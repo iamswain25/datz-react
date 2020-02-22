@@ -1,5 +1,7 @@
 import React from "react";
-export default (props: React.PropsWithoutRef<{ images: string[] }>) => {
+export default (
+  props: React.PropsWithoutRef<{ images: Array<string | undefined> }>
+) => {
   return (
     <div
       style={{
@@ -11,7 +13,7 @@ export default (props: React.PropsWithoutRef<{ images: string[] }>) => {
     >
       <img
         src={props.images[0]}
-        alt="image"
+        alt="ok"
         style={{ objectFit: "contain", width: "100%", height: "100%" }}
       />
       <div

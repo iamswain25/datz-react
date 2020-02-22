@@ -4,7 +4,7 @@ import Header from "./components/header";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import PrivateRoute from "./components/PrivateRoute";
-import AdminHome from "./pages/Home";
+import AdminHome from "./pages/AdminHome";
 function App() {
   return (
     <Router>

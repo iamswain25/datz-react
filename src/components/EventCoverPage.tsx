@@ -11,9 +11,9 @@ export default () => {
         flexDirection: "row"
       }}
     >
-      <img src={require("../images/half.jpg")} />
+      <img src={require("../images/half.jpg")} alt="ok" />
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <img src={require("../images/event1.jpg")} />
+        <img src={require("../images/event1.jpg")} alt="ok" />
         <p>From South Korea to NYPL: Datz Press</p>
         <p>
           During 2019, Datz Museum of Art organized three exhibitions based on
@@ -23,8 +23,8 @@ export default () => {
           lyricism and narrative.
         </p>
         <div>
-          <img src={require("../images/event2.jpg")} />
-          <img src={require("../images/event3.jpg")} />
+          <img src={require("../images/event2.jpg")} alt="ok" />
+          <img src={require("../images/event3.jpg")} alt="ok" />
         </div>
       </div>
     </div>
