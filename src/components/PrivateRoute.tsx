@@ -10,6 +10,12 @@ export default ({
   [any: string]: any;
 }) => {
   const [user, isInit, error] = useAuthState(auth);
+  if (isInit) {
+    return <div>"loading..."</div>;
+  } else if (error) {
+    return <div>JSON.stringify(error)</div>;
+  }
+  console.log(user);
   return (
     <Route
       {...rest}
