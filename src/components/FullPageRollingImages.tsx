@@ -1,7 +1,8 @@
 import React from "react";
-export default (
-  props: React.PropsWithoutRef<{ images: Array<string | undefined> }>
-) => {
+import "react-image-gallery/styles/css/image-gallery.css";
+import ImageGallery from "react-image-gallery";
+export default (props: React.PropsWithoutRef<{ images: Array<any> }>) => {
+  const images = props.images.map(a => ({ original: a.image }));
   return (
     <div
       style={{
@@ -11,10 +12,16 @@ export default (
         position: "relative"
       }}
     >
-      <img
-        src={props.images[0]}
-        alt="ok"
-        style={{ objectFit: "contain", width: "100%", height: "100%" }}
+      <ImageGallery
+        infinite={true}
+        items={images}
+        showNav={false}
+        showThumbnails={false}
+        showFullscreenButton={false}
+        showPlayButton={false}
+        showBullets={true}
+        autoPlay={true}
+        slideInterval={5000}
       />
       <div
         style={{

@@ -1,15 +1,34 @@
 import React from "react";
-import FullPageRollingImages from "../components/FullPageRollingImages";
-import { useDownloadURL } from "react-firebase-hooks/storage";
-// import EventCoverPage from "../components/EventCoverPage";
-import { storage } from "../firebase";
+import FullPageRollingImagesEdit from "../components/FullPageRollingImagesEdit";
+import { firestore } from "../firebase";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { Main } from "../@type/main";
+import coverImg from "../images/cover.jpg";
+const newMain = {
+  image: coverImg,
+  title: "Nothing Will Ever be the Same Again",
+  type: "New Books",
+  author: "Amanda Marchand",
+  color: "white",
+  isShowing: true
+};
 export default () => {
-  const [image1] = useDownloadURL(storage.ref().child("cover.jpg"));
-  const [image2] = useDownloadURL(storage.ref().child("cover2.jpg"));
-  const [image3] = useDownloadURL(storage.ref().child("cover.jpg"));
+  const [dataArray, loading, error] = useCollectionDataOnce<Main>(
+    firestore
+      .collection("main")
+      .orderBy("isShowing", "desc")
+      .limit(5)
+  );
+
+  if (loading) {
+    return null;
+  }
+  if (dataArray!.length < 1) {
+    dataArray?.push(newMain);
+  }
   return (
     <>
-      <FullPageRollingImages images={[image1, image2, image3]} />
+      <FullPageRollingImagesEdit images={dataArray!} />
     </>
   );
 };

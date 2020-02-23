@@ -6,7 +6,7 @@ export default ({
   component: Component,
   ...rest
 }: {
-  component: (props: RouteComponentProps) => JSX.Element;
+  component: (props: RouteComponentProps) => any;
   [any: string]: any;
 }) => {
   const [user, isInit, error] = useAuthState(auth);
@@ -15,7 +15,6 @@ export default ({
   } else if (error) {
     return <div>JSON.stringify(error)</div>;
   }
-  console.log(user);
   return (
     <Route
       {...rest}
