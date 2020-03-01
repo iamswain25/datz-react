@@ -1,34 +1,36 @@
 import React from "react";
 import FullPageRollingImagesEdit from "../components/FullPageRollingImagesEdit";
 import { firestore } from "../firebase";
-import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Main } from "../@type/main";
-import coverImg from "../images/cover.jpg";
-const newMain = {
-  image: coverImg,
-  title: "Nothing Will Ever be the Same Again",
-  type: "New Books",
-  author: "Amanda Marchand",
-  color: "white",
-  isShowing: true
-};
+
 export default () => {
-  const [dataArray, loading, error] = useCollectionDataOnce<Main>(
+  const [dataArray, loading, error] = useCollectionData<Main>(
     firestore
       .collection("main")
       .orderBy("isShowing", "desc")
-      .limit(5)
+      .limit(5),
+    { idField: "id" }
   );
-
+  const [dataArray2, loading2, error2] = useCollectionData<Main>(
+    firestore
+      .collection("main2")
+      .orderBy("isShowing", "desc")
+      .limit(5),
+    { idField: "id" }
+  );
   if (loading) {
     return null;
   }
-  if (dataArray!.length < 1) {
-    dataArray?.push(newMain);
+  if (error) {
+    return <>{JSON.stringify(error)}</>;
   }
   return (
     <>
-      <FullPageRollingImagesEdit images={dataArray!} />
+      {!loading && !error && <FullPageRollingImagesEdit images={dataArray!} collection="main" />}
+      {!loading2 && !error2 && (
+        <FullPageRollingImagesEdit images={dataArray2!} collection="main2" />
+      )}
     </>
   );
 };

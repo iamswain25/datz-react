@@ -3,31 +3,25 @@ import FullPageRollingImages from "../components/FullPageRollingImages";
 import EventCoverPage from "../components/EventCoverPage";
 import { firestore } from "../firebase";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
-import coverImg from "../images/cover.jpg";
+import { Main } from "../@type/main";
 export default () => {
-  const [dataArray, loading, error] = useCollectionDataOnce(
+  const [dataArray, loading, error] = useCollectionDataOnce<Main>(
     firestore
       .collection("main")
-      .where("isShwoing", "==", true)
+      .where("isShowing", "==", true)
       .limit(5)
   );
-  if (loading) {
-    return null;
-  }
-  if (dataArray!.length < 1) {
-    dataArray?.push({
-      image: coverImg,
-      title: "Nothing Will Ever be the Same Again",
-      type: "New Books",
-      author: "Amanda Marchand",
-      color: "white",
-      isShowing: true
-    });
-  }
+  const [dataArray2, loading2, error2] = useCollectionDataOnce<Main>(
+    firestore
+      .collection("main2")
+      .where("isShowing", "==", true)
+      .limit(5)
+  );
+  console.log(dataArray, dataArray2);
   return (
     <>
-      <FullPageRollingImages images={dataArray!} />
-      <FullPageRollingImages images={dataArray!} />
+      {!loading && !error && <FullPageRollingImages images={dataArray} />}
+      {!loading2 && !error2 && <FullPageRollingImages images={dataArray2} />}
       <EventCoverPage />
     </>
   );

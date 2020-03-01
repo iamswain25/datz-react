@@ -1,8 +1,16 @@
 import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
-export default (props: React.PropsWithoutRef<{ images: Array<any> }>) => {
-  const images = props.images.map(a => ({ original: a.image }));
+import { Main, newMain } from "../@type/main";
+export default (props: { images: Array<Main> | undefined }) => {
+  const images =
+    (props.images && props.images.map(a => ({ original: a.image }))) || [];
+  const [index, setIndex] = React.useState(0);
+  function onslideHandler(index: number) {
+    setIndex(index);
+  }
+  const { type, title, author, color } =
+    (props.images && props.images[index]) || newMain;
   return (
     <div
       style={{
@@ -21,6 +29,7 @@ export default (props: React.PropsWithoutRef<{ images: Array<any> }>) => {
         showPlayButton={false}
         showBullets={true}
         autoPlay={true}
+        onSlide={onslideHandler}
         slideInterval={5000}
       />
       <div
@@ -33,13 +42,14 @@ export default (props: React.PropsWithoutRef<{ images: Array<any> }>) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: 37
+          padding: 37,
+          color
         }}
       >
-        <div>New Books</div>
-        <hr style={{ borderWidth: 1, borderColor: "black", width: 400 }} />
-        <div>Nothing Will Ever be the Same Again</div>
-        <div>Amanda Marchand</div>
+        <div>{type}</div>
+        <hr style={{ borderWidth: 1, borderColor: color, width: 400 }} />
+        <div>{title}</div>
+        <div>{author}</div>
       </div>
     </div>
   );
