@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Header from "./header"
+import Header from "./Header"
 import FlexCenter from "./FlexCenter"
 import "./layout.css"
 import { FirebaseContext } from "gatsby-plugin-firebase"

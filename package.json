@@ -10,6 +10,7 @@
     "@types/react-responsive": "^8.0.2",
     "@types/react-router-dom": "^5.1.3",
     "cra-template-typescript": "1.0.2",
+    "emotion": "^10.0.27",
     "firebase": "^7.9.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

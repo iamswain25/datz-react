@@ -155,3 +155,44 @@ select[multiple] {
 .image-gallery .image-gallery-bullets {
   height: auto;
 }
+
+@font-face {
+  font-family: BauerGroteskOTW03;
+  src: local(BauerGroteskOTW03-Book),
+    url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.woff2)
+      format("woff2"),
+    url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.woff)
+      format("woff"),
+    url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.ttf)
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: ArnoPro-Subhead;
+  src: local(ArnoPro-Subhead),
+    url(./assets/fonts/arno_pro/ArnoPro-Subhead/@font-face/ArnoPro-Subhead.woff2)
+      format("woff2"),
+    url(./assets/fonts/arno_pro/ArnoPro-Subhead/@font-face/ArnoPro-Subhead.woff)
+      format("woff"),
+    url(./assets/fonts/arno_pro/ArnoPro-Subhead/@font-face/ArnoPro-Subhead.ttf)
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: ArnoPro-Display;
+  src: local(ArnoPro-Display),
+    url(./assets/fonts/arno_pro/ArnoPro-Display/@font-face/ArnoPro-Display.woff2)
+      format("woff2"),
+    url(./assets/fonts/arno_pro/ArnoPro-Display/@font-face/ArnoPro-Display.woff)
+      format("woff"),
+    url(./assets/fonts/arno_pro/ArnoPro-Display/@font-face/ArnoPro-Display.ttf)
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
