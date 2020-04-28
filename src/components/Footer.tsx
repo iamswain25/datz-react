@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
-
+import { useMediaQuery } from "react-responsive";
 import { Flex, FlexRow, F1 } from "./div";
 import datzpress from "../assets/images/datzpress.svg";
 import datzbooks from "../assets/images/datzbooks.svg";
@@ -20,7 +20,6 @@ const menu = css`
 `;
 const padding = css`
   padding: 11px;
-  text-decoration: none;
   color: #707070;
 `;
 const divider = (
@@ -55,6 +54,115 @@ const dividerSmallV = (
   />
 );
 export default () => {
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 800 });
+  if (isTabletOrMobile) {
+    return (
+      <>
+        <F1
+          className={css`
+            font-family: BauerGroteskOTW03;
+            height: 136px;
+            font-size: 16px;
+            line-height: 1.19;
+            text-align: right;
+            color: #707070;
+          `}
+        >
+          <Link to="/">Sign up for Datz newsletter ></Link>
+        </F1>
+        <section
+          className={css`
+            height: 73px;
+            background-color: #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          `}
+        >
+          <div className={menu}>
+            <Link to="/about" className={padding}>
+              About
+            </Link>
+            <Link to="/contact" className={padding}>
+              Contact
+            </Link>
+            <Link to="/news" className={padding}>
+              News
+            </Link>
+            <Link to="/support" className={padding}>
+              Support
+            </Link>
+          </div>
+        </section>
+
+        <FlexRow
+          className={css`
+            height: 71px;
+            margin-left: 37px;
+            margin-right: 37px;
+            padding-left: 30px;
+            padding-right: 30px;
+            justify-content: center;
+          `}
+        >
+          <Link to="/press">
+            <img
+              src={datzpress}
+              alt="datzpress"
+              className={css`
+                height: 30px;
+              `}
+            />
+          </Link>
+          {dividerV}
+          <Link to="/books">
+            <img
+              src={datzbooks}
+              alt="datzbooks"
+              className={css`
+                height: 30px;
+              `}
+            />
+          </Link>
+          {dividerV}
+          <Link to="/museum">
+            <img
+              src={datzmuseum}
+              alt="datzmuseum"
+              className={css`
+                height: 30px;
+              `}
+            />
+          </Link>
+        </FlexRow>
+        {divider}
+        <FlexRow
+          className={css`
+            height: 91px;
+            margin-left: 37px;
+            margin-right: 37px;
+            padding-left: 30px;
+            padding-right: 30px;
+          `}
+        >
+          <F1
+            className={css`
+              font-family: BauerGroteskOTW03;
+              font-size: 11px;
+              color: #707070;
+              line-height: 2;
+            `}
+          >
+            <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
+            <FlexRow className={css``}>
+              <div>Privacy Policy</div>
+              <div>Terms of Use</div>
+            </FlexRow>
+          </F1>
+        </FlexRow>
+      </>
+    );
+  }
   return (
     <>
       <section
@@ -132,7 +240,7 @@ export default () => {
             color: #707070;
           `}
         >
-          <span>Sign up for Datz newsletter ></span>
+          <Link to="/">Sign up for Datz newsletter ></Link>
           {dividerV}
         </FlexRow>
       </FlexRow>

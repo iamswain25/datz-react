@@ -3,6 +3,7 @@ import { css } from "emotion";
 import PastEventsLeft from "./PastEventsLeft";
 import PastEventsRight from "./PastEventsRight";
 import { useMediaQuery } from "react-responsive";
+import { Flex, FlexRow, F1 } from "./div";
 const devider = (
   <div
     className={css`
@@ -19,15 +20,14 @@ export default () => {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 800 });
   if (isTabletOrMobile) {
     return (
-      <div
-        style={{
-          overflow: "hidden",
-          padding: 17,
-          paddingTop: 28,
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-        }}
+      <Flex
+        className={css`
+          overflow: hidden;
+          padding: 17px;
+          padding-top: 28px;
+          padding-bottom: 0;
+          position: relative;
+        `}
       >
         <div
           className={css`
@@ -49,7 +49,7 @@ export default () => {
         >
           <PastEventsRight />
         </div>
-      </div>
+      </Flex>
     );
   }
   return (

@@ -18,13 +18,14 @@ export const F0 = (
   props: React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
 ) => (
   <div
+    {...props}
     className={css`
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      ${props.className}
     `}
-    {...props}
   >
     {props.children}
   </div>
@@ -33,14 +34,15 @@ export const F1 = (
   props: React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
 ) => (
   <div
+    {...props}
     className={css`
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       flex: 1;
+      ${props.className}
     `}
-    {...props}
   >
     {props.children}
   </div>

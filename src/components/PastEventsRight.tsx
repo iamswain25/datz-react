@@ -133,7 +133,6 @@ export default () => {
           className={css`
             height: 0;
             border-bottom: solid 1px #707070;
-            margin-bottom: 20px;
           `}
         ></div>
       </div>

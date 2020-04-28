@@ -16,7 +16,6 @@ const headerText = css`
   letter-spacing: normal;
   text-align: center;
   color: #707070;
-  text-decoration: none;
   max-width: 120px;
   flex: 1;
 `;

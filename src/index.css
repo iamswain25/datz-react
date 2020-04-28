@@ -27,6 +27,10 @@ textarea {
   font-size: 13px;
   font-family: Arial;
 }
+a {
+  text-decoration: none;
+  color: #707070;
+}
 ul {
   display: flex;
   list-style-type: none;
