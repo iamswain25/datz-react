@@ -16,8 +16,9 @@ const headerText = css`
   letter-spacing: normal;
   text-align: center;
   color: #707070;
-  margin-left: 37px;
   text-decoration: none;
+  max-width: 120px;
+  flex: 1;
 `;
 const marginNone = css`
   margin-left: 10px;
@@ -32,10 +33,9 @@ export default () => {
         marginRight: 37,
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
       }}
     >
-      <FlexCenter>
+      <FlexCenter style={{ flex: 1, justifyContent: "flex-start" }}>
         <Link className={headerText} to="/">
           <img
             src={logo}
@@ -57,8 +57,13 @@ export default () => {
         <Link className={headerText} to="/">
           Events
         </Link>
-      </FlexCenter>
-      <FlexCenter>
+        <div
+          className={css`
+            width: 0;
+            height: 12px;
+            border: solid 1px #707070;
+          `}
+        ></div>
         <Link className={headerText} to="/">
           Store
         </Link>

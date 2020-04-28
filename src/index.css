@@ -156,6 +156,9 @@ select[multiple] {
   height: auto;
 }
 
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  object-fit: cover;
+}
 @font-face {
   font-family: BauerGroteskOTW03;
   src: local(BauerGroteskOTW03-Book),

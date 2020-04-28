@@ -56,6 +56,7 @@ export default () => {
         height: "100vh",
         overflow: "hidden",
         padding: 37,
+        paddingTop: 28,
         position: "relative",
         display: "flex",
         flexDirection: "row",
@@ -66,6 +67,8 @@ export default () => {
           flex: 1;
           margin-right: 14px;
           background-image: url(${require("../assets/images/half.jpg")});
+          background-repeat: no-repeat;
+          background-size: cover;
         `}
       >
         <section
