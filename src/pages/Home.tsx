@@ -2,6 +2,7 @@ import React from "react";
 import FullPageRollingImages from "../components/FullPageRollingImages";
 import FullPageRollingImages2 from "../components/FullPageRollingImages2";
 import EventCoverPage from "../components/EventCoverPage";
+import Footer from "../components/Footer";
 import { firestore } from "../firebase";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { Main } from "../@type/main";
@@ -31,6 +32,7 @@ export default () => {
       {!loading2 && !error2 && <FullPageRollingImages2 images={dataArray2} />}
       {devider}
       <EventCoverPage />
+      <Footer />
     </>
   );
 };

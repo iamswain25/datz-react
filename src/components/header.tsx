@@ -3,7 +3,7 @@ import Headroom from "react-headroom";
 import FlexCenter from "./FlexCenter";
 // import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/datz_main.svg";
+import logo from "../assets/images/datzmain.svg";
 import { css } from "emotion";
 
 const headerText = css`
