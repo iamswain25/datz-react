@@ -3,9 +3,10 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { Flex, FlexRow, F1 } from "./div";
-import datzpress from "../assets/images/datzpress.svg";
-import datzbooks from "../assets/images/datzbooks.svg";
-import datzmuseum from "../assets/images/datzmuseum.svg";
+import Shares from "./Shares";
+import datzpress from "../assets/svg/0524_datzpress.svg";
+import datzbooks from "../assets/svg/0524_datzbooks.svg";
+import datzmuseum from "../assets/svg/0524_datz museum.svg";
 const menu = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -53,25 +54,64 @@ const dividerSmallV = (
     `}
   />
 );
-export default () => {
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 800 });
-  if (isTabletOrMobile) {
+const Menus = (
+  <div className={menu}>
+    <Link to="/about" className={padding}>
+      About
+    </Link>
+    <Link to="/contact" className={padding}>
+      Contact
+    </Link>
+    <Link to="/news" className={padding}>
+      News
+    </Link>
+    <Link to="/support" className={padding}>
+      Support
+    </Link>
+  </div>
+);
+const dotzsvgs = (
+  <>
+    <Link to="/press">
+      <img
+        src={datzpress}
+        alt="datzpress"
+        className={css`
+          height: 30px;
+        `}
+      />
+    </Link>
+    {dividerV}
+    <Link to="/books">
+      <img
+        src={datzbooks}
+        alt="datzbooks"
+        className={css`
+          height: 30px;
+        `}
+      />
+    </Link>
+    {dividerV}
+    <Link to="/museum">
+      <img
+        src={datzmuseum}
+        alt="datzmuseum"
+        className={css`
+          height: 30px;
+        `}
+      />
+    </Link>
+  </>
+);
+export default function Footer() {
+  const isDeskTop = useMediaQuery({ minWidth: 1000 });
+  if (!isDeskTop) {
     return (
       <>
-        <F1
-          className={css`
-            font-family: BauerGroteskOTW03;
-            height: 136px;
-            font-size: 16px;
-            line-height: 1.19;
-            text-align: right;
-            color: #707070;
-          `}
-        >
-          <Link to="/">Sign up for Datz newsletter ></Link>
-        </F1>
         <section
           className={css`
+            margin-top: 40px;
+            font-family: BauerGroteskOTW03;
             height: 73px;
             background-color: #ececec;
             display: flex;
@@ -79,20 +119,7 @@ export default () => {
             justify-content: center;
           `}
         >
-          <div className={menu}>
-            <Link to="/about" className={padding}>
-              About
-            </Link>
-            <Link to="/contact" className={padding}>
-              Contact
-            </Link>
-            <Link to="/news" className={padding}>
-              News
-            </Link>
-            <Link to="/support" className={padding}>
-              Support
-            </Link>
-          </div>
+          <Link to="/">Sign up for Datz newsletter ></Link>
         </section>
 
         <FlexRow
@@ -105,37 +132,16 @@ export default () => {
             justify-content: center;
           `}
         >
-          <Link to="/press">
-            <img
-              src={datzpress}
-              alt="datzpress"
-              className={css`
-                height: 30px;
-              `}
-            />
-          </Link>
-          {dividerV}
-          <Link to="/books">
-            <img
-              src={datzbooks}
-              alt="datzbooks"
-              className={css`
-                height: 30px;
-              `}
-            />
-          </Link>
-          {dividerV}
-          <Link to="/museum">
-            <img
-              src={datzmuseum}
-              alt="datzmuseum"
-              className={css`
-                height: 30px;
-              `}
-            />
-          </Link>
+          {dotzsvgs}
         </FlexRow>
         {divider}
+        <F1
+          className={css`
+            height: 71px;
+          `}
+        >
+          <Shares />
+        </F1>
         <FlexRow
           className={css`
             height: 91px;
@@ -174,20 +180,7 @@ export default () => {
           justify-content: center;
         `}
       >
-        <div className={menu}>
-          <Link to="/about" className={padding}>
-            About
-          </Link>
-          <Link to="/contact" className={padding}>
-            Contact
-          </Link>
-          <Link to="/news" className={padding}>
-            News
-          </Link>
-          <Link to="/support" className={padding}>
-            Support
-          </Link>
-        </div>
+        {Menus}
       </section>
 
       <FlexRow
@@ -200,49 +193,25 @@ export default () => {
           padding-right: 30px;
         `}
       >
-        <FlexRow className={css``}>
-          <Link to="/press">
-            <img
-              src={datzpress}
-              alt="datzpress"
-              className={css`
-                height: 30px;
-              `}
-            />
-          </Link>
-          {dividerV}
-          <Link to="/books">
-            <img
-              src={datzbooks}
-              alt="datzbooks"
-              className={css`
-                height: 30px;
-              `}
-            />
-          </Link>
-          {dividerV}
-          <Link to="/museum">
-            <img
-              src={datzmuseum}
-              alt="datzmuseum"
-              className={css`
-                height: 30px;
-              `}
-            />
-          </Link>
-        </FlexRow>
         <FlexRow
           className={css`
+            height: 26px;
             font-family: BauerGroteskOTW03;
-            font-size: 16px;
-            line-height: 1.19;
-            text-align: right;
+            font-size: 21px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.24;
+            letter-spacing: normal;
+            text-align: left;
             color: #707070;
           `}
         >
           <Link to="/">Sign up for Datz newsletter ></Link>
           {dividerV}
+          <Shares />
         </FlexRow>
+        <FlexRow className={css``}>{dotzsvgs}</FlexRow>
       </FlexRow>
       {divider}
       <FlexRow
@@ -271,6 +240,7 @@ export default () => {
         <F1
           className={css`
             justify-content: flex-start;
+            align-items: flex-start;
             margin-left: 43px;
             font-family: NotoSansCJKkr;
             font-size: 10px;
@@ -296,4 +266,4 @@ export default () => {
       </FlexRow>
     </>
   );
-};
+}

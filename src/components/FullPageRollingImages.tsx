@@ -3,7 +3,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
-import datzpressLogo from "../assets/images/datzpress.svg";
+import datzpressLogo from "../assets/svg/0524_datzpress.svg";
 const typeClass = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
@@ -35,7 +35,11 @@ const authorClass = css`
   letter-spacing: 0.54px;
   text-align: center;
 `;
-export default (props: { images: Array<Main> | undefined }) => {
+export default (props: {
+  images: Array<Main> | undefined;
+  style?: React.CSSProperties;
+}) => {
+  const { style } = props;
   const images =
     (props.images && props.images.map((a) => ({ original: a.image }))) || [];
   const [index, setIndex] = React.useState(0);
@@ -50,7 +54,9 @@ export default (props: { images: Array<Main> | undefined }) => {
         height: "calc(100vh - 79px)",
         overflow: "hidden",
         padding: 37,
+        paddingTop: 0,
         position: "relative",
+        ...style,
       }}
     >
       <ImageGallery

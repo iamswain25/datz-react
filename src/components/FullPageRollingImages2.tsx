@@ -3,7 +3,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
-import datzpressLogo from "../assets/images/datzpress.svg";
+import datzpressLogo from "../assets/svg/0524_datzpress.svg";
 const typeClass = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
@@ -47,7 +47,7 @@ export default (props: { images: Array<Main> | undefined }) => {
   return (
     <div
       style={{
-        height: "calc(100vh - 79px)",
+        height: "100vh",
         overflow: "hidden",
         paddingTop: 28,
         paddingBottom: 28,
