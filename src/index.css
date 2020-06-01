@@ -160,7 +160,8 @@ select[multiple] {
 .image-gallery {
   height: 100%;
 }
-.image-gallery div,
+.image-gallery
+  div:not(.image-gallery-bullets-container):not(.image-gallery-bullets),
 .image-gallery img {
   height: inherit;
 }
@@ -169,6 +170,7 @@ select[multiple] {
 }
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
+  max-height: none;
   object-fit: cover;
 }
 @font-face {
