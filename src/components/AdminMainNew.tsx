@@ -33,7 +33,7 @@ export default (props: {
         .ref()
         .child(ref.id)
         .put(imageFile)
-        .then(snapshot => snapshot.ref.getDownloadURL());
+        .then((snapshot) => snapshot.ref.getDownloadURL());
       ref.update({ image: imgUrl });
     }
     props.setNew(false);
@@ -46,7 +46,7 @@ export default (props: {
     padding: 37,
     background: `url(${image}) no-repeat center`,
     backgroundSize: "contain",
-    backgroundOrigin: "content-box"
+    backgroundOrigin: "content-box",
   };
 
   return (
@@ -55,26 +55,32 @@ export default (props: {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "stretch"
+          alignItems: "stretch",
         }}
       >
         <input
           type="text"
           value={type}
-          onChange={e => setData({ ...data, type: e.target.value })}
+          onChange={(e) => setData({ ...data, type: e.target.value })}
           style={{ textAlign: "center", color, width: "inherit" }}
         />
-        <hr style={{ borderWidth: 1, borderColor: "black", width: 400 }} />
+        <hr
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: "calc(100% - 40px)",
+          }}
+        />
         <input
           type="text"
           value={title}
-          onChange={e => setData({ ...data, title: e.target.value })}
+          onChange={(e) => setData({ ...data, title: e.target.value })}
           style={{ textAlign: "center", color, width: "inherit" }}
         />
         <input
           type="text"
           value={author}
-          onChange={e => setData({ ...data, author: e.target.value })}
+          onChange={(e) => setData({ ...data, author: e.target.value })}
           style={{ textAlign: "center", color, width: "inherit" }}
         />
       </div>
@@ -86,7 +92,7 @@ export default (props: {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
         <ImageUploader
@@ -99,11 +105,11 @@ export default (props: {
         <input
           type="text"
           value={color}
-          onChange={e => setData({ ...data, color: e.target.value })}
+          onChange={(e) => setData({ ...data, color: e.target.value })}
           style={{
             backgroundColor: "white",
             textAlign: "center",
-            width: "inherit"
+            width: "inherit",
           }}
         />
         <label htmlFor="isShowing">show</label>
@@ -111,10 +117,10 @@ export default (props: {
           id="isShowing"
           type="checkbox"
           checked={isShowing}
-          onChange={e => setData({ ...data, isShowing: e.target.checked })}
+          onChange={(e) => setData({ ...data, isShowing: e.target.checked })}
           style={{
             backgroundColor: "white",
-            textAlign: "center"
+            textAlign: "center",
           }}
         />
 

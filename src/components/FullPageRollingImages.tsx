@@ -4,6 +4,7 @@ import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
 import datzpressLogo from "../assets/svg/0524_datzpress.svg";
+import useDesktop from "./useDesktop";
 const typeClass = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
@@ -13,7 +14,6 @@ const typeClass = css`
   line-height: 1.21;
   letter-spacing: normal;
   text-align: center;
-  margin-top: 37px;
 `;
 const titleClass = css`
   font-family: ArnoPro-Subhead;
@@ -40,6 +40,7 @@ export default (props: {
   style?: React.CSSProperties;
 }) => {
   const { style } = props;
+  const isDeskTop = useDesktop();
   const images =
     (props.images && props.images.map((a) => ({ original: a.image }))) || [];
   const [index, setIndex] = React.useState(0);
@@ -53,8 +54,9 @@ export default (props: {
       style={{
         height: "calc(100vh - 79px)",
         overflow: "hidden",
-        padding: 37,
-        paddingTop: 0,
+        paddingBottom: isDeskTop ? 37 : 17,
+        paddingLeft: isDeskTop ? 37 : 17,
+        paddingRight: isDeskTop ? 37 : 17,
         position: "relative",
         ...style,
       }}
@@ -81,12 +83,18 @@ export default (props: {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: 37,
+          padding: isDeskTop ? 37 : 20,
           color,
         }}
       >
         <div className={typeClass}>{type}</div>
-        <hr style={{ borderWidth: 1, borderColor: color, width: 400 }} />
+        <hr
+          style={{
+            borderWidth: 1,
+            borderColor: color,
+            width: "calc(100% - 40px)",
+          }}
+        />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
         <img

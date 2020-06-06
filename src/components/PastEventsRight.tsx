@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import ArrowHorizontal from "./ArrowHorizontal";
+import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 const headerStyle = css`
   font-family: BauerGroteskOTW03;
@@ -85,14 +86,22 @@ export default function PastEventsRight() {
           space where the texture of abstraction became the temperature of
           lyricism and narrative.
         </p>
-        <div
+        <Link
+          to="/event"
           className={css`
-            height: 0;
             border-bottom: solid 1px #707070;
             margin-top: 20px;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            text-align: center;
+            font-family: BauerGroteskOTW03;
+            font-size: 14px;
+            line-height: 1.21;
+            color: #707070;
           `}
-        ></div>
+        >
+          read more >
+        </Link>
         <section>
           <div
             className={css`

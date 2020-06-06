@@ -26,10 +26,7 @@ export default (props: { data: Main; collection: string }) => {
         .collection(props.collection)
         .doc(id)
         .delete();
-      const deleteImg = storage
-        .ref()
-        .child(id)
-        .delete();
+      const deleteImg = storage.ref().child(id).delete();
       return await Promise.all([deleteData, deleteImg]);
     }
   }
@@ -43,33 +40,39 @@ export default (props: { data: Main; collection: string }) => {
         top: 0,
         left: 0,
         justifyContent: "stretch",
-        padding: 37
+        padding: 37,
       }}
     >
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "stretch"
+          alignItems: "stretch",
         }}
       >
         <input
           type="text"
           value={type}
-          onChange={e => setData({ ...data, type: e.target.value })}
+          onChange={(e) => setData({ ...data, type: e.target.value })}
           style={{ textAlign: "center", color, width: "inherit" }}
         />
-        <hr style={{ borderWidth: 1, borderColor: "black", width: 400 }} />
+        <hr
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: "calc(100% - 40px)",
+          }}
+        />
         <input
           type="text"
           value={title}
-          onChange={e => setData({ ...data, title: e.target.value })}
+          onChange={(e) => setData({ ...data, title: e.target.value })}
           style={{ textAlign: "center", color, width: "inherit" }}
         />
         <input
           type="text"
           value={author}
-          onChange={e => setData({ ...data, author: e.target.value })}
+          onChange={(e) => setData({ ...data, author: e.target.value })}
           style={{ textAlign: "center", color, width: "inherit" }}
         />
       </div>
@@ -80,17 +83,17 @@ export default (props: { data: Main; collection: string }) => {
           right: 0,
           display: "flex",
           flexDirection: "column",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <input
           type="text"
           value={color}
-          onChange={e => setData({ ...data, color: e.target.value })}
+          onChange={(e) => setData({ ...data, color: e.target.value })}
           style={{
             backgroundColor: "white",
             textAlign: "center",
-            width: "inherit"
+            width: "inherit",
           }}
         />
         <label htmlFor="isShowing">show</label>
@@ -98,10 +101,10 @@ export default (props: { data: Main; collection: string }) => {
           id="isShowing"
           type="checkbox"
           checked={isShowing}
-          onChange={e => setData({ ...data, isShowing: e.target.checked })}
+          onChange={(e) => setData({ ...data, isShowing: e.target.checked })}
           style={{
             backgroundColor: "white",
-            textAlign: "center"
+            textAlign: "center",
           }}
         />
 

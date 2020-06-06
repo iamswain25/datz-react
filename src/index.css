@@ -150,7 +150,8 @@ textarea {
 /* Selects
 -----------------------------------------------*/
 
-select {
+p {
+  margin: 0;
 }
 
 select[multiple] {
@@ -169,7 +170,7 @@ select[multiple] {
   height: auto;
 }
 
-.image-gallery-content .image-gallery-slide .image-gallery-image {
+.image-gallery .image-gallery-content .image-gallery-slide .image-gallery-image {
   max-height: none;
   object-fit: cover;
 }

@@ -1,12 +1,13 @@
 import React from "react";
 import Headroom from "react-headroom";
 import FlexCenter from "./FlexCenter";
-// import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import logo from "../assets/svg/0524_datz main.svg";
 import { css } from "emotion";
+import useDesktop from "./useDesktop";
 // import menu from "../assets/svg/menu.svg";
-// import search from "../assets/svg/search.svg";
+import { HamburgerButton } from "react-hamburger-button";
+import search from "../assets/svg/search.svg";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -24,43 +25,34 @@ const marginNone = css`
   margin-left: 10px;
   margin-right: 10px;
 `;
-export default () => {
+const headerLinkArr = [
+  ["Publication", "/publication"],
+  ["Artist Projects", "/artist"],
+  ["Exhibition", "/exhibition"],
+  ["Events", "/event"],
+];
+export default function Header() {
   const [text, setText] = React.useState("");
+  const isDeskTop = useDesktop();
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
   }
-  return (
-    <Headroom
-      style={{
-        height: 79,
-        marginLeft: 37,
-        marginRight: 37,
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <FlexCenter style={{ justifyContent: "flex-start" }}>
-        <Link className={headerText} to="/">
-          <img
-            src={logo}
-            alt="datz Logo"
-            className={css`
-              height: 20px;
-            `}
-          />
-        </Link>
-        <Link className={headerText} to="/">
-          Publication
-        </Link>
-        <Link className={headerText} to="/">
-          Artist Projects
-        </Link>
-        <Link className={headerText} to="/">
-          Exhibition
-        </Link>
-        <Link className={headerText} to="/">
-          Events
-        </Link>
+  const [isOpen, setOpen] = React.useState(false);
+  function openHandler() {
+    setOpen(!isOpen);
+  }
+  let links = null;
+  if (isDeskTop) {
+    links = (
+      <>
+        {headerLinkArr.map(([label, link], i) => {
+          return (
+            <Link className={headerText} to={link} key={i}>
+              {label}
+            </Link>
+          );
+        })}
+
         <div
           className={css`
             width: 0;
@@ -73,27 +65,61 @@ export default () => {
         <Link className={headerText} to="/">
           Store
         </Link>
-      </FlexCenter>
-      <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
-        <span
+      </>
+    );
+  }
+  return (
+    <Headroom
+      style={{
+        height: 79,
+        marginLeft: isDeskTop ? 37 : 20,
+        marginRight: isDeskTop ? 37 : 20,
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <FlexCenter style={{ justifyContent: "flex-start" }}>
+        <Link
           className={css`
             ${headerText}
-            margin: 0;
+            ${!isDeskTop && "margin: 0;"}
           `}
+          to="/"
         >
-          Search
-        </span>
-        <input
-          type="text"
-          value={text}
-          onChange={textHandler}
-          className={css`
-            ${headerText};
-            border-bottom: solid 1px #707070;
-            flex-basis: 56px;
-            margin: 0;
-          `}
-        />
+          <img
+            src={logo}
+            alt="datz Logo"
+            className={css`
+              height: 20px;
+            `}
+          />
+        </Link>
+        {links}
+      </FlexCenter>
+      <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
+        {isDeskTop && (
+          <>
+            <span
+              className={css`
+                ${headerText}
+                margin: 0;
+              `}
+            >
+              Search
+            </span>
+            <input
+              type="text"
+              value={text}
+              onChange={textHandler}
+              className={css`
+                ${headerText};
+                border-bottom: solid 1px #707070;
+                flex-basis: 56px;
+                margin: 0;
+              `}
+            />
+          </>
+        )}
         <button
           className={css`
             ${headerText};
@@ -117,7 +143,27 @@ export default () => {
         >
           KR
         </button>
+        {!isDeskTop && (
+          <>
+            <img
+              src={search}
+              width={25}
+              height={25}
+              style={{ marginRight: 20 }}
+              alt="search"
+            />
+            <HamburgerButton
+              open={isOpen}
+              onClick={openHandler}
+              width={18}
+              height={15}
+              strokeWidth={1}
+              color="black"
+              animationDuration={0.5}
+            />
+          </>
+        )}
       </FlexCenter>
     </Headroom>
   );
-};
+}

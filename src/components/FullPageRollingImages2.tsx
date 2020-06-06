@@ -81,7 +81,13 @@ export default (props: { images: Array<Main> | undefined }) => {
         }}
       >
         <div className={typeClass}>{type}</div>
-        <hr style={{ borderWidth: 1, borderColor: color, width: 400 }} />
+        <hr
+          style={{
+            borderWidth: 1,
+            borderColor: color,
+            width: "calc(100% - 40px)",
+          }}
+        />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
         <img
