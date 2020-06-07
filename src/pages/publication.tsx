@@ -128,6 +128,7 @@ export default function Publication() {
                   justify-content: center;
                   align-items: center;
                   color: #707070;
+                  text-align: center;
                 `}
               >
                 <img src={src} alt="title" />
