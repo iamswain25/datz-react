@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Publication from "./pages/Publication";
+import PublicationItem from "./pages/PublicationItem";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminHome from "./pages/AdminHome";
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/publication" component={Publication} />
+        <Route exact path="/publication/:id" component={PublicationItem} />
         <Route exact path="/login" component={Signin} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>

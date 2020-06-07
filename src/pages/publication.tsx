@@ -1,12 +1,12 @@
 import React from "react";
 import PublicationStickyTop from "../components/PublicationStickyTop";
-import p1 from "../assets/images/p1.png";
-import p2 from "../assets/images/p2.png";
-import p3 from "../assets/images/p3.png";
-import p4 from "../assets/images/p4.png";
-import p5 from "../assets/images/p5.png";
-import p6 from "../assets/images/p6.png";
-
+import p1 from "../assets/images/publication/p1.png";
+import p2 from "../assets/images/publication/p2.png";
+import p3 from "../assets/images/publication/p3.png";
+import p4 from "../assets/images/publication/p4.png";
+import p5 from "../assets/images/publication/p5.png";
+import p6 from "../assets/images/publication/p6.png";
+import { Link } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
@@ -118,7 +118,8 @@ export default function Publication() {
         >
           {products.map(([src, title, artist], i) => {
             return (
-              <div
+              <Link
+                to="/publication/nothingwill"
                 key={i}
                 className={css`
                   padding-left: 18px;
@@ -148,7 +149,7 @@ export default function Publication() {
                 >
                   {artist}
                 </span>
-              </div>
+              </Link>
             );
           })}
         </div>
