@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
+import Publication from "./pages/Publication";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminHome from "./pages/AdminHome";
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/publication" component={Publication} />
         <Route exact path="/login" component={Signin} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>

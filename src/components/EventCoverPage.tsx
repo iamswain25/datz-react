@@ -2,10 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import PastEventsLeft from "./PastEventsLeft";
 import PastEventsRight from "./PastEventsRight";
-import { useMediaQuery } from "react-responsive";
+import useDesktop from "./useDesktop";
 import { Flex } from "./div";
 export default function EventCoverPage() {
-  const isDeskTop = useMediaQuery({ minWidth: 1000 });
+  const isDeskTop = useDesktop();
   if (!isDeskTop) {
     return (
       <Flex
