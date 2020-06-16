@@ -67,6 +67,7 @@ export default function Header() {
   return (
     <>
       <Headroom
+        // downTolerance={500}
         style={{
           height: 79,
           marginLeft: isDeskTop ? 37 : 20,
