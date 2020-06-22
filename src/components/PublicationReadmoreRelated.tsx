@@ -5,19 +5,27 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
-
+import { useHistory } from "react-router-dom";
+const mobileContainer = css`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+`;
+const desktopContainer = css`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+`;
 export default function PublicationItemPhotos() {
   const isDeskTop = useDesktop();
-  console.log(isDeskTop);
+  const history = useHistory();
+  function goBack() {
+    history.goBack();
+  }
   return (
-    <section
-      className={css`
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        margin-left: 30px;
-      `}
-    >
+    <section className={isDeskTop ? desktopContainer : mobileContainer}>
       <div
         className={css`
           display: flex;
@@ -48,9 +56,29 @@ export default function PublicationItemPhotos() {
       </div>
       <div
         className={css`
-          text-align: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
         `}
       >
+        {!isDeskTop && (
+          <button
+            onClick={goBack}
+            className={css`
+              font-family: BauerGroteskOTW03;
+              font-size: 14px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.21;
+              letter-spacing: normal;
+              text-align: center;
+              color: #707070;
+            `}
+          >
+            {"<"} back
+          </button>
+        )}
         <button
           onClick={(e) =>
             window.scrollTo({

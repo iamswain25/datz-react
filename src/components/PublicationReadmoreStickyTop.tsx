@@ -188,41 +188,43 @@ export default function PublicationStickyTop() {
           {"\n"}2019 {"\n"}ISBN 978-89-97605-45-3
         </p>
       </section>
-      <div
-        className={css`
-          align-items: center;
-          justify-content: flex-end;
-          display: flex;
-          flex-direction: column;
-          padding-top: 20px;
-          padding-bottom: 20px;
-        `}
-      >
-        <hr
+      {isDeskTop && (
+        <div
           className={css`
-            height: 0;
-            width: 100%;
-            border-bottom: solid 1px #707070;
-            border-top: none;
-          `}
-        />
-        <button
-          onClick={goBack}
-          className={css`
-            font-family: BauerGroteskOTW03;
-            font-size: 14px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.21;
-            letter-spacing: normal;
-            text-align: center;
-            color: #707070;
+            align-items: center;
+            justify-content: flex-end;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            padding-bottom: 20px;
           `}
         >
-          {"<"} back
-        </button>
-      </div>
+          <hr
+            className={css`
+              height: 0;
+              width: 100%;
+              border-bottom: solid 1px #707070;
+              border-top: none;
+            `}
+          />
+          <button
+            onClick={goBack}
+            className={css`
+              font-family: BauerGroteskOTW03;
+              font-size: 14px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.21;
+              letter-spacing: normal;
+              text-align: center;
+              color: #707070;
+            `}
+          >
+            {"<"} back
+          </button>
+        </div>
+      )}
     </div>
   );
 }
