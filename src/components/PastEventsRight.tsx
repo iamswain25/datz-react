@@ -100,7 +100,7 @@ export default function PastEventsRight() {
             color: #707070;
           `}
         >
-          read more >
+          read more {">"}
         </Link>
         <section>
           <div
