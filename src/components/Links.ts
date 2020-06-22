@@ -1,8 +1,8 @@
 export const headerLinkArr = [
   ["Publication", "/publication"],
-  ["Artist Projects", "/artist"],
   ["Exhibition", "/exhibition"],
   ["Events", "/event"],
+  ["Artist Projects", "/artist"],
 ];
 export const store = ["Store", "/store"];
 export const otherLinks = [
