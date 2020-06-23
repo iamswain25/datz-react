@@ -7,6 +7,7 @@ import { firestore } from "../firebase";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { Main } from "../@type/main";
 import useDevider from "../components/useDevider";
+import Header from "../components/Header";
 
 export default () => {
   const [dataArray, loading, error] = useCollectionDataOnce<Main>(
@@ -18,6 +19,7 @@ export default () => {
   const devider = useDevider();
   return (
     <>
+      <Header />
       {!loading && !error && <FullPageRollingImages images={dataArray} />}
       {devider}
       {!loading2 && !error2 && <FullPageRollingImages2 images={dataArray2} />}

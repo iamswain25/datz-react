@@ -28,7 +28,8 @@ const marginNone = css`
   margin-right: 10px;
 `;
 
-export default function Header() {
+export default function Header(props: { fixed?: boolean }) {
+  const { fixed = false } = props;
   const [text, setText] = React.useState("");
   const isDeskTop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
@@ -39,6 +40,7 @@ export default function Header() {
   function openHandler() {
     setOpen(!isOpen);
   }
+
   let links = null;
   if (isDeskTop) {
     links = (
@@ -66,6 +68,113 @@ export default function Header() {
       </>
     );
   }
+  const innerHeader = (
+    <>
+      <FlexCenter style={{ justifyContent: "flex-start" }}>
+        <Link
+          className={css`
+            ${headerText}
+            ${!isDeskTop && "margin: 0;"}
+          `}
+          to="/"
+        >
+          <Datz
+            className={css`
+              height: 20px;
+            `}
+          />
+        </Link>
+        {links}
+      </FlexCenter>
+      <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
+        {isDeskTop && (
+          <>
+            <span
+              className={css`
+                ${headerText}
+                margin: 0;
+              `}
+            >
+              Search
+            </span>
+            <input
+              type="text"
+              value={text}
+              onChange={textHandler}
+              className={css`
+                ${headerText};
+                border-bottom: solid 1px #707070;
+                flex-basis: 56px;
+                margin: 0;
+              `}
+            />
+          </>
+        )}
+        <button
+          className={css`
+            ${headerText};
+            ${marginNone};
+          `}
+          onClick={() => setLang("en")}
+          style={lang === "en" ? { fontWeight: "bold" } : {}}
+        >
+          EN
+        </button>
+        <div
+          className={css`
+            width: 0;
+            height: 12px;
+            border: solid 1px #707070;
+          `}
+        />
+        <button
+          onClick={() => setLang("ko")}
+          className={css`
+            ${headerText};
+            ${marginNone};
+          `}
+          style={lang === "ko" ? { fontWeight: "bold" } : {}}
+        >
+          KR
+        </button>
+        {!isDeskTop && (
+          <>
+            <Search
+              className={css`
+                margin-right: 20px;
+              `}
+            />
+            <HamburgerButton
+              open={isOpen}
+              onClick={openHandler}
+              width={18}
+              height={15}
+              strokeWidth={1}
+              color="black"
+              animationDuration={0.5}
+            />
+          </>
+        )}
+      </FlexCenter>
+    </>
+  );
+  if (fixed) {
+    return (
+      <>
+        <div
+          style={{
+            height: 79,
+            marginLeft: isDeskTop ? 37 : 20,
+            marginRight: isDeskTop ? 37 : 20,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {innerHeader}
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <Headroom
@@ -78,92 +187,7 @@ export default function Header() {
           alignItems: "center",
         }}
       >
-        <FlexCenter style={{ justifyContent: "flex-start" }}>
-          <Link
-            className={css`
-              ${headerText}
-              ${!isDeskTop && "margin: 0;"}
-            `}
-            to="/"
-          >
-            <Datz
-              className={css`
-                height: 20px;
-              `}
-            />
-          </Link>
-          {links}
-        </FlexCenter>
-        <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
-          {isDeskTop && (
-            <>
-              <span
-                className={css`
-                  ${headerText}
-                  margin: 0;
-                `}
-              >
-                Search
-              </span>
-              <input
-                type="text"
-                value={text}
-                onChange={textHandler}
-                className={css`
-                  ${headerText};
-                  border-bottom: solid 1px #707070;
-                  flex-basis: 56px;
-                  margin: 0;
-                `}
-              />
-            </>
-          )}
-          <button
-            className={css`
-              ${headerText};
-              ${marginNone};
-            `}
-            onClick={() => setLang("en")}
-            style={lang === "en" ? { fontWeight: "bold" } : {}}
-          >
-            EN
-          </button>
-          <div
-            className={css`
-              width: 0;
-              height: 12px;
-              border: solid 1px #707070;
-            `}
-          />
-          <button
-            onClick={() => setLang("ko")}
-            className={css`
-              ${headerText};
-              ${marginNone};
-            `}
-            style={lang === "ko" ? { fontWeight: "bold" } : {}}
-          >
-            KR
-          </button>
-          {!isDeskTop && (
-            <>
-              <Search
-                className={css`
-                  margin-right: 20px;
-                `}
-              />
-              <HamburgerButton
-                open={isOpen}
-                onClick={openHandler}
-                width={18}
-                height={15}
-                strokeWidth={1}
-                color="black"
-                animationDuration={0.5}
-              />
-            </>
-          )}
-        </FlexCenter>
+        {innerHeader}
       </Headroom>
       {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
     </>

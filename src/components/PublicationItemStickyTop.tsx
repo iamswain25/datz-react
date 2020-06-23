@@ -10,7 +10,7 @@ const stickyContainer = css`
   position: sticky;
   top: 0;
   width: 350px;
-  height: 100vh;
+  height: calc(100vh - 79px);
   margin-left: 16px;
   margin-right: 40px;
   font-family: BauerGroteskOTW03;

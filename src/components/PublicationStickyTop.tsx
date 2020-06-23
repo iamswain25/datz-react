@@ -4,11 +4,13 @@ import pside1 from "../assets/images/pside1.png";
 import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-const stickyContainer = css`
-  align-self: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+const desktopContainer = css`
+  // align-self: flex-start;
+  // position: -webkit-sticky;
+  // position: sticky;
+  // top: 0;
+  position: relative;
+  width: 384px;
 `;
 const mobileContainer = css`
   height: 181px;
@@ -17,22 +19,16 @@ const mobileContainer = css`
 export default function PublicationStickyTop() {
   const isDeskTop = useDesktop();
   return (
-    <div className={isDeskTop ? stickyContainer : mobileContainer}>
+    <div className={isDeskTop ? desktopContainer : mobileContainer}>
       <img
         src={pside1}
         alt="side-sticky"
-        className={
-          isDeskTop
-            ? css`
-                height: 100vh;
-              `
-            : css`
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                object-position: top;
-              `
-        }
+        className={css`
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: top;
+        `}
       />
       {/* ${isDeskTop ? "absolute" : "relative"}; */}
       <div
