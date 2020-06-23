@@ -12,7 +12,7 @@ const typeClass = css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.21;
-  
+
   text-align: center;
 `;
 const titleClass = css`
@@ -89,11 +89,12 @@ export default (props: {
       >
         <div className={typeClass}>{type}</div>
         <hr
-          style={{
-            borderWidth: 1,
-            borderColor: color,
-            width: "calc(100% - 40px)",
-          }}
+          className={css`
+            border-top: 1px solid ${color};
+            width: calc(100% - 40px);
+            margin-top: 8px;
+            margin-bottom: 18px;
+          `}
         />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
