@@ -4,7 +4,6 @@ import PublicationReadmoreRelated from "../components/PublicationReadmoreRelated
 import { useParams } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
-import PublicationCloseBtn from "../components/PublicationCloseBtn";
 import Header from "../components/Header";
 const desktopContainer = css`
   display: flex;
