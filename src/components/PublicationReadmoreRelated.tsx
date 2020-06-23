@@ -24,6 +24,7 @@ export default function PublicationItemPhotos() {
   function goBack() {
     history.goBack();
   }
+
   return (
     <section className={isDeskTop ? desktopContainer : mobileContainer}>
       <div

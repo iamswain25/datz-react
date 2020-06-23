@@ -1,3 +1,5 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -171,7 +173,10 @@ select[multiple] {
   height: auto;
 }
 
-.image-gallery .image-gallery-content .image-gallery-slide .image-gallery-image {
+.image-gallery
+  .image-gallery-content
+  .image-gallery-slide
+  .image-gallery-image {
   max-height: none;
   object-fit: cover;
 }
@@ -214,4 +219,56 @@ select[multiple] {
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
+}
+
+@font-face {
+  font-family: "SpoqaHanSans";
+  font-weight: 700;
+  src: local("SpoqaHanSans Bold"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansBold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansBold.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansBold.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "SpoqaHanSans";
+  font-weight: 400;
+  src: local("SpoqaHanSans Regular"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansRegular.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansRegular.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansRegular.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "SpoqaHanSans";
+  font-weight: 300;
+  src: local("SpoqaHanSans Light"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansLight.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansLight.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansLight.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "SpoqaHanSans";
+  font-weight: 100;
+  src: local("SpoqaHanSans Thin"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansThin.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansThin.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansThin.ttf")
+      format("truetype");
+}
+
+.ko {
+  font-family: "SpoqaHanSans", "SpoqaHanSans JP", "Sans-serif" !important;
 }

@@ -8,6 +8,7 @@ import { css } from "emotion";
 import { headerLinkArr } from "./Links";
 import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
+import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 const headerText = css`
   font-family: BauerGroteskOTW03;
@@ -30,6 +31,7 @@ const marginNone = css`
 export default function Header() {
   const [text, setText] = React.useState("");
   const isDeskTop = useDesktop();
+  const [lang, setLang] = useGlobalState(LANG);
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
   }
@@ -121,6 +123,8 @@ export default function Header() {
               ${headerText};
               ${marginNone};
             `}
+            onClick={() => setLang("en")}
+            style={lang === "en" ? { fontWeight: "bold" } : {}}
           >
             EN
           </button>
@@ -132,10 +136,12 @@ export default function Header() {
             `}
           />
           <button
+            onClick={() => setLang("ko")}
             className={css`
               ${headerText};
               ${marginNone};
             `}
+            style={lang === "ko" ? { fontWeight: "bold" } : {}}
           >
             KR
           </button>

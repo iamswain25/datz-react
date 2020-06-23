@@ -17,6 +17,7 @@
     "react-firebase-hooks": "^2.1.1",
     "react-hamburger-button": "^0.0.1",
     "react-headroom": "^3.0.0",
+    "react-hooks-global-state": "^1.0.0",
     "react-image-gallery": "^1.0.6",
     "react-images-upload": "^1.2.8",
     "react-loader-spinner": "^3.1.5",
