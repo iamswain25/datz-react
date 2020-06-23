@@ -1,11 +1,9 @@
 import React from "react";
 import Headroom from "react-headroom";
 import FlexCenter from "./FlexCenter";
-import { Link } from "react-router-dom";
-import Datz from "../assets/svg/Datz";
+import ArtistCloseBtn from "./ArtistCloseBtn";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
-import { headerLinkArr } from "./Links";
 import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
@@ -19,7 +17,7 @@ const headerText = css`
   line-height: 1.19;
   letter-spacing: normal;
   text-align: center;
-  color: #707070;
+  color: #ffffff;
   margin-left: 16px;
   margin-right: 16px;
 `;
@@ -28,95 +26,28 @@ const marginNone = css`
   margin-right: 10px;
 `;
 
-export default function Header(props: { fixed?: boolean }) {
+export default function ArtistHeader(props: { fixed?: boolean }) {
   const { fixed = false } = props;
-  const [text, setText] = React.useState("");
   const isDeskTop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
-  function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setText(e.currentTarget.value);
-  }
   const [isOpen, setOpen] = React.useState(false);
   function openHandler() {
     setOpen(!isOpen);
   }
 
-  let links = null;
-  if (isDeskTop) {
-    links = (
-      <>
-        {headerLinkArr.map(([label, link], i) => {
-          return (
-            <Link className={headerText} to={link} key={i}>
-              {label}
-            </Link>
-          );
-        })}
-
-        <div
-          className={css`
-            width: 0;
-            height: 12px;
-            border: solid 1px #707070;
-            margin-left: 16px;
-            margin-right: 16px;
-          `}
-        />
-        <Link className={headerText} to="/">
-          Store
-        </Link>
-      </>
-    );
-  }
   const innerHeader = (
     <>
       <FlexCenter style={{ justifyContent: "flex-start" }}>
-        <Link
-          className={css`
-            ${headerText}
-            ${!isDeskTop && "margin: 0;"}
-          `}
-          to="/"
-        >
-          <Datz
-            className={css`
-              height: 20px;
-            `}
-          />
-        </Link>
-        {links}
+        <ArtistCloseBtn />
       </FlexCenter>
       <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
-        {isDeskTop && (
-          <>
-            <span
-              className={css`
-                ${headerText}
-                margin: 0;
-              `}
-            >
-              Search
-            </span>
-            <input
-              type="text"
-              value={text}
-              onChange={textHandler}
-              className={css`
-                ${headerText};
-                border-bottom: solid 1px #707070;
-                flex-basis: 56px;
-                margin: 0;
-              `}
-            />
-          </>
-        )}
         <button
           className={css`
             ${headerText};
             ${marginNone};
           `}
           onClick={() => setLang("en")}
-          style={lang === "en" ? { fontWeight: "bold" } : {}}
+          style={lang === "en" ? { color: "#ffffff" } : { color: "#cccccc" }}
         >
           EN
         </button>
@@ -124,7 +55,7 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             width: 0;
             height: 12px;
-            border: solid 1px #707070;
+            border-left: solid 1px #ffffff;
           `}
         />
         <button
@@ -133,13 +64,14 @@ export default function Header(props: { fixed?: boolean }) {
             ${headerText};
             ${marginNone};
           `}
-          style={lang === "ko" ? { fontWeight: "bold" } : {}}
+          style={lang === "ko" ? { color: "#ffffff" } : { color: "#cccccc" }}
         >
           KR
         </button>
         {!isDeskTop && (
           <>
             <Search
+              color="#ffffff"
               className={css`
                 margin-right: 20px;
               `}
@@ -150,7 +82,7 @@ export default function Header(props: { fixed?: boolean }) {
               width={18}
               height={15}
               strokeWidth={1}
-              color="black"
+              color="#ffffff"
               animationDuration={0.5}
             />
           </>
@@ -166,8 +98,6 @@ export default function Header(props: { fixed?: boolean }) {
             position: "sticky",
             top: "0",
             height: 79,
-            marginLeft: isDeskTop ? 37 : 20,
-            marginRight: isDeskTop ? 37 : 20,
             display: "flex",
             alignItems: "center",
             zIndex: 1,
@@ -182,11 +112,10 @@ export default function Header(props: { fixed?: boolean }) {
   return (
     <>
       <Headroom
-        // downTolerance={500}
         style={{
           height: 79,
-          marginLeft: isDeskTop ? 37 : 20,
-          marginRight: isDeskTop ? 37 : 20,
+          marginLeft: isDeskTop ? 55 : 20,
+          marginRight: isDeskTop ? 55 : 20,
           display: "flex",
           alignItems: "center",
         }}
