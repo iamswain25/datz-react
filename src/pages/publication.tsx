@@ -9,8 +9,6 @@ const desktopContainer = css`
   flex-direction: row;
   padding-left: 37px;
   padding-right: 37px;
-  height: calc(100vh - 79px);
-  overflow: hidden;
 `;
 const mobileContainer = css`
   display: flex;
@@ -22,13 +20,11 @@ export default function Publication() {
   const isDeskTop = useDesktop();
   return (
     <>
-      <div style={isDeskTop ? { height: "100vh", overflow: "hidden" } : {}}>
-        <Header fixed />
-        <section className={isDeskTop ? desktopContainer : mobileContainer}>
-          <PublicationStickyTop />
-          <PublicationList />
-        </section>
-      </div>
+      <Header fixed />
+      <section className={isDeskTop ? desktopContainer : mobileContainer}>
+        <PublicationStickyTop />
+        <PublicationList />
+      </section>
     </>
   );
 }

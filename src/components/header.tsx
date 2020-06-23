@@ -156,6 +156,7 @@ export default function Header(props: { fixed?: boolean }) {
           </>
         )}
       </FlexCenter>
+      {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
     </>
   );
   if (fixed) {
@@ -163,11 +164,14 @@ export default function Header(props: { fixed?: boolean }) {
       <>
         <div
           style={{
+            position: "sticky",
+            top: "0",
             height: 79,
             marginLeft: isDeskTop ? 37 : 20,
             marginRight: isDeskTop ? 37 : 20,
             display: "flex",
             alignItems: "center",
+            zIndex: 1,
           }}
         >
           {innerHeader}
@@ -189,7 +193,6 @@ export default function Header(props: { fixed?: boolean }) {
       >
         {innerHeader}
       </Headroom>
-      {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
     </>
   );
 }

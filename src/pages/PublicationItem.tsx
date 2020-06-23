@@ -4,6 +4,7 @@ import PublicationItemPhotos from "../components/PublicationItemPhotos";
 import { useParams } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
+import Header from "../components/Header";
 const desktopContainer = css`
   display: flex;
   flex-direction: row;
@@ -21,9 +22,12 @@ export default function Publication() {
   console.log(id);
   const isDeskTop = useDesktop();
   return (
-    <section className={isDeskTop ? desktopContainer : mobileContainer}>
-      <PublicationItemStickyTop />
-      <PublicationItemPhotos />
-    </section>
+    <>
+      <Header fixed />
+      <section className={isDeskTop ? desktopContainer : mobileContainer}>
+        <PublicationItemStickyTop />
+        <PublicationItemPhotos />
+      </section>
+    </>
   );
 }

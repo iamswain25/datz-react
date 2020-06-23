@@ -32,7 +32,9 @@ export default function PublicationItemPhotos() {
   return (
     <section
       className={css`
+        height: 100%;
         flex: 1;
+        overflow: scroll;
       `}
     >
       {images.map((src, i) => {
@@ -86,7 +88,7 @@ export default function PublicationItemPhotos() {
             color: #707070;
           `}
         >
-          Top >
+          Top {">"}
         </button>
       </div>
     </section>

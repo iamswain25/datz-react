@@ -4,11 +4,12 @@ import { css } from "emotion";
 import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import { useGlobalState, LANG } from "../store/useGlobalState";
+import PublicationCloseBtn from "./PublicationCloseBtn";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 79px;
   flex: 1;
   height: calc(100vh - 79px);
   padding-right: 30px;
@@ -132,6 +133,7 @@ export default function PublicationStickyTop() {
 
   return (
     <div className={isDeskTop ? stickyContainer : mobileContainer}>
+      <PublicationCloseBtn />
       <div
         className={css`
           display: flex;

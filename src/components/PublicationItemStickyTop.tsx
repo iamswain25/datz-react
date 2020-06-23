@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 const stickyContainer = css`
-  align-self: flex-start;
-  position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 79px;
   width: 350px;
   height: calc(100vh - 79px);
   margin-left: 16px;

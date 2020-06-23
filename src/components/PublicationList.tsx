@@ -102,7 +102,7 @@ export default function PublicationList() {
             flex: 1;
             justify-content: center;
             font-family: BauerGroteskOTW03;
-            overflow: scroll;
+            // overflow: scroll;
           `}
         >
           {products.map(([src, title, artist], i) => {

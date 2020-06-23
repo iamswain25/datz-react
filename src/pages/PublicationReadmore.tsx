@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import PublicationCloseBtn from "../components/PublicationCloseBtn";
+import Header from "../components/Header";
 const desktopContainer = css`
   display: flex;
   flex-direction: row;
@@ -26,12 +27,14 @@ export default function Publication() {
   console.log(id);
   const isDeskTop = useDesktop();
   return (
-    <div className={isDeskTop ? desktopMargin : mobileMargin}>
-      <PublicationCloseBtn />
-      <section className={isDeskTop ? desktopContainer : mobileContainer}>
-        <PublicationReadmoreStickyTop />
-        <PublicationReadmoreRelated />
-      </section>
-    </div>
+    <>
+      <Header fixed />
+      <div className={isDeskTop ? desktopMargin : mobileMargin}>
+        <section className={isDeskTop ? desktopContainer : mobileContainer}>
+          <PublicationReadmoreStickyTop />
+          <PublicationReadmoreRelated />
+        </section>
+      </div>
+    </>
   );
 }
