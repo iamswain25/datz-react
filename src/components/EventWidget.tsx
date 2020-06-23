@@ -1,13 +1,11 @@
 import React from "react";
 import { css } from "emotion";
-import ArrowHorizontal from "./ArrowHorizontal";
 import ev1 from "../assets/images/readmore/ev1.png";
 import ev2 from "../assets/images/readmore/ev2.png";
 import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import useDesktop from "./useDesktop";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -16,7 +14,7 @@ const textClass = (dark = false) => css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  letter-spacing: normal;
+
   text-align: right;
   color: ${dark ? "#ffffff" : "#707070"};
 `;
@@ -27,7 +25,7 @@ const descClass = (dark = false) => css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.64;
-  letter-spacing: normal;
+
   text-align: center;
   color: ${dark ? "#ffffff" : "#707070"};
   text-align: center;

@@ -10,7 +10,7 @@ const headerStyle = css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  letter-spacing: normal;
+  
   text-align: right;
   color: #707070;
 `;
@@ -59,7 +59,7 @@ export default function PastEventsRight() {
             font-stretch: normal;
             font-style: normal;
             line-height: 1.23;
-            letter-spacing: normal;
+            
             text-align: center;
             color: #4b4b4b;
           `}
@@ -74,7 +74,7 @@ export default function PastEventsRight() {
             font-stretch: normal;
             font-style: normal;
             line-height: 1.47;
-            letter-spacing: normal;
+            
             text-align: left;
             color: #4b4b4b;
             flex: 1;

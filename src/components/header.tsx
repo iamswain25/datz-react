@@ -17,7 +17,7 @@ const headerText = css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  letter-spacing: normal;
+  
   text-align: center;
   color: #707070;
   margin-left: 16px;

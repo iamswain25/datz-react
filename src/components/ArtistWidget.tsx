@@ -27,7 +27,7 @@ const descClass = css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.47;
-  letter-spacing: normal;
+  
   text-align: left;
   color: #707070;
   overflow: hidden;
@@ -39,7 +39,7 @@ const textClass = (dark = false) => css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  letter-spacing: normal;
+  
   text-align: right;
   color: ${dark ? "#ffffff" : "#707070"};
 `;

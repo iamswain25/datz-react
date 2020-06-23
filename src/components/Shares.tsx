@@ -22,7 +22,7 @@ export default function Shares() {
         font-stretch: normal;
         font-style: normal;
         line-height: 1.19;
-        letter-spacing: normal;
+        
         text-align: center;
         flex-direction: row;
         display: flex;

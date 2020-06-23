@@ -10,7 +10,7 @@ const bookStyle = css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.21;
-  letter-spacing: normal;
+  
   text-align: center;
   color: #ffffff;
 `;

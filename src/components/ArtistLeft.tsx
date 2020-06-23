@@ -1,23 +1,18 @@
 import React from "react";
-import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
-import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 const stickyContainer = css`
   border-top: 1px solid #ffffff;
   padding-top: 43px;
-  align-self: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 79px;
+  // top: 79px;
   flex: 1;
-  height: calc(100vh - 79px);
   padding-right: 30px;
   font-family: BauerGroteskOTW03;
   display: flex;
   flex-direction: column;
   color: #ffffff;
+  margin-bottom: 36px;
 `;
 const mobileContainer = css`
   position: relative;
@@ -77,7 +72,6 @@ export default function ArtistLeft() {
             display: flex;
             flex-direction: column;
             padding-top: 20px;
-            padding-bottom: 20px;
             font-family: BauerGroteskOTW03;
             font-size: 17px;
             line-height: 1.47;

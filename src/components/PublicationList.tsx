@@ -31,6 +31,7 @@ export default function PublicationList() {
           flex: 1;
           flex-direction: column;
           height: 100%;
+          margin-bottom: 30px;
         `}
       >
         <div
@@ -102,7 +103,7 @@ export default function PublicationList() {
             flex: 1;
             justify-content: center;
             font-family: BauerGroteskOTW03;
-            // overflow: scroll;
+            margin-bottom: 40px;
           `}
         >
           {products.map(([src, title, artist], i) => {

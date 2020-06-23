@@ -5,7 +5,7 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
-import { useHistory } from "react-router-dom";
+import BtnBack from "./BtnBack";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -21,10 +21,6 @@ const desktopContainer = css`
 `;
 export default function PublicationItemPhotos() {
   const isDeskTop = useDesktop();
-  const history = useHistory();
-  function goBack() {
-    history.goBack();
-  }
 
   return (
     <section className={isDeskTop ? desktopContainer : mobileContainer}>
@@ -42,7 +38,7 @@ export default function PublicationItemPhotos() {
             font-stretch: normal;
             font-style: normal;
             line-height: 1.24;
-            letter-spacing: normal;
+
             text-align: center;
             color: #707070;
             padding-bottom: 7px;
@@ -63,24 +59,7 @@ export default function PublicationItemPhotos() {
           justify-content: center;
         `}
       >
-        {!isDeskTop && (
-          <button
-            onClick={goBack}
-            className={css`
-              font-family: BauerGroteskOTW03;
-              font-size: 14px;
-              font-weight: normal;
-              font-stretch: normal;
-              font-style: normal;
-              line-height: 1.21;
-              letter-spacing: normal;
-              text-align: center;
-              color: #707070;
-            `}
-          >
-            {"<"} back
-          </button>
-        )}
+        {!isDeskTop && <BtnBack />}
         <button
           onClick={(e) =>
             window.scrollTo({

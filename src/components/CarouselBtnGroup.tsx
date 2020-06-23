@@ -7,7 +7,7 @@ const headerStyle = (dark: boolean) => css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  letter-spacing: normal;
+  
   text-align: right;
   color: ${dark ? "#ffffff" : "#707070"};
 `;

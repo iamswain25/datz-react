@@ -14,7 +14,7 @@ const menu = css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  letter-spacing: normal;
+  
   text-align: center;
   flex-direction: row;
   display: flex;
@@ -202,7 +202,7 @@ export default function Footer() {
             font-stretch: normal;
             font-style: normal;
             line-height: 1.24;
-            letter-spacing: normal;
+            
             text-align: left;
             color: #707070;
           `}

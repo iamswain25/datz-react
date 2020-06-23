@@ -46,7 +46,7 @@ const p3Class = css`
   font-family: ArnoPro-Subhead;
   font-size: 17px;
   line-height: 1.59;
-  letter-spacing: normal;
+  
   text-align: left;
   color: #4b4b4b;
   white-space: break-spaces;
@@ -243,11 +243,9 @@ export default function PublicationStickyTop() {
             className={css`
               font-family: BauerGroteskOTW03;
               font-size: 14px;
-              font-weight: normal;
-              font-stretch: normal;
-              font-style: normal;
+             
               line-height: 1.21;
-              letter-spacing: normal;
+              
               text-align: center;
               color: #707070;
             `}

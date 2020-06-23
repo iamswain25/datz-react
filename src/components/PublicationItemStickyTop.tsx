@@ -184,7 +184,7 @@ export default function PublicationStickyTop() {
             font-stretch: normal;
             font-style: normal;
             line-height: 1.21;
-            letter-spacing: normal;
+            
             text-align: center;
             color: #707070;
           `}

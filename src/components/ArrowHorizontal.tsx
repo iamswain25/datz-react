@@ -7,7 +7,7 @@ const headerStyle = css`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.19;
-  letter-spacing: normal;
+  
   text-align: right;
   color: #707070;
 `;

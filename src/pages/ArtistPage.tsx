@@ -29,6 +29,9 @@ export default function ArtistPage() {
   const { id } = useParams();
   console.log(id);
   const isDeskTop = useDesktop();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className={bgContainer}>
