@@ -1,8 +1,10 @@
 import React from "react";
 import { css } from "emotion";
-import ArrowHorizontal from "./ArrowHorizontal";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useHistory } from "react-router-dom";
+import CarouselBtnGroup from "./CarouselBtnGroup";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 // import useDesktop from "./useDesktop";
 const artistNameClass = css`
   font-family: ArnoPro-Display;
@@ -14,6 +16,7 @@ const artistNameClass = css`
   letter-spacing: 0.46px;
   text-align: center;
   color: #4b4b4b;
+  margin-bottom: 20px;
 `;
 
 const descClass = css`
@@ -29,8 +32,7 @@ const descClass = css`
   color: #707070;
   overflow: hidden;
 `;
-
-const textClass = css`
+const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
   font-weight: normal;
@@ -39,7 +41,7 @@ const textClass = css`
   line-height: 1.19;
   letter-spacing: normal;
   text-align: right;
-  color: #707070;
+  color: ${dark ? "#ffffff" : "#707070"};
 `;
 const artist = {
   en: {
@@ -64,23 +66,61 @@ Hour’ was exhibited as a site-specific installation in Margate, England.`,
     `,
   },
 };
-export default function ArtistWidget() {
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 0 },
+    items: 1,
+    // partialVisibilityGutter: 10,
+  },
+};
+const itemClass = css`
+  display: flex;
+  align-items: center;
+`;
+const list = [artist, artist, artist];
+export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
   const [lang] = useGlobalState(LANG);
   const history = useHistory();
   function goToArtist() {
     history.push("/artist/Amanda Marchand");
   }
   return (
-    <div style={{ cursor: "pointer" }} onClick={goToArtist}>
-      <h5 className={`${artistNameClass} ${lang === "ko" ? "ko" : ""}`}>
-        {artist[lang].name} {">"}
-      </h5>
-      <p className={`${descClass} ${lang === "ko" ? "ko" : ""}`}>
-        {artist[lang].desc}
-      </p>
-      <ArrowHorizontal>
-        <div className={textClass}>Artist</div>
-      </ArrowHorizontal>
+    <div>
+      <div
+        className={css`
+          margin-top: 32px;
+        `}
+      >
+        <Carousel
+          responsive={responsive}
+          containerClass="carousel-container-custom"
+          itemClass={itemClass}
+          renderButtonGroupOutside={true}
+          arrows={false}
+          customButtonGroup={
+            <CarouselBtnGroup dark={dark}>
+              <div className={textClass(dark)}>Artist</div>
+            </CarouselBtnGroup>
+          }
+        >
+          {list.map((artist, i) => {
+            return (
+              <div key={i}>
+                <h5
+                  className={`${artistNameClass} ${lang === "ko" ? "ko" : ""}`}
+                  style={{ cursor: "pointer" }}
+                  onClick={goToArtist}
+                >
+                  {artist[lang].name} {">"}
+                </h5>
+                <p className={`${descClass} ${lang === "ko" ? "ko" : ""}`}>
+                  {artist[lang].desc}
+                </p>
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
     </div>
   );
 }

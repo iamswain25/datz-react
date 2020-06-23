@@ -27,7 +27,7 @@ export default function Publication() {
   const isDeskTop = useDesktop();
   return (
     <>
-      <Header fixed />
+      <Header fixed={isDeskTop} />
       <div className={isDeskTop ? desktopMargin : mobileMargin}>
         <section className={isDeskTop ? desktopContainer : mobileContainer}>
           <PublicationReadmoreStickyTop />

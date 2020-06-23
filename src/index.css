@@ -27,7 +27,7 @@ textarea {
 
   /* Browsers have different default form fonts */
   font-size: 13px;
-  font-family: Arial;
+  font-family: BauerGroteskOTW03;
 }
 a {
   text-decoration: none;
@@ -271,4 +271,15 @@ select[multiple] {
 
 .ko {
   font-family: "SpoqaHanSans", "SpoqaHanSans JP", "Sans-serif" !important;
+}
+.carousel-container-custom {
+  min-width: 100%;
+  width: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
