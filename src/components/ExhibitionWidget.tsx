@@ -43,7 +43,11 @@ const imgClass = css`
   object-fit: contain;
   width: 100%;
 `;
-export default function PublicationWidget() {
+export default function PublicationWidget({
+  dark = false,
+}: {
+  dark?: boolean;
+}) {
   const history = useHistory();
   function clickHandler() {
     history.push("/publication/nothingwill");

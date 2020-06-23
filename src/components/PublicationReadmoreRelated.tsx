@@ -16,8 +16,8 @@ const desktopContainer = css`
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
-  margin-top: 40px;
+  padding-left: 30px;
+  padding-top: 40px;
 `;
 export default function PublicationItemPhotos() {
   const isDeskTop = useDesktop();

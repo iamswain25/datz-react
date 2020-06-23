@@ -24,9 +24,9 @@ export default function PublicationItemPhotos() {
 
   return (
     <section className={isDeskTop ? desktopContainer : mobileContainer}>
-      <PublicationWidget />
-      <ExhibitionWidget />
-      <EventWidget />
+      <PublicationWidget dark />
+      <ExhibitionWidget dark />
+      <EventWidget dark />
     </section>
   );
 }
