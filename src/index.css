@@ -172,8 +172,15 @@ select[multiple] {
 }
 .image-gallery .image-gallery-bullets {
   height: auto;
+  bottom: 30px;
 }
-
+.image-gallery .image-gallery-bullets .image-gallery-bullet.active {
+  background-color: #707070;
+}
+.image-gallery .image-gallery-bullets-container .image-gallery-bullet {
+  border: 1px solid #707070;
+  box-shadow: none;
+}
 .image-gallery
   .image-gallery-content
   .image-gallery-slide

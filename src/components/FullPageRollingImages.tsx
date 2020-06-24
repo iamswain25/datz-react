@@ -8,32 +8,23 @@ import useDesktop from "./useDesktop";
 const typeClass = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.21;
-
   text-align: center;
 `;
 const titleClass = css`
   font-family: ArnoPro-Subhead;
-  font-size: 22px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.36;
-  letter-spacing: 0.44px;
+  font-size: 27px;
+  line-height: 1.37;
+  letter-spacing: 0.54px;
   text-align: center;
 `;
 const authorClass = css`
   font-family: ArnoPro-Display;
-  font-size: 27px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.37;
-  letter-spacing: 0.54px;
+  font-size: 21px;
+  line-height: 1.38;
+  letter-spacing: 0.42px;
   text-align: center;
+  margin-top: 4px;
 `;
 export default (props: {
   images: Array<Main> | undefined;
@@ -91,7 +82,7 @@ export default (props: {
         <hr
           className={css`
             border-top: 1px solid ${color};
-            width: calc(100% - 40px);
+            width: 555px;
             margin-top: 8px;
             margin-bottom: 18px;
           `}

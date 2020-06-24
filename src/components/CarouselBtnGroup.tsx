@@ -3,9 +3,7 @@ import { css } from "emotion";
 const headerStyle = (dark: boolean) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.19;
   
   text-align: right;

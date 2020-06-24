@@ -9,9 +9,7 @@ import "react-multi-carousel/lib/styles.css";
 const artistNameClass = css`
   font-family: ArnoPro-Display;
   font-size: 23px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.17;
   letter-spacing: 0.46px;
   text-align: center;
@@ -23,9 +21,7 @@ const descClass = css`
   height: 100px;
   font-family: BauerGroteskOTW03;
   font-size: 17px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.47;
   
   text-align: left;
@@ -35,9 +31,7 @@ const descClass = css`
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.19;
   
   text-align: right;

@@ -11,9 +11,7 @@ import { HamburgerButton } from "react-hamburger-button";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.19;
   
   text-align: center;

@@ -9,7 +9,7 @@ export default function useDevider() {
         margin-left: ${isDeskTop ? 47 : 17}px;
         margin-right: ${isDeskTop ? 47 : 17}px;
         height: 0;
-        border: solid 1px #afafaf;
+        border-top: solid 1px #afafaf;
       `}
     />
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import Headroom from "react-headroom";
 import FlexCenter from "./FlexCenter";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
@@ -13,15 +13,16 @@ import { HamburgerButton } from "react-hamburger-button";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  text-decoration: none;
   line-height: 1.19;
-  
   text-align: center;
   color: #707070;
   margin-left: 16px;
   margin-right: 16px;
+`;
+const linkActiveClass = css`
+  text-decoration: underline;
+  color: #383838;
 `;
 const marginNone = css`
   margin-left: 10px;
@@ -40,16 +41,20 @@ export default function Header(props: { fixed?: boolean }) {
   function openHandler() {
     setOpen(!isOpen);
   }
-
   let links = null;
   if (isDeskTop) {
     links = (
       <>
         {headerLinkArr.map(([label, link], i) => {
           return (
-            <Link className={headerText} to={link} key={i}>
+            <NavLink
+              className={headerText}
+              to={link}
+              key={i}
+              activeClassName={linkActiveClass}
+            >
               {label}
-            </Link>
+            </NavLink>
           );
         })}
 
@@ -62,16 +67,16 @@ export default function Header(props: { fixed?: boolean }) {
             margin-right: 16px;
           `}
         />
-        <Link className={headerText} to="/">
+        <NavLink className={headerText} to="/">
           Store
-        </Link>
+        </NavLink>
       </>
     );
   }
   const innerHeader = (
     <>
       <FlexCenter style={{ justifyContent: "flex-start" }}>
-        <Link
+        <NavLink
           className={css`
             ${headerText}
             ${!isDeskTop && "margin: 0;"}
@@ -83,7 +88,7 @@ export default function Header(props: { fixed?: boolean }) {
               height: 20px;
             `}
           />
-        </Link>
+        </NavLink>
         {links}
       </FlexCenter>
       <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>

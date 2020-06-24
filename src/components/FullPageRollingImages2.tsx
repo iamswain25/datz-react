@@ -3,36 +3,26 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
-import datzpressLogo from "../assets/svg/0524_datzpress.svg";
+import DatzMuseum from "../assets/svg/DatzMuseum";
 const typeClass = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.21;
-
   text-align: center;
-  margin-top: 37px;
 `;
 const titleClass = css`
   font-family: ArnoPro-Subhead;
-  font-size: 22px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.36;
-  letter-spacing: 0.44px;
+  font-size: 27px;
+  line-height: 1.37;
+  letter-spacing: 0.54px;
   text-align: center;
 `;
 const authorClass = css`
+  margin-top: 4px;
   font-family: ArnoPro-Display;
-  font-size: 27px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.37;
-  letter-spacing: 0.54px;
+  font-size: 21px;
+  line-height: 1.38;
+  letter-spacing: 0.42px;
   text-align: center;
 `;
 export default (props: { images: Array<Main> | undefined }) => {
@@ -62,44 +52,45 @@ export default (props: { images: Array<Main> | undefined }) => {
         showFullscreenButton={false}
         showPlayButton={false}
         showBullets={true}
-        autoPlay={true}
+        autoPlay={false}
         onSlide={onslideHandler}
         slideInterval={5000}
       />
       <div
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: 37,
-          color,
-        }}
+        className={css`
+          width: 100%;
+          height: calc(100vh - 56px);
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 28px;
+          margin-bottom: 28px;
+          padding-top: 37px;
+          color: ${color ?? "#ffffff"};
+        `}
       >
         <div className={typeClass}>{type}</div>
         <hr
           className={css`
             border-top: 1px solid ${color};
-            width: calc(100% - 40px);
+            width: 555px;
             margin-top: 8px;
             margin-bottom: 18px;
           `}
         />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
-        <img
-          src={datzpressLogo}
-          alt="logo"
+        <DatzMuseum
           className={css`
             height: 30px;
             bottom: 0;
             left: 0;
             position: absolute;
             padding: 70px;
+            padding-bottom: 35px;
           `}
         />
       </div>

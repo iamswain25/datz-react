@@ -6,9 +6,7 @@ const bookStyle = css`
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   font-family: BauerGroteskOTW03;
   font-size: 19px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.21;
   
   text-align: center;
@@ -18,9 +16,7 @@ const subHead = css`
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   font-family: ArnoPro-Subhead;
   font-size: 22px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.36;
   letter-spacing: 0.44px;
   text-align: center;
@@ -30,9 +26,7 @@ const subDesc = css`
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   font-family: ArnoPro-Display;
   font-size: 26px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  
   line-height: 1.38;
   letter-spacing: 0.52px;
   text-align: center;
