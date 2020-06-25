@@ -10,7 +10,7 @@ export default function Darkroom(props: {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 258.5 117.3"
-      height="30px"
+      width="58.02px"
       className={className}
     >
       <g fill={color}>

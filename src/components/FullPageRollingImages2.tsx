@@ -87,8 +87,8 @@ export default (props: { images: Array<Main> | undefined }) => {
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
         <DatzMuseum
+          color={color}
           className={css`
-            height: 30px;
             left: ${isDesktop ? 69 : 40}px;
             bottom: ${isDesktop ? 33 : 29}px;
             position: absolute;

@@ -12,8 +12,8 @@ const listClass = (dark = false) => css`
   cursor: pointer;
   flex: 1;
   color: ${dark ? "#ffffff" : "#707070"};
-  padding-left: 4px;
-  padding-right: 4px;
+  // padding-left: 4px;
+  // padding-right: 4px;
   width: 100%;
 `;
 const afterClass = (i: number) => css`

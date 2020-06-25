@@ -92,7 +92,6 @@ export default function FullPageRollingImages(props: {
         <div className={authorClass}>{author}</div>
         <Datzpress
           className={css`
-            height: 30px;
             bottom: ${isDesktop ? 29 : 25}px;
             left: ${isDesktop ? 32 : 23}px;
             position: absolute;

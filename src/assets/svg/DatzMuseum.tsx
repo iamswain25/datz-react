@@ -3,14 +3,14 @@ export default function DatzMuseum(props: {
   color?: string;
   className?: string;
 }) {
-  const { color = "#ffffff", className } = props;
+  const { color = "#404041", className } = props;
   return (
     <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 527.53 114.79"
-      height="20px"
+      width="121px"
       className={className}
     >
       <g fill={color}>

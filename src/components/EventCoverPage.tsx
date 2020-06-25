@@ -3,19 +3,22 @@ import { css } from "emotion";
 import PastEventsLeft from "./PastEventsLeft";
 import PastEventsRight from "./PastEventsRight";
 import useDesktop from "./useDesktop";
-import { Flex } from "./div";
 export default function EventCoverPage() {
-  const isDeskTop = useDesktop();
-  if (!isDeskTop) {
-    return (
-      <Flex
-        className={css`
+  const isDesktop = useDesktop();
+  return (
+    <div
+      className={css`
           overflow: hidden;
+          padding: ${isDesktop ? 37 : 0}px;
           padding-top: 28px;
-          padding-bottom: 0;
           position: relative;
+          display: flex;
+          flex-direction: ${isDesktop ? "row" : "column"};
         `}
-      >
+    >
+      {isDesktop ? (
+        <PastEventsLeft />
+      ) : (
         <div
           className={css`
             height: calc(100vh - 34px);
@@ -28,35 +31,13 @@ export default function EventCoverPage() {
         >
           <PastEventsLeft />
         </div>
-        <div
-          className={css`
-            display: flex;
-            flex-direction: column;
-          `}
-        >
-          <PastEventsRight />
-        </div>
-      </Flex>
-    );
-  }
-  return (
-    <div
-      style={{
-        overflow: "hidden",
-        padding: 37,
-        paddingTop: 28,
-        position: "relative",
-        display: "flex",
-        flexDirection: "row",
-      }}
-    >
-      <PastEventsLeft />
+      )}
       <div
         className={css`
-          flex: 1;
+          flex: ${isDesktop ? 1 : "auto"};
           display: flex;
           flex-direction: column;
-          margin-left: 14px;
+          margin-left: ${isDesktop ? 14 : 0}px;
         `}
       >
         <PastEventsRight />

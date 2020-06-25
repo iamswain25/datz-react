@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { Flex, FlexRow, F1 } from "./div";
 import Shares from "./Shares";
-import datzpress from "../assets/svg/0524_datzpress.svg";
-import datzbooks from "../assets/svg/0524_datzbooks.svg";
-import datzmuseum from "../assets/svg/0524_datz museum.svg";
+import Datzpress from "../assets/svg/Datzpress";
+import Darkroom from "../assets/svg/Darkroom";
+import DatzMuseum from "../assets/svg/DatzMuseum";
 const menu = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -31,7 +31,7 @@ const divider = (
     `}
   />
 );
-const dividerV = (
+const dividerV = (className = "") => (
   <div
     className={css`
       margin-left: 37px;
@@ -39,6 +39,7 @@ const dividerV = (
       width: 0;
       height: 29px;
       border-left: solid 1px #707070;
+      ${className}
     `}
   />
 );
@@ -73,33 +74,21 @@ const Menus = (
 const dotzsvgs = (
   <>
     <Link to="/press">
-      <img
-        src={datzpress}
-        alt="datzpress"
-        className={css`
-          height: 30px;
-        `}
-      />
+      <Datzpress />
     </Link>
-    {dividerV}
-    <Link to="/books">
-      <img
-        src={datzbooks}
-        alt="datzbooks"
-        className={css`
-          height: 30px;
-        `}
-      />
+    {dividerV(css`
+      margin-left: 28px;
+      margin-right: 25px;
+    `)}
+    <Link to="/darkroom">
+      <Darkroom />
     </Link>
-    {dividerV}
+    {dividerV(css`
+      margin-left: 33px;
+      margin-right: 25px;
+    `)}
     <Link to="/museum">
-      <img
-        src={datzmuseum}
-        alt="datzmuseum"
-        className={css`
-          height: 30px;
-        `}
-      />
+      <DatzMuseum />
     </Link>
   </>
 );
@@ -141,6 +130,7 @@ export default function Footer() {
             padding-left: 30px;
             padding-right: 30px;
             justify-content: center;
+            overflow: hidden;
           `}
         >
           {dotzsvgs}

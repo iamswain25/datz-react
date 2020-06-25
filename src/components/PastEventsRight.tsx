@@ -23,24 +23,14 @@ export default function PastEventsRight() {
         `}
       />
       <div
-        className={
-          isDeskTop
-            ? css`
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-                padding-left: 17px;
-                padding-right: 17px;
-              `
-            : css`
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                padding-left: 27px;
-                padding-right: 27px;
-              `
-        }
+        className={css`
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          padding-left: ${isDeskTop ? 17 : 27}px;
+          padding-right: ${isDeskTop ? 17 : 27}px;
+        `}
       >
         <div
           className={css`
@@ -49,8 +39,6 @@ export default function PastEventsRight() {
             justify-content: space-between;
             padding-top: 10px;
             padding-bottom: 10px;
-            padding-left: 17px;
-            padding-right: 17px;
           `}
         >
           <div className={headerStyle}>Sep 25, 2019</div>
@@ -60,8 +48,6 @@ export default function PastEventsRight() {
           className={css`
             overflow: hidden;
             flex: 1;
-            padding-left: 17px;
-            padding-right: 17px;
           `}
         >
           <p

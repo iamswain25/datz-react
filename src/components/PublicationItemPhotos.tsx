@@ -71,7 +71,7 @@ export default function PublicationItemPhotos() {
                   className={css`
                     position: absolute;
                     left: 30px;
-                    bottom: 60px;
+                    bottom: 30px;
                   `}
                 />
               )}

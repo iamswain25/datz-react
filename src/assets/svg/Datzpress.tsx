@@ -3,14 +3,14 @@ export default function Datzpress(props: {
   color?: string;
   className?: string;
 }) {
-  const { color = "#4a4b49", className } = props;
+  const { color = "#404041", className } = props;
   return (
     <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 225.74 135.22"
-      height="20px"
+      width="52px"
       className={className}
     >
       <g fill={color}>
