@@ -122,8 +122,7 @@ export default function PastEventsRight() {
           className={css`
             height: 17px;
             border-bottom: solid 1px #707070;
-            margin-top: 10px;
-            // margin-bottom: 20px;
+            padding-top: 10px;
             padding-bottom: 10px;
             text-align: center;
             font-family: BauerGroteskOTW03;

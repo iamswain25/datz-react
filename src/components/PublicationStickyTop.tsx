@@ -24,7 +24,7 @@ export default function PublicationStickyTop() {
         className={
           isDeskTop
             ? css`
-                height: calc(100vh - 79px);
+                height: calc(100vh - 79px - 37px);
               `
             : css`
                 height: 100%;
