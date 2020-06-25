@@ -281,8 +281,8 @@ select[multiple] {
   font-family: "SpoqaHanSans", "SpoqaHanSans JP", "Sans-serif" !important;
 }
 .react-multi-carousel-list.carousel-container-custom {
-  min-width: 100%;
-  width: 0;
+  /* min-width: 100%;
+  width: 0; */
   flex: 1;
   align-items: normal;
 }

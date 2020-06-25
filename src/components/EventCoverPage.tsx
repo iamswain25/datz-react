@@ -8,13 +8,13 @@ export default function EventCoverPage() {
   return (
     <div
       className={css`
-          overflow: hidden;
-          padding: ${isDesktop ? 37 : 0}px;
-          padding-top: 28px;
-          position: relative;
-          display: flex;
-          flex-direction: ${isDesktop ? "row" : "column"};
-        `}
+        overflow: hidden;
+        padding: ${isDesktop ? 37 : 0}px;
+        padding-top: 28px;
+        position: relative;
+        display: flex;
+        flex-direction: ${isDesktop ? "row" : "column"};
+      `}
     >
       {isDesktop ? (
         <PastEventsLeft />
@@ -34,7 +34,7 @@ export default function EventCoverPage() {
       )}
       <div
         className={css`
-          flex: ${isDesktop ? 1 : "auto"};
+          width: ${isDesktop ? "calc(50% - 14px)" : "auto"};
           display: flex;
           flex-direction: column;
           margin-left: ${isDesktop ? 14 : 0}px;
