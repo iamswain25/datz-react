@@ -49,33 +49,30 @@ export default function PublicationReadmoreRelated() {
         <ExhibitionWidget />
         <EventWidget />
       </div>
-      <div
+      <button
+        onClick={(e) =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
         className={css`
           display: flex;
-          flex-direction: row;
           justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 37px;
+          // padding-top: 8px;
+          text-align: center;
+          font-family: BauerGroteskOTW03;
+          font-size: 14px;
+          line-height: 1.21;
+          color: #707070;
+          box-sizing: content-box;
         `}
       >
-        <button
-          onClick={(e) =>
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            })
-          }
-          className={css`
-            padding: 20px;
-            height: 58px;
-            font-family: BauerGroteskOTW03;
-            font-size: 14px;
-            line-height: 1.21;
-            text-align: center;
-            color: #707070;
-          `}
-        >
-          Top {">"}
-        </button>
-      </div>
+        Top {">"}
+      </button>
     </section>
   );
 }

@@ -164,25 +164,19 @@ export default function PublicationStickyTop() {
           display: flex;
           flex-direction: column;
           padding-top: 20px;
-          padding-bottom: 20px;
         `}
       >
-        <hr
-          className={css`
-            height: 0;
-            width: 100%;
-            border-top: solid 1px #707070;
-          `}
-        />
         <Link
           to="/publication/nothingwill/readmore"
           className={css`
+            width: 100%;
+            border-top: solid 1px #707070;
+            height: 29px;
+            padding-top: 8px;
+            text-align: center;
             font-family: BauerGroteskOTW03;
             font-size: 14px;
-            
             line-height: 1.21;
-            
-            text-align: center;
             color: #707070;
           `}
         >

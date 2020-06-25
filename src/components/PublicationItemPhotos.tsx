@@ -52,6 +52,8 @@ export default function PublicationItemPhotos() {
               key={i}
               className={css`
                 position: relative;
+                margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
+                display: flex;
               `}
             >
               <img
@@ -59,7 +61,6 @@ export default function PublicationItemPhotos() {
                 onClick={imageClickHandler}
                 alt="book"
                 className={css`
-                  margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
                   width: 100%;
                   cursor: pointer;
                 `}
@@ -77,31 +78,30 @@ export default function PublicationItemPhotos() {
             </div>
           );
         })}
-        <div
+        <button
+          onClick={(e) =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
           className={css`
+            padding-top: 9px;
+            box-sizing: content-box;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 28px;
+            font-family: BauerGroteskOTW03;
+            font-size: 14px;
+            line-height: 1.21;
             text-align: center;
+            color: #707070;
+            width: 100%;
           `}
         >
-          <button
-            onClick={(e) =>
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              })
-            }
-            className={css`
-              padding: 20px;
-              height: 58px;
-              font-family: BauerGroteskOTW03;
-              font-size: 14px;
-              line-height: 1.21;
-              text-align: center;
-              color: #707070;
-            `}
-          >
-            Top {">"}
-          </button>
-        </div>
+          Top {">"}
+        </button>
         <div
           className={
             isVisible
