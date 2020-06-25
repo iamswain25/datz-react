@@ -19,8 +19,8 @@ const desktopMargin = css`
   padding-right: 55px;
 `;
 const mobileMargin = css`
-  padding-left: 17px;
-  padding-right: 17px;
+  padding-left: 27px;
+  padding-right: 27px;
 `;
 const bgContainer = css`
   background-color: #afafaf;

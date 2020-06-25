@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
+import { useGlobalState, LANG } from "../store/useGlobalState";
 const defaultContainer = css`
   display: flex;
   flex-direction: column;
@@ -9,9 +10,40 @@ const defaultContainer = css`
   text-align: center;
   color: #ffffff;
 `;
+const publication = {
+  en: {
+    artist: "Amanda Marchand",
+  },
+  ko: {
+    artist: "아만다 마찬드",
+  },
+};
 export default function ArtistMainImage() {
-  const isDeskTop = useDesktop();
-  console.log(isDeskTop);
+  const isDesktop = useDesktop();
+  const [lang] = useGlobalState(LANG);
+  const nameClassEn = css`
+    height: 27px;
+    font-family: ArnoPro-Display;
+    font-size: ${isDesktop ? 27 : 22}px;
+    line-height: ${isDesktop ? 1.37 : 1.36};
+    letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
+    margin-top: 14px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
+  const nameClassKo = css`
+    font-family: SpoqaHanSans;
+    font-size: 23px;
+    line-height: 1.17;
+    height: 34px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
   return (
     <>
       <section className={defaultContainer}>
@@ -26,16 +58,8 @@ export default function ArtistMainImage() {
         >
           Artist
         </div>
-        <div
-          className={css`
-            font-family: ArnoPro-Display;
-            font-size: 27px;
-            line-height: 1.37;
-            letter-spacing: 0.54px;
-            margin-top: 14px;
-          `}
-        >
-          Amanda Marchand
+        <div className={lang === "en" ? nameClassEn : nameClassKo}>
+          {publication[lang].artist}
         </div>
         <div
           className={css`

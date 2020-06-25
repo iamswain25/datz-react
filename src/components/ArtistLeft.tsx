@@ -7,7 +7,7 @@ const stickyContainer = css`
   padding-top: 43px;
   // top: 79px;
   flex: 1;
-  padding-right: 30px;
+  margin-right: 30px;
   font-family: BauerGroteskOTW03;
   display: flex;
   flex-direction: column;
@@ -38,6 +38,8 @@ export default function ArtistLeft() {
         className={css`
           flex: 1;
           overflow-x: scroll;
+          padding-left: 10px;
+          padding-right: 10px;
         `}
       >
         <div
@@ -56,7 +58,7 @@ export default function ArtistLeft() {
           className={css`
             font-family: ${lang === "ko" ? "SpoqaHanSans" : "ArnoPro-Subhead"};
             font-size: ${lang === "ko" ? 16 : 19}px;
-            line-height: 1.69;
+            line-height: ${lang === "ko" ? 1.69 : 1.42};
             text-align: left;
             color: #ffffff;
           `}

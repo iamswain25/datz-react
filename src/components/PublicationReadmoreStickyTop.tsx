@@ -185,6 +185,8 @@ export default function PublicationStickyTop() {
         className={css`
           flex: 1;
           overflow-y: scroll;
+          padding-left: 10px;
+          padding-right: 10px;
         `}
       >
         <div
