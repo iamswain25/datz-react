@@ -1,5 +1,5 @@
 import React from "react";
-export default function datzpress(props: {
+export default function Datzpress(props: {
   color?: string;
   className?: string;
 }) {

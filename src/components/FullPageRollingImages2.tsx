@@ -4,6 +4,7 @@ import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
 import DatzMuseum from "../assets/svg/DatzMuseum";
+import useDesktop from "./useDesktop";
 const typeClass = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
@@ -32,6 +33,7 @@ export default (props: { images: Array<Main> | undefined }) => {
   function onslideHandler(index: number) {
     setIndex(index);
   }
+  const isDesktop = useDesktop();
   const { type, title, author, color } =
     (props.images && props.images[index]) || newMain;
   return (
@@ -86,11 +88,9 @@ export default (props: { images: Array<Main> | undefined }) => {
         <DatzMuseum
           className={css`
             height: 30px;
-            bottom: 0;
-            left: 0;
+            left: ${isDesktop ? 69: 40}px;
+            bottom: ${isDesktop ? 33: 29}px;
             position: absolute;
-            padding: 70px;
-            padding-bottom: 35px;
           `}
         />
       </div>

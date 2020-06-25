@@ -42,13 +42,15 @@ const dividerV = (
     `}
   />
 );
-const dividerSmallV = (
+const dividerSmallV = (className = "") => (
   <div
     className={css`
       margin-left: 5px;
       margin-right: 5px;
       height: 8px;
       border-left: solid 1px #d1d1d1;
+      margin-top: 2px;
+      ${className}
     `}
   />
 );
@@ -198,8 +200,8 @@ export default function Footer() {
           height: 107px;
           margin-left: 37px;
           margin-right: 37px;
-          padding-left: 30px;
-          padding-right: 30px;
+          padding-left: 18px;
+          padding-right: 18px;
         `}
       >
         <FlexRow
@@ -207,9 +209,7 @@ export default function Footer() {
             height: 26px;
             font-family: BauerGroteskOTW03;
             font-size: 21px;
-            
             line-height: 1.24;
-
             text-align: left;
             color: #707070;
           `}
@@ -230,25 +230,35 @@ export default function Footer() {
       {divider}
       <FlexRow
         className={css`
-          height: 91px;
+          height: 90px;
           margin-left: 37px;
           margin-right: 37px;
-          padding-left: 30px;
-          padding-right: 30px;
+          padding-left: 18px;
+          padding-right: 18px;
         `}
       >
         <Flex
           className={css`
             font-family: BauerGroteskOTW03;
             font-size: 11px;
+            line-height: 1.27;
+            text-align: left;
             color: #707070;
-            line-height: 2;
           `}
         >
           <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
-          <FlexRow className={css``}>
-            <div>Privacy Policy</div>
-            <div>Terms of Use</div>
+          <FlexRow
+            className={css`
+              margin-top: 6px;
+            `}
+          >
+            <Link to="privacy">Privacy Policy</Link>
+            {dividerSmallV(
+              css`
+                border-left: 1px solid #707070;
+              `
+            )}
+            <Link to="terms">Terms of Use</Link>
           </FlexRow>
         </Flex>
         <F1
@@ -256,24 +266,29 @@ export default function Footer() {
             justify-content: flex-start;
             align-items: flex-start;
             margin-left: 43px;
-            font-family: NotoSansCJKkr;
+            font-family: SpoqaHanSans;
             font-size: 10px;
-            color: #d1d1d1;
-            line-height: 2;
+            line-height: 1.5;
+            text-align: left;
+            color: #cccccc;
           `}
         >
-          <FlexRow className={css``}>
+          <FlexRow>
             <span>대표: 주상연</span>
-            {dividerSmallV}
+            {dividerSmallV()}
             <span>전화: 02-447-2581</span>
-            {dividerSmallV}
+            {dividerSmallV()}
             <span>사업자등록번호: 206-26-99381</span>
           </FlexRow>
-          <FlexRow>
+          <FlexRow
+            className={css`
+              margin-top: 5px;
+            `}
+          >
             <span>통신판매: 제 2012-서울광진-0124 호</span>
-            {dividerSmallV}
+            {dividerSmallV()}
             <span>이용약관</span>
-            {dividerSmallV}
+            {dividerSmallV()}
             <span>개인정보처리방침</span>
           </FlexRow>
         </F1>

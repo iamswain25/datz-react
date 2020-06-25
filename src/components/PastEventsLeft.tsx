@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import Darkroom from "../assets/svg/Darkroom";
 import EventCoverWidget from "./EventCoverWidget";
+import useDesktop from "./useDesktop";
 const bookStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
@@ -28,6 +29,7 @@ const subDesc = css`
   overflow: hidden;
 `;
 export default function PastEventsLeft() {
+  const isDesktop = useDesktop();
   return (
     <section
       className={css`
@@ -73,15 +75,14 @@ export default function PastEventsLeft() {
           <div className={subDesc}>FNL#6 Barbara Bosworth’s Photobook Talk</div>
           <div className={subTime}>2019.11.11</div>
         </div>
-        <div
+        <Darkroom
+          color="#ffffff"
           className={css`
             position: absolute;
-            left: 32px;
-            bottom: 34px;
+            left: ${isDesktop ? 23 : 32}px;
+            bottom: ${isDesktop ? 29 : 32}px;
           `}
-        >
-          <Darkroom color="#ffffff" />
-        </div>
+        />
       </div>
     </section>
   );

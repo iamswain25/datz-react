@@ -3,8 +3,8 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
-import datzpressLogo from "../assets/svg/0524_datzpress.svg";
 import useDesktop from "./useDesktop";
+import Datzpress from "../assets/svg/Datzpress";
 const typeClass = css`
   font-family: BauerGroteskOTW03;
   font-size: 19px;
@@ -31,7 +31,7 @@ export default (props: {
   style?: React.CSSProperties;
 }) => {
   const { style } = props;
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   const images =
     (props.images && props.images.map((a) => ({ original: a.image }))) || [];
   const [index, setIndex] = React.useState(0);
@@ -45,9 +45,9 @@ export default (props: {
       style={{
         height: "calc(100vh - 79px)",
         overflow: "hidden",
-        paddingBottom: isDeskTop ? 37 : 17,
-        paddingLeft: isDeskTop ? 37 : 17,
-        paddingRight: isDeskTop ? 37 : 17,
+        paddingBottom: isDesktop ? 37 : 17,
+        paddingLeft: isDesktop ? 37 : 17,
+        paddingRight: isDesktop ? 37 : 17,
         position: "relative",
         ...style,
       }}
@@ -74,7 +74,7 @@ export default (props: {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: isDeskTop ? 37 : 20,
+          padding: isDesktop ? 37 : 20,
           color,
         }}
       >
@@ -89,15 +89,13 @@ export default (props: {
         />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
-        <img
-          src={datzpressLogo}
-          alt="logo"
+        <Datzpress
           className={css`
             height: 30px;
-            bottom: 0;
-            left: 0;
+            bottom: ${isDesktop ? 29 : 25}px;
+            left: ${isDesktop ? 32 : 23}px;
             position: absolute;
-            padding: 70px;
+            padding: ${isDesktop ? 37 : 20}px;
           `}
         />
       </div>

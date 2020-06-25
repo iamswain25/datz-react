@@ -1,12 +1,12 @@
 import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
-import blog from "../assets/svg/blog.svg";
-import fb from "../assets/svg/fb.svg";
-import insta from "../assets/svg/insta.svg";
-import Mail from "../assets/svg/Mail";
-import share from "../assets/svg/share.svg";
-import twitter from "../assets/svg/twitter.svg";
+import blog from "../assets/svg/0625_blog.svg";
+import fb from "../assets/svg/0625_FB.svg";
+import insta from "../assets/svg/0625_instagram.svg";
+import mail from "../assets/svg/0625_mail.svg";
+import share from "../assets/svg/0625_share.svg";
+import twitter from "../assets/svg/0625_twitter.svg";
 
 const padding = css`
   color: #707070;
@@ -27,10 +27,11 @@ export default function Shares() {
       `}
     >
       <Link to="/mail" className={padding}>
-        <Mail
+        <img
+          src={mail}
+          alt="share"
           className={css`
-            height: 18px;
-            width: 26px;
+            height: 24px;
             margin-right: 21px;
           `}
         />
@@ -60,7 +61,7 @@ export default function Shares() {
           src={fb}
           alt="fb"
           className={css`
-            height: 21px;
+            height: 24px;
             margin-right: 20px;
           `}
         />
@@ -70,7 +71,7 @@ export default function Shares() {
           src={twitter}
           alt="twitter"
           className={css`
-            height: 20px;
+            height: 24px;
             margin-right: 16px;
           `}
         />
@@ -80,7 +81,7 @@ export default function Shares() {
           src={blog}
           alt="blog"
           className={css`
-            height: 20px;
+            height: 24px;
           `}
         />
       </Link>

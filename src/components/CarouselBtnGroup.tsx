@@ -1,24 +1,34 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-const headerStyle = (dark: boolean) => css`
+const headerStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
   line-height: 1.19;
   text-align: right;
-  color: ${dark ? "#ffffff" : "#707070"};
 `;
 export default function CarouselBtnGroup({
   next,
   previous,
   children,
+  carouselState,
   dark = false,
 }: React.PropsWithChildren<{
   next?: () => void;
   previous?: () => void;
   dark?: boolean;
+  carouselState?: {
+    totalItems: number;
+    currentSlide: number;
+    slidesToShow: number;
+  };
 }>) {
+  const { totalItems = 0, currentSlide = 0, slidesToShow = 0 } =
+    carouselState ?? {};
   const isDesktop = useDesktop();
+  const isBeginning = currentSlide === 0;
+  const isEnding = currentSlide === totalItems - slidesToShow;
+  console.log(isEnding, currentSlide, totalItems);
   return (
     <>
       <div
@@ -36,7 +46,8 @@ export default function CarouselBtnGroup({
           <button
             onClick={previous}
             className={css`
-              ${headerStyle(dark)};
+              ${headerStyle};
+              color: ${isBeginning ? "#cccccc" : dark ? "#ffffff" : "#707070"};
               margin-right: 13px;
             `}
           >
@@ -45,7 +56,8 @@ export default function CarouselBtnGroup({
           <button
             onClick={next}
             className={css`
-              ${headerStyle(dark)};
+              ${headerStyle};
+              color: ${isEnding ? "#cccccc" : dark ? "#ffffff" : "#707070"};
               margin-left: 13px;
             `}
           >
