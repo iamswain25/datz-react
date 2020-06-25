@@ -35,7 +35,7 @@ export default function PastEventsLeft() {
         display: flex;
         flex-direction: column;
         margin-right: 14px;
-        width: ${isDesktop ? "calc(50% - 14px)" : "auto"};
+        width: ${isDesktop ? "calc(50% - 14px)" : "100%"};
         position: relative;
       `}
     >

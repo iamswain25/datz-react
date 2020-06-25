@@ -178,8 +178,8 @@ export default function Header(props: { fixed?: boolean }) {
             position: "sticky",
             top: "0",
             height: 79,
-            marginLeft: isDeskTop ? 37 : 20,
-            marginRight: isDeskTop ? 37 : 20,
+            paddingLeft: isDeskTop ? 37 : 20,
+            paddingRight: isDeskTop ? 37 : 20,
             display: "flex",
             alignItems: "center",
             zIndex: 4,
@@ -200,8 +200,8 @@ export default function Header(props: { fixed?: boolean }) {
           alignItems: "center",
           height: 79,
           backgroundColor: "#ffffff",
-          marginLeft: isDeskTop ? 37 : 20,
-          marginRight: isDeskTop ? 37 : 20,
+          paddingLeft: isDeskTop ? 37 : 20,
+          paddingRight: isDeskTop ? 37 : 20,
         }}
       >
         {innerHeader}

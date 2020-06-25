@@ -93,8 +93,22 @@ const dotzsvgs = (
   </>
 );
 export default function Footer() {
-  const isDeskTop = useMediaQuery({ minWidth: 1000 });
-  if (!isDeskTop) {
+  const isDesktop = useMediaQuery({ minWidth: 1000 });
+  const signup = (
+    <Link
+      to="/"
+      className={css`
+        font-family: BauerGroteskOTW03;
+        font-size: ${isDesktop ? 21 : 19}px;
+        line-height: ${isDesktop ? 1.24 : 1.42};
+        text-align: left;
+        color: #707070;
+      `}
+    >
+      Sign up for Datz newsletter {">"}
+    </Link>
+  );
+  if (!isDesktop) {
     return (
       <>
         <section
@@ -108,18 +122,7 @@ export default function Footer() {
             justify-content: center;
           `}
         >
-          <Link
-            to="/"
-            className={css`
-              font-family: BauerGroteskOTW03;
-              font-size: 21px;
-              line-height: 1.24;
-              text-align: left;
-              color: #707070;
-            `}
-          >
-            Sign up for Datz newsletter {">"}
-          </Link>
+          {signup}
         </section>
 
         <FlexRow
@@ -163,6 +166,11 @@ export default function Footer() {
             <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
             <FlexRow className={css``}>
               <div>Privacy Policy</div>
+              {dividerSmallV(
+                css`
+                  border-left: 1px solid #707070;
+                `
+              )}
               <div>Terms of Use</div>
             </FlexRow>
           </F1>
@@ -204,7 +212,7 @@ export default function Footer() {
             color: #707070;
           `}
         >
-          <Link to="/">Sign up for Datz newsletter {">"}</Link>
+          {signup}
           <div
             className={css`
               margin-left: 26px;

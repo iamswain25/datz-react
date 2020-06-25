@@ -99,8 +99,8 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
             display: "flex",
             alignItems: "center",
             zIndex: 4,
-            marginLeft: isDeskTop ? 37 : 20,
-            marginRight: isDeskTop ? 37 : 20,
+            paddingLeft: isDeskTop ? 37 : 20,
+            paddingRight: isDeskTop ? 37 : 20,
             backgroundColor: "#afafaf",
           }}
         >
@@ -115,8 +115,8 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
       <Headroom
         style={{
           height: 79,
-          marginLeft: isDeskTop ? 55 : 20,
-          marginRight: isDeskTop ? 55 : 20,
+          paddingLeft: isDeskTop ? 55 : 20,
+          paddingRight: isDeskTop ? 55 : 20,
           display: "flex",
           alignItems: "center",
           backgroundColor: "#afafaf",
