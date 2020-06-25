@@ -180,9 +180,7 @@ export default function PublicationStickyTop() {
           className={css`
             font-family: BauerGroteskOTW03;
             font-size: 14px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
+            
             line-height: 1.21;
             
             text-align: center;

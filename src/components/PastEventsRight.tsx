@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import ArrowHorizontal from "./ArrowHorizontal";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import UpcomingWidget from "./UpcomingWidget";

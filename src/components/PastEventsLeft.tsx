@@ -1,7 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import darkroom from "../assets/svg/0524_darkroom.svg";
-import ArrowHorizontal from "./ArrowHorizontal";
 import Darkroom from "../assets/svg/Darkroom";
 import EventCoverWidget from "./EventCoverWidget";
 const bookStyle = css`

@@ -182,7 +182,7 @@ export default function Header(props: { fixed?: boolean }) {
             marginRight: isDeskTop ? 37 : 20,
             display: "flex",
             alignItems: "center",
-            zIndex: 1,
+            zIndex: 4,
             backgroundColor: "#ffffff",
           }}
         >

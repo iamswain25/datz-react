@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import blog from "../assets/svg/blog.svg";
 import fb from "../assets/svg/fb.svg";
 import insta from "../assets/svg/insta.svg";
-import mail from "../assets/svg/mail.svg";
 import Mail from "../assets/svg/Mail";
 import share from "../assets/svg/share.svg";
 import twitter from "../assets/svg/twitter.svg";

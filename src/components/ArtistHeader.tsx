@@ -98,7 +98,7 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
             height: 79,
             display: "flex",
             alignItems: "center",
-            zIndex: 1,
+            zIndex: 4,
             marginLeft: isDeskTop ? 37 : 20,
             marginRight: isDeskTop ? 37 : 20,
             backgroundColor: "#afafaf",

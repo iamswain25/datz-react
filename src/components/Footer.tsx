@@ -207,9 +207,7 @@ export default function Footer() {
             height: 26px;
             font-family: BauerGroteskOTW03;
             font-size: 21px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
+            
             line-height: 1.24;
 
             text-align: left;

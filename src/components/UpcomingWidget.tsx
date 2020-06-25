@@ -14,21 +14,6 @@ const textClass = (dark = false) => css`
   text-align: right;
   color: ${dark ? "#ffffff" : "#707070"};
 `;
-const descClass = (dark = false) => css`
-  font-family: BauerGroteskOTW03;
-  font-size: 14px;
-
-  line-height: 1.64;
-
-  text-align: center;
-  color: ${dark ? "#ffffff" : "#707070"};
-  text-align: center;
-  margin-top: 10px;
-  height: 20px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
 const listClass = (dark = false) => css`
   display: flex;
   flex-direction: column;

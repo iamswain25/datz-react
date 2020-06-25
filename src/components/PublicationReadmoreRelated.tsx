@@ -18,7 +18,7 @@ const desktopContainer = css`
   padding-left: 30px;
   padding-top: 40px;
 `;
-export default function PublicationItemPhotos() {
+export default function PublicationReadmoreRelated() {
   const isDeskTop = useDesktop();
 
   return (
@@ -33,11 +33,7 @@ export default function PublicationItemPhotos() {
           className={css`
             font-family: BauerGroteskOTW03;
             font-size: 17px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
             line-height: 1.24;
-
             text-align: center;
             color: #707070;
             padding-bottom: 7px;
