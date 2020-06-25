@@ -195,15 +195,13 @@ export default function Header(props: { fixed?: boolean }) {
   return (
     <>
       <Headroom
-        className={css`
-          margin-left: ${isDeskTop ? 37 : 20}px;
-          margin-right: ${isDeskTop ? 37 : 20}px;
-        `}
         style={{
           display: "flex",
           alignItems: "center",
           height: 79,
           backgroundColor: "#ffffff",
+          marginLeft: isDeskTop ? 37 : 20,
+          marginRight: isDeskTop ? 37 : 20,
         }}
       >
         {innerHeader}

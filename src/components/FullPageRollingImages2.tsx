@@ -78,7 +78,7 @@ export default (props: { images: Array<Main> | undefined }) => {
         <hr
           className={css`
             border-top: 1px solid ${color};
-            width: 555px;
+            width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
             margin-top: 8px;
             margin-bottom: 18px;
           `}
@@ -88,8 +88,8 @@ export default (props: { images: Array<Main> | undefined }) => {
         <DatzMuseum
           className={css`
             height: 30px;
-            left: ${isDesktop ? 69: 40}px;
-            bottom: ${isDesktop ? 33: 29}px;
+            left: ${isDesktop ? 69 : 40}px;
+            bottom: ${isDesktop ? 33 : 29}px;
             position: absolute;
           `}
         />

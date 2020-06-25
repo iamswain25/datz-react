@@ -5,12 +5,7 @@ import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Datzpress from "../assets/svg/Datzpress";
-const typeClass = css`
-  font-family: BauerGroteskOTW03;
-  font-size: 19px;
-  line-height: 1.21;
-  text-align: center;
-`;
+
 const titleClass = css`
   font-family: ArnoPro-Subhead;
   font-size: 27px;
@@ -38,6 +33,13 @@ export default (props: {
   function onslideHandler(index: number) {
     setIndex(index);
   }
+  const typeClass = css`
+    font-family: BauerGroteskOTW03;
+    font-size: 19px;
+    line-height: 1.21;
+    text-align: center;
+    margin-top: ${isDesktop ? 0 : 5}px;
+  `;
   const { type, title, author, color } =
     (props.images && props.images[index]) || newMain;
   return (
@@ -74,7 +76,7 @@ export default (props: {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: isDesktop ? 37 : 20,
+          padding: isDesktop ? 37 : 17,
           color,
         }}
       >
@@ -82,7 +84,7 @@ export default (props: {
         <hr
           className={css`
             border-top: 1px solid ${color};
-            width: 555px;
+            width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
             margin-top: 8px;
             margin-bottom: 18px;
           `}
