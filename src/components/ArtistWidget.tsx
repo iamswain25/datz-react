@@ -5,35 +5,53 @@ import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import useDesktop from "./useDesktop";
 // import useDesktop from "./useDesktop";
 const artistNameClass = css`
   font-family: ArnoPro-Display;
   font-size: 23px;
-  
   line-height: 1.17;
   letter-spacing: 0.46px;
   text-align: center;
   color: #4b4b4b;
   margin-bottom: 20px;
 `;
+const artistNameClassKo = css`
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: SpoqaHanSans;
+  font-size: 19px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.42;
+  color: #4b4b4b;
+`;
 
 const descClass = css`
   height: 100px;
   font-family: BauerGroteskOTW03;
   font-size: 17px;
-  
   line-height: 1.47;
-  
   text-align: left;
   color: #707070;
   overflow: hidden;
+  margin-top: 12px;
+`;
+const descClassKo = css`
+  height: 100px;
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  line-height: 1.79;
+  text-align: left;
+  color: #707070;
+  overflow: hidden;
+  margin-top: 11px;
 `;
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
   line-height: 1.19;
-  
   text-align: right;
   color: ${dark ? "#ffffff" : "#707070"};
 `;
@@ -70,10 +88,12 @@ const responsive = {
 const itemClass = css`
   display: flex;
   align-items: center;
+  height: auto;
 `;
 const list = [artist, artist, artist];
 export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
   const [lang] = useGlobalState(LANG);
+  const isDesktop = useDesktop();
   const history = useHistory();
   function goToArtist() {
     history.push("/artist/Amanda Marchand");
@@ -82,7 +102,9 @@ export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
     <div>
       <div
         className={css`
-          margin-top: 32px;
+          margin-top: ${lang === "ko" ? 45 : 49}px;
+          padding-left: ${isDesktop ? 17 : 0}px;
+          padding-right: ${isDesktop ? 17 : 0}px;
         `}
       >
         <Carousel
@@ -92,7 +114,7 @@ export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
           renderButtonGroupOutside={true}
           arrows={false}
           customButtonGroup={
-            <CarouselBtnGroup dark={dark}>
+            <CarouselBtnGroup dark={dark} hasPadding={false}>
               <div className={textClass(dark)}>Artist</div>
             </CarouselBtnGroup>
           }
@@ -101,13 +123,15 @@ export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
             return (
               <div key={i}>
                 <h5
-                  className={`${artistNameClass} ${lang === "ko" ? "ko" : ""}`}
+                  className={
+                    lang === "ko" ? artistNameClassKo : artistNameClass
+                  }
                   style={{ cursor: "pointer" }}
                   onClick={goToArtist}
                 >
                   {artist[lang].name} {">"}
                 </h5>
-                <p className={`${descClass} ${lang === "ko" ? "ko" : ""}`}>
+                <p className={lang === "ko" ? descClassKo : descClass}>
                   {artist[lang].desc}
                 </p>
               </div>

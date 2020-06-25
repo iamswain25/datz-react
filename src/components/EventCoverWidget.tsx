@@ -46,11 +46,11 @@ export default function EventCoverWidget({ dark = false }: { dark?: boolean }) {
   }
   return (
     <div
-      className={css`
+      className={`home ${css`
         height: 100%;
         display: flex;
         flex-direction: column;
-      `}
+      `}`}
     >
       <Carousel
         responsive={responsive}

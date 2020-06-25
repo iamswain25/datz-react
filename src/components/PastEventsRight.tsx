@@ -30,9 +30,12 @@ export default function PastEventsRight() {
                 display: flex;
                 flex-direction: column;
                 overflow: hidden;
+                padding-left: 17px;
+                padding-right: 17px;
               `
             : css`
-                padding: 27px;
+                padding-left: 27px;
+                padding-right: 27px;
               `
         }
       >
@@ -76,6 +79,8 @@ export default function PastEventsRight() {
               line-height: 1.42;
               text-align: left;
               color: #4b4b4b;
+              margin-top: 10px;
+              max-height: 311px;
             `}
           >
             “ Datz Press understands and responds sensitively to what an artist
@@ -110,7 +115,7 @@ export default function PastEventsRight() {
         </div>
 
         <Link
-          to="/event"
+          to="/publication"
           className={css`
             height: 17px;
             border-bottom: solid 1px #707070;
@@ -128,6 +133,17 @@ export default function PastEventsRight() {
         >
           read more {">"}
         </Link>
+      </div>
+      <div
+        className={
+          isDeskTop
+            ? ""
+            : css`
+                padding-left: 27px;
+                padding-right: 27px;
+              `
+        }
+      >
         <UpcomingWidget />
       </div>
     </>

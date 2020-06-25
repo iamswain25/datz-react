@@ -19,10 +19,10 @@ const desktopContainer = css`
   padding-top: 40px;
 `;
 export default function PublicationReadmoreRelated() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
 
   return (
-    <section className={isDeskTop ? desktopContainer : mobileContainer}>
+    <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div
         className={css`
           display: flex;
@@ -36,8 +36,10 @@ export default function PublicationReadmoreRelated() {
             line-height: 1.24;
             text-align: center;
             color: #707070;
-            padding-bottom: 7px;
+            padding-bottom: 8px;
             border-bottom: solid 1px #707070;
+            margin-left: ${isDesktop ? 17 : 0}px;
+            margin-right: ${isDesktop ? 17 : 0}px;
           `}
         >
           Related

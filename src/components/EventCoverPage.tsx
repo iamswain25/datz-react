@@ -42,7 +42,6 @@ export default function EventCoverPage() {
   return (
     <div
       style={{
-        height: "100vh",
         overflow: "hidden",
         padding: 37,
         paddingTop: 28,

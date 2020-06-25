@@ -293,11 +293,12 @@ h4,
 h5,
 hr {
   margin: 0;
+  font-weight: normal;
 }
 
-.react-multi-carousel-track div,
-.react-multi-carousel-track ul,
-.react-multi-carousel-track img,
-.react-multi-carousel-track li {
+.home .react-multi-carousel-track div,
+.home .react-multi-carousel-track ul,
+.home .react-multi-carousel-track img,
+.home .react-multi-carousel-track li {
   height: 100%;
 }

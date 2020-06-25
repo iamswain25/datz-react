@@ -23,13 +23,19 @@ const mobileContainer = css`
 const quoteClass = css`
   font-family: ArnoPro-Display;
   font-size: 20px;
-  font-weight: normal;
-  font-stretch: normal;
   font-style: italic;
   line-height: 1.35;
   letter-spacing: 0.4px;
   text-align: left;
   margin-top: 29px;
+`;
+const quoteClassKo = css`
+  font-family: SpoqaHanSans;
+  font-size: 16px;
+  line-height: 1.69;
+  text-align: left;
+  color: #5d5d5d;
+  margin-top: 22px;
 `;
 const p2Class = css`
   font-family: ArnoPro-Display;
@@ -41,14 +47,30 @@ const p2Class = css`
   margin-top: 30px;
   overflow: hidden;
 `;
+const p2ClassKo = css`
+  font-family: SpoqaHanSans;
+  font-size: 16px;
+  line-height: 1.69;
+  text-align: left;
+  color: #5d5d5d;
+  margin-top: 23px;
+`;
 
 const p3Class = css`
   font-family: ArnoPro-Subhead;
   font-size: 17px;
   line-height: 1.59;
-  
   text-align: left;
   color: #4b4b4b;
+  white-space: break-spaces;
+`;
+const p3ClassKo = css`
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  line-height: 1.93;
+  text-align: left;
+  color: #5d5d5d;
+  margin-top: 41px;
   white-space: break-spaces;
 `;
 const publication = {
@@ -94,16 +116,16 @@ ISBN 978-89-97605-45-3
   ko: {
     title: "모두 다른 하나의 순간들[SE]",
     artist: "아만다 마찬드",
-    content: `<p class="${quoteClass} ko">
+    content: `<p class="${quoteClassKo}">
 “오래된 학교 건물 안 세 개의 창문. 만약 카메라까지 하나의 창으로 생각한다면, 네 개의 창문이 그곳에 있었다.”
 - 작가 노트 중
   </p>
-  <p class="${p2Class} ko">
+  <p class="${p2ClassKo}">
 아만다 마찬드가 레지던시로 머무른 핀란드의 오래된 건물, 세 개의 창문에서부터 이 책은 시작된다. 작가는 정사각형 포맷의 카메라를 포함한 네 개의 창을 통해 한 순간도 같지 않은 핀란드의 풍광을 바라보았다. 해질녘, 하늘의 새들, 갑작스런 태양 등, 100여년이 된 오래된 창을 통해 미묘하게 변화하는 풍경이 그려진다. 창은 정사각형 포맷의 카메라 프레임을 닮아 있다. 작가는 카메라 뷰파인더와 네모난 창을 통해 한 순간도 같지 않은 풍경을 읽어내는 고요한 ‘관조’의 태도를 실현한다. 
 
 이 작업은 작가가 어린 시절을 보낸 캐나다의 겨울에 대한 기억에서 출발하여 세계를 바라보는 명상의 한 방법으로서 사진을 보여 준다. 책 전체는 창문처럼 여닫을 수 있는 많은 페이지로 구성되었다. 특히, ‘For all the knowledge of the world’ 페이지에서는 창을 열듯 이미지를 열면 숨겨져 있던 시어詩語들이 드러난다.
   </p>
-  <p class="${p3Class} ko">
+  <p class="${p3ClassKo}">
 *각 책마다 서로 다른 C-print 한 장을 포함하고 있습니다.
 
 크레딧
@@ -194,12 +216,12 @@ export default function PublicationStickyTop() {
         <div
           className={css`
             font-family: ${lang === "ko" ? "SpoqaHanSans" : "ArnoPro-Subhead"};
-            font-size: 27px;
-            line-height: 1.19;
+            font-size: ${lang === "ko" ? 23 : 27}px;
+            line-height: ${lang === "ko" ? 1.48 : 1.19};
+            margin-top: ${lang === "ko" ? 22 : 28}px;
             letter-spacing: 0.54px;
             text-align: center;
             color: #4b4b4b;
-            margin-top: 28px;
           `}
         >
           {publication[lang]?.title}
@@ -207,12 +229,12 @@ export default function PublicationStickyTop() {
         <div
           className={css`
             font-family: ${lang === "ko" ? "SpoqaHanSans" : "ArnoPro-Display"};
-            font-size: 21px;
-            line-height: 1.38;
+            font-size: ${lang === "ko" ? 17 : 21}px;
+            line-height: ${lang === "ko" ? 1.41 : 1.38};
+            margin-top: ${lang === "ko" ? 0 : 4}px;
             letter-spacing: 0.42px;
             text-align: center;
             color: #4b4b4b;
-            margin-top: 4px;
           `}
         >
           {publication[lang]?.artist}
@@ -243,9 +265,9 @@ export default function PublicationStickyTop() {
             className={css`
               font-family: BauerGroteskOTW03;
               font-size: 14px;
-             
+
               line-height: 1.21;
-              
+
               text-align: center;
               color: #707070;
             `}

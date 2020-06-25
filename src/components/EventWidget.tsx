@@ -53,6 +53,8 @@ const imgClass = css`
 const itemClass = css`
   display: flex;
   align-items: center;
+  height: auto;
+
 `;
 
 const responsive = {

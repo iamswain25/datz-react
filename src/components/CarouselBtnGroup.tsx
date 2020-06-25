@@ -13,10 +13,12 @@ export default function CarouselBtnGroup({
   children,
   carouselState,
   dark = false,
+  hasPadding = true,
 }: React.PropsWithChildren<{
   next?: () => void;
   previous?: () => void;
   dark?: boolean;
+  hasPadding?: boolean;
   carouselState?: {
     totalItems: number;
     currentSlide: number;
@@ -28,7 +30,6 @@ export default function CarouselBtnGroup({
   const isDesktop = useDesktop();
   const isBeginning = currentSlide === 0;
   const isEnding = currentSlide === totalItems - slidesToShow;
-  console.log(isEnding, currentSlide, totalItems);
   return (
     <>
       <div
@@ -38,8 +39,8 @@ export default function CarouselBtnGroup({
           justify-content: space-between;
           padding-top: 10px;
           padding-bottom: 10px;
-          padding-left: ${isDesktop ? 17 : 0}px;
-          padding-right: ${isDesktop ? 17 : 0}px;
+          padding-left: ${isDesktop && hasPadding ? 17 : 0}px;
+          padding-right: ${isDesktop && hasPadding ? 17 : 0}px;
         `}
       >
         <div>
@@ -70,8 +71,8 @@ export default function CarouselBtnGroup({
         className={css`
           height: 0;
           border-bottom: solid 1px ${dark ? "#ffffff" : "#707070"};
-          margin-left: ${isDesktop ? 17 : 0}px;
-          margin-right: ${isDesktop ? 17 : 0}px;
+          margin-left: ${isDesktop && hasPadding ? 17 : 0}px;
+          margin-right: ${isDesktop && hasPadding ? 17 : 0}px;
         `}
       ></div>
     </>

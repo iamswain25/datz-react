@@ -8,7 +8,6 @@ import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { Main } from "../@type/main";
 import useDevider from "../components/useDevider";
 import Header from "../components/Header";
-
 export default () => {
   const [dataArray, loading, error] = useCollectionDataOnce<Main>(
     firestore.collection("main").where("isShowing", "==", true).limit(5)
