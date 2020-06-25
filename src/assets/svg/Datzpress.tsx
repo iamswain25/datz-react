@@ -1,16 +1,18 @@
 import React from "react";
+import useDesktop from "../../components/useDesktop";
 export default function Datzpress(props: {
   color?: string;
   className?: string;
 }) {
   const { color = "#404041", className } = props;
+  const isDesktop = useDesktop();
   return (
     <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 225.74 135.22"
-      width="52px"
+      width={isDesktop ? 52 : 39.71}
       className={className}
     >
       <g fill={color}>

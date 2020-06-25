@@ -1,16 +1,18 @@
 import React from "react";
+import useDesktop from "../../components/useDesktop";
 export default function Darkroom(props: {
   color?: string;
   className?: string;
 }) {
   const { color = "#404041", className } = props;
+  const isDesktop = useDesktop();
   return (
     <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 258.5 117.3"
-      width="58.02px"
+      width={isDesktop ? 58.02 : 44.31}
       className={className}
     >
       <g fill={color}>

@@ -95,12 +95,11 @@ export default function PublicationStickyTop() {
           Linda Connor
         </div>
         <Datzpress
-          color="white"
+          color="#ffffff"
           className={css`
-            height: 30px;
             position: absolute;
-            bottom: 20px;
-            left: 20px;
+            bottom: 29px;
+            left: 32px;
           `}
         />
       </div>
