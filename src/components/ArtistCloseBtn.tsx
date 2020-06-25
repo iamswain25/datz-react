@@ -5,6 +5,7 @@ import Fb from "../assets/svg/Fb";
 import { css } from "emotion";
 import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
+import Close from "../assets/svg/Close";
 export default function PublicationCloseBtn() {
   const isDeskTop = useDesktop();
   const history = useHistory();
@@ -33,28 +34,36 @@ export default function PublicationCloseBtn() {
           text-align: left;
           color: #ffffff;
           margin-right: 45px;
+          display: flex;
+          align-items: center;
         `}
       >
-        X CLOSE
+        <Close
+          color="#ffffff"
+          className={css`
+            margin-right: 8px;
+          `}
+        />
+        <span>CLOSE</span>
       </button>
       {isDeskTop && (
         <>
           <Share
-            color="#ffffff"
+            color="#ececec"
             className={css`
               height: 15px;
               margin-right: 14px;
             `}
           />
           <Fb
-            color="#ffffff"
+            color="#ececec"
             className={css`
               height: 15px;
               margin-right: 14px;
             `}
           />
           <Twitter
-            color="#ffffff"
+            color="#ececec"
             className={css`
               height: 15px;
             `}

@@ -34,11 +34,7 @@ export default function PublicationStickyTop() {
           padding-bottom: 8px;
         `}
       >
-        <Datzpress
-          className={css`
-            height: 30px;
-          `}
-        />
+        <Datzpress />
         <a
           href="https://datzpress.com/product/offerings-se"
           className={css`

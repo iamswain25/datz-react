@@ -162,16 +162,11 @@ export default function PublicationStickyTop() {
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
-          height: 30px;
           border-bottom: solid 1px #707070;
           padding-bottom: 8px;
         `}
       >
-        <Datzpress
-          className={css`
-            height: 30px;
-          `}
-        />
+        <Datzpress />
         <a
           href="https://datzpress.com/product/offerings-se"
           className={css`

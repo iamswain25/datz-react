@@ -7,8 +7,8 @@ export default function Search(props: { color?: string; className?: string }) {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 21.88 21.87"
-      height="25px"
-      width="25px"
+      height="15.7px"
+      width="16.3px"
       className={className}
     >
       <g fill={color}>

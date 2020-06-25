@@ -31,6 +31,7 @@ export default function PublicationReadmoreRelated() {
       >
         <div
           className={css`
+            height: 31.14px;
             font-family: BauerGroteskOTW03;
             font-size: 17px;
             line-height: 1.24;
@@ -38,6 +39,10 @@ export default function PublicationReadmoreRelated() {
             color: #707070;
             padding-bottom: 8px;
             border-bottom: solid 1px #707070;
+            box-sizing: content-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-left: ${isDesktop ? 17 : 0}px;
             margin-right: ${isDesktop ? 17 : 0}px;
           `}

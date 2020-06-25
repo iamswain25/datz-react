@@ -2,6 +2,7 @@ import React from "react";
 import Share from "../assets/svg/Share";
 import Twitter from "../assets/svg/Twitter";
 import Fb from "../assets/svg/Fb";
+import Close from "../assets/svg/Close";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 // import useDesktop from "./useDesktop";
@@ -25,22 +26,30 @@ export default function PublicationCloseBtn() {
           text-align: left;
           color: #afafaf;
           margin-right: 45px;
+          display: flex;
+          align-items: center;
         `}
       >
-        X CLOSE
+        <Close
+          color="#afafaf"
+          className={css`
+            margin-right: 8px;
+          `}
+        />
+        <span>CLOSE</span>
       </Link>
       <Share
         color="#cccccc"
         className={css`
           height: 15px;
-          margin-right: 14px;
+          margin-right: 16px;
         `}
       />
       <Fb
         color="#cccccc"
         className={css`
           height: 15px;
-          margin-right: 14px;
+          margin-right: 17px;
         `}
       />
       <Twitter
