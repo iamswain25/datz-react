@@ -5,26 +5,10 @@ import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Datzpress from "../assets/svg/Datzpress";
-
-const titleClass = css`
-  font-family: ArnoPro-Subhead;
-  font-size: 27px;
-  line-height: 1.37;
-  letter-spacing: 0.54px;
-  text-align: center;
-`;
-const authorClass = css`
-  font-family: ArnoPro-Display;
-  font-size: 21px;
-  line-height: 1.38;
-  letter-spacing: 0.42px;
-  text-align: center;
-  margin-top: 4px;
-`;
-export default (props: {
+export default function FullPageRollingImages(props: {
   images: Array<Main> | undefined;
   style?: React.CSSProperties;
-}) => {
+}) {
   const { style } = props;
   const isDesktop = useDesktop();
   const images =
@@ -35,10 +19,25 @@ export default (props: {
   }
   const typeClass = css`
     font-family: BauerGroteskOTW03;
-    font-size: 19px;
-    line-height: 1.21;
+    font-size: ${isDesktop ? 19 : 16}px;
+    line-height: ${isDesktop ? 1.21 : 1.19};
     text-align: center;
     margin-top: ${isDesktop ? 0 : 5}px;
+  `;
+  const titleClass = css`
+    font-family: ArnoPro-Subhead;
+    font-size: ${isDesktop ? 27 : 22}px;
+    line-height: ${isDesktop ? 1.37 : 1.36};
+    letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
+    text-align: center;
+  `;
+  const authorClass = css`
+    font-family: ArnoPro-Display;
+    font-size: ${isDesktop ? 21 : 20}px;
+    line-height: ${isDesktop ? 1.38 : 1.4};
+    letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
+    text-align: center;
+    margin-top: ${isDesktop ? 4 : 3}px;
   `;
   const { type, title, author, color } =
     (props.images && props.images[index]) || newMain;
@@ -85,8 +84,8 @@ export default (props: {
           className={css`
             border-top: 1px solid ${color};
             width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
-            margin-top: 8px;
-            margin-bottom: 18px;
+            margin-top: ${isDesktop ? 8 : 3}px;
+            margin-bottom: ${isDesktop ? 18 : 16}px;
           `}
         />
         <div className={titleClass}>{title}</div>
@@ -103,4 +102,4 @@ export default (props: {
       </div>
     </div>
   );
-};
+}

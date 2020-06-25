@@ -3,33 +3,32 @@ import { css } from "emotion";
 import Darkroom from "../assets/svg/Darkroom";
 import EventCoverWidget from "./EventCoverWidget";
 import useDesktop from "./useDesktop";
-const bookStyle = css`
-  font-family: BauerGroteskOTW03;
-  font-size: 19px;
-  line-height: 1.21;
-  text-align: center;
-  color: #ffffff;
-`;
-const subTime = css`
-  font-family: ArnoPro-Display;
-  font-size: 21px;
-  line-height: 1.38;
-  letter-spacing: 0.42px;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 4px;
-`;
-const subDesc = css`
-  font-family: ArnoPro-Subhead;
-  font-size: 27px;
-  line-height: 1.37;
-  letter-spacing: 0.54px;
-  color: #ffffff;
-  height: 32px;
-  overflow: hidden;
-`;
 export default function PastEventsLeft() {
   const isDesktop = useDesktop();
+  const typeClass = css`
+    font-family: BauerGroteskOTW03;
+    font-size: ${isDesktop ? 19 : 16}px;
+    line-height: ${isDesktop ? 1.21 : 1.19};
+    text-align: center;
+    margin-top: ${isDesktop ? 0 : 5}px;
+  `;
+  const titleClass = css`
+    font-family: ArnoPro-Subhead;
+    font-size: ${isDesktop ? 27 : 22}px;
+    line-height: ${isDesktop ? 1.37 : 1.36};
+    letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
+    text-align: center;
+    height: 32px;
+    overflow: hidden;
+  `;
+  const authorClass = css`
+    font-family: ArnoPro-Display;
+    font-size: ${isDesktop ? 21 : 20}px;
+    line-height: ${isDesktop ? 1.38 : 1.4};
+    letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
+    text-align: center;
+    margin-top: ${isDesktop ? 4 : 3}px;
+  `;
   return (
     <section
       className={css`
@@ -61,19 +60,22 @@ export default function PastEventsLeft() {
         <div
           className={css`
             text-align: center;
+            color: #ffffff;
           `}
         >
-          <div className={bookStyle}>Past Events {">"}</div>
-          <div
+          <div className={typeClass}>Past Events {">"}</div>
+          <hr
             className={css`
               height: 0;
               border-bottom: solid 1px #ffffff;
-              margin-top: 7px;
-              margin-bottom: 17px;
+              margin-top: ${isDesktop ? 8 : 3}px;
+              margin-bottom: ${isDesktop ? 18 : 16}px;
             `}
-          ></div>
-          <div className={subDesc}>FNL#6 Barbara Bosworth’s Photobook Talk</div>
-          <div className={subTime}>2019.11.11</div>
+          />
+          <div className={titleClass}>
+            FNL#6 Barbara Bosworth’s Photobook Talk
+          </div>
+          <div className={authorClass}>2019.11.11</div>
         </div>
         <Darkroom
           color="#ffffff"

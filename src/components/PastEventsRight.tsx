@@ -34,6 +34,9 @@ export default function PastEventsRight() {
                 padding-right: 17px;
               `
             : css`
+                flex: 1;
+                display: flex;
+                flex-direction: column;
                 padding-left: 27px;
                 padding-right: 27px;
               `
