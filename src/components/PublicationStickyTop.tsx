@@ -62,13 +62,13 @@ export default function PublicationStickyTop() {
         >
           Upcoming Book
         </div>
-        <div
+        <hr
           className={css`
             margin-left: 18px;
             margin-right: 18px;
-            border-bottom: solid 1px #ffffff;
+            border-top: solid 1px #ffffff;
           `}
-        ></div>
+        />
         <div
           className={css`
             font-family: ArnoPro-Subhead;

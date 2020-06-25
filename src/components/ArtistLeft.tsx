@@ -85,8 +85,7 @@ export default function ArtistLeft() {
             className={css`
               margin-top: 24px;
               width: 100%;
-              border-bottom: solid 1px #ffffff;
-              border-top: none;
+              border-top: solid 1px #ffffff;
             `}
           />
         </div>

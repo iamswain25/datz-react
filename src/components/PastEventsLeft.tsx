@@ -67,7 +67,7 @@ export default function PastEventsLeft() {
           <hr
             className={css`
               height: 0;
-              border-bottom: solid 1px #ffffff;
+              border-top: solid 1px #ffffff;
               margin-top: ${isDesktop ? 8 : 3}px;
               margin-bottom: ${isDesktop ? 18 : 16}px;
             `}

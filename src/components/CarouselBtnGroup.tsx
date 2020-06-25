@@ -67,14 +67,14 @@ export default function CarouselBtnGroup({
         </div>
         {children}
       </div>
-      <div
+      <hr
         className={css`
           height: 0;
-          border-bottom: solid 1px ${dark ? "#ffffff" : "#707070"};
+          border-top: solid 1px ${dark ? "#ffffff" : "#707070"};
           margin-left: ${isDesktop && hasPadding ? 17 : 0}px;
           margin-right: ${isDesktop && hasPadding ? 17 : 0}px;
         `}
-      ></div>
+      />
     </>
   );
 }

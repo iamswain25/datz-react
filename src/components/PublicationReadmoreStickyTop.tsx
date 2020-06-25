@@ -256,8 +256,7 @@ export default function PublicationStickyTop() {
             className={css`
               height: 0;
               width: 100%;
-              border-bottom: solid 1px #707070;
-              border-top: none;
+              border-top: solid 1px #707070;
             `}
           />
           <button

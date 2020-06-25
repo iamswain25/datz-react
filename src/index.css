@@ -294,6 +294,7 @@ h5,
 hr {
   margin: 0;
   font-weight: normal;
+  border-bottom: 0;
 }
 
 .home .react-multi-carousel-track div,
