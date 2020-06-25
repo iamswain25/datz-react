@@ -52,7 +52,7 @@ export default (props: { images: Array<Main> | undefined }) => {
         showFullscreenButton={false}
         showPlayButton={false}
         showBullets={true}
-        autoPlay={false}
+        autoPlay={true}
         onSlide={onslideHandler}
         slideInterval={5000}
       />

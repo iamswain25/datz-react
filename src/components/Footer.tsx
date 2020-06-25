@@ -10,9 +10,9 @@ import datzmuseum from "../assets/svg/0524_datz museum.svg";
 const menu = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
+
   line-height: 1.19;
-  
+
   text-align: center;
   flex-direction: row;
   display: flex;
@@ -24,21 +24,21 @@ const padding = css`
 const divider = (
   <div
     className={css`
-      margin-left: 37px;
-      margin-right: 37px;
+      margin-left: 27px;
+      margin-right: 29px;
       height: 0;
-      border: solid 1px #707070;
+      border-left: solid 1px #707070;
     `}
   />
 );
 const dividerV = (
   <div
     className={css`
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 37px;
+      margin-right: 21px;
       width: 0;
       height: 29px;
-      border: solid 1px #707070;
+      border-left: solid 1px #707070;
     `}
   />
 );
@@ -117,7 +117,18 @@ export default function Footer() {
             justify-content: center;
           `}
         >
-          <Link to="/">Sign up for Datz newsletter ></Link>
+          <Link
+            to="/"
+            className={css`
+              font-family: BauerGroteskOTW03;
+              font-size: 21px;
+              line-height: 1.24;
+              text-align: left;
+              color: #707070;
+            `}
+          >
+            Sign up for Datz newsletter {">"}
+          </Link>
         </section>
 
         <FlexRow
@@ -200,13 +211,20 @@ export default function Footer() {
             font-stretch: normal;
             font-style: normal;
             line-height: 1.24;
-            
+
             text-align: left;
             color: #707070;
           `}
         >
-          <Link to="/">Sign up for Datz newsletter ></Link>
-          {dividerV}
+          <Link to="/">Sign up for Datz newsletter {">"}</Link>
+          <div
+            className={css`
+              margin-left: 26px;
+              margin-right: 21px;
+              height: 29px;
+              border-left: solid 1px #707070;
+            `}
+          />
           <Shares />
         </FlexRow>
         <FlexRow className={css``}>{dotzsvgs}</FlexRow>

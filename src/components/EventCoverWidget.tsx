@@ -1,7 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import ev1 from "../assets/images/readmore/ev1.png";
-import ev2 from "../assets/images/readmore/ev2.png";
+import half from "../assets/images/half.jpg";
 import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
@@ -10,7 +9,7 @@ import "react-multi-carousel/lib/styles.css";
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
+
   line-height: 1.19;
 
   text-align: right;
@@ -19,7 +18,7 @@ const textClass = (dark = false) => css`
 const descClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 14px;
-  
+
   line-height: 1.64;
 
   text-align: center;
@@ -47,8 +46,7 @@ const afterClass = (i: number) => css`
   width: 100%;
 `;
 const imgClass = css`
-  object-fit: contain;
-  width: 100%;
+  object-fit: cover;
 `;
 const itemClass = css`
   display: flex;
@@ -58,28 +56,15 @@ const itemClass = css`
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
-    items: 2,
-    // partialVisibilityGutter: 10,
+    items: 1,
   },
   mobile: {
     breakpoint: { max: 999, min: 0 },
-    items: 2,
-    // partialVisibilityGutter: 10,
+    items: 1,
   },
 };
-const list = [
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-];
-export default function PublicationWidget({
-  dark = false,
-}: {
-  dark?: boolean;
-}) {
+const list = [[half], [half], [half], [half]];
+export default function EventCoverWidget({ dark = false }: { dark?: boolean }) {
   const history = useHistory();
   function clickHandler() {
     history.push("/publication/nothingwill");
@@ -87,7 +72,9 @@ export default function PublicationWidget({
   return (
     <div
       className={css`
-        margin-top: 32px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
       `}
     >
       <Carousel
@@ -96,18 +83,13 @@ export default function PublicationWidget({
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}
-        customButtonGroup={
-          <CarouselBtnGroup dark={dark}>
-            <div className={textClass(dark)}>Event</div>
-          </CarouselBtnGroup>
-        }
+        customButtonGroup={<CarouselBtnGroup dark={dark}></CarouselBtnGroup>}
       >
-        {list.map(([img, title], i) => {
+        {list.map(([img], i) => {
           return (
             <div key={i} className={afterClass(i)} onClick={clickHandler}>
               <div className={listClass(dark)}>
-                <img src={img} alt="books" className={imgClass} />
-                <span className={descClass(dark)}>{title}</span>
+                <img src={img} alt="event" className={imgClass} />
               </div>
             </div>
           );

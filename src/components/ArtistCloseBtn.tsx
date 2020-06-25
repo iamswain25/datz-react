@@ -9,6 +9,10 @@ export default function PublicationCloseBtn() {
   const isDeskTop = useDesktop();
   const history = useHistory();
   function goBackHandler() {
+    console.log(history.length);
+    if (history.length < 3) {
+      history.replace("/publication");
+    }
     history.goBack();
   }
   return (

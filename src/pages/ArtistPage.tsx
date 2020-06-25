@@ -35,7 +35,7 @@ export default function ArtistPage() {
   return (
     <>
       <div className={bgContainer}>
-        <ArtistHeader />
+        <ArtistHeader fixed />
         <div className={isDeskTop ? desktopMargin : mobileMargin}>
           <ArtistMainImage />
           <section className={isDeskTop ? desktopContainer : mobileContainer}>

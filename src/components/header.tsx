@@ -62,14 +62,19 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             width: 0;
             height: 12px;
-            border: solid 1px #707070;
+            border-left: solid 1px #707070;
             margin-left: 16px;
             margin-right: 16px;
           `}
         />
-        <NavLink className={headerText} to="/">
+        <a
+          className={headerText}
+          href="https://datzpress.com/store"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Store
-        </NavLink>
+        </a>
       </>
     );
   }
@@ -109,8 +114,10 @@ export default function Header(props: { fixed?: boolean }) {
               className={css`
                 ${headerText};
                 border-bottom: solid 1px #707070;
-                flex-basis: 56px;
-                margin: 0;
+                width: 56px;
+                margin-left: 5px;
+                margin-right: 8px;
+                margin-bottom: 7px;
               `}
             />
           </>
@@ -119,9 +126,9 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             ${headerText};
             ${marginNone};
+            color: ${lang === "en" ? "#707070" : "#afafaf"};
           `}
           onClick={() => setLang("en")}
-          style={lang === "en" ? { fontWeight: "bold" } : {}}
         >
           EN
         </button>
@@ -129,7 +136,7 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             width: 0;
             height: 12px;
-            border: solid 1px #707070;
+            border-left: solid 1px #707070;
           `}
         />
         <button
@@ -137,8 +144,8 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             ${headerText};
             ${marginNone};
+            color: ${lang === "ko" ? "#707070" : "#afafaf"};
           `}
-          style={lang === "ko" ? { fontWeight: "bold" } : {}}
         >
           KR
         </button>
@@ -176,6 +183,7 @@ export default function Header(props: { fixed?: boolean }) {
             display: "flex",
             alignItems: "center",
             zIndex: 1,
+            backgroundColor: "#ffffff",
           }}
         >
           {innerHeader}
@@ -187,13 +195,15 @@ export default function Header(props: { fixed?: boolean }) {
   return (
     <>
       <Headroom
-        // downTolerance={500}
+        className={css`
+          margin-left: ${isDeskTop ? 37 : 20}px;
+          margin-right: ${isDeskTop ? 37 : 20}px;
+        `}
         style={{
-          height: 79,
-          marginLeft: isDeskTop ? 37 : 20,
-          marginRight: isDeskTop ? 37 : 20,
           display: "flex",
           alignItems: "center",
+          height: 79,
+          backgroundColor: "#ffffff",
         }}
       >
         {innerHeader}

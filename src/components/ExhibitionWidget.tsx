@@ -47,7 +47,8 @@ const afterClass = (i: number) => css`
   width: 100%;
 `;
 const imgClass = css`
-  object-fit: cover;
+  object-fit: contain;
+  width: 100%;
 `;
 const itemClass = css`
   display: flex;

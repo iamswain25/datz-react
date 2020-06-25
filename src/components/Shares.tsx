@@ -5,12 +5,15 @@ import blog from "../assets/svg/blog.svg";
 import fb from "../assets/svg/fb.svg";
 import insta from "../assets/svg/insta.svg";
 import mail from "../assets/svg/mail.svg";
+import Mail from "../assets/svg/Mail";
 import share from "../assets/svg/share.svg";
 import twitter from "../assets/svg/twitter.svg";
 
 const padding = css`
-  padding: 11px;
   color: #707070;
+  display: flex;
+  align-items: center;
+  justify-contents: center;
 `;
 export default function Shares() {
   return (
@@ -18,22 +21,18 @@ export default function Shares() {
       className={css`
         font-family: BauerGroteskOTW03;
         font-size: 16px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
         line-height: 1.19;
-        
         text-align: center;
         flex-direction: row;
         display: flex;
       `}
     >
       <Link to="/mail" className={padding}>
-        <img
-          src={mail}
-          alt="mail"
+        <Mail
           className={css`
-            height: 30px;
+            height: 18px;
+            width: 26px;
+            margin-right: 21px;
           `}
         />
       </Link>
@@ -42,7 +41,8 @@ export default function Shares() {
           src={share}
           alt="share"
           className={css`
-            height: 30px;
+            height: 24px;
+            margin-right: 20px;
           `}
         />
       </Link>
@@ -51,7 +51,8 @@ export default function Shares() {
           src={insta}
           alt="insta"
           className={css`
-            height: 30px;
+            height: 24px;
+            margin-right: 23px;
           `}
         />
       </Link>
@@ -60,7 +61,8 @@ export default function Shares() {
           src={fb}
           alt="fb"
           className={css`
-            height: 30px;
+            height: 21px;
+            margin-right: 20px;
           `}
         />
       </Link>
@@ -69,7 +71,8 @@ export default function Shares() {
           src={twitter}
           alt="twitter"
           className={css`
-            height: 30px;
+            height: 20px;
+            margin-right: 16px;
           `}
         />
       </Link>
@@ -78,7 +81,7 @@ export default function Shares() {
           src={blog}
           alt="blog"
           className={css`
-            height: 30px;
+            height: 20px;
           `}
         />
       </Link>

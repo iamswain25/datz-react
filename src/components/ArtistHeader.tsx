@@ -11,9 +11,9 @@ import { HamburgerButton } from "react-hamburger-button";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
+
   line-height: 1.19;
-  
+
   text-align: center;
   color: #ffffff;
   margin-left: 16px;
@@ -99,6 +99,9 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
             display: "flex",
             alignItems: "center",
             zIndex: 1,
+            marginLeft: isDeskTop ? 37 : 20,
+            marginRight: isDeskTop ? 37 : 20,
+            backgroundColor: "#afafaf",
           }}
         >
           {innerHeader}
@@ -116,6 +119,7 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
           marginRight: isDeskTop ? 55 : 20,
           display: "flex",
           alignItems: "center",
+          backgroundColor: "#afafaf",
         }}
       >
         {innerHeader}

@@ -2,35 +2,32 @@ import React from "react";
 import { css } from "emotion";
 import darkroom from "../assets/svg/0524_darkroom.svg";
 import ArrowHorizontal from "./ArrowHorizontal";
+import Darkroom from "../assets/svg/Darkroom";
+import EventCoverWidget from "./EventCoverWidget";
 const bookStyle = css`
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   font-family: BauerGroteskOTW03;
   font-size: 19px;
-  
   line-height: 1.21;
-  
   text-align: center;
   color: #ffffff;
 `;
-const subHead = css`
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  font-family: ArnoPro-Subhead;
-  font-size: 22px;
-  
-  line-height: 1.36;
-  letter-spacing: 0.44px;
+const subTime = css`
+  font-family: ArnoPro-Display;
+  font-size: 21px;
+  line-height: 1.38;
+  letter-spacing: 0.42px;
   text-align: center;
   color: #ffffff;
+  margin-top: 4px;
 `;
 const subDesc = css`
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  font-family: ArnoPro-Display;
-  font-size: 26px;
-  
-  line-height: 1.38;
-  letter-spacing: 0.52px;
-  text-align: center;
+  font-family: ArnoPro-Subhead;
+  font-size: 27px;
+  line-height: 1.37;
+  letter-spacing: 0.54px;
   color: #ffffff;
+  height: 32px;
+  overflow: hidden;
 `;
 export default function PastEventsLeft() {
   return (
@@ -40,14 +37,17 @@ export default function PastEventsLeft() {
         flex-direction: column;
         margin-right: 14px;
         flex: 1;
+        position: relative;
       `}
     >
+      <EventCoverWidget />
       <div
         className={css`
           padding: 37px;
-          width: inherit;
-          height: inherit;
-          background-image: url(${require("../assets/images/half.jpg")});
+          padding-left: 17px;
+          padding-right: 17px;
+          width: 100%;
+          height: calc(100% - 40px);
           background-repeat: no-repeat;
           flex-direction: column;
           background-size: cover;
@@ -55,6 +55,7 @@ export default function PastEventsLeft() {
           align-items: stretch;
           justify-content: space-between;
           flex: 1;
+          position: absolute;
         `}
       >
         <div
@@ -62,29 +63,28 @@ export default function PastEventsLeft() {
             text-align: center;
           `}
         >
-          <div className={bookStyle}>Past Events ></div>
+          <div className={bookStyle}>Past Events {">"}</div>
           <div
             className={css`
               height: 0;
-              box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-              border: solid 1px #ffffff;
-              margin: 23px;
+              border-bottom: solid 1px #ffffff;
+              margin-top: 7px;
+              margin-bottom: 17px;
             `}
           ></div>
-          <div className={subHead}>2019.11.11</div>
           <div className={subDesc}>FNL#6 Barbara Bosworth’s Photobook Talk</div>
+          <div className={subTime}>2019.11.11</div>
         </div>
-        <div>
-          <img
-            src={darkroom}
-            alt="darkroom"
-            className={css`
-              height: 30px;
-            `}
-          />
+        <div
+          className={css`
+            position: absolute;
+            left: 32px;
+            bottom: 34px;
+          `}
+        >
+          <Darkroom color="#ffffff" />
         </div>
       </div>
-      <ArrowHorizontal />
     </section>
   );
 }

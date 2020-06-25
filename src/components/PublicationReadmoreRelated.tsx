@@ -5,7 +5,6 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
-import BtnBack from "./BtnBack";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -59,7 +58,6 @@ export default function PublicationItemPhotos() {
           justify-content: center;
         `}
       >
-        {!isDeskTop && <BtnBack />}
         <button
           onClick={(e) =>
             window.scrollTo({

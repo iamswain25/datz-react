@@ -30,7 +30,7 @@ textarea {
   font-family: BauerGroteskOTW03;
 }
 a {
-  /* text-decoration: none; */
+  text-decoration: none;
   /* color: #707070; */
   color: inherit;
 }
@@ -280,9 +280,11 @@ select[multiple] {
 .ko {
   font-family: "SpoqaHanSans", "SpoqaHanSans JP", "Sans-serif" !important;
 }
-.carousel-container-custom {
+.react-multi-carousel-list.carousel-container-custom {
   min-width: 100%;
   width: 0;
+  flex: 1;
+  align-items: normal;
 }
 h1,
 h2,
@@ -291,4 +293,11 @@ h4,
 h5,
 hr {
   margin: 0;
+}
+
+.react-multi-carousel-track div,
+.react-multi-carousel-track ul,
+.react-multi-carousel-track img,
+.react-multi-carousel-track li {
+  height: 100%;
 }

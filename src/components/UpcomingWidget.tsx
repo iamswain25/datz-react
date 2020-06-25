@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
-import ev1 from "../assets/images/readmore/ev1.png";
-import ev2 from "../assets/images/readmore/ev2.png";
+import ev1 from "../assets/images/event2.jpg";
+import ev2 from "../assets/images/event3.jpg";
 import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
@@ -10,16 +10,14 @@ import "react-multi-carousel/lib/styles.css";
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
   line-height: 1.19;
-
   text-align: right;
   color: ${dark ? "#ffffff" : "#707070"};
 `;
 const descClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 14px;
-  
+
   line-height: 1.64;
 
   text-align: center;
@@ -67,19 +65,8 @@ const responsive = {
     // partialVisibilityGutter: 10,
   },
 };
-const list = [
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-];
-export default function PublicationWidget({
-  dark = false,
-}: {
-  dark?: boolean;
-}) {
+const list = [[ev1], [ev2], [ev1], [ev2], [ev1], [ev2]];
+export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
   const history = useHistory();
   function clickHandler() {
     history.push("/publication/nothingwill");
@@ -87,7 +74,7 @@ export default function PublicationWidget({
   return (
     <div
       className={css`
-        margin-top: 32px;
+        margin-top: 21px;
       `}
     >
       <Carousel
@@ -98,7 +85,7 @@ export default function PublicationWidget({
         arrows={false}
         customButtonGroup={
           <CarouselBtnGroup dark={dark}>
-            <div className={textClass(dark)}>Event</div>
+            <div className={textClass(dark)}>Upcoming Events/News</div>
           </CarouselBtnGroup>
         }
       >
@@ -107,7 +94,6 @@ export default function PublicationWidget({
             <div key={i} className={afterClass(i)} onClick={clickHandler}>
               <div className={listClass(dark)}>
                 <img src={img} alt="books" className={imgClass} />
-                <span className={descClass(dark)}>{title}</span>
               </div>
             </div>
           );
