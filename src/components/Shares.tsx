@@ -1,12 +1,12 @@
 import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
-import blog from "../assets/svg/0625_blog.svg";
-import fb from "../assets/svg/0625_FB.svg";
-import insta from "../assets/svg/0625_instagram.svg";
-import mail from "../assets/svg/0625_mail.svg";
-import share from "../assets/svg/0625_share.svg";
-import twitter from "../assets/svg/0625_twitter.svg";
+import blog from "../assets/svg/0625/0625_blog.svg";
+import fb from "../assets/svg/0625/0625_FB.svg";
+import insta from "../assets/svg/0625/0625_instagram.svg";
+import mail from "../assets/svg/0625/0625_mail.svg";
+import share from "../assets/svg/0625/0625_share.svg";
+import twitter from "../assets/svg/0625/0625_twitter.svg";
 
 const padding = css`
   color: #707070;
