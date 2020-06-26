@@ -316,16 +316,17 @@ hr {
 .home .react-multi-carousel-track li {
   height: 100%;
 }
-
+/* 
 ::-webkit-scrollbar {
-  /* -webkit-appearance: none; */
   width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background-color: #cccccc;
-}
+} 
+*/
+
 .image-gallery-slide {
   transform: none !important;
   opacity: 0;
