@@ -1,5 +1,4 @@
 import React from "react";
-import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
 import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";

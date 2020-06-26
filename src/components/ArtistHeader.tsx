@@ -1,6 +1,6 @@
 import React from "react";
 import Headroom from "react-headroom";
-import FlexCenter from "./FlexCenter";
+
 import ArtistCloseBtn from "./ArtistCloseBtn";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
@@ -8,6 +8,7 @@ import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
+import { flexrowcenter } from "./styles";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -35,10 +36,22 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
 
   const innerHeader = (
     <>
-      <FlexCenter style={{ justifyContent: "flex-start" }}>
+      <div
+        className={css`
+          ${flexrowcenter}
+          flex: 1;
+          justify-content: flex-start;
+        `}
+      >
         <ArtistCloseBtn />
-      </FlexCenter>
-      <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
+      </div>
+      <div
+        className={css`
+          ${flexrowcenter}
+          flex: 1;
+          justify-content: flex-end;
+        `}
+      >
         <button
           className={css`
             ${headerText};
@@ -85,7 +98,7 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
             />
           </>
         )}
-      </FlexCenter>
+      </div>
     </>
   );
   if (fixed) {

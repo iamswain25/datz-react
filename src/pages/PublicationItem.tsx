@@ -5,17 +5,10 @@ import { useParams } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
+import { flexcolumn, flexrow, paddingH37 } from "../components/styles";
 const desktopContainer = css`
-  display: flex;
-  flex-direction: row;
-  padding-left: 37px;
-  padding-right: 37px;
-`;
-const mobileContainer = css`
-  display: flex;
-  flex-direction: column;
-  padding-left: 27px;
-  padding-right: 27px;
+  ${flexrow}
+  ${paddingH37}
 `;
 export default function Publication() {
   const { id } = useParams();
@@ -24,7 +17,7 @@ export default function Publication() {
   return (
     <>
       <Header fixed />
-      <section className={isDesktop ? desktopContainer : mobileContainer}>
+      <section className={isDesktop ? desktopContainer : flexcolumn}>
         <PublicationItemStickyTop />
         <PublicationItemPhotos />
       </section>

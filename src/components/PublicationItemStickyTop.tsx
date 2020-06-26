@@ -1,11 +1,10 @@
 import React from "react";
-import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
-import { bottomBtn37 } from "./styles";
+import { bottomBtn37, paddingH27 } from "./styles";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -16,6 +15,7 @@ const stickyContainer = css`
   font-family: BauerGroteskOTW03;
   display: flex;
   flex-direction: column;
+  ${paddingH27}
 `;
 const mobileContainer = css`
   position: relative;
@@ -31,8 +31,8 @@ export default function PublicationStickyTop() {
           display: flex;
           flex-direction: column;
           overflow: hidden;
-          padding-left: 10px;
-          padding-right: 10px;
+          padding-left: ${isDesktop ? 10 : 0}px;
+          padding-right: ${isDesktop ? 10 : 0}px;
           flex: 1;
         `}
       >

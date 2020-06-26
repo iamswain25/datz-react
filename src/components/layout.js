@@ -1,11 +1,12 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Header from "./Header"
-import FlexCenter from "./FlexCenter"
-import "./layout.css"
-import { FirebaseContext } from "gatsby-plugin-firebase"
+import React from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import Header from "./Header";
+
+import "./layout.css";
+import { FirebaseContext } from "gatsby-plugin-firebase";
+import { flexrowcenter } from "./styles";
 const Layout = ({ children }) => {
-  const firebase = React.useContext(FirebaseContext)
+  const firebase = React.useContext(FirebaseContext);
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -15,9 +16,9 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
   if (!firebase) {
-    return null
+    return null;
     //loading
   }
   return (
@@ -25,7 +26,13 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <footer>
-        <FlexCenter style={{ height: 73, backgroundColor: "#ececec" }}>
+        <div
+          className={css`
+            ${flexrowcenter}
+            height: 73px;
+            background-color: #ececec;
+          `}
+        >
           <Link style={{ marginLeft: 37 }} to="/">
             datz
           </Link>
@@ -38,8 +45,12 @@ const Layout = ({ children }) => {
           <Link style={{ marginLeft: 37 }} to="/">
             Support
           </Link>
-        </FlexCenter>
-        <FlexCenter>
+        </div>
+        <div
+          className={css`
+            ${flexrowcenter}
+          `}
+        >
           <Link style={{ marginLeft: 37 }}>datz press</Link>
           <Link style={{ marginLeft: 37 }}>d'ark room</Link>
           <Link style={{ marginLeft: 37 }}>datz museum of art</Link>
@@ -52,8 +63,12 @@ const Layout = ({ children }) => {
           <Link style={{ marginLeft: 37 }}>facebook</Link>
           <Link style={{ marginLeft: 37 }}>twitter</Link>
           <Link style={{ marginLeft: 37 }}>blogger</Link>
-        </FlexCenter>
-        <FlexCenter>
+        </div>
+        <div
+          className={css`
+            ${flexrowcenter}
+          `}
+        >
           <div>
             <div>Copyright © 2019 Datz Inc. All rights reserved.</div>
             <div>Privacy Policy | Terms of Use</div>
@@ -70,10 +85,10 @@ const Layout = ({ children }) => {
               <span>개인정보처리방침</span>
             </div>
           </div>
-        </FlexCenter>
+        </div>
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

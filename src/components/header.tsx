@@ -1,6 +1,5 @@
 import React from "react";
 import Headroom from "react-headroom";
-import FlexCenter from "./FlexCenter";
 import { NavLink } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
 import Search from "../assets/svg/Search";
@@ -94,7 +93,13 @@ export default function Header(props: { fixed?: boolean }) {
         <Datz />
       </NavLink>
       {links}
-      <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
+      <div
+        className={css`
+          ${flexrowcenter}
+          flex: 1;
+          justify-content: flex-end;
+        `}
+      >
         {isDesktop && (
           <>
             <span
@@ -164,7 +169,7 @@ export default function Header(props: { fixed?: boolean }) {
             />
           </>
         )}
-      </FlexCenter>
+      </div>
     </>
   );
   if (fixed) {
