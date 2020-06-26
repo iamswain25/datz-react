@@ -154,6 +154,7 @@ export default function PublicationList() {
                   </span>
                   <span
                     className={css`
+                      margin-top: 4px;
                       font-size: 17px;
                       line-height: 1.35;
                     `}
