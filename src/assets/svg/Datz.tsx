@@ -1,6 +1,6 @@
 import React from "react";
 export default function Datz(props: { color?: string; className?: string }) {
-  const { color = "#4a4b49;", className } = props;
+  const { color = "#4a4b4b", className } = props;
   return (
     <svg
       id="Layer_1"
