@@ -70,9 +70,6 @@ export default function PublicationStickyTop() {
           className={css`
             font-family: ArnoPro-Subhead;
             font-size: 16px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
             line-height: 1.38;
             letter-spacing: 0.32px;
             text-align: center;
@@ -86,9 +83,6 @@ export default function PublicationStickyTop() {
           className={css`
             font-family: ArnoPro-Subhead;
             font-size: 27px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
             line-height: 1.19;
             letter-spacing: 0.54px;
             text-align: center;
@@ -102,9 +96,6 @@ export default function PublicationStickyTop() {
           className={css`
             font-family: ArnoPro-Display;
             font-size: 21px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
             line-height: 1.38;
             letter-spacing: 0.42px;
             text-align: center;
@@ -118,13 +109,12 @@ export default function PublicationStickyTop() {
           className={css`
             font-family: ArnoPro-Display;
             font-size: 20px;
-            font-weight: normal;
-            font-stretch: normal;
             font-style: italic;
             line-height: 1.35;
             letter-spacing: 0.4px;
             text-align: left;
             margin-top: 29px;
+            color: #4b4b4b;
           `}
         >
           “Three windows in an old school house. Four, if you count the camera
@@ -134,17 +124,12 @@ export default function PublicationStickyTop() {
           className={css`
             font-family: ArnoPro-Display;
             font-size: 20px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
             line-height: 1.35;
             letter-spacing: 0.4px;
             text-align: left;
             color: #4b4b4b;
             margin-top: 30px;
             overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
           `}
         >
           The book focuses on three windows in a century-old schoolhouse and

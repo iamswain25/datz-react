@@ -23,7 +23,7 @@ const artistNameClassKo = css`
   font-size: 19px;
   font-weight: normal;
   font-stretch: normal;
-  font-style: normal;
+ 
   line-height: 1.42;
   color: #4b4b4b;
 `;
