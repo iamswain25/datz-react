@@ -1,12 +1,12 @@
 import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 import { Flex, FlexRow, F1 } from "./div";
 import Shares from "./Shares";
 import Datzpress from "../assets/svg/Datzpress";
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
+import useDesktop from "./useDesktop";
 const menu = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -23,16 +23,7 @@ const flex = css`
   display: flex;
   align-items: center;
 `;
-const divider = (
-  <div
-    className={css`
-      margin-left: 27px;
-      margin-right: 29px;
-      height: 0;
-      border-left: solid 1px #707070;
-    `}
-  />
-);
+
 const dividerV = (className = "") => (
   <div
     className={css`
@@ -95,7 +86,17 @@ const dotzsvgs = (
   </>
 );
 export default function Footer() {
-  const isDesktop = useMediaQuery({ minWidth: 1000 });
+  const isDesktop = useDesktop();
+  const divider = (
+    <div
+      className={css`
+        margin-left: ${isDesktop ? 55 : 28}px;
+        margin-right: ${isDesktop ? 55 : 28}px;
+        height: 0;
+        border-top: solid 1px #707070;
+      `}
+    />
+  );
   const signup = (
     <Link
       to="/"
