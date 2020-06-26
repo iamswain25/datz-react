@@ -1,6 +1,4 @@
-name: CI-Firebase-hosting
-description: 'build create-react-app SPA and deploy to the firebase hosting.'
-author: 'iamswain25'
+name: firebase-hosting
 
 on:
   push:
