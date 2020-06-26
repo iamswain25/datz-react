@@ -52,7 +52,7 @@ export default function PastEventsRight() {
         >
           <p
             className={css`
-              font-family: BauerGroteskOTW03;
+              font-family: BauerGroteskOTW03-Book;
               font-size: 20px;
               line-height: 1.35;
               text-align: center;
