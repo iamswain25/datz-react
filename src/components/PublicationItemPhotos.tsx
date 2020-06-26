@@ -53,7 +53,6 @@ export default function PublicationItemPhotos() {
               className={css`
                 position: relative;
                 margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
-                display: flex;
               `}
             >
               <img
@@ -63,6 +62,8 @@ export default function PublicationItemPhotos() {
                 className={css`
                   width: 100%;
                   cursor: pointer;
+                  object-fit: contain;
+                  height: auto;
                 `}
               />
               {i === 0 && (
