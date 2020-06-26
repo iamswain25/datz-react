@@ -2,25 +2,14 @@ import React from "react";
 import PublicationReadmoreStickyTop from "../components/PublicationReadmoreStickyTop";
 import PublicationReadmoreRelated from "../components/PublicationReadmoreRelated";
 import { useParams } from "react-router-dom";
-import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
-const desktopContainer = css`
-  display: flex;
-  flex-direction: row;
-`;
-const mobileContainer = css`
-  display: flex;
-  flex-direction: column;
-`;
-const desktopMargin = css`
-  padding-left: 37px;
-  padding-right: 37px;
-`;
-const mobileMargin = css`
-  padding-left: 27px;
-  padding-right: 27px;
-`;
+import {
+  flexrow,
+  flexcolumn,
+  paddingH37,
+  paddingH27,
+} from "../components/styles";
 export default function Publication() {
   const { id } = useParams();
   console.log(id);
@@ -28,8 +17,8 @@ export default function Publication() {
   return (
     <>
       <Header fixed={isDesktop} />
-      <div className={isDesktop ? desktopMargin : mobileMargin}>
-        <section className={isDesktop ? desktopContainer : mobileContainer}>
+      <div className={isDesktop ? paddingH37 : paddingH27}>
+        <section className={isDesktop ? flexrow : flexcolumn}>
           <PublicationReadmoreStickyTop />
           <PublicationReadmoreRelated />
         </section>

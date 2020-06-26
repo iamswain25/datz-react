@@ -4,17 +4,19 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import PublicationList from "../components/PublicationList";
+import {
+  flexcolumn,
+  paddingH17,
+  flexrow,
+  paddingH37,
+} from "../components/styles";
 const desktopContainer = css`
-  display: flex;
-  flex-direction: row;
-  padding-left: 37px;
-  padding-right: 37px;
+  ${flexrow}
+  ${paddingH37}
 `;
 const mobileContainer = css`
-  display: flex;
-  flex-direction: column;
-  padding-left: 17px;
-  padding-right: 17px;
+  ${flexcolumn}
+  ${paddingH17}
 `;
 export default function Publication() {
   const isDesktop = useDesktop();

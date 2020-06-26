@@ -6,22 +6,13 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
 import ArtistMainImage from "../components/ArtistMainImage";
-const desktopContainer = css`
-  display: flex;
-  flex-direction: row;
-`;
-const mobileContainer = css`
-  display: flex;
-  flex-direction: column;
-`;
-const desktopMargin = css`
-  padding-left: 55px;
-  padding-right: 55px;
-`;
-const mobileMargin = css`
-  padding-left: 27px;
-  padding-right: 27px;
-`;
+import {
+  paddingH27,
+  paddingH55,
+  flexrow,
+  flexcolumn,
+} from "../components/styles";
+
 const bgContainer = css`
   background-color: #afafaf;
 `;
@@ -36,9 +27,9 @@ export default function ArtistPage() {
     <>
       <div className={bgContainer}>
         <ArtistHeader fixed />
-        <div className={isDesktop ? desktopMargin : mobileMargin}>
+        <div className={isDesktop ? paddingH55 : paddingH27}>
           <ArtistMainImage />
-          <section className={isDesktop ? desktopContainer : mobileContainer}>
+          <section className={isDesktop ? flexrow : flexcolumn}>
             <ArtistLeft />
             <ArtistRight />
           </section>

@@ -15,10 +15,10 @@ const stickyContainer = css`
   font-family: BauerGroteskOTW03;
   display: flex;
   flex-direction: column;
-  ${paddingH27}
 `;
 const mobileContainer = css`
   position: relative;
+  ${paddingH27}
 `;
 export default function PublicationStickyTop() {
   const isDesktop = useDesktop();

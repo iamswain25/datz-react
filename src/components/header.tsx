@@ -9,7 +9,7 @@ import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
-import { flexrowcenter } from "./styles";
+import { flexrowcenter, marginH10, marginH16 } from "./styles";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -18,17 +18,10 @@ const headerText = css`
   text-align: center;
   color: #707070;
 `;
-const marginH16 = css`
-  margin-left: 16px;
-  margin-right: 16px;
-`;
+
 const linkActiveClass = css`
   text-decoration: underline;
   color: #383838;
-`;
-const marginH10 = css`
-  margin-left: 10px;
-  margin-right: 10px;
 `;
 
 export default function Header(props: { fixed?: boolean }) {
@@ -65,8 +58,7 @@ export default function Header(props: { fixed?: boolean }) {
             width: 0;
             height: 12px;
             border-left: solid 1px #707070;
-            margin-left: 16px;
-            margin-right: 16px;
+            ${marginH16}
           `}
         />
         <a
