@@ -176,7 +176,7 @@ export default function Header(props: { fixed?: boolean }) {
             paddingRight: isDesktop ? 37 : 17,
             display: "flex",
             alignItems: "center",
-            zIndex: 4,
+            zIndex: 2,
             backgroundColor: "#ffffff",
           }}
         >
