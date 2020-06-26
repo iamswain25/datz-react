@@ -313,3 +313,10 @@ hr {
   border-radius: 2px;
   background-color: #cccccc;
 }
+.image-gallery-slide {
+  transform: none!important;
+  opacity: 0;
+}
+.image-gallery-slide.center {
+  opacity: 1;
+}
