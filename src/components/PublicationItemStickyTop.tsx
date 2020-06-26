@@ -4,12 +4,13 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
+import DatzpressOrder from "./DatzpressOrder";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
   width: 350px;
   height: calc(100vh - 79px);
-  margin-left: 16px;
+  margin-left: 18px;
   margin-right: 40px;
   font-family: BauerGroteskOTW03;
   display: flex;
@@ -23,27 +24,7 @@ export default function PublicationStickyTop() {
   return (
     <div className={isDeskTop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
-      <div
-        className={css`
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          height: 30px;
-          border-bottom: solid 1px #707070;
-          padding-bottom: 8px;
-        `}
-      >
-        <Datzpress />
-        <a
-          href="https://datzpress.com/product/offerings-se"
-          className={css`
-            color: #707070;
-          `}
-        >
-          Order {">"}
-        </a>
-      </div>
+      <DatzpressOrder />
       <div
         className={css`
           display: flex;
@@ -51,6 +32,7 @@ export default function PublicationStickyTop() {
           overflow: hidden;
           padding-left: 10px;
           padding-right: 10px;
+          flex: 1;
         `}
       >
         <div
@@ -146,32 +128,24 @@ export default function PublicationStickyTop() {
           photographs ask, What happens when you pay attention?
         </div>
       </div>
-      <div
+      <Link
+        to="/publication/nothingwill/readmore"
         className={css`
-          flex: 1;
-          align-items: center;
-          justify-content: flex-end;
+          width: 100%;
+          border-top: solid 1px #707070;
+          min-height: 37px;
+          text-align: center;
+          font-family: BauerGroteskOTW03;
+          font-size: 14px;
+          line-height: 1.21;
+          color: #707070;
           display: flex;
-          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         `}
       >
-        <Link
-          to="/publication/nothingwill/readmore"
-          className={css`
-            width: 100%;
-            border-top: solid 1px #707070;
-            height: 29px;
-            padding-top: 8px;
-            text-align: center;
-            font-family: BauerGroteskOTW03;
-            font-size: 14px;
-            line-height: 1.21;
-            color: #707070;
-          `}
-        >
-          read more {">"}
-        </Link>
-      </div>
+        read more {">"}
+      </Link>
     </div>
   );
 }

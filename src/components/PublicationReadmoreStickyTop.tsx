@@ -5,12 +5,14 @@ import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import PublicationCloseBtn from "./PublicationCloseBtn";
+import DatzpressOrder from "./DatzpressOrder";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
   position: sticky;
   top: 79px;
   flex: 1;
+  padding-left: 18px;
   height: calc(100vh - 79px);
   padding-right: 30px;
   font-family: BauerGroteskOTW03;
@@ -156,26 +158,7 @@ export default function PublicationStickyTop() {
   return (
     <div className={isDeskTop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
-      <div
-        className={css`
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          border-bottom: solid 1px #707070;
-          padding-bottom: 8px;
-        `}
-      >
-        <Datzpress />
-        <a
-          href="https://datzpress.com/product/offerings-se"
-          className={css`
-            color: #707070;
-          `}
-        >
-          Order {">"}
-        </a>
-      </div>
+      <DatzpressOrder />
       <section
         className={css`
           flex: 1;
@@ -255,8 +238,7 @@ export default function PublicationStickyTop() {
               align-items: center;
               width: 100%;
               border-top: solid 1px #707070;
-              height: 37px;
-              // padding-top: 8px;
+              min-height: 37px;
               text-align: center;
               font-family: BauerGroteskOTW03;
               font-size: 14px;

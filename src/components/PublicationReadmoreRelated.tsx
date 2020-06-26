@@ -12,7 +12,7 @@ const mobileContainer = css`
   margin-top: 48px;
 `;
 const desktopContainer = css`
-  width: calc(50vw - 30px - 55px);
+  width: calc(50vw - 30px - 37px);
   display: flex;
   flex-direction: column;
   padding-left: 30px;
@@ -31,7 +31,7 @@ export default function PublicationReadmoreRelated() {
       >
         <div
           className={css`
-            height: 31.14px;
+            height: 31px;
             font-family: BauerGroteskOTW03;
             font-size: 17px;
             line-height: 1.24;
@@ -39,7 +39,6 @@ export default function PublicationReadmoreRelated() {
             color: #707070;
             padding-bottom: 8px;
             border-bottom: solid 1px #707070;
-            box-sizing: content-box;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -67,13 +66,12 @@ export default function PublicationReadmoreRelated() {
           align-items: center;
           width: 100%;
           height: 37px;
-          // padding-top: 8px;
+          min-height: 37px;
           text-align: center;
           font-family: BauerGroteskOTW03;
           font-size: 14px;
           line-height: 1.21;
           color: #707070;
-          box-sizing: content-box;
         `}
       >
         Top {">"}

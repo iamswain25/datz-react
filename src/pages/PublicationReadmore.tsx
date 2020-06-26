@@ -14,8 +14,8 @@ const mobileContainer = css`
   flex-direction: column;
 `;
 const desktopMargin = css`
-  padding-left: 55px;
-  padding-right: 55px;
+  padding-left: 37px;
+  padding-right: 37px;
 `;
 const mobileMargin = css`
   padding-left: 17px;

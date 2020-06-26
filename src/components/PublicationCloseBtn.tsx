@@ -13,7 +13,7 @@ export default function PublicationCloseBtn() {
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 20px;
+        min-height: 20px;
         margin-bottom: 20px;
       `}
     >
