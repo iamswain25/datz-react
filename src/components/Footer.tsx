@@ -10,9 +10,7 @@ import DatzMuseum from "../assets/svg/DatzMuseum";
 const menu = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-
   line-height: 1.19;
-
   text-align: center;
   flex-direction: row;
   display: flex;
@@ -20,6 +18,10 @@ const menu = css`
 const padding = css`
   padding: 11px;
   color: #707070;
+`;
+const flex = css`
+  display: flex;
+  align-items: center;
 `;
 const divider = (
   <div
@@ -73,21 +75,21 @@ const Menus = (
 );
 const dotzsvgs = (
   <>
-    <Link to="/press">
+    <Link to="/press" className={flex}>
       <Datzpress />
     </Link>
     {dividerV(css`
       margin-left: 28px;
       margin-right: 25px;
     `)}
-    <Link to="/darkroom">
+    <Link to="/darkroom" className={flex}>
       <Darkroom />
     </Link>
     {dividerV(css`
       margin-left: 33px;
       margin-right: 25px;
     `)}
-    <Link to="/museum">
+    <Link to="/museum" className={flex}>
       <DatzMuseum />
     </Link>
   </>
