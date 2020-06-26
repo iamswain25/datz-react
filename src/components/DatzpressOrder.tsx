@@ -2,16 +2,13 @@ import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 import Datzpress from "../assets/svg/Datzpress";
-const flexrow = css`
-  display: flex;
-  flex-direction: row;
-`;
+import { flexrowcenter } from "./styles";
+
 export default function DatzpressOrder() {
   return (
     <div
       className={css`
-        ${flexrow}
-        align-items: center;
+        ${flexrowcenter}
         justify-content: space-between;
         border-bottom: solid 1px #707070;
         padding-bottom: 8px;
@@ -19,7 +16,7 @@ export default function DatzpressOrder() {
         height: 31px;
       `}
     >
-      <Link to="/" className={flexrow}>
+      <Link to="/" className={flexrowcenter}>
         <Datzpress />
       </Link>
       <a
@@ -27,7 +24,7 @@ export default function DatzpressOrder() {
         target="_blank"
         rel="noopener noreferrer"
         className={css`
-          ${flexrow}
+          ${flexrowcenter}
           color: #707070;
         `}
       >

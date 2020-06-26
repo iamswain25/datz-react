@@ -20,13 +20,13 @@ const desktopContainer = css`
   margin-bottom: 36px;
 `;
 export default function PublicationItemPhotos() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   return (
-    <section className={isDeskTop ? desktopContainer : mobileContainer}>
+    <section className={isDesktop ? desktopContainer : mobileContainer}>
       <PublicationWidget dark />
       <ExhibitionWidget dark />
       <EventWidget dark />
-      {!isDeskTop && (
+      {!isDesktop && (
         <div
           className={css`
             align-items: center;
@@ -73,7 +73,7 @@ export default function PublicationItemPhotos() {
               border-top: solid 1px #ffffff;
             `}
           />
-          {!isDeskTop && <BtnBack dark />}
+          {!isDesktop && <BtnBack dark />}
         </div>
       )}
     </section>

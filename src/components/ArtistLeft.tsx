@@ -29,11 +29,11 @@ const publication = {
   },
 };
 export default function ArtistLeft() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
 
   return (
-    <div className={isDeskTop ? stickyContainer : mobileContainer}>
+    <div className={isDesktop ? stickyContainer : mobileContainer}>
       <section
         className={css`
           flex: 1;
@@ -66,7 +66,7 @@ export default function ArtistLeft() {
           {publication[lang]?.bio}
         </div>
       </section>
-      {isDeskTop && (
+      {isDesktop && (
         <div
           className={css`
             align-items: center;

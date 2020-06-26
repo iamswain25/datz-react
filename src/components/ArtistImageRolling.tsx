@@ -6,8 +6,8 @@ import useDesktop from "./useDesktop";
 import Arrow from "./Arrow";
 const images = [m1, m1, m1, m1, m1, m1];
 export default function ArtistImageRolling() {
-  const isDeskTop = useDesktop();
-  console.log(isDeskTop);
+  const isDesktop = useDesktop();
+  console.log(isDesktop);
   return (
     <>
       <div

@@ -38,15 +38,15 @@ const products = [
 
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   return (
     <>
       <div
         className={css`
-          margin-top: ${isDeskTop ? 0 : 29}px;
-          border-top: ${isDeskTop ? 0 : 1}px solid #afafaf;
-          margin-left: ${isDeskTop ? 27 : 10}px;
-          margin-right: ${isDeskTop ? 0 : 10}px;
+          margin-top: ${isDesktop ? 0 : 29}px;
+          border-top: ${isDesktop ? 0 : 1}px solid #afafaf;
+          margin-left: ${isDesktop ? 27 : 10}px;
+          margin-right: ${isDesktop ? 0 : 10}px;
           display: flex;
           flex: 1;
           flex-direction: column;
@@ -95,8 +95,8 @@ export default function PublicationList() {
         </div>
         <div
           className={css`
-            margin-left: ${isDeskTop ? 73 : 0}px;
-            margin-right: ${isDeskTop ? 73 : 0}px;
+            margin-left: ${isDesktop ? 73 : 0}px;
+            margin-right: ${isDesktop ? 73 : 0}px;
             display: flex;
             flex-direction: column;
           `}

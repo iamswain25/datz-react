@@ -11,7 +11,7 @@ const headerStyle = css`
   color: #707070;
 `;
 export default function PastEventsRight() {
-  const isDeskTop = useMediaQuery({ minWidth: 1000 });
+  const isDesktop = useMediaQuery({ minWidth: 1000 });
   return (
     <>
       <img
@@ -28,8 +28,8 @@ export default function PastEventsRight() {
           display: flex;
           flex-direction: column;
           overflow: hidden;
-          padding-left: ${isDeskTop ? 17 : 27}px;
-          padding-right: ${isDeskTop ? 17 : 27}px;
+          padding-left: ${isDesktop ? 17 : 27}px;
+          padding-right: ${isDesktop ? 17 : 27}px;
         `}
       >
         <div
@@ -124,7 +124,7 @@ export default function PastEventsRight() {
       </div>
       <div
         className={
-          isDeskTop
+          isDesktop
             ? ""
             : css`
                 padding-left: 27px;

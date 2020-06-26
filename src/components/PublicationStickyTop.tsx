@@ -15,14 +15,14 @@ const mobileContainer = css`
   position: relative;
 `;
 export default function PublicationStickyTop() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   return (
-    <div className={isDeskTop ? stickyContainer : mobileContainer}>
+    <div className={isDesktop ? stickyContainer : mobileContainer}>
       <img
         src={pside1}
         alt="side-sticky"
         className={
-          isDeskTop
+          isDesktop
             ? css`
                 height: calc(100vh - 79px - 37px);
               `
@@ -34,7 +34,7 @@ export default function PublicationStickyTop() {
               `
         }
       />
-      {/* ${isDeskTop ? "absolute" : "relative"}; */}
+      {/* ${isDesktop ? "absolute" : "relative"}; */}
       <div
         className={css`
           position: absolute;
@@ -52,10 +52,10 @@ export default function PublicationStickyTop() {
         <div
           className={css`
             font-family: BauerGroteskOTW03;
-            font-size: ${isDeskTop ? 19 : 16}px;
+            font-size: ${isDesktop ? 19 : 16}px;
             line-height: 1.21;
             text-align: center;
-            margin-top: ${isDeskTop ? 36 : 22}px;
+            margin-top: ${isDesktop ? 36 : 22}px;
             height: 23px;
             margin-bottom: 6px;
           `}
@@ -72,11 +72,11 @@ export default function PublicationStickyTop() {
         <div
           className={css`
             font-family: ArnoPro-Subhead;
-            font-size: ${isDeskTop ? 27 : 22}px;
+            font-size: ${isDesktop ? 27 : 22}px;
             line-height: 1.37;
             letter-spacing: 0.54px;
             text-align: center;
-            height: ${isDeskTop ? 32 : 30}px;
+            height: ${isDesktop ? 32 : 30}px;
             margin-top: 16px;
           `}
         >
@@ -85,7 +85,7 @@ export default function PublicationStickyTop() {
         <div
           className={css`
             font-family: ArnoPro-Display;
-            font-size: ${isDeskTop ? 21 : 20}px;
+            font-size: ${isDesktop ? 21 : 20}px;
             line-height: 1.38;
             letter-spacing: 0.42px;
             text-align: center;

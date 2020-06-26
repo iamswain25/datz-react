@@ -17,11 +17,11 @@ const mobileContainer = css`
   padding-right: 17px;
 `;
 export default function Publication() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   return (
     <>
       <Header fixed />
-      <section className={isDeskTop ? desktopContainer : mobileContainer}>
+      <section className={isDesktop ? desktopContainer : mobileContainer}>
         <PublicationStickyTop />
         <PublicationList />
       </section>

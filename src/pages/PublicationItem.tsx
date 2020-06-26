@@ -14,17 +14,17 @@ const desktopContainer = css`
 const mobileContainer = css`
   display: flex;
   flex-direction: column;
-  padding-left: 17px;
-  padding-right: 17px;
+  padding-left: 27px;
+  padding-right: 27px;
 `;
 export default function Publication() {
   const { id } = useParams();
   console.log(id);
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   return (
     <>
       <Header fixed />
-      <section className={isDeskTop ? desktopContainer : mobileContainer}>
+      <section className={isDesktop ? desktopContainer : mobileContainer}>
         <PublicationItemStickyTop />
         <PublicationItemPhotos />
       </section>

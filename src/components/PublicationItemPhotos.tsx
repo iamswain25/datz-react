@@ -15,6 +15,7 @@ import dtz8344 from "../assets/images/nothingwill/dtz-8344.png";
 import dtz8351 from "../assets/images/nothingwill/dtz-8351.png";
 import ImageGallery from "react-image-gallery";
 import Arrow from "./Arrow";
+import { bottomBtn37 } from "./styles";
 const images = [
   dtz6539,
   dtz6562,
@@ -29,8 +30,8 @@ const images = [
   dtz8351,
 ];
 export default function PublicationItemPhotos() {
-  const isDeskTop = useDesktop();
-  console.log(isDeskTop);
+  const isDesktop = useDesktop();
+  console.log(isDesktop);
   const [isVisible, setVisible] = React.useState(false);
 
   const full = React.useRef<ImageGallery>(null);
@@ -86,20 +87,7 @@ export default function PublicationItemPhotos() {
               behavior: "smooth",
             })
           }
-          className={css`
-            padding-top: 9px;
-            box-sizing: content-box;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 28px;
-            font-family: BauerGroteskOTW03;
-            font-size: 14px;
-            line-height: 1.21;
-            text-align: center;
-            color: #707070;
-            width: 100%;
-          `}
+          className={bottomBtn37}
         >
           Top {">"}
         </button>

@@ -26,7 +26,7 @@ const marginNone = css`
 
 export default function ArtistHeader(props: { fixed?: boolean }) {
   const { fixed = false } = props;
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   const [isOpen, setOpen] = React.useState(false);
   function openHandler() {
@@ -66,7 +66,7 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
         >
           KR
         </button>
-        {!isDeskTop && (
+        {!isDesktop && (
           <>
             <Search
               color="#ffffff"
@@ -99,8 +99,8 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
             display: "flex",
             alignItems: "center",
             zIndex: 4,
-            paddingLeft: isDeskTop ? 37 : 20,
-            paddingRight: isDeskTop ? 37 : 20,
+            paddingLeft: isDesktop ? 37 : 17,
+            paddingRight: isDesktop ? 37 : 17,
             backgroundColor: "#afafaf",
           }}
         >
@@ -115,8 +115,8 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
       <Headroom
         style={{
           height: 79,
-          paddingLeft: isDeskTop ? 55 : 20,
-          paddingRight: isDeskTop ? 55 : 20,
+          paddingLeft: isDesktop ? 55 : 17,
+          paddingRight: isDesktop ? 55 : 17,
           display: "flex",
           alignItems: "center",
           backgroundColor: "#afafaf",

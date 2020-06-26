@@ -24,7 +24,7 @@ const asideClass = css`
   text-align: left;
   color: #ffffff;
   z-index: 5;
-  padding: 22px;
+  padding: 17px;
   padding-top: 0px;
   box-sizing: border-box;
   display: flex;
@@ -47,6 +47,7 @@ export default function MenuAside(props: {
           display: flex;
           align-items: center;
           height: 79px;
+          padding-left: 5px;
         `}
       >
         <Datz color="white" />
@@ -81,6 +82,7 @@ export default function MenuAside(props: {
           flex-direction: column;
           padding-top: 8px;
           padding-bottom: 8px;
+          padding-left: 5px;
           border-top: solid 1px #ffffff;
           border-bottom: solid 1px #ffffff;
         `}
@@ -104,6 +106,7 @@ export default function MenuAside(props: {
           flex-direction: column;
           padding-top: 8px;
           padding-bottom: 8px;
+          padding-left: 5px;
         `}
       >
         <Link className={headerText} to={store[1]} onClick={clickHandler}>
@@ -118,6 +121,7 @@ export default function MenuAside(props: {
           padding-bottom: 8px;
           border-top: solid 1px #ffffff;
           border-bottom: solid 1px #ffffff;
+          padding-left: 5px;
         `}
       >
         {otherLinks.map(([label, link], i) => {

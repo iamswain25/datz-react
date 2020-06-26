@@ -18,18 +18,18 @@ const desktopMargin = css`
   padding-right: 37px;
 `;
 const mobileMargin = css`
-  padding-left: 17px;
-  padding-right: 17px;
+  padding-left: 27px;
+  padding-right: 27px;
 `;
 export default function Publication() {
   const { id } = useParams();
   console.log(id);
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   return (
     <>
-      <Header fixed={isDeskTop} />
-      <div className={isDeskTop ? desktopMargin : mobileMargin}>
-        <section className={isDeskTop ? desktopContainer : mobileContainer}>
+      <Header fixed={isDesktop} />
+      <div className={isDesktop ? desktopMargin : mobileMargin}>
+        <section className={isDesktop ? desktopContainer : mobileContainer}>
           <PublicationReadmoreStickyTop />
           <PublicationReadmoreRelated />
         </section>

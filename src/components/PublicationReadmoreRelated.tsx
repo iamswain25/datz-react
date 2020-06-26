@@ -5,6 +5,7 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
+import { bottomBtn37 } from "./styles";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -60,19 +61,7 @@ export default function PublicationReadmoreRelated() {
             behavior: "smooth",
           })
         }
-        className={css`
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 37px;
-          min-height: 37px;
-          text-align: center;
-          font-family: BauerGroteskOTW03;
-          font-size: 14px;
-          line-height: 1.21;
-          color: #707070;
-        `}
+        className={bottomBtn37}
       >
         Top {">"}
       </button>

@@ -28,7 +28,7 @@ const bgContainer = css`
 export default function ArtistPage() {
   const { id } = useParams();
   console.log(id);
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -36,9 +36,9 @@ export default function ArtistPage() {
     <>
       <div className={bgContainer}>
         <ArtistHeader fixed />
-        <div className={isDeskTop ? desktopMargin : mobileMargin}>
+        <div className={isDesktop ? desktopMargin : mobileMargin}>
           <ArtistMainImage />
-          <section className={isDeskTop ? desktopContainer : mobileContainer}>
+          <section className={isDesktop ? desktopContainer : mobileContainer}>
             <ArtistLeft />
             <ArtistRight />
           </section>

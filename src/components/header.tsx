@@ -10,6 +10,7 @@ import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
+import { flexrowcenter } from "./styles";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -17,6 +18,8 @@ const headerText = css`
   line-height: 1.19;
   text-align: center;
   color: #707070;
+`;
+const marginH16 = css`
   margin-left: 16px;
   margin-right: 16px;
 `;
@@ -24,7 +27,7 @@ const linkActiveClass = css`
   text-decoration: underline;
   color: #383838;
 `;
-const marginNone = css`
+const marginH10 = css`
   margin-left: 10px;
   margin-right: 10px;
 `;
@@ -32,7 +35,7 @@ const marginNone = css`
 export default function Header(props: { fixed?: boolean }) {
   const { fixed = false } = props;
   const [text, setText] = React.useState("");
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
@@ -42,13 +45,13 @@ export default function Header(props: { fixed?: boolean }) {
     setOpen(!isOpen);
   }
   let links = null;
-  if (isDeskTop) {
+  if (isDesktop) {
     links = (
       <>
         {headerLinkArr.map(([label, link], i) => {
           return (
             <NavLink
-              className={headerText}
+              className={`${headerText} ${marginH16}`}
               to={link}
               key={i}
               activeClassName={linkActiveClass}
@@ -68,7 +71,7 @@ export default function Header(props: { fixed?: boolean }) {
           `}
         />
         <a
-          className={headerText}
+          className={`${headerText} ${marginH16}`}
           href="https://datzpress.com/store"
           target="_blank"
           rel="noopener noreferrer"
@@ -80,28 +83,22 @@ export default function Header(props: { fixed?: boolean }) {
   }
   const innerHeader = (
     <>
-      <FlexCenter style={{ justifyContent: "flex-start" }}>
-        <NavLink
-          className={css`
+      <NavLink
+        className={css`
+            ${flexrowcenter}
             ${headerText}
-            ${!isDeskTop && "margin: 0;"}
+            padding-left: ${isDesktop ? 17 : 5}px;
           `}
-          to="/"
-        >
-          <Datz
-            className={css`
-              height: 20px;
-            `}
-          />
-        </NavLink>
-        {links}
-      </FlexCenter>
+        to="/"
+      >
+        <Datz />
+      </NavLink>
+      {links}
       <FlexCenter style={{ flex: 1, justifyContent: "flex-end" }}>
-        {isDeskTop && (
+        {isDesktop && (
           <>
             <span
               className={css`
-                ${headerText}
                 margin: 0;
               `}
             >
@@ -125,7 +122,7 @@ export default function Header(props: { fixed?: boolean }) {
         <button
           className={css`
             ${headerText};
-            ${marginNone};
+            ${marginH10};
             color: ${lang === "en" ? "#707070" : "#afafaf"};
           `}
           onClick={() => setLang("en")}
@@ -143,13 +140,13 @@ export default function Header(props: { fixed?: boolean }) {
           onClick={() => setLang("ko")}
           className={css`
             ${headerText};
-            ${marginNone};
+            ${marginH10};
             color: ${lang === "ko" ? "#707070" : "#afafaf"};
           `}
         >
           KR
         </button>
-        {!isDeskTop && (
+        {!isDesktop && (
           <>
             <Search
               className={css`
@@ -178,8 +175,8 @@ export default function Header(props: { fixed?: boolean }) {
             position: "sticky",
             top: "0",
             height: 79,
-            paddingLeft: isDeskTop ? 37 : 20,
-            paddingRight: isDeskTop ? 37 : 20,
+            paddingLeft: isDesktop ? 37 : 17,
+            paddingRight: isDesktop ? 37 : 17,
             display: "flex",
             alignItems: "center",
             zIndex: 4,
@@ -200,8 +197,8 @@ export default function Header(props: { fixed?: boolean }) {
           alignItems: "center",
           height: 79,
           backgroundColor: "#ffffff",
-          paddingLeft: isDeskTop ? 37 : 20,
-          paddingRight: isDeskTop ? 37 : 20,
+          paddingLeft: isDesktop ? 37 : 17,
+          paddingRight: isDesktop ? 37 : 17,
         }}
       >
         {innerHeader}

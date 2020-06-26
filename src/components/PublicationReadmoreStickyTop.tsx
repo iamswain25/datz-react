@@ -6,6 +6,7 @@ import useDesktop from "./useDesktop";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
+import { bottomBtn37 } from "./styles";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -148,7 +149,7 @@ ISBN  978-89-97605-45-3
   },
 };
 export default function PublicationStickyTop() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   const history = useHistory();
   function goBack() {
     history.goBack();
@@ -156,7 +157,7 @@ export default function PublicationStickyTop() {
   const [lang] = useGlobalState(LANG);
 
   return (
-    <div className={isDeskTop ? stickyContainer : mobileContainer}>
+    <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
       <DatzpressOrder />
       <section
@@ -221,7 +222,7 @@ export default function PublicationStickyTop() {
         </div>
         <div dangerouslySetInnerHTML={{ __html: publication[lang].content }} />
       </section>
-      {isDeskTop && (
+      {isDesktop && (
         <div
           className={css`
             align-items: center;
@@ -233,18 +234,8 @@ export default function PublicationStickyTop() {
           <button
             onClick={goBack}
             className={css`
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 100%;
               border-top: solid 1px #707070;
-              min-height: 37px;
-              text-align: center;
-              font-family: BauerGroteskOTW03;
-              font-size: 14px;
-              line-height: 1.21;
-              color: #707070;
-              box-sizing: content-box;
+              ${bottomBtn37}
             `}
           >
             {"<"} back

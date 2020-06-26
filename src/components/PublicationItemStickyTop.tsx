@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
+import { bottomBtn37 } from "./styles";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -20,9 +21,9 @@ const mobileContainer = css`
   position: relative;
 `;
 export default function PublicationStickyTop() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   return (
-    <div className={isDeskTop ? stickyContainer : mobileContainer}>
+    <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
       <DatzpressOrder />
       <div
@@ -131,17 +132,8 @@ export default function PublicationStickyTop() {
       <Link
         to="/publication/nothingwill/readmore"
         className={css`
-          width: 100%;
           border-top: solid 1px #707070;
-          min-height: 37px;
-          text-align: center;
-          font-family: BauerGroteskOTW03;
-          font-size: 14px;
-          line-height: 1.21;
-          color: #707070;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          ${bottomBtn37}
         `}
       >
         read more {">"}

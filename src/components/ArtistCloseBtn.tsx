@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import Close from "../assets/svg/Close";
 export default function PublicationCloseBtn() {
-  const isDeskTop = useDesktop();
+  const isDesktop = useDesktop();
   const history = useHistory();
   function goBackHandler() {
     console.log(history.length);
@@ -23,6 +23,7 @@ export default function PublicationCloseBtn() {
         flex-direction: row;
         align-items: center;
         height: 20px;
+        padding-left: 5px;
       `}
     >
       <button
@@ -44,9 +45,15 @@ export default function PublicationCloseBtn() {
             margin-right: 8px;
           `}
         />
-        <span>CLOSE</span>
+        <span
+          className={css`
+            margin-top: 2px;
+          `}
+        >
+          CLOSE
+        </span>
       </button>
-      {isDeskTop && (
+      {isDesktop && (
         <>
           <Share
             color="#ececec"
