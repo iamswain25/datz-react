@@ -188,7 +188,7 @@ select[multiple] {
   max-height: none;
   object-fit: cover;
 }
-@font-face {
+/* @font-face {
   font-family: BauerGroteskOTW03;
   src: local(BauerGroteskOTW03-Book),
     url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.woff2)
@@ -200,6 +200,19 @@ select[multiple] {
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
+} */
+@font-face {
+  font-family: BauerGroteskOTW03;
+  src: url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.eot"); /* IE9*/
+  src: local(BauerGroteskOTW03-Book),
+    url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.woff2")
+      format("woff2"),
+    /* chrome、firefox */
+      url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.woff")
+      format("woff"),
+    /* chrome、firefox */
+      url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.ttf")
+      format("truetype");
 }
 @font-face {
   font-family: ArnoPro-Subhead;
@@ -314,7 +327,7 @@ hr {
   background-color: #cccccc;
 }
 .image-gallery-slide {
-  transform: none!important;
+  transform: none !important;
   opacity: 0;
 }
 .image-gallery-slide.center {
