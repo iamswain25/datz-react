@@ -4,7 +4,6 @@ import SEO from "../components/seo";
 import FullPageRollingImages from "../components/FullPageRollingImages";
 import EventCoverPage from "../components/EventCoverPage";
 import "../components/i18n";
-import "swiper/css/swiper.css";
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
