@@ -8,6 +8,7 @@ import PublicationReadmore from "./pages/PublicationReadmore";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminHome from "./pages/AdminHome";
 import ArtistPage from "./pages/ArtistPage";
+import About from "./pages/About";
 function App() {
   return (
     <Router>
@@ -15,9 +16,14 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/publication" component={Publication} />
         <Route exact path="/publication/:id" component={PublicationItem} />
-        <Route exact path="/publication/:id/readmore" component={PublicationReadmore} />
+        <Route
+          exact
+          path="/publication/:id/readmore"
+          component={PublicationReadmore}
+        />
         <Route exact path="/artist/:id" component={ArtistPage} />
         <Route exact path="/login" component={Signin} />
+        <Route exact path="/about" component={About} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>
     </Router>

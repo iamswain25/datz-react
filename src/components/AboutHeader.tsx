@@ -1,7 +1,5 @@
 import React from "react";
 import Headroom from "react-headroom";
-
-import ArtistCloseBtn from "./ArtistCloseBtn";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
@@ -9,19 +7,25 @@ import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
+import Datz from "../assets/svg/Datz";
+import { otherLinks } from "./Links";
+import { NavLink } from "react-router-dom";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-
   line-height: 1.19;
-
   text-align: center;
   color: #ffffff;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 11px;
+  margin-right: 11px;
 `;
 
-export default function ArtistHeader(props: { fixed?: boolean }) {
+const linkActiveClass = css`
+  text-decoration: underline;
+  color: #383838;
+`;
+
+export default function AboutHeader(props: { fixed?: boolean }) {
   const { fixed = false } = props;
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
@@ -39,8 +43,24 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
           justify-content: flex-start;
         `}
       >
-        <ArtistCloseBtn />
+        <Datz color="white" />
       </div>
+      {isDesktop && (
+        <div>
+          {otherLinks.map(([label, link], i) => {
+            return (
+              <NavLink
+                className={headerText}
+                to={link}
+                key={i}
+                activeClassName={linkActiveClass}
+              >
+                {label}
+              </NavLink>
+            );
+          })}
+        </div>
+      )}
       <div
         className={css`
           ${flexrowcenter}

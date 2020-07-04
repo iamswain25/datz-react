@@ -20,6 +20,25 @@ export const flexrowcenter = css`
   flex-direction: row;
   align-items: center;
 `;
+export const flexcolumn = css`
+  display: flex;
+  flex-direction: column;
+`;
+export const flexcolumncenter = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const paddingH10 = css`
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+export const paddingH15 = css`
+  padding-left: 15px;
+  padding-right: 15px;
+`;
+
 export const paddingH17 = css`
   padding-left: 17px;
   padding-right: 17px;
@@ -36,10 +55,7 @@ export const paddingH55 = css`
   padding-left: 55px;
   padding-right: 55px;
 `;
-export const flexcolumn = css`
-  display: flex;
-  flex-direction: column;
-`;
+
 export const marginH10 = css`
   margin-left: 10px;
   margin-right: 10px;
@@ -48,7 +64,35 @@ export const marginH16 = css`
   margin-left: 16px;
   margin-right: 16px;
 `;
-// export const marginH37 = css`
-//   margin-left: 37px;
-//   margin-right: 37px;
-// `;
+export const marginH17 = css`
+  margin-left: 17px;
+  margin-right: 17px;
+`;
+export const marginH18 = css`
+  margin-left: 18px;
+  margin-right: 18px;
+`;
+export const marginH24 = css`
+  margin-left: 24px;
+  margin-right: 24px;
+`;
+export const marginH27 = css`
+  margin-left: 27px;
+  margin-right: 27px;
+`;
+export const marginH37 = css`
+  margin-left: 37px;
+  margin-right: 37px;
+`;
+export const marginH55 = css`
+  margin-left: 55px;
+  margin-right: 55px;
+`;
+export const fullContainImg = css`
+  object-fit: contain;
+  width: 100%;
+`;
+export const fullCoverImg = css`
+  object-fit: cover;
+  width: 100%;
+`;
