@@ -2,8 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import BtnBack from "../components/BtnBack";
-import d2 from "../assets/images/about/d2.png";
-import m2 from "../assets/images/about/m2.png";
+import d4 from "../assets/images/about/d4.png";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
@@ -11,10 +10,11 @@ import {
   marginH10,
   flexcolumn,
   paddingH17,
+  flexcolumncenter,
 } from "../components/styles";
-import Datzpress from "../assets/svg/Datzpress";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
+import DatzMuseum from "../assets/svg/DatzMuseum";
 const bgContainer = css`
   background-color: #afafaf;
   height: 100vh;
@@ -49,26 +49,17 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const h2Style = css`
-  font-size: 20px;
-  line-height: 1.25;
-  text-align: center;
-  margin-bottom: 25px;
-  margin-bottom: 8px;
-  margin-top: 34px;
-  text-align: left;
-`;
 const pStyle = css`
   font-size: 18px;
   line-height: 1.39;
   text-align: left;
+  white-space: break-spaces;
 `;
 const contact = `Phone
 +82 2 447 2581
 -
 Email
-Enquiry      datzpress@datzpress.com
-Datz Books      books@datzpress.com`;
+D’Ark Room      darkroom@datzpress.com`;
 export default function AboutDatzpress() {
   const isDesktop = useDesktop();
   React.useEffect(() => {
@@ -112,15 +103,15 @@ export default function AboutDatzpress() {
         <div
           className={css`
             height: ${isDesktop ? "calc(100% - 37px)" : "588px"};
-            background-image: url(${isDesktop ? d2 : m2});
+            background-image: url(${d4});
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             position: relative;
           `}
         >
-          <Datzpress
-            color="#afafaf"
+          <DatzMuseum
+            color="#fff"
             className={css`
               bottom: 29px;
               left: 32px;
@@ -139,22 +130,38 @@ export default function AboutDatzpress() {
               flex: 1;
             `}
           >
-            <h1 className={h1Style(isDesktop)}>Datz Press</h1>
-
+            <h1 className={h1Style(isDesktop)}>Datz Museum of Art</h1>
+            <a
+              href="/museum"
+              className={css`
+                ${flexcolumncenter}
+                font-size: 14px;
+                line-height: 1.21;
+                margin-top: 15px;
+                margin-bottom: 15px;
+              `}
+            >
+              Visit Website {">"}
+            </a>
             <p className={pStyle}>
-              Datz Press is an art book press that works with photographers,
-              designers, and bookmakers. We create, publish, and exhibit books
-              centered on photography. We advocates for the growth of
-              participatory artistic activity through exhibiting and publishing
-              art, as well as art education.
-            </p>
-            <h2 className={h2Style}>Datz Books</h2>
-            <p className={pStyle}>
-              Datz Books is a bookmaking studio. We collaborate with artists who
-              want to create artist books. We suggest appropriate designs,
-              materials, and binding procedures and complete a book. We assure
-              an excellent book through a direct management of the whole
-              delicate process handcrafted to perfection.
+              Datz Museum of Art is a meeting place of nature’s beauty and art.
+              Set conveniently away from the busy city.
+              {"\n"}
+              {"\n"}
+              DMA welcomes you to retreat and find inspiration with a community
+              of artist. {"\n"}
+              Come share your creativity and expressions in a uniquely organic
+              and natural environment.
+              {"\n"}
+              {"\n"}
+              DMA opened in October of 2010 in Jinsaegol, Gwangju, Gyeonggi-do,
+              with a mission to help rejuvenate artistically creative spirits.
+              It presents an organic space in nature where one can spend
+              self-reflective time away from the busy city. It is our hope that
+              those who visit will encounter true beauty and reclaim their
+              personal imaginations, sensibilities, and perspectives to breathe
+              anew fresh life into their daily lives. DMA wishes for a community
+              in which life is shared through art.
             </p>
           </div>
           <div>
