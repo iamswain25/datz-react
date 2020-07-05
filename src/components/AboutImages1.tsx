@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { useGlobalState, LANG } from "../store/useGlobalState";
+// import { useGlobalState, LANG } from "../store/useGlobalState";
 import {
   marginH18,
   flexcolumncenter,
@@ -158,7 +158,7 @@ const arr = [
 ];
 export default function AboutImages1() {
   const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
+  // const [lang] = useGlobalState(LANG);
   return (
     <>
       <section className={isDesktop ? marginH18 : marginH10}>

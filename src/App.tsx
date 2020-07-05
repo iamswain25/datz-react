@@ -10,6 +10,8 @@ import AdminHome from "./pages/AdminHome";
 import ArtistPage from "./pages/ArtistPage";
 import About from "./pages/About";
 import AboutDatzpress from "./pages/AboutDatzpress";
+import AboutDatzmuseum from "./pages/AboutDatzmuseum";
+import AboutDarkroom from "./pages/AboutDarkroom";
 function App() {
   return (
     <Router>
@@ -26,6 +28,8 @@ function App() {
         <Route exact path="/login" component={Signin} />
         <Route exact path="/about" component={About} />
         <Route exact path="/about/datzpress" component={AboutDatzpress} />
+        <Route exact path="/about/darkroom" component={AboutDarkroom} />
+        <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>
     </Router>

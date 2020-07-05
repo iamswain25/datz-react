@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { useGlobalState, LANG } from "../store/useGlobalState";
+// import { useGlobalState, LANG } from "../store/useGlobalState";
 import {
   bottomBtn37,
   paddingH37,
@@ -68,7 +68,7 @@ const defaultProps = {
 };
 export default function AboutMap3() {
   const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
+  // const [lang] = useGlobalState(LANG);
   return (
     <>
       <section className={sectionStyle(isDesktop)}>
