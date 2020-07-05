@@ -2,8 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import BtnBack from "../components/BtnBack";
-import d2 from "../assets/images/about/d2.png";
-import m2 from "../assets/images/about/m2.png";
+import d3 from "../assets/images/about/d3.png";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
@@ -12,9 +11,9 @@ import {
   flexcolumn,
   paddingH17,
 } from "../components/styles";
-import Datzpress from "../assets/svg/Datzpress";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
+import Darkroom from "../assets/svg/Darkroom";
 const bgContainer = css`
   background-color: #afafaf;
   height: 100vh;
@@ -67,8 +66,7 @@ const contact = `Phone
 +82 2 447 2581
 -
 Email
-Enquiry      datzpress@datzpress.com
-Datz Books      books@datzpress.com`;
+D’Ark Room      darkroom@datzpress.com`;
 export default function AboutDatzpress() {
   const isDesktop = useDesktop();
   React.useEffect(() => {
@@ -112,15 +110,15 @@ export default function AboutDatzpress() {
         <div
           className={css`
             height: ${isDesktop ? "calc(100% - 37px)" : "588px"};
-            background-image: url(${isDesktop ? d2 : m2});
+            background-image: url(${d3});
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             position: relative;
           `}
         >
-          <Datzpress
-            color="#afafaf"
+          <Darkroom
+            color="#fff"
             className={css`
               bottom: 29px;
               left: 32px;
@@ -139,22 +137,21 @@ export default function AboutDatzpress() {
               flex: 1;
             `}
           >
-            <h1 className={h1Style(isDesktop)}>Datz Press</h1>
+            <h1 className={h1Style(isDesktop)}>D’Ark Room</h1>
 
             <p className={pStyle}>
-              Datz Press is an art book press that works with photographers,
-              designers, and bookmakers. We create, publish, and exhibit books
-              centered on photography. We advocates for the growth of
-              participatory artistic activity through exhibiting and publishing
-              art, as well as art education.
+              D’ark Room is a project space for showcasing photographs and
+              books. We hosts lectures, artist talks, and portfolio reviews in
+              collaboration with various artist. Archive Room has over 1,000
+              photo books and offers a reading room for artists documentaries
+              and DVDs.
             </p>
-            <h2 className={h2Style}>Datz Books</h2>
+            <h2 className={h2Style}>D’Front Space</h2>
             <p className={pStyle}>
-              Datz Books is a bookmaking studio. We collaborate with artists who
-              want to create artist books. We suggest appropriate designs,
-              materials, and binding procedures and complete a book. We assure
-              an excellent book through a direct management of the whole
-              delicate process handcrafted to perfection.
+              D’Front Space is a gallery space that naturally connects to D’Ark
+              Room and invites and welcomes the outside gaze. It displays
+              various projects underway at D’ARK ROOM, and is a 12.65 m² area
+              featuring a show window exposed outside.
             </p>
           </div>
           <div>
