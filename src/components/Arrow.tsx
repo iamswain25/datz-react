@@ -5,9 +5,7 @@ const headerStyle = css`
   z-index: 2;
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
   line-height: 1.19;
-  
   text-align: right;
   color: #707070;
 `;

@@ -29,6 +29,11 @@ export const flexcolumncenter = css`
   flex-direction: column;
   align-items: center;
 `;
+export const flexcolumnstretch = css`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+`;
 
 export const paddingH10 = css`
   padding-left: 10px;
@@ -95,4 +100,9 @@ export const fullContainImg = css`
 export const fullCoverImg = css`
   object-fit: cover;
   width: 100%;
+`;
+export const fullHeightCoverImg = css`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;

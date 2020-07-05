@@ -6,15 +6,14 @@ import { css } from "emotion";
 import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import Close from "../assets/svg/Close";
-export default function PublicationCloseBtn() {
+export default function PublicationCloseBtn({ shared = true }) {
   const isDesktop = useDesktop();
   const history = useHistory();
   function goBackHandler() {
-    console.log(history.length);
     if (history.length < 3) {
-      history.replace("/publication");
+      return history.replace("/publication");
     }
-    history.goBack();
+    return history.goBack();
   }
   return (
     <div
@@ -53,7 +52,7 @@ export default function PublicationCloseBtn() {
           CLOSE
         </span>
       </button>
-      {isDesktop && (
+      {isDesktop && shared && (
         <>
           <Share
             color="#ececec"

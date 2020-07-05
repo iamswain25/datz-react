@@ -9,7 +9,7 @@ import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
 import Datz from "../assets/svg/Datz";
 import { otherLinks } from "./Links";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -36,7 +36,8 @@ export default function AboutHeader(props: { fixed?: boolean }) {
 
   const innerHeader = (
     <>
-      <div
+      <Link
+        to="/"
         className={css`
           ${flexrowcenter}
           flex: 1;
@@ -44,7 +45,7 @@ export default function AboutHeader(props: { fixed?: boolean }) {
         `}
       >
         <Datz color="white" />
-      </div>
+      </Link>
       {isDesktop && (
         <div>
           {otherLinks.map(([label, link], i) => {

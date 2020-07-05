@@ -21,8 +21,13 @@ const headerText = css`
   margin-right: 16px;
 `;
 
-export default function ArtistHeader(props: { fixed?: boolean }) {
-  const { fixed = false } = props;
+export default function ArtistHeader({
+  fixed = false,
+  shared = false,
+}: {
+  fixed?: boolean;
+  shared?: boolean;
+}) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   const [isOpen, setOpen] = React.useState(false);
@@ -39,7 +44,7 @@ export default function ArtistHeader(props: { fixed?: boolean }) {
           justify-content: flex-start;
         `}
       >
-        <ArtistCloseBtn />
+        <ArtistCloseBtn shared={shared} />
       </div>
       <div
         className={css`

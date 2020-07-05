@@ -16,6 +16,7 @@ import {
 import a1 from "../assets/images/about/a1.png";
 import a2 from "../assets/images/about/a2.png";
 import a3 from "../assets/images/about/a3.png";
+import { Link } from "react-router-dom";
 const titleStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 23px;
@@ -140,16 +141,19 @@ const arr = [
     a1,
     "Datz Press  >",
     "Datz Press is an art book press that works with photographers, designers, and bookmakers. \nWe create, publish, and exhibit books centered on photography.",
+    "about/datzpress",
   ],
   [
     a2,
     "D’Ark Room  >",
     "D’Ark Room is a project space for showcasing photographs and books. \nWe hosts lectures, artist talks, and portfolio reviews in collaboration with various artist.",
+    "about/darkroom",
   ],
   [
     a3,
-    "Datz Musem of Art  >",
+    "Datz Museum of Art  >",
     "Datz Museum of Art is a meeting place of nature’s beauty and art. \nWe have curatorial exhibitions revolving around photography and art books as well as carpentry workshops.",
+    "about/datzmuseum",
   ],
 ];
 export default function AboutImages1() {
@@ -166,7 +170,7 @@ export default function AboutImages1() {
         </div>
       </section>
       <ul className={isDesktop ? ulGridStyle : ulMobileStyle}>
-        {arr.map(([imgsrc, title, desc], i) => {
+        {arr.map(([imgsrc, title, desc, link], i) => {
           return (
             <li key={i} className={liStyle(isDesktop)}>
               <img
@@ -175,15 +179,15 @@ export default function AboutImages1() {
                 className={isDesktop ? fullContainImg : mobileImg}
               />
               <div className={liTextStyle(isDesktop)}>
-                <div>
+                <Link to={link}>
                   {isDesktop ? title : title.substr(0, title.length - 2)}
-                </div>
+                </Link>
                 <div className={liDescStyle(isDesktop)}>{desc}</div>
               </div>
               {!isDesktop && (
-                <a href="/" className={linkStyle(isDesktop)}>
+                <Link to={link} className={linkStyle(isDesktop)}>
                   {title}
-                </a>
+                </Link>
               )}
             </li>
           );

@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import AdminHome from "./pages/AdminHome";
 import ArtistPage from "./pages/ArtistPage";
 import About from "./pages/About";
+import AboutDatzpress from "./pages/AboutDatzpress";
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/artist/:id" component={ArtistPage} />
         <Route exact path="/login" component={Signin} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/about/datzpress" component={AboutDatzpress} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>
     </Router>
