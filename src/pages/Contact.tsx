@@ -2,23 +2,9 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import AboutHeader from "../components/AboutHeader";
-import { marginH55, flexcolumncenter } from "../components/styles";
+import { marginH55, flexcolumncenter, marginH27 } from "../components/styles";
+import BtnTop from "../components/BtnTop";
 
-const bgContainer = css`
-  background-color: #afafaf;
-  font-family: BauerGroteskOTW03;
-  text-align: center;
-  color: #ffffff;
-  height: 100vh;
-`;
-const h1Style = css`
-  font-size: 17px;
-  line-height: 1.24;
-  padding-bottom: 6px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #fff;
-  width: 100%;
-`;
 const aStyle = css`
   text-decoration: underline;
   display: block;
@@ -54,13 +40,34 @@ export default function Contact() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const h1Style = React.useMemo(
+    () => css`
+      font-size: 17px;
+      line-height: 1.24;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      margin-top: ${isDesktop ? 0 : 74}px;
+      border-bottom: 1px solid #fff;
+      width: 100%;
+    `,
+    [isDesktop]
+  );
   return (
     <>
-      <div className={bgContainer}>
+      <div
+        className={css`
+          background-color: #afafaf;
+          font-family: BauerGroteskOTW03;
+          text-align: center;
+          color: #ffffff;
+          height: ${isDesktop ? "100vh" : "auto"};
+        `}
+      >
         <AboutHeader fixed />
         <div
           className={css`
-            display: grid;
+            display: ${isDesktop ? "grid" : "flex"};
+            flex-direction: column;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(7, 1fr);
             column-gap: 62px;
@@ -68,7 +75,7 @@ export default function Contact() {
             min-height: 600px;
             border-bottom: 1px solid #fff;
             padding-bottom: 20px;
-            ${marginH55}
+            ${isDesktop ? marginH55 : marginH27}
           `}
         >
           <div
@@ -78,7 +85,14 @@ export default function Contact() {
               ${flexcolumncenter}
             `}
           >
-            <h1 className={h1Style}>Enquiry</h1>
+            <h1
+              className={css`
+                ${h1Style}
+                margin-top: 35px;
+              `}
+            >
+              Enquiry
+            </h1>
             <a
               href="mailto:datzpress@datzpress.com"
               className={css`
@@ -191,6 +205,7 @@ DMA      museum@datzpress.com`}
             </p>
           </div>
         </div>
+        {!isDesktop && <BtnTop white />}
       </div>
     </>
   );
