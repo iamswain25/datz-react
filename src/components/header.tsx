@@ -176,7 +176,7 @@ export default function Header(props: { fixed?: boolean }) {
             paddingRight: isDesktop ? 37 : 17,
             display: "flex",
             alignItems: "center",
-            zIndex: 2,
+            zIndex: 5,
             backgroundColor: "#ffffff",
           }}
         >
@@ -190,6 +190,7 @@ export default function Header(props: { fixed?: boolean }) {
     <>
       <Headroom
         style={{
+          zIndex: 5,
           display: "flex",
           alignItems: "center",
           height: 79,
