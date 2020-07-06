@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
-import ev1 from "../assets/images/event2.jpg";
-import ev2 from "../assets/images/event3.jpg";
+import ev1 from "../assets/images/legacy/event2.jpg";
+import ev2 from "../assets/images/legacy/event3.jpg";
 import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";

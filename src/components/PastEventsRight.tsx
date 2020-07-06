@@ -15,7 +15,7 @@ export default function PastEventsRight() {
   return (
     <>
       <img
-        src={require("../assets/images/event1.jpg")}
+        src={require("../assets/images/legacy/event1.jpg")}
         alt="ok"
         className={css`
           object-fit: contain;

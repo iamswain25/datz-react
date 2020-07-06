@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import half from "../assets/images/half.jpg";
+import half from "../assets/images/legacy/half.jpg";
 import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";

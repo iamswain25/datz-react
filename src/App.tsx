@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Publication from "./pages/Publication";
 import PublicationItem from "./pages/PublicationItem";
+import Event from "./pages/Event";
+import EventItem from "./pages/EventItem";
 import PublicationReadmore from "./pages/PublicationReadmore";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminHome from "./pages/AdminHome";
@@ -20,6 +22,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/publication" component={Publication} />
         <Route exact path="/publication/:id" component={PublicationItem} />
+        <Route exact path="/event" component={Event} />
+        <Route exact path="/event/:id" component={EventItem} />
         <Route
           exact
           path="/publication/:id/readmore"

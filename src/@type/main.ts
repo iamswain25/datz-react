@@ -1,4 +1,4 @@
-import coverImg from "../assets/images/cover.jpg";
+import coverImg from "../assets/images/legacy/cover.jpg";
 export const newMain = {
   image: null || coverImg,
   title: "Nothing Will Ever be the Same Again",

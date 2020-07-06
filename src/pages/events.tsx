@@ -7,7 +7,7 @@ import "../components/i18n";
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <FullPageRollingImages images={[require("../images/cover.jpg")]} />
+    <FullPageRollingImages images={[require("../images/legacy/cover.jpg")]} />
     <FullPageRollingImages images={[require("../images/cover2.jpg")]} />
     <EventCoverPage />
   </Layout>

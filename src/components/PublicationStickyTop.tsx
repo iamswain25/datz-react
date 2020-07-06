@@ -1,5 +1,5 @@
 import React from "react";
-import pside1 from "../assets/images/pside1.png";
+import pside1 from "../assets/images/legacy/pside1.png";
 // import datzpress from "../assets/svg/0524_datzpress.svg";
 import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";

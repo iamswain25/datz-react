@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import { useHistory } from "react-router-dom";
 
 export default function BtnTop({
   white = false,
