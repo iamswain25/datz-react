@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import AdminHome from "./pages/AdminHome";
 import ArtistPage from "./pages/ArtistPage";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import AboutDatzpress from "./pages/AboutDatzpress";
 import AboutDatzmuseum from "./pages/AboutDatzmuseum";
 import AboutDarkroom from "./pages/AboutDarkroom";
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/about/datzpress" component={AboutDatzpress} />
         <Route exact path="/about/darkroom" component={AboutDarkroom} />
         <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
+        <Route exact path="/contact" component={Contact} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>
     </Router>
