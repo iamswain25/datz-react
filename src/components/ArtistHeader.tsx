@@ -24,9 +24,11 @@ const headerText = css`
 export default function ArtistHeader({
   fixed = false,
   shared = false,
+  isWhite = false,
 }: {
   fixed?: boolean;
   shared?: boolean;
+  isWhite?: boolean;
 }) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
@@ -44,7 +46,7 @@ export default function ArtistHeader({
           justify-content: flex-start;
         `}
       >
-        <ArtistCloseBtn shared={shared} />
+        <ArtistCloseBtn shared={shared} isWhite={isWhite} />
       </div>
       <div
         className={css`
@@ -59,7 +61,11 @@ export default function ArtistHeader({
             ${marginH10};
           `}
           onClick={() => setLang("en")}
-          style={lang === "en" ? { color: "#ffffff" } : { color: "#cccccc" }}
+          style={
+            lang === "en"
+              ? { color: isWhite ? "#707070" : "#ffffff" }
+              : { color: "#cccccc" }
+          }
         >
           EN
         </button>
@@ -67,7 +73,7 @@ export default function ArtistHeader({
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px #ffffff;
+            border-left: solid 1px ${isWhite ? "#707070" : "#ffffff"};
           `}
         />
         <button
@@ -76,14 +82,18 @@ export default function ArtistHeader({
             ${headerText};
             ${marginH10};
           `}
-          style={lang === "ko" ? { color: "#ffffff" } : { color: "#cccccc" }}
+          style={
+            lang === "ko"
+              ? { color: isWhite ? "#707070" : "#ffffff" }
+              : { color: "#cccccc" }
+          }
         >
           KR
         </button>
         {!isDesktop && (
           <>
             <Search
-              color="#ffffff"
+              color={isWhite ? "#707070" : "#ffffff"}
               className={css`
                 margin-right: 20px;
               `}
@@ -94,7 +104,7 @@ export default function ArtistHeader({
               width={18}
               height={15}
               strokeWidth={1}
-              color="#ffffff"
+              color={isWhite ? "#707070" : "#ffffff"}
               animationDuration={0.5}
             />
           </>
@@ -115,7 +125,7 @@ export default function ArtistHeader({
             zIndex: 2,
             paddingLeft: isDesktop ? 37 : 17,
             paddingRight: isDesktop ? 37 : 17,
-            backgroundColor: "#afafaf",
+            backgroundColor: isWhite ? "#fff" : "#afafaf",
           }}
         >
           {innerHeader}
@@ -133,7 +143,7 @@ export default function ArtistHeader({
           paddingRight: isDesktop ? 55 : 17,
           display: "flex",
           alignItems: "center",
-          backgroundColor: "#afafaf",
+          backgroundColor: isWhite ? "#fff" : "#afafaf",
         }}
       >
         {innerHeader}

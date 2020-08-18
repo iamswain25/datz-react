@@ -6,7 +6,11 @@ import Close from "../assets/svg/Close";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 // import useDesktop from "./useDesktop";
-export default function PublicationCloseBtn() {
+export default function PublicationCloseBtn({
+  noClose = false,
+}: {
+  noClose?: boolean;
+}) {
   return (
     <div
       className={css`
@@ -17,27 +21,29 @@ export default function PublicationCloseBtn() {
         margin-bottom: 20px;
       `}
     >
-      <Link
-        to="/publication"
-        className={css`
-          height: 13px;
-          font-size: 10px;
-          line-height: 1.3;
-          text-align: left;
-          color: #afafaf;
-          margin-right: 45px;
-          display: flex;
-          align-items: center;
-        `}
-      >
-        <Close
-          color="#afafaf"
+      {!noClose && (
+        <Link
+          to="/publication"
           className={css`
-            margin-right: 8px;
+            height: 13px;
+            font-size: 10px;
+            line-height: 1.3;
+            text-align: left;
+            color: #afafaf;
+            margin-right: 45px;
+            display: flex;
+            align-items: center;
           `}
-        />
-        <span>CLOSE</span>
-      </Link>
+        >
+          <Close
+            color="#afafaf"
+            className={css`
+              margin-right: 8px;
+            `}
+          />
+          <span>CLOSE</span>
+        </Link>
+      )}
       <Share
         color="#cccccc"
         className={css`

@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import useDesktop from "./useDesktop";
 const listClass = (dark = false) => css`
   display: flex;
   flex-direction: column;
@@ -20,8 +21,12 @@ const afterClass = (i: number) => css`
   position: relative;
   width: 100%;
 `;
-const imgClass = css`
+const imgCover = css`
   object-fit: cover;
+`;
+const imgContain = css`
+  width: 100%;
+  object-fit: contain;
 `;
 const itemClass = css`
   display: flex;
@@ -39,18 +44,29 @@ const responsive = {
   },
 };
 const list = [[half], [half], [half], [half]];
-export default function EventCoverWidget({ dark = false }: { dark?: boolean }) {
+export default function EventCoverWidget({
+  dark = false,
+  images = list,
+}: {
+  dark?: boolean;
+  images?: any[];
+}) {
+  const isDesktop = useDesktop();
   const history = useHistory();
   function clickHandler() {
     history.push("/publication/nothingwill");
   }
   return (
     <div
-      className={`home ${css`
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      `}`}
+      className={
+        isDesktop
+          ? `home ${css`
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+            `}`
+          : undefined
+      }
     >
       <Carousel
         responsive={responsive}
@@ -58,13 +74,22 @@ export default function EventCoverWidget({ dark = false }: { dark?: boolean }) {
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}
-        customButtonGroup={<CarouselBtnGroup dark={dark}></CarouselBtnGroup>}
+        customButtonGroup={
+          <CarouselBtnGroup
+            dark={dark}
+            noBorderBottom={!isDesktop}
+          ></CarouselBtnGroup>
+        }
       >
-        {list.map(([img], i) => {
+        {images.map(([img], i) => {
           return (
             <div key={i} className={afterClass(i)} onClick={clickHandler}>
               <div className={listClass(dark)}>
-                <img src={img} alt="event" className={imgClass} />
+                <img
+                  src={img}
+                  alt="event"
+                  className={isDesktop ? imgCover : imgContain}
+                />
               </div>
             </div>
           );

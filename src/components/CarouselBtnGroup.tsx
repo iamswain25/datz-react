@@ -14,11 +14,13 @@ export default function CarouselBtnGroup({
   carouselState,
   dark = false,
   hasPadding = true,
+  noBorderBottom = false,
 }: React.PropsWithChildren<{
   next?: () => void;
   previous?: () => void;
   dark?: boolean;
   hasPadding?: boolean;
+  noBorderBottom?: boolean;
   carouselState?: {
     totalItems: number;
     currentSlide: number;
@@ -67,14 +69,16 @@ export default function CarouselBtnGroup({
         </div>
         {children}
       </div>
-      <hr
-        className={css`
-          height: 0;
-          border-top: solid 1px ${dark ? "#ffffff" : "#707070"};
-          margin-left: ${isDesktop && hasPadding ? 17 : 0}px;
-          margin-right: ${isDesktop && hasPadding ? 17 : 0}px;
-        `}
-      />
+      {!noBorderBottom && (
+        <hr
+          className={css`
+            height: 0;
+            border-top: solid 1px ${dark ? "#ffffff" : "#707070"};
+            margin-left: ${isDesktop && hasPadding ? 17 : 0}px;
+            margin-right: ${isDesktop && hasPadding ? 17 : 0}px;
+          `}
+        />
+      )}
     </>
   );
 }

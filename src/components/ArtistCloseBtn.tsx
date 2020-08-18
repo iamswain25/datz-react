@@ -6,7 +6,10 @@ import { css } from "emotion";
 import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import Close from "../assets/svg/Close";
-export default function PublicationCloseBtn({ shared = true }) {
+export default function PublicationCloseBtn({
+  shared = true,
+  isWhite = false,
+}) {
   const isDesktop = useDesktop();
   const history = useHistory();
   function goBackHandler() {
@@ -32,14 +35,14 @@ export default function PublicationCloseBtn({ shared = true }) {
           font-size: 10px;
           line-height: 1.3;
           text-align: left;
-          color: #ffffff;
+          color: ${isWhite ? "#707070" : "#ffffff"};
           margin-right: 45px;
           display: flex;
           align-items: center;
         `}
       >
         <Close
-          color="#ffffff"
+          color={isWhite ? "#707070" : "#ffffff"}
           className={css`
             margin-right: 8px;
           `}
