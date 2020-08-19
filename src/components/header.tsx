@@ -90,6 +90,8 @@ export default function Header(props: { fixed?: boolean }) {
           ${flexrowcenter}
           flex: 1;
           justify-content: flex-end;
+          font-size: 16px;
+          font-family: BauerGroteskOTW03;
         `}
       >
         {isDesktop && (

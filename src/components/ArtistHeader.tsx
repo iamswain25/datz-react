@@ -25,14 +25,22 @@ export default function ArtistHeader({
   fixed = false,
   shared = false,
   isWhite = false,
+  hasSearch = false,
+  closeTo
 }: {
   fixed?: boolean;
   shared?: boolean;
   isWhite?: boolean;
+  hasSearch?: boolean;
+  closeTo?: string;
 }) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   const [isOpen, setOpen] = React.useState(false);
+  const [text, setText] = React.useState("");
+  function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
+    setText(e.currentTarget.value);
+  }
   function openHandler() {
     setOpen(!isOpen);
   }
@@ -46,15 +54,42 @@ export default function ArtistHeader({
           justify-content: flex-start;
         `}
       >
-        <ArtistCloseBtn shared={shared} isWhite={isWhite} />
+        <ArtistCloseBtn shared={shared} isWhite={isWhite} closeTo={closeTo} />
       </div>
       <div
         className={css`
           ${flexrowcenter}
           flex: 1;
           justify-content: flex-end;
+          font-family: BauerGroteskOTW03;
         `}
       >
+        {isDesktop && (
+          <>
+            <span
+              className={css`
+                font-size: 16px;
+                color: ${isWhite ? "#707070" : "#ffffff"};
+              `}
+            >
+              Search
+            </span>
+            <input
+              type="text"
+              value={text}
+              onChange={textHandler}
+              className={css`
+                ${headerText};
+                color: ${isWhite ? "#707070" : "#ffffff"};
+                border-bottom: solid 1px ${isWhite ? "#707070" : "#ffffff"};
+                width: 56px;
+                margin-left: 5px;
+                margin-right: 8px;
+                margin-bottom: 7px;
+              `}
+            />
+          </>
+        )}
         <button
           className={css`
             ${headerText};

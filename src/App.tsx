@@ -1,5 +1,10 @@
 import React from "react";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  Redirect,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Publication from "./pages/Publication";
@@ -15,6 +20,7 @@ import Contact from "./pages/Contact";
 import AboutDatzpress from "./pages/AboutDatzpress";
 import AboutDatzmuseum from "./pages/AboutDatzmuseum";
 import AboutDarkroom from "./pages/AboutDarkroom";
+import EventPast from "./pages/EventPast";
 function App() {
   return (
     <Router>
@@ -23,6 +29,10 @@ function App() {
         <Route exact path="/publication" component={Publication} />
         <Route exact path="/publication/:id" component={PublicationItem} />
         <Route exact path="/event" component={Event} />
+        <Route exact path="/event_past">
+          <Redirect to="/event_past/all" />
+        </Route>
+        <Route exact path="/event_past/:filter" component={EventPast} />
         <Route exact path="/event/:id" component={EventItem} />
         <Route
           exact

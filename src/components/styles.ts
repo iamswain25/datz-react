@@ -77,6 +77,10 @@ export const marginH18 = css`
   margin-left: 18px;
   margin-right: 18px;
 `;
+export const marginH20 = css`
+  margin-left: 20px;
+  margin-right: 20px;
+`;
 export const marginH24 = css`
   margin-left: 24px;
   margin-right: 24px;

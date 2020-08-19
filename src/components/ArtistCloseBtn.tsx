@@ -9,10 +9,18 @@ import Close from "../assets/svg/Close";
 export default function PublicationCloseBtn({
   shared = true,
   isWhite = false,
+  closeTo,
+}: {
+  shared?: boolean;
+  isWhite?: boolean;
+  closeTo?: string;
 }) {
   const isDesktop = useDesktop();
   const history = useHistory();
   function goBackHandler() {
+    if (closeTo) {
+      return history.push(closeTo);
+    }
     if (history.length < 3) {
       return history.replace("/publication");
     }

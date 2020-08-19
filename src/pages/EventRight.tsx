@@ -53,7 +53,7 @@ export default function EventRight() {
         ))}
       </div>
       <Link
-        to="event"
+        to="event_past"
         className={css`
           ${bottomBtn37}
           ${isDesktop ? marginH10 : marginH27}

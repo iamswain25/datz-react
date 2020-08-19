@@ -47,37 +47,37 @@ export const eventcard2 = {
 
 export const bottomcard1 = {
   image: b1,
-  type: "Past Events/Reveiws",
+  type: "Artist Talk / Lecture",
   title: "2019 NY ART BOOK FAIR",
   date: "2019. 11. 23",
 };
 export const bottomcard2 = {
   image: b2,
-  type: "Past Events/Reveiws",
+  type: "Artist Talk / Lecture",
   title: "2019 NY ART BOOK FAIR",
   date: "2019. 11. 23",
 };
 export const bottomcard3 = {
   image: b3,
-  type: "Past Events/Reveiws",
+  type: "Exhibition",
   title: "2019 NY ART BOOK FAIR",
   date: "2019. 11. 23",
 };
 export const bottomcard4 = {
   image: b4,
-  type: "Past Events/Reveiws",
+  type: "Exhibition",
   title: "2019 NY ART BOOK FAIR",
   date: "2019. 11. 23",
 };
 export const bottomcard5 = {
   image: b5,
-  type: "Past Events/Reveiws",
+  type: "Book Fair",
   title: "2019 NY ART BOOK FAIR",
   date: "2019. 11. 23",
 };
 export const bottomcard6 = {
   image: b6,
-  type: "Past Events/Reveiws",
+  type: "Book Fair",
   title: "2019 NY ART BOOK FAIR",
   date: "2019. 11. 23",
 };
