@@ -21,12 +21,14 @@ import AboutDatzpress from "./pages/AboutDatzpress";
 import AboutDatzmuseum from "./pages/AboutDatzmuseum";
 import AboutDarkroom from "./pages/AboutDarkroom";
 import EventPast from "./pages/EventPast";
+import Exhibition from "./pages/Exhibition";
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/publication" component={Publication} />
+        <Route exact path="/exhibition" component={Exhibition} />
         <Route exact path="/publication/:id" component={PublicationItem} />
         <Route exact path="/event" component={Event} />
         <Route exact path="/event_past">

@@ -1,16 +1,26 @@
 import React from "react";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import FullPageRollingImages from "../components/FullPageRollingImages";
-import EventCoverPage from "../components/EventCoverPage";
-import "../components/i18n";
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <FullPageRollingImages images={[require("../images/legacy/cover.jpg")]} />
-    <FullPageRollingImages images={[require("../images/cover2.jpg")]} />
-    <EventCoverPage />
-  </Layout>
-);
-
-export default IndexPage;
+import { css } from "emotion";
+import useDesktop from "../components/useDesktop";
+import Header from "../components/Header";
+import { flexcolumn, flexrow, paddingH37 } from "../components/styles";
+import EventStickyLeftGallery from "../components/EventStickyLeftGallery";
+import ExhibitionRight from "./ExhibitionRight";
+const desktopContainer = css`
+  ${flexrow}
+  ${paddingH37}
+`;
+const mobileContainer = css`
+  ${flexcolumn}
+`;
+export default function Event() {
+  const isDesktop = useDesktop();
+  return (
+    <>
+      <Header fixed />
+      <section className={isDesktop ? desktopContainer : mobileContainer}>
+        <EventStickyLeftGallery />
+        <ExhibitionRight />
+      </section>
+    </>
+  );
+}
