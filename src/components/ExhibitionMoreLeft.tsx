@@ -77,7 +77,7 @@ export default function ExhibitionMoreLeft() {
       <section
         className={css`
           flex: 1;
-          overflow-y: scroll;
+          overflow-y: auto;
           padding-left: 10px;
           padding-right: 10px;
         `}
