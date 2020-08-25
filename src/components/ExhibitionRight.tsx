@@ -3,9 +3,13 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "../components/styles";
 import ExhibitionCardMain from "../components/ExhibitionCardMain";
-import { exhi1, exhi2, bottomcards } from "../@type/event";
-import EventCardPastGrey from "../components/EventCardPastGrey";
+import { exhibitions } from "../@type/exhibition";
 import { Link } from "react-router-dom";
+import ExhibitionCardPastGrey from "./ExhibitionCardPastGrey";
+import {
+  filterExhibitionCurrent,
+  filterExhibitionPast,
+} from "../utils/datefns";
 
 export default function ExhibitionRight() {
   const isDesktop = useDesktop();
@@ -23,8 +27,12 @@ export default function ExhibitionRight() {
           column-gap: 27px;
         `}
       >
-        <ExhibitionCardMain event={exhi1} />
-        <ExhibitionCardMain event={exhi2} />
+        {exhibitions
+          .slice(1)
+          .filter(filterExhibitionCurrent)
+          .map((item, i) => (
+            <ExhibitionCardMain item={item} key={i} />
+          ))}
       </div>
       <h1
         className={css`
@@ -38,7 +46,7 @@ export default function ExhibitionRight() {
           margin-bottom: -15px;
         `}
       >
-        Past Event
+        Past Exhibition
       </h1>
       <div
         className={css`
@@ -48,9 +56,12 @@ export default function ExhibitionRight() {
           column-gap: 27px;
         `}
       >
-        {[exhi1, exhi2, ...bottomcards].map((a, i) => (
-          <EventCardPastGrey key={i} event={a} />
-        ))}
+        {exhibitions
+          .slice(1)
+          .filter(filterExhibitionPast)
+          .map((a, i) => (
+            <ExhibitionCardPastGrey key={i} item={a} />
+          ))}
       </div>
       <Link
         to="exhibitions"

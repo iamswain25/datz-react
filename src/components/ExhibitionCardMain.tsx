@@ -2,9 +2,11 @@ import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
-import Datzpress from "../assets/svg/Datzpress";
-import { eventcard1 } from "../@type/event";
-import { fullContainImg, fullHeightCoverImg } from "./styles";
+import RollingImages from "./RollingImages";
+import { exhibitions, image } from "../@type/exhibition";
+import { exhibitionCurrentPast } from "../utils/datefns";
+import { useGlobalState, LANG } from "../store/useGlobalState";
+import DatzMuseum from "../assets/svg/DatzMuseum";
 const headerStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -12,9 +14,9 @@ const headerStyle = css`
   text-align: right;
   color: #707070;
 `;
-export default function ExhibitionCardMain({ event = eventcard1 }) {
-  const { image, date, type, title, body, link } = event;
+export default function ExhibitionCardMain({ item = exhibitions[1] }) {
   const isDesktop = useDesktop();
+  const [lang] = useGlobalState(LANG);
   return (
     <section
       className={css`
@@ -28,12 +30,8 @@ export default function ExhibitionCardMain({ event = eventcard1 }) {
           height: ${isDesktop ? "auto" : "588px"};
         `}
       >
-        <img
-          src={image}
-          alt="ok"
-          className={isDesktop ? fullContainImg : fullHeightCoverImg}
-        />
-        <Datzpress
+        <RollingImages images={[image, image, image]} />
+        <DatzMuseum
           color="#fff"
           className={css`
             position: absolute;
@@ -61,8 +59,12 @@ export default function ExhibitionCardMain({ event = eventcard1 }) {
             padding-bottom: 10px;
           `}
         >
-          <div className={headerStyle}>{date}</div>
-          <div className={headerStyle}>{type}</div>
+          <div className={headerStyle}>
+            {item.start_date} - {item.end_date}
+          </div>
+          <div className={headerStyle}>
+            {exhibitionCurrentPast(item.start_date, item.end_date)}
+          </div>
         </div>
         <div
           className={css`
@@ -79,7 +81,7 @@ export default function ExhibitionCardMain({ event = eventcard1 }) {
               color: #4b4b4b;
             `}
           >
-            {title}
+            {lang === "ko" ? item.title_ko : item.title_en}
           </p>
           <p
             className={css`
@@ -93,12 +95,12 @@ export default function ExhibitionCardMain({ event = eventcard1 }) {
               white-space: break-spaces;
             `}
           >
-            {body}
+            {lang === "ko" ? item.body_ko : item.body_en}
           </p>
         </div>
 
         <Link
-          to={link}
+          to={`/exhibition/${item.id}`}
           className={css`
             height: 17px;
             border-bottom: solid 1px #707070;

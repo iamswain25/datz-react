@@ -24,6 +24,7 @@ import Events from "./pages/Events";
 import Exhibition from "./pages/Exhibition";
 import Exhibitions from "./pages/Exhibitions";
 import ExhibitionItem from "./pages/ExhibitionItem";
+import ExhibitionReadmore from "./pages/ExhibitionReadmore";
 function App() {
   return (
     <Router>
@@ -47,6 +48,11 @@ function App() {
           exact
           path="/publication/:id/readmore"
           component={PublicationReadmore}
+        />
+        <Route
+          exact
+          path="/exhibition/:id/readmore"
+          component={ExhibitionReadmore}
         />
         <Route exact path="/artist/:id" component={ArtistPage} />
         <Route exact path="/login" component={Signin} />

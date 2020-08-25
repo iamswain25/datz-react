@@ -1,10 +1,13 @@
 import React from "react";
 import { css } from "emotion";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useDesktop from "./useDesktop";
-import PublicationCloseBtn from "./PublicationCloseBtn";
-import DatzpressOrder from "./DatzpressOrder";
+import CloseShare from "./CloseShare";
 import { bottomBtn37, paddingH27 } from "./styles";
+import { exhibitions } from "../@type/exhibition";
+import { exhibitionCurrentPast } from "../utils/datefns";
+import { useGlobalState, LANG } from "../store/useGlobalState";
+import DatzmuseumOrder from "./DatzmuseumOrder";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -20,12 +23,14 @@ const mobileContainer = css`
   position: relative;
   ${paddingH27}
 `;
-export default function LeftItemStickyTop() {
+export default function ExhibitionItemLeft({ item = exhibitions[1] }) {
+  const { id = 1 } = useParams();
   const isDesktop = useDesktop();
+  const [lang] = useGlobalState(LANG);
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <PublicationCloseBtn />
-      <DatzpressOrder />
+      <CloseShare close="/exhibition" />
+      <DatzmuseumOrder order={item.visit_url} />
       <div
         className={css`
           display: flex;
@@ -47,7 +52,7 @@ export default function LeftItemStickyTop() {
             margin-top: 18px;
           `}
         >
-          Limited Edition
+          {item.start_date} - {item.end_date}
         </div>
         <div
           className={css`
@@ -60,7 +65,7 @@ export default function LeftItemStickyTop() {
             margin-top: 3px;
           `}
         >
-          300 copies
+          {exhibitionCurrentPast(item.start_date, item.end_date)}
         </div>
         <div
           className={css`
@@ -73,35 +78,7 @@ export default function LeftItemStickyTop() {
             margin-top: 28px;
           `}
         >
-          Nothing Will Ever be the Same Again
-        </div>
-        <div
-          className={css`
-            font-family: ArnoPro-Display;
-            font-size: 21px;
-            line-height: 1.38;
-            letter-spacing: 0.42px;
-            text-align: center;
-            color: #4b4b4b;
-            margin-top: 4px;
-          `}
-        >
-          Amanda Marchand
-        </div>
-        <div
-          className={css`
-            font-family: ArnoPro-Display;
-            font-size: 20px;
-            font-style: italic;
-            line-height: 1.35;
-            letter-spacing: 0.4px;
-            text-align: left;
-            margin-top: 29px;
-            color: #4b4b4b;
-          `}
-        >
-          “Three windows in an old school house. Four, if you count the camera
-          as a window, too” - artist’s note
+          {lang === "ko" ? item.title_ko : item.title_en}
         </div>
         <div
           className={css`
@@ -115,22 +92,11 @@ export default function LeftItemStickyTop() {
             overflow: hidden;
           `}
         >
-          The book focuses on three windows in a century-old schoolhouse and
-          their subtle surprises. The square panes and the window reference the
-          medium-format camera frame, producing a square negative. This work is
-          a return to a childhood state of pure presence, recalling, long hours
-          at play in the Canadian snow. Like the practice of meditation, these
-          quiet photographs ask, What happens when you pay attention? The book
-          focuses on three windows in a century-old schoolhouse and their subtle
-          surprises. The square panes and the window reference the medium-format
-          camera frame, producing a square negative. This work is a return to a
-          childhood state of pure presence, recalling, long hours at play in the
-          Canadian snow. Like the practice of meditation, these quiet
-          photographs ask, What happens when you pay attention?
+          {lang === "ko" ? item.body_ko : item.body_en}
         </div>
       </div>
       <Link
-        to="/publication/nothingwill/readmore"
+        to={`/exhibition/${id}/readmore`}
         className={css`
           border-top: solid 1px #707070;
           ${bottomBtn37}

@@ -1,10 +1,13 @@
+import i from "../assets/images/event/top1.png";
+export const image = i;
 export const exhibitions = [
+  { id: 0 },
   {
     id: 1,
     type: "d'ark room",
     visit_url: "X",
     start_date: "2020.8.7 ",
-    end_date: "2020-10-31T07:00:00.000Z",
+    end_date: "2020.10.31",
     title_en: "Art of Imagination",
     body_en:
       "The artist’s infinite imagination is the most important material in art. In ‘Art of Imagination’, artistic imaginations like small seeds germinate with multisensory media to manifest as artists’ books, paintings, photos, and installation works. Hyunjeong Kimbak, Hyunseon Son, Meen Yea Oh, and Hyejin Jo reduce their imaginations to various artistic materials by asking questions about the surface of matter and the essential form of objects. Datz’s artist book and various visual arts publications show that the artist’s imagination is diversified within the pages of the books. Artists' keen curiosity and imagination become synesthesia materials, making us think more about the power of artistic imagination in our daily lives.",
@@ -21,8 +24,8 @@ export const exhibitions = [
     id: 2,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2020-03-28T07:00:00.000Z",
-    end_date: "2020-08-16T07:00:00.000Z",
+    start_date: "2020.03.28",
+    end_date: "2020.08.16",
     title_en: "Philosopher's Stone",
     body_en:
       "‘Philosopher's Stone’ introduces the works of photographers from western side of the United States. ‘The philosopher's stone’, which was sought by alchemists in the past, means a mysterious material that turns nothing into gold. Four contemporary artists, Ville Kansanen, Gretchen LeMaistre, Rhonda Lashley Lope, and Diane Pierce, make the invisible spiritual through their own unique methods and creative processes which are similar to alchemy.This exhibition, which depicts the meaningful vibrations of nature, human beings, art and between them as the light of the photography, suggests the value of art gone through time for the nobility.",
@@ -39,8 +42,8 @@ export const exhibitions = [
     id: 3,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2019-11-02T07:00:00.000Z",
-    end_date: "2020-02-23T08:00:00.000Z",
+    start_date: "2019.11.02",
+    end_date: "2020.02.23",
     title_en: "Synesthesia : The Space Between",
     body_en:
       "In the exhibition ‘Synesthesia: The Space Between’, sound, images, books, videos, and texts are put together, asking questions about reason and intuition to capture the space between different media. Along with works that express their own synesthesia through photos, sounds, and videos, books that interpret artist books as creative subjects and bring them to the world of various senses. As the inner space opened through the book expands to the physical exhibition space, it is tried to draw a living universe in which all the spaces of various senses that exist between them extend.",
@@ -57,8 +60,8 @@ export const exhibitions = [
     id: 4,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2019-07-06T07:00:00.000Z",
-    end_date: "2019-10-13T07:00:00.000Z",
+    start_date: "2019.07.06",
+    end_date: "2019.10.13",
     title_en: "The Texture of Temperature",
     body_en:
       "In the exhibition ‘The Texture of Temperature’, four artists participate and ask questions about how abstract is represented in art. The artists construct their own abstract images through shapes and colors, concentrate on exploring the forms in art, and carefully transform their interests into paintings, ceramics, images, and installations. The story of the four artists, abstracted by their artistic sense, spreads to emotional temperatures and creates new imaginations for us.",
@@ -75,13 +78,13 @@ export const exhibitions = [
     id: 5,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2019-07-05T07:00:00.000Z",
-    end_date: "2019-09-30T07:00:00.000Z",
+    start_date: "2019.07.05",
+    end_date: "2019.09.30",
     title_en: "Book of Lights",
     body_en:
       "Words engraved with light come together to form a poem, and the image touched by light becomes a photography. In the exhibition ‘Book of Lights’, we pay attention to the process of putting images and letters drawn in the language of light into a material property called a book. Through the process of reading, looking, and touching, we examine the plurality of senses that go beyond the limits of time and space. Different art forms, such as text, images and books, harmonize in one space and awaken another sense.",
     notes_en:
-      "Artist\nHyunmee Kim, Xianlu Yi, Alan Eglinton, Alyssa Fujita Karoui, Amanda Marchand\n \nRelated Event_Friday Night Lecture\n19 Jul, FNL#19 Artist Talk ‘YES, to everything’ \n26 Jul, FNL#20 Lecture \n2 Aug, FNL#21 Lecture\n23 Aug, FNL#22 Book Talk ‘Interpreting Text in Typography’\n6 Sep, FNL#23 Artist Talk ‘Photography?’\n \nRelated Event_Workshop\n25 Jul, Workshop ‘Mini-book making’\n1 Aug, Workshop ‘Mini-book making’\n\n\n \nSponsored by Seoul Foundation for Arts and Culture, Jooshin Engineering",
+      "Artist\nHyunmee Kim, Xianlu Yi, Alan Eglinton, Alyssa Fujita Karoui, Amanda Marchand\n \nRelated Event_Friday Night Lecture\n19 Jul, FNL#19 Artist Talk ‘YES, to everything’ \n26 Jul, FNL#20 Lecture \n2 Aug, FNL#21 Lecture\n23 Aug, FNL#22 Book Talk ‘Interpreting Text in Typography’\n6 Sep, FNL#23 Artist Talk ‘Photography?’\n \nRelated Event_Workshop\n25 Jul, Workshop ‘Mini.book making’\n1 Aug, Workshop ‘Mini.book making’\n\n\n \nSponsored by Seoul Foundation for Arts and Culture, Jooshin Engineering",
     preview_body_en: "",
     title_ko: "빛들의 책",
     body_ko:
@@ -93,13 +96,13 @@ export const exhibitions = [
     id: 6,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2019-03-16T07:00:00.000Z",
-    end_date: "2019-06-16T07:00:00.000Z",
+    start_date: "2019.03.16",
+    end_date: "2019.06.16",
     title_en: "Image Poetics",
     body_en:
       "‘Image Poetics’ is an exhibition about poetry and photography. The exhibition consists of old Korean poems and photographs from the collections of Datz Museum of Art. The poems are newly represented through typography, to breathe together with the photographs, while the photographs each become verses to converse with the poems. These two different forms of art freely seek harmony within a single space, adding depth to their resonance.",
     notes_en:
-      "Korean Poems & Photography Collections of Datz Museum of Art\nCo-Typography Artist Xianlu Yi",
+      "Korean Poems & Photography Collections of Datz Museum of Art\nCo.Typography Artist Xianlu Yi",
     preview_body_en: "",
     title_ko: "시·象",
     body_ko:
@@ -111,13 +114,13 @@ export const exhibitions = [
     id: 7,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2018-10-27T07:00:00.000Z",
-    end_date: "2019-02-17T08:00:00.000Z",
+    start_date: "2018.10.27",
+    end_date: "2019.02.17",
     title_en: "Journey of Transformation",
     body_en:
       "The exhibition ‘Journey of Transformation’ is a narration about life and breathing, circulation, and inner journey. It is an exhibition that reflects on us as a traveler who becomes a human in the world of the elements of the universe and the earth in the cycle of life, and then returns to dust in the vast universe through a life journey. Each of these four artists is unique and connected at the same time. Through this exhibition, four artists guide us through the journey of time and space that flows beyond the boundaries of everyday life.",
     notes_en:
-      "Artist\nBryant Austin, Mary Daniel Hobson, Hendrik Paul, Minny Lee\n \nCo-curator\nAnne Veh\n \nRelated Event\n26 Oct, FNL#16 Gitz Talk\n27 Oct, Opening Reception\n3 Nov, Round Talk",
+      "Artist\nBryant Austin, Mary Daniel Hobson, Hendrik Paul, Minny Lee\n \nCo.curator\nAnne Veh\n \nRelated Event\n26 Oct, FNL#16 Gitz Talk\n27 Oct, Opening Reception\n3 Nov, Round Talk",
     preview_body_en: "",
     title_ko: "변화의 여정",
     body_ko:
@@ -129,8 +132,8 @@ export const exhibitions = [
     id: 8,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2019-04-10T07:00:00.000Z",
-    end_date: "2019-06-20T07:00:00.000Z",
+    start_date: "2019.04.10",
+    end_date: "2019.06.20",
     title_en: "‘FLOWING’ 3rd Edition exhibition for book launch",
     body_en:
       "‘FLOWING’, which was loved by many people as the best seller of Datz Press, changed its cover and published its third edition. To celebrate this, we have prepared an exhibition in the D’Ark Room to introduce Wayne Levin’s works and his books together. Levin's art world, in which he continues to work in photography of underwater landscapes through his own view point, is full of transcendental inspiration to feel the order and flow of life. The photo series ‘Flowing’, which was taken for 30 years, ‘Island, Jeju’, a collection of works taken as a stranger, and a Lecture video will be displayed together.",
@@ -145,8 +148,8 @@ export const exhibitions = [
     id: 9,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2018-10-26T07:00:00.000Z",
-    end_date: "2018-12-31T08:00:00.000Z",
+    start_date: "2018.10.26",
+    end_date: "2018.12.31",
     title_en: "Magazine Gitz Vol.10 exhibition for book launch",
     body_en:
       "The work of nine artists participating in the exhibition Magazine Gitz Vol.10 ‘Process and Attitude’ will be on display in the D’Ark Room and D’Front Space for about two months. Through the magazine, ‘Gitz’, Datz Press has captured the process of visualizing the density and purity of life and art. The magazine contains a meditative space of time and space facing the pure gaze and serene attitude of the artist who deals with life, and the nine artists synthesize, purify, and reproduce the moment they meet the world in their own language.",
@@ -163,8 +166,8 @@ export const exhibitions = [
     id: 10,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2018-09-14T07:00:00.000Z",
-    end_date: "2018-10-20T07:00:00.000Z",
+    start_date: "2018.09.14",
+    end_date: "2018.10.20",
     title_en: "‘Arranging Life’ exhibition for book launch",
     body_en:
       "Seongyeon Jo has been working on photographs of sophisticated and static attitude, observing and analyzing the growth and extinction of seeds in a slow manner for a long time, like botanists. The artist published a collection of works ‘Arranging Life’ containing the logic, order, and materiality of nature felt while cultivating the work in person. You can see Seongyeon Jo's newly published ‘Arranging Life’ with 15 prints through this exhibition.",
@@ -179,8 +182,8 @@ export const exhibitions = [
     id: 11,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2018-07-07T07:00:00.000Z",
-    end_date: "2018-10-07T07:00:00.000Z",
+    start_date: "2018.07.07",
+    end_date: "2018.10.07",
     title_en: "HERE, NOW.",
     body_en:
       "‘HERE, NOW.’ is a meditative space that confronts the artist's pure gaze and serene attitude toward life. Five artists condense and purify the moment in their own artistic language, recreating it in a visual poem. Featuring the works of Ryuten Paul Rosenblum(photography), Mikyung Kim(painting), Amanda Marchand(photography), Alyssa Fujita Karoui(photography), and Hoon Lee (photography and drawing), the five artists looked at the world purely and captured them delicately, and the beautiful breath of the moment was refined into the photography and the painting to fill the exhibition space.",
@@ -197,8 +200,8 @@ export const exhibitions = [
     id: 12,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2018-07-03T07:00:00.000Z",
-    end_date: "2018-09-01T07:00:00.000Z",
+    start_date: "2018.07.03",
+    end_date: "2018.09.01",
     title_en: "Dear Tree, From Book",
     body_en:
       "Visual artist Mikyung Kim's ‘Tree Thougt’ and photographer Hendrik Paul's ‘Elementum’ will be on display for the month of July at D’Ark Room and D’Front Space with their works. As part of D’Ark Room’s second book making project, the exhibition arranges works under the theme of ‘The Circulation of Nature and Art’. The artists treat art as a medium to explore and perform at a point of endlessly circulating material and mental flow, and introduce an artist book as a 'frame’ and a ‘media’ containing it.",
@@ -215,11 +218,11 @@ export const exhibitions = [
     id: 13,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2018-04-06T07:00:00.000Z",
-    end_date: "2018-05-31T07:00:00.000Z",
+    start_date: "2018.04.06",
+    end_date: "2018.05.31",
     title_en: "‘Silent Prayer’ exhibition for book launch",
     body_en:
-      "‘Silent Prayer’ is a collection of Jeongin Kim’s works that starts with experience from the absence of his father, who came to Buddhism and as a result, she recorded the landscape and the object in a simple and transparent manner. Kim, who discovered the key to healing in the process of linking the five-year record, works to inspire the human suffering and recovery of life and relationships. Along with the publication, 22 prints from the book will be displayed in D’Ark Room and D'Front Space.",
+      "‘Silent Prayer’ is a collection of Jeongin Kim’s works that starts with experience from the absence of his father, who came to Buddhism and as a result, she recorded the landscape and the object in a simple and transparent manner. Kim, who discovered the key to healing in the process of linking the five.year record, works to inspire the human suffering and recovery of life and relationships. Along with the publication, 22 prints from the book will be displayed in D’Ark Room and D'Front Space.",
     notes_en: "Artist\nJeongin Kim\n \nRelated Event\n6 Apr, FNL#12 Book Talk",
     preview_body_en: "",
     title_ko: "「묵안默安」 출판기념전",
@@ -231,8 +234,8 @@ export const exhibitions = [
     id: 14,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2018-03-17T07:00:00.000Z",
-    end_date: "2018-05-27T07:00:00.000Z",
+    start_date: "2018.03.17",
+    end_date: "2018.05.27",
     title_en: "The Artist’s Garden",
     body_en:
       "In the exhibition ‘The Artist’s Garden’, taking off from the question, “what significance does the garden have for an artist”, it consists of more than 50 works provided by Korean artists and the collections of Datz Museum of Art. Moreover, a special separated study space called ‘Garden of the Heart’ was composed to add literary depth and interpretation to the artist’s garden. This exhibition is even more special because you can meet the garden, which has been a source of inspiration for all artists, and reflect deeply on the essential relationship between nature and art.",
@@ -249,25 +252,25 @@ export const exhibitions = [
     id: 15,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2018-01-19T08:00:00.000Z",
-    end_date: "2018-02-10T08:00:00.000Z",
-    title_en: "‘Re-membrance of the Remembrance’ exhibition for book launch",
+    start_date: "2018.01.19",
+    end_date: "2018.02.10",
+    title_en: "‘Re.membrance of the Remembrance’ exhibition for book launch",
     body_en:
-      "Hye-Ryoung Min, a photographer based in New York, has worked on looking back on relationships and everyday life through her art. ‘Re-membrance of the Remembrance’ is her first book, a visual reconstruction of memories that have passed through over 70 diary books that the artist has written since childhood. The book contains a diary as still life, a place in the diary, a portrait of the artist, and text from the diary. In this exhibition, you can see 25 pieces of works from the book along with the newly published book of Hye-Ryoung Min.",
+      "Hye.Ryoung Min, a photographer based in New York, has worked on looking back on relationships and everyday life through her art. ‘Re.membrance of the Remembrance’ is her first book, a visual reconstruction of memories that have passed through over 70 diary books that the artist has written since childhood. The book contains a diary as still life, a place in the diary, a portrait of the artist, and text from the diary. In this exhibition, you can see 25 pieces of works from the book along with the newly published book of Hye.Ryoung Min.",
     notes_en:
-      "Artist\nHye-Ryoung Min\n \nRelated Event\n19 Jan, FNL#10 Artist Talk",
+      "Artist\nHye.Ryoung Min\n \nRelated Event\n19 Jan, FNL#10 Artist Talk",
     preview_body_en: "",
     title_ko: " 「기억의 재구성」 출판기념전",
     body_ko:
-      "뉴욕에서 활동하는 사진가 민혜령은 일상의 모습을 통해 인간관계와 삶을 되돌아보는 작업을 해오고 있습니다. 「기억의 재구성Re-membrance of the Remembrance」는 그의 첫 번째 책으로, 작가가 어린시절부터 꾸준히 써내려온 70여 권의 일기장을 통해 지나온 기억들을 시각적으로 재구성한 책입니다. 정물로서의 일기장과 그 속에 담긴 장소, 작가의 초상, 그리고 일기에서 발췌한 텍스트를 함께 담았습니다. 이번 전시에서는 새로이 출판된 민혜령의 책과 함께 책에 실린 25점의 작품을 보실 수 있습니다.",
+      "뉴욕에서 활동하는 사진가 민혜령은 일상의 모습을 통해 인간관계와 삶을 되돌아보는 작업을 해오고 있습니다. 「기억의 재구성Re.membrance of the Remembrance」는 그의 첫 번째 책으로, 작가가 어린시절부터 꾸준히 써내려온 70여 권의 일기장을 통해 지나온 기억들을 시각적으로 재구성한 책입니다. 정물로서의 일기장과 그 속에 담긴 장소, 작가의 초상, 그리고 일기에서 발췌한 텍스트를 함께 담았습니다. 이번 전시에서는 새로이 출판된 민혜령의 책과 함께 책에 실린 25점의 작품을 보실 수 있습니다.",
     notes_ko: "참여작가\n민혜령\n \n연계행사\n1월 19일, FNL#10 아티스트토크",
   },
   {
     id: 16,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2017-09-09T07:00:00.000Z",
-    end_date: "2018-02-25T08:00:00.000Z",
+    start_date: "2017.09.09",
+    end_date: "2018.02.25",
     title_en: "Resonant Voices",
     body_en: "",
     notes_en:
@@ -282,11 +285,11 @@ export const exhibitions = [
     id: 17,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2017-07-15T07:00:00.000Z",
-    end_date: "2017-08-27T07:00:00.000Z",
+    start_date: "2017.07.15",
+    end_date: "2017.08.27",
     title_en: "Water in Between",
     body_en:
-      "‘Water in Between’ is an exhibition that faces the uniqueness of ‘water’ as a theme in art. Hyunjung Kim, Andrew Gold, and Seungjoo Yang each express various interpretations about water through painting, photography, and performance(video). While Hyunjung Kim and Andrew Gold express waves through charcoal and photography, respectively, revealing an impressive contrast in styles, Seungjoo Yang represents flowing water in a symbolic way using black cloth, sometimes calmly and sometimes boldly. This adds an extra dimension to the exhibition, in exquisite harmony with the primordiality of the charcoal and the liveliness of the photograph. The exhibition, consisting of works by these three artists and some additional works from the collection of Datz Museum of Art, aims to create a special space of ‘water’ where the concreteness and abstractness of water exist in multi-dimensional harmony.",
+      "‘Water in Between’ is an exhibition that faces the uniqueness of ‘water’ as a theme in art. Hyunjung Kim, Andrew Gold, and Seungjoo Yang each express various interpretations about water through painting, photography, and performance(video). While Hyunjung Kim and Andrew Gold express waves through charcoal and photography, respectively, revealing an impressive contrast in styles, Seungjoo Yang represents flowing water in a symbolic way using black cloth, sometimes calmly and sometimes boldly. This adds an extra dimension to the exhibition, in exquisite harmony with the primordiality of the charcoal and the liveliness of the photograph. The exhibition, consisting of works by these three artists and some additional works from the collection of Datz Museum of Art, aims to create a special space of ‘water’ where the concreteness and abstractness of water exist in multi.dimensional harmony.",
     notes_en:
       "Artist\nHyunjung Kim, Andrew Gold, Seungjoo Yang\n \nRelated Event\n14 Jul, FNL#9 Artist Talk\n15 Jul, Opening Performance",
     preview_body_en: "",
@@ -300,8 +303,8 @@ export const exhibitions = [
     id: 18,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2017-04-08T07:00:00.000Z",
-    end_date: "2017-07-02T07:00:00.000Z",
+    start_date: "2017.04.08",
+    end_date: "2017.07.02",
     title_en: "Heaven, Wind, Stars and Poems",
     body_en:
       "The exhibition ‘Heaven, Wind, Stars and Poems’ is a special solo exhibition of photographer Barbara Bosworth. The artist’s photographic works, which contain the artist’s warm attitude to the small lights of nature—the sun, the moon, stars and fireflies, sparkling far away in space or in the woods—will be exhibited together with poetry by Dongjoo Yoon. Through these two artists, who loved sky, wind and stars, and sang about their love through poetry and photography, spectators will be able to enjoy the beautiful artistic harmony of the artists from East and West.",
@@ -318,8 +321,8 @@ export const exhibitions = [
     id: 19,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2017-01-25T08:00:00.000Z",
-    end_date: "2017-02-25T08:00:00.000Z",
+    start_date: "2017.01.25",
+    end_date: "2017.02.25",
     title_en: "‘Black Wind’ exhibition for book launch",
     body_en:
       "Datz Press has published a new photo book, ‘Black Wind.’ In this book, combining the previous works of Gap Chul Lee, with new works that the public had no chance to encounter. He is famous for his distinctive world of photography which contains Koreans' identity, their tenacious vitality, emotions which concern on the history, and their invisible spiritual things. Twelve original silver prints from the book will be displayed in D’Ark Room with the book.",
@@ -335,11 +338,11 @@ export const exhibitions = [
     id: 20,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2016-11-12T08:00:00.000Z",
-    end_date: "2017-02-10T08:00:00.000Z",
+    start_date: "2016.11.12",
+    end_date: "2017.02.10",
     title_en: "from Walden",
     body_en:
-      "‘from Walden’ is an exhibition that shows the human intelligence and the inspiration from nature leads to the creation of artists at the point where the context of photography, humanities, religion, science, and philosophy meet. Through the works of artists inspired by Yosemite and Lake Walden in the Concorde region, the artists ask us here 'where are you coming from and where are you heading to?’ The exhibition is composed of works of seven photographers that show the mystery and beauty of nature in various ways and the reproduction of a small cottage of Henry David Thoreau who left the book ‘The Walden’ in a way of living a non-owned life.",
+      "‘from Walden’ is an exhibition that shows the human intelligence and the inspiration from nature leads to the creation of artists at the point where the context of photography, humanities, religion, science, and philosophy meet. Through the works of artists inspired by Yosemite and Lake Walden in the Concorde region, the artists ask us here 'where are you coming from and where are you heading to?’ The exhibition is composed of works of seven photographers that show the mystery and beauty of nature in various ways and the reproduction of a small cottage of Henry David Thoreau who left the book ‘The Walden’ in a way of living a non.owned life.",
     notes_en:
       "Artist\nEliot Porter, Carleton Watkins, David Ellingsen, Kirk Crippens & Gretchen LeMaistre, Minny Lee, Sangyon Joo\n \nRelated Event\n12 Nov, Opening Performance",
     preview_body_en: "",
@@ -353,8 +356,8 @@ export const exhibitions = [
     id: 21,
     type: "d'ark room",
     visit_url: "",
-    start_date: "2016-11-09T08:00:00.000Z",
-    end_date: "2016-12-31T08:00:00.000Z",
+    start_date: "2016.11.09",
+    end_date: "2016.12.31",
     title_en: "Nature and Art",
     body_en:
       "Since the existence of art, artists have been inspired by nature. This exhibition consists of artist books which introduces books by artists who work on nature and Nature Photography which captures the emotions that humans can interact with nature. In addition, Media Artist Joon Kim's Sound Installation which collects sounds from nature and installs in space is filled with the exhibition together.",
@@ -371,8 +374,8 @@ export const exhibitions = [
     id: 22,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2016-09-17T07:00:00.000Z",
-    end_date: "2016-10-23T07:00:00.000Z",
+    start_date: "2016.09.17",
+    end_date: "2016.10.23",
     title_en: "Artist Book Space",
     body_en:
       "‘Artist Book Space’ is an exhibition of artists and Datz Press who want to realize, communicate, and reinterpret the meaning of creation through a space called ‘book’. It is a project that expands the concept of a book as another visual art medium and reconstructs the already produced work into a book to visualize the creative process in various ways.This exhibition with three artists Yunsoo Kim (sculpture /installation), Changhoon Lee (project /installation), and Victor Sira (photo /book artist) expands the concept of a book as a visual art medium and shows a ‘book space’ that expands to the subject for artistic thinking.",
@@ -389,11 +392,11 @@ export const exhibitions = [
     id: 23,
     type: "datz museum of art",
     visit_url: "",
-    start_date: "2016-05-07T07:00:00.000Z",
-    end_date: "2016-06-22T07:00:00.000Z",
+    start_date: "2016.05.07",
+    end_date: "2016.06.22",
     title_en: "Our Time Between",
     body_en:
-      "‘Our Time Between’ is a drama-like exhibition that shows Doug Muir and Jean McMann’s life, art, and the special relationship between them. Muir, a photographer, captured her life on camera, staying with McMann and losing her memory for more than a decade. Like their emotions, you can feel the humanistic reality that art can capture through the images left by a gentle and wise life.",
+      "‘Our Time Between’ is a drama.like exhibition that shows Doug Muir and Jean McMann’s life, art, and the special relationship between them. Muir, a photographer, captured her life on camera, staying with McMann and losing her memory for more than a decade. Like their emotions, you can feel the humanistic reality that art can capture through the images left by a gentle and wise life.",
     notes_en: "Artist\nDoug Muir, Jean McMann",
     preview_body_en: "",
     title_ko: "우리가 사는 동안",
