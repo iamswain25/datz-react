@@ -10,8 +10,8 @@ import {
 import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
 import { useParams, NavLink } from "react-router-dom";
-import { bottomcards } from "../@type/event";
-import EventCardForViewAll from "../components/EventCardForViewAll";
+import ExhibitionCardForViewAll from "../components/ExhibitionCardForViewAll";
+import { exhibitions } from "../@type/exhibition";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   darkroom: "D’Ark Room",
@@ -22,7 +22,7 @@ export default function Exhibitions() {
   const isDesktop = useDesktop();
   return (
     <>
-      <ArtistHeader fixed hasSearch closeTo="/event" />
+      <ArtistHeader fixed hasSearch closeTo="/exhibition" />
       <section
         className={css`
           font-family: BauerGroteskOTW03;
@@ -72,13 +72,14 @@ export default function Exhibitions() {
           ))}
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
-          {bottomcards
+          {exhibitions
+            .slice(1)
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
             .map((c, i) => (
               <Grid key={i} item xs={6} xl={4}>
-                <EventCardForViewAll event={c} />
+                <ExhibitionCardForViewAll item={c} />
               </Grid>
             ))}
         </Grid>

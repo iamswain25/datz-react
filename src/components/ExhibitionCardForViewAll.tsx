@@ -1,12 +1,20 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { bottomcard1 } from "../@type/event";
-export default function EventCardForViewAll({ event = bottomcard1 }) {
-  const { image, date, title } = event;
+import { exhibitions, image } from "../@type/exhibition";
+import { useGlobalState, LANG } from "../store/useGlobalState";
+import { filterExhibitionCurrent } from "../utils/datefns";
+import { useHistory } from "react-router-dom";
+export default function ExhibitionCardForViewAll({ item = exhibitions[1] }) {
   const isDesktop = useDesktop();
+  const [lang] = useGlobalState(LANG);
+  const history = useHistory();
+  const isCurrent = filterExhibitionCurrent(item);
+  function clickHandler() {
+    history.push(`/exhibition/${item.id}`);
+  }
   return (
-    <section className={css``}>
+    <section className={css``} onClick={clickHandler}>
       <div
         className={css`
           position: relative;
@@ -19,7 +27,7 @@ export default function EventCardForViewAll({ event = bottomcard1 }) {
           className={css`
             object-fit: contain;
             width: 100%;
-            mix-blend-mode: screen;
+            mix-blend-mode: ${isCurrent ? "normal" : "screen"};
           `}
         />
       </div>
@@ -50,7 +58,7 @@ export default function EventCardForViewAll({ event = bottomcard1 }) {
               color: #fff;
             `}
           >
-            {title}
+            {lang === "ko" ? item.title_ko : item.title_en}
           </p>
           <p
             className={css`
@@ -61,7 +69,7 @@ export default function EventCardForViewAll({ event = bottomcard1 }) {
               color: #ffffff;
             `}
           >
-            {date}
+            {item.start_date} - {item.end_date}
           </p>
         </div>
       </div>

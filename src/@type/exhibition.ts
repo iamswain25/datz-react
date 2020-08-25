@@ -4,7 +4,7 @@ export const exhibitions = [
   { id: 0 },
   {
     id: 1,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "X",
     start_date: "2020.8.7 ",
     end_date: "2020.10.31",
@@ -22,7 +22,7 @@ export const exhibitions = [
   },
   {
     id: 2,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2020.03.28",
     end_date: "2020.08.16",
@@ -40,7 +40,7 @@ export const exhibitions = [
   },
   {
     id: 3,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2019.11.02",
     end_date: "2020.02.23",
@@ -58,7 +58,7 @@ export const exhibitions = [
   },
   {
     id: 4,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2019.07.06",
     end_date: "2019.10.13",
@@ -76,7 +76,7 @@ export const exhibitions = [
   },
   {
     id: 5,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2019.07.05",
     end_date: "2019.09.30",
@@ -94,7 +94,7 @@ export const exhibitions = [
   },
   {
     id: 6,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2019.03.16",
     end_date: "2019.06.16",
@@ -112,7 +112,7 @@ export const exhibitions = [
   },
   {
     id: 7,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2018.10.27",
     end_date: "2019.02.17",
@@ -130,7 +130,7 @@ export const exhibitions = [
   },
   {
     id: 8,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2019.04.10",
     end_date: "2019.06.20",
@@ -146,7 +146,7 @@ export const exhibitions = [
   },
   {
     id: 9,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2018.10.26",
     end_date: "2018.12.31",
@@ -164,7 +164,7 @@ export const exhibitions = [
   },
   {
     id: 10,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2018.09.14",
     end_date: "2018.10.20",
@@ -180,7 +180,7 @@ export const exhibitions = [
   },
   {
     id: 11,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2018.07.07",
     end_date: "2018.10.07",
@@ -198,7 +198,7 @@ export const exhibitions = [
   },
   {
     id: 12,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2018.07.03",
     end_date: "2018.09.01",
@@ -216,7 +216,7 @@ export const exhibitions = [
   },
   {
     id: 13,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2018.04.06",
     end_date: "2018.05.31",
@@ -232,7 +232,7 @@ export const exhibitions = [
   },
   {
     id: 14,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2018.03.17",
     end_date: "2018.05.27",
@@ -250,7 +250,7 @@ export const exhibitions = [
   },
   {
     id: 15,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2018.01.19",
     end_date: "2018.02.10",
@@ -267,7 +267,7 @@ export const exhibitions = [
   },
   {
     id: 16,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2017.09.09",
     end_date: "2018.02.25",
@@ -283,7 +283,7 @@ export const exhibitions = [
   },
   {
     id: 17,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2017.07.15",
     end_date: "2017.08.27",
@@ -301,7 +301,7 @@ export const exhibitions = [
   },
   {
     id: 18,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2017.04.08",
     end_date: "2017.07.02",
@@ -319,7 +319,7 @@ export const exhibitions = [
   },
   {
     id: 19,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2017.01.25",
     end_date: "2017.02.25",
@@ -336,7 +336,7 @@ export const exhibitions = [
   },
   {
     id: 20,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2016.11.12",
     end_date: "2017.02.10",
@@ -354,7 +354,7 @@ export const exhibitions = [
   },
   {
     id: 21,
-    type: "d'ark room",
+    type: "D’Ark Room",
     visit_url: "",
     start_date: "2016.11.09",
     end_date: "2016.12.31",
@@ -372,7 +372,7 @@ export const exhibitions = [
   },
   {
     id: 22,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2016.09.17",
     end_date: "2016.10.23",
@@ -390,7 +390,7 @@ export const exhibitions = [
   },
   {
     id: 23,
-    type: "datz museum of art",
+    type: "Datz Museum of Art",
     visit_url: "",
     start_date: "2016.05.07",
     end_date: "2016.06.22",
