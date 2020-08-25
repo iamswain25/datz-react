@@ -14,11 +14,10 @@ import { bottomcards } from "../@type/event";
 import EventCardForViewAll from "../components/EventCardForViewAll";
 const FILTERS: { [key: string]: string } = {
   all: "all",
-  talk: "Artist Talk / Lecture",
-  exhibition: "Exhibition",
-  bookfair: "Book Fair",
+  darkroom: "D’Ark Room",
+  museum: "Datz Museum of Art",
 };
-export default function EventPast() {
+export default function Exhibitions() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop();
   return (
@@ -42,7 +41,7 @@ export default function EventPast() {
             margin-bottom: 12px;
           `}
         >
-          Past Event
+          Past Exhibition
         </div>
         <Grid
           container

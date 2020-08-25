@@ -1,10 +1,10 @@
 import React from "react";
 import { css } from "emotion";
-import useDesktop from "../components/useDesktop";
-import { bottomBtn37, marginH10, marginH27 } from "../components/styles";
-import EventCardMain from "../components/EventCardMain";
+import useDesktop from "./useDesktop";
+import { bottomBtn37, marginH10, marginH27 } from "./styles";
+import EventCardMain from "./EventCardMain";
 import { eventcard1, eventcard2, bottomcards } from "../@type/event";
-import EventCardPastGrey from "../components/EventCardPastGrey";
+import EventCardPastGrey from "./EventCardPastGrey";
 import { Link } from "react-router-dom";
 
 export default function EventRight() {
@@ -53,7 +53,7 @@ export default function EventRight() {
         ))}
       </div>
       <Link
-        to="event_past"
+        to="events"
         className={css`
           ${bottomBtn37}
           ${isDesktop ? marginH10 : marginH27}

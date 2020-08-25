@@ -3,8 +3,8 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { flexcolumn, flexrow, paddingH37 } from "../components/styles";
-import EventStickyLeftGallery from "../components/EventStickyLeftGallery";
-import ExhibitionRight from "./ExhibitionRight";
+import ExhibitionRight from "../components/ExhibitionRight";
+import ExhibitionLeft from "../components/ExhibitionLeft";
 const desktopContainer = css`
   ${flexrow}
   ${paddingH37}
@@ -18,7 +18,7 @@ export default function Event() {
     <>
       <Header fixed />
       <section className={isDesktop ? desktopContainer : mobileContainer}>
-        <EventStickyLeftGallery />
+        <ExhibitionLeft />
         <ExhibitionRight />
       </section>
     </>

@@ -4,7 +4,7 @@ import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { flexcolumn, flexrow, paddingH37 } from "../components/styles";
 import EventStickyLeftGallery from "../components/EventStickyLeftGallery";
-import EventRight from "./EventRight";
+import EventRight from "../components/EventRight";
 const desktopContainer = css`
   ${flexrow}
   ${paddingH37}

@@ -20,8 +20,10 @@ import Contact from "./pages/Contact";
 import AboutDatzpress from "./pages/AboutDatzpress";
 import AboutDatzmuseum from "./pages/AboutDatzmuseum";
 import AboutDarkroom from "./pages/AboutDarkroom";
-import EventPast from "./pages/EventPast";
+import Events from "./pages/Events";
 import Exhibition from "./pages/Exhibition";
+import Exhibitions from "./pages/Exhibitions";
+import ExhibitionItem from "./pages/ExhibitionItem";
 function App() {
   return (
     <Router>
@@ -31,11 +33,16 @@ function App() {
         <Route exact path="/exhibition" component={Exhibition} />
         <Route exact path="/publication/:id" component={PublicationItem} />
         <Route exact path="/event" component={Event} />
-        <Route exact path="/event_past">
-          <Redirect to="/event_past/all" />
+        <Route exact path="/events">
+          <Redirect to="/events/all" />
         </Route>
-        <Route exact path="/event_past/:filter" component={EventPast} />
+        <Route exact path="/Exhibitions">
+          <Redirect to="/exhibitions/all" />
+        </Route>
+        <Route exact path="/events/:filter" component={Events} />
+        <Route exact path="/exhibitions/:filter" component={Exhibitions} />
         <Route exact path="/event/:id" component={EventItem} />
+        <Route exact path="/exhibition/:id" component={ExhibitionItem} />
         <Route
           exact
           path="/publication/:id/readmore"

@@ -2,8 +2,8 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "../components/styles";
-import EventCardMain from "../components/EventCardMain";
-import { eventcard1, eventcard2, bottomcards } from "../@type/event";
+import ExhibitionCardMain from "../components/ExhibitionCardMain";
+import { exhi1, exhi2, bottomcards } from "../@type/event";
 import EventCardPastGrey from "../components/EventCardPastGrey";
 import { Link } from "react-router-dom";
 
@@ -23,8 +23,8 @@ export default function ExhibitionRight() {
           column-gap: 27px;
         `}
       >
-        <EventCardMain event={eventcard1} />
-        <EventCardMain event={eventcard2} />
+        <ExhibitionCardMain event={exhi1} />
+        <ExhibitionCardMain event={exhi2} />
       </div>
       <h1
         className={css`
@@ -48,12 +48,12 @@ export default function ExhibitionRight() {
           column-gap: 27px;
         `}
       >
-        {[eventcard1, eventcard2, ...bottomcards].map((a, i) => (
+        {[exhi1, exhi2, ...bottomcards].map((a, i) => (
           <EventCardPastGrey key={i} event={a} />
         ))}
       </div>
       <Link
-        to="event_past"
+        to="exhibitions"
         className={css`
           ${bottomBtn37}
           ${isDesktop ? marginH10 : marginH27}
