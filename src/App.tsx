@@ -25,6 +25,7 @@ import Exhibition from "./pages/Exhibition";
 import Exhibitions from "./pages/Exhibitions";
 import ExhibitionItem from "./pages/ExhibitionItem";
 import ExhibitionReadmore from "./pages/ExhibitionReadmore";
+import Artist from "./pages/Artist";
 function App() {
   return (
     <Router>
@@ -55,6 +56,7 @@ function App() {
           component={ExhibitionReadmore}
         />
         <Route exact path="/artist/:id" component={ArtistPage} />
+        <Route exact path="/artist" component={Artist} />
         <Route exact path="/login" component={Signin} />
         <Route exact path="/about" component={About} />
         <Route exact path="/about/datzpress" component={AboutDatzpress} />

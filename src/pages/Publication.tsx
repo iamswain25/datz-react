@@ -22,7 +22,7 @@ export default function Publication() {
   const isDesktop = useDesktop();
   return (
     <>
-      <Header fixed />
+     <Header sticky />
       <section className={isDesktop ? desktopContainer : mobileContainer}>
         <PublicationStickyTop />
         <PublicationList />

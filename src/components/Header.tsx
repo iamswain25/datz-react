@@ -16,7 +16,7 @@ const headerText = css`
   text-decoration: none;
   line-height: 1.19;
   text-align: center;
-  color: #707070;
+  color: inherit;
 `;
 
 const linkActiveClass = css`
@@ -24,8 +24,11 @@ const linkActiveClass = css`
   color: #383838;
 `;
 
-export default function Header(props: { fixed?: boolean }) {
-  const { fixed = false } = props;
+export default function Header({
+  fixed = false,
+  sticky = false,
+  color = "#707070",
+}) {
   const [text, setText] = React.useState("");
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
@@ -46,7 +49,9 @@ export default function Header(props: { fixed?: boolean }) {
               className={`${headerText} ${marginH16}`}
               to={link}
               key={i}
-              activeClassName={linkActiveClass}
+              activeClassName={css`
+                ${linkActiveClass} ${color === "white" ? "color: white" : ""}
+              `}
             >
               {label}
             </NavLink>
@@ -57,7 +62,7 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px #707070;
+            border-left: solid 1px ${color};
             ${marginH16}
           `}
         />
@@ -78,11 +83,13 @@ export default function Header(props: { fixed?: boolean }) {
         className={css`
             ${flexrowcenter}
             ${headerText}
-            padding-left: ${isDesktop ? 17 : 5}px;
+            padding-left: ${isDesktop ? 16 : 5}px;
+            padding-right: ${isDesktop ? 16 : 5}px;
+            margin-bottom: 8px;
           `}
         to="/"
       >
-        <Datz />
+        <Datz color={color} />
       </NavLink>
       {links}
       <div
@@ -109,7 +116,7 @@ export default function Header(props: { fixed?: boolean }) {
               onChange={textHandler}
               className={css`
                 ${headerText};
-                border-bottom: solid 1px #707070;
+                border-bottom: solid 1px ${color};
                 width: 56px;
                 margin-left: 5px;
                 margin-right: 8px;
@@ -122,7 +129,7 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "en" ? "#707070" : "#afafaf"};
+            color: ${lang === "en" ? color : "#afafaf"};
           `}
           onClick={() => setLang("en")}
         >
@@ -132,7 +139,7 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px #707070;
+            border-left: solid 1px ${color};
           `}
         />
         <button
@@ -140,7 +147,7 @@ export default function Header(props: { fixed?: boolean }) {
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "ko" ? "#707070" : "#afafaf"};
+            color: ${lang === "ko" ? color : "#afafaf"};
           `}
         >
           KR
@@ -166,21 +173,45 @@ export default function Header(props: { fixed?: boolean }) {
       </div>
     </>
   );
+  if (sticky) {
+    return (
+      <>
+        <div
+          className={css`
+            position: sticky;
+            top: 0;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            z-index: 5;
+            padding-left: ${isDesktop ? 37 : 17}px;
+            padding-right: ${isDesktop ? 37 : 17}px;
+            background-color: #fff;
+            color: ${color};
+          `}
+        >
+          {innerHeader}
+        </div>
+        {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+      </>
+    );
+  }
   if (fixed) {
     return (
       <>
         <div
-          style={{
-            position: "sticky",
-            top: "0",
-            height: 79,
-            paddingLeft: isDesktop ? 37 : 17,
-            paddingRight: isDesktop ? 37 : 17,
-            display: "flex",
-            alignItems: "center",
-            zIndex: 5,
-            backgroundColor: "#ffffff",
-          }}
+          className={css`
+            position: fixed;
+            width: 100%;
+            top: 0;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            z-index: 5;
+            padding-left: ${isDesktop ? 37 : 17}px;
+            padding-right: ${isDesktop ? 37 : 17}px;
+            color: ${color};
+          `}
         >
           {innerHeader}
         </div>

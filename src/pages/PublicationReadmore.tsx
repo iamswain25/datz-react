@@ -16,7 +16,7 @@ export default function Publication() {
   const isDesktop = useDesktop();
   return (
     <>
-      <Header fixed={isDesktop} />
+     <Header sticky={isDesktop} />
       <div className={isDesktop ? paddingH37 : paddingH27}>
         <section className={isDesktop ? flexrow : flexcolumn}>
           <PublicationReadmoreStickyTop />

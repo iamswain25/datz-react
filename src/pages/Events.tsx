@@ -23,7 +23,7 @@ export default function Events() {
   const isDesktop = useDesktop();
   return (
     <>
-      <ArtistHeader fixed hasSearch closeTo="/event" />
+      <ArtistHeader sticky hasSearch closeTo="/event" />
       <section
         className={css`
           font-family: BauerGroteskOTW03;

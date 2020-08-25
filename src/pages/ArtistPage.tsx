@@ -26,7 +26,7 @@ export default function ArtistPage() {
   return (
     <>
       <div className={bgContainer}>
-        <ArtistHeader fixed shared />
+        <ArtistHeader sticky shared />
         <div className={isDesktop ? paddingH55 : paddingH27}>
           <ArtistMainImage />
           <section className={isDesktop ? flexrow : flexcolumn}>

@@ -12,9 +12,7 @@ import { flexrowcenter, marginH10 } from "./styles";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-
   line-height: 1.19;
-
   text-align: center;
   color: #ffffff;
   margin-left: 16px;
@@ -23,12 +21,14 @@ const headerText = css`
 
 export default function ArtistHeader({
   fixed = false,
+  sticky = false,
   shared = false,
   isWhite = false,
   hasSearch = false,
-  closeTo
+  closeTo,
 }: {
   fixed?: boolean;
+  sticky?: boolean;
   shared?: boolean;
   isWhite?: boolean;
   hasSearch?: boolean;
@@ -147,21 +147,44 @@ export default function ArtistHeader({
       </div>
     </>
   );
+  if (sticky) {
+    return (
+      <>
+        <div
+          className={css`
+            position: sticky;
+            top: 0;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            padding-left: ${isDesktop ? 37 : 17}px;
+            padding-right: ${isDesktop ? 37 : 17}px;
+            background-color: ${isWhite ? "#fff" : "#afafaf"};
+          `}
+        >
+          {innerHeader}
+        </div>
+        {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+      </>
+    );
+  }
   if (fixed) {
     return (
       <>
         <div
-          style={{
-            position: "sticky",
-            top: "0",
-            height: 79,
-            display: "flex",
-            alignItems: "center",
-            zIndex: 2,
-            paddingLeft: isDesktop ? 37 : 17,
-            paddingRight: isDesktop ? 37 : 17,
-            backgroundColor: isWhite ? "#fff" : "#afafaf",
-          }}
+          className={css`
+            position: fixed;
+            width: 100%;
+            top: 0;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            padding-left: ${isDesktop ? 37 : 17}px;
+            padding-right: ${isDesktop ? 37 : 17}px;
+            background-color: transparent;
+          `}
         >
           {innerHeader}
         </div>

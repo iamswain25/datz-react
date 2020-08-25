@@ -107,7 +107,7 @@ export default function AboutDatzpress() {
           />
         </div>
       )}
-      <ArtistHeader fixed />
+      <ArtistHeader sticky />
       <div className={isDesktop ? twoColumns : mobileContainer}>
         <div
           className={css`

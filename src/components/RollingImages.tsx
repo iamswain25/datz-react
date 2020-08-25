@@ -3,11 +3,13 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 export default function RollingImages(props: {
   images: Array<any> | undefined;
+  className?: string;
 }) {
   const images =
     (props.images && props.images.map((a) => ({ original: a }))) || [];
   return (
     <div
+      className={props.className}
       style={{
         overflow: "hidden",
         position: "relative",

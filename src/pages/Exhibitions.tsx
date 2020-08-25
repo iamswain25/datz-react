@@ -22,7 +22,7 @@ export default function Exhibitions() {
   const isDesktop = useDesktop();
   return (
     <>
-      <ArtistHeader fixed hasSearch closeTo="/exhibition" />
+      <ArtistHeader sticky hasSearch closeTo="/exhibition" />
       <section
         className={css`
           font-family: BauerGroteskOTW03;
