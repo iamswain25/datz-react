@@ -5,19 +5,20 @@ export default function BookProject() {
   return (
     <section
       className={css`
-        max-width: 600px;
         font-family: BauerGroteskOTW03;
         text-align: center;
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: center;
+        align-items: center;
         color: #5d5d5d;
         border-bottom: 1px solid #5d5d5d;
       `}
     >
       <div
         className={css`
+          max-width: 600px;
           flex: 1;
           display: flex;
           flex-direction: column;

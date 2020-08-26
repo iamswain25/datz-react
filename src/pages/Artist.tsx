@@ -7,15 +7,18 @@ import { css } from "emotion";
 import { Divider } from "@material-ui/core";
 import { marginH55, marginH37 } from "../components/styles";
 import BookProject from "../components/BookProject";
+import DatzArtistProject from "../components/DatzArtistProject";
 export default function Artist() {
   return (
     <>
       <Header fixed color="white" />
       <RollingImages
         images={[a1, a1, a1]}
+        additionalClass="white-bullets"
         className={css`
           height: 100vh;
         `}
+        children={<DatzArtistProject />}
       />
       <div
         className={css`

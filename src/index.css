@@ -181,6 +181,16 @@ select[multiple] {
   border: 1px solid #707070;
   box-shadow: none;
 }
+.image-gallery.white-bullets
+  .image-gallery-bullets
+  .image-gallery-bullet.active {
+  background-color: white;
+}
+.image-gallery.white-bullets
+  .image-gallery-bullets-container
+  .image-gallery-bullet {
+  border: 1px solid white;
+}
 .image-gallery
   .image-gallery-content
   .image-gallery-slide
