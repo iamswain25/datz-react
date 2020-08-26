@@ -5,6 +5,7 @@ import a2 from "../assets/images/artist/artist2.png";
 import e1 from "../assets/images/artist/exhi1.png";
 import ai1 from "../assets/images/artist/ai1.png";
 import ai2 from "../assets/images/artist/ai2.png";
+import ai3 from "../assets/images/artist/ai3.png";
 import Header from "../components/Header";
 import { css } from "emotion";
 import { Divider } from "@material-ui/core";
@@ -15,6 +16,10 @@ import DatzArtistExhibition from "../components/DatzArtistExhibition";
 import DatzArtistProject2 from "../components/DatzArtistProject2";
 import DatzArtistExhibition2 from "../components/DatzArtistExhibition2";
 import DatzArtistExhibition3 from "../components/DatzArtistExhibition3";
+import Residence from "../components/Residence";
+import DatzArtistExhibition4 from "../components/DatzArtistExhibition4";
+import DatzArtistProject3 from "../components/DatzArtistProject3";
+import BtnBack from "../components/BtnBack";
 export default function Artist() {
   return (
     <>
@@ -69,7 +74,7 @@ export default function Artist() {
         children={<DatzArtistExhibition />}
       />
       <RollingImages
-        images={[ai1, ai1, ai1]}
+        images={[ai1, ai2, ai3]}
         additionalClass="white-bullets"
         className={css`
           height: 100vh;
@@ -79,7 +84,7 @@ export default function Artist() {
         children={<DatzArtistExhibition2 />}
       />
       <RollingImages
-        images={[ai2, ai2, ai2]}
+        images={[ai2, ai3, ai1]}
         additionalClass="white-bullets"
         className={css`
           height: 100vh;
@@ -88,6 +93,48 @@ export default function Artist() {
         `}
         children={<DatzArtistExhibition3 />}
       />
+      <div
+        className={css`
+          ${marginH55}
+          margin-top: 28px;
+          margin-bottom: 28px;
+        `}
+      >
+        <Divider />
+      </div>
+      <div
+        className={css`
+          ${marginH37} display:flex;
+        `}
+      >
+        <RollingImages
+          images={[ai3, ai1, ai2]}
+          children={<DatzArtistExhibition4 />}
+          className={css`
+            height: 100vh;
+            width: calc(50% - 23px);
+            margin-right: 23px;
+          `}
+        />
+        <div
+          className={css`
+            flex: 1;
+            margin-left: 23px;
+          `}
+        >
+          <Residence />
+        </div>
+      </div>
+      <DatzArtistProject3 />
+      <div
+        className={css`
+          margin-top: 70px;
+          display: flex;
+          justify-content: center;
+        `}
+      >
+        <BtnBack />
+      </div>
     </>
   );
 }
