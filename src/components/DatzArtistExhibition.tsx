@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import { paddingH55 } from "./styles";
 import DatzSvgs from "./DatzSvgs";
-export default function DatzArtistProject() {
+export default function DatzArtistExhibition() {
   return (
     <div
       className={css`
@@ -28,7 +28,7 @@ export default function DatzArtistProject() {
           width: 100%;
         `}
       >
-        Datz Artist Projects
+        Exhibition
         <hr
           className={css`
             margin-top: 5px;
@@ -48,31 +48,24 @@ export default function DatzArtistProject() {
         <DatzSvgs color="white" />
         <div
           className={css`
+            margin-top: 34px;
             max-width: 600px;
             font-size: 19px;
             line-height: 1.42;
-            margin-top: 34px;
           `}
         >
-          Datz Artist Project, run by Datz Community, is a program that supports
-          ideal collaboration among curators, artists, designers and bookmakers
-          based on their expertise in the field of visual arts.
-        </div>
-        <div
-          className={css`
-            margin-top: 27px;
-          `}
-        >
-          <a
-            href="community"
+          In the exhibition space, there is an exhibition with the contents of
+          Datz Press.
+          <div
             className={css`
-              text-decoration: underline;
-              font-size: 16px;
-              line-height: 1.19;
+              font-size: 14px;
+              line-height: 1.14;
+              margin-top: 3px;
             `}
           >
-            About Datz Community {">"}
-          </a>
+            *The two spaces are operated in conjunction with the support of the
+            book project, so there is no separate submission for a exhibition.
+          </div>
         </div>
       </div>
     </div>
