@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { paddingH55 } from "./styles";
+import { paddingH17 } from "./styles";
 import DatzSvgs from "./DatzSvgs";
 export default function DatzArtistExhibition() {
   return (
@@ -18,12 +18,12 @@ export default function DatzArtistExhibition() {
         flex-direction: column;
         align-items: center;
         top: 0;
-        ${paddingH55}
+        ${paddingH17}
       `}
     >
       <div
         className={css`
-          margin-top: 111px;
+          margin-top: 50px;
           flex: 1;
           width: 100%;
         `}
