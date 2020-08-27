@@ -26,6 +26,8 @@ import Exhibitions from "./pages/Exhibitions";
 import ExhibitionItem from "./pages/ExhibitionItem";
 import ExhibitionReadmore from "./pages/ExhibitionReadmore";
 import Artist from "./pages/Artist";
+import Support from "./pages/Support";
+import News from "./pages/News";
 function App() {
   return (
     <Router>
@@ -63,6 +65,8 @@ function App() {
         <Route exact path="/about/darkroom" component={AboutDarkroom} />
         <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/news" component={News} />
+        <Route exact path="/support" component={Support} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>
     </Router>

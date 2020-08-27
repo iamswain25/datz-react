@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 
 export default function BtnTop({
-  white = false,
+  color = "#707070",
   full = false,
   borderTop = false,
 }) {
@@ -22,9 +22,8 @@ export default function BtnTop({
         text-align: center;
         padding: 10px;
         width: ${full ? "100%" : "auto"};
-        border-top: ${borderTop ? 1 : 0}px solid
-          ${white ? "#ffffff" : "#707070"};
-        color: ${white ? "#ffffff" : "#707070"};
+        border-top: ${borderTop ? 1 : 0}px solid ${color};
+        color: ${color};
       `}
     >
       Top {">"}

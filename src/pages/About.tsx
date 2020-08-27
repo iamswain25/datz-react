@@ -18,7 +18,7 @@ export default function About() {
   return (
     <>
       <div className={bgContainer}>
-        <AboutHeader fixed />
+        <AboutHeader sticky />
         <div className={isDesktop ? paddingH37 : paddingH17}>
           <AboutImages1 />
         </div>

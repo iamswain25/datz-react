@@ -25,8 +25,11 @@ const linkActiveClass = css`
   color: #383838;
 `;
 
-export default function AboutHeader(props: { fixed?: boolean }) {
-  const { fixed = false } = props;
+export default function AboutHeader({
+  fixed = false,
+  sticky = false,
+  color = "#707070",
+}) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   const [isOpen, setOpen] = React.useState(false);
@@ -118,21 +121,45 @@ export default function AboutHeader(props: { fixed?: boolean }) {
       </div>
     </>
   );
+  if (sticky) {
+    return (
+      <>
+        <div
+          className={css`
+            position: sticky;
+            top: 0;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            padding-left: ${isDesktop ? 37 : 17}px;
+            padding-right: ${isDesktop ? 37 : 17}px;
+            background-color: #afafaf;
+            color: ${color};
+          `}
+        >
+          {innerHeader}
+        </div>
+        {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+      </>
+    );
+  }
   if (fixed) {
     return (
       <>
         <div
-          style={{
-            position: "sticky",
-            top: "0",
-            height: 79,
-            display: "flex",
-            alignItems: "center",
-            zIndex: 2,
-            paddingLeft: isDesktop ? 37 : 17,
-            paddingRight: isDesktop ? 37 : 17,
-            backgroundColor: "#afafaf",
-          }}
+          className={css`
+            position: fixed;
+            width: 100%;
+            top: 0;
+            height: 79px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            padding-left: ${isDesktop ? 37 : 17}px;
+            padding-right: ${isDesktop ? 37 : 17}px;
+            color: ${color};
+          `}
         >
           {innerHeader}
         </div>

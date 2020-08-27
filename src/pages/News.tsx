@@ -35,7 +35,7 @@ function mapLinks(top: any, i: number) {
     return <br key={i} />;
   }
 }
-export default function Contact() {
+export default function News() {
   const isDesktop = useDesktop();
   React.useEffect(() => {
     window.scrollTo(0, 0);
