@@ -66,13 +66,12 @@ export default function DatzArtistProject2() {
         {items.map((item, i) => {
           const { title, link, artist, image } = item;
           return (
-            <Grid item xs={4} key={i}>
+            <Grid item xs={12} sm={4} key={i}>
               <img className={classes.image} src={image} alt={title} />
               <div className={classes.h5}>{title}</div>
               <div className={classes.h6}>{artist}</div>
               <div
                 className={css`
-                  height: 17px;
                   border-top: solid 1px #aaaaaa;
                   padding-top: 10px;
                   margin-top: 20px;

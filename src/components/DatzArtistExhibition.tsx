@@ -2,7 +2,9 @@ import React from "react";
 import { css } from "emotion";
 import { paddingH17 } from "./styles";
 import DatzSvgs from "./DatzSvgs";
+import useDesktop from "./useDesktop";
 export default function DatzArtistExhibition() {
+  const isDesktop = useDesktop();
   return (
     <div
       className={css`
@@ -23,7 +25,7 @@ export default function DatzArtistExhibition() {
     >
       <div
         className={css`
-          margin-top: 50px;
+          margin-top: ${isDesktop ? 50 : 21}px;
           flex: 1;
           width: 100%;
         `}

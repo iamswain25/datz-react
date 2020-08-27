@@ -1,7 +1,9 @@
 import React from "react";
 import { css } from "emotion";
 import DatzBooks from "../assets/svg/DatzBooks";
+import useDesktop from "./useDesktop";
 export default function Residence() {
+  const isDesktop = useDesktop();
   return (
     <section
       className={css`
@@ -23,6 +25,7 @@ export default function Residence() {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          ${isDesktop ? "" : "margin-top: 25px"}
         `}
       >
         <div
@@ -76,7 +79,7 @@ export default function Residence() {
         </div>
         <div
           className={css`
-            margin-top: 100px;
+            margin-top: ${isDesktop ? 100 : 23}px;
           `}
         >
           <DatzBooks color="#5d5d5d" />

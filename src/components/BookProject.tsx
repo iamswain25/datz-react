@@ -1,7 +1,9 @@
 import React from "react";
 import { css } from "emotion";
 import DatzBooks from "../assets/svg/DatzBooks";
+import useDesktop from "./useDesktop";
 export default function BookProject() {
+  const isDesktop = useDesktop();
   return (
     <section
       className={css`
@@ -23,6 +25,7 @@ export default function BookProject() {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          ${isDesktop ? "" : "margin-top: 25px"}
         `}
       >
         <div
@@ -85,7 +88,7 @@ export default function BookProject() {
             font-size: 16px;
             line-height: 1.19;
             color: #aaaaaa;
-            margin-top: 100px;
+            margin-top: ${isDesktop ? 100 : 23}px;
           `}
         >
           In collaboration with

@@ -9,7 +9,12 @@ import ai3 from "../assets/images/artist/ai3.png";
 import Header from "../components/Header";
 import { css } from "emotion";
 import { Divider } from "@material-ui/core";
-import { marginH55, marginH37 } from "../components/styles";
+import {
+  marginH55,
+  marginH37,
+  paddingH20,
+  marginH17,
+} from "../components/styles";
 import BookProject from "../components/BookProject";
 import DatzArtistProject from "../components/DatzArtistProject";
 import DatzArtistExhibition from "../components/DatzArtistExhibition";
@@ -20,15 +25,21 @@ import Residence from "../components/Residence";
 import DatzArtistExhibition4 from "../components/DatzArtistExhibition4";
 import DatzArtistProject3 from "../components/DatzArtistProject3";
 import BtnBack from "../components/BtnBack";
+import useDesktop from "../components/useDesktop";
 export default function Artist() {
+  const isDesktop = useDesktop();
   return (
     <>
-      <Header fixed color="white" />
+      <Header
+        fixed={isDesktop}
+        sticky={!isDesktop}
+        color={isDesktop ? "white" : undefined}
+      />
       <RollingImages
         images={[a1, a1, a1]}
         additionalClass="white-bullets"
         className={css`
-          height: 100vh;
+          height: ${isDesktop ? "100vh" : "588px"};
         `}
         children={<DatzArtistProject />}
       />
@@ -43,22 +54,59 @@ export default function Artist() {
       </div>
       <div
         className={css`
-          ${marginH37} display:flex;
+          ${isDesktop ? marginH37 : marginH17} display:flex;
+          flex-direction: ${isDesktop ? "row" : "column"};
         `}
       >
         <RollingImages
           images={[a2, a1, a1]}
-          className={css`
-            height: 100vh;
-            width: calc(50% - 23px);
-            margin-right: 23px;
-          `}
+          children={
+            isDesktop ? undefined : (
+              <div
+                className={css`
+                  margin-top: 21px;
+                  width: 100%;
+                  position: absolute;
+                  font-family: BauerGroteskOTW03;
+                  font-size: 23px;
+                  line-height: 1.17;
+                  text-align: center;
+                  color: #ffffff;
+                  top: 0;
+                  ${paddingH20}
+                `}
+              >
+                Residence
+                <hr
+                  className={css`
+                    margin-top: 5px;
+                    border-top-color: white;
+                    border-style: solid;
+                  `}
+                />
+              </div>
+            )
+          }
+          className={
+            isDesktop
+              ? css`
+                  width: calc(50% - 23px);
+                  margin-right: 23px;
+                `
+              : css`
+                  height: 588px;
+                `
+          }
         />
         <div
-          className={css`
-            flex: 1;
-            margin-left: 23px;
-          `}
+          className={
+            isDesktop
+              ? css`
+                  flex: 1;
+                  margin-left: 23px;
+                `
+              : undefined
+          }
         >
           <BookProject />
         </div>
@@ -68,8 +116,8 @@ export default function Artist() {
         images={[e1, e1, e1]}
         additionalClass="white-bullets"
         className={css`
-          height: 100vh;
-          ${marginH37}
+          ${isDesktop ? marginH37 : marginH17}
+          height: ${isDesktop ? "auto" : "588px"};
         `}
         children={<DatzArtistExhibition />}
       />
@@ -77,9 +125,9 @@ export default function Artist() {
         images={[ai1, ai2, ai3]}
         additionalClass="white-bullets"
         className={css`
-          height: 100vh;
           margin-top: 21px;
-          ${marginH37}
+          ${isDesktop ? marginH37 : marginH17}
+          height: ${isDesktop ? "auto" : "588px"};
         `}
         children={<DatzArtistExhibition2 />}
       />
@@ -87,9 +135,9 @@ export default function Artist() {
         images={[ai2, ai3, ai1]}
         additionalClass="white-bullets"
         className={css`
-          height: 100vh;
           margin-top: 21px;
-          ${marginH37}
+          ${isDesktop ? marginH37 : marginH17}
+          height: ${isDesktop ? "auto" : "588px"};
         `}
         children={<DatzArtistExhibition3 />}
       />
@@ -104,23 +152,33 @@ export default function Artist() {
       </div>
       <div
         className={css`
-          ${marginH37} display:flex;
+          ${isDesktop ? marginH37 : marginH17} display:flex;
+          flex-direction: ${isDesktop ? "row" : "column"};
         `}
       >
         <RollingImages
           images={[ai3, ai1, ai2]}
           children={<DatzArtistExhibition4 />}
-          className={css`
-            height: 100vh;
-            width: calc(50% - 23px);
-            margin-right: 23px;
-          `}
+          className={
+            isDesktop
+              ? css`
+                  width: calc(50% - 23px);
+                  margin-right: 23px;
+                `
+              : css`
+                  height: 588px;
+                `
+          }
         />
         <div
-          className={css`
-            flex: 1;
-            margin-left: 23px;
-          `}
+          className={
+            isDesktop
+              ? css`
+                  flex: 1;
+                  margin-left: 23px;
+                `
+              : undefined
+          }
         >
           <Residence />
         </div>

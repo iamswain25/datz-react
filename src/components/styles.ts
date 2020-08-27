@@ -48,6 +48,11 @@ export const paddingH17 = css`
   padding-left: 17px;
   padding-right: 17px;
 `;
+
+export const paddingH20 = css`
+  padding-left: 20px;
+  padding-right: 20px;
+`;
 export const paddingH27 = css`
   padding-left: 27px;
   padding-right: 27px;
