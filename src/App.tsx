@@ -28,6 +28,7 @@ import ExhibitionReadmore from "./pages/ExhibitionReadmore";
 import Artist from "./pages/Artist";
 import Support from "./pages/Support";
 import News from "./pages/News";
+import NewsItem from "./pages/NewsItem";
 function App() {
   return (
     <Router>
@@ -65,8 +66,12 @@ function App() {
         <Route exact path="/about/darkroom" component={AboutDarkroom} />
         <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/news" component={News} />
         <Route exact path="/support" component={Support} />
+        <Route exact path="/news">
+          <Redirect to="/news/all" />
+        </Route>
+        <Route exact path="/news/:filter" component={News} />
+        <Route exact path="/newsitem/:id" component={NewsItem} />
         <PrivateRoute path="/admin" component={AdminHome} />
       </Switch>
     </Router>

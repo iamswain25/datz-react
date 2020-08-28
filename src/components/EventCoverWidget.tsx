@@ -75,10 +75,7 @@ export default function EventCoverWidget({
         renderButtonGroupOutside={true}
         arrows={false}
         customButtonGroup={
-          <CarouselBtnGroup
-            dark={dark}
-            noBorderBottom={!isDesktop}
-          ></CarouselBtnGroup>
+          <CarouselBtnGroup dark={dark} noBorderBottom={!isDesktop} />
         }
       >
         {images.map(([img], i) => {

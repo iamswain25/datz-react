@@ -1,212 +1,127 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
+import {
+  paddingH27,
+  paddingH37,
+  marginH20,
+  marginH18,
+} from "../components/styles";
+import { Grid } from "@material-ui/core";
+import { useParams, NavLink } from "react-router-dom";
+import NewsCard from "../components/NewsCard";
+import { news } from "../@type/news";
 import AboutHeader from "../components/AboutHeader";
-import { marginH55, flexcolumncenter, marginH27 } from "../components/styles";
-import BtnTop from "../components/BtnTop";
-
-const aStyle = css`
-  text-decoration: underline;
-  display: block;
-  line-height: 1.39;
-  font-size: 18px;
-`;
-const collectionList = [
-  ["Stanford Libraries", "/"],
-  ["Amon Carter Museum ", "/"],
-  ["ICP Library ", "/"],
-  ["Special Collections, John M. Flaxman Library (SAIC)  ", "/"],
-  ["SFAI Library   ", "/"],
-  ["New York Public Library", "/"],
-  ["Duke University Libraries", "/"],
-];
-function mapLinks(top: any, i: number) {
-  if (typeof top === "string") {
-    return <div key={i}>{top}</div>;
-  }
-  if (top instanceof Array) {
-    const [label, link] = top;
-    return (
-      <a href={link} key={i} className={aStyle}>
-        {label}
-      </a>
-    );
-  } else {
-    return <br key={i} />;
-  }
-}
+const FILTERS: { [key: string]: string } = {
+  all: "all",
+  notice: "NOTICE",
+  event: "UPCOMING EVENT",
+};
 export default function News() {
+  const { filter = "all" } = useParams();
   const isDesktop = useDesktop();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  const h1Style = React.useMemo(
-    () => css`
-      font-size: 17px;
-      line-height: 1.24;
-      padding-bottom: 6px;
-      margin-bottom: 12px;
-      margin-top: ${isDesktop ? 0 : 74}px;
-      border-bottom: 1px solid #fff;
-      width: 100%;
-    `,
-    [isDesktop]
-  );
   return (
     <>
-      <div
+      <AboutHeader sticky />
+      <section
         className={css`
-          background-color: #afafaf;
           font-family: BauerGroteskOTW03;
+          background-color: #afafaf;
           text-align: center;
           color: #ffffff;
-          height: ${isDesktop ? "100vh" : "auto"};
+          ${isDesktop ? paddingH37 : paddingH27}
         `}
       >
-        <AboutHeader sticky />
         <div
           className={css`
-            display: ${isDesktop ? "grid" : "flex"};
-            flex-direction: column;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(7, 1fr);
-            column-gap: 62px;
-            height: ${isDesktop ? "calc(100vh - 79px - 37px)" : "auto"};
-            min-height: 600px;
-            border-bottom: 1px solid #fff;
-            padding-bottom: 20px;
-            ${isDesktop ? marginH55 : marginH27}
+            font-size: 23px;
+            line-height: 1.17;
+            padding-bottom: 6px;
+            border-bottom: solid 1px #ffffff;
+            margin-bottom: 12px;
           `}
         >
-          <div
-            className={css`
-              grid-column: 1/3;
-              grid-row: 1;
-              ${flexcolumncenter}
-            `}
-          >
-            <h1
-              className={css`
-                ${h1Style}
-                margin-top: 35px;
-              `}
-            >
-              Enquiry
-            </h1>
-            <a
-              href="mailto:datzpress@datzpress.com"
-              className={css`
-                font-size: 16px;
-                line-height: 1.19;
-              `}
-            >
-              datzpress@datzpress.com
-            </a>
-          </div>
-          <div
-            className={css`
-              grid-column: 1;
-              grid-row: 2/7;
-            `}
-          >
-            <h1 className={h1Style}>STOCKLIST</h1>
-            <div
-              className={css`
-                grid-template-columns: repeat(2, 1fr);
-                display: grid;
-                font-size: 18px;
-                line-height: 1.39;
-              `}
-            >
-              <div>
-                {[
-                  "Seoul, Korea",
-                  ["MMCA Art Zone", "/"],
-                  ["Your-mind", "/"],
-                  ["The Reference", "/"],
-                  ["Photobooks Gorae", "/"],
-                  null,
-                  "New York, USA",
-                  ["Printed Matter Inc.", "/"],
-                  ["Clic Gallery", "/"],
-                  null,
-                  "New Mexico, USA",
-                  ["Photo-eye Bookstore", "/"],
-                ].map(mapLinks)}
-              </div>
-              <div>
-                {[
-                  "San Francisco, USA",
-                  ["Smith Anderson Gallery", "/"],
-                  ["Moe’s Books", "/"],
-                  null,
-                  "Hawaii, USA, USA",
-                  ["Honolulu Museum of Art", "/"],
-                  ["Tree House", "/"],
-                  ["Minny Lee Fine Art. LLC", "/"],
-                  null,
-                  "Massachusetts, USA",
-                  ["Concord Art Center", "/"],
-                  null,
-                  "Taipei City, Taiwan",
-                  ["Artland Bookstore", "/"],
-                ].map(mapLinks)}
-              </div>
-            </div>
-          </div>
-          <div
-            className={css`
-              grid-column: 1;
-              grid-row: 7;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-end;
-            `}
-          >
-            <h1 className={h1Style}>CATALOG</h1>
-            <a href="/publication" className={aStyle}>
-              Publication 2019
-            </a>
-          </div>
-          <div
-            className={css`
-              grid-column: 2;
-              grid-row: 2/5;
-            `}
-          >
-            <h1 className={h1Style}>COLLECTIONS</h1>
-            {collectionList.map(mapLinks)}
-          </div>
-          <div
-            className={css`
-              grid-column: 2;
-              grid-row: 5/8;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-end;
-            `}
-          >
-            <h1 className={h1Style}>CONTACT</h1>
-            <p
-              className={css`
-                line-height: 1.39;
-                font-size: 18px;
-                white-space: break-spaces;
-              `}
-            >
-              {`Phone
-+82 2 447 2581
--
-Email
-Datz Press      datzpress@datzpress.com
-Datz Books      books@datzpress.com
-D’Ark Room      darkroom@datzpress.com
-DMA      museum@datzpress.com`}
-            </p>
-          </div>
+          Datz Newsletter
         </div>
-        {!isDesktop && <BtnTop color="white" />}
-      </div>
+        <div
+          className={css`
+            font-size: 16px;
+            line-height: 1.19;
+          `}
+        >
+          <a
+            href="newsletter"
+            className={css`
+              text-decoration: underline;
+            `}
+          >
+            Sign up for Datz Newsletter {">"}
+          </a>
+        </div>
+        <Grid
+          container
+          alignItems="center"
+          justify="center"
+          className={css`
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.19;
+            margin-top: 50px;
+            margin-bottom: 45px;
+          `}
+        >
+          {Object.keys(FILTERS).map((f) => (
+            <NavLink
+              key={f}
+              exact
+              to={f}
+              activeClassName={css`
+                color: #ffffff;
+                text-decoration: underline;
+              `}
+              className={css`
+                ${marginH20}
+              `}
+            >
+              {FILTERS[f]}
+            </NavLink>
+          ))}
+        </Grid>
+        <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
+          {news
+            .slice(1)
+            .filter((f) =>
+              filter === "all" ? true : f.type === FILTERS[filter]
+            )
+            .map((c, i) => (
+              <Grid key={i} item xs={12} sm={6} xl={4}>
+                <NewsCard item={c} />
+              </Grid>
+            ))}
+        </Grid>
+        <div
+          className={css`
+            border-top: 1px solid #fff;
+            ${marginH18}
+            font-size: 14px;
+            line-height: 1.21;
+            text-align: center;
+            color: #ffffff;
+            transform: translateY(-1px);
+          `}
+        >
+          <Grid
+            container
+            alignItems="center"
+            justify="center"
+            className={css`
+              height: 28px;
+            `}
+          >
+            view more {">"}
+          </Grid>
+        </div>
+      </section>
     </>
   );
 }
