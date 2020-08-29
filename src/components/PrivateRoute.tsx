@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect, RouteComponentProps } from "react-router-dom";
-import { auth } from "../firebase";
+import { auth } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 export default ({
   component: Component,

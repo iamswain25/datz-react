@@ -1,7 +1,7 @@
 import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { Main } from "../@type/main";
-import { firestore, storage } from "../firebase";
+import { firestore, storage } from "../config/firebase";
 export default (props: { data: Main; collection: string }) => {
   if (!props.data) {
     return null;

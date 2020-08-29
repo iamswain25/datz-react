@@ -1,5 +1,5 @@
 import React from "react";
-import { auth, Firebase } from "../firebase";
+import { auth, Firebase } from "../config/firebase";
 import { RouteComponentProps } from "react-router-dom";
 const provider = new Firebase.auth.GoogleAuthProvider();
 export default (props: RouteComponentProps) => {

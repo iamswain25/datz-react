@@ -1,6 +1,6 @@
 import React from "react";
 import FullPageRollingImagesEdit from "../components/FullPageRollingImagesEdit";
-import { firestore } from "../firebase";
+import { firestore } from "../config/firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Main } from "../@type/main";
 
