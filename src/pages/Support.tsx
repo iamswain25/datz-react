@@ -12,11 +12,12 @@ export default function Support() {
   console.log(isDesktop);
   return (
     <>
-      <AboutHeader fixed />
+      <AboutHeader change backgroundColor="transparent" />
       <div
         className={css`
           position: relative;
           display: flex;
+          // flex-direction: column;
         `}
       >
         <img
@@ -25,6 +26,7 @@ export default function Support() {
           className={css`
             width: 100%;
             min-height: 724px;
+            // position: absolute;
           `}
         />
         <SupportTexts />

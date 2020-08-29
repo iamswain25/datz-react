@@ -28,11 +28,14 @@ const linkActiveClass = css`
 export default function AboutHeader({
   fixed = false,
   sticky = false,
-  color = "#707070",
+  change = false,
+  color = "#fff",
+  backgroundColor = "#afafaf",
 }) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   const [isOpen, setOpen] = React.useState(false);
+  const [colors, setColors] = React.useState({ color, backgroundColor });
   function openHandler() {
     setOpen(!isOpen);
   }
@@ -47,7 +50,7 @@ export default function AboutHeader({
           justify-content: flex-start;
         `}
       >
-        <Datz color="white" />
+        <Datz color={colors.color} />
       </Link>
       {isDesktop && (
         <div>
@@ -78,7 +81,7 @@ export default function AboutHeader({
             ${marginH10};
           `}
           onClick={() => setLang("en")}
-          style={lang === "en" ? { color: "#ffffff" } : { color: "#cccccc" }}
+          style={lang === "en" ? { color: colors.color } : { color: "#cccccc" }}
         >
           EN
         </button>
@@ -86,7 +89,7 @@ export default function AboutHeader({
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px #ffffff;
+            border-left: solid 1px ${colors.color};
           `}
         />
         <button
@@ -95,14 +98,14 @@ export default function AboutHeader({
             ${headerText};
             ${marginH10};
           `}
-          style={lang === "ko" ? { color: "#ffffff" } : { color: "#cccccc" }}
+          style={lang === "ko" ? { color: colors.color } : { color: "#cccccc" }}
         >
           KR
         </button>
         {!isDesktop && (
           <>
             <Search
-              color="#ffffff"
+              color={colors.color}
               className={css`
                 margin-right: 20px;
               `}
@@ -113,7 +116,7 @@ export default function AboutHeader({
               width={18}
               height={15}
               strokeWidth={1}
-              color="#ffffff"
+              color={colors.color}
               animationDuration={0.5}
             />
           </>
@@ -134,7 +137,7 @@ export default function AboutHeader({
             z-index: 2;
             padding-left: ${isDesktop ? 37 : 17}px;
             padding-right: ${isDesktop ? 37 : 17}px;
-            background-color: #afafaf;
+            background-color: ${colors.backgroundColor};
             color: ${color};
           `}
         >
@@ -158,7 +161,7 @@ export default function AboutHeader({
             z-index: 2;
             padding-left: ${isDesktop ? 37 : 17}px;
             padding-right: ${isDesktop ? 37 : 17}px;
-            color: ${color};
+            color: ${colors.color};
           `}
         >
           {innerHeader}
@@ -170,13 +173,28 @@ export default function AboutHeader({
   return (
     <>
       <Headroom
+        wrapperStyle={
+          change ? { position: "absolute", width: "100%" } : undefined
+        }
+        onPin={
+          change
+            ? () => setColors({ color: "white", backgroundColor: "#afafaf" })
+            : undefined
+        }
+        onUnfix={
+          change
+            ? () =>
+                setColors({ color: color, backgroundColor: backgroundColor })
+            : undefined
+        }
         style={{
           height: 79,
           paddingLeft: isDesktop ? 55 : 17,
           paddingRight: isDesktop ? 55 : 17,
           display: "flex",
           alignItems: "center",
-          backgroundColor: "#afafaf",
+          backgroundColor: colors.backgroundColor,
+          color: colors.color,
         }}
       >
         {innerHeader}

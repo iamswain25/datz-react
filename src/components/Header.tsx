@@ -27,9 +27,12 @@ const linkActiveClass = css`
 export default function Header({
   fixed = false,
   sticky = false,
+  change = false,
   color = "#707070",
+  backgroundColor = "#fff",
 }) {
   const [text, setText] = React.useState("");
+  const [colors, setColors] = React.useState({ color, backgroundColor });
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
@@ -50,7 +53,9 @@ export default function Header({
               to={link}
               key={i}
               activeClassName={css`
-                ${linkActiveClass} ${color === "white" ? "color: white" : ""}
+                ${linkActiveClass} ${colors.color === "white"
+                  ? "color: white"
+                  : ""}
               `}
             >
               {label}
@@ -62,7 +67,7 @@ export default function Header({
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px ${color};
+            border-left: solid 1px ${colors.color};
             ${marginH16}
           `}
         />
@@ -81,15 +86,15 @@ export default function Header({
     <>
       <NavLink
         className={css`
-            ${flexrowcenter}
-            ${headerText}
+          ${flexrowcenter}
+          ${headerText}
             padding-left: ${isDesktop ? 16 : 5}px;
-            padding-right: ${isDesktop ? 16 : 5}px;
-            margin-bottom: 8px;
-          `}
+          padding-right: ${isDesktop ? 16 : 5}px;
+          margin-bottom: 8px;
+        `}
         to="/"
       >
-        <Datz color={color} />
+        <Datz color={colors.color} />
       </NavLink>
       {links}
       <div
@@ -116,7 +121,7 @@ export default function Header({
               onChange={textHandler}
               className={css`
                 ${headerText};
-                border-bottom: solid 1px ${color};
+                border-bottom: solid 1px ${colors.color};
                 width: 56px;
                 margin-left: 5px;
                 margin-right: 8px;
@@ -129,7 +134,7 @@ export default function Header({
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "en" ? color : "#afafaf"};
+            color: ${lang === "en" ? colors.color : "#cccccc"};
           `}
           onClick={() => setLang("en")}
         >
@@ -139,7 +144,7 @@ export default function Header({
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px ${color};
+            border-left: solid 1px ${colors.color};
           `}
         />
         <button
@@ -147,7 +152,7 @@ export default function Header({
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "ko" ? color : "#afafaf"};
+            color: ${lang === "ko" ? colors.color : "#cccccc"};
           `}
         >
           KR
@@ -187,7 +192,7 @@ export default function Header({
             padding-left: ${isDesktop ? 37 : 17}px;
             padding-right: ${isDesktop ? 37 : 17}px;
             background-color: #fff;
-            color: ${color};
+            color: ${colors.color};
           `}
         >
           {innerHeader}
@@ -210,7 +215,7 @@ export default function Header({
             z-index: 5;
             padding-left: ${isDesktop ? 37 : 17}px;
             padding-right: ${isDesktop ? 37 : 17}px;
-            color: ${color};
+            color: ${colors.color};
           `}
         >
           {innerHeader}
@@ -222,14 +227,29 @@ export default function Header({
   return (
     <>
       <Headroom
+        wrapperStyle={
+          change ? { position: "absolute", width: "100%" } : undefined
+        }
+        onPin={
+          change
+            ? () => setColors({ color: "white", backgroundColor: "#afafaf" })
+            : undefined
+        }
+        onUnfix={
+          change
+            ? () =>
+                setColors({ color: color, backgroundColor: backgroundColor })
+            : undefined
+        }
         style={{
           zIndex: 5,
           display: "flex",
           alignItems: "center",
           height: 79,
-          backgroundColor: "#ffffff",
+          backgroundColor: colors.backgroundColor,
           paddingLeft: isDesktop ? 37 : 17,
           paddingRight: isDesktop ? 37 : 17,
+          color: colors.color,
         }}
       >
         {innerHeader}

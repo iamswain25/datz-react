@@ -6,7 +6,6 @@ import e1 from "../assets/images/artist/exhi1.png";
 import ai1 from "../assets/images/artist/ai1.png";
 import ai2 from "../assets/images/artist/ai2.png";
 import ai3 from "../assets/images/artist/ai3.png";
-import Header from "../components/Header";
 import { css } from "emotion";
 import { Divider } from "@material-ui/core";
 import {
@@ -26,13 +25,14 @@ import DatzArtistExhibition4 from "../components/DatzArtistExhibition4";
 import DatzArtistProject3 from "../components/DatzArtistProject3";
 import BtnBack from "../components/BtnBack";
 import useDesktop from "../components/useDesktop";
+import Header from "../components/Header";
 export default function Artist() {
   const isDesktop = useDesktop();
   return (
     <>
       <Header
-        fixed={isDesktop}
-        sticky={!isDesktop}
+        change={isDesktop}
+        backgroundColor={isDesktop ? "transparent" : undefined}
         color={isDesktop ? "white" : undefined}
       />
       <RollingImages

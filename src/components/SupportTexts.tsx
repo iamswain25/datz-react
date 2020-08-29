@@ -13,7 +13,6 @@ export default function SupportTexts() {
         font-family: BauerGroteskOTW03;
         font-size: 16px;
         line-height: 1.19;
-
         text-align: center;
         color: #ffffff;
         display: flex;

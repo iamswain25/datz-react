@@ -24,14 +24,12 @@ export default function ArtistHeader({
   sticky = false,
   shared = false,
   isWhite = false,
-  hasSearch = false,
   closeTo,
 }: {
   fixed?: boolean;
   sticky?: boolean;
   shared?: boolean;
   isWhite?: boolean;
-  hasSearch?: boolean;
   closeTo?: string;
 }) {
   const isDesktop = useDesktop();
