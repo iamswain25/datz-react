@@ -63,6 +63,7 @@ export default function FullPageRollingImages(props: {
         showBullets={true}
         autoPlay={true}
         onSlide={onslideHandler}
+        lazyLoad
         slideInterval={5000}
       />
       <div

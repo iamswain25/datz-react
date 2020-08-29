@@ -16,7 +16,7 @@ export default (props: { data: Main; collection: string }) => {
   async function updateHandler() {
     await firestore
       .collection(props.collection)
-      .doc(id)
+      .doc(String(id))
       .update({ type, title, author, color, isShowing });
   }
   async function deleteHandler() {
@@ -24,9 +24,9 @@ export default (props: { data: Main; collection: string }) => {
       const { id } = props.data;
       const deleteData = firestore
         .collection(props.collection)
-        .doc(id)
+        .doc(String(id))
         .delete();
-      const deleteImg = storage.ref().child(id).delete();
+      const deleteImg = storage.ref().child(String(id)).delete();
       return await Promise.all([deleteData, deleteImg]);
     }
   }

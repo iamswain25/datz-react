@@ -6,7 +6,7 @@ export const newMain = {
   author: "Amanda Marchand",
   color: "pink",
   isShowing: true,
-  id: "",
+  id: 0,
 };
 
 export type Main = typeof newMain;
