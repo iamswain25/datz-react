@@ -8,36 +8,12 @@ import p6 from "../assets/images/publication/p6.png";
 import { Link } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
+import { publications } from "../@type/publications";
+import { useGlobalState, LANG } from "../store/useGlobalState";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
-const products = [
-  [p1, "Offerings [SE]", "Mary Daniel Hobson"],
-  [p2, "Offerings", "Mary Daniel Hobson"],
-  [p3, "TYPE LIBRARY", "Hyunmee Kim"],
-  [p4, "Nothing Will Ever be the Same Again [SE]", "Amanda Marchand"],
-  [p5, "NOTES", "Alyssa Minahan"],
-  [p6, "Flowing", "Wayne Levin"],
-  [p1, "Offerings [SE]", "Mary Daniel Hobson"],
-  [p2, "Offerings", "Mary Daniel Hobson"],
-  [p3, "TYPE LIBRARY", "Hyunmee Kim"],
-  [p4, "Nothing Will Ever be the Same Again [SE]", "Amanda Marchand"],
-  [p5, "NOTES", "Alyssa Minahan"],
-  [p6, "Flowing", "Wayne Levin"],
-  [p1, "Offerings [SE]", "Mary Daniel Hobson"],
-  [p2, "Offerings", "Mary Daniel Hobson"],
-  [p3, "TYPE LIBRARY", "Hyunmee Kim"],
-  [p4, "Nothing Will Ever be the Same Again [SE]", "Amanda Marchand"],
-  [p5, "NOTES", "Alyssa Minahan"],
-  [p6, "Flowing", "Wayne Levin"],
-  [p1, "Offerings [SE]", "Mary Daniel Hobson"],
-  [p2, "Offerings", "Mary Daniel Hobson"],
-  [p3, "TYPE LIBRARY", "Hyunmee Kim"],
-  [p4, "Nothing Will Ever be the Same Again [SE]", "Amanda Marchand"],
-  [p5, "NOTES", "Alyssa Minahan"],
-  [p6, "Flowing", "Wayne Levin"],
-];
-
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
+  const [lang] = useGlobalState(LANG);
   const isDesktop = useDesktop();
   return (
     <>
@@ -127,10 +103,10 @@ export default function PublicationList() {
               margin-bottom: 40px;
             `}
           >
-            {products.map(([src, title, artist], i) => {
+            {publications.map((item, i) => {
               return (
                 <Link
-                  to="/publication/nothingwill"
+                  to={`publication/${item.id}`}
                   key={i}
                   className={css`
                     padding-left: 18px;
@@ -143,14 +119,14 @@ export default function PublicationList() {
                     text-align: center;
                   `}
                 >
-                  <img src={src} alt="title" />
+                  <img src={item.images.split(`\n`)[0] || p1} alt="title" />
                   <span
                     className={css`
                       font-size: 19px;
                       line-height: 1.21;
                     `}
                   >
-                    {title}
+                    {lang === "ko" ? item.title_ko : item.title_en}
                   </span>
                   <span
                     className={css`
@@ -159,7 +135,7 @@ export default function PublicationList() {
                       line-height: 1.35;
                     `}
                   >
-                    {artist}
+                    {lang === "ko" ? item.artist_ko : item.artist_en}
                   </span>
                 </Link>
               );
