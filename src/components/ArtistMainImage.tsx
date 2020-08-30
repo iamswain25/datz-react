@@ -3,6 +3,8 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
 import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useParams } from "react-router-dom";
+import useArtistIndex from "../utils/useArtistIndex ";
 const defaultContainer = css`
   display: flex;
   flex-direction: column;
@@ -10,17 +12,11 @@ const defaultContainer = css`
   text-align: center;
   color: #ffffff;
 `;
-const publication = {
-  en: {
-    artist: "Amanda Marchand",
-  },
-  ko: {
-    artist: "아만다 마찬드",
-  },
-};
 export default function ArtistMainImage() {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
+  const { id } = useParams();
+  const { name, genre, images } = useArtistIndex(id);
   const nameClassEn = css`
     height: 27px;
     font-family: ArnoPro-Display;
@@ -58,9 +54,7 @@ export default function ArtistMainImage() {
         >
           Artist
         </div>
-        <div className={lang === "en" ? nameClassEn : nameClassKo}>
-          {publication[lang].artist}
-        </div>
+        <div className={lang === "en" ? nameClassEn : nameClassKo}>{name}</div>
         <div
           className={css`
             font-size: 14px;
@@ -68,9 +62,9 @@ export default function ArtistMainImage() {
             margin-bottom: 20px;
           `}
         >
-          Photographer
+          {genre}
         </div>
-        <ArtistImageRolling />
+        <ArtistImageRolling images={images} />
       </section>
     </>
   );

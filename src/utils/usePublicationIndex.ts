@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { publications } from "../@type/publications";
-import { artists } from "../@type/arists";
+import { artists } from "../@type/artists";
 import { events } from "../@type/events";
 import { exhibitions } from "../@type/exhibitions";
 

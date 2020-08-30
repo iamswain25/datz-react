@@ -1,13 +1,9 @@
 import React from "react";
 import ImageGallery from "react-image-gallery";
-import m1 from "../assets/images/artist/m1.png";
 import { css } from "emotion";
-import useDesktop from "./useDesktop";
 import Arrow from "./Arrow";
-const images = [m1, m1, m1, m1, m1, m1];
-export default function ArtistImageRolling() {
-  const isDesktop = useDesktop();
-  console.log(isDesktop);
+import { makeUrl } from "../config/url";
+export default function ArtistImageRolling({ images }: { images: string[] }) {
   return (
     <>
       <div
@@ -17,7 +13,7 @@ export default function ArtistImageRolling() {
       >
         <ImageGallery
           infinite={false}
-          items={images.map((i) => ({ original: i }))}
+          items={images.map((i) => ({ original: makeUrl(i) }))}
           showNav={true}
           showThumbnails={false}
           showFullscreenButton={false}
