@@ -21,7 +21,6 @@ const desktopContainer = css`
 `;
 export default function PublicationReadmoreRelated() {
   const isDesktop = useDesktop();
-
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div

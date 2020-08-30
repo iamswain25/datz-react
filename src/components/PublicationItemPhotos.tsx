@@ -10,6 +10,7 @@ import { publications } from "../@type/publications";
 import { makeUrl } from "../config/url";
 import { LazyImage } from "react-lazy-images";
 import { useGlobalState, LANG } from "../store/useGlobalState";
+import usePublicationIndex from "../utils/usePublicationIndex";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -36,7 +37,7 @@ const classes = {
 export default function PublicationItemPhotos() {
   const { id } = useParams();
   const item = publications[Number(id) - 1];
-  const images = item.images.split(`\n`).slice(1);
+  const { images } = usePublicationIndex(id);
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
   console.log(isDesktop);
@@ -60,7 +61,7 @@ export default function PublicationItemPhotos() {
               key={i}
               className={css`
                 position: relative;
-                margin-bottom: ${images.length - 2 === i ? 0 : 28}px;
+                margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
               `}
             >
               <LazyImage

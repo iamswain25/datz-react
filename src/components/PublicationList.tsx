@@ -4,7 +4,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { publications } from "../@type/publications";
 import { useGlobalState, LANG } from "../store/useGlobalState";
-import { imageUrl } from "../config/url";
+import { makeUrl } from "../config/url";
 import { LazyImage } from "react-lazy-images";
 import { Grid } from "@material-ui/core";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
@@ -135,7 +135,7 @@ export default function PublicationList() {
                         placeholder={({ imageProps, ref }) => (
                           <div ref={ref} className={classes.placeholder} />
                         )}
-                        src={imageUrl + item.images.split(`\n`)[0]}
+                        src={makeUrl(item.image_cover)}
                         actual={({ imageProps }) => (
                           <img
                             {...imageProps}

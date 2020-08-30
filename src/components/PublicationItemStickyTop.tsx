@@ -129,7 +129,7 @@ export default function PublicationStickyTop() {
         </div>
       </div>
       <Link
-        to="/publication/nothingwill/readmore"
+        to={`/publication/${id}/readmore`}
         className={css`
           border-top: solid 1px #707070;
           ${bottomBtn37}
