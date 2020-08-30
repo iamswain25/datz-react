@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { exhibitions } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibitions";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useHistory } from "react-router-dom";
 import { makeUrl } from "../config/url";

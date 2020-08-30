@@ -6,7 +6,7 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { flexcolumn, flexrow, paddingH37 } from "../components/styles";
-import { exhibitions } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibitions";
 const desktopContainer = css`
   ${flexrow}
   ${paddingH37}
@@ -16,7 +16,7 @@ export default function Publication() {
   const isDesktop = useDesktop();
   return (
     <>
-     <Header sticky />
+      <Header sticky />
       <section className={isDesktop ? desktopContainer : flexcolumn}>
         <ExhibitionItemLeft item={exhibitions[Number(id)]} />
         <PublicationItemPhotos />

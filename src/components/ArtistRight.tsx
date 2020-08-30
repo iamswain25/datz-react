@@ -5,6 +5,8 @@ import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
 import BtnBack from "./BtnBack";
+import { useParams } from "react-router-dom";
+import usePublicationIndex from "../utils/usePublicationIndex";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -21,9 +23,11 @@ const desktopContainer = css`
 `;
 export default function PublicationItemPhotos() {
   const isDesktop = useDesktop();
+  const { id } = useParams();
+  const { publications } = usePublicationIndex(id);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
-      <PublicationWidget dark />
+      <PublicationWidget publications={publications} dark />
       <ExhibitionWidget dark />
       <EventWidget dark />
       {!isDesktop && (

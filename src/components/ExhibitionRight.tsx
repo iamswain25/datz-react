@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "../components/styles";
 import ExhibitionCardMain from "../components/ExhibitionCardMain";
-import { exhibitions } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibitions";
 import { Link } from "react-router-dom";
 import ExhibitionCardPastGrey from "./ExhibitionCardPastGrey";
 import {
@@ -67,7 +67,9 @@ export default function ExhibitionRight() {
         to="exhibitions"
         className={css`
           ${bottomBtn37}
-          ${isDesktop ? marginH10 : marginH27}
+          ${isDesktop
+            ? marginH10
+            : marginH27}
           width: calc(100% - ${isDesktop ? 20 : 54}px);
           transform: translateY(-1px);
           border-top: 1px solid #707070;

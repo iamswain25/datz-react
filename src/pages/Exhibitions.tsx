@@ -11,7 +11,7 @@ import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
 import { useParams, NavLink } from "react-router-dom";
 import ExhibitionCardForViewAll from "../components/ExhibitionCardForViewAll";
-import { exhibitions } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibitions";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   darkroom: "D’Ark Room",

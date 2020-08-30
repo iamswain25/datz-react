@@ -1,10 +1,9 @@
 import React from "react";
 import { css } from "emotion";
 import CarouselBtnGroup from "./CarouselBtnGroup";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import usePublicationIndex from "../utils/usePublicationIndex";
 import usePublications from "../utils/usePublications";
 import { makeUrl } from "../config/url";
 
@@ -72,9 +71,13 @@ const responsive = {
     // partialVisibilityGutter: 10,
   },
 };
-export default function PublicationWidget({ dark = false }) {
-  const { id } = useParams();
-  const { publications } = usePublicationIndex(id);
+export default function PublicationWidget({
+  dark = false,
+  publications,
+}: {
+  publications: any[];
+  dark?: boolean;
+}) {
   const list = usePublications(publications);
   if (!list.length) {
     return null;

@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { bottomBtn37 } from "./styles";
-import { exhibitions } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibitions";
 import DatzmuseumOrder from "./DatzmuseumOrder";
 import CloseShare from "./CloseShare";
 import { exhibitionCurrentPast } from "../utils/datefns";

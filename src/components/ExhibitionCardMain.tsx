@@ -3,7 +3,7 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import RollingImages from "./RollingImages";
-import { exhibitions } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibitions";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import DatzMuseum from "../assets/svg/DatzMuseum";

@@ -1,25 +1,21 @@
 import React from "react";
 import { css } from "emotion";
 import { useGlobalState, LANG } from "../store/useGlobalState";
-import { useHistory, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useDesktop from "./useDesktop";
-import usePublicationIndex from "../utils/usePublicationIndex";
 import useArtists from "../utils/useArtists";
-// import useDesktop from "./useDesktop";
 const artistNameClass = css`
   font-family: ArnoPro-Display;
   font-size: 23px;
   line-height: 1.17;
   letter-spacing: 0.46px;
-  text-align: center;
   color: #4b4b4b;
   margin-bottom: 20px;
 `;
 const artistNameClassKo = css`
-  text-align: center;
   margin-bottom: 20px;
   font-family: SpoqaHanSans;
   font-size: 19px;
@@ -68,13 +64,16 @@ const itemClass = css`
   align-items: center;
   height: auto;
 `;
-export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
+export default function ArtistWidget({
+  dark = false,
+  artists,
+}: {
+  dark?: boolean;
+  artists: any[];
+}) {
   const [lang] = useGlobalState(LANG);
   const isDesktop = useDesktop();
-  const { id } = useParams();
-  const { artists } = usePublicationIndex(id);
   const list = useArtists(artists);
-  const history = useHistory();
   if (!list.length) {
     return null;
   }
@@ -100,20 +99,22 @@ export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
           }
         >
           {list.map(({ name, bio, id }, i) => {
-            function goToArtist() {
-              history.push(`/artist/${id}`);
-            }
             return (
-              <div key={i}>
-                <h5
+              <div
+                key={i}
+                className={css`
+                  text-align: center;
+                `}
+              >
+                <Link
+                  to={`/artist/${id}`}
                   className={
                     lang === "ko" ? artistNameClassKo : artistNameClass
                   }
-                  style={{ cursor: "pointer" }}
-                  onClick={goToArtist}
+                  style={{ cursor: "pointer", textDecoration: "underline" }}
                 >
                   {name} {">"}
-                </h5>
+                </Link>
                 <p className={lang === "ko" ? descClassKo : descClass}>{bio}</p>
               </div>
             );

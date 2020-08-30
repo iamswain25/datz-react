@@ -1,27 +1,24 @@
 import React from "react";
 import { css } from "emotion";
-import ex1 from "../assets/images/readmore/ex1.png";
-import ex2 from "../assets/images/readmore/ex2.png";
-import { useHistory } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import usePublicationIndex from "../utils/usePublicationIndex";
+import useExhibitions from "../utils/useExhibitions";
+import { makeUrl } from "../config/url";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
   line-height: 1.19;
-
   text-align: right;
   color: ${dark ? "#ffffff" : "#707070"};
 `;
 const descClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 14px;
-  
   line-height: 1.64;
-
   text-align: center;
   color: ${dark ? "#ffffff" : "#707070"};
   text-align: center;
@@ -67,23 +64,10 @@ const responsive = {
     // partialVisibilityGutter: 10,
   },
 };
-const list = [
-  [ex1, "Book of Lights"],
-  [ex2, "Synesthesia : The Space Between"],
-  [ex1, "Book of Lights"],
-  [ex2, "Synesthesia : The Space Between"],
-  [ex1, "Book of Lights"],
-  [ex2, "Synesthesia : The Space Between"],
-];
-export default function PublicationWidget({
-  dark = false,
-}: {
-  dark?: boolean;
-}) {
-  const history = useHistory();
-  function clickHandler() {
-    history.push("/publication/nothingwill");
-  }
+export default function PublicationWidget({ dark = false }) {
+  const { id } = useParams();
+  const { exhibitions } = usePublicationIndex(id);
+  const list = useExhibitions(exhibitions);
   return (
     <div
       className={css`
@@ -102,14 +86,18 @@ export default function PublicationWidget({
           </CarouselBtnGroup>
         }
       >
-        {list.map(([img, title], i) => {
+        {list.map(({ images, title, id }, i) => {
           return (
-            <div key={i} className={afterClass(i)} onClick={clickHandler}>
+            <Link key={i} className={afterClass(i)} to={`/exhibition/${id}`}>
               <div className={listClass(dark)}>
-                <img src={img} alt="books" className={imgClass} />
+                <img
+                  src={makeUrl(images[0])}
+                  alt={title}
+                  className={imgClass}
+                />
                 <span className={descClass(dark)}>{title}</span>
               </div>
-            </div>
+            </Link>
           );
         })}
       </Carousel>
