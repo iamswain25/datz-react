@@ -20,6 +20,10 @@ export default function usePublicationIndex(index: string | number) {
     () => artists.filter((a) => item.rel_artists.includes(a.id)),
     [item.rel_artists]
   );
+  const publicationsObj = useMemo(
+    () => publications.filter((a) => item.rel_publications.includes(a.id)),
+    [item.rel_publications]
+  );
   return {
     ...item,
     title,
@@ -31,5 +35,6 @@ export default function usePublicationIndex(index: string | number) {
     preview_body,
     order_url,
     artists: artistsObj,
+    publications: publicationsObj,
   };
 }

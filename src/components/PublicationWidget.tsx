@@ -1,13 +1,12 @@
 import React from "react";
 import { css } from "emotion";
 import CarouselBtnGroup from "./CarouselBtnGroup";
-import w1 from "../assets/images/readmore/w1.png";
-import w2 from "../assets/images/readmore/w2.png";
-import w3 from "../assets/images/readmore/w3.png";
-import ev1 from "../assets/images/readmore/ev1.png";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import usePublicationIndex from "../utils/usePublicationIndex";
+import usePublications from "../utils/usePublications";
+import { makeUrl } from "../config/url";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -77,22 +76,16 @@ const responsive = {
     // partialVisibilityGutter: 10,
   },
 };
-const list = [
-  [w1, "Night Garden"],
-  [w2, "Magazine Gitz vol.10"],
-  [w3, "Nothing Will Ever be the …"],
-  [ev1, "ev1"],
-  [w2, "Magazine Gitz vol.10"],
-  [w3, "Nothing Will Ever be the …"],
-];
-export default function PublicationWidget({
-  dark = false,
-}: {
-  dark?: boolean;
-}) {
+export default function PublicationWidget({ dark = false }) {
+  const { id } = useParams();
+  const { publications } = usePublicationIndex(id);
+  const list = usePublications(publications);
   const history = useHistory();
   function clickHandler() {
     history.push("/publication/nothingwill");
+  }
+  if (!list.length) {
+    return null;
   }
   return (
     <>
@@ -113,11 +106,15 @@ export default function PublicationWidget({
             </CarouselBtnGroup>
           }
         >
-          {list.map(([img, title], i) => {
+          {list.map(({ image_cover, title }, i) => {
             return (
               <div key={i} className={afterClass(i)} onClick={clickHandler}>
                 <div className={listClass(dark)}>
-                  <img src={img} alt="books" className={imgClass} />
+                  <img
+                    src={makeUrl(image_cover)}
+                    alt="books"
+                    className={imgClass}
+                  />
                   <span className={descClass(dark)}>{title}</span>
                 </div>
               </div>

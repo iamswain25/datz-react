@@ -7,7 +7,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useDesktop from "./useDesktop";
 import usePublicationIndex from "../utils/usePublicationIndex";
-import useArtistItem from "../utils/useArtistItem";
+import useArtists from "../utils/useArtists";
 // import useDesktop from "./useDesktop";
 const artistNameClass = css`
   font-family: ArnoPro-Display;
@@ -73,9 +73,11 @@ export default function ArtistWidget({ dark = false }: { dark?: boolean }) {
   const isDesktop = useDesktop();
   const { id } = useParams();
   const { artists } = usePublicationIndex(id);
-  const list = useArtistItem(artists);
+  const list = useArtists(artists);
   const history = useHistory();
-
+  if (!list.length) {
+    return null;
+  }
   return (
     <div>
       <div
