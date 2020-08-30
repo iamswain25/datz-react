@@ -21,7 +21,9 @@ const classes = {
   `,
   placeholder: css`
     background-color: grey;
-    width: 100%;
+    // width: 100%;
+    min-width: 300px;
+    min-height: 300px;
   `,
   img: css`
     object-fit: contain;
@@ -43,7 +45,6 @@ export default function PublicationList() {
           display: flex;
           flex: 1;
           flex-direction: column;
-          height: 100%;
         `}
       >
         <div
@@ -92,6 +93,7 @@ export default function PublicationList() {
             margin-right: ${isDesktop ? 73 : 0}px;
             display: flex;
             flex-direction: column;
+            flex: 1;
           `}
         >
           <p
@@ -116,58 +118,53 @@ export default function PublicationList() {
             className={css`
               flex: 1;
               font-family: BauerGroteskOTW03;
-              margin-bottom: 40px;
+              padding-bottom: 40px;
             `}
           >
-            {publications.map((item, i) => {
-              return (
-                <Grid
-                  item
-                  key={i}
-                  xs={12}
-                  xm={6}
-                  sm={4}
-                  md={12}
-                  lg={6}
-                  lm={4}
-                  xl={3}
-                >
-                  <Link to={`publication/${item.id}`} className={classes.link}>
-                    <LazyImage
-                      alt={lang === "ko" ? item.title_ko : item.title_en}
-                      placeholder={({ imageProps, ref }) => (
-                        <div ref={ref} className={classes.placeholder} />
-                      )}
-                      src={imageUrl + item.images.split(`\n`)[0]}
-                      actual={({ imageProps }) => (
-                        <img
-                          {...imageProps}
-                          alt={imageProps.alt}
-                          className={classes.img}
-                        />
-                      )}
-                    />
-                    <span
-                      className={css`
-                        font-size: 19px;
-                        line-height: 1.21;
-                      `}
+            {publications
+              .filter((f) => (selected === "all" ? true : f.type === selected))
+              .map((item, i) => {
+                return (
+                  <Grid item key={i} xs={12} sm={4} md={12} lg={6} xl={3}>
+                    <Link
+                      to={`publication/${item.id}`}
+                      className={classes.link}
                     >
-                      {lang === "ko" ? item.title_ko : item.title_en}
-                    </span>
-                    <span
-                      className={css`
-                        margin-top: 4px;
-                        font-size: 17px;
-                        line-height: 1.35;
-                      `}
-                    >
-                      {lang === "ko" ? item.artist_ko : item.artist_en}
-                    </span>
-                  </Link>
-                </Grid>
-              );
-            })}
+                      <LazyImage
+                        alt={lang === "ko" ? item.title_ko : item.title_en}
+                        placeholder={({ imageProps, ref }) => (
+                          <div ref={ref} className={classes.placeholder} />
+                        )}
+                        src={imageUrl + item.images.split(`\n`)[0]}
+                        actual={({ imageProps }) => (
+                          <img
+                            {...imageProps}
+                            alt={imageProps.alt}
+                            className={classes.img}
+                          />
+                        )}
+                      />
+                      <span
+                        className={css`
+                          font-size: 19px;
+                          line-height: 1.21;
+                        `}
+                      >
+                        {lang === "ko" ? item.title_ko : item.title_en}
+                      </span>
+                      <span
+                        className={css`
+                          margin-top: 4px;
+                          font-size: 17px;
+                          line-height: 1.35;
+                        `}
+                      >
+                        {lang === "ko" ? item.artist_ko : item.artist_en}
+                      </span>
+                    </Link>
+                  </Grid>
+                );
+              })}
           </Grid>
           <button
             className={css`
