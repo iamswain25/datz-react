@@ -189,8 +189,8 @@ export default function AboutHeader({
         }
         style={{
           height: 79,
-          paddingLeft: isDesktop ? 55 : 17,
-          paddingRight: isDesktop ? 55 : 17,
+          paddingLeft: isDesktop ? 37 : 17,
+          paddingRight: isDesktop ? 37 : 17,
           display: "flex",
           alignItems: "center",
           backgroundColor: colors.backgroundColor,
