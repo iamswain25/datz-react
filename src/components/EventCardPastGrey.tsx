@@ -1,9 +1,10 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { bottomcard1 } from "../@type/event";
-export default function EventCardPastGrey({ event = bottomcard1 }) {
-  const { image, date, title } = event;
+import { events } from "../@type/events";
+import { makeUrl } from "../config/url";
+export default function EventCardPastGrey({ event = events[0] }) {
+  const { images, date, title_en } = event;
   const isDesktop = useDesktop();
   return (
     <section
@@ -20,7 +21,7 @@ export default function EventCardPastGrey({ event = bottomcard1 }) {
         `}
       >
         <img
-          src={image}
+          src={makeUrl(images[0])}
           alt="ok"
           className={css`
             object-fit: contain;
@@ -58,7 +59,7 @@ export default function EventCardPastGrey({ event = bottomcard1 }) {
               color: #707070;
             `}
           >
-            {title}
+            {title_en}
           </p>
           <p
             className={css`

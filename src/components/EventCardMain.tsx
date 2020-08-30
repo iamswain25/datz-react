@@ -3,8 +3,8 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import Datzpress from "../assets/svg/Datzpress";
-import { eventcard1 } from "../@type/event";
 import { fullContainImg, fullHeightCoverImg } from "./styles";
+import { makeUrl } from "../config/url";
 const headerStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -12,8 +12,8 @@ const headerStyle = css`
   text-align: right;
   color: #707070;
 `;
-export default function EventCardMain({ event = eventcard1 }) {
-  const { image, date, type, title, body, link } = event;
+export default function EventCardMain({ event }: { event: any }) {
+  const { images, date, type, title, body, link } = event;
   const isDesktop = useDesktop();
   return (
     <section
@@ -29,7 +29,7 @@ export default function EventCardMain({ event = eventcard1 }) {
         `}
       >
         <img
-          src={image}
+          src={makeUrl(images[0])}
           alt="ok"
           className={isDesktop ? fullContainImg : fullHeightCoverImg}
         />

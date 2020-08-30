@@ -50,7 +50,7 @@ export const publications = [
     rel_artists: [1],
     rel_publications: [],
     rel_exhibition: [26],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/01/cover.png",
   },
   {
@@ -101,7 +101,7 @@ export const publications = [
     rel_artists: [2],
     rel_publications: [],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/02/cover.png",
   },
   {
@@ -151,7 +151,7 @@ export const publications = [
     rel_artists: [18],
     rel_publications: [50, 61, 64],
     rel_exhibition: [1, 24, 30, 35, 36, 41],
-    rel_event: [30],
+    rel_events: [30],
     image_cover: "/Publication/03/cover.png",
   },
   {
@@ -201,7 +201,7 @@ export const publications = [
     rel_artists: [3],
     rel_publications: [5, 40, 41, 58],
     rel_exhibition: [3, 5, 9, 11, 26],
-    rel_event: [5, 11, 12],
+    rel_events: [5, 11, 12],
     image_cover: "/Publication/04/cover.png",
   },
   {
@@ -241,7 +241,7 @@ export const publications = [
     rel_artists: [3],
     rel_publications: [4, 40, 41, 58],
     rel_exhibition: [3, 5, 9, 11, 26],
-    rel_event: [5, 11, 12],
+    rel_events: [5, 11, 12],
     image_cover: "/Publication/05/cover.png",
   },
   {
@@ -289,7 +289,7 @@ export const publications = [
     rel_artists: [6],
     rel_publications: [7, 58],
     rel_exhibition: [7, 9, 30],
-    rel_event: [17, 19],
+    rel_events: [17, 19],
     image_cover: "/Publication/06/cover.png",
   },
   {
@@ -334,7 +334,7 @@ export const publications = [
     rel_artists: [6],
     rel_publications: [6, 58],
     rel_exhibition: [7, 9, 30],
-    rel_event: [17, 19],
+    rel_events: [17, 19],
     image_cover: "/Publication/07/cover.png",
   },
   {
@@ -384,7 +384,7 @@ export const publications = [
     rel_artists: [4],
     rel_publications: [],
     rel_exhibition: [3],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/08/cover.png",
   },
   {
@@ -431,7 +431,7 @@ export const publications = [
     rel_artists: [26],
     rel_publications: [],
     rel_exhibition: [5],
-    rel_event: [7],
+    rel_events: [7],
     image_cover: "/Publication/09/cover.png",
   },
   {
@@ -481,7 +481,7 @@ export const publications = [
     rel_artists: [12],
     rel_publications: [58],
     rel_exhibition: [5, 9, 11],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/10/cover.png",
   },
   {
@@ -524,7 +524,7 @@ export const publications = [
     rel_artists: [25],
     rel_publications: [12, 13],
     rel_exhibition: [3, 5],
-    rel_event: [8],
+    rel_events: [8],
     image_cover: "/Publication/11/cover.png",
   },
   {
@@ -571,7 +571,7 @@ export const publications = [
     rel_artists: [25],
     rel_publications: [11, 13],
     rel_exhibition: [3, 5],
-    rel_event: [8],
+    rel_events: [8],
     image_cover: "/Publication/12/cover.png",
   },
   {
@@ -614,7 +614,7 @@ export const publications = [
     rel_artists: [25],
     rel_publications: [11, 12],
     rel_exhibition: [3, 5],
-    rel_event: [8],
+    rel_events: [8],
     image_cover: "/Publication/13/cover.png",
   },
   {
@@ -664,7 +664,7 @@ export const publications = [
     rel_artists: [27],
     rel_publications: [],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/14/cover.png",
   },
   {
@@ -713,7 +713,7 @@ export const publications = [
     rel_artists: [28],
     rel_publications: [],
     rel_exhibition: [],
-    rel_event: [13],
+    rel_events: [13],
     image_cover: "/Publication/15/cover.png",
   },
   {
@@ -770,7 +770,7 @@ export const publications = [
     rel_artists: [19],
     rel_publications: [37, 62],
     rel_exhibition: [8, 25, 28, 30],
-    rel_event: [36, 37],
+    rel_events: [36, 37],
     image_cover: "/Publication/16/cover.png",
   },
   {
@@ -826,7 +826,7 @@ export const publications = [
     rel_artists: [29],
     rel_publications: [],
     rel_exhibition: [5, 6],
-    rel_event: [8],
+    rel_events: [8],
     image_cover: "/Publication/17/cover.png",
   },
   {
@@ -875,7 +875,7 @@ export const publications = [
     rel_artists: [11],
     rel_publications: [58],
     rel_exhibition: [9, 11],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/18/cover.png",
   },
   {
@@ -932,7 +932,7 @@ export const publications = [
     rel_artists: [10],
     rel_publications: [58],
     rel_exhibition: [9, 11, 12, 26],
-    rel_event: [22],
+    rel_events: [22],
     image_cover: "/Publication/19/cover.png",
   },
   {
@@ -987,7 +987,7 @@ export const publications = [
     rel_artists: [30],
     rel_publications: [],
     rel_exhibition: [13, 32],
-    rel_event: [24],
+    rel_events: [24],
     image_cover: "/Publication/20/cover.png",
   },
   {
@@ -1036,7 +1036,7 @@ export const publications = [
     rel_artists: [31],
     rel_publications: [],
     rel_exhibition: [15],
-    rel_event: [26],
+    rel_events: [26],
     image_cover: "/Publication/21/cover.png",
   },
   {
@@ -1091,7 +1091,7 @@ export const publications = [
     rel_artists: [13],
     rel_publications: [23],
     rel_exhibition: [3, 10, 14],
-    rel_event: [3, 20, 23],
+    rel_events: [3, 20, 23],
     image_cover: "/Publication/22/cover.png",
   },
   {
@@ -1133,7 +1133,7 @@ export const publications = [
     rel_artists: [13],
     rel_publications: [22],
     rel_exhibition: [3, 10, 14],
-    rel_event: [3, 20, 23],
+    rel_events: [3, 20, 23],
     image_cover: "/Publication/23/cover.png",
   },
   {
@@ -1193,7 +1193,7 @@ export const publications = [
     rel_artists: [7],
     rel_publications: [43, 58, 60],
     rel_exhibition: [7, 9, 20, 26],
-    rel_event: [5, 17, 18],
+    rel_events: [5, 17, 18],
     image_cover: "/Publication/24/cover.png",
   },
   {
@@ -1255,7 +1255,7 @@ export const publications = [
     rel_artists: [8],
     rel_publications: [58],
     rel_exhibition: [7, 9, 12],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/25/cover.png",
   },
   {
@@ -1311,7 +1311,7 @@ export const publications = [
     rel_artists: [32],
     rel_publications: [],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/26/cover.png",
   },
   {
@@ -1373,7 +1373,7 @@ export const publications = [
     rel_artists: [33],
     rel_publications: [],
     rel_exhibition: [],
-    rel_event: [25],
+    rel_events: [25],
     image_cover: "/Publication/27/cover.png",
   },
   {
@@ -1429,7 +1429,7 @@ export const publications = [
     rel_artists: [16],
     rel_publications: [29, 30, 44, 61, 62],
     rel_exhibition: [18, 24, 28, 30],
-    rel_event: [31, 37],
+    rel_events: [31, 37],
     image_cover: "/Publication/28/cover.png",
   },
   {
@@ -1476,7 +1476,7 @@ export const publications = [
     rel_artists: [16],
     rel_publications: [28, 30, 44, 61, 62],
     rel_exhibition: [18, 24, 28, 30],
-    rel_event: [31, 37],
+    rel_events: [31, 37],
     image_cover: "/Publication/29/cover.png",
   },
   {
@@ -1521,7 +1521,7 @@ export const publications = [
     rel_artists: [16],
     rel_publications: [28, 29, 44, 61, 62],
     rel_exhibition: [18, 24, 28, 30],
-    rel_event: [31, 37],
+    rel_events: [31, 37],
     image_cover: "/Publication/30/cover.png",
   },
   {
@@ -1573,7 +1573,7 @@ export const publications = [
     rel_artists: [14],
     rel_publications: [59],
     rel_exhibition: [16, 30, 36],
-    rel_event: [5, 27, 28],
+    rel_events: [5, 27, 28],
     image_cover: "/Publication/31/cover.png",
   },
   {
@@ -1624,7 +1624,7 @@ export const publications = [
     rel_artists: [15],
     rel_publications: [59],
     rel_exhibition: [16],
-    rel_event: [27, 28],
+    rel_events: [27, 28],
     image_cover: "/Publication/32/cover.png",
   },
   {
@@ -1674,7 +1674,7 @@ export const publications = [
     rel_artists: [9],
     rel_publications: [34, 58],
     rel_exhibition: [9, 11],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/33/cover.png",
   },
   {
@@ -1720,7 +1720,7 @@ export const publications = [
     rel_artists: [9],
     rel_publications: [33, 58],
     rel_exhibition: [9, 11],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/34/cover.png",
   },
   {
@@ -1775,7 +1775,7 @@ export const publications = [
     rel_artists: [34],
     rel_publications: [66],
     rel_exhibition: [19, 39],
-    rel_event: [33],
+    rel_events: [33],
     image_cover: "/Publication/35/cover.png",
   },
   {
@@ -1828,7 +1828,7 @@ export const publications = [
     rel_artists: [59],
     rel_publications: [],
     rel_exhibition: [23],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/36/cover.png",
   },
   {
@@ -1878,7 +1878,7 @@ export const publications = [
     rel_artists: [19],
     rel_publications: [16, 62],
     rel_exhibition: [8, 25, 28, 30],
-    rel_event: [36, 37],
+    rel_events: [36, 37],
     image_cover: "/Publication/37/cover.png",
   },
   {
@@ -1930,7 +1930,7 @@ export const publications = [
     rel_artists: [17],
     rel_publications: [39, 60],
     rel_exhibition: [20, 33, 42],
-    rel_event: [2, 5, 9, 10, 15, 19, 21, 32],
+    rel_events: [2, 5, 9, 10, 15, 19, 21, 32],
     image_cover: "/Publication/38/cover.png",
   },
   {
@@ -1972,7 +1972,7 @@ export const publications = [
     rel_artists: [17],
     rel_publications: [38, 60],
     rel_exhibition: [20, 33, 42],
-    rel_event: [2, 5, 9, 10, 15, 19, 21, 32],
+    rel_events: [2, 5, 9, 10, 15, 19, 21, 32],
     image_cover: "/Publication/39/cover.png",
   },
   {
@@ -2027,7 +2027,7 @@ export const publications = [
     rel_artists: [3],
     rel_publications: [4, 5, 41, 58],
     rel_exhibition: [3, 5, 9, 11, 26],
-    rel_event: [5, 11, 12],
+    rel_events: [5, 11, 12],
     image_cover: "/Publication/40/cover.png",
   },
   {
@@ -2075,7 +2075,7 @@ export const publications = [
     rel_artists: [3],
     rel_publications: [4, 5, 40, 58],
     rel_exhibition: [3, 5, 9, 11, 26],
-    rel_event: [5, 11, 12],
+    rel_events: [5, 11, 12],
     image_cover: "/Publication/41/cover.png",
   },
   {
@@ -2122,7 +2122,7 @@ export const publications = [
     rel_artists: [36],
     rel_publications: [],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/42/cover.png",
   },
   {
@@ -2170,7 +2170,7 @@ export const publications = [
     rel_artists: [7],
     rel_publications: [24, 58, 60],
     rel_exhibition: [7, 9, 20, 26],
-    rel_event: [5, 17, 18],
+    rel_events: [5, 17, 18],
     image_cover: "/Publication/43/cover.png",
   },
   {
@@ -2224,7 +2224,7 @@ export const publications = [
     rel_artists: [16],
     rel_publications: [28, 29, 30, 61, 62],
     rel_exhibition: [18, 24, 28, 30],
-    rel_event: [31, 37],
+    rel_events: [31, 37],
     image_cover: "/Publication/44/cover.png",
   },
   {
@@ -2274,7 +2274,7 @@ export const publications = [
     rel_artists: [20],
     rel_publications: [],
     rel_exhibition: [29],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/45/cover.png",
   },
   {
@@ -2324,7 +2324,7 @@ export const publications = [
     rel_artists: [21],
     rel_publications: [],
     rel_exhibition: [29],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/46/cover.png",
   },
   {
@@ -2370,7 +2370,7 @@ export const publications = [
     rel_artists: [35],
     rel_publications: [61],
     rel_exhibition: [24, 32],
-    rel_event: [35],
+    rel_events: [35],
     image_cover: "/Publication/47/cover.png",
   },
   {
@@ -2420,7 +2420,7 @@ export const publications = [
     rel_artists: [37],
     rel_publications: [49],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/48/cover.png",
   },
   {
@@ -2462,7 +2462,7 @@ export const publications = [
     rel_artists: [37],
     rel_publications: [48],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/49/cover.png",
   },
   {
@@ -2513,7 +2513,7 @@ export const publications = [
     rel_artists: [18],
     rel_publications: [3, 61, 64],
     rel_exhibition: [1, 24, 30, 35, 36, 41],
-    rel_event: [30],
+    rel_events: [30],
     image_cover: "/Publication/50/cover.png",
   },
   {
@@ -2559,7 +2559,7 @@ export const publications = [
     rel_artists: [38],
     rel_publications: [52],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/51/cover.png",
   },
   {
@@ -2603,7 +2603,7 @@ export const publications = [
     rel_artists: [38],
     rel_publications: [51],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/52/cover.png",
   },
   {
@@ -2653,7 +2653,7 @@ export const publications = [
     rel_artists: [22],
     rel_publications: [],
     rel_exhibition: [38],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/53/cover.png",
   },
   {
@@ -2702,7 +2702,7 @@ export const publications = [
     rel_artists: [23],
     rel_publications: [],
     rel_exhibition: [38],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/54/cover.png",
   },
   {
@@ -2753,7 +2753,7 @@ export const publications = [
     rel_artists: [24],
     rel_publications: [],
     rel_exhibition: [38],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/55/cover.png",
   },
   {
@@ -2797,7 +2797,7 @@ export const publications = [
     rel_artists: [39],
     rel_publications: [57],
     rel_exhibition: [40],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/56/cover.png",
   },
   {
@@ -2842,7 +2842,7 @@ export const publications = [
     rel_artists: [39],
     rel_publications: [56],
     rel_exhibition: [40],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/57/cover.png",
   },
   {
@@ -2923,7 +2923,7 @@ export const publications = [
       60,
     ],
     rel_exhibition: [7, 9],
-    rel_event: [17, 19],
+    rel_events: [17, 19],
     image_cover: "/Publication/58/cover.png",
   },
   {
@@ -2974,7 +2974,7 @@ export const publications = [
     rel_artists: [],
     rel_publications: [],
     rel_exhibition: [],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/59/cover.png",
   },
   {
@@ -3034,7 +3034,7 @@ export const publications = [
     rel_artists: [17, 7, 53, 54],
     rel_publications: [24, 38, 39, 43, 58],
     rel_exhibition: [20],
-    rel_event: [2],
+    rel_events: [2],
     image_cover: "/Publication/60/cover.png",
   },
   {
@@ -3087,7 +3087,7 @@ export const publications = [
     rel_artists: [61, 62, 16, 63, 35, 64, 18],
     rel_publications: [3, 28, 29, 30, 44, 47, 50, 62, 64],
     rel_exhibition: [24],
-    rel_event: [35],
+    rel_events: [35],
     image_cover: "/Publication/61/cover.png",
   },
   {
@@ -3142,7 +3142,7 @@ export const publications = [
     rel_artists: [16, 19, 56],
     rel_publications: [16, 28, 29, 30, 37, 44, 61],
     rel_exhibition: [28],
-    rel_event: [37],
+    rel_events: [37],
     image_cover: "/Publication/62/cover.png",
   },
   {
@@ -3201,7 +3201,7 @@ export const publications = [
     rel_artists: [67, 68, 69, 70],
     rel_publications: [],
     rel_exhibition: [32],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/63/cover.png",
   },
   {
@@ -3254,7 +3254,7 @@ export const publications = [
     rel_artists: [18, 72, 73, 74],
     rel_publications: [3, 50, 61],
     rel_exhibition: [35],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/64/cover.png",
   },
   {
@@ -3302,7 +3302,7 @@ export const publications = [
     rel_artists: [],
     rel_publications: [],
     rel_exhibition: [34],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/65/cover.png",
   },
   {
@@ -3354,7 +3354,7 @@ export const publications = [
     rel_artists: [34],
     rel_publications: [35],
     rel_exhibition: [39],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/66/cover.png",
   },
   {
@@ -3407,7 +3407,7 @@ export const publications = [
     rel_artists: [],
     rel_publications: [],
     rel_exhibition: [39],
-    rel_event: [],
+    rel_events: [],
     image_cover: "/Publication/67/cover.png",
   },
 ];

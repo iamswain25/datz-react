@@ -10,7 +10,7 @@ import {
 import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
 import { useParams, NavLink } from "react-router-dom";
-import { bottomcards } from "../@type/event";
+import { events } from "../@type/events";
 import EventCardForViewAll from "../components/EventCardForViewAll";
 const FILTERS: { [key: string]: string } = {
   all: "all",
@@ -73,7 +73,7 @@ export default function Events() {
           ))}
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
-          {bottomcards
+          {events
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )

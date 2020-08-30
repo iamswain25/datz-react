@@ -1,16 +1,16 @@
 import React from "react";
 import { css } from "emotion";
-import ev1 from "../assets/images/readmore/ev1.png";
-import ev2 from "../assets/images/readmore/ev2.png";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { makeUrl } from "../config/url";
+import useEvents from "../utils/useEvents";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
-  
+
   line-height: 1.19;
 
   text-align: right;
@@ -19,7 +19,7 @@ const textClass = (dark = false) => css`
 const descClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 14px;
-  
+
   line-height: 1.64;
 
   text-align: center;
@@ -54,7 +54,6 @@ const itemClass = css`
   display: flex;
   align-items: center;
   height: auto;
-
 `;
 
 const responsive = {
@@ -69,22 +68,16 @@ const responsive = {
     // partialVisibilityGutter: 10,
   },
 };
-const list = [
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-  [ev1, "Lumen Circle"],
-  [ev2, "FNL#19 Amanda Marchand"],
-];
-export default function PublicationWidget({
+export default function EventWidget({
   dark = false,
+  events,
 }: {
   dark?: boolean;
+  events: any[];
 }) {
-  const history = useHistory();
-  function clickHandler() {
-    history.push("/publication/nothingwill");
+  const list = useEvents(events);
+  if (!list.length) {
+    return null;
   }
   return (
     <div
@@ -104,14 +97,18 @@ export default function PublicationWidget({
           </CarouselBtnGroup>
         }
       >
-        {list.map(([img, title], i) => {
+        {list.map(({ images, title, id }, i) => {
           return (
-            <div key={i} className={afterClass(i)} onClick={clickHandler}>
+            <Link key={i} className={afterClass(i)} to={`/publication/${id}`}>
               <div className={listClass(dark)}>
-                <img src={img} alt="books" className={imgClass} />
+                <img
+                  src={makeUrl(images[0])}
+                  alt="books"
+                  className={imgClass}
+                />
                 <span className={descClass(dark)}>{title}</span>
               </div>
-            </div>
+            </Link>
           );
         })}
       </Carousel>

@@ -3,11 +3,13 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "./styles";
 import EventCardMain from "./EventCardMain";
-import { eventcard1, eventcard2, bottomcards } from "../@type/event";
+import { events } from "../@type/events";
 import EventCardPastGrey from "./EventCardPastGrey";
 import { Link } from "react-router-dom";
+import useEvents from "../utils/useEvents";
 
 export default function EventRight() {
+  const langEvents = useEvents(events);
   const isDesktop = useDesktop();
   return (
     <main
@@ -23,8 +25,8 @@ export default function EventRight() {
           column-gap: 27px;
         `}
       >
-        <EventCardMain event={eventcard1} />
-        <EventCardMain event={eventcard2} />
+        <EventCardMain event={langEvents[0]} />
+        <EventCardMain event={langEvents[1]} />
       </div>
       <h1
         className={css`
@@ -48,7 +50,7 @@ export default function EventRight() {
           column-gap: 27px;
         `}
       >
-        {[eventcard1, eventcard2, ...bottomcards].map((a, i) => (
+        {langEvents.map((a, i) => (
           <EventCardPastGrey key={i} event={a} />
         ))}
       </div>
@@ -56,7 +58,9 @@ export default function EventRight() {
         to="events"
         className={css`
           ${bottomBtn37}
-          ${isDesktop ? marginH10 : marginH27}
+          ${isDesktop
+            ? marginH10
+            : marginH27}
           width: calc(100% - ${isDesktop ? 20 : 54}px);
           transform: translateY(-1px);
           border-top: 1px solid #707070;

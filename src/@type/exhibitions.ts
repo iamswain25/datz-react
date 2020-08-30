@@ -36,7 +36,7 @@ export const exhibitions = [
     ],
     rel_artist: [80, 81, 82, 83],
     rel_publications: [],
-    rel_event: [1],
+    rel_events: [1],
   },
   {
     id: 2,
@@ -74,7 +74,7 @@ export const exhibitions = [
     ],
     rel_artist: [55, 76, 77, 79],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 3,
@@ -109,7 +109,7 @@ export const exhibitions = [
     ],
     rel_artist: [3, 4, 13, 25, 40, 41, 42],
     rel_publications: [8],
-    rel_event: [null],
+    rel_events: [null],
   },
   {
     id: 4,
@@ -149,7 +149,7 @@ export const exhibitions = [
     ],
     rel_artist: [43, 44, 45, 46],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 5,
@@ -189,7 +189,7 @@ export const exhibitions = [
     ],
     rel_artist: [3, 12, 25, 26, 29],
     rel_publications: [9, 10, 12, 13, 17],
-    rel_event: [null],
+    rel_events: [null],
   },
   {
     id: 6,
@@ -229,7 +229,7 @@ export const exhibitions = [
     ],
     rel_artist: [29],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 7,
@@ -271,7 +271,7 @@ export const exhibitions = [
     ],
     rel_artist: [5, 6, 7, 8],
     rel_publications: [6, 7, 24, 25],
-    rel_event: [17, 19],
+    rel_events: [17, 19],
   },
   {
     id: 8,
@@ -308,7 +308,7 @@ export const exhibitions = [
     ],
     rel_artist: [19],
     rel_publications: [16],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 9,
@@ -351,7 +351,7 @@ export const exhibitions = [
     ],
     rel_artist: [3, 5, 6, 7, 8, 9, 10, 11, 12],
     rel_publications: [58],
-    rel_event: [19],
+    rel_events: [19],
   },
   {
     id: 10,
@@ -389,7 +389,7 @@ export const exhibitions = [
     ],
     rel_artist: [13],
     rel_publications: [22, 23],
-    rel_event: [20],
+    rel_events: [20],
   },
   {
     id: 11,
@@ -428,7 +428,7 @@ export const exhibitions = [
     ],
     rel_artist: [3, 9, 10, 11, 12],
     rel_publications: [10, 18, 33, 34],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 12,
@@ -467,7 +467,7 @@ export const exhibitions = [
     ],
     rel_artist: [null],
     rel_publications: [19, 25],
-    rel_event: [22],
+    rel_events: [22],
   },
   {
     id: 13,
@@ -501,7 +501,7 @@ export const exhibitions = [
     ],
     rel_artist: [30],
     rel_publications: [20],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 14,
@@ -539,7 +539,7 @@ export const exhibitions = [
     ],
     rel_artist: [13, 47, 48, 49],
     rel_publications: [22, 23],
-    rel_event: [23],
+    rel_events: [23],
   },
   {
     id: 15,
@@ -574,7 +574,7 @@ export const exhibitions = [
     ],
     rel_artist: [31],
     rel_publications: [21],
-    rel_event: [26],
+    rel_events: [26],
   },
   {
     id: 16,
@@ -609,7 +609,7 @@ export const exhibitions = [
     ],
     rel_artist: [14, 15],
     rel_publications: [59],
-    rel_event: [27, 28],
+    rel_events: [27, 28],
   },
   {
     id: 17,
@@ -646,7 +646,7 @@ export const exhibitions = [
     ],
     rel_artist: [50, 51, 52],
     rel_publications: [],
-    rel_event: [29],
+    rel_events: [29],
   },
   {
     id: 18,
@@ -685,7 +685,7 @@ export const exhibitions = [
     ],
     rel_artist: [16],
     rel_publications: [28],
-    rel_event: [31],
+    rel_events: [31],
   },
   {
     id: 19,
@@ -719,7 +719,7 @@ export const exhibitions = [
     ],
     rel_artist: [34],
     rel_publications: [35],
-    rel_event: [33],
+    rel_events: [33],
   },
   {
     id: 20,
@@ -756,7 +756,7 @@ export const exhibitions = [
     ],
     rel_artist: [7, 17, 53, 54],
     rel_publications: [60],
-    rel_event: [2],
+    rel_events: [2],
   },
   {
     id: 21,
@@ -790,7 +790,7 @@ export const exhibitions = [
     ],
     rel_artist: [40],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 22,
@@ -835,7 +835,7 @@ export const exhibitions = [
     ],
     rel_artist: [56, 57, 58],
     rel_publications: [],
-    rel_event: [34],
+    rel_events: [34],
   },
   {
     id: 23,
@@ -867,7 +867,7 @@ export const exhibitions = [
     ],
     rel_artist: [59, 60],
     rel_publications: [36],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 24,
@@ -908,7 +908,7 @@ export const exhibitions = [
     ],
     rel_artist: [16, 18, 35, 61, 62, 63, 64],
     rel_publications: [61],
-    rel_event: [35],
+    rel_events: [35],
   },
   {
     id: 25,
@@ -946,7 +946,7 @@ export const exhibitions = [
     ],
     rel_artist: [19],
     rel_publications: [37],
-    rel_event: [36],
+    rel_events: [36],
   },
   {
     id: 26,
@@ -984,7 +984,7 @@ export const exhibitions = [
     ],
     rel_artist: [1, 3, 7, 10, 66],
     rel_publications: [40, 41, 43],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 27,
@@ -1015,7 +1015,7 @@ export const exhibitions = [
     ],
     rel_artist: [],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 28,
@@ -1053,7 +1053,7 @@ export const exhibitions = [
     ],
     rel_artist: [16, 19, 56],
     rel_publications: [62],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 29,
@@ -1091,7 +1091,7 @@ export const exhibitions = [
     ],
     rel_artist: [20, 21],
     rel_publications: [45, 46],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 30,
@@ -1116,7 +1116,7 @@ export const exhibitions = [
     images: ["/Exhibition/30/01.jpg"],
     rel_artist: [6, 14, 16, 18, 19, 73],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 31,
@@ -1150,7 +1150,7 @@ export const exhibitions = [
     ],
     rel_artist: [],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 32,
@@ -1183,7 +1183,7 @@ export const exhibitions = [
     ],
     rel_artist: [67, 68, 69, 70],
     rel_publications: [63],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 33,
@@ -1219,7 +1219,7 @@ export const exhibitions = [
     ],
     rel_artist: [17, 73, 75],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 34,
@@ -1256,7 +1256,7 @@ export const exhibitions = [
     ],
     rel_artist: [71],
     rel_publications: [65],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 35,
@@ -1293,7 +1293,7 @@ export const exhibitions = [
     ],
     rel_artist: [18, 72, 73, 74],
     rel_publications: [64],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 36,
@@ -1329,7 +1329,7 @@ export const exhibitions = [
     ],
     rel_artist: [14, 18],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 37,
@@ -1358,7 +1358,7 @@ export const exhibitions = [
     ],
     rel_artist: [75],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 38,
@@ -1391,7 +1391,7 @@ export const exhibitions = [
     ],
     rel_artist: [22, 23, 24],
     rel_publications: [53, 54, 55],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 39,
@@ -1423,7 +1423,7 @@ export const exhibitions = [
     ],
     rel_artist: [34],
     rel_publications: [66, 67],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 40,
@@ -1451,7 +1451,7 @@ export const exhibitions = [
     ],
     rel_artist: [39],
     rel_publications: [56, 57],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 41,
@@ -1485,7 +1485,7 @@ export const exhibitions = [
     ],
     rel_artist: [18],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
   {
     id: 42,
@@ -1516,6 +1516,6 @@ export const exhibitions = [
     ],
     rel_artist: [17],
     rel_publications: [],
-    rel_event: [],
+    rel_events: [],
   },
 ];

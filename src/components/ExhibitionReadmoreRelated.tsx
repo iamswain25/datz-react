@@ -24,7 +24,9 @@ const desktopContainer = css`
 export default function ExhibitionReadmoreRelated() {
   const isDesktop = useDesktop();
   const { id } = useParams();
-  const { artists, publications } = usePublicationIndex(id);
+  const { artists, publications, exhibitions, events } = usePublicationIndex(
+    id
+  );
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div
@@ -54,8 +56,8 @@ export default function ExhibitionReadmoreRelated() {
         </div>
         <ArtistWidget artists={artists} />
         <PublicationWidget publications={publications} />
-        <ExhibitionWidget />
-        <EventWidget />
+        <ExhibitionWidget exhibitions={exhibitions} />
+        <EventWidget events={events} />
       </div>
       <button
         onClick={(e) =>

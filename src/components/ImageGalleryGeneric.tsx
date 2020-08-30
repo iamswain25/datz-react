@@ -4,8 +4,7 @@ import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Datzpress from "../assets/svg/Datzpress";
-import { newone } from "../@type/event";
-export default function ImageGalleryGeneric({ images = [newone] }) {
+export default function ImageGalleryGeneric({ images }: { images: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
   function onslideHandler(index: number) {

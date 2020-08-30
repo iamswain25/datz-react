@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { publications } from "../@type/publications";
 import { artists } from "../@type/arists";
+import { events } from "../@type/events";
 import { exhibitions } from "../@type/exhibitions";
 
 export default function usePublicationIndex(index: string | number) {
@@ -9,6 +10,7 @@ export default function usePublicationIndex(index: string | number) {
   const item = publications[Number(index) - 1];
   const rel_publications = item.rel_publications as number[];
   const rel_exhibition = item.rel_exhibition as number[];
+  const rel_events = item.rel_events as number[];
   const title = lang === "ko" ? item.title_ko : item.title_en;
   const artist = lang === "ko" ? item.artist_ko : item.artist_en;
   const quotes = lang === "ko" ? item.quotes_ko : item.quotes_en;
@@ -22,6 +24,10 @@ export default function usePublicationIndex(index: string | number) {
   const artistsObj = useMemo(
     () => artists.filter((a) => item.rel_artists.includes(a.id)),
     [item.rel_artists]
+  );
+  const eventObj = useMemo(
+    () => events.filter((a) => rel_events.includes(a.id)),
+    [rel_events]
   );
   const exhibitionsObj = useMemo(
     () => exhibitions.filter((a) => rel_exhibition.includes(a.id)),
@@ -44,5 +50,6 @@ export default function usePublicationIndex(index: string | number) {
     artists: artistsObj,
     publications: publicationsObj,
     exhibitions: exhibitionsObj,
+    events: eventObj,
   };
 }
