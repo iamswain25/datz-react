@@ -136,6 +136,7 @@ export default function PublicationStickyTop() {
               letter-spacing: 0.42px;
               text-align: center;
               color: #4b4b4b;
+              white-space: break-spaces;
             `}
           >
             {artist}
