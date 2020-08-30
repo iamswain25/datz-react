@@ -97,7 +97,6 @@ export const publications = [
       "/Publication/02/10.jpg",
       "/Publication/02/11.jpg",
       "/Publication/02/12.jpg",
-      "",
     ],
     rel_artists: [2],
     rel_publications: [],
@@ -148,7 +147,6 @@ export const publications = [
       "/Publication/03/09.jpg",
       "/Publication/03/10.jpg",
       "/Publication/03/11.jpg",
-      "",
     ],
     rel_artists: [18],
     rel_publications: [50, 61, 64],
@@ -199,7 +197,6 @@ export const publications = [
       "/Publication/04/09.jpg",
       "/Publication/04/10.jpg",
       "/Publication/04/11.jpg",
-      "",
     ],
     rel_artists: [3],
     rel_publications: [5, 40, 41, 58],
@@ -214,22 +211,22 @@ export const publications = [
     copies_count: 30,
     title_en: "Nothing Will Ever be the Same Again(SE)",
     artist_en: "Amanda Marchand",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘Nothing Will Ever be the Same Again’ focuses on three windows in a century-old schoolhouse and their subtle surprises. Taking place over the entire month of January, the book pays homage to the vulnerable season of winter. Following the movement of light across the minimal landscape, the serial images contemplate human, geologic and cosmic time. Through repetition, gate-folds, and other playful structural elements, the book is a return to a childhood state of pure presence. The square windows double as the camera frame – the photographs were made with a medium-format, analog camera that produces a square negative. \n \nThe special edition box, limited to 30 copies, is handcrafted, wooden box housing the book and a signed print. The wooden box reminds us of the square window that the artist looked at and can serve as a frame for original prints and books.The plexiglass cover opens like a window.",
     notes_en:
       "2019\n29.5 × 25 cm \n84 pages\nHard cover binding \nISBN 978-89-97605-45-3 03660\n \n$550.00\n \n* Each book has one unique C-print.\n* Includes one matted, archival pigment print in the handcrafted wooden box. Signed and numbered.\n \n* Book Production by Munsung Printing\n* Box Production by cabinet maker KANGSEONG. plainplan.kr",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘Nothing Will Ever be the Same Again’ focuses on three windows in a century-old schoolhouse and their subtle surprises. Taking place over the entire month of January, the book pays homage to the vulnerable season of winter. Following the movement of light across the minimal landscape, the serial images contemplate human, geologic and cosmic time. Through repetition, gate-folds, and other playful structural elements, the book is a return to a childhood state of pure presence. The square windows double as the camera frame – the photographs were made with a medium-format, analog camera that produces a square negative. \n \nThe special edition box, limited to 30 copies, is handcrafted, wooden box housing the book and a signed print. The wooden box reminds us of the square window that the artist looked at and can serve as a frame for original prints and books.The plexiglass cover opens like a window.",
     title_ko: "모두 다른 하나의 순간들(SE) ",
     artist_ko: "아만다 마찬드  ",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "아만다 마찬드가 레지던시로 한 달간 머무른 핀란드의 오래된 학교 건물 안, 세 개의 창문에서부터 이 책은 시작된다. 겨울이 긴 핀란드에서 작가는 정사각형 포맷의 카메라를 포함한 네 개의 창을 통해 한순간도 같지 않은 풍광을 읽어내는 고요한 ‘관조’의 태도를 실현한다. 이 작업은 작가가 어린 시절을 보낸 캐나다의 겨울에 대한 기억에서 출발하였으며, 세계를 바라보는 명상의 한 방법으로서 사진을 보여 준다.\n \n300권의 리미티드 에디션 책과 함께 30부 한정의 스페셜 에디션 박스가 제작되었다. 스페셜 에디션은 수공예로 제작한 나무 상자에 책과 오리지널 프린트를 함께 넣었다. 나무 상자는 작가가 바라보았던 네모난 창을 상기시키며, 오리지널 프린트와 책을 위해 액자와 같은 기능을 할 수 있다. 스페셜 에디션 박스를 통하여 작가가 창을 통해 보았던 명상적 풍경을 감상할 수 있도록 구현하였다.",
     notes_ko:
       "2019\n29.5 × 25 cm \n84 pages\nHard cover binding \nISBN 978-89-97605-45-3 03660\n \n₩600,000\n \n* 각 책마다 서로 다른 C-print 한 장을 포함하고 있습니다.\n* 스페셜 에디션으로 수제 나무 박스 안에 작가의 친필 사인과 넘버링이 있는 오리지널 프린트 한장이 포함되어 있습니다.\n \n* 제작: 문성인쇄\n* 스페셜 박스 제작: 강성 plainplan.kr",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "아만다 마찬드가 레지던시로 한 달간 머무른 핀란드의 오래된 학교 건물 안, 세 개의 창문에서부터 이 책은 시작된다. 겨울이 긴 핀란드에서 작가는 정사각형 포맷의 카메라를 포함한 네 개의 창을 통해 한순간도 같지 않은 풍광을 읽어내는 고요한 ‘관조’의 태도를 실현한다. 이 작업은 작가가 어린 시절을 보낸 캐나다의 겨울에 대한 기억에서 출발하였으며, 세계를 바라보는 명상의 한 방법으로서 사진을 보여 준다.\n \n300권의 리미티드 에디션 책과 함께 30부 한정의 스페셜 에디션 박스가 제작되었다. 스페셜 에디션은 수공예로 제작한 나무 상자에 책과 오리지널 프린트를 함께 넣었다. 나무 상자는 작가가 바라보았던 네모난 창을 상기시키며, 오리지널 프린트와 책을 위해 액자와 같은 기능을 할 수 있다. 스페셜 에디션 박스를 통하여 작가가 창을 통해 보았던 명상적 풍경을 감상할 수 있도록 구현하였다.",
     order_url_en: "https://www.datzpress.kr/publications/nothingwill-se",
@@ -302,22 +299,22 @@ export const publications = [
     copies_count: 30,
     title_en: "Offerings(SE)",
     artist_en: "Mary Daniel Hobson",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "For over twenty-five years, the artist has paired photography with collage and sculpture to see below the surface. By layering tactile materials, she expresses a deeper psychological complexity and navigates an inner world.\n \nThe special edition box contains Hobson’s five photographic series, ‘Milagros’, ‘Evocations’, ‘Mapping the Body’, ‘Invocation’ and ‘Sanctuary’ bound books, an accordion card made from the ‘Milagros’ series, and an original print ‘Incantation #8’ with the artist’s signature. The map images and feathers used by the artist are composed together to create “tactile reasons”. The book, map images, the accordion card, a feather, and the original print are arranged in layers to remind the artist of the way she worked with objects and photographs.",
     notes_en:
       "2019\n18.5 × 22 cm\n100 pages\nSoftcover / Exposed spine binding\nISBN 978-89-97605-47-7\n \n$300,000 \n \n* Includes a first edition book of Offerings, a signed original print(Incantation #8, archival pigment print, 8×6″) and an accordion card with Milagros series(7×18.5cm) in a Special box.\n \n* Text by Anne Veh\n* Production by Munsung Printing\n* Special Edition production by Datz Books",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "For over twenty-five years, the artist has paired photography with collage and sculpture to see below the surface. By layering tactile materials, she expresses a deeper psychological complexity and navigates an inner world.\n \nThe special edition box contains Hobson’s five photographic series, ‘Milagros’, ‘Evocations’, ‘Mapping the Body’, ‘Invocation’ and ‘Sanctuary’ bound books, an accordion card made from the ‘Milagros’ series, and an original print ‘Incantation #8’ with the artist’s signature. The map images and feathers used by the artist are composed together to create “tactile reasons”. The book, map images, the accordion card, a feather, and the original print are arranged in layers to remind the artist of the way she worked with objects and photographs.",
     title_ko: "Offerings(SE)",
     artist_ko: "메리 다니엘 홉슨",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "메리 다니엘 홉슨은 25년 동안 사진을 이용한 콜라주와 입체 작업을 하고 있다. 표면에 감추어진 내면의 층위를 드러내기 위해, 여러 가지 재료들을 선택하여 조합하며 복합적인 의미를 만들어 낸다. 홉슨의 모든 작업은 신체의 이미지를 포함하거나 작가의 내밀한 내면의 이야기가 담겨 있다. \n \n스페셜 에디션 박스에는 홉슨의 다섯 시리즈, ‘기적Milagros’, ‘환기Evocations’, ‘몸의 지도Mapping the Body‘, ‘기도Invocation’, ‘안식처Sanctuary’가 담긴 책과 ‘기적Milagros’ 시리즈로 만든 아코디언 카드, 작가의 친필 사인이 담긴 오리지널 프린트 ‘Incantation #8’이 담겨 있다. 작가가 사용했던 지도 이미지와 깃을 함께 구성하여 촉각적인 사유를 불러일으킨다. 책과 오래된 지도 이미지, 아코디언 카드, 깃, 오리지널 프린트를 층층이 쌓듯이 구성하여, 오브제와 사진을 겹쳐 작업하는 작가의 방식을 상기시키도록 하였다.",
     notes_ko:
       "2019\n18.5 × 22 cm\n100 pages\nSoftcover / Exposed spine binding\nISBN 978-89-97605-47-7\n \n₩300,000 \n \n* 스페셜 에디션 박스에는 Offerings 책과 작가의 친필 사인이 있는 오리지널 프린트(‘Incantation #8’, archival pigment print, 8×6″), 아코디언 카드(‘Milagros’ seires, 7×18.5 cm)가 담겨있습니다.\n \n* 글: 앤 베이\n* 제작: 문성인쇄\n* 스페셜 에디션 제작: 닻북스",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "메리 다니엘 홉슨은 25년 동안 사진을 이용한 콜라주와 입체 작업을 하고 있다. 표면에 감추어진 내면의 층위를 드러내기 위해, 여러 가지 재료들을 선택하여 조합하며 복합적인 의미를 만들어 낸다. 홉슨의 모든 작업은 신체의 이미지를 포함하거나 작가의 내밀한 내면의 이야기가 담겨 있다. \n \n스페셜 에디션 박스에는 홉슨의 다섯 시리즈, ‘기적Milagros’, ‘환기Evocations’, ‘몸의 지도Mapping the Body‘, ‘기도Invocation’, ‘안식처Sanctuary’가 담긴 책과 ‘기적Milagros’ 시리즈로 만든 아코디언 카드, 작가의 친필 사인이 담긴 오리지널 프린트 ‘Incantation #8’이 담겨 있다. 작가가 사용했던 지도 이미지와 깃을 함께 구성하여 촉각적인 사유를 불러일으킨다. 책과 오래된 지도 이미지, 아코디언 카드, 깃, 오리지널 프린트를 층층이 쌓듯이 구성하여, 오브제와 사진을 겹쳐 작업하는 작가의 방식을 상기시키도록 하였다.",
     order_url_en: "https://www.datzpress.kr/publications/offerings-se",
@@ -383,7 +380,6 @@ export const publications = [
       "/Publication/08/09.jpg",
       "/Publication/08/10.jpg",
       "/Publication/08/11.jpg",
-      "",
     ],
     rel_artists: [4],
     rel_publications: [],
@@ -481,7 +477,6 @@ export const publications = [
       "/Publication/10/09.jpg",
       "/Publication/10/10.jpg",
       "/Publication/10/11.jpg",
-      "",
     ],
     rel_artists: [12],
     rel_publications: [58],
@@ -496,22 +491,22 @@ export const publications = [
     copies_count: 50,
     title_en: "TYPE LIBRARY",
     artist_en: "Hyunmee Kim",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘TYPE LIBRARY’ catalogues the Roman alphabet typefaces that Hyunmee Kim uses often, along with those that she wanted to study further. Since the invention of metal type and typography in the 15th century in Germany, the history of typefaces has also evolved, along with the changes in the history of music, art and architecture. A typeface is the product of its time and culture, a fused creation of an individual who breathed that particular time and space. When a typographer chooses a typeface to work with, she or he is actually working with the history embedded within the typeface. To effectively accentuate the informational hierarchy and structure, a typeface family consists of varying weights, angle, and proportions. In this book, she has selected a font most representative of the original typeface in thickness and proportion. This book is intended for anyone who is interested in the many beautiful forms of Roman alphabet typefaces and the stories behind them. At the end of the book, the typefaces and their history is explained  in Korean and English. The book was produced in a limited edition of 50 copies with two different covers.",
     notes_en:
       "2019\n14.8 × 21 cm\n148 pages\nHardcover / Perfect Binding\n \n$60.00\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. ",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘TYPE LIBRARY’ catalogues the Roman alphabet typefaces that Hyunmee Kim uses often, along with those that she wanted to study further. Since the invention of metal type and typography in the 15th century in Germany, the history of typefaces has also evolved, along with the changes in the history of music, art and architecture. A typeface is the product of its time and culture, a fused creation of an individual who breathed that particular time and space. When a typographer chooses a typeface to work with, she or he is actually working with the history embedded within the typeface. To effectively accentuate the informational hierarchy and structure, a typeface family consists of varying weights, angle, and proportions. In this book, she has selected a font most representative of the original typeface in thickness and proportion. This book is intended for anyone who is interested in the many beautiful forms of Roman alphabet typefaces and the stories behind them. At the end of the book, the typefaces and their history is explained  in Korean and English. The book was produced in a limited edition of 50 copies with two different covers.",
     title_ko: "TYPE LIBRARY",
     artist_ko: "김현미",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "「TYPE LIBRARY」는 타이포그래피 연구자인 김현미 디자이너가 애용하거나 더 연구하고 싶은 로마자 글자체들을 선택하여 모은 자료집이다. 15세기 독일에서 금속 활자와 활판 인쇄술이 발명된 이후 음악과 미술, 건축 양식의 변화 및 역사와 같이하여 글자체의 역사 역시 발전해왔다. 이러한 글자체는 당시의 시공간을 호흡한 개인의 창작물이자 시대와 문화의 산물이기에 타이포그래퍼가 글자체를 선정하여 작업한다는 것은 글자체가 함유한 모든 것을 활용하는 것을 의미한다. 하나의 글자체는 문자 정보의 위계나 구성을 더욱 효과적으로 드러내 주기 위해 대체로 굵기, 기울기, 비례에 있어 변화를 가지는 글자 가족, 패밀리를 이룬다. 이 책에서는 각 글자체를 소개하며 하나의 글자체 패밀리에서 굵기나 비례를 고려하여 ‘가장 그 글자체다운’ 폰트를 선정하고자 하였다. 책의 말미에는 글자체에 대한 역사와 설명의 글을 국영문으로 담았다. 책을 통해 로마체의 서로 다른 모습과 그 이야기에 대한 이해는 새로운 세계에 눈뜨는 경험이 될 것이다. 이 책은 두가지 색상의 표지에 50부 한정 수량으로 제작되었다.",
     notes_ko:
       "2019\n14.8 × 21 cm\n148 pages\nHardcover / Perfect Binding\n \n₩60,000\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "「TYPE LIBRARY」는 타이포그래피 연구자인 김현미 디자이너가 애용하거나 더 연구하고 싶은 로마자 글자체들을 선택하여 모은 자료집이다. 15세기 독일에서 금속 활자와 활판 인쇄술이 발명된 이후 음악과 미술, 건축 양식의 변화 및 역사와 같이하여 글자체의 역사 역시 발전해왔다. 이러한 글자체는 당시의 시공간을 호흡한 개인의 창작물이자 시대와 문화의 산물이기에 타이포그래퍼가 글자체를 선정하여 작업한다는 것은 글자체가 함유한 모든 것을 활용하는 것을 의미한다. 하나의 글자체는 문자 정보의 위계나 구성을 더욱 효과적으로 드러내 주기 위해 대체로 굵기, 기울기, 비례에 있어 변화를 가지는 글자 가족, 패밀리를 이룬다. 이 책에서는 각 글자체를 소개하며 하나의 글자체 패밀리에서 굵기나 비례를 고려하여 ‘가장 그 글자체다운’ 폰트를 선정하고자 하였다. 책의 말미에는 글자체에 대한 역사와 설명의 글을 국영문으로 담았다. 책을 통해 로마체의 서로 다른 모습과 그 이야기에 대한 이해는 새로운 세계에 눈뜨는 경험이 될 것이다. 이 책은 두가지 색상의 표지에 50부 한정 수량으로 제작되었다.",
     order_url_en: "https://www.datzpress.kr/publications/type-library",
@@ -539,22 +534,22 @@ export const publications = [
     copies_count: 60,
     title_en: "HEART SUTRA ",
     artist_en: "Hyunmee Kim",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘HEART SUTRA’ is a typography book written with scripture that explains the core beliefs of Buddhism. Prajna Paramita Hrdaya Sutra was translated from Sanskrit to Chinese during the Tang dynasty by the Chinese Buddhist monk, Tripitaka Master Hsuan Tsang. She would recite the 260 Chinese characters of the Sutra without fully grasping their meaning, because she was only taught to phonate the words of the prayer rather than the meaning of each character. In order to get closer to the contents of the prayer, the book is designed with a Korean translation and explanation of key concepts, along with an English translation to see how it is expressed in another language. It is a book that interweaves three writing systems around the prayer, which has been recited for more than 2,000 years to gain enlightenment. ‘HEART SUTRA’, which was awarded the Grand title by the Korean Society of Typography, is produced as the third edition in a limited quantity of 60 books containing Hyunmee Kim's autograph.",
     notes_en:
       "2015 / 2019\n21 × 14.8 cm\n22 pages\nHard cover / French binding\n \n$60.00\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n \n1st edition of 30 copies, 2015\n2nd edition of 10 copies, 2017\n3rd edition of 60 copies, 2019",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘HEART SUTRA’ is a typography book written with scripture that explains the core beliefs of Buddhism. Prajna Paramita Hrdaya Sutra was translated from Sanskrit to Chinese during the Tang dynasty by the Chinese Buddhist monk, Tripitaka Master Hsuan Tsang. She would recite the 260 Chinese characters of the Sutra without fully grasping their meaning, because she was only taught to phonate the words of the prayer rather than the meaning of each character. In order to get closer to the contents of the prayer, the book is designed with a Korean translation and explanation of key concepts, along with an English translation to see how it is expressed in another language. It is a book that interweaves three writing systems around the prayer, which has been recited for more than 2,000 years to gain enlightenment. ‘HEART SUTRA’, which was awarded the Grand title by the Korean Society of Typography, is produced as the third edition in a limited quantity of 60 books containing Hyunmee Kim's autograph.",
     title_ko: "반야심경 般若心經",
     artist_ko: "김현미",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "「반야심경HEART SUTRA」은 불교 반야사상般若思想의 핵심을 담은 경전인 반야심경般若心經으로 기획된 타이포그라피 책이다. 현재 한국인이 암송하는 260자 기도문은 당나라 현장 법사가 산스크리트어를 한문으로 번역하고 또 그 소리를 음사한 것으로, 가히 뜻이 와닿지 않는다. 김현미 디자이너는 기도문의 내용에 보다 근접하기 위해 한글 번역, 핵심 개념의 해설을 곁들이고 또 다른 언어에서는 어떻게 표현했는지 살펴보기 위해 영문번역도 함께 담은 책을 기획하였다. 지난 2천여 년간 깨달음을 얻기 위해 암송되었던 이 기도문을 중심으로 세 개의 문자체계가 교차하는 책이다. 한국타이포그라피학회 회원전에서 최우수상을 받은 ‘반야심경’은 작가의 친필사인이 담겨 있는 60권 한정본의 세 번째 에디션으로 제작되었다.",
     notes_ko:
       "2015 / 2019\n21 × 14.8 cm\n22 pages\nHard cover / French binding\n \n₩60,000\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n \n1st edition of 30 copies, 2015\n2nd edition of 10 copies, 2017\n3rd edition of 60 copies, 2019",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "「반야심경HEART SUTRA」은 불교 반야사상般若思想의 핵심을 담은 경전인 반야심경般若心經으로 기획된 타이포그라피 책이다. 현재 한국인이 암송하는 260자 기도문은 당나라 현장 법사가 산스크리트어를 한문으로 번역하고 또 그 소리를 음사한 것으로, 가히 뜻이 와닿지 않는다. 김현미 디자이너는 기도문의 내용에 보다 근접하기 위해 한글 번역, 핵심 개념의 해설을 곁들이고 또 다른 언어에서는 어떻게 표현했는지 살펴보기 위해 영문번역도 함께 담은 책을 기획하였다. 지난 2천여 년간 깨달음을 얻기 위해 암송되었던 이 기도문을 중심으로 세 개의 문자체계가 교차하는 책이다. 한국타이포그라피학회 회원전에서 최우수상을 받은 ‘반야심경’은 작가의 친필사인이 담겨 있는 60권 한정본의 세 번째 에디션으로 제작되었다.",
     order_url_en:
@@ -572,7 +567,6 @@ export const publications = [
       "/Publication/12/09.jpg",
       "/Publication/12/10.jpg",
       "/Publication/12/11.jpg",
-      "",
     ],
     rel_artists: [25],
     rel_publications: [11, 13],
@@ -587,22 +581,22 @@ export const publications = [
     copies_count: 70,
     title_en: "ODE TO TYPOGRAPHY",
     artist_en: "Hyunmee Kim",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Hyunmee Kim translated the Chilean poet Pablo Neruda’s ‘Ode to Typography’ with typography design. The poem covers the history of typography and how it has impacted human civilization. In order to convey the timeless value of typography, she used only black type on white paper. Typographic form, color, texture, and space were explored within the classical proportions of typography grids, using each page as a stage. ",
     notes_en:
       "2013 / 2019\n20.7 × 29.6 cm\n32 pages\nHard cover / French binding\n \n$70.00\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n \n1st edition of 10 copies, 2013\n2nd edition of 10 copies, 2015\n3rd edition of 10 copies, 2016\n4th edition of 70 copies, 2019",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "Hyunmee Kim translated the Chilean poet Pablo Neruda’s ‘Ode to Typography’ with typography design. The poem covers the history of typography and how it has impacted human civilization. In order to convey the timeless value of typography, she used only black type on white paper. Typographic form, color, texture, and space were explored within the classical proportions of typography grids, using each page as a stage. ",
     title_ko: "ODE TO TYPOGRAPHY",
     artist_ko: "김현미",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "칠레의 시인 파블로 네루다의 ‘타이포그라피 송시Ode to Typography’를 시각적으로 해석한 이 책은 타이포그라피의 형태와 그것이 인류 문명에 미친 영향에 대한 예찬의 시이다. 김현미 디자이너는 시인이 언어로 표현한 타이포그라피의 역사와 감성을 각 시대의 산물이면서 뚜렷한 개성을 가진 글자체와 타이포그라피로 표현하려 하였다. 고전적 비율의 텍스트 영역을 무대로 하여 흰 종이에 검정 타입만 사용하면서 타이포그라피가 표현할 수 있는 다양한 형태와 색, 질감, 공간을 표현하였다.",
     notes_ko:
       "2013 / 2019\n20.7 × 29.6 cm\n32 pages\nHard cover / French binding\n \n₩70,000\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n \n1st edition of 10 copies, 2013\n2nd edition of 10 copies, 2015\n3rd edition of 10 copies, 2016\n4th edition of 70 copies, 2019",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "칠레의 시인 파블로 네루다의 ‘타이포그라피 송시Ode to Typography’를 시각적으로 해석한 이 책은 타이포그라피의 형태와 그것이 인류 문명에 미친 영향에 대한 예찬의 시이다. 김현미 디자이너는 시인이 언어로 표현한 타이포그라피의 역사와 감성을 각 시대의 산물이면서 뚜렷한 개성을 가진 글자체와 타이포그라피로 표현하려 하였다. 고전적 비율의 텍스트 영역을 무대로 하여 흰 종이에 검정 타입만 사용하면서 타이포그라피가 표현할 수 있는 다양한 형태와 색, 질감, 공간을 표현하였다.",
     order_url_en: "https://www.datzpress.kr/publications/ode-to-typography",
@@ -666,7 +660,6 @@ export const publications = [
       "/Publication/14/09.jpg",
       "/Publication/14/10.jpg",
       "/Publication/14/11.jpg",
-      "",
     ],
     rel_artists: [27],
     rel_publications: [],
@@ -787,22 +780,22 @@ export const publications = [
     copies_count: 50,
     title_en: "Grass, Kim Su-yong",
     artist_en: "Xianlu Yi",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Kim su-yong is one of the most exceptional modern poets in Korea. He died at a relatively young age of 48 in 1968, but his poetry has become a symbol of freedom and revolution during the democratization of Korea. His last poem ‘Grass’, only published after his death, has provoked particular attention and debate amongst critics. Depending on the viewpoint of the literary figures and their political beliefs, the meaning and  value of Kim’s poetry showed a great range of differing analysis. The populist grass-roots movement interpreted the phrases from ‘Grass’ such as “lying down faster than the wind” and “rising faster than the wind,” as signifying the tenacious vitality of the masses. Meanwhile, the humanist interpreted it as a symbol of life itself. ‘Grass, Kim Su-yong’ is a typographic art book in which a poem composed of letters is transformed into an image through the form of an art book. Under the guidance of Professor Hyunmee Kim, Xianlu Yi reinterpreted a poem into the form of concrete poetry that freely constitutes the size and location of letters, and utilizing the forms of pop-up and accordion books to express the repeated rhythm of the poem in three dimensions.",
     notes_en:
       "2019\n11.3 x 13.5 cm\n12 pages\nWooden hardcover / Accordion binding\nISBN 978-89-97605-39-2\n \n$50.00 \n$70.00 (Rare Book)  * Sold Out\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books.",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "Kim su-yong is one of the most exceptional modern poets in Korea. He died at a relatively young age of 48 in 1968, but his poetry has become a symbol of freedom and revolution during the democratization of Korea. His last poem ‘Grass’, only published after his death, has provoked particular attention and debate amongst critics. Depending on the viewpoint of the literary figures and their political beliefs, the meaning and  value of Kim’s poetry showed a great range of differing analysis. The populist grass-roots movement interpreted the phrases from ‘Grass’ such as “lying down faster than the wind” and “rising faster than the wind,” as signifying the tenacious vitality of the masses. Meanwhile, the humanist interpreted it as a symbol of life itself. ‘Grass, Kim Su-yong’ is a typographic art book in which a poem composed of letters is transformed into an image through the form of an art book. Under the guidance of Professor Hyunmee Kim, Xianlu Yi reinterpreted a poem into the form of concrete poetry that freely constitutes the size and location of letters, and utilizing the forms of pop-up and accordion books to express the repeated rhythm of the poem in three dimensions.",
     title_ko: "풀, 김수영",
     artist_ko: "이현노",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "거짓을 배격하고 구속과 억압을 거부한 시인, 자유시인 김수영은 자유와 사랑을 노래한 우리나라의 대표적 시인이다. 일제강점기 시절에 태어나, 광복과 한국전쟁을 겪은 그는 모질고 격한 비바람 같았던 우리 역사와 함께 서서 시대와 함께 변모하고 고뇌했고, 새로운 세상을 꿈꾸며 진정한 시, 자유로운 시를 쓰기 위해 전력을 다했다. ‘풀’은 김수영 시인이 불의의 교통사고로 타계하기 직전에 발표한 유작으로, 민중주의자들은 ‘풀’을 어떠한 압력에도 굴하지 않고 일어서는 ‘민중’의 상징으로, 인문주의적 평론가들은 삶의 여러 움직임을 보여주는 상징동력으로 해석하고 있다.\n \n 「풀, 김수영Grass, Kim Su-yong」은 글자로 이루어진 시가 아트북의 형태를 통해 이미지로 변환되어 보여지는 타이포그라피 아트북이다. 작가의 스승인 김현미 교수(sadi)의 지도 아래 글자 크기와 위치를 자유롭게 구성하는 구체시의 형식으로 재해석하였고, 팝업북과 아코디언북의 형태를 응용하여 시의 반복적인 운율을 입체적으로 표현하였다. 책을 펼치면 시의 단어가 풀처럼 교차되며 ‘눕고’, ‘일어나’ 이미지로 열리게 된다.",
     notes_ko:
       "2019\n11.3 x 13.5 cm\n12 pages\nWooden hardcover / Accordion binding\nISBN 978-89-97605-39-2\n \n₩48,000\n₩70,000 (Rare Book)\n \n* 이책은 국문과 영문 두가지 에디션이 각 50권 한정으로 만들어졌습니다. \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "거짓을 배격하고 구속과 억압을 거부한 시인, 자유시인 김수영은 자유와 사랑을 노래한 우리나라의 대표적 시인이다. 일제강점기 시절에 태어나, 광복과 한국전쟁을 겪은 그는 모질고 격한 비바람 같았던 우리 역사와 함께 서서 시대와 함께 변모하고 고뇌했고, 새로운 세상을 꿈꾸며 진정한 시, 자유로운 시를 쓰기 위해 전력을 다했다. ‘풀’은 김수영 시인이 불의의 교통사고로 타계하기 직전에 발표한 유작으로, 민중주의자들은 ‘풀’을 어떠한 압력에도 굴하지 않고 일어서는 ‘민중’의 상징으로, 인문주의적 평론가들은 삶의 여러 움직임을 보여주는 상징동력으로 해석하고 있다.\n \n 「풀, 김수영Grass, Kim Su-yong」은 글자로 이루어진 시가 아트북의 형태를 통해 이미지로 변환되어 보여지는 타이포그라피 아트북이다. 작가의 스승인 김현미 교수(sadi)의 지도 아래 글자 크기와 위치를 자유롭게 구성하는 구체시의 형식으로 재해석하였고, 팝업북과 아코디언북의 형태를 응용하여 시의 반복적인 운율을 입체적으로 표현하였다. 책을 펼치면 시의 단어가 풀처럼 교차되며 ‘눕고’, ‘일어나’ 이미지로 열리게 된다.",
     order_url_en: "https://www.datzpress.kr/publications/grass",
@@ -1108,22 +1101,22 @@ export const publications = [
     copies_count: 60,
     title_en: "Arranging Life(SE)",
     artist_en: "Seongyeon Jo",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Seongyeon Jo investigated and analyzed the process of growth and extinction of seeds for a long time with attitude of a botanist, since she began to experience the life as an urban farmer a few years ago. Jo has worked on sophisticated and static photography by expanding the viewpoint, noticing the order in nature and materiality as she has cultivated her own crops. The abandoned and dead things gained new breath and are reborn as the book ‘Arranging Life’. This book carries the result of her meditated observations, the artist’s embracing of the process of life, perceiving the birth and extinction of nature as one. This special edition of 60 copies include the artist’s signature and a original print.",
     notes_en:
       "2018\n19.7 × 27.8 cm \n104 pages\nHard cover binding\nISBN 978-89-97605-36-1\n \n$150.00\n \n* Includes one original print (signed)\n* Production: Munsung Printing",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "Seongyeon Jo investigated and analyzed the process of growth and extinction of seeds for a long time with attitude of a botanist, since she began to experience the life as an urban farmer a few years ago. Jo has worked on sophisticated and static photography by expanding the viewpoint, noticing the order in nature and materiality as she has cultivated her own crops. The abandoned and dead things gained new breath and are reborn as the book ‘Arranging Life’. This book carries the result of her meditated observations, the artist’s embracing of the process of life, perceiving the birth and extinction of nature as one. This special edition of 60 copies include the artist’s signature and a original print.",
     title_ko: "지고 맺다(SE) ",
     artist_ko: "조성연 ",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "조성연은 몇 해 전부터 도시농부로서의 삶을 선택하여, 느린 태도로 씨앗이 발아하는 성장과 이후의 소멸 과정을 식물학자처럼 관찰하여 왔다. 몸소 작물을 경작하며 자연의 이치와 질서, 그리고 물질성을 경험한  작가의 시야는 자연스레 확장되어, 세련되고 정적인 사진 작업으로 드러난다. 쓸모없이 버려지고 죽은 듯 보이는 것들에 숨결을 불어 넣고, 세련됨, 섬세함, 화려함 또는 소박함, 생경함 등의 다채로운 시감각을 책에 담아 내었다. 8년 만에 새로이 선보이는 사진집 「지고 맺다Arranging Life」에는 자연의 생성과 소멸을 하나로 인지하며, 삶의 과정을 지켜보고 수용하는 작가의 성숙한 태도가 고스란히 배어 있다. 이 책은 작가의 친필싸인과 오리지널 프린트가 한 장씩 들어있는 60권 한정 스페셜 에디션이다.",
     notes_ko:
       "2018\n19.7 × 27.8 cm \n104 pages\nHard cover binding\nISBN 978-89-97605-36-1\n \n₩150,000\n \n* 작가의 친필 사인이 있는 오리지널 프린트 한장이 포함되어 있습니다.\n* 제작: 문성인쇄\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "조성연은 몇 해 전부터 도시농부로서의 삶을 선택하여, 느린 태도로 씨앗이 발아하는 성장과 이후의 소멸 과정을 식물학자처럼 관찰하여 왔다. 몸소 작물을 경작하며 자연의 이치와 질서, 그리고 물질성을 경험한  작가의 시야는 자연스레 확장되어, 세련되고 정적인 사진 작업으로 드러난다. 쓸모없이 버려지고 죽은 듯 보이는 것들에 숨결을 불어 넣고, 세련됨, 섬세함, 화려함 또는 소박함, 생경함 등의 다채로운 시감각을 책에 담아 내었다. 8년 만에 새로이 선보이는 사진집 「지고 맺다Arranging Life」에는 자연의 생성과 소멸을 하나로 인지하며, 삶의 과정을 지켜보고 수용하는 작가의 성숙한 태도가 고스란히 배어 있다. 이 책은 작가의 친필싸인과 오리지널 프린트가 한 장씩 들어있는 60권 한정 스페셜 에디션이다.",
     order_url_en: "https://www.datzpress.kr/publications/arranginglife",
@@ -1278,7 +1271,7 @@ export const publications = [
       "‘What Appears In the Light Was im Licht erscheint’ contains about 40 years of Max Kellenberger's viewpoint on the world. Kellenberger, who has slowly observed things around him at his own pace since he was a young boy, captures the light's everyday scenery, the lines and sides of it, and the darkness from his own orderly perspective. The 41 images that are firmly embedded in the book are viewed according to the artist's static breathing.\nThe book also includes the original print with the artist’s autograph.\n",
     notes_en:
       "2018\n21 × 26.5 cm\n48 pages\nBookcloth Hardcover\nISBN 978-89-97605-33-0\n \n$80.00\n \n* Includes one original print (signed)\n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. ",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "What Appears In the Light Was im Licht erscheint’ contains about 40 years of Max Kellenberger's viewpoint on the world. Kellenberger, who has slowly observed things around him at his own pace since he was a young boy, captures the light's everyday scenery, the lines and sides of it, and the darkness from his own orderly perspective. The 41 images that are firmly embedded in the book are viewed according to the artist's static breathing.\nThe book also includes the original print with the artist’s autograph.\n",
     title_ko: "What Appears In the Light",
@@ -1289,7 +1282,7 @@ export const publications = [
       "이 책에는 맥스 켈렌버거가 세상을 세심히 바라봐온 약 40년간의 시선이 담겨있다. 어린 소년이었을 때부터 주변의 것들을 자신만의 속도로 천천히 관찰해왔던 작가는 빛에 드러난 일상의 풍경과 그 안의 선과 면, 그리고 어둠을 그만의 정돈된 시각으로 포착해 낸다. 책에 단단하게 맺혀있는 41장의 이미지를 작가의 정적인 호흡에 맞춰 바라보게 된다. 책에는 작가의 친필사인이 있는 오리지널 프린트도 포함되어 있다.",
     notes_ko:
       "2018\n21 × 26.5 cm\n48 pages\nBookcloth Hardcover\nISBN 978-89-97605-33-0\n \n₩80,000 \n \n* 책에는 작가의 친필사인과 오리지널 프린트 한 장이 포함되어 있습니다. \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "이 책에는 맥스 켈렌버거가 세상을 세심히 바라봐온 약 40년간의 시선이 담겨있다. 어린 소년이었을 때부터 주변의 것들을 자신만의 속도로 천천히 관찰해왔던 작가는 빛에 드러난 일상의 풍경과 그 안의 선과 면, 그리고 어둠을 그만의 정돈된 시각으로 포착해 낸다. 책에 단단하게 맺혀있는 41장의 이미지를 작가의 정적인 호흡에 맞춰 바라보게 된다. 책에는 작가의 친필사인이 있는 오리지널 프린트도 포함되어 있다.",
     order_url_en:
@@ -1324,8 +1317,8 @@ export const publications = [
   {
     id: 27,
     type: "Book",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Art is already in your mind",
     artist_en: "U Sunok",
     quotes_en:
@@ -1538,22 +1531,22 @@ export const publications = [
     copies_count: 100,
     title_en: "A Conversation with the World",
     artist_en: "Lonnie Graham",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Over the course of 30 years, Lonnie Graham has carried out ‘A Conversation with the World’ in more than 50 different countries in six continents. He interviews the people he meets concerning eight subjects—origins, family, life, death, values, tradition, connections and western culture—and photographs them. ‘A Conversation with the World’ is a simple question and answer exchange between the photographer and interviewees chosen at random. From a template of eight questions, interviewees voice their responses from their own distinctive cultural standpoint. From culture to culture, the responses are the same, outlining the same basic human needs.\nHis project is published in the form of a book for the first time by Datz Press. This book contains the images and stories of all the people he has met throughout the world. \nThe publication includes a main book with a series of portraits, and a secondary book that lists their answers to each question.\n",
     notes_en:
       "2017\n22.4 × 28 cm\n114 pages\nSoft cover / Perfect binding\nISBN 978-8997605-28-6-03660\n \n$90.00 \n \n* signed and numbered\n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. ",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "Over the course of 30 years, Lonnie Graham has carried out ‘A Conversation with the World’ in more than 50 different countries in six continents. He interviews the people he meets concerning eight subjects—origins, family, life, death, values, tradition, connections and western culture—and photographs them. ‘A Conversation with the World’ is a simple question and answer exchange between the photographer and interviewees chosen at random. From a template of eight questions, interviewees voice their responses from their own distinctive cultural standpoint. From culture to culture, the responses are the same, outlining the same basic human needs.\nHis project is published in the form of a book for the first time by Datz Press. This book contains the images and stories of all the people he has met throughout the world. \nThe publication includes a main book with a series of portraits, and a secondary book that lists their answers to each question.\n",
     title_ko: "세계와의 대화",
     artist_ko: "로니 그래험",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "로니 그래험은 30년간 ‘세계와의 대화’를 진행하며 6개 대륙, 50여 개국에서 만난 사람들에게 여덟 가지 주제 - 기원origins, 가족family, 삶life, 죽음death, 가치관values, 전통tradition, 연결connections, 서구 문화western culture에 대해 공통적인 질문을 던지고 그들의 이야기와 함께 사진을 찍어왔다. \n「세계와의 대화A Conversation with the World」는 사진가 로니 그래험이 무작위로 선정한 인터뷰 대상자와 주고받는 단순한 질문과 대답으로 이루어진다. 응답자들은 총 8개의 질문에 대해 자신이 속한 문화권의 관점과 각자가 가진 개인적인 기분에 따라 본인의 생각을 자유롭게 이야기한다. 각기 다른 문화권임에도 불구하고 응답자들의 대답은 한결같으며 인간의 근본적인 요건에 대해 한 목소리를 내고 있다. 닻프레스는 그래험의 프로젝트를 처음으로 책의 형태로 묶었다. 참여한 사람들의 초상을 담은 본 책과 각 질문에 대한 그들의 답변을 정리하여 별책의 형태로 제작하였다.",
     notes_ko:
       "2017\n22.4 × 28 cm\n114 pages\nSoft cover / Perfect binding\nISBN 978-8997605-28-6-03660\n \n₩90,000\n \n* 에디션 넘버와 작가의 친필사인이 포함되어 있습니다.\n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "로니 그래험은 30년간 ‘세계와의 대화’를 진행하며 6개 대륙, 50여 개국에서 만난 사람들에게 여덟 가지 주제 - 기원origins, 가족family, 삶life, 죽음death, 가치관values, 전통tradition, 연결connections, 서구 문화western culture에 대해 공통적인 질문을 던지고 그들의 이야기와 함께 사진을 찍어왔다. \n「세계와의 대화A Conversation with the World」는 사진가 로니 그래험이 무작위로 선정한 인터뷰 대상자와 주고받는 단순한 질문과 대답으로 이루어진다. 응답자들은 총 8개의 질문에 대해 자신이 속한 문화권의 관점과 각자가 가진 개인적인 기분에 따라 본인의 생각을 자유롭게 이야기한다. 각기 다른 문화권임에도 불구하고 응답자들의 대답은 한결같으며 인간의 근본적인 요건에 대해 한 목소리를 내고 있다. 닻프레스는 그래험의 프로젝트를 처음으로 책의 형태로 묶었다. 참여한 사람들의 초상을 담은 본 책과 각 질문에 대한 그들의 답변을 정리하여 별책의 형태로 제작하였다.",
     order_url_en:
@@ -1627,7 +1620,6 @@ export const publications = [
       "/Publication/32/10.jpg",
       "/Publication/32/11.jpg",
       "/Publication/32/12.jpg",
-      "",
     ],
     rel_artists: [15],
     rel_publications: [59],
@@ -1678,7 +1670,6 @@ export const publications = [
       "/Publication/33/09.jpg",
       "/Publication/33/10.jpg",
       "/Publication/33/11.jpg",
-      "",
     ],
     rel_artists: [9],
     rel_publications: [34, 58],
@@ -1791,7 +1782,7 @@ export const publications = [
     id: 36,
     type: "Book",
     edition: "First Edition",
-    copies_count: "",
+    copies_count: null,
     title_en: "Our Time Between",
     artist_en: "Doug Muir",
     quotes_en:
@@ -1949,22 +1940,22 @@ export const publications = [
     copies_count: 50,
     title_en: "Grace and Gravity",
     artist_en: "Sangyon Joo",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘Grace and Gravity’ consists of photographs of light and shadow that the photographer encountered in the West Coast of the United States. Intuitively gathered trivial dots were reconstructed and fermented into a different language through years of thought-process. One image may not encompass all meanings but multiple images that are free of constraints and borders would mix and react to each other,constructing new meanings. Such an infinite landscape, not derived from an illusion of a singular perspective but from an illusion of multiple perspectives, dreams of ascending into the space of sublime and grace by resisting gravity. These 50 special edition, signed and numbered copies include one original print from a choice of five.",
     notes_en:
       "2015\n26 × 35 cm\n138 pages\nHard cover / Perfect binding\nISBN  978-89-97605-15-6\n \n$300.00\n \n* signed and numbered\n* Production by TOP PROCESS, Korea",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘GRACE AND GRAVITY’ consists of photographs of light and shadow that the photographer encountered in the West Coast of the United States. Intuitively gathered trivial dots were reconstructed and fermented into a different language through years of thought-process. One image may not encompass all meanings but multiple images that are free of constraints and borders would mix and react to each other,constructing new meanings. Such an infinite landscape, not derived from an illusion of a singular perspective but from an illusion of multiple perspectives, dreams of ascending into the space of sublime and grace by resisting gravity. These 50 special edition, signed and numbered copies include one original print from a choice of five.",
     title_ko: "중력과 은총(SE)  ",
     artist_ko: "주상연  ",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "「중력과 은총Grace and Gravity」은 미국 서부의 자연에서 만난 빛과 그림자를 작가 자신의 사진언어로 엮은 책이다. 직관으로 수집된 무수한 점(點) 들이 모여 시간의 사유를 통해 재구성되고 새로운 시각언어로 발효된다. 낱개로는 의미가 다 서술되지 않지만, 경계없는 지경 속에서 열린 이미지들은 책 속에서 서로 뒤섞이고 반응한다. 작가는 일시점(一視點) 이 아닌 다시점(多視點)의 전체적 환영이 존재하는 무한의 풍경을 통해 중력을 벗어난 숭고한 은총의 공간으로 상승을 꿈꾼다. 이 50권 한정의 스페셜 에디션에는 다섯장의 오리지널 프린트 중 한장이 포함된다. ",
     notes_ko:
       "2015\n26 × 35 cm\n138 pages\nHard cover / Perfect binding\nISBN  978-89-97605-15-6\n \n₩300,000\n \n* 에디션 넘버와 작가의 친필사인이 포함되어 있습니다.\n* 제작: 으뜸프로세스",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "「중력과 은총GRACE AND GRAVITY」은 미국 서부의 자연에서 만난 빛과 그림자를 작가 자신의 사진언어로 엮은 책이다. 직관으로 수집된 무수한 점(點) 들이 모여 시간의 사유를 통해 재구성되고 새로운 시각언어로 발효된다. 낱개로는 의미가 다 서술되지 않지만, 경계없는 지경 속에서 열린 이미지들은 책 속에서 서로 뒤섞이고 반응한다. 작가는 일시점(一視點) 이 아닌 다시점(多視點)의 전체적 환영이 존재하는 무한의 풍경을 통해 중력을 벗어난 숭고한 은총의 공간으로 상승을 꿈꾼다. 이 50권 한정의 스페셜 에디션에는 다섯장의 오리지널 프린트 중 한장이 포함된다. ",
     order_url_en: "https://www.datzpress.kr/publications/grace-and-gravity",
@@ -2094,22 +2085,22 @@ export const publications = [
     copies_count: 100,
     title_en: "Still-Life",
     artist_en: "Yoonjean Lee",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘Still-Life’ is a work from the period when Lee studied photography under Bernd and Hilla Becher at Kunstakademie Düsseldorf in Germany. Lee took subject matters of still life and interior spaces and put them through the act of ‘photographic restructuring of the real’ and ‘photographic seeing’. Transcending boundaries of frame structure and arrangement by utilizing photographic light and color, Lee creates two-dimensional planes from three-dimensional spaces.",
     notes_en:
       "2015\n22 x 30 cm\n108 pages\nHard cover / Perfect binding\nISBN  978-89-97605-14-9\n \n$100.00 \n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘Still-Life’ is a work from the period when Lee studied photography under Bernd and Hilla Becher at Kunstakademie Düsseldorf in Germany. Lee took subject matters of still life and interior spaces and put them through the act of ‘photographic restructuring of the real’ and ‘photographic seeing’. Transcending boundaries of frame structure and arrangement by utilizing photographic light and color, Lee creates two-dimensional planes from three-dimensional spaces.",
     title_ko: "스틸라이프",
     artist_ko: "이윤진",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "「스틸라이프Still-Life」는 작가가 독일 뒤셀도르프 쿤스트아카데미의 베허부부에게 사진을 수학하던 시기의 작업이다. 이 책에는 정물과 실내공간을 소재로 ‘실재를 사진적으로 재구성하는 방법’과 ‘사진적으로 보는 법’에 대한 실천이 담겨있다. 작가는 경계를 넘나드는 화면 구성과 배치, 사진적 빛과 색의 활용을 통해 3차원의 공간을 2차원의 독창적 평면으로 재현하고 있다. ",
     notes_ko:
       "2015\n22 x 30 cm\n108 pages\nHard cover / Perfect binding\nISBN  978-89-97605-14-9\n \n₩100,000\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "「스틸라이프Still-Life」는 작가가 독일 뒤셀도르프 쿤스트아카데미의 베허부부에게 사진을 수학하던 시기의 작업이다. 이 책에는 정물과 실내공간을 소재로 ‘실재를 사진적으로 재구성하는 방법’과 ‘사진적으로 보는 법’에 대한 실천이 담겨있다. 작가는 경계를 넘나드는 화면 구성과 배치, 사진적 빛과 색의 활용을 통해 3차원의 공간을 2차원의 독창적 평면으로 재현하고 있다. ",
     order_url_en: "https://www.datzpress.kr/publications/still-life",
@@ -2127,7 +2118,6 @@ export const publications = [
       "/Publication/42/10.jpg",
       "/Publication/42/11.jpg",
       "/Publication/42/12.jpg",
-      "",
     ],
     rel_artists: [36],
     rel_publications: [],
@@ -2280,7 +2270,6 @@ export const publications = [
       "/Publication/45/09.jpg",
       "/Publication/45/10.jpg",
       "/Publication/45/11.jpg",
-      "",
     ],
     rel_artists: [20],
     rel_publications: [],
@@ -2295,22 +2284,22 @@ export const publications = [
     copies_count: 100,
     title_en: "A man without words",
     artist_en: "Jungwook Yang",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "This is a book of drawings that contains recurring thoughts from ordinary scenes and environments. One can trace the kinetic artist Jungwook Yang’s visions, perspectives, and the trajectory of his thoughts, which leaves the reader  feeling like one is pursuing an artist’s sketchbook. Using the book form with drawings and a short story by the artist, this book visually presents a part of Yang’s working process and his structural and experimental kinetic methods. This book was made by collaboration with the artist as a part of ‘Datz Press Bookmaking Studio Program’.",
     notes_en:
       "2014\n13 x 20.5 cm\n220 pages\nSoft cover / Perfect binding\nISBN 978-89-97605-06-4\n \n$40.00 * Sold Out\n \n* signed and numbered\n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "This is a book of drawings that contains recurring thoughts from ordinary scenes and environments. One can trace the kinetic artist Jungwook Yang’s visions, perspectives, and the trajectory of his thoughts, which leaves the reader  feeling like one is pursuing an artist’s sketchbook. Using the book form with drawings and a short story by the artist, this book visually presents a part of Yang’s working process and his structural and experimental kinetic methods. This book was made by collaboration with the artist as a part of ‘Datz Press Bookmaking Studio Program’.",
     title_ko: "말이 없는 사람",
     artist_ko: "양정욱",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "양정욱의 「말이 없는 사람A man without words」은 일상의 풍경에서 발견되는 생각을 담은 드로잉북이다. 이 책은 키네틱 아트를 하는 양정욱 작가의 시각과 사고의 동선을 마치 작가의 스케치북을 들여다 보듯 볼 수 있어 더욱 흥미롭다. 그의 구조적 연산의 과정이 표현된 시각물 외에도 작가가 쓴 단편소설이 함께 들어있다. 이 책은 <닻프레스 북메이킹 스투디오 프로그램>을 통해 작가와의 공동작업으로 진행되었다.",
     notes_ko:
       "2014\n13 x 20.5 cm\n220 pages\nSoft cover / Perfect binding\nISBN 978-89-97605-06-4\n \n₩36,000 * Sold Out\n \n* 에디션 넘버와 작가의 친필사인이 포함되어 있습니다.\n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "양정욱의 「말이 없는 사람A man without words」은 일상의 풍경에서 발견되는 생각을 담은 드로잉북이다. 이 책은 키네틱 아트를 하는 양정욱 작가의 시각과 사고의 동선을 마치 작가의 스케치북을 들여다 보듯 볼 수 있어 더욱 흥미롭다. 그의 구조적 연산의 과정이 표현된 시각물 외에도 작가가 쓴 단편소설이 함께 들어있다. 이 책은 <닻프레스 북메이킹 스투디오 프로그램>을 통해 작가와의 공동작업으로 진행되었다.",
     order_url_en: "https://www.datzpress.kr/publications/a-man-without-words",
@@ -2347,23 +2336,23 @@ export const publications = [
     artist_en: "Younghea Kim",
     quotes_en:
       "“In a time full of darkness and silence, the sky, clouds, and the moon always exist in the same place in different forms. The moon and trees always look at me there without any emotion. The dizzying minds of the day are subdued, and under the dark sky only my thoughts remain. The moment’s air and my mind remain in the picture taken by the camera. These trivial moments give me comfort in my daily life.”_Younghea Kim",
-    body_en: "X",
+    body_en: null,
     notes_en:
       "2014\n18.5 × 25 cm\n80 pages\nHard cover / Perfect binding\n \n$60.00\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. ",
     preview_quote_en:
       "“In a time full of darkness and silence, the sky, clouds, and the moon always exist in the same place in different forms. The moon and trees always look at me there without any emotion. The dizzying minds of the day are subdued, and under the dark sky only my thoughts remain. The moment’s air and my mind remain in the picture taken by the camera. These trivial moments give me comfort in my daily life.”_Younghea Kim",
-    preview_body_en: "X",
+    preview_body_en: null,
     title_ko: "위로의 풍경",
     artist_ko: "김영혜",
     quotes_ko:
       "“어둠과 침묵이 가득한 시간 속 하늘과 구름, 달은 언제나 같은 곳에 다른 모습으로 존재한다. 달과 나무들은 항상 그 자리에서 아무런 감정 없이 나를 바라본다. 하루의 어지러운 마음들은 가라앉고 캄캄한 하늘 아래 오롯하게 나의 생각들만 남는다. 카메라로 담아낸 사진 속엔 그 순간의 공기와 나의 마음이 함께 남는다. 사소한 이 순간들은 나에겐 일상의 작은 위안을 주는 순간들이다.”_김영혜",
-    body_ko: "X",
+    body_ko: null,
     notes_ko:
       "2014\n18.5 × 25 cm\n80 pages\nHard cover / Perfect binding\n \n₩60,000\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
     preview_quote_ko:
       "“어둠과 침묵이 가득한 시간 속 하늘과 구름, 달은 언제나 같은 곳에 다른 모습으로 존재한다. 달과 나무들은 항상 그 자리에서 아무런 감정 없이 나를 바라본다. 하루의 어지러운 마음들은 가라앉고 캄캄한 하늘 아래 오롯하게 나의 생각들만 남는다. 카메라로 담아낸 사진 속엔 그 순간의 공기와 나의 마음이 함께 남는다. 사소한 이 순간들은 나에겐 일상의 작은 위안을 주는 순간들이다.”_김영혜",
-    preview_body_ko: "X",
-    order_url_en: "",
+    preview_body_ko: null,
+    order_url_en: null,
     order_url_ko: "https://datzpress.com/product/consolation",
     images: [
       "/Publication/47/01.jpg",
@@ -2377,7 +2366,6 @@ export const publications = [
       "/Publication/47/09.jpg",
       "/Publication/47/10.jpg",
       "/Publication/47/11.jpg",
-      "",
     ],
     rel_artists: [35],
     rel_publications: [61],
@@ -2392,22 +2380,22 @@ export const publications = [
     copies_count: 100,
     title_en: "XOXO",
     artist_en: "Mimi Youn",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘XOXO’ is Mimi Youn’s book of manipulated Polaroid pictures: writing text, scratching the surface, and drawing. Adding personal traces on instant photographs, Youn expresses discernible, touchable, and sometimes deeply spawning emotions. The book comes in a total edition of 100, which includes 30 special editions with original Polaroid prints.",
     notes_en:
       "2013\n12.8 × 18.8 cm\n204 pages\nHard cover / Hand binding\nISBN 978-89-97605-03-3 \n \n$80.00 * Sold Out\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘XOXO’ is Mimi Youn’s book of manipulated Polaroid pictures: writing text, scratching the surface, and drawing. Adding personal traces on instant photographs, Youn expresses discernible, touchable, and sometimes deeply spawning emotions. The book comes in a total edition of 100, which includes 30 special editions with original Polaroid prints.",
     title_ko: "XOXO",
     artist_ko: "윤미미",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "「XOXO」는 폴라로이드 사진의 표면에 텍스트나 스크래치, 드로잉 등을 덧대는 작가 윤미미의 책이다. 작가는 일상에서 찾은 즉흥적 이미지에 사적인 흔적을 더함으로 흔들리는 내면의 섬세한 결을 표현하고 있다. 총 100권의 리미티드 에디션 중 스페셜 에디션 30권에는 작가의 오리지널 폴라로이드 작품이 포함되어 있다. ",
     notes_ko:
       "2013\n12.8 × 18.8 cm\n204 pages\nHard cover / Hand binding\nISBN 978-89-97605-03-3 \n \n₩80,000 * Sold Out\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "「XOXO」는 폴라로이드 사진의 표면에 텍스트나 스크래치, 드로잉 등을 덧대는 작가 윤미미의 책이다. 작가는 일상에서 찾은 즉흥적 이미지에 사적인 흔적을 더함으로 흔들리는 내면의 섬세한 결을 표현하고 있다. 총 100권의 리미티드 에디션 중 스페셜 에디션 30권에는 작가의 오리지널 폴라로이드 작품이 포함되어 있다. ",
     order_url_en: "https://www.datzpress.kr/publications/xoxo",
@@ -2442,22 +2430,22 @@ export const publications = [
     copies_count: 30,
     title_en: "XOXO (SE)",
     artist_en: "Mimi Youn",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘XOXO’ is Mimi Youn’s book of manipulated with manipulation of Polaroid pictures: writing text, scratching the surface, and drawing. Adding personal traces on instant photographs, Youn expresses discernible, and touchable, and sometimes deeply spawning emotions. The book comes in a total edition of 100, which includes 30 special editions with original Polaroid prints.",
     notes_en:
       "2013\n12.8 × 18.8 cm\n204 pages\nHard cover / Hand binding\nISBN 978-89-97605-03-3 \n \n$300.00 * Sold Out\n \n* Includes one original polaroid\n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. ",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘XOXO’ is Mimi Youn’s book of manipulated with manipulation of Polaroid pictures: writing text, scratching the surface, and drawing. Adding personal traces on instant photographs, Youn expresses discernible, and touchable, and sometimes deeply spawning emotions. The book comes in a total edition of 100, which includes 30 special editions with original Polaroid prints.",
     title_ko: "XOXO (SE)",
     artist_ko: "윤미미",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "「XOXO」는 폴라로이드 사진의 표면에 텍스트나 스크래치, 드로잉 등을 덧대는 작가 윤미미의 책이다. 작가는 일상에서 찾은 즉흥적 이미지에 사적인 흔적을 더함으로 흔들리는 내면의 섬세한 결을 표현하고 있다. 총 100권의 리미티드 에디션 중 스페셜 에디션 30권에는 작가의 오리지널 폴라로이드 작품이 포함되어 있다. ",
     notes_ko:
       "2013\n12.8 × 18.8 cm\n204 pages\nHard cover / Hand binding\nISBN 978-89-97605-03-3 \n \n₩300,000 * Sold Out\n \n* 작가의 오리지널 폴라로이드 한장이 포함되어 있습니다.\n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "「XOXO」는 폴라로이드 사진의 표면에 텍스트나 스크래치, 드로잉 등을 덧대는 작가 윤미미의 책이다. 작가는 일상에서 찾은 즉흥적 이미지에 사적인 흔적을 더함으로 흔들리는 내면의 섬세한 결을 표현하고 있다. 총 100권의 리미티드 에디션 중 스페셜 에디션 30권에는 작가의 오리지널 폴라로이드 작품이 포함되어 있다. ",
     order_url_en: "https://www.datzpress.kr/publications/xoxo",
@@ -2481,25 +2469,25 @@ export const publications = [
     id: 50,
     type: "Book",
     edition: "First Edition",
-    copies_count: "",
+    copies_count: null,
     title_en: "The Olson House",
     artist_en: "Linda Connor",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Olson House became famous in American history, thanks to Andrew Wyeth who was in close association with the Olsons. Cincinnati Art Museum commissioned San Francisco-based artist Linda Connor to photograph the site in 2006 and exhibited her images to provide a counterpoint to an exhibition of Wyeth’s earlier watercolors and drawings of the house and its owners. While Wyeth’s work ponders upon human agony and contemplation, Connor’s ‘The Olson House’ is mysteriously alive and animated, in communion with the historical figures.",
     notes_en:
       "2012\n20.3 × 25.4 cm\n64 pages\nHard cover / Perfect binding \nISBN 978-89-97605-01-9\n \n$70.00\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. ",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "Olson House became famous in American history, thanks to Andrew Wyeth who was in close association with the Olsons. Cincinnati Art Museum commissioned San Francisco-based artist Linda Connor to photograph the site in 2006 and exhibited her images to provide a counterpoint to an exhibition of Wyeth’s earlier watercolors and drawings of the house and its owners. While Wyeth’s work ponders upon human agony and contemplation, Connor’s ‘The Olson House’ is mysteriously alive and animated, in communion with the historical figures.",
     title_ko: "올슨 하우스",
     artist_ko: "린다 코너 ",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "올슨 하우스는 화가 앤드류 웨이스 Andrew Wyeth에 의해 미국 역사에서 유명해진 장소이다. 2006년 신시내티 미술관에서는 샌프란시스코의 사진가 린다 코너에게 올슨 하우스의 촬영을 의뢰하고, 웨이스의 작품을 함께 전시하는 프로젝트를 진행했다. 웨이스의 올슨 하우스에는 인간의 고통과 사색이 담겨 있다면, 린다 코너의 「올슨 하우스 The Olson House」는 역사 속의 인물과의 교감을 현재로 불러와 사진적인 신비로움과 생동감을 부여했다.",
     notes_ko:
       "2012\n20.3 × 25.4 cm\n64 pages\nHard cover / Perfect binding \nISBN 978-89-97605-01-9\n \n₩70,000\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "올슨 하우스는 화가 앤드류 웨이스 Andrew Wyeth에 의해 미국 역사에서 유명해진 장소이다. 2006년 신시내티 미술관에서는 샌프란시스코의 사진가 린다 코너에게 올슨 하우스의 촬영을 의뢰하고, 웨이스의 작품을 함께 전시하는 프로젝트를 진행했다. 웨이스의 올슨 하우스에는 인간의 고통과 사색이 담겨 있다면, 린다 코너의 「올슨 하우스 The Olson House」는 역사 속의 인물과의 교감을 현재로 불러와 사진적인 신비로움과 생동감을 부여했다.",
     order_url_en: "https://www.datzpress.kr/publications/the-olson-house",
@@ -2532,25 +2520,25 @@ export const publications = [
     id: 51,
     type: "Book",
     edition: "Limited Edition",
-    copies_count: "",
+    copies_count: null,
     title_en: "Dogs",
     artist_en: "Ruth Silverman",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "“I have a new book called, if you can imagine, ‘Dogs’. Published by an exciting new artists press, Datz Press, in Seoul, Dogs, like my previous ‘TINs’, is a part of the Collectorz Book series. Beautifully printed and hand-bound in an elegant but scruffy silk cloth, this little 5x7 inch book features 106 full-page photographs of some lovely, amusing and unique items from my trove of things canine.” \n_ Ruth Silverman\n",
     notes_en:
       "2012\n12 × 16.5 cm \n226 pages\nHard cover / Perfect binding \n \n$50.00 * Sold Out\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "“I have a new book called, if you can imagine, ‘Dogs’. Published by an exciting new artists press, Datz Press, in Seoul, Dogs, like my previous ‘TINs’, is a part of the Collectorz Book series. Beautifully printed and hand-bound in an elegant but scruffy silk cloth, this little 5x7 inch book features 106 full-page photographs of some lovely, amusing and unique items from my trove of things canine.” \n_ Ruth Silverman\n",
     title_ko: "독스",
     artist_ko: "루스 실버만",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "“서울에 위치한 출판사, 닻프레스와 함께 「독스Dogs」라는 제목의 새로운 책을 만들었습니다. 이 책은 이전에 출판된 「틴스TINs」와 함께 닻프레스 콜렉터즈 북 시리즈입니다. 아름다운 인쇄와 독특한 질감의 실크로 수제작된 이 5x7 인치의 작은 책은 강아지와 관련된 사랑스럽고, 즐겁고, 특별한 저의 수집품들을 찍은 106장의 사진이미지로 구성되어 있습니다.”_ 루스 실버만  ",
     notes_ko:
       "2012\n12 × 16.5 cm \n226 pages\nHard cover / Perfect binding \n \n₩50,000 * Sold Out\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "“서울에 위치한 출판사, 닻프레스와 함께 「독스Dogs」라는 제목의 새로운 책을 만들었습니다. 이 책은 이전에 출판된 「틴스TINs」와 함께 닻프레스 콜렉터즈 북 시리즈입니다. 아름다운 인쇄와 독특한 질감의 실크로 수제작된 이 5x7 인치의 작은 책은 강아지와 관련된 사랑스럽고, 즐겁고, 특별한 저의 수집품들을 찍은 106장의 사진이미지로 구성되어 있습니다.”_ 루스 실버만",
     order_url_en: "https://www.datzpress.kr/publications/dogs",
@@ -2567,7 +2555,6 @@ export const publications = [
       "/Publication/51/09.jpg",
       "/Publication/51/10.jpg",
       "/Publication/51/11.jpg",
-      "",
     ],
     rel_artists: [38],
     rel_publications: [52],
@@ -2579,25 +2566,25 @@ export const publications = [
     id: 52,
     type: "Book",
     edition: "Limited Edition",
-    copies_count: "",
+    copies_count: null,
     title_en: "TINs",
     artist_en: "Ruth Silverman",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "‘TINs’  is the first of the Datz Press Collectorz Book series. Ruth Silverman, a photography curator who lived in Berkeley, CA, had collected and photographed over one thousand tins before she passed away in 2015. The former ICP curator, publisher, and gallerist left this small, yet intimate and deeply personal book. Silverman’s photographs, taken with a compact point-and-shoot camera, are neither flashy nor perfect, but they readily display the collector’s affection for finding joy in everyday, ordinary objects. Seeing and loving the world with curious eyes, Silverman passed away on April 10, 2015—the same day as her birthday, exactly as she wanted and willed.",
     notes_en:
       "2011\n12 × 16.5 cm\n342 pages\nHard cover / Perfect  binding\nISBN 978-89-96620-80-8\n \n$50.00\n$70.00 (Rare Book)\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "‘TINs’  is the first of the Datz Press Collectorz Book series. Ruth Silverman, a photography curator who lived in Berkeley, CA, had collected and photographed over one thousand tins before she passed away in 2015. The former ICP curator, publisher, and gallerist left this small, yet intimate and deeply personal book. Silverman’s photographs, taken with a compact point-and-shoot camera, are neither flashy nor perfect, but they readily display the collector’s affection for finding joy in everyday, ordinary objects. Seeing and loving the world with curious eyes, Silverman passed away on April 10, 2015—the same day as her birthday, exactly as she wanted and willed.",
     title_ko: "틴스",
     artist_ko: "루스 실버만",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "캘리포니아 버클리에 거주했던 루스 실버만은 생전에 천여 개가 넘는 양철통을 수집했고, 이를 사진으로 찍었다. 뉴욕 ICP의 큐레이터, 출판인, 기획자, 갤러리스트 등의 경력을 가진 루스는 마지막 프로젝트로 이 소중한 책을 남겼다. 손안에 들어오는 작은 책 「틴스TINs」에는 일상 속 개인의 수집품에 대한 애정이 담겨 있다. 호기심 가득한 시선으로 세상을 아끼던 그녀는 떠나고 이 책이 우리 곁에 남았다. 루스는 자신이 원하던 대로, 자신이 태어난 날과 같은 날인 2015년 4월10일 세상을 떠났다.\n닻프레스 콜렉터즈북 시리즈의 첫번째 책으로, 누군가의 애정이 담긴 소장품들을 책으로 나눌 수 있길 바라는 마음으로 기획하였다. 루스 실버만은 뉴욕 국제 사진 센터의 사진 큐레이터로 일하며 다수의 사진집을 기획, 출판하였다. 사진과 함께해 온 여정에서 마지막 프로젝트로 자신의 책을 만들고 싶어했다. 그녀는 오랫동안 천여개가 넘는 양철통을 수집해왔고, 작은 디지털 카메라로 직접 찍기 시작하였다. 그녀의 사진들은 화려하거나 완벽하진 않지만, 일상의 소박한 즐거움이 담겨 있다.\n",
     notes_ko:
       "2011\n12 × 16.5 cm\n342 pages\nHard cover / Perfect  binding\nISBN 978-89-96620-80-8\n \n₩50,000\n₩70,000 (Rare Book)\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "캘리포니아 버클리에 거주했던 루스 실버만은 생전에 천여 개가 넘는 양철통을 수집했고, 이를 사진으로 찍었다. 뉴욕 ICP의 큐레이터, 출판인, 기획자, 갤러리스트 등의 경력을 가진 루스는 마지막 프로젝트로 이 소중한 책을 남겼다. 손안에 들어오는 작은 책 「틴스TINs」에는 일상 속 개인의 수집품에 대한 애정이 담겨 있다. 호기심 가득한 시선으로 세상을 아끼던 그녀는 떠나고 이 책이 우리 곁에 남았다. 루스는 자신이 원하던 대로, 자신이 태어난 날과 같은 날인 2015년 4월10일 세상을 떠났다.\n닻프레스 콜렉터즈북 시리즈의 첫번째 책으로, 누군가의 애정이 담긴 소장품들을 책으로 나눌 수 있길 바라는 마음으로 기획하였다. 루스 실버만은 뉴욕 국제 사진 센터의 사진 큐레이터로 일하며 다수의 사진집을 기획, 출판하였다. 사진과 함께해 온 여정에서 마지막 프로젝트로 자신의 책을 만들고 싶어했다. 그녀는 오랫동안 천여개가 넘는 양철통을 수집해왔고, 작은 디지털 카메라로 직접 찍기 시작하였다. 그녀의 사진들은 화려하거나 완벽하진 않지만, 일상의 소박한 즐거움이 담겨 있다.\n",
     order_url_en: "https://www.datzpress.kr/publications/tins",
@@ -2662,7 +2649,6 @@ export const publications = [
       "/Publication/53/09.jpg",
       "/Publication/53/10.jpg",
       "/Publication/53/11.jpg",
-      "",
     ],
     rel_artists: [22],
     rel_publications: [],
@@ -2763,7 +2749,6 @@ export const publications = [
       "/Publication/55/09.jpg",
       "/Publication/55/10.jpg",
       "/Publication/55/11.jpg",
-      "",
     ],
     rel_artists: [24],
     rel_publications: [],
@@ -2775,25 +2760,25 @@ export const publications = [
     id: 56,
     type: "Book",
     edition: "Limited Edition",
-    copies_count: "",
+    copies_count: null,
     title_en: "EMPTY SPACE",
     artist_en: "Dongjoo Seo",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "“I imagined an empty athletic field after the frenzied game and after everyone left. All the players who fought fiercely for victory and the spectators who were cheering for their own victory through them \nhave left and the empty stadium, where no winner or loser is known, is scattered with only the equipment used by the players. Inside these spaces are the shapes of dots, lines, faces, and colors created by human needs, and the aesthetics of abstractions and ideas. Similar but different images are images of laws and rules, symbols and symbols and civilizations that humans have given to humans. After all, space is essentially human .I wanted to portray: the graphic impressions of the sport itself; the traces of past time;the unfinished stories; the lingering effects of physical movements and sounds; the moments and spaces that are over; the feelings of peace and silence. All elements expressed in the illustration (such as the use of figures and colors; specifications and ratios of stadiums and equipment), were produced in accordance with the official Olympic rules except for some detailed elements.”_Dongjoo Seo",
     notes_en:
       "2011\n27.2 x 42 cm\n74 pages\nHard cover / Perfect binding\nISBN 978-89-966208-9-1 \n \n$80.00\n \n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "“I imagined an empty athletic field after the frenzied game and after everyone left. All the players who fought fiercely for victory and the spectators who were cheering for their own victory through them \nhave left and the empty stadium, where no winner or loser is known, is scattered with only the equipment used by the players. Inside these spaces are the shapes of dots, lines, faces, and colors created by human needs, and the aesthetics of abstractions and ideas. Similar but different images are images of laws and rules, symbols and symbols and civilizations that humans have given to humans. After all, space is essentially human .I wanted to portray: the graphic impressions of the sport itself; the traces of past time;the unfinished stories; the lingering effects of physical movements and sounds; the moments and spaces that are over; the feelings of peace and silence. All elements expressed in the illustration (such as the use of figures and colors; specifications and ratios of stadiums and equipment), were produced in accordance with the official Olympic rules except for some detailed elements.”_Dongjoo Seo",
     title_ko: "엠티 스페이스",
     artist_ko: "서동주",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "열광적인 경기가 끝나고 사람이 모두 떠난 후의 텅 빈 운동 경기장을 상상해 보았다. 승리를 위해 격렬하게 싸우던 선수들과 그들을 통해 자기 자신의 승리를 응원하던 관중들이 모두 떠나고 승자도 패자도 알 수 없는 텅 빈 경기장에는, 선수들이 사용했던 장비만 덩그러니 흩어져 있다. 이 공간들 안에는 인간이 필요에 의해 창조한 점, 선, 면, 색의 조형이 있고 추상과 구상의 미학이 있다. 비슷하면서도 다른 이 이미지들은 인간이 인간에게 부여한 법과 규칙, 기호와 상징, 문명의 이미지이다. 결국 공간은 본질적으로 인간이다. 나는 스포츠 그 자체가 가지고 있는 그래픽적인 인상과 함께, 지난 시간의 흔적과 아직 끝나지 않은 이야기, 육체의 움직임과 소리의 여운, 모든 게 끝나고 난 순간과 공간이 자아내는 평화와 정적의 정서를 그려보고 싶었다. - 일러스트레이션에 표현한 모든 요소(경기장과 장비의 규격, 비율 등의 수치와 색의 사용 등)는 세부 요소를 포함하기 위한 일부 예외 외엔 올림픽 공식 규정과 각 게임의 공식 규칙에 따라 제작하였다.” _서동주",
     notes_ko:
       "2011\n27.2 x 42 cm\n74 pages\nHard cover / Perfect binding\nISBN 978-89-966208-9-1 \n \n₩80,000\n \n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "“열광적인 경기가 끝나고 사람이 모두 떠난 후의 텅 빈 운동 경기장을 상상해 보았다. 승리를 위해 격렬하게 싸우던 선수들과 그들을 통해 자기 자신의 승리를 응원하던 관중들이 모두 떠나고 승자도 패자도 알 수 없는 텅 빈 경기장에는, 선수들이 사용했던 장비만 덩그러니 흩어져 있다. 이 공간들 안에는 인간이 필요에 의해 창조한 점, 선, 면, 색의 조형이 있고 추상과 구상의 미학이 있다. 비슷하면서도 다른 이 이미지들은 인간이 인간에게 부여한 법과 규칙, 기호와 상징, 문명의 이미지이다. 결국 공간은 본질적으로 인간이다. 나는 스포츠 그 자체가 가지고 있는 그래픽적인 인상과 함께, 지난 시간의 흔적과 아직 끝나지 않은 이야기, 육체의 움직임과 소리의 여운, 모든 게 끝나고 난 순간과 공간이 자아내는 평화와 정적의 정서를 그려보고 싶었다. - 일러스트레이션에 표현한 모든 요소(경기장과 장비의 규격, 비율 등의 수치와 색의 사용 등)는 세부 요소를 포함하기 위한 일부 예외 외엔 올림픽 공식 규정과 각 게임의 공식 규칙에 따라 제작하였다.”\n_서동주",
     order_url_en: "https://www.datzpress.kr/publications/empty-space",
@@ -2822,22 +2807,22 @@ export const publications = [
     copies_count: 30,
     title_en: "EMPTY SPACE (SE) ",
     artist_en: "Dongjoo Seo",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "“I imagined an empty athletic field after the frenzied game and after everyone left. All the players who fought fiercely for victory and the spectators who were cheering for their own victory through them \nhave left and the empty stadium, where no winner or loser is known, is scattered with only the equipment used by the players. Inside these spaces are the shapes of dots, lines, faces, and colors created by human needs, and the aesthetics of abstractions and ideas. Similar but different images are images of laws and rules, symbols and symbols and civilizations that humans have given to humans. After all, space is essentially human .I wanted to portray: the graphic impressions of the sport itself; the traces of past time;the unfinished stories; the lingering effects of physical movements and sounds; the moments and spaces that are over; the feelings of peace and silence. All elements expressed in the illustration (such as the use of figures and colors; specifications and ratios of stadiums and equipment), were produced in accordance with the official Olympic rules except for some detailed elements.”_Dongjoo Seo",
     notes_en:
       "2011\n27.2 x 42 cm\n74 pages\nHard cover / Perfect binding\nISBN 978-89-966208-9-1 \n \n#1-10 : $120.00\n#11-20 : $140.00\n#21-30 : $150.00\n \n* Each special editions are made with unique cover.\n* The bookmaking process of this book is carried out with exquisite craftsmanship by Datz Books. \n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "“I imagined an empty athletic field after the frenzied game and after everyone left. All the players who fought fiercely for victory and the spectators who were cheering for their own victory through them \nhave left and the empty stadium, where no winner or loser is known, is scattered with only the equipment used by the players. Inside these spaces are the shapes of dots, lines, faces, and colors created by human needs, and the aesthetics of abstractions and ideas. Similar but different images are images of laws and rules, symbols and symbols and civilizations that humans have given to humans. After all, space is essentially human .I wanted to portray: the graphic impressions of the sport itself; the traces of past time;the unfinished stories; the lingering effects of physical movements and sounds; the moments and spaces that are over; the feelings of peace and silence. All elements expressed in the illustration (such as the use of figures and colors; specifications and ratios of stadiums and equipment), were produced in accordance with the official Olympic rules except for some detailed elements.”_Dongjoo Seo",
     title_ko: "엠티 스페이스 (SE)",
     artist_ko: "서동주",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "“열광적인 경기가 끝나고 사람이 모두 떠난 후의 텅 빈 운동 경기장을 상상해 보았다. 승리를 위해 격렬하게 싸우던 선수들과 그들을 통해 자기 자신의 승리를 응원하던 관중들이 모두 떠나고 승자도 패자도 알 수 없는 텅 빈 경기장에는, 선수들이 사용했던 장비만 덩그러니 흩어져 있다. 이 공간들 안에는 인간이 필요에 의해 창조한 점, 선, 면, 색의 조형이 있고 추상과 구상의 미학이 있다. 비슷하면서도 다른 이 이미지들은 인간이 인간에게 부여한 법과 규칙, 기호와 상징, 문명의 이미지이다. 결국 공간은 본질적으로 인간이다. 나는 스포츠 그 자체가 가지고 있는 그래픽적인 인상과 함께, 지난 시간의 흔적과 아직 끝나지 않은 이야기, 육체의 움직임과 소리의 여운, 모든 게 끝나고 난 순간과 공간이 자아내는 평화와 정적의 정서를 그려보고 싶었다. - 일러스트레이션에 표현한 모든 요소(경기장과 장비의 규격, 비율 등의 수치와 색의 사용 등)는 세부 요소를 포함하기 위한 일부 예외 외엔 올림픽 공식 규정과 각 게임의 공식 규칙에 따라 제작하였다.”_작가 서동주",
     notes_ko:
       "2011\n27.2 x 42 cm\n74 pages\nHard cover / Perfect binding\nISBN 978-89-966208-9-1 \n \n#1-10 : ₩120,000\n#11-20 : ₩140,000\n#21-30 : ₩150,000\n \n* 스페셜 에디션은 각기 다른 표지로 제작되었습니다.\n* 이 책의 모든 공정은 닻북스의 수제작 시스템을 통해 완성되었습니다.\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "“열광적인 경기가 끝나고 사람이 모두 떠난 후의 텅 빈 운동 경기장을 상상해 보았다. 승리를 위해 격렬하게 싸우던 선수들과 그들을 통해 자기 자신의 승리를 응원하던 관중들이 모두 떠나고 승자도 패자도 알 수 없는 텅 빈 경기장에는, 선수들이 사용했던 장비만 덩그러니 흩어져 있다. 이 공간들 안에는 인간이 필요에 의해 창조한 점, 선, 면, 색의 조형이 있고 추상과 구상의 미학이 있다. 비슷하면서도 다른 이 이미지들은 인간이 인간에게 부여한 법과 규칙, 기호와 상징, 문명의 이미지이다. 결국 공간은 본질적으로 인간이다. 나는 스포츠 그 자체가 가지고 있는 그래픽적인 인상과 함께, 지난 시간의 흔적과 아직 끝나지 않은 이야기, 육체의 움직임과 소리의 여운, 모든 게 끝나고 난 순간과 공간이 자아내는 평화와 정적의 정서를 그려보고 싶었다. - 일러스트레이션에 표현한 모든 요소(경기장과 장비의 규격, 비율 등의 수치와 색의 사용 등)는 세부 요소를 포함하기 위한 일부 예외 외엔 올림픽 공식 규정과 각 게임의 공식 규칙에 따라 제작하였다.”_작가 서동주",
     order_url_en: "https://www.datzpress.kr/publications/empty-space",
@@ -2863,28 +2848,28 @@ export const publications = [
   {
     id: 58,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.10 Process and Attitude",
     artist_en:
       "Ryuten Paul Rosenblum\nAlyssa Fujita Karoui\nAmanda Marchand\nMikyung Kim\nHendrik Paul\nBryant Austin\nHoon Lee\nMinny lee\nMary Daniel Hobson\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "In Magazine Gitz vol.10, we look back on the process and attitude in art that we have pursue through Gitz. With a meditative attitude,  Ryuten Paul Rosenblum, Alyssa Fujita Karoui, and Amanda Marchand interpret the time and the space they face in their own visual language. Mikyung Kim, Hendrik Paul, and Bryant Austin capture infinite nature in the lens, making us consider the meaning of our existence. Hoon Lee explores the city in photographs and drawings, and Minny lee leads us to imagine the time of human being in the vast universe and the ancient time through the view from above. Mary Daniel Hobson attempt  shares the story of growth and healing through a deep and meditative journey toward inside.",
     notes_en:
       "2018\n23 x 30 cm\n142 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n$20.00\n \n* Photographer Bryant Austin's double-sided photo poster is included. (folded)",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "In Magazine Gitz vol.10, we look back on the process and attitude in art that we have pursue through Gitz. With a meditative attitude,  Ryuten Paul Rosenblum, Alyssa Fujita Karoui, and Amanda Marchand interpret the time and the space they face in their own visual language. Mikyung Kim, Hendrik Paul, and Bryant Austin capture infinite nature in the lens, making us consider the meaning of our existence. Hoon Lee explores the city in photographs and drawings, and Minny lee leads us to imagine the time of human being in the vast universe and the ancient time through the view from above. Mary Daniel Hobson attempt  shares the story of growth and healing through a deep and meditative journey toward inside.",
     title_ko: "매거진 깃 10호 과정과 태도",
     artist_ko:
       "류텐 폴 로젠블럼\n앨리사 후지타 가루이\n아만다 마찬드\n김미경\n핸드릭 폴\n브라이언 오스틴\n훈리\n미니 리\n메리 다니엘 홉슨",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "지난 9년간 깃은 작가의 삶이 깃들어 있는 소통의 도구로써 창조적 영감을 구현하기 위해 발간되었다. 10호에서는 예술 안에서 이제까지 깃을 통해 추구하고자 했던  과정과 태도를 다시 돌아본다. 류텐 폴 로젠블럼, 앨리사 후지타 가루이, 아만다 마찬드는 명상적인 태도로 마주한 시공간을 자신만의 언어로 응축하여 정화한다. 김미경, 핸드릭 폴과 브라이언 오스틴은 자연의 무한한 모습을 탐구하듯 렌즈에 담아내며, 우리의 존재 의미를 고찰하게 한다. 훈리는 감각적이고 예술적 언어로 도시를 탐구하며, 미니 리는 지구의 모습을 통해 드넓은 우주 가운데 존재하는 인간과 태고의 시간을 상상하도록 이끈다. 메리 다니엘 홉슨은 내면으로의 깊고 명상적인 여행을 통해 성장과 치유의 이야기를 나눈다.\n\n\n창조적 영감과 작가의 삶이 깃들어 있는 진정한 소통의 도구가 되기 위해 지난 9년간 빛과 어둠, 그리고 삶과 예술의 밀도와 순도를 가시화 시키는 과정을 매거진 깃에 담아왔습니다. 이제까지의 과정과 태도를 돌아보게 만드는 깃 10호는 삶을 대하는 예술가의 순수한 시선, 고요한 태도와 마주하는 명상적인 시공간을 담고 있고 작가들은 세상과 만나는 찰나의 순간을 자신만의 언어로 응축하고 정화하며 한편의 시로 재현해냅니다. 또 땅과 대지, 물과 바다, 태양과 하늘 그리고 아름다운 생명체까지, 자연의 무한한 모습을 마치 탐구하듯 렌즈에 담아낸 이들의 여정은 우리의 존재와 우주의 의미를 찾는 예술적 탐험과도 같습니다.",
     notes_ko:
       "2018\n23 x 30 cm\n142 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n₩20,000\n \n* 사진가 브라이언 오스틴의 양면 사진포스터가 포함됩니다. (접지형식)\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "지난 9년간 깃은 작가의 삶이 깃들어 있는 소통의 도구로써 창조적 영감을 구현하기 위해 발간되었다. 10호에서는 예술 안에서 이제까지 깃을 통해 추구하고자 했던  과정과 태도를 다시 돌아본다. 류텐 폴 로젠블럼, 앨리사 후지타 가루이, 아만다 마찬드는 명상적인 태도로 마주한 시공간을 자신만의 언어로 응축하여 정화한다. 김미경, 핸드릭 폴과 브라이언 오스틴은 자연의 무한한 모습을 탐구하듯 렌즈에 담아내며, 우리의 존재 의미를 고찰하게 한다. 훈리는 감각적이고 예술적 언어로 도시를 탐구하며, 미니 리는 지구의 모습을 통해 드넓은 우주 가운데 존재하는 인간과 태고의 시간을 상상하도록 이끈다. 메리 다니엘 홉슨은 내면으로의 깊고 명상적인 여행을 통해 성장과 치유의 이야기를 나눈다.\n\n\n창조적 영감과 작가의 삶이 깃들어 있는 진정한 소통의 도구가 되기 위해 지난 9년간 빛과 어둠, 그리고 삶과 예술의 밀도와 순도를 가시화 시키는 과정을 매거진 깃에 담아왔습니다. 이제까지의 과정과 태도를 돌아보게 만드는 깃 10호는 삶을 대하는 예술가의 순수한 시선, 고요한 태도와 마주하는 명상적인 시공간을 담고 있고 작가들은 세상과 만나는 찰나의 순간을 자신만의 언어로 응축하고 정화하며 한편의 시로 재현해냅니다. 또 땅과 대지, 물과 바다, 태양과 하늘 그리고 아름다운 생명체까지, 자연의 무한한 모습을 마치 탐구하듯 렌즈에 담아낸 이들의 여정은 우리의 존재와 우주의 의미를 찾는 예술적 탐험과도 같습니다.",
     order_url_en:
@@ -2944,25 +2929,25 @@ export const publications = [
   {
     id: 59,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.9 Resonant Voices\t",
     artist_en: "Lonnie Graham\nJane Baldwin",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Magazine Gitz vol.9 explores and introduces the world of two artists under the theme of ‘Resonant Voices’. Over the course of 30 years, Lonnie Graham has carried out ‘A Conversation with the World’ in more than 50 different countries in six continents. He interviews the people he meets concerning eight subjects—origins, family, life, death, values, tradition, connections and western culture—and photographs them. Jane Baldwin’s most recent project, ‘Kara Women Speak/Stories from Women’, is multi-sensory, immersive body of work about women, culture, human rights and the environmental issues the threaten the communities of Ethiopia’s Omo River Valley and Kenya’s Lake Turkana watershed. Like the word ‘resonance’, which means a deep, clear, and strong sound, the two artists have devoted themselves to a meaningful photography project that reveals yet unknown truths based on strong humanity.\t",
     notes_en:
       "2017\n23 x 30 cm\n104 pages\nSoft cover / Perfect binding\nISBN 2093-7970 02\n\n$25.00",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en: "Magazine Gitz vol.9 Resonant Voices",
     title_ko: "매거진 깃 9호 공명의 소리",
     artist_ko: "로니 그래험\n제인 볼드윈",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 9호에서는 ‘공명의 소리’를 주제로 두 예술가의 예술세계를 탐구하여 소개한다. 로니 그래험은 30여년 넘도록 40개국의 사람들을 만나며 태생, 가족, 삶, 가치관, 전통에 대한 보편적인 질문을 던져 왔으며, 이를 사진과 인터뷰가 함께하는 ‘세계와의 대화’라는 프로젝트로 실현해오고 있다. 제인 볼드윈은 ‘카라 여인의 이야기’란 프로젝트를 통해 에티오피아 오모강 계곡과 케냐의 투르카나 호수 유역 공동체를 위협하는 여성, 문화, 인권, 그리고 환경문제에 대해 깊은 몰입도와 다양한 감각으로 이야기한다. 마주 울리는, 영향을 주고 받아 그 파장이 널리 퍼지는 ‘공명’이라는 단어처럼, 두 예술가는 깊은 인류애를 바탕으로 아직 알려지지 않은 진실을 드러내는 의미있는 사진 프로젝트에 헌신해 오고 있다.\t",
     notes_ko:
       "2017\n23 x 30 cm\n104 pages\nSoft cover / Perfect binding\nISBN 2093-7970 02\n\n₩25,000",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 9호에서는 ‘공명의 소리’를 주제로 두 예술가의 예술세계를 탐구하여 소개한다. 로니 그래험은 30여년 넘도록 40개국의 사람들을 만나며 태생, 가족, 삶, 가치관, 전통에 대한 보편적인 질문을 던져 왔으며, 이를 사진과 인터뷰가 함께하는 ‘세계와의 대화’라는 프로젝트로 실현해오고 있다. 제인 볼드윈은 ‘카라 여인의 이야기’란 프로젝트를 통해 에티오피아 오모강 계곡과 케냐의 투르카나 호수 유역 공동체를 위협하는 여성, 문화, 인권, 그리고 환경문제에 대해 깊은 몰입도와 다양한 감각으로 이야기한다. 마주 울리는, 영향을 주고 받아 그 파장이 널리 퍼지는 ‘공명’이라는 단어처럼, 두 예술가는 깊은 인류애를 바탕으로 아직 알려지지 않은 진실을 드러내는 의미있는 사진 프로젝트에 헌신해 오고 있다.\t",
     order_url_en: "https://www.datzpress.kr/publications/gitz9",
@@ -2995,28 +2980,28 @@ export const publications = [
   {
     id: 60,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.8 from Walden",
     artist_en:
       "Eliot Porter\nSangyon Joo\nMinny Lee\nDavid Ellingsen\nCarleton Watkins\nKirk Crippens and Gretchen Lemaistre\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "In Gitz vol. 8, an American poet and philosopher Henry David Thoreau’s life and the world of artists influenced by Thoreau’s book, ‘Walden’ are introduced. Eliot Porter, an American photographer known for his richly colored images of the natural world bound writings in ‘Walden’ with his images in the photobook. Introducing Porter’s long-time inspirational photographs, photos of Sangyon Joo inspired by Walden Lake and the works of Minny Lee, who reinterprets with her essays and performances, are enumerate. David Ellingsen records a portrait of the remaining tree stumps after being cut off by his ancestors, replacing the realization given by nature with human desires.  Carleton Watkins has recorded a Yosemite called the Paradise of the West, and Kirk Crippens and Gretchen Lemaistre shows the sacred beauty of nature recorded in photographs.",
     notes_en:
       "2016\n23 x 30 cm\n102 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n$25.00",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "In Gitz vol. 8, an American poet and philosopher Henry David Thoreau’s life and the world of artists influenced by Thoreau’s book, ‘Walden’ are introduced. Eliot Porter, an American photographer known for his richly colored images of the natural world bound writings in ‘Walden’ with his images in the photobook. Introducing Porter’s long-time inspirational photographs, photos of Sangyon Joo inspired by Walden Lake and the works of Minny Lee, who reinterprets with her essays and performances, are enumerate. David Ellingsen records a portrait of the remaining tree stumps after being cut off by his ancestors, replacing the realization given by nature with human desires.  Carleton Watkins has recorded a Yosemite called the Paradise of the West, and Kirk Crippens and Gretchen Lemaistre shows the sacred beauty of nature recorded in photographs.",
     title_ko: "매거진 깃 8호 월든으로부터",
     artist_ko:
       "엘리엇 포터\n주상연\n미니 리\n데이비드 엘링슨\n칼튼 와킨스\n커크 크리펜스와 그레첸 르마이스트레",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 8호에서는 사상가이자 철학자, 시인인 헨리 데이비드 소로우의 삶과 그의 책 ‘월든’으로부터 영감 받은 예술가들의 창작세계가 소개된다. ‘월든’의 글과 자신의 사진을 묶어 사진집을 출판하기도 했던 엘리엇 포터는 생태학자이자 자연사진의 거장이다. 오랜 시간 동안 초월적 영감을 선사하는 그의 사진을 소개하며, 월든 호수에서 영감을 받은 주상연의 사진과 이를 퍼포먼스와 에세이로 재해석한 미니 리의 작업세계를 풀어낸다. 데이비드 엘링슨은 선조들에 의해 잘린 후 남은 나무 그루터기들의 초상을 기록하여 자연이 주는 교감과 인간의 욕망을 대치시킨다. 칼튼 와킨스는 서부의 낙원이라 불리는 요세미티를 기록하였으며, 와킨스의 후학인 사진가 커크와 그레첸은 사진으로 기록된 자연의 신성한 아름다움과 상반된 인간의 욕망을 보여준다. ",
     notes_ko:
       "2016\n23 x 30 cm\n102 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n₩25,000\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 8호에서는 사상가이자 철학자, 시인인 헨리 데이비드 소로우의 삶과 그의 책 ‘월든’으로부터 영감 받은 예술가들의 창작세계가 소개된다. ‘월든’의 글과 자신의 사진을 묶어 사진집을 출판하기도 했던 엘리엇 포터는 생태학자이자 자연사진의 거장이다. 오랜 시간 동안 초월적 영감을 선사하는 그의 사진을 소개하며, 월든 호수에서 영감을 받은 주상연의 사진과 이를 퍼포먼스와 에세이로 재해석한 미니 리의 작업세계를 풀어낸다. 데이비드 엘링슨은 선조들에 의해 잘린 후 남은 나무 그루터기들의 초상을 기록하여 자연이 주는 교감과 인간의 욕망을 대치시킨다. 칼튼 와킨스는 서부의 낙원이라 불리는 요세미티를 기록하였으며, 와킨스의 후학인 사진가 커크와 그레첸은 사진으로 기록된 자연의 신성한 아름다움과 상반된 인간의 욕망을 보여준다. ",
     order_url_en:
@@ -3055,28 +3040,28 @@ export const publications = [
   {
     id: 61,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.7 DARKNESS",
     artist_en:
       "Stephen Tourlentes\nJiyu Lee\nBarbara Bosworth\nHee Ah Yang\nYounghea Kim\nYooyun Yang\nLinda Connor\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "In Gitz vol. 7, there is the creative world of the artists agonizing over the existence of solitary human beings in the darkness and questioning what the essential things in life are. Stephen Tourlentes gives us a glimpse of the world through the irony that the fascinating night scenery is from the lights of the prison. Barbara Bosworth insights into life and death through fireflies communication with subtle light and the light of solitary ships floating the dim horizon. Hee Ah Yang draws her own monologue into ‘Six Nights’ and Jiyu Lee represents darkness as an existential event with a boat floating on the vast ocean. Linda Conner photographed a portrait of a painful human left by fossils covered with ashes of Pompeii 2000 years ago. Yooyun Yang depicts the helplessness of life in a portrait of a lonely human being in the dark, and Younghea Kim looks at the night sky in repeated daily life to find the scenery of comfort. ",
     notes_en:
       "2016\n23 x 30 cm\n114 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n$25.00",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "In Gitz vol. 7, there is the creative world of the artists agonizing over the existence of solitary human beings in the darkness and questioning what the essential things in life are. Stephen Tourlentes gives us a glimpse of the world through the irony that the fascinating night scenery is from the lights of the prison. Barbara Bosworth insights into life and death through fireflies communication with subtle light and the light of solitary ships floating the dim horizon. Hee Ah Yang draws her own monologue into ‘Six Nights’ and Jiyu Lee represents darkness as an existential event with a boat floating on the vast ocean. Linda Conner photographed a portrait of a painful human left by fossils covered with ashes of Pompeii 2000 years ago. Yooyun Yang depicts the helplessness of life in a portrait of a lonely human being in the dark, and Younghea Kim looks at the night sky in repeated daily life to find the scenery of comfort. ",
     title_ko: "매거진 깃 7호 다크니스",
     artist_ko:
       "스티븐 투어렌티스\n이지유\n바바라 보스워스\n양희아\n김영혜\n양유연\n린다 코너\n",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 7호 다크니스에서는 어둠 가운데 고독한 인간의 실존과 삶의 근원이 무엇인지를 고민하는 예술가들의 창작세계를 들여다 본다. 스티븐 투어렌티스는 매혹적으로 보이는 감옥의 밤 풍경이라는 아이러니를 통해 세상의 단면을 바라보게 한다. 바바라 보스워스는 어둠 가운데 미세한 빛으로 소통하는 반딧불이와 아련한 수평선에 떠있는 고독한 배들의 빛들을 통해 삶과 죽음을 통찰한다. 양희아는 자신만의 독백을 여섯 개의 밤으로 표현하고, 이지유는 거대한 바다에 홀로 떠 있는 배를 통해 실존하는 어두움을 그려낸다. 린다 코너는 2천년전 폼페이 화산재로 뒤덮여 화석으로 남은 고통스러운 인간의 초상을, 양유연은 삶의 무력함을 어두움으로 그려내며, 김영혜는 반복되는 일상 가운데 밤하늘을 바라보며 위로의 풍경을 찾아내고 있다.\n\n\n매거진 깃7호 ‘다크니스’는 어두움을 주제로 시각예술의 근원이 되는 빛의 본질에 대한 이야기를 이어갑니다. \n빛을 예민하게 인식하기 위해서 전제되는 어둠, 이 어둠이 인간의 삶에서 어떤 의미를 가지는지, \n고립, 절망, 고통, 아픔을 연상하며 예술가들이 이 문제를 어떻게 마주하는지에 대한 이야기를 담았습니다.\n",
     notes_ko:
       "2016\n23 x 30 cm\n114 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n₩25,000",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 7호 다크니스에서는 어둠 가운데 고독한 인간의 실존과 삶의 근원이 무엇인지를 고민하는 예술가들의 창작세계를 들여다 본다. 스티븐 투어렌티스는 매혹적으로 보이는 감옥의 밤 풍경이라는 아이러니를 통해 세상의 단면을 바라보게 한다. 바바라 보스워스는 어둠 가운데 미세한 빛으로 소통하는 반딧불이와 아련한 수평선에 떠있는 고독한 배들의 빛들을 통해 삶과 죽음을 통찰한다. 양희아는 자신만의 독백을 여섯 개의 밤으로 표현하고, 이지유는 거대한 바다에 홀로 떠 있는 배를 통해 실존하는 어두움을 그려낸다. 린다 코너는 2천년전 폼페이 화산재로 뒤덮여 화석으로 남은 고통스러운 인간의 초상을, 양유연은 삶의 무력함을 어두움으로 그려내며, 김영혜는 반복되는 일상 가운데 밤하늘을 바라보며 위로의 풍경을 찾아내고 있다.\n\n\n매거진 깃7호 ‘다크니스’는 어두움을 주제로 시각예술의 근원이 되는 빛의 본질에 대한 이야기를 이어갑니다. \n빛을 예민하게 인식하기 위해서 전제되는 어둠, 이 어둠이 인간의 삶에서 어떤 의미를 가지는지, \n고립, 절망, 고통, 아픔을 연상하며 예술가들이 이 문제를 어떻게 마주하는지에 대한 이야기를 담았습니다.\n",
     order_url_en:
@@ -3108,26 +3093,26 @@ export const publications = [
   {
     id: 62,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.6 Flow",
     artist_en: "Barbara Bosworth\nWayne Levin\nYun Soo Kim\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "When a human’s self-consciousness disappears into the universe, we are finally able to find ourselves as a part of the whole nature.The artists in Gitz vol. 6 emptied themselves to be a passage or a filter to flow. Photographer Wayne Levin becomes one with fish underwater. Barbara Bosworth beholds a tree and a bird in the sky. The nature they photograph is not merely a subject they shoot. It is more like capturing the whole state of being, including themselves in it. Like how a silkworm builds its cocoon, artist Yun Soo Kim uses actions to communicate between nature and self, which is ultimately presented in a sensuous state. The calm echoes that come out of their works are quiet deep and harmonious. They overflow and fill the air. ",
     notes_en:
       "2014\n23 x 30 cm\n180 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n$25.00",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "When a human’s self-consciousness disappears into the universe, we are finally able to find ourselves as a part of the whole nature.The artists in Gitz vol. 6 emptied themselves to be a passage or a filter to flow. Photographer Wayne Levin becomes one with fish underwater. Barbara Bosworth beholds a tree and a bird in the sky. The nature they photograph is not merely a subject they shoot. It is more like capturing the whole state of being, including themselves in it. Like how a silkworm builds its cocoon, artist Yun Soo Kim uses actions to communicate between nature and self, which is ultimately presented in a sensuous state. The calm echoes that come out of their works are quiet deep and harmonious. They overflow and fill the air. ",
     title_ko: "매거진 깃 6호 무아 경 無我 景",
     artist_ko: "바바라 보스워스\n웨인 레빈\n김윤수\n",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 6호의 주제 ‘무아 경無我 景’은 대자연의 풍경 앞에서 자신을 비워내는 상태를 말한다. 시대가 만들어낸 예술가의 아우라는 속된 욕망이 빚어낸 허상일 때가 많지만, 여기 예술가들은 치열한 현실 가운데 묵묵히 창작의 시간을 견디며 예술을 통해 삶의 의미를 지키고 있다. 사진가 바바라 보스워스에게 사진은 본다는 행위를 통한 살아있음의 확인이며 세상을 사랑하는 방법이다. 보스워스는  삶의 관조자로서 세상의 빛이 사라진기 전, 눈 앞에 붙잡고 싶은 모든 것들은 필름 속에 담아낸다. 웨인 레빈은 하늘을 하는 것과 같은 무중력의 삼차원의 공간, 바닷 속에서 육체의 한계를 조율하며 우리를 초월적 세계로 이끈다. 김윤수는 일상적인 재료들을 가져와 다양한 형태의 정신적 부산물들을 만들어내며 작업을 통해 부지런히 삶을 기록한다. ",
     notes_ko:
       "2014\n23 x 30 cm\n180 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n₩25,000\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 6호의 주제 ‘무아 경無我 景’은 대자연의 풍경 앞에서 자신을 비워내는 상태를 말한다. 시대가 만들어낸 예술가의 아우라는 속된 욕망이 빚어낸 허상일 때가 많지만, 여기 예술가들은 치열한 현실 가운데 묵묵히 창작의 시간을 견디며 예술을 통해 삶의 의미를 지키고 있다. 사진가 바바라 보스워스에게 사진은 본다는 행위를 통한 살아있음의 확인이며 세상을 사랑하는 방법이다. 보스워스는  삶의 관조자로서 세상의 빛이 사라진기 전, 눈 앞에 붙잡고 싶은 모든 것들은 필름 속에 담아낸다. 웨인 레빈은 하늘을 하는 것과 같은 무중력의 삼차원의 공간, 바닷 속에서 육체의 한계를 조율하며 우리를 초월적 세계로 이끈다. 김윤수는 일상적인 재료들을 가져와 다양한 형태의 정신적 부산물들을 만들어내며 작업을 통해 부지런히 삶을 기록한다. ",
     order_url_en:
@@ -3163,27 +3148,27 @@ export const publications = [
   {
     id: 63,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.5 Art on Paper",
     artist_en:
       "Catherine Wagner\nTheresa Ganz\nTheresa Hak kyung Cha\nJangjibang\nSeungchul Lee\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Magazine Gitz vol. 5 has a story based on the materiality in the visual art, such as paper, books, and photographs, under the title ‘Art on Paper’. Catherine Wagner is an artist who transforms elements of contemporary society into conceptual images. Mostly inspired by nature, Theresa Ganz combines photography, paintings and sculpture in her work and crosses between materialization and revival. Theresa Hak kyung Cha deals with the concept of migration, women, language, and nation in a complex way and works on it through multilingual, photography, text, and books. Also, Gitz contains interviews with Seungchul Lee, an artist and a collector who researches on Korean traditional materials on books and an attractive paper shop called Jang Ji Bang, Jan’s family’s paper workshop for the four generations.",
     notes_en:
       "2013\n23 x 30 cm\n148 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n$25.00 * Sold Out",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "Magazine Gitz vol. 5 has a story based on the materiality in the visual art, such as paper, books, and photographs, under the title ‘Art on Paper’. Catherine Wagner is an artist who transforms elements of contemporary society into conceptual images. Mostly inspired by nature, Theresa Ganz combines photography, paintings and sculpture in her work and crosses between materialization and revival. Theresa Hak kyung Cha deals with the concept of migration, women, language, and nation in a complex way and works on it through multilingual, photography, text, and books. Also, Gitz contains interviews with Seungchul Lee, an artist and a collector who researches on Korean traditional materials on books and an attractive paper shop called Jang Ji Bang, Jan’s family’s paper workshop for the four generations.",
     title_ko: "매거진 깃 5호 종이 위의 예술",
     artist_ko: "캐더린 와그너\n테레사 갠즈\n차학경\n장지방\n이승철\n",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 5호에서는 ‘종이 위의 예술’이라는 제목 아래, 종이, 책, 사진 등 시각예술에서의 물성을 중심으로 한 이야기를 엮었다. 캐더리 와그너는 글자와 책을 통해 사물을 바라보는 방식을 통제함으로 사물의 본질에 다가가려 한다. 테레사 갠즈는 노동집약적인 과정을 통해 사회, 회화, 조각 사이의 경계를 지우며 구현과 재현의 한계를 실험하고 있다. 차학경은 이주, 여성, 언어, 민족이라는 개념을 복합적으로 다루며 이를 다중 언어, 사진, 텍스트, 책의 형태를 빌려 작업했다. 최초의 질료인 종이의 물성을 깊이 이해하며 대를 이어 종이를 만드는 장지방과 예술의 물성으로서의 종이와 책, 그러한 우리의 책을 오랜기간 수집해온 수집가 이승철의 인터뷰를 싣었다.",
     notes_ko:
       "2013\n23 x 30 cm\n148 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n₩25,000 * Sold Out\n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 5호에서는 ‘종이 위의 예술’이라는 제목 아래, 종이, 책, 사진 등 시각예술에서의 물성을 중심으로 한 이야기를 엮었다. 캐더리 와그너는 글자와 책을 통해 사물을 바라보는 방식을 통제함으로 사물의 본질에 다가가려 한다. 테레사 갠즈는 노동집약적인 과정을 통해 사회, 회화, 조각 사이의 경계를 지우며 구현과 재현의 한계를 실험하고 있다. 차학경은 이주, 여성, 언어, 민족이라는 개념을 복합적으로 다루며 이를 다중 언어, 사진, 텍스트, 책의 형태를 빌려 작업했다. 최초의 질료인 종이의 물성을 깊이 이해하며 대를 이어 종이를 만드는 장지방과 예술의 물성으로서의 종이와 책, 그러한 우리의 책을 오랜기간 수집해온 수집가 이승철의 인터뷰를 싣었다.",
     order_url_en:
@@ -3222,26 +3207,26 @@ export const publications = [
   {
     id: 64,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.4 Tracing Light",
     artist_en: "Linda Connor\nKlea McKenna\nBen Nixon\nChris McCaw\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "In Magazine Gitz vol. 4, four photographers from the American West are introduced. In a world that seeks fast and convenience, here we present four photographers who are going back in time to capture the true essence of photography. Linda Connor has described the essential and fundamental place through photography for over 35 years. Klea McKenna works with photogram like unpredictable abstract and experiment with the possibility. Ben Nixon, who works with one of the traditional photographic techniques, the collodion wet-plate, mentions the meaning of photography as a mental awakening and spiritual training. Chris McCau leaves the sun's marks on the photo paper by giving exposure, and continues the fundamental exploration of photography, which means ‘to write with light’.\n",
     notes_en:
       "2012\n23 x 30 cm\n128 pages\nSoft cover / Perfect binding\nISSN 2093-7970\n \n$35.00 \n  \n* Magazine Gitz 4 SPECIAL EDITION\n- Magazine Git No.4 Special Edition is made with 30 different covers containing the works of four artists, and each edition has a unique number.\n- No Edition is a cover made of Ben Nixon's work.\n- The content is all the same.\n\n*Currently, the three editions are out of stock except for Chris edition.\n",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "In Magazine Gitz vol. 4, four photographers from the American West are introduced. In a world that seeks fast and convenience, here we present four photographers who are going back in time to capture the true essence of photography. Linda Connor has described the essential and fundamental place through photography for over 35 years. Klea McKenna works with photogram like unpredictable abstract and experiment with the possibility. Ben Nixon, who works with one of the traditional photographic techniques, the collodion wet-plate, mentions the meaning of photography as a mental awakening and spiritual training. Chris McCau leaves the sun's marks on the photo paper by giving exposure, and continues the fundamental exploration of photography, which means ‘to write with light’.\n",
     title_ko: "매거진 깃 4호 빛으로 간 사진",
     artist_ko: "린다 코너\n클리아 맥키나\n벤 닉슨\n크리스 맥카우\n",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 4호에서는 미국 서부를 중심으로 여러 지역과 국가에서 활동하는 네 사진가의 예술세계를 다루었다. 린다 코너는 35년간 사진을 통해  세계를 실재를 묘사하고, 본질적이고 근원적인 장소들을 담고 있다. 클리아 맥키나는 자유로운 추상화 같은 포토그램 기법을 통해 작업하며, 그 가능성에 대해 실험한다. 전통적인 사진 기법 중 하나인 콜로디온 습판법으로 작업하는 벤 닉슨은 정신적 각성이며 영적인 훈련과도 같은 사진의 의미에 대해 언급한다. 크리스 맥카우는 노광을 주어 인화지에 태양의 자국을 남기며, ‘빛으로 쓰는 것’이란 뜻의 ‘사진’에 대한  근원적인 탐구를 지속하고 있다. 이렇게 네 작가가 사진을 통해 추구하는 사진의 본질에 관한 이야기가 깃 4호에 담겨 있다.",
     notes_ko:
       "2012\n23 x 30 cm\n128 pages\nSoft cover / Perfect binding\nISSN 2093-7970\n \n₩35,000\n \n* Magazine Gitz 4 SPECIAL EDITION\n- 매거진 깃 4호 스페셜 에디션은 4명 작가들의 작품을 담은 각기다른 표지로 총 30권씩 특별 제작되었으며 각 에디션마다 고유번호가 찍혀있습니다. \n- No Edition은 Ben Nixon의 표지로 제작되었습니다.\n- 내용은 모두 동일합니다.\n\n*현재 Chris 에디션을 제외한 세가지 에디션은 품절입니다. \n",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 4호에서는 미국 서부를 중심으로 여러 지역과 국가에서 활동하는 네 사진가의 예술세계를 다루었다. 린다 코너는 35년간 사진을 통해  세계를 실재를 묘사하고, 본질적이고 근원적인 장소들을 담고 있다. 클리아 맥키나는 자유로운 추상화 같은 포토그램 기법을 통해 작업하며, 그 가능성에 대해 실험한다. 전통적인 사진 기법 중 하나인 콜로디온 습판법으로 작업하는 벤 닉슨은 정신적 각성이며 영적인 훈련과도 같은 사진의 의미에 대해 언급한다. 크리스 맥카우는 노광을 주어 인화지에 태양의 자국을 남기며, ‘빛으로 쓰는 것’이란 뜻의 ‘사진’에 대한  근원적인 탐구를 지속하고 있다. 이렇게 네 작가가 사진을 통해 추구하는 사진의 본질에 관한 이야기가 깃 4호에 담겨 있다.",
     order_url_en:
@@ -3275,28 +3260,28 @@ export const publications = [
   {
     id: 65,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.3 Woods, Breath",
     artist_en:
       "Jo, Kyu-Sung\nKim, Ju-Yeon\nKim, Seung-Yeong\nNoname Noshop\nKil, Chosil\nKim, Shin-Il\nKang, Yo-Bae\nKim, Young-Gap\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "In Magazine Gitz vol. 3, under the theme of ‘Woods, Breath’, 8 artists capture the extinction and circulation in the nature and movement in mind to breathe new life into the abandoned. Jo, Kyu-Sung engrave momentary sculptures on photographs. Kim, Ju-Yeon accepts the transformation in the  nature and captures the growth and germination of plants in her art. Kim, Seung-Yeong contemplate the relationship between nature and a human being and the communication among human beings through the various methods in art. Kil, Chosil peered deeply into the gap between beauty and non-beauty  and Kim, Shin-Il deconstructs the concepts that we already assure. Noname Noshop is the artist group that concentrate on naming something unnamed. They, Kang, Yo-Bae with painting,\nKim, Young-Gap with photography, depict the light, the wind, the fields in Jeju island.   \n",
     notes_en:
       "2011\n17.7 x 24.2 cm\n184 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n$25.00 * Sold Out",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "In Magazine Gitz vol. 3, under the theme of ‘Woods, Breath’, 8 artists capture the extinction and circulation in the nature and movement in mind to breathe new life into the abandoned. Jo, Kyu-Sung engrave momentary sculptures on photographs. Kim, Ju-Yeon accepts the transformation in the  nature and captures the growth and germination of plants in her art. Kim, Seung-Yeong contemplate the relationship between nature and a human being and the communication among human beings through the various methods in art. Kil, Chosil peered deeply into the gap between beauty and non-beauty  and Kim, Shin-Il deconstructs the concepts that we already assure. Noname Noshop is the artist group that concentrate on naming something unnamed. They, Kang, Yo-Bae with painting,\nKim, Young-Gap with photography, depict the light, the wind, the fields in Jeju island.   \n",
     title_ko: "매거진 깃 3호 숲, 숨",
     artist_ko:
       "조규성\n김주연\n김승영\n노네임노샵\n길초실\n김신일\n강요배\n김영갑\n",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 3호에서는 ‘숲, 숨’을 화두로 삶 가운데 예술의 숲을 일구어 낸 여덟 작가를 소개한다. 깃의 예술가들은 매혹하는 자연 가운데 생의 소멸과 순환, 마음의 움직임을 예술로 담아 내며, 버려진 것에 새 숨을 불어 넣는다. 예술가들은 순간의 조각을 사진에 새기며(조규성), 생장과 변이를 긍정하여 식물의 생장과 발아를 작업세계에 녹여낸다(김주연). 다양한 매체를 통해 인간과 자연, 인간과 인간 사이의 소통을 고민하고(김승영)는 작가도 있다. 미와 미가 아닌 미가 무엇인지(길초실) 고민하며, 이미 알고 있는 개념을 해체시키고(김신일), 이름없는 것에 이름을 짓는(노네임노샴) 예술가들도 소개한다. 제주의 숨, 바람, 들판, 빛을 회화로(강요배), 사진으로 (김영갑) 발현한 예술가들의 생각과 작품들을 담았다.",
     notes_ko:
       "2011\n17.7 x 24.2 cm\n184 pages\nSoft cover / Perfect binding\nISSN 2093-7970 02\n \n₩20,000 * Sold Out",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 3호에서는 ‘숲, 숨’을 화두로 삶 가운데 예술의 숲을 일구어 낸 여덟 작가를 소개한다. 깃의 예술가들은 매혹하는 자연 가운데 생의 소멸과 순환, 마음의 움직임을 예술로 담아 내며, 버려진 것에 새 숨을 불어 넣는다. 예술가들은 순간의 조각을 사진에 새기며(조규성), 생장과 변이를 긍정하여 식물의 생장과 발아를 작업세계에 녹여낸다(김주연). 다양한 매체를 통해 인간과 자연, 인간과 인간 사이의 소통을 고민하고(김승영)는 작가도 있다. 미와 미가 아닌 미가 무엇인지(길초실) 고민하며, 이미 알고 있는 개념을 해체시키고(김신일), 이름없는 것에 이름을 짓는(노네임노샴) 예술가들도 소개한다. 제주의 숨, 바람, 들판, 빛을 회화로(강요배), 사진으로 (김영갑) 발현한 예술가들의 생각과 작품들을 담았다.",
     order_url_en:
@@ -3323,27 +3308,27 @@ export const publications = [
   {
     id: 66,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.2 Dust",
     artist_en:
       "Jang Bok Ryu\nGap Cheol Lee\nJang Seop Son\nJeong Hun Yoon\nBoc Su Jeong\nKi Youl Cha\nJae Kyung Kim\n",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "Magazine Gitz vol. 2, ‘Dust’ is design with the inspiration from the original meaning of dust, which indicate something worthless like dirt. We ask the artists who have made works for a long time and what value the artist pursue in the life of repetition of growth and death. Seven artists and craftsmen who work in the field of visual art are interviewed in Gitz vol. 2",
     notes_en:
       "2011\n17.7 x 24.2 cm\n230 pages\nSoft cover / Perfect binding\nISSN 2093-7970 (01)\n \n$15.00",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "Magazine Gitz vol. 2, ‘Dust’ is design with the inspiration from the original meaning of dust, which indicate something worthless like dirt. We ask the artists who have made works for a long time and what value the artist pursue in the life of repetition of growth and death. Seven artists and craftsmen who work in the field of visual art are interviewed in Gitz vol. 2",
     title_ko: "매거진 깃 2호 먼지",
     artist_ko: "류장복\n이갑철\n손장섭\n윤정훈\n정복수\n차기율\n김재경\n",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 2호 ‘Dust’는 ‘티끌, 흙, 무가치한 것’으로 번역되는 원래의 뜻에 영감을 받아 기획되었다. 예술가가 발견한 사소한 것이 어떤 가치로 생장하는지 살펴보며, 그 작업세계에 대해 질문하고 있다. 꾸준함으로 개인의 삶을 그리는 류장복, ‘가슴시림’의 정서를 사진으로 담아내는 이갑철, 인간의 나이를 넘어선 나무를 캔버스에 담는 손장섭, 세 예술가의 이야기를 먼저 실었다. 이어 목공 기능장인과 건축기술사로서 일하며 나무를 깊이 이해하는 윤정훈과 인체를 소재로 인간의 근원을 그리는 정복수를 소개한다. 마지막으로 여러 매체를 통해 ‘순환의 여행’를 이야기하는 차기율과 소멸과 성장을 반복하는 도시 및 풍경을 카메라에 담는 김재경의 인터뷰를 담았다. \n\n\n아티스트 인터뷰 매거진 <깃> 두번째호가 2011년 5월 27일 발간됩니다. <깃>은 아티스트, 디자이너, 공방장인 등 시각예술분야에서 작업하는 사람들의 이야기를 인터뷰 형식으로 담아 일년에 두번 발행됩니다. 두번째 <깃>의 주제는 ‘Dust’로 생장소멸을 반복하는 삶 속에서 예술가는 어떤 가치에 우선을 두고 작업하고 있는지, 그런 가치를 만들어내는 작가란 과연 누구인지를 질문하면서 오랜 시간 작품을 만들어온 작가들의 생각과 경험을 들어봅니다.",
     notes_ko:
       "2011\n17.7 x 24.2 cm\n230 pages\nSoft cover / Perfect binding\nISSN 2093-7970 (01)\n \n₩15,000",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 2호 ‘Dust’는 ‘티끌, 흙, 무가치한 것’으로 번역되는 원래의 뜻에 영감을 받아 기획되었다. 예술가가 발견한 사소한 것이 어떤 가치로 생장하는지 살펴보며, 그 작업세계에 대해 질문하고 있다. 꾸준함으로 개인의 삶을 그리는 류장복, ‘가슴시림’의 정서를 사진으로 담아내는 이갑철, 인간의 나이를 넘어선 나무를 캔버스에 담는 손장섭, 세 예술가의 이야기를 먼저 실었다. 이어 목공 기능장인과 건축기술사로서 일하며 나무를 깊이 이해하는 윤정훈과 인체를 소재로 인간의 근원을 그리는 정복수를 소개한다. 마지막으로 여러 매체를 통해 ‘순환의 여행’를 이야기하는 차기율과 소멸과 성장을 반복하는 도시 및 풍경을 카메라에 담는 김재경의 인터뷰를 담았다. \n\n\n아티스트 인터뷰 매거진 <깃> 두번째호가 2011년 5월 27일 발간됩니다. <깃>은 아티스트, 디자이너, 공방장인 등 시각예술분야에서 작업하는 사람들의 이야기를 인터뷰 형식으로 담아 일년에 두번 발행됩니다. 두번째 <깃>의 주제는 ‘Dust’로 생장소멸을 반복하는 삶 속에서 예술가는 어떤 가치에 우선을 두고 작업하고 있는지, 그런 가치를 만들어내는 작가란 과연 누구인지를 질문하면서 오랜 시간 작품을 만들어온 작가들의 생각과 경험을 들어봅니다.",
     order_url_en: "https://www.datzpress.kr/publications/magazine-gitz-2-dust",
@@ -3375,28 +3360,28 @@ export const publications = [
   {
     id: 67,
     type: "Magazine",
-    edition: "",
-    copies_count: "",
+    edition: null,
+    copies_count: null,
     title_en: "Magazine Gitz vol.1 Press",
     artist_en:
       "Koh San Keum\nJi Hyun Lee\nSoosik Lim\nJuhwan Noh\nHyesoo Park\nPortfolio\nStudio Hertz\nDatz Museum of Art",
-    quotes_en: "X",
+    quotes_en: null,
     body_en:
       "In first issue of Magazine GItz vol.1 with the theme of ‘Press’, the artist and their works inspired by text, narrative, book, print and publishing are introduced. Koh San Keum interpret sentences in newspapers into visual form. Ji Hyun Lee transforms the original form of the book into installation through intensive labor. Soosik Lim expresses an individual’s study like a portrait and Juhwan Noh uses the typeface as an artistic object. Hyesoo Park works by using text and narrative to evoke for her art. In addition, artists’ portfolio production studio ‘Portfolio’, book designers’ creative community ‘Studio Hertz’ and Datz Museum of Art, which display and plan in conjunction with Dats’ publication are introduced.",
     notes_en:
       "2010\n17.7 x 24.2 cm\n174 pages\nSoft cover / Perfect binding\nISSN 2093-7970 (01)\n \n$15.00",
-    preview_quote_en: "X",
+    preview_quote_en: null,
     preview_body_en:
       "In first issue of Magazine GItz vol.1 with the theme of ‘Press’, the artist and their works inspired by text, narrative, book, print and publishing are introduced. Koh San Keum interpret sentences in newspapers into visual form. Ji Hyun Lee transforms the original form of the book into installation through intensive labor. Soosik Lim expresses an individual’s study like a portrait and Juhwan Noh uses the typeface as an artistic object. Hyesoo Park works by using text and narrative to evoke for her art. In addition, artists’ portfolio production studio ‘Portfolio’, book designers’ creative community ‘Studio Hertz’ and Datz Museum of Art, which display and plan in conjunction with Dats’ publication are introduced.",
     title_ko: "매거진 깃 1호 프레스",
     artist_ko:
       "고산금\n이지현\n임수식\n노주환\n박혜수\n포트폴리오\n스튜디오헤르쯔\n닻미술관\n",
-    quotes_ko: "X",
+    quotes_ko: null,
     body_ko:
       "매거진 깃 1호는 매거진 깃의 창간호로서 ‘Press’라는 주제 아래 텍스트와 서사, 책과 인쇄, 출판에 영감을 받아 작업하는 여덟명의 작업세계와 그들의 인터뷰를 소개한다. 시각예술가 고산금은 신문 혹은 책에 실린 문장들을 시각적 형태로 해석하기도 하고, 이지현은  집요한 노동을 통해 책의 고유의 형태를 설치로 작동시켜 보여주기도 한다. 임수식은 초상사진과도 같은 개인의 서재를 책가도로 표현하고, 노주환은 ‘읽다’라는 기능이 소멸된 활자를 도구로 삼고 있다. 박혜수는 텍스트와 서사를 이용해 일종의 ‘환기’를 불러 일으키며 작업한다. 작품을 담는 포트폴리오를 제작해주는 팀 ‘포트폴리오’와 북디자이너들이 모인 창조적 공동체 ‘스튜디오헤르쯔’, 닻프레스의 출판물과 깊이 연계하여 지속적으로 전시를 기획하는 닻미술관도 소개한다. \n\n\n아티스트 인터뷰 전문잡지 <깃>이 2010년 10월 1일 창간되었습니다. 아티스트, 디자이너, 공방장인 등 시각예술분야에서 작업하는 사람들의 이야기를 인터뷰 형식으로 담아 일년에 두번 발행됩니다. 창간호의 주제는 ‘Press’로 텍스트나 네러티브, 혹은 책이나 인쇄, 출판에 영감을 받아 작업하는 사람들과의 대화를 묶었습니다.",
     notes_ko:
       "2010\n17.7 x 24.2 cm\n174 pages\nSoft cover / Perfect binding\nISSN 2093-7970 (01)\n \n₩15,000",
-    preview_quote_ko: "X",
+    preview_quote_ko: null,
     preview_body_ko:
       "매거진 깃 1호는 매거진 깃의 창간호로서 ‘Press’라는 주제 아래 텍스트와 서사, 책과 인쇄, 출판에 영감을 받아 작업하는 여덟명의 작업세계와 그들의 인터뷰를 소개한다. 시각예술가 고산금은 신문 혹은 책에 실린 문장들을 시각적 형태로 해석하기도 하고, 이지현은  집요한 노동을 통해 책의 고유의 형태를 설치로 작동시켜 보여주기도 한다. 임수식은 초상사진과도 같은 개인의 서재를 책가도로 표현하고, 노주환은 ‘읽다’라는 기능이 소멸된 활자를 도구로 삼고 있다. 박혜수는 텍스트와 서사를 이용해 일종의 ‘환기’를 불러 일으키며 작업한다. 작품을 담는 포트폴리오를 제작해주는 팀 ‘포트폴리오’와 북디자이너들이 모인 창조적 공동체 ‘스튜디오헤르쯔’, 닻프레스의 출판물과 깊이 연계하여 지속적으로 전시를 기획하는 닻미술관도 소개한다. \n\n\n아티스트 인터뷰 전문잡지 <깃>이 2010년 10월 1일 창간되었습니다. 아티스트, 디자이너, 공방장인 등 시각예술분야에서 작업하는 사람들의 이야기를 인터뷰 형식으로 담아 일년에 두번 발행됩니다. 창간호의 주제는 ‘Press’로 텍스트나 네러티브, 혹은 책이나 인쇄, 출판에 영감을 받아 작업하는 사람들과의 대화를 묶었습니다.",
     order_url_en: "https://www.datzpress.kr/publications/magazine-gitz-1-press",

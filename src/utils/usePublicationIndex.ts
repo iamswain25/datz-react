@@ -6,6 +6,7 @@ import { artists } from "../@type/arists";
 export default function usePublicationIndex(index: string | number) {
   const [lang] = useGlobalState(LANG);
   const item = publications[Number(index) - 1];
+  const rel_publications = item.rel_publications as number[];
   const title = lang === "ko" ? item.title_ko : item.title_en;
   const artist = lang === "ko" ? item.artist_ko : item.artist_en;
   const quotes = lang === "ko" ? item.quotes_ko : item.quotes_en;
@@ -21,8 +22,8 @@ export default function usePublicationIndex(index: string | number) {
     [item.rel_artists]
   );
   const publicationsObj = useMemo(
-    () => publications.filter((a) => item.rel_publications.includes(a.id)),
-    [item.rel_publications]
+    () => publications.filter((a) => rel_publications.includes(a.id)),
+    [rel_publications]
   );
   return {
     ...item,

@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import CarouselBtnGroup from "./CarouselBtnGroup";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import usePublicationIndex from "../utils/usePublicationIndex";
@@ -80,10 +80,6 @@ export default function PublicationWidget({ dark = false }) {
   const { id } = useParams();
   const { publications } = usePublicationIndex(id);
   const list = usePublications(publications);
-  const history = useHistory();
-  function clickHandler() {
-    history.push("/publication/nothingwill");
-  }
   if (!list.length) {
     return null;
   }
@@ -106,9 +102,9 @@ export default function PublicationWidget({ dark = false }) {
             </CarouselBtnGroup>
           }
         >
-          {list.map(({ image_cover, title }, i) => {
+          {list.map(({ image_cover, title, id }, i) => {
             return (
-              <div key={i} className={afterClass(i)} onClick={clickHandler}>
+              <Link key={i} className={afterClass(i)} to={`/publication/${id}`}>
                 <div className={listClass(dark)}>
                   <img
                     src={makeUrl(image_cover)}
@@ -117,7 +113,7 @@ export default function PublicationWidget({ dark = false }) {
                   />
                   <span className={descClass(dark)}>{title}</span>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </Carousel>
