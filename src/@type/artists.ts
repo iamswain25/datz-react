@@ -66,7 +66,7 @@ export const artists = [
     ],
     publications: [4, 5, 40, 41, 58],
     exhibitions: [3, 5, 9, 11, 26],
-    events: [null],
+    events: [],
   },
   {
     id: 4,
@@ -111,7 +111,7 @@ export const artists = [
       "/Artist/Bryant_Austin/07.jpg",
     ],
     publications: [58],
-    exhibitions: [null],
+    exhibitions: [],
     events: [17, 19],
   },
   {
@@ -133,8 +133,8 @@ export const artists = [
       "/Artist/Mary_Daniel_Hobson/06.jpg",
       "/Artist/Mary_Daniel_Hobson/07.jpg",
     ],
-    publications: [null],
-    exhibitions: [null],
+    publications: [],
+    exhibitions: [],
     events: [17, 19],
   },
   {
@@ -180,7 +180,7 @@ export const artists = [
       "/Artist/Hendrik_Paul/07.jpg",
     ],
     publications: [25, 58],
-    exhibitions: [null],
+    exhibitions: [],
     events: [],
   },
   {
@@ -203,7 +203,7 @@ export const artists = [
       "/Artist/Ryuten_Paul_Rosenblum/07.jpg",
     ],
     publications: [33, 34, 58],
-    exhibitions: [null],
+    exhibitions: [],
     events: [],
   },
   {
@@ -249,7 +249,7 @@ export const artists = [
       "/Artist/hoon_lee/07.jpg",
     ],
     publications: [18, 58],
-    exhibitions: [null],
+    exhibitions: [],
     events: [],
   },
   {
@@ -272,7 +272,7 @@ export const artists = [
       "/Artist/Alyssa_Fujita_Karoui/07.jpg",
     ],
     publications: [10, 58],
-    exhibitions: [null],
+    exhibitions: [],
     events: [],
   },
   {
@@ -295,8 +295,8 @@ export const artists = [
       "/Artist/Seongyeon_Jo/07.jpg",
     ],
     publications: [22, 23],
-    exhibitions: [null],
-    events: [null],
+    exhibitions: [],
+    events: [],
   },
   {
     id: 14,
@@ -319,7 +319,7 @@ export const artists = [
     ],
     publications: [31, 59],
     exhibitions: [16, 36],
-    events: [null],
+    events: [],
   },
   {
     id: 15,
@@ -434,7 +434,7 @@ export const artists = [
       "/Artist/Wayne_Levin/07.jpg",
     ],
     publications: [16, 37, 62],
-    exhibitions: [null],
+    exhibitions: [],
     events: [36, 37],
   },
   {
@@ -553,8 +553,8 @@ export const artists = [
       "/Artist/Hynmee_Kim/05.jpg",
       "/Artist/Hynmee_Kim/06.jpg",
     ],
-    publications: [null],
-    exhibitions: [null],
+    publications: [],
+    exhibitions: [],
     events: [8],
   },
   {
@@ -645,7 +645,7 @@ export const artists = [
       "/Artist/Ilam_Jang/07.jpg",
     ],
     publications: [17],
-    exhibitions: [null],
+    exhibitions: [],
     events: [8],
   },
   {
@@ -885,7 +885,7 @@ export const artists = [
     homepage: "kimjoon.de",
     images: ["/Artist/Joon_Kim/01.jpg", "/Artist/Joon_Kim/02.jpg"],
     publications: [],
-    exhibitions: [null],
+    exhibitions: [],
     events: [],
   },
   {

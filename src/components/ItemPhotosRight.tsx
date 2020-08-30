@@ -1,16 +1,11 @@
 import React from "react";
 import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
-import useDesktop from "./useDesktop";
 import ImageGallery from "react-image-gallery";
 import Arrow from "./Arrow";
 import { bottomBtn37 } from "./styles";
-import { useParams } from "react-router-dom";
-import { publications } from "../@type/publications";
 import { makeUrl } from "../config/url";
 import { LazyImage } from "react-lazy-images";
-import { useGlobalState, LANG } from "../store/useGlobalState";
-import usePublicationIndex from "../utils/usePublicationIndex";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -34,13 +29,13 @@ const classes = {
     height: auto;
   `,
 };
-export default function PublicationItemPhotos() {
-  const { id } = useParams();
-  const item = publications[Number(id) - 1];
-  const { images } = usePublicationIndex(id);
-  const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
-  console.log(isDesktop);
+export default function ItemPhotosRight({
+  images,
+  type = "publication",
+}: {
+  images: string[];
+  type?: string;
+}) {
   const [isVisible, setVisible] = React.useState(false);
   const full = React.useRef<ImageGallery>(null);
 
@@ -65,7 +60,7 @@ export default function PublicationItemPhotos() {
               `}
             >
               <LazyImage
-                alt={lang === "ko" ? item.title_ko : item.title_en}
+                alt={`image-${i}`}
                 placeholder={({ ref }) => (
                   <div ref={ref} className={classes.placeholder} />
                 )}

@@ -1,12 +1,10 @@
 import React from "react";
 import { css } from "emotion";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
 import { bottomBtn37, paddingH27 } from "./styles";
-import { publications } from "../@type/publications";
-import usePublicationItem from "../utils/usePublicationItem";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -22,17 +20,9 @@ const mobileContainer = css`
   position: relative;
   ${paddingH27}
 `;
-export default function PublicationStickyTop() {
+export default function PublicationItemLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const { id } = useParams();
-  const item = publications[Number(id) - 1];
-  const {
-    title,
-    artist,
-    preview_quote,
-    preview_body,
-    order_url,
-  } = usePublicationItem(item);
+  const { title, artist, preview_quote, preview_body, order_url, id } = item;
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
