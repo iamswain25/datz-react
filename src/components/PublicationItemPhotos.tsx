@@ -41,7 +41,6 @@ export default function PublicationItemPhotos() {
   const [lang] = useGlobalState(LANG);
   console.log(isDesktop);
   const [isVisible, setVisible] = React.useState(false);
-
   const full = React.useRef<ImageGallery>(null);
 
   return (
@@ -75,6 +74,7 @@ export default function PublicationItemPhotos() {
                     {...imageProps}
                     alt={imageProps.alt}
                     className={classes.img}
+                    onClick={imageClickHandler}
                   />
                 )}
               />

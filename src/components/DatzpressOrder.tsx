@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import Datzpress from "../assets/svg/Datzpress";
 import { flexrowcenter } from "./styles";
 
-export default function DatzpressOrder() {
+export default function DatzpressOrder({
+  order = "https://datzpress.com/product/offerings-se",
+}) {
   return (
     <div
       className={css`
@@ -20,7 +22,7 @@ export default function DatzpressOrder() {
         <Datzpress />
       </Link>
       <a
-        href="https://datzpress.com/product/offerings-se"
+        href={order}
         target="_blank"
         rel="noopener noreferrer"
         className={css`

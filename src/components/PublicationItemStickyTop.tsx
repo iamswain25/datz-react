@@ -1,10 +1,12 @@
 import React from "react";
 import { css } from "emotion";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
 import { bottomBtn37, paddingH27 } from "./styles";
+import { publications } from "../@type/publications";
+import usePublicationItem from "../utils/usePublicationItem";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -22,10 +24,19 @@ const mobileContainer = css`
 `;
 export default function PublicationStickyTop() {
   const isDesktop = useDesktop();
+  const { id } = useParams();
+  const item = publications[Number(id) - 1];
+  const {
+    title,
+    artist,
+    preview_quote,
+    preview_body,
+    order_url,
+  } = usePublicationItem(item);
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
-      <DatzpressOrder />
+      <DatzpressOrder order={order_url} />
       <div
         className={css`
           display: flex;
@@ -47,7 +58,7 @@ export default function PublicationStickyTop() {
             margin-top: 18px;
           `}
         >
-          Limited Edition
+          {item.edition}
         </div>
         <div
           className={css`
@@ -60,7 +71,7 @@ export default function PublicationStickyTop() {
             margin-top: 3px;
           `}
         >
-          300 copies
+          {item.copies_count}
         </div>
         <div
           className={css`
@@ -73,7 +84,7 @@ export default function PublicationStickyTop() {
             margin-top: 28px;
           `}
         >
-          Nothing Will Ever be the Same Again
+          {title}
         </div>
         <div
           className={css`
@@ -86,7 +97,7 @@ export default function PublicationStickyTop() {
             margin-top: 4px;
           `}
         >
-          Amanda Marchand
+          {artist}
         </div>
         <div
           className={css`
@@ -100,8 +111,7 @@ export default function PublicationStickyTop() {
             color: #4b4b4b;
           `}
         >
-          “Three windows in an old school house. Four, if you count the camera
-          as a window, too” - artist’s note
+          {preview_quote}
         </div>
         <div
           className={css`
@@ -115,18 +125,7 @@ export default function PublicationStickyTop() {
             overflow: hidden;
           `}
         >
-          The book focuses on three windows in a century-old schoolhouse and
-          their subtle surprises. The square panes and the window reference the
-          medium-format camera frame, producing a square negative. This work is
-          a return to a childhood state of pure presence, recalling, long hours
-          at play in the Canadian snow. Like the practice of meditation, these
-          quiet photographs ask, What happens when you pay attention? The book
-          focuses on three windows in a century-old schoolhouse and their subtle
-          surprises. The square panes and the window reference the medium-format
-          camera frame, producing a square negative. This work is a return to a
-          childhood state of pure presence, recalling, long hours at play in the
-          Canadian snow. Like the practice of meditation, these quiet
-          photographs ask, What happens when you pay attention?
+          {preview_body}
         </div>
       </div>
       <Link
