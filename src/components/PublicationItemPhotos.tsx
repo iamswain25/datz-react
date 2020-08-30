@@ -2,35 +2,43 @@ import React from "react";
 import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import dtz6539 from "../assets/images/nothingwill/dtz-6539.png";
-import dtz6562 from "../assets/images/nothingwill/dtz-6562.png";
-import dtz8176 from "../assets/images/nothingwill/dtz-8176.png";
-import dtz8206 from "../assets/images/nothingwill/dtz-8206.png";
-import dtz8291 from "../assets/images/nothingwill/dtz-8291.png";
-import dtz8313 from "../assets/images/nothingwill/dtz-8313.png";
-import dtz8316 from "../assets/images/nothingwill/dtz-8316.png";
-import dtz8318 from "../assets/images/nothingwill/dtz-8318.png";
-import dtz8330 from "../assets/images/nothingwill/dtz-8330.png";
-import dtz8344 from "../assets/images/nothingwill/dtz-8344.png";
-import dtz8351 from "../assets/images/nothingwill/dtz-8351.png";
 import ImageGallery from "react-image-gallery";
 import Arrow from "./Arrow";
 import { bottomBtn37 } from "./styles";
-const images = [
-  dtz6539,
-  dtz6562,
-  dtz8176,
-  dtz8206,
-  dtz8291,
-  dtz8313,
-  dtz8316,
-  dtz8318,
-  dtz8330,
-  dtz8344,
-  dtz8351,
-];
+import { useParams } from "react-router-dom";
+import { publications } from "../@type/publications";
+import { makeUrl } from "../config/url";
+import { LazyImage } from "react-lazy-images";
+import { useGlobalState, LANG } from "../store/useGlobalState";
+const classes = {
+  link: css`
+    padding-left: 18px;
+    padding-right: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #707070;
+    text-align: center;
+  `,
+  placeholder: css`
+    background-color: grey;
+    min-width: 300px;
+    min-height: 300px;
+  `,
+  img: css`
+    width: 100%;
+    cursor: pointer;
+    object-fit: contain;
+    height: auto;
+  `,
+};
 export default function PublicationItemPhotos() {
+  const { id } = useParams();
+  const item = publications[Number(id) - 1];
+  const images = item.images.split(`\n`).slice(1);
   const isDesktop = useDesktop();
+  const [lang] = useGlobalState(LANG);
   console.log(isDesktop);
   const [isVisible, setVisible] = React.useState(false);
 
@@ -53,19 +61,22 @@ export default function PublicationItemPhotos() {
               key={i}
               className={css`
                 position: relative;
-                margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
+                margin-bottom: ${images.length - 2 === i ? 0 : 28}px;
               `}
             >
-              <img
-                src={src}
-                onClick={imageClickHandler}
-                alt="book"
-                className={css`
-                  width: 100%;
-                  cursor: pointer;
-                  object-fit: contain;
-                  height: auto;
-                `}
+              <LazyImage
+                alt={lang === "ko" ? item.title_ko : item.title_en}
+                placeholder={({ ref }) => (
+                  <div ref={ref} className={classes.placeholder} />
+                )}
+                src={makeUrl(src)}
+                actual={({ imageProps }) => (
+                  <img
+                    {...imageProps}
+                    alt={imageProps.alt}
+                    className={classes.img}
+                  />
+                )}
               />
               {i === 0 && (
                 <Datzpress
@@ -112,7 +123,7 @@ export default function PublicationItemPhotos() {
           <ImageGallery
             ref={full}
             infinite={false}
-            items={images.map((i) => ({ original: i }))}
+            items={images.map((i) => ({ original: makeUrl(i) }))}
             showNav={true}
             showThumbnails={false}
             showFullscreenButton={false}
