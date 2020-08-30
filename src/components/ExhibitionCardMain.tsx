@@ -3,7 +3,7 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import RollingImages from "./RollingImages";
-import { exhibitions, image } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibition";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import DatzMuseum from "../assets/svg/DatzMuseum";
@@ -14,7 +14,7 @@ const headerStyle = css`
   text-align: right;
   color: #707070;
 `;
-export default function ExhibitionCardMain({ item = exhibitions[1] }) {
+export default function ExhibitionCardMain({ item = exhibitions[0] }) {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
   return (
@@ -30,7 +30,7 @@ export default function ExhibitionCardMain({ item = exhibitions[1] }) {
           height: ${isDesktop ? "auto" : "588px"};
         `}
       >
-        <RollingImages images={[image, image, image]} />
+        <RollingImages images={item.images} />
         <DatzMuseum
           color="#fff"
           className={css`

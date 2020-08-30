@@ -1,6 +1,7 @@
 import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
+import { makeUrl } from "../config/url";
 export default function RollingImages(props: {
   images: Array<any> | undefined;
   className?: string;
@@ -8,7 +9,7 @@ export default function RollingImages(props: {
   children?: React.ReactNode;
 }) {
   const images =
-    (props.images && props.images.map((a) => ({ original: a }))) || [];
+    (props.images && props.images.map((a) => ({ original: makeUrl(a) }))) || [];
   return (
     <div
       className={props.className}

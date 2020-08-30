@@ -1,10 +1,11 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { exhibitions, image } from "../@type/exhibition";
+import { exhibitions } from "../@type/exhibition";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useHistory } from "react-router-dom";
-export default function ExhibitionCardPastGrey({ item = exhibitions[1] }) {
+import { makeUrl } from "../config/url";
+export default function ExhibitionCardPastGrey({ item = exhibitions[0] }) {
   const isDesktop = useDesktop();
   const history = useHistory();
   const [lang] = useGlobalState(LANG);
@@ -28,7 +29,7 @@ export default function ExhibitionCardPastGrey({ item = exhibitions[1] }) {
         `}
       >
         <img
-          src={image}
+          src={makeUrl(item.images[0])}
           alt="ok"
           className={css`
             object-fit: contain;

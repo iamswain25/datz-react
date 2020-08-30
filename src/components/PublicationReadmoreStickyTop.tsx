@@ -65,7 +65,7 @@ export default function PublicationStickyTop() {
   const { id } = useParams();
   const isDesktop = useDesktop();
   const history = useHistory();
-  const item = publications[Number(id) - 1];
+  const item = publications.find((p) => p.id === Number(id));
   const { title, artist, quotes, body, notes, order_url } = usePublicationItem(
     item
   );
@@ -97,7 +97,7 @@ export default function PublicationStickyTop() {
             margin-top: 18px;
           `}
         >
-          {item.edition}
+          {item?.edition}
         </div>
         <div
           className={css`
@@ -109,7 +109,7 @@ export default function PublicationStickyTop() {
             margin-top: 3px;
           `}
         >
-          {item.copies_count}
+          {item?.copies_count} copies
         </div>
         <div
           className={css`
