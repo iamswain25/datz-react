@@ -24,6 +24,7 @@
     "react-hooks-global-state": "^1.0.0",
     "react-image-gallery": "^1.0.6",
     "react-images-upload": "^1.2.8",
+    "react-lazy-images": "^1.1.0",
     "react-loader-spinner": "^3.1.5",
     "react-multi-carousel": "^2.5.5",
     "react-responsive": "^8.0.3",

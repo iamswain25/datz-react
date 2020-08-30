@@ -1,16 +1,33 @@
 import React from "react";
-import p1 from "../assets/images/publication/p1.png";
-import p2 from "../assets/images/publication/p2.png";
-import p3 from "../assets/images/publication/p3.png";
-import p4 from "../assets/images/publication/p4.png";
-import p5 from "../assets/images/publication/p5.png";
-import p6 from "../assets/images/publication/p6.png";
 import { Link } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { publications } from "../@type/publications";
 import { useGlobalState, LANG } from "../store/useGlobalState";
+import { imageUrl } from "../config/url";
+import { LazyImage } from "react-lazy-images";
+import { Grid } from "@material-ui/core";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
+const classes = {
+  link: css`
+    padding-left: 18px;
+    padding-right: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #707070;
+    text-align: center;
+  `,
+  placeholder: css`
+    background-color: grey;
+    width: 100%;
+  `,
+  img: css`
+    object-fit: contain;
+    width: 100%;
+  `,
+};
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
   const [lang] = useGlobalState(LANG);
@@ -92,55 +109,66 @@ export default function PublicationList() {
             its books it shares their art. As a rule, all work presented at Datz
             Museum are recorded and preserved in book form.
           </p>
-          <div
+          <Grid
+            container
+            spacing={4}
+            justify="center"
             className={css`
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-              grid-gap: 36px;
               flex: 1;
-              justify-content: center;
               font-family: BauerGroteskOTW03;
               margin-bottom: 40px;
             `}
           >
             {publications.map((item, i) => {
               return (
-                <Link
-                  to={`publication/${item.id}`}
+                <Grid
+                  item
                   key={i}
-                  className={css`
-                    padding-left: 18px;
-                    padding-right: 18px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    color: #707070;
-                    text-align: center;
-                  `}
+                  xs={12}
+                  xm={6}
+                  sm={4}
+                  md={12}
+                  lg={6}
+                  lm={4}
+                  xl={3}
                 >
-                  <img src={item.images.split(`\n`)[0] || p1} alt="title" />
-                  <span
-                    className={css`
-                      font-size: 19px;
-                      line-height: 1.21;
-                    `}
-                  >
-                    {lang === "ko" ? item.title_ko : item.title_en}
-                  </span>
-                  <span
-                    className={css`
-                      margin-top: 4px;
-                      font-size: 17px;
-                      line-height: 1.35;
-                    `}
-                  >
-                    {lang === "ko" ? item.artist_ko : item.artist_en}
-                  </span>
-                </Link>
+                  <Link to={`publication/${item.id}`} className={classes.link}>
+                    <LazyImage
+                      alt={lang === "ko" ? item.title_ko : item.title_en}
+                      placeholder={({ imageProps, ref }) => (
+                        <div ref={ref} className={classes.placeholder} />
+                      )}
+                      src={imageUrl + item.images.split(`\n`)[0]}
+                      actual={({ imageProps }) => (
+                        <img
+                          {...imageProps}
+                          alt={imageProps.alt}
+                          className={classes.img}
+                        />
+                      )}
+                    />
+                    <span
+                      className={css`
+                        font-size: 19px;
+                        line-height: 1.21;
+                      `}
+                    >
+                      {lang === "ko" ? item.title_ko : item.title_en}
+                    </span>
+                    <span
+                      className={css`
+                        margin-top: 4px;
+                        font-size: 17px;
+                        line-height: 1.35;
+                      `}
+                    >
+                      {lang === "ko" ? item.artist_ko : item.artist_en}
+                    </span>
+                  </Link>
+                </Grid>
               );
             })}
-          </div>
+          </Grid>
           <button
             className={css`
               height: 38px;

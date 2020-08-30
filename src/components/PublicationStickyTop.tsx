@@ -1,6 +1,5 @@
 import React from "react";
 import pside1 from "../assets/images/legacy/pside1.png";
-// import datzpress from "../assets/svg/0524_datzpress.svg";
 import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
@@ -9,6 +8,7 @@ const stickyContainer = css`
   position: -webkit-sticky;
   position: sticky;
   top: 79px;
+  width: 384px;
 `;
 const mobileContainer = css`
   height: 181px;
@@ -25,6 +25,8 @@ export default function PublicationStickyTop() {
           isDesktop
             ? css`
                 height: calc(100vh - 79px - 37px);
+                width: 100%;
+                object-fit: cover;
               `
             : css`
                 height: 100%;
@@ -34,7 +36,6 @@ export default function PublicationStickyTop() {
               `
         }
       />
-      {/* ${isDesktop ? "absolute" : "relative"}; */}
       <div
         className={css`
           position: absolute;
