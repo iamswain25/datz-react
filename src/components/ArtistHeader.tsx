@@ -155,7 +155,7 @@ export default function ArtistHeader({
             height: 79px;
             display: flex;
             align-items: center;
-            z-index: 2;
+            z-index: 5;
             padding-left: ${isDesktop ? 37 : 17}px;
             padding-right: ${isDesktop ? 37 : 17}px;
             background-color: ${isWhite ? "#fff" : "#afafaf"};

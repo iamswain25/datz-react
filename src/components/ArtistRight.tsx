@@ -7,6 +7,7 @@ import EventWidget from "./EventWidget";
 import BtnBack from "./BtnBack";
 import { useParams } from "react-router-dom";
 import useArtistIndex from "../utils/useArtistIndex ";
+import { Grid } from "@material-ui/core";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -24,7 +25,7 @@ const desktopContainer = css`
 export default function PublicationItemPhotos() {
   const isDesktop = useDesktop();
   const { id } = useParams();
-  const { publications, exhibitions, events } = useArtistIndex(id);
+  const { publications, exhibitions, events, homepage } = useArtistIndex(id);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <PublicationWidget publications={publications} dark />
@@ -45,31 +46,38 @@ export default function PublicationItemPhotos() {
             color: #ffffff;
           `}
         >
-          <div
-            className={css`
-              display: grid;
-              align-self: flex-start;
-              grid-template-columns: 70px auto;
-            `}
-          >
-            <div>Website</div>
-            <a
-              href="https://amandamarchand.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              amandamarchand.com
-            </a>
-            <div>Email</div>
-            <a
-              href="mailto:marydaniel.hobson.gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              marydaniel.hobson.gmail.com
-            </a>
-          </div>
-
+          <Grid container>
+            {!!homepage && (
+              <Grid container>
+                <span
+                  className={css`
+                    width: 70px;
+                  `}
+                >
+                  Website
+                </span>
+                <a href={homepage} target="_blank" rel="noopener noreferrer">
+                  {homepage}
+                </a>
+              </Grid>
+            )}
+            {/* <Grid container>
+              <span
+                className={css`
+                  width: 70px;
+                `}
+              >
+                Email
+              </span>
+              <a
+                href="mailto:marydaniel.hobson.gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                marydaniel.hobson.gmail.com
+              </a>
+            </Grid> */}
+          </Grid>
           <hr
             className={css`
               margin-top: 24px;
