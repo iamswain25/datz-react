@@ -26,6 +26,9 @@ export default function MainCard({
       className={css`
         position: relative;
         margin-bottom: 27px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       `}
     >
       <div
