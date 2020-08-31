@@ -1,11 +1,12 @@
 import React from "react";
 import { css } from "emotion";
-import ev1 from "../assets/images/legacy/event2.jpg";
-import ev2 from "../assets/images/legacy/event3.jpg";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import useNews from "../utils/useNews";
+import { news } from "../@type/news";
+import LazyImage from "./LazyImage";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -15,22 +16,19 @@ const textClass = (dark = false) => css`
   color: ${dark ? "#ffffff" : "#707070"};
 `;
 const listClass = (dark = false) => css`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  cursor: pointer;
-  flex: 1;
   color: ${dark ? "#ffffff" : "#707070"};
-  padding-left: 4px;
-  padding-right: 4px;
-  width: 100%;
+  position: relative;
+  margin-left: 4px;
+  margin-right: 4px;
+  ::before {
+    content: "";
+    display: inline-block;
+    padding-bottom: 50.51%;
+    vertical-align: top;
+  }
 `;
 const afterClass = (i: number) => css`
   position: relative;
-  width: 100%;
-`;
-const imgClass = css`
-  object-fit: contain;
   width: 100%;
 `;
 const itemClass = css`
@@ -50,12 +48,8 @@ const responsive = {
     // partialVisibilityGutter: 10,
   },
 };
-const list = [[ev1], [ev2], [ev1], [ev2], [ev1], [ev2]];
 export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
-  const history = useHistory();
-  function clickHandler() {
-    history.push("/publication/nothingwill");
-  }
+  const list = useNews(news.slice(0, 6));
   return (
     <div
       className={css`
@@ -74,13 +68,29 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
           </CarouselBtnGroup>
         }
       >
-        {list.map(([img, title], i) => {
+        {list.map((item, i) => {
           return (
-            <div key={i} className={afterClass(i)} onClick={clickHandler}>
+            <Link key={i} className={afterClass(i)} to={`/newsitem/${item.id}`}>
               <div className={listClass(dark)}>
-                <img src={img} alt="books" className={imgClass} />
+                <LazyImage
+                  alt={item.title}
+                  link={item.images[0]}
+                  placeholder={css`
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: lightgrey;
+                    top: 0;
+                  `}
+                  img={css`
+                    position: absolute;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                  `}
+                />
               </div>
-            </div>
+            </Link>
           );
         })}
       </Carousel>

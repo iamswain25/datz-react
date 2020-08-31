@@ -21,7 +21,7 @@ export default function EventCoverPage() {
       ) : (
         <div
           className={css`
-            height: calc(100vh - 34px);
+            min-height: 588px;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;

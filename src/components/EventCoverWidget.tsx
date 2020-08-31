@@ -22,10 +22,6 @@ const afterClass = (i: number) => css`
 const imgCover = css`
   object-fit: cover;
 `;
-const imgContain = css`
-  width: 100%;
-  object-fit: contain;
-`;
 const itemClass = css`
   display: flex;
   align-items: center;
@@ -55,15 +51,11 @@ export default function EventCoverWidget({
   }
   return (
     <div
-      className={
-        isDesktop
-          ? `home ${css`
-              height: 100%;
-              display: flex;
-              flex-direction: column;
-            `}`
-          : undefined
-      }
+      className={`home ${css`
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      `}`}
     >
       <Carousel
         responsive={responsive}
@@ -79,11 +71,7 @@ export default function EventCoverWidget({
           return (
             <div key={i} className={afterClass(i)} onClick={clickHandler}>
               <div className={listClass(dark)}>
-                <img
-                  src={makeUrl(img)}
-                  alt="event"
-                  className={isDesktop ? imgCover : imgContain}
-                />
+                <img src={makeUrl(img)} alt="event" className={imgCover} />
               </div>
             </div>
           );
