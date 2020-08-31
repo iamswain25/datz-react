@@ -15,8 +15,8 @@ import AboutHeader from "../components/AboutHeader";
 import useNews from "../utils/useNews";
 const FILTERS: { [key: string]: string } = {
   all: "all",
-  notice: "NOTICE",
-  event: "UPCOMING EVENT",
+  notice: "Notice",
+  event: "Upcoming Event",
 };
 export default function News() {
   const { filter = "all" } = useParams();
@@ -74,6 +74,7 @@ export default function News() {
             line-height: 1.19;
             margin-top: 50px;
             margin-bottom: 45px;
+            text-transform: uppercase;
           `}
         >
           {Object.keys(FILTERS).map((f) => (
