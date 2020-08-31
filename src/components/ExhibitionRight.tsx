@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "../components/styles";
-import ExhibitionCardMain from "../components/ExhibitionCardMain";
 import { exhibitions } from "../@type/exhibitions";
 import { Link } from "react-router-dom";
 import {
@@ -11,10 +10,13 @@ import {
 } from "../utils/datefns";
 import { Grid } from "@material-ui/core";
 import ViewAllCard from "./ViewAllCard";
+import MainCard from "./MainCard";
+import useExhibitions from "../utils/useExhibitions";
 
 export default function ExhibitionRight() {
   const isDesktop = useDesktop();
-  const currentExhibitions = exhibitions.filter(filterExhibitionCurrent);
+  const list = useExhibitions(exhibitions);
+  const currentExhibitions = list.filter(filterExhibitionCurrent);
   return (
     <main
       className={css`
@@ -29,7 +31,7 @@ export default function ExhibitionRight() {
             sm={currentExhibitions.length > 1 ? 6 : 12}
             key={i}
           >
-            <ExhibitionCardMain item={item} />
+            <MainCard item={item} type="exhibition" />
           </Grid>
         ))}
       </Grid>
@@ -48,7 +50,7 @@ export default function ExhibitionRight() {
         Past Exhibition
       </h1>
       <Grid container spacing={3}>
-        {exhibitions
+        {list
           .filter(filterExhibitionPast)
           .slice(0, 6)
           .map((a, i) => (

@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "./styles";
-import EventCardMain from "./EventCardMain";
+import MainCard from "./MainCard";
 import { events } from "../@type/events";
 import { Link } from "react-router-dom";
 import useEvents from "../utils/useEvents";
@@ -22,7 +22,7 @@ export default function EventRight() {
       <Grid container spacing={3}>
         {list.slice(0, 2).map((item, i) => (
           <Grid item xs={12} xl={6} key={i}>
-            <EventCardMain event={item} />
+            <MainCard item={item} type="event" />
           </Grid>
         ))}
       </Grid>

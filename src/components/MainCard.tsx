@@ -5,6 +5,7 @@ import useDesktop from "./useDesktop";
 import Datzpress from "../assets/svg/Datzpress";
 import { fullContainImg, fullHeightCoverImg } from "./styles";
 import { makeUrl } from "../config/url";
+import { exhibitionCurrentPast } from "../utils/datefns";
 const headerStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -12,8 +13,14 @@ const headerStyle = css`
   text-align: right;
   color: #707070;
 `;
-export default function EventCardMain({ event }: { event: any }) {
-  const { images, date, type, title, body, id } = event;
+export default function MainCard({
+  item,
+  type = "exhibition",
+}: {
+  item: any;
+  type: string;
+}) {
+  const { images, date, title, body, id } = item;
   const isDesktop = useDesktop();
   return (
     <section
@@ -61,8 +68,14 @@ export default function EventCardMain({ event }: { event: any }) {
             padding-bottom: 10px;
           `}
         >
-          <div className={headerStyle}>{date}</div>
-          <div className={headerStyle}>{type}</div>
+          <div className={headerStyle}>
+            {date ?? item.start_date + " - " + item.end_date}
+          </div>
+          <div className={headerStyle}>
+            {type === "event"
+              ? item.type
+              : exhibitionCurrentPast(item.start_date, item.end_date)}
+          </div>
         </div>
         <div
           className={css`
@@ -98,7 +111,7 @@ export default function EventCardMain({ event }: { event: any }) {
         </div>
 
         <Link
-          to={`/event/${id}`}
+          to={`/${type}/${id}`}
           className={css`
             height: 17px;
             border-bottom: solid 1px #707070;

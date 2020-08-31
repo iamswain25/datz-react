@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import UpcomingWidget from "./UpcomingWidget";
-import EventCardMain from "./EventCardMain";
+import MainCard from "./MainCard";
 import useDesktop from "./useDesktop";
 import useEventIndex from "../utils/useEventIndex";
 export default function PastEventsRight() {
@@ -9,7 +9,7 @@ export default function PastEventsRight() {
   const item = useEventIndex(1);
   return (
     <>
-      <EventCardMain event={item} />
+      <MainCard item={item} type="event" />
       <div
         className={
           isDesktop
