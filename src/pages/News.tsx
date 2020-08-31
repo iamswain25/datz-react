@@ -95,7 +95,7 @@ export default function News() {
               filter === "all" ? true : f.type === FILTERS[filter]
             )
             .map((c, i) => (
-              <Grid key={i} item xs={12} sm={6} xl={4}>
+              <Grid key={i} item xs={12} xl={4}>
                 <NewsCard item={c} />
               </Grid>
             ))}

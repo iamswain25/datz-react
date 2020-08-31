@@ -53,7 +53,7 @@ export default function SupportBottomThree() {
         {items.map((item, i) => {
           const { title, price, desc } = item;
           return (
-            <Grid item xs={12} md={4} key={i}>
+            <Grid item xs={12} sm={4} key={i}>
               <div className={classes.title}>{title}</div>
               <div className={classes.price}>{price}</div>
               <div className={classes.desc}>{desc}</div>

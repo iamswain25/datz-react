@@ -125,7 +125,7 @@ export default function PublicationList() {
               .filter((f) => (selected === "all" ? true : f.type === selected))
               .map((item, i) => {
                 return (
-                  <Grid item key={i} xs={12} sm={4} md={12} lg={6} xl={3}>
+                  <Grid item key={i} xs={12} sm={12} md={6} lg={4} xl={3}>
                     <Link
                       to={`publication/${item.id}`}
                       className={classes.link}

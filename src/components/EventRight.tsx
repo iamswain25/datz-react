@@ -42,7 +42,7 @@ export default function EventRight() {
       </h1>
       <Grid container spacing={3}>
         {langEvents.map((a, i) => (
-          <Grid item key={i} xs={12} md={6} xl={4}>
+          <Grid item key={i} xs={12} sm={6} xl={4}>
             <EventCardPastGrey event={a} />
           </Grid>
         ))}
