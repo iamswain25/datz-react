@@ -66,6 +66,9 @@ export default function Routes() {
             className={css`
               min-height: 100vh;
               background-color: #afafaf;
+              color: #ffffff;
+              position: relative;
+              font-family: BauerGroteskOTW03;
             `}
           >
             <Route exact path="/events/:filter" component={Events} />
