@@ -14,7 +14,7 @@ import ExhibitionCardForViewAll from "../components/ExhibitionCardForViewAll";
 import { exhibitions } from "../@type/exhibitions";
 const FILTERS: { [key: string]: string } = {
   all: "all",
-  darkroom: "D’Ark Room",
+  darkroom: "D'Ark Room",
   museum: "Datz Museum of Art",
 };
 export default function Exhibitions() {
