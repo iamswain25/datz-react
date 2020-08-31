@@ -18,15 +18,19 @@ const classes = {
     text-align: center;
   `,
   placeholder: css`
-    background-color: grey;
-    min-width: 300px;
-    min-height: 300px;
+    background-color: lightgrey;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: lightgrey;
+    top: 0;
   `,
   img: css`
-    width: 100%;
     cursor: pointer;
-    object-fit: contain;
-    height: auto;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   `,
 };
 export default function ItemPhotosRight({
@@ -57,6 +61,12 @@ export default function ItemPhotosRight({
               className={css`
                 position: relative;
                 margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
+                ::before {
+                  content: "";
+                  display: inline-block;
+                  padding-bottom: 60.98%;
+                  vertical-align: top;
+                }
               `}
             >
               <LazyImage
