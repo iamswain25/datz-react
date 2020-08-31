@@ -31,7 +31,7 @@ export default function MainCard({
       <div
         className={css`
           position: relative;
-          // height: ${isDesktop ? "auto" : "588px"};
+          height: ${isDesktop ? "auto" : "588px"};
           ::before {
             content: "";
             display: inline-block;
