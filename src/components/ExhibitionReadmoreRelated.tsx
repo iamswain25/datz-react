@@ -3,10 +3,9 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
-import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
 import { useParams } from "react-router-dom";
-import usePublicationIndex from "../utils/usePublicationIndex";
+import useExhibitionIndex from "../utils/useExhibitionIndex";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -23,9 +22,7 @@ const desktopContainer = css`
 export default function ExhibitionReadmoreRelated() {
   const isDesktop = useDesktop();
   const { id } = useParams();
-  const { artists, publications, exhibitions, events } = usePublicationIndex(
-    id
-  );
+  const { artists, publications, events } = useExhibitionIndex(id);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div
@@ -55,7 +52,6 @@ export default function ExhibitionReadmoreRelated() {
         </div>
         <ArtistWidget artists={artists} />
         <PublicationWidget publications={publications} />
-        <ExhibitionWidget exhibitions={exhibitions} />
         <EventWidget events={events} />
       </div>
     </section>

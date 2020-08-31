@@ -100,23 +100,20 @@ export default function ArtistWidget({
         >
           {list.map(({ name, bio, id }, i) => {
             return (
-              <div
+              <Link
+                to={`/artist/${id}`}
                 key={i}
-                className={css`
-                  text-align: center;
-                `}
+                className={lang === "ko" ? artistNameClassKo : artistNameClass}
               >
-                <Link
-                  to={`/artist/${id}`}
-                  className={
-                    lang === "ko" ? artistNameClassKo : artistNameClass
-                  }
-                  style={{ cursor: "pointer", textDecoration: "underline" }}
+                <p
+                  className={css`
+                    text-align: center;
+                  `}
                 >
                   {name} {">"}
-                </Link>
+                </p>
                 <p className={lang === "ko" ? descClassKo : descClass}>{bio}</p>
-              </div>
+              </Link>
             );
           })}
         </Carousel>
