@@ -5,7 +5,7 @@ import { exhibitions } from "../@type/exhibitions";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { filterExhibitionCurrent } from "../utils/datefns";
 import { useHistory } from "react-router-dom";
-import { makeUrl } from "../config/url";
+import LazyImage from "./LazyImage";
 export default function ExhibitionCardForViewAll({ item = exhibitions[0] }) {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
@@ -22,10 +22,10 @@ export default function ExhibitionCardForViewAll({ item = exhibitions[0] }) {
           background-color: #afafaf;
         `}
       >
-        <img
-          src={makeUrl(item.images[0])}
+        <LazyImage
           alt="ok"
-          className={css`
+          link={item.images[0]}
+          img={css`
             object-fit: contain;
             width: 100%;
             mix-blend-mode: ${isCurrent ? "normal" : "screen"};

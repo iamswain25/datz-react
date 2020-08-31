@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { publications } from "../@type/publications";
-import { useGlobalState, LANG } from "../store/useGlobalState";
-import { makeUrl } from "../config/url";
-import { LazyImage } from "react-lazy-images";
+import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
+import usePublications from "../utils/usePublications";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
 const classes = {
   link: css`
@@ -34,7 +33,7 @@ const classes = {
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
   const [limit, setLimit] = React.useState(12);
-  const [lang] = useGlobalState(LANG);
+  const list = usePublications(publications);
   const isDesktop = useDesktop();
   function loadMoreHandler() {
     setLimit((l) => l + 6);
@@ -125,7 +124,7 @@ export default function PublicationList() {
               padding-bottom: 40px;
             `}
           >
-            {publications
+            {list
               .filter((f) => (selected === "all" ? true : f.type === selected))
               .slice(0, limit)
               .map((item, i) => {
@@ -135,27 +134,14 @@ export default function PublicationList() {
                       to={`publication/${item.id}`}
                       className={classes.link}
                     >
-                      <LazyImage
-                        alt={lang === "ko" ? item.title_ko : item.title_en}
-                        placeholder={({ imageProps, ref }) => (
-                          <div ref={ref} className={classes.placeholder} />
-                        )}
-                        src={makeUrl(item.image_cover)}
-                        actual={({ imageProps }) => (
-                          <img
-                            {...imageProps}
-                            alt={imageProps.alt}
-                            className={classes.img}
-                          />
-                        )}
-                      />
+                      <LazyImage alt={item.title} link={item.image_cover} />
                       <span
                         className={css`
                           font-size: 19px;
                           line-height: 1.21;
                         `}
                       >
-                        {lang === "ko" ? item.title_ko : item.title_en}
+                        {item.title}
                       </span>
                       <span
                         className={css`
@@ -164,7 +150,7 @@ export default function PublicationList() {
                           line-height: 1.35;
                         `}
                       >
-                        {lang === "ko" ? item.artist_ko : item.artist_en}
+                        {item.artist}
                       </span>
                     </Link>
                   </Grid>
