@@ -10,30 +10,29 @@ import {
   filterExhibitionCurrent,
   filterExhibitionPast,
 } from "../utils/datefns";
+import { Grid } from "@material-ui/core";
 
 export default function ExhibitionRight() {
   const isDesktop = useDesktop();
+  const currentExhibitions = exhibitions.filter(filterExhibitionCurrent);
   return (
     <main
       className={css`
         margin-left: ${isDesktop ? 27 : 0}px;
       `}
     >
-      <div
-        className={css`
-          display: ${isDesktop ? "grid" : "flex"};
-          flex-direction: column;
-          grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-          column-gap: 27px;
-        `}
-      >
-        {exhibitions
-          .slice(1)
-          .filter(filterExhibitionCurrent)
-          .map((item, i) => (
-            <ExhibitionCardMain item={item} key={i} />
-          ))}
-      </div>
+      <Grid container spacing={3}>
+        {currentExhibitions.map((item, i) => (
+          <Grid
+            item
+            xs={12}
+            sm={currentExhibitions.length > 1 ? 6 : 12}
+            key={i}
+          >
+            <ExhibitionCardMain item={item} />
+          </Grid>
+        ))}
+      </Grid>
       <h1
         className={css`
           height: 37px;
