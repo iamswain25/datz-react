@@ -10,8 +10,8 @@ import useEvents from "../utils/useEvents";
 import { Grid } from "@material-ui/core";
 // import { filterExhibitionCurrent } from "../utils/datefns";
 export default function EventRight() {
-  const langEvents = useEvents(events);
-  // const currentEvents = langEvents.filter(filterExhibitionCurrent);
+  const list = useEvents(events);
+  // const currentEvents = list.filter(filterExhibitionCurrent);
   const isDesktop = useDesktop();
   return (
     <main
@@ -20,7 +20,7 @@ export default function EventRight() {
       `}
     >
       <Grid container spacing={3}>
-        {langEvents.slice(0, 2).map((item, i) => (
+        {list.slice(0, 2).map((item, i) => (
           <Grid item xs={12} xl={6} key={i}>
             <EventCardMain event={item} />
           </Grid>
@@ -41,7 +41,7 @@ export default function EventRight() {
         Past Event
       </h1>
       <Grid container spacing={3}>
-        {langEvents.map((a, i) => (
+        {list.slice(2, 8).map((a, i) => (
           <Grid item key={i} xs={12} sm={6} xl={4}>
             <EventCardPastGrey event={a} />
           </Grid>
