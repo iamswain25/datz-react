@@ -4,18 +4,14 @@ import useDesktop from "./useDesktop";
 import { exhibitions } from "../@type/exhibitions";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { filterExhibitionCurrent } from "../utils/datefns";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 export default function ExhibitionCardForViewAll({ item = exhibitions[0] }) {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
-  const history = useHistory();
   const isCurrent = filterExhibitionCurrent(item);
-  function clickHandler() {
-    history.push(`/exhibition/${item.id}`);
-  }
   return (
-    <section className={css``} onClick={clickHandler}>
+    <Link to={`/exhibition/${item.id}`}>
       <div
         className={css`
           position: relative;
@@ -74,6 +70,6 @@ export default function ExhibitionCardForViewAll({ item = exhibitions[0] }) {
           </p>
         </div>
       </div>
-    </section>
+    </Link>
   );
 }
