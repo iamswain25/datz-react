@@ -22,7 +22,7 @@ export function exhibitionCurrentPast(start_date?: string, end_date?: string) {
   return past;
 }
 export function filterExhibitionCurrent(e: any) {
-  const { start_date, end_date } = e;
+  const { start_date, end_date, date } = e;
   if (start_date && end_date) {
     const start = new Date(start_date);
     const end = new Date(end_date);
@@ -36,6 +36,9 @@ export function filterExhibitionCurrent(e: any) {
   }
   if (start_date && !end_date) {
     return isAfter(new Date(), new Date(start_date));
+  }
+  if (date) {
+    return isBefore(new Date(), new Date(date));
   }
   return false;
 }

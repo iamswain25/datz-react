@@ -73,7 +73,6 @@ export default function Exhibitions() {
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
           {exhibitions
-            .slice(1)
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )

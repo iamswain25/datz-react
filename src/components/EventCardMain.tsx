@@ -13,7 +13,7 @@ const headerStyle = css`
   color: #707070;
 `;
 export default function EventCardMain({ event }: { event: any }) {
-  const { images, date, type, title, body, link } = event;
+  const { images, date, type, title, body, id } = event;
   const isDesktop = useDesktop();
   return (
     <section
@@ -98,7 +98,7 @@ export default function EventCardMain({ event }: { event: any }) {
         </div>
 
         <Link
-          to={link}
+          to={`/event/${id}`}
           className={css`
             height: 17px;
             border-bottom: solid 1px #707070;

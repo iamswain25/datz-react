@@ -7,9 +7,11 @@ import { events } from "../@type/events";
 import EventCardPastGrey from "./EventCardPastGrey";
 import { Link } from "react-router-dom";
 import useEvents from "../utils/useEvents";
-
+import { Grid } from "@material-ui/core";
+// import { filterExhibitionCurrent } from "../utils/datefns";
 export default function EventRight() {
   const langEvents = useEvents(events);
+  // const currentEvents = langEvents.filter(filterExhibitionCurrent);
   const isDesktop = useDesktop();
   return (
     <main
@@ -17,17 +19,13 @@ export default function EventRight() {
         margin-left: ${isDesktop ? 27 : 0}px;
       `}
     >
-      <div
-        className={css`
-          display: ${isDesktop ? "grid" : "flex"};
-          flex-direction: column;
-          grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-          column-gap: 27px;
-        `}
-      >
-        <EventCardMain event={langEvents[0]} />
-        <EventCardMain event={langEvents[1]} />
-      </div>
+      <Grid container spacing={3}>
+        {langEvents.slice(0, 2).map((item, i) => (
+          <Grid item xs={12} xl={6} key={i}>
+            <EventCardMain event={item} />
+          </Grid>
+        ))}
+      </Grid>
       <h1
         className={css`
           height: 37px;
