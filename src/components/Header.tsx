@@ -29,7 +29,7 @@ export default function Header({
   sticky = false,
   change = false,
   color = "#707070",
-  backgroundColor = "#fff",
+  backgroundColor = "rgba(255,255,255,0.5)",
 }) {
   const [text, setText] = React.useState("");
   const [colors, setColors] = React.useState({ color, backgroundColor });
@@ -191,7 +191,7 @@ export default function Header({
             z-index: 5;
             padding-left: ${isDesktop ? 37 : 17}px;
             padding-right: ${isDesktop ? 37 : 17}px;
-            background-color: #fff;
+            background-color: ${backgroundColor};
             color: ${colors.color};
           `}
         >
@@ -232,7 +232,11 @@ export default function Header({
         }
         onPin={
           change
-            ? () => setColors({ color: "#707070", backgroundColor: "#fff" })
+            ? () =>
+                setColors({
+                  color: "#707070",
+                  backgroundColor: "rgba(255,255,255,0.5)",
+                })
             : undefined
         }
         onUnfix={
