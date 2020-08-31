@@ -19,14 +19,22 @@ export default function ViewAllCard({
         className={css`
           position: relative;
           background-color: #afafaf;
+          ::before {
+            content: "";
+            display: inline-block;
+            padding-bottom: 52.91%;
+            vertical-align: top;
+          }
         `}
       >
         <LazyImage
           alt="ok"
           link={item.images[0]}
           img={css`
-            object-fit: contain;
+            position: absolute;
+            object-fit: cover;
             width: 100%;
+            height: 100%;
             mix-blend-mode: ${isCurrent ? "normal" : "screen"};
           `}
         />
