@@ -165,30 +165,28 @@ export default function AboutImages1() {
       >
         {arr.map(([imgsrc, title, desc, link], i) => {
           return (
-            <Grid item key={i} xs={12} sm={4} className={liStyle(isDesktop)}>
-              <LazyImage
-                link={imgsrc}
-                alt={title}
-                img={css`
-                  ${fullCoverImg}
-                  height: ${isDesktop ? 455 : 588}px
-                `}
-                placeholder={css`
-                  ${fullCoverImg}
-                  height: ${isDesktop ? 455 : 588}px
-                `}
-              />
-              <div className={liTextStyle(isDesktop)}>
-                <Link to={link}>
+            <Grid item key={i} xs={12} sm={4}>
+              <Link to={link} className={liStyle(isDesktop)}>
+                <LazyImage
+                  link={imgsrc}
+                  alt={title}
+                  img={css`
+                    ${fullCoverImg}
+                    height: ${isDesktop ? 455 : 588}px
+                  `}
+                  placeholder={css`
+                    ${fullCoverImg}
+                    height: ${isDesktop ? 455 : 588}px
+                  `}
+                />
+                <div className={liTextStyle(isDesktop)}>
                   {isDesktop ? title : title.substr(0, title.length - 2)}
-                </Link>
-                <div className={liDescStyle(isDesktop)}>{desc}</div>
-              </div>
-              {!isDesktop && (
-                <Link to={link} className={linkStyle(isDesktop)}>
-                  {title}
-                </Link>
-              )}
+                  <div className={liDescStyle(isDesktop)}>{desc}</div>
+                </div>
+                {!isDesktop && (
+                  <div className={linkStyle(isDesktop)}>{title}</div>
+                )}
+              </Link>
             </Grid>
           );
         })}
