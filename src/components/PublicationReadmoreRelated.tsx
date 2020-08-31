@@ -5,7 +5,6 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
-import { bottomBtn37 } from "./styles";
 import { useParams } from "react-router-dom";
 import usePublicationIndex from "../utils/usePublicationIndex";
 const mobileContainer = css`
@@ -59,17 +58,6 @@ export default function PublicationReadmoreRelated() {
         <ExhibitionWidget exhibitions={exhibitions} />
         <EventWidget events={events} />
       </div>
-      <button
-        onClick={(e) =>
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          })
-        }
-        className={bottomBtn37}
-      >
-        Top {">"}
-      </button>
     </section>
   );
 }
