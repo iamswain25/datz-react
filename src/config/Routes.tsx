@@ -73,6 +73,9 @@ export default function Routes() {
         <Route exact path="/news/:filter" component={News} />
         <Route exact path="/newsitem/:id" component={NewsItem} />
         <PrivateRoute path="/admin" component={AdminHome} />
+        <Route exact path="*">
+          <Redirect to="/" />
+        </Route>
       </Switch>
     </Router>
   );
