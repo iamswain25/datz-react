@@ -1,9 +1,11 @@
 import { useMediaQuery } from "react-responsive";
 import { useEffect } from "react";
-export default function useDesktop() {
+export default function useDesktop(scrollTop = true) {
   const isDesktop = useMediaQuery({ minWidth: 1000 });
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (scrollTop) {
+      window.scrollTo(0, 0);
+    }
+  }, [scrollTop]);
   return isDesktop;
 }

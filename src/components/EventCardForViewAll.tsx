@@ -5,7 +5,7 @@ import { events } from "../@type/events";
 import { makeUrl } from "../config/url";
 export default function EventCardForViewAll({ event = events[0] }) {
   const { images, date, title_en } = event;
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(false);
   return (
     <section className={css``}>
       <div

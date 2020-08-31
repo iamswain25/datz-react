@@ -20,7 +20,11 @@ const FILTERS: { [key: string]: string } = {
 };
 export default function Events() {
   const { filter = "all" } = useParams();
+  const [limit, setLimit] = React.useState(6);
   const isDesktop = useDesktop();
+  function viewMoreHandler() {
+    setLimit((l) => l + 6);
+  }
   return (
     <>
       <ArtistHeader sticky closeTo="/event" />
@@ -77,8 +81,9 @@ export default function Events() {
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
+            .slice(0, limit)
             .map((c, i) => (
-              <Grid key={i} item xs={6} xl={4}>
+              <Grid key={i} item xs={12} sm={6} xl={4}>
                 <EventCardForViewAll event={c} />
               </Grid>
             ))}
@@ -102,7 +107,7 @@ export default function Events() {
               height: 28px;
             `}
           >
-            view more {">"}
+            <button onClick={viewMoreHandler}>view more {">"}</button>
           </Grid>
         </div>
       </section>
