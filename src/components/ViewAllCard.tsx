@@ -4,6 +4,7 @@ import useDesktop from "./useDesktop";
 import { filterExhibitionCurrent } from "../utils/datefns";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
+import Logo from "./Logo";
 export default function ViewAllCard({
   item,
   type = "exhibition",
@@ -62,6 +63,17 @@ export default function ViewAllCard({
             mix-blend-mode: ${isCurrent ? "normal" : "screen"};
           `}
         />
+        {type === "exhibition" && (
+          <Logo
+            type={item.type}
+            color="#fff"
+            className={css`
+              position: absolute;
+              left: 32px;
+              bottom: 29px;
+            `}
+          />
+        )}
       </div>
       <div
         className={

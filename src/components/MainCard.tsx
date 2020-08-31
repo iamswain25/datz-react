@@ -2,10 +2,9 @@ import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
-import Datzpress from "../assets/svg/Datzpress";
-import { fullContainImg, fullHeightCoverImg } from "./styles";
-import { makeUrl } from "../config/url";
 import { exhibitionCurrentPast } from "../utils/datefns";
+import LazyImage from "./LazyImage";
+import Logo from "./Logo";
 const headerStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -20,7 +19,7 @@ export default function MainCard({
   item: any;
   type: string;
 }) {
-  const { images, date, title, body, id } = item;
+  const { date, title, body, id } = item;
   const isDesktop = useDesktop();
   return (
     <section
@@ -32,15 +31,34 @@ export default function MainCard({
       <div
         className={css`
           position: relative;
-          height: ${isDesktop ? "auto" : "588px"};
+          // height: ${isDesktop ? "auto" : "588px"};
+          ::before {
+            content: "";
+            display: inline-block;
+            padding-bottom: 60.98%;
+            vertical-align: top;
+          }
         `}
       >
-        <img
-          src={makeUrl(images[0])}
-          alt="ok"
-          className={isDesktop ? fullContainImg : fullHeightCoverImg}
+        <LazyImage
+          alt={title}
+          link={item.images[0]}
+          placeholder={css`
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: lightgrey;
+            top: 0;
+          `}
+          img={css`
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          `}
         />
-        <Datzpress
+        <Logo
+          type={item.type}
           color="#fff"
           className={css`
             position: absolute;
