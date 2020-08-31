@@ -22,12 +22,13 @@ const classes = {
   placeholder: css`
     background-color: grey;
     // width: 100%;
-    min-width: 300px;
-    min-height: 300px;
+    min-width: 280px;
+    min-height: 280px;
   `,
   img: css`
     object-fit: contain;
-    width: 100%;
+    width: 280px;
+    height: 280px;
   `,
 };
 export default function PublicationList() {
@@ -114,7 +115,6 @@ export default function PublicationList() {
           <Grid
             container
             spacing={4}
-            justify="center"
             className={css`
               flex: 1;
               font-family: BauerGroteskOTW03;
