@@ -232,7 +232,7 @@ export default function Header({
         }
         onPin={
           change
-            ? () => setColors({ color: "white", backgroundColor: "#afafaf" })
+            ? () => setColors({ color: "#707070", backgroundColor: "#fff" })
             : undefined
         }
         onUnfix={
