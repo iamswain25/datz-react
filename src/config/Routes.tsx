@@ -45,8 +45,7 @@ export default function Routes() {
         <Route exact path="/Exhibitions">
           <Redirect to="/exhibitions/all" />
         </Route>
-        <Route exact path="/events/:filter" component={Events} />
-        <Route exact path="/exhibitions/:filter" component={Exhibitions} />
+
         <Route exact path="/event/:id" component={EventItem} />
         <Route exact path="/exhibition/:id" component={ExhibitionItem} />
         <Route
@@ -69,6 +68,8 @@ export default function Routes() {
               background-color: #afafaf;
             `}
           >
+            <Route exact path="/events/:filter" component={Events} />
+            <Route exact path="/exhibitions/:filter" component={Exhibitions} />
             <Route exact path="/about" component={About} />
             <Route exact path="/about/datzpress" component={AboutDatzpress} />
             <Route exact path="/about/darkroom" component={AboutDarkroom} />

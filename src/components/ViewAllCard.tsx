@@ -1,17 +1,20 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { exhibitions } from "../@type/exhibitions";
-import { useGlobalState, LANG } from "../store/useGlobalState";
 import { filterExhibitionCurrent } from "../utils/datefns";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
-export default function ExhibitionCardForViewAll({ item = exhibitions[0] }) {
+export default function ViewAllCard({
+  item,
+  type = "exhibition",
+}: {
+  item: any;
+  type: string;
+}) {
   const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
   const isCurrent = filterExhibitionCurrent(item);
   return (
-    <Link to={`/exhibition/${item.id}`}>
+    <Link to={`/${type}/${item.id}`}>
       <div
         className={css`
           position: relative;
@@ -55,7 +58,7 @@ export default function ExhibitionCardForViewAll({ item = exhibitions[0] }) {
               color: #fff;
             `}
           >
-            {lang === "ko" ? item.title_ko : item.title_en}
+            {item.title}
           </p>
           <p
             className={css`
@@ -66,7 +69,7 @@ export default function ExhibitionCardForViewAll({ item = exhibitions[0] }) {
               color: #ffffff;
             `}
           >
-            {item.start_date} - {item.end_date}
+            {item.date ?? item.start_date + " - " + item.end_date}
           </p>
         </div>
       </div>

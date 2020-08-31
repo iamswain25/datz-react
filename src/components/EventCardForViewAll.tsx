@@ -1,13 +1,13 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { events } from "../@type/events";
 import { makeUrl } from "../config/url";
-export default function EventCardForViewAll({ event = events[0] }) {
-  const { images, date, title_en } = event;
+import { Link } from "react-router-dom";
+export default function EventCardForViewAll({ event }: { event: any }) {
+  const { images, date, title, id } = event;
   const isDesktop = useDesktop(false);
   return (
-    <section className={css``}>
+    <Link to={`/event/${id}`}>
       <div
         className={css`
           position: relative;
@@ -51,7 +51,7 @@ export default function EventCardForViewAll({ event = events[0] }) {
               color: #fff;
             `}
           >
-            {title_en}
+            {title}
           </p>
           <p
             className={css`
@@ -66,6 +66,6 @@ export default function EventCardForViewAll({ event = events[0] }) {
           </p>
         </div>
       </div>
-    </section>
+    </Link>
   );
 }

@@ -11,7 +11,8 @@ import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
 import { useParams, NavLink } from "react-router-dom";
 import { events } from "../@type/events";
-import EventCardForViewAll from "../components/EventCardForViewAll";
+import ViewAllCard from "../components/ViewAllCard";
+import useEvents from "../utils/useEvents";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   talk: "Artist Talk / Lecture",
@@ -22,6 +23,7 @@ export default function Events() {
   const { filter = "all" } = useParams();
   const [limit, setLimit] = React.useState(6);
   const isDesktop = useDesktop();
+  const list = useEvents(events);
   function viewMoreHandler() {
     setLimit((l) => l + 6);
   }
@@ -77,14 +79,14 @@ export default function Events() {
           ))}
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
-          {events
+          {list
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
             .slice(0, limit)
             .map((c, i) => (
               <Grid key={i} item xs={12} sm={6} xl={4}>
-                <EventCardForViewAll event={c} />
+                <ViewAllCard item={c} type="event" />
               </Grid>
             ))}
         </Grid>
