@@ -6,7 +6,6 @@ import {
   marginH18,
   flexcolumncenter,
   paddingH15,
-  fullContainImg,
   bottomBtn37,
   marginH10,
   fullCoverImg,
@@ -17,6 +16,8 @@ import a1 from "../assets/images/about/a1.png";
 import a2 from "../assets/images/about/a2.png";
 import a3 from "../assets/images/about/a3.png";
 import { Link } from "react-router-dom";
+import LazyImage from "./LazyImage";
+import { Grid } from "@material-ui/core";
 const titleStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 23px;
@@ -35,17 +36,7 @@ const descStyle = css`
   margin-top: 12px;
   white-space: break-spaces;
 `;
-const ulGridStyle = css`
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 27px;
-  margin-top: 37px;
-`;
-const ulMobileStyle = css`
-  ${flexcolumncenter}
-  margin-top: 10px;
-`;
+
 const liStyle = (isDesktop: boolean) => {
   if (isDesktop) {
     return css`
@@ -132,10 +123,6 @@ const linkStyle = (isDesktop: boolean) => css`
   border-bottom: ${isDesktop ? 0 : 1}px solid #fff;
   // margin-bottom: ${isDesktop ? 0 : 30}px;
 `;
-const mobileImg = css`
-  ${fullCoverImg}
-  height: 588px;
-`;
 const arr = [
   [
     a1,
@@ -169,14 +156,27 @@ export default function AboutImages1() {
           grows from pure motives.
         </div>
       </section>
-      <ul className={isDesktop ? ulGridStyle : ulMobileStyle}>
+      <Grid
+        container
+        spacing={3}
+        className={css`
+          padding-top: ${isDesktop ? 37 : 10}px;
+        `}
+      >
         {arr.map(([imgsrc, title, desc, link], i) => {
           return (
-            <li key={i} className={liStyle(isDesktop)}>
-              <img
-                src={imgsrc}
+            <Grid item key={i} xs={12} sm={4} className={liStyle(isDesktop)}>
+              <LazyImage
+                link={imgsrc}
                 alt={title}
-                className={isDesktop ? fullContainImg : mobileImg}
+                img={css`
+                  ${fullCoverImg}
+                  height: ${isDesktop ? 455 : 588}px
+                `}
+                placeholder={css`
+                  ${fullCoverImg}
+                  height: ${isDesktop ? 455 : 588}px
+                `}
               />
               <div className={liTextStyle(isDesktop)}>
                 <Link to={link}>
@@ -189,10 +189,10 @@ export default function AboutImages1() {
                   {title}
                 </Link>
               )}
-            </li>
+            </Grid>
           );
         })}
-      </ul>
+      </Grid>
       <a className={messagesStyle(isDesktop)} href="/message">
         message {">"}
       </a>
