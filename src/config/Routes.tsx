@@ -29,6 +29,7 @@ import Artist from "../pages/Artist";
 import Support from "../pages/Support";
 import News from "../pages/News";
 import NewsItem from "../pages/NewsItem";
+import { css } from "emotion";
 export default function Routes() {
   return (
     <Router>
@@ -61,17 +62,26 @@ export default function Routes() {
         <Route exact path="/artist/:id" component={ArtistPage} />
         <Route exact path="/artist" component={Artist} />
         <Route exact path="/login" component={Signin} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/about/datzpress" component={AboutDatzpress} />
-        <Route exact path="/about/darkroom" component={AboutDarkroom} />
-        <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/support" component={Support} />
-        <Route exact path="/news">
-          <Redirect to="/news/all" />
-        </Route>
-        <Route exact path="/news/:filter" component={News} />
-        <Route exact path="/newsitem/:id" component={NewsItem} />
+        <React.Fragment>
+          <main
+            className={css`
+              min-height: 100vh;
+              background-color: #afafaf;
+            `}
+          >
+            <Route exact path="/about" component={About} />
+            <Route exact path="/about/datzpress" component={AboutDatzpress} />
+            <Route exact path="/about/darkroom" component={AboutDarkroom} />
+            <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/support" component={Support} />
+            <Route exact path="/news">
+              <Redirect to="/news/all" />
+            </Route>
+            <Route exact path="/news/:filter" component={News} />
+            <Route exact path="/newsitem/:id" component={NewsItem} />
+          </main>
+        </React.Fragment>
         <PrivateRoute path="/admin" component={AdminHome} />
         <Route exact path="*">
           <Redirect to="/" />
