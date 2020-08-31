@@ -33,8 +33,12 @@ const classes = {
 };
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
+  const [limit, setLimit] = React.useState(12);
   const [lang] = useGlobalState(LANG);
   const isDesktop = useDesktop();
+  function loadMoreHandler() {
+    setLimit((l) => l + 6);
+  }
   return (
     <>
       <div
@@ -123,6 +127,7 @@ export default function PublicationList() {
           >
             {publications
               .filter((f) => (selected === "all" ? true : f.type === selected))
+              .slice(0, limit)
               .map((item, i) => {
                 return (
                   <Grid item key={i} xs={12} sm={12} md={6} lg={4} xl={3}>
@@ -167,6 +172,7 @@ export default function PublicationList() {
               })}
           </Grid>
           <button
+            onClick={loadMoreHandler}
             className={css`
               height: 38px;
               border-top: solid 1px #707070;
