@@ -67,10 +67,10 @@ export default function AboutDatzpress() {
   }, []);
   const history = useHistory();
   function onLeft() {
-    history.push("/about");
+    history.push("/about/darkroom");
   }
   function onRight() {
-    history.push("/about");
+    history.push("/about/datzpress");
   }
   return (
     <main className={isDesktop ? bgContainer : bgM}>
