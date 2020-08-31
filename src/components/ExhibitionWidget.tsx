@@ -5,7 +5,7 @@ import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useExhibitions from "../utils/useExhibitions";
-import { makeUrl } from "../config/url";
+import LazyImage from "./LazyImage";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -28,23 +28,24 @@ const descClass = (dark = false) => css`
   white-space: nowrap;
 `;
 const listClass = (dark = false) => css`
+  position: relative;
+  color: ${dark ? "#ffffff" : "#707070"};
+  width: 100%;
+  ::before {
+    content: "";
+    display: inline-block;
+    padding-bottom: 50.51%;
+    vertical-align: top;
+`;
+const afterClass = (i: number) => css`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   cursor: pointer;
   flex: 1;
-  color: ${dark ? "#ffffff" : "#707070"};
   padding-left: 4px;
   padding-right: 4px;
-  width: 100%;
-`;
-const afterClass = (i: number) => css`
-  position: relative;
-  width: 100%;
-`;
-const imgClass = css`
-  object-fit: contain;
-  width: 100%;
 `;
 const itemClass = css`
   display: flex;
@@ -92,17 +93,30 @@ export default function ExhibitionWidget({
           </CarouselBtnGroup>
         }
       >
-        {list.map(({ images, title, id }, i) => {
+        {list.map((item, i) => {
+          const { images, title, id } = item;
           return (
             <Link key={i} className={afterClass(i)} to={`/exhibition/${id}`}>
               <div className={listClass(dark)}>
-                <img
-                  src={makeUrl(images[0])}
-                  alt={title}
-                  className={imgClass}
+                <LazyImage
+                  alt={item.title}
+                  link={images[0]}
+                  placeholder={css`
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: lightgrey;
+                    top: 0;
+                  `}
+                  img={css`
+                    position: absolute;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                  `}
                 />
-                <span className={descClass(dark)}>{title}</span>
               </div>
+              <span className={descClass(dark)}>{title}</span>
             </Link>
           );
         })}
