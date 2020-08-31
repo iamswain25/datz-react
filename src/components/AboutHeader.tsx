@@ -6,7 +6,7 @@ import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
-import { flexrowcenter, marginH10 } from "./styles";
+import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import Datz from "../assets/svg/Datz";
 import { otherLinks } from "./Links";
 import { NavLink, Link } from "react-router-dom";
@@ -16,8 +16,7 @@ const headerText = css`
   line-height: 1.19;
   text-align: center;
   color: #ffffff;
-  margin-left: 11px;
-  margin-right: 11px;
+  ${marginH16}
 `;
 
 const linkActiveClass = css`
@@ -47,7 +46,9 @@ export default function AboutHeader({
         className={css`
           ${flexrowcenter}
           flex: 1;
-          justify-content: flex-start;
+          padding-left: ${isDesktop ? 16 : 5}px;
+          padding-right: ${isDesktop ? 16 : 5}px;
+          margin-bottom: 8px;
         `}
       >
         <Datz color={colors.color} />
