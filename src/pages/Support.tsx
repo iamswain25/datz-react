@@ -17,7 +17,7 @@ export default function Support() {
         className={css`
           position: relative;
           display: flex;
-          // flex-direction: column;
+          height: 100vh;
         `}
       >
         <img
