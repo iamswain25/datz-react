@@ -43,7 +43,7 @@ export default () => {
   const devider = useDevider();
   return (
     <>
-      <Header />
+      <Header sticky />
       <FullPageRollingImages images={data1} />
       {devider}
       <FullPageRollingImages2 images={data2} />
