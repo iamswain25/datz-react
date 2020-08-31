@@ -21,7 +21,7 @@ export function exhibitionCurrentPast(start_date?: string, end_date?: string) {
   }
   return past;
 }
-export function filterExhibitionCurrent(e: any) {
+export function filterExhibitionCurrent(e: any): boolean {
   const { start_date, end_date, date } = e;
   if (start_date && end_date) {
     const start = new Date(start_date);
@@ -38,6 +38,13 @@ export function filterExhibitionCurrent(e: any) {
     return isAfter(new Date(), new Date(start_date));
   }
   if (date) {
+    if (date.indexOf("-") > -1) {
+      const [start, end] = date.split("-").map((a: string) => a.trim());
+      return filterExhibitionCurrent({ start_date: start, end_date: end });
+    } else if (date.indexOf("/") > -1) {
+      const dateOnly = date.substr(0, date.indexOf("/")).trim();
+      return isBefore(new Date(), new Date(dateOnly));
+    }
     return isBefore(new Date(), new Date(date));
   }
   return false;

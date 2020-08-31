@@ -3,6 +3,8 @@ import { css } from "emotion";
 import Darkroom from "../assets/svg/Darkroom";
 import EventCoverWidget from "./EventCoverWidget";
 import useDesktop from "./useDesktop";
+import half from "../assets/images/legacy/half.jpg";
+const list = [half, half, half];
 export default function PastEventsLeft() {
   const isDesktop = useDesktop();
   const typeClass = css`
@@ -39,7 +41,7 @@ export default function PastEventsLeft() {
         position: relative;
       `}
     >
-      <EventCoverWidget />
+      <EventCoverWidget images={list} />
       <div
         className={css`
           padding: 37px;

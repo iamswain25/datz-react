@@ -40,18 +40,13 @@ export default function EventRight() {
       >
         Past Event
       </h1>
-      <div
-        className={css`
-          display: ${isDesktop ? "grid" : "flex"};
-          flex-direction: column;
-          grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
-          column-gap: 27px;
-        `}
-      >
+      <Grid container spacing={3}>
         {langEvents.map((a, i) => (
-          <EventCardPastGrey key={i} event={a} />
+          <Grid item key={i} xs={12} md={6} xl={4}>
+            <EventCardPastGrey event={a} />
+          </Grid>
         ))}
-      </div>
+      </Grid>
       <Link
         to="events"
         className={css`

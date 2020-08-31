@@ -18,7 +18,7 @@ export default function EventItem() {
   if (isDesktop) {
     return (
       <>
-        <ArtistHeader sticky isWhite />
+        <ArtistHeader sticky isWhite closeTo="/event" />
         <section className={desktopContainer}>
           <EventItemLeftSticky images={item.images} />
           <EventItemRight item={item} />
@@ -28,7 +28,7 @@ export default function EventItem() {
   }
   return (
     <>
-      <ArtistHeader sticky isWhite />
+      <ArtistHeader sticky isWhite closeTo="/event" />
       <EventItemRight
         item={item}
         children={<EventItemLeftSticky images={item.images} />}

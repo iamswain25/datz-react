@@ -12,6 +12,7 @@ import { useParams, NavLink } from "react-router-dom";
 import NewsCard from "../components/NewsCard";
 import { news } from "../@type/news";
 import AboutHeader from "../components/AboutHeader";
+import useNews from "../utils/useNews";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   notice: "NOTICE",
@@ -20,6 +21,7 @@ const FILTERS: { [key: string]: string } = {
 export default function News() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop();
+  const list = useNews(news);
   return (
     <>
       <AboutHeader sticky />
@@ -88,8 +90,7 @@ export default function News() {
           ))}
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
-          {news
-            .slice(1)
+          {list
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )

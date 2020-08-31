@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import half from "../assets/images/legacy/half.jpg";
 import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
@@ -42,13 +41,12 @@ const responsive = {
     items: 1,
   },
 };
-const list = [[half], [half], [half], [half]];
 export default function EventCoverWidget({
   dark = false,
-  images = list,
+  images,
 }: {
   dark?: boolean;
-  images?: any[];
+  images: any[];
 }) {
   const isDesktop = useDesktop();
   const history = useHistory();

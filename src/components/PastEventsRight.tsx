@@ -1,14 +1,15 @@
 import React from "react";
 import { css } from "emotion";
-import { useMediaQuery } from "react-responsive";
 import UpcomingWidget from "./UpcomingWidget";
 import EventCardMain from "./EventCardMain";
-import { events } from "../@type/events";
+import useDesktop from "./useDesktop";
+import useEventIndex from "../utils/useEventIndex";
 export default function PastEventsRight() {
-  const isDesktop = useMediaQuery({ minWidth: 1000 });
+  const isDesktop = useDesktop();
+  const item = useEventIndex(1);
   return (
     <>
-      <EventCardMain event={events[0]} />
+      <EventCardMain event={item} />
       <div
         className={
           isDesktop

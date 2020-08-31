@@ -1,20 +1,14 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { news, image } from "../@type/news";
-import { useGlobalState, LANG } from "../store/useGlobalState";
 import { filterExhibitionCurrent } from "../utils/datefns";
-import { useHistory } from "react-router-dom";
-export default function NewsCard({ item = news[1] }) {
+import { Link } from "react-router-dom";
+import { makeUrl } from "../config/url";
+export default function NewsCard({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
-  const history = useHistory();
   const isCurrent = filterExhibitionCurrent(item);
-  function clickHandler() {
-    history.push(`/newsitem/${item.id}`);
-  }
   return (
-    <section className={css``} onClick={clickHandler}>
+    <Link to={`/newsitem/${item.id}`}>
       <div
         className={css`
           position: relative;
@@ -22,7 +16,7 @@ export default function NewsCard({ item = news[1] }) {
         `}
       >
         <img
-          src={image}
+          src={makeUrl(item.images[0])}
           alt="ok"
           className={css`
             object-fit: contain;
@@ -58,7 +52,7 @@ export default function NewsCard({ item = news[1] }) {
               color: #fff;
             `}
           >
-            {lang === "ko" ? item.title_ko : item.title_en}
+            {item.title}
           </p>
           <p
             className={css`
@@ -69,10 +63,10 @@ export default function NewsCard({ item = news[1] }) {
               color: #ffffff;
             `}
           >
-            {item.start_date} - {item.end_date}
+            {item.date}
           </p>
         </div>
       </div>
-    </section>
+    </Link>
   );
 }
