@@ -7,6 +7,7 @@ import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
 import { useParams } from "react-router-dom";
 import usePublicationIndex from "../utils/usePublicationIndex";
+import { bottomBtn37 } from "./styles";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -58,6 +59,7 @@ export default function PublicationReadmoreRelated() {
         <ExhibitionWidget exhibitions={exhibitions} />
         <EventWidget events={events} />
       </div>
+      <div className={bottomBtn37} />
     </section>
   );
 }

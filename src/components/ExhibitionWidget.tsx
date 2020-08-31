@@ -63,7 +63,7 @@ const responsive = {
     // partialVisibilityGutter: 10,
   },
 };
-export default function PublicationWidget({
+export default function ExhibitionWidget({
   dark = false,
   exhibitions,
 }: {

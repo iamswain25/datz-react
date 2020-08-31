@@ -31,7 +31,6 @@ const descClass = (dark = false) => css`
 `;
 const listClass = (dark = false) => css`
   color: ${dark ? "#ffffff" : "#707070"};
-
   position: relative;
   ::before {
     content: "";
@@ -44,8 +43,8 @@ const afterClass = (i: number) => css`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
   flex: 1;
   position: relative;
   overflow: hidden;
