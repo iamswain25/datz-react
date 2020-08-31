@@ -56,8 +56,8 @@ export default function ExhibitionRight() {
         `}
       >
         {exhibitions
-          .slice(1)
           .filter(filterExhibitionPast)
+          .slice(0, 6)
           .map((a, i) => (
             <ExhibitionCardPastGrey key={i} item={a} />
           ))}
