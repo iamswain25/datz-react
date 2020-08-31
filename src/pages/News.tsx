@@ -21,6 +21,10 @@ const FILTERS: { [key: string]: string } = {
 export default function News() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop();
+  const [limit, setLimit] = React.useState(6);
+  function viewMoreHandler() {
+    setLimit((l) => l + 6);
+  }
   const list = useNews(news);
   return (
     <>
@@ -94,8 +98,9 @@ export default function News() {
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
+            .slice(0, limit)
             .map((c, i) => (
-              <Grid key={i} item xs={12} xl={4}>
+              <Grid key={i} item xs={12} sm={6} lg={4} xl={3}>
                 <NewsCard item={c} />
               </Grid>
             ))}
@@ -119,7 +124,7 @@ export default function News() {
               height: 28px;
             `}
           >
-            view more {">"}
+            <button onClick={viewMoreHandler}>view more {">"}</button>
           </Grid>
         </div>
       </section>
