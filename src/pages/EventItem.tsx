@@ -6,21 +6,22 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
 import { flexrow, paddingH37 } from "../components/styles";
+import useEventIndex from "../utils/useEventIndex";
 const desktopContainer = css`
   ${flexrow}
   ${paddingH37}
 `;
 export default function EventItem() {
   const { id } = useParams();
-  console.log(id);
+  const item = useEventIndex(id);
   const isDesktop = useDesktop();
   if (isDesktop) {
     return (
       <>
         <ArtistHeader sticky isWhite />
         <section className={desktopContainer}>
-          <EventItemLeftSticky />
-          <EventItemRight />
+          <EventItemLeftSticky images={item.images} />
+          <EventItemRight item={item} />
         </section>
       </>
     );
@@ -28,7 +29,10 @@ export default function EventItem() {
   return (
     <>
       <ArtistHeader sticky isWhite />
-      <EventItemRight children={<EventItemLeftSticky />} />
+      <EventItemRight
+        item={item}
+        children={<EventItemLeftSticky images={item.images} />}
+      />
     </>
   );
 }

@@ -6,6 +6,7 @@ import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useDesktop from "./useDesktop";
+import { makeUrl } from "../config/url";
 const listClass = (dark = false) => css`
   display: flex;
   flex-direction: column;
@@ -13,8 +14,6 @@ const listClass = (dark = false) => css`
   cursor: pointer;
   flex: 1;
   color: ${dark ? "#ffffff" : "#707070"};
-  // padding-left: 4px;
-  // padding-right: 4px;
   width: 100%;
 `;
 const afterClass = (i: number) => css`
@@ -78,12 +77,12 @@ export default function EventCoverWidget({
           <CarouselBtnGroup dark={dark} noBorderBottom={!isDesktop} />
         }
       >
-        {images.map(([img], i) => {
+        {images.map((img, i) => {
           return (
             <div key={i} className={afterClass(i)} onClick={clickHandler}>
               <div className={listClass(dark)}>
                 <img
-                  src={img}
+                  src={makeUrl(img)}
                   alt="event"
                   className={isDesktop ? imgCover : imgContain}
                 />
