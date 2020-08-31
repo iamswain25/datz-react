@@ -5,12 +5,12 @@ import { bottomBtn37, marginH10, marginH27 } from "../components/styles";
 import ExhibitionCardMain from "../components/ExhibitionCardMain";
 import { exhibitions } from "../@type/exhibitions";
 import { Link } from "react-router-dom";
-import ExhibitionCardPastGrey from "./ExhibitionCardPastGrey";
 import {
   filterExhibitionCurrent,
   filterExhibitionPast,
 } from "../utils/datefns";
 import { Grid } from "@material-ui/core";
+import ViewAllCard from "./ViewAllCard";
 
 export default function ExhibitionRight() {
   const isDesktop = useDesktop();
@@ -47,21 +47,16 @@ export default function ExhibitionRight() {
       >
         Past Exhibition
       </h1>
-      <div
-        className={css`
-          display: ${isDesktop ? "grid" : "flex"};
-          flex-direction: column;
-          grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
-          column-gap: 27px;
-        `}
-      >
+      <Grid container spacing={3}>
         {exhibitions
           .filter(filterExhibitionPast)
           .slice(0, 6)
           .map((a, i) => (
-            <ExhibitionCardPastGrey key={i} item={a} />
+            <Grid item key={i} xs={12} md={6} xl={4}>
+              <ViewAllCard item={a} type="exhibition" nonWhite />
+            </Grid>
           ))}
-      </div>
+      </Grid>
       <Link
         to="exhibitions"
         className={css`

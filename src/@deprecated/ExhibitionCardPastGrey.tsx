@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import useDesktop from "./useDesktop";
+import useDesktop from "../components/useDesktop";
 import { exhibitions } from "../@type/exhibitions";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useHistory } from "react-router-dom";

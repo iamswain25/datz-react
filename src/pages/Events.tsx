@@ -58,7 +58,7 @@ export default function Events() {
             color: #cccccc;
             font-size: 16px;
             line-height: 1.19;
-            margin-bottom: 45px;
+            margin-bottom: 12px;
           `}
         >
           {Object.keys(FILTERS).map((f) => (

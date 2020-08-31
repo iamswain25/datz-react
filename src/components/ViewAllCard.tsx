@@ -7,29 +7,53 @@ import LazyImage from "./LazyImage";
 export default function ViewAllCard({
   item,
   type = "exhibition",
+  nonWhite = false,
 }: {
   item: any;
   type: string;
+  nonWhite?: boolean;
 }) {
   const isDesktop = useDesktop();
   const isCurrent = filterExhibitionCurrent(item);
   return (
     <Link to={`/${type}/${item.id}`}>
       <div
-        className={css`
-          position: relative;
-          background-color: #afafaf;
-          ::before {
-            content: "";
-            display: inline-block;
-            padding-bottom: 52.91%;
-            vertical-align: top;
-          }
-        `}
+        className={
+          nonWhite
+            ? css`
+                position: relative;
+                margin-top: 26px;
+                margin-left: ${isDesktop ? 0 : 17}px;
+                margin-right: ${isDesktop ? 0 : 17}px;
+                ::before {
+                  content: "";
+                  display: inline-block;
+                  padding-bottom: 52.91%;
+                  vertical-align: top;
+                }
+              `
+            : css`
+                position: relative;
+                margin-top: 26px;
+                ::before {
+                  content: "";
+                  display: inline-block;
+                  padding-bottom: 52.91%;
+                  vertical-align: top;
+                }
+              `
+        }
       >
         <LazyImage
           alt="ok"
           link={item.images[0]}
+          placeholder={css`
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: lightgrey;
+            top: 0;
+          `}
           img={css`
             position: absolute;
             object-fit: cover;
@@ -40,14 +64,25 @@ export default function ViewAllCard({
         />
       </div>
       <div
-        className={css`
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-          padding-left: ${isDesktop ? 22 : 0}px;
-          padding-right: ${isDesktop ? 22 : 0}px;
-        `}
+        className={
+          nonWhite
+            ? css`
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                padding-left: ${isDesktop ? 17 : 27}px;
+                padding-right: ${isDesktop ? 17 : 27}px;
+              `
+            : css`
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                padding-left: ${isDesktop ? 22 : 0}px;
+                padding-right: ${isDesktop ? 22 : 0}px;
+              `
+        }
       >
         <div
           className={css`
@@ -55,7 +90,7 @@ export default function ViewAllCard({
             flex: 1;
             padding-top: 16px;
             padding-bottom: 23px;
-            border-bottom: solid 1px #fff;
+            border-bottom: solid 1px ${nonWhite ? "#707070" : "#fff"};
           `}
         >
           <p
@@ -63,7 +98,7 @@ export default function ViewAllCard({
               font-size: 16px;
               line-height: 1.19;
               text-align: center;
-              color: #fff;
+              color: ${nonWhite ? "#707070" : "#fff"};
             `}
           >
             {item.title}
@@ -74,7 +109,7 @@ export default function ViewAllCard({
               font-size: 14px;
               line-height: 1.21;
               text-align: center;
-              color: #ffffff;
+              color: ${nonWhite ? "#afafaf" : "#fff"};
             `}
           >
             {item.date ?? item.start_date + " - " + item.end_date}

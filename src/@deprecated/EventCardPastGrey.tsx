@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import useDesktop from "./useDesktop";
+import useDesktop from "../components/useDesktop";
 import { events } from "../@type/events";
 import { makeUrl } from "../config/url";
 import { Link } from "react-router-dom";

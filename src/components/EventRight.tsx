@@ -4,10 +4,10 @@ import useDesktop from "./useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "./styles";
 import EventCardMain from "./EventCardMain";
 import { events } from "../@type/events";
-import EventCardPastGrey from "./EventCardPastGrey";
 import { Link } from "react-router-dom";
 import useEvents from "../utils/useEvents";
 import { Grid } from "@material-ui/core";
+import ViewAllCard from "./ViewAllCard";
 // import { filterExhibitionCurrent } from "../utils/datefns";
 export default function EventRight() {
   const list = useEvents(events);
@@ -42,8 +42,8 @@ export default function EventRight() {
       </h1>
       <Grid container spacing={3}>
         {list.slice(2, 8).map((a, i) => (
-          <Grid item key={i} xs={12} sm={6} xl={4}>
-            <EventCardPastGrey event={a} />
+          <Grid item key={i} xs={12} md={6} xl={4}>
+            <ViewAllCard item={a} type="event" nonWhite />
           </Grid>
         ))}
       </Grid>
