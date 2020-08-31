@@ -8,6 +8,8 @@ import DatzpressOrder from "./DatzpressOrder";
 import { bottomBtn37 } from "./styles";
 import { publications } from "../@type/publications";
 import usePublicationItem from "../utils/usePublicationItem";
+import Linkify from "react-linkify";
+
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -87,30 +89,34 @@ export default function PublicationStickyTop() {
           font-family: ArnoPro-Subhead;
         `}
       >
-        <div
-          className={css`
-            font-size: 20px;
-            line-height: 1.4;
-            letter-spacing: 0.4px;
-            text-align: center;
-            color: #707070;
-            margin-top: 18px;
-          `}
-        >
-          {item?.edition}
-        </div>
-        <div
-          className={css`
-            font-size: 16px;
-            line-height: 1.38;
-            letter-spacing: 0.32px;
-            text-align: center;
-            color: #afafaf;
-            margin-top: 3px;
-          `}
-        >
-          {item?.copies_count} copies
-        </div>
+        {item?.edition && (
+          <div
+            className={css`
+              font-size: 20px;
+              line-height: 1.4;
+              letter-spacing: 0.4px;
+              text-align: center;
+              color: #707070;
+              margin-top: 18px;
+            `}
+          >
+            {item?.edition}
+          </div>
+        )}
+        {item?.copies_count && (
+          <div
+            className={css`
+              font-size: 16px;
+              line-height: 1.38;
+              letter-spacing: 0.32px;
+              text-align: center;
+              color: #afafaf;
+              margin-top: 3px;
+            `}
+          >
+            {item?.copies_count} copies
+          </div>
+        )}
         <div
           className={css`
             font-family: ${lang === "ko" ? "SpoqaHanSans" : "ArnoPro-Subhead"};
@@ -147,11 +153,13 @@ export default function PublicationStickyTop() {
               color: ${lang === "ko" ? "#5d5d5d" : "#4b4b4b"};
             `}
           >
-            <p className={lang === "ko" ? quoteClassKo : quoteClass}>
-              {quotes}
-            </p>
-            <p className={lang === "ko" ? p2ClassKo : p2Class}>{body}</p>
-            <p className={lang === "ko" ? p3ClassKo : p3Class}>{notes}</p>
+            <Linkify>
+              <p className={lang === "ko" ? quoteClassKo : quoteClass}>
+                {quotes}
+              </p>
+              <p className={lang === "ko" ? p2ClassKo : p2Class}>{body}</p>
+              <p className={lang === "ko" ? p3ClassKo : p3Class}>{notes}</p>
+            </Linkify>
           </div>
         </div>
       </section>

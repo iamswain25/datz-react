@@ -1,20 +1,13 @@
 import React from "react";
 import { css } from "emotion";
-import { useHistory } from "react-router-dom";
+import useBtnBack from "./useBtnBack";
 
 export default function BtnBack({
   dark = false,
   full = false,
   borderTop = false,
 }) {
-  const history = useHistory();
-  console.log(document.referrer);
-  function goBack() {
-    if (history.length < 3) {
-      return history.replace("/publication");
-    }
-    history.goBack();
-  }
+  const goBack = useBtnBack();
   return (
     <button
       onClick={goBack}

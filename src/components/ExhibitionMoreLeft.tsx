@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { bottomBtn37 } from "./styles";
@@ -8,6 +8,8 @@ import { exhibitions } from "../@type/exhibitions";
 import DatzmuseumOrder from "./DatzmuseumOrder";
 import CloseShare from "./CloseShare";
 import { exhibitionCurrentPast } from "../utils/datefns";
+import useBtnBack from "./useBtnBack";
+import Linkify from "react-linkify";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -64,10 +66,7 @@ export default function ExhibitionMoreLeft() {
   const isDesktop = useDesktop();
   const { id = 1 } = useParams();
   const item = exhibitions[Number(id)];
-  const history = useHistory();
-  function goBack() {
-    history.goBack();
-  }
+  const goBack = useBtnBack();
   const [lang] = useGlobalState(LANG);
 
   return (
@@ -121,12 +120,14 @@ export default function ExhibitionMoreLeft() {
         >
           {lang === "ko" ? item.title_ko : item.title_en}
         </div>
-        <div className={lang === "ko" ? p2ClassKo : p2Class}>
-          {lang === "ko" ? item.body_ko : item.body_en}
-        </div>
-        <div className={lang === "ko" ? p3ClassKo : p3Class}>
-          {lang === "ko" ? item.notes_ko : item.notes_en}
-        </div>
+        <Linkify>
+          <div className={lang === "ko" ? p2ClassKo : p2Class}>
+            {lang === "ko" ? item.body_ko : item.body_en}
+          </div>
+          <div className={lang === "ko" ? p3ClassKo : p3Class}>
+            {lang === "ko" ? item.notes_ko : item.notes_en}
+          </div>
+        </Linkify>
       </section>
       {isDesktop && (
         <div
