@@ -2,8 +2,9 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import EventCoverWidget from "./EventCoverWidget";
-import ev1Mb from "../assets/images/eventitem/ev1-mb.png";
 import { marginH17 } from "./styles";
+import { useParams } from "react-router-dom";
+import useNewsIndex from "../utils/useNewsIndex";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -21,9 +22,11 @@ const mobileContainer = css`
 `;
 export default function NewsItemLeftSticky() {
   const isDesktop = useDesktop();
+  const { id } = useParams();
+  const item = useNewsIndex(id);
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <EventCoverWidget dark images={[[ev1Mb], [ev1Mb]]} />
+      <EventCoverWidget dark images={item.images} />
     </div>
   );
 }

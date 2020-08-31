@@ -1,7 +1,6 @@
 import React from "react";
 import NewsItemLeftSticky from "../components/NewsItemLeftSticky";
 import NewsItemRight from "../components/NewsItemRight";
-import { useParams } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
@@ -11,8 +10,6 @@ const desktopContainer = css`
   ${paddingH37}
 `;
 export default function NewsItem() {
-  const { id } = useParams();
-  console.log(id);
   const isDesktop = useDesktop();
   if (isDesktop) {
     return (
