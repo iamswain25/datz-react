@@ -3,11 +3,13 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { events } from "../@type/events";
 import { makeUrl } from "../config/url";
+import { Link } from "react-router-dom";
 export default function EventCardPastGrey({ event = events[0] }) {
-  const { images, date, title_en } = event;
+  const { images, date, title_en, id } = event;
   const isDesktop = useDesktop();
   return (
-    <section
+    <Link
+      to={`/event/${id}`}
       className={css`
         margin-top: 26px;
       `}
@@ -75,6 +77,6 @@ export default function EventCardPastGrey({ event = events[0] }) {
           </p>
         </div>
       </div>
-    </section>
+    </Link>
   );
 }
