@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import usePublications from "../utils/usePublications";
-import { makeUrl } from "../config/url";
+import LazyImage from "./LazyImage";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -26,21 +26,29 @@ const descClass = (dark = false) => css`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-left: 8px;
+  padding-right: 8px;
 `;
 const listClass = (dark = false) => css`
+  color: ${dark ? "#ffffff" : "#707070"};
+
+  position: relative;
+  ::before {
+    content: "";
+    display: inline-block;
+    padding-bottom: 50.51%;
+    vertical-align: top;
+  }
+`;
+const afterClass = (i: number) => css`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  cursor: pointer;
+  padding-left: 8px;
+  padding-right: 8px;
   flex: 1;
-  color: ${dark ? "#ffffff" : "#707070"};
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 100%;
-`;
-const afterClass = (i: number) => css`
   position: relative;
-  width: 100%;
+  overflow: hidden;
   ::before {
     content: "";
     height: 86px;
@@ -49,10 +57,6 @@ const afterClass = (i: number) => css`
     top: 50%;
     transform: translateY(-50%) translateX(-1px);
   }
-`;
-const imgClass = css`
-  object-fit: contain;
-  width: 100%;
 `;
 const itemClass = css`
   display: flex;
@@ -101,17 +105,30 @@ export default function PublicationWidget({
             </CarouselBtnGroup>
           }
         >
-          {list.map(({ image_cover, title, id }, i) => {
+          {list.map((item, i) => {
+            const { image_cover, title, id } = item;
             return (
-              <Link key={i} className={afterClass(i)} to={`/publication/${id}`}>
+              <Link key={i} to={`/publication/${id}`} className={afterClass(i)}>
                 <div className={listClass(dark)}>
-                  <img
-                    src={makeUrl(image_cover)}
-                    alt="books"
-                    className={imgClass}
+                  <LazyImage
+                    alt={item.title}
+                    link={image_cover}
+                    placeholder={css`
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      background-color: lightgrey;
+                      top: 0;
+                    `}
+                    img={css`
+                      position: absolute;
+                      object-fit: cover;
+                      width: 100%;
+                      height: 100%;
+                    `}
                   />
-                  <span className={descClass(dark)}>{title}</span>
                 </div>
+                <span className={descClass(dark)}>{title}</span>
               </Link>
             );
           })}
