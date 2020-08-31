@@ -23,7 +23,7 @@ export default function Events() {
   const { filter = "all" } = useParams();
   const [limit, setLimit] = React.useState(6);
   const isDesktop = useDesktop();
-  const list = useEvents(events);
+  const list = useEvents(events.slice(2));
   function viewMoreHandler() {
     setLimit((l) => l + 6);
   }

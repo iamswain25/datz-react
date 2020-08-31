@@ -13,6 +13,7 @@ import { useParams, NavLink } from "react-router-dom";
 import ViewAllCard from "../components/ViewAllCard";
 import { exhibitions } from "../@type/exhibitions";
 import useExhibitions from "../utils/useExhibitions";
+import { filterExhibitionPast } from "../utils/datefns";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   darkroom: "D'Ark Room",
@@ -20,7 +21,7 @@ const FILTERS: { [key: string]: string } = {
 };
 export default function Exhibitions() {
   const { filter = "all" } = useParams();
-  const list = useExhibitions(exhibitions);
+  const list = useExhibitions(exhibitions).filter(filterExhibitionPast);
   const isDesktop = useDesktop();
   return (
     <>
