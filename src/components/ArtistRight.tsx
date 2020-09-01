@@ -8,6 +8,7 @@ import BtnBack from "./BtnBack";
 import { useParams } from "react-router-dom";
 import useArtistIndex from "../utils/useArtistIndex ";
 import { Grid } from "@material-ui/core";
+import Linkify from "./Linkify";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -56,9 +57,7 @@ export default function PublicationItemPhotos() {
                 >
                   Website
                 </span>
-                <a href={homepage} target="_blank" rel="noopener noreferrer">
-                  {homepage}
-                </a>
+                <Linkify children={homepage} />
               </Grid>
             )}
             {/* <Grid container>
