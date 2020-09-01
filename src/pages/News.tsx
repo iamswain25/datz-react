@@ -101,7 +101,7 @@ export default function News() {
             )
             .slice(0, limit)
             .map((c, i) => (
-              <Grid key={i} item xs={12} sm={6} lg={4} xl={3}>
+              <Grid key={i} item xs={12} sm={6} lg={4}>
                 <NewsCard item={c} />
               </Grid>
             ))}

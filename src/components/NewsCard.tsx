@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { filterExhibitionCurrent } from "../utils/datefns";
 import { Link } from "react-router-dom";
-import { makeUrl } from "../config/url";
+import LazyImage from "./LazyImage";
 export default function NewsCard({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const isCurrent = filterExhibitionCurrent(item);
@@ -13,14 +13,31 @@ export default function NewsCard({ item }: { item: any }) {
         className={css`
           position: relative;
           background-color: #afafaf;
+          margin-top: 26px;
+          display: flex;
+          ::before {
+            content: "";
+            display: inline-block;
+            padding-bottom: 52.91%;
+            vertical-align: top;
+          }
         `}
       >
-        <img
-          src={makeUrl(item.images[0])}
-          alt="ok"
-          className={css`
-            object-fit: contain;
+        <LazyImage
+          alt={`image-${item.id}`}
+          link={item.images[0]}
+          placeholder={css`
+            position: absolute;
             width: 100%;
+            height: 100%;
+            background-color: lightgrey;
+            top: 0;
+          `}
+          img={css`
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
             mix-blend-mode: ${isCurrent ? "normal" : "screen"};
           `}
         />
