@@ -8,9 +8,12 @@ import useArtistIndex from "../utils/useArtistIndex ";
 const defaultContainer = css`
   display: flex;
   flex-direction: column;
+  position: relative;
   font-family: BauerGroteskOTW03;
   text-align: center;
   color: #ffffff;
+  height: calc(100vh - 79px);
+  overflow: hidden;
 `;
 export default function ArtistMainImage() {
   const isDesktop = useDesktop();
@@ -64,7 +67,17 @@ export default function ArtistMainImage() {
         >
           {genre}
         </div>
-        <ArtistImageRolling images={images} />
+        <div
+          className={css`
+            flex: 1;
+            display: flex;
+            position: relative;
+            padding-bottom: 70px;
+            overflow: hidden;
+          `}
+        >
+          <ArtistImageRolling images={images} />
+        </div>
       </section>
     </>
   );
