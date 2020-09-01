@@ -1,11 +1,11 @@
-import { isWithinInterval, isBefore, isAfter } from "date-fns";
+import { isWithinInterval, isBefore, isAfter, parse } from "date-fns";
 const current = "Current Exhibition";
 const past = "Past Exhibition";
 const future = "Future Exhibition";
 export function exhibitionCurrentPast(start_date?: string, end_date?: string) {
   if (start_date && end_date) {
-    const start = new Date(start_date);
-    const end = new Date(end_date);
+    const start = parse(start_date, "yyyy.MM.dd", new Date());
+    const end = parse(end_date, "yyyy.MM.dd", new Date());
     return isWithinInterval(new Date(), {
       start,
       end,
@@ -14,28 +14,32 @@ export function exhibitionCurrentPast(start_date?: string, end_date?: string) {
       : past;
   }
   if (!start_date && end_date) {
-    return isBefore(new Date(), new Date(end_date)) ? current : past;
+    return isBefore(new Date(), parse(end_date, "yyyy.MM.dd", new Date()))
+      ? current
+      : past;
   }
   if (start_date && !end_date) {
-    return isAfter(new Date(), new Date(start_date)) ? current : future;
+    return isAfter(new Date(), parse(start_date, "yyyy.MM.dd", new Date()))
+      ? current
+      : future;
   }
   return past;
 }
 export function filterExhibitionCurrent(e: any): boolean {
   const { start_date, end_date, date } = e;
   if (start_date && end_date) {
-    const start = new Date(start_date);
-    const end = new Date(end_date);
+    const start = parse(start_date, "yyyy.MM.dd", new Date());
+    const end = parse(end_date, "yyyy.MM.dd", new Date());
     return isWithinInterval(new Date(), {
       start,
       end,
     });
   }
   if (!start_date && end_date) {
-    return isBefore(new Date(), new Date(end_date));
+    return isBefore(new Date(), parse(end_date, "yyyy.MM.dd", new Date()));
   }
   if (start_date && !end_date) {
-    return isAfter(new Date(), new Date(start_date));
+    return isAfter(new Date(), parse(start_date, "yyyy.MM.dd", new Date()));
   }
   if (date) {
     if (date.indexOf("-") > -1) {
@@ -43,27 +47,27 @@ export function filterExhibitionCurrent(e: any): boolean {
       return filterExhibitionCurrent({ start_date: start, end_date: end });
     } else if (date.indexOf("/") > -1) {
       const dateOnly = date.substr(0, date.indexOf("/")).trim();
-      return isBefore(new Date(), new Date(dateOnly));
+      return isBefore(new Date(), parse(dateOnly, "yyyy.MM.dd", new Date()));
     }
-    return isBefore(new Date(), new Date(date));
+    return isBefore(new Date(), parse(date, "yyyy.MM.dd", new Date()));
   }
   return false;
 }
 export function filterExhibitionPast(e: any) {
   const { start_date, end_date } = e;
   if (start_date && end_date) {
-    const start = new Date(start_date);
-    const end = new Date(end_date);
+    const start = parse(start_date, "yyyy.MM.dd", new Date());
+    const end = parse(end_date, "yyyy.MM.dd", new Date());
     return !isWithinInterval(new Date(), {
       start,
       end,
     });
   }
   if (!start_date && end_date) {
-    return !isBefore(new Date(), new Date(end_date));
+    return !isBefore(new Date(), parse(end_date, "yyyy.MM.dd", new Date()));
   }
   if (start_date && !end_date) {
-    return !isAfter(new Date(), new Date(start_date));
+    return !isAfter(new Date(), parse(start_date, "yyyy.MM.dd", new Date()));
   }
   return false;
 }
