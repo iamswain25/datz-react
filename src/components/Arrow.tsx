@@ -7,7 +7,7 @@ const headerStyle = css`
   font-size: 16px;
   line-height: 1.19;
   text-align: right;
-  color: #707070;
+  color: inherit;
 `;
 export default function Arrow(
   props: React.PropsWithChildren<{

@@ -49,6 +49,7 @@ export default function Routes() {
           path="/exhibition/:id/images/:index"
           render={() => <FullImageGallery type="exhibition" />}
         />
+
         <Route exact path="/event" component={Event} />
         <Route exact path="/events">
           <Redirect to="/events/all" />
@@ -82,6 +83,11 @@ export default function Routes() {
               font-family: BauerGroteskOTW03;
             `}
           >
+            <Route
+              exact
+              path="/artist/:id/images/:index"
+              render={() => <FullImageGallery type="artist" />}
+            />
             <Route exact path="/events/:filter" component={Events} />
             <Route exact path="/exhibitions/:filter" component={Exhibitions} />
             <Route exact path="/about" component={About} />

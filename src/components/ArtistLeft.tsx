@@ -4,6 +4,7 @@ import useDesktop from "./useDesktop";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useParams } from "react-router-dom";
 import useArtistIndex from "../utils/useArtistIndex ";
+import Linkify from "./Linkify";
 const stickyContainer = css`
   border-top: 1px solid #ffffff;
   padding-top: 43px;
@@ -30,7 +31,7 @@ export default function ArtistLeft() {
       <section
         className={css`
           flex: 1;
-          overflow-x: scroll;
+          // overflow-x: scroll;
           padding-left: 10px;
           padding-right: 10px;
         `}
@@ -73,7 +74,7 @@ export default function ArtistLeft() {
             color: #ffffff;
           `}
         >
-          {!!homepage && <div>{homepage}</div>}
+          {!!homepage && <Linkify>{homepage}</Linkify>}
           <hr
             className={css`
               margin-top: 24px;

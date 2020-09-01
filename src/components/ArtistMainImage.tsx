@@ -5,16 +5,6 @@ import ArtistImageRolling from "./ArtistImageRolling";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useParams } from "react-router-dom";
 import useArtistIndex from "../utils/useArtistIndex ";
-const defaultContainer = css`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  font-family: BauerGroteskOTW03;
-  text-align: center;
-  color: #ffffff;
-  height: calc(100vh - 79px);
-  overflow: hidden;
-`;
 export default function ArtistMainImage() {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
@@ -45,7 +35,18 @@ export default function ArtistMainImage() {
   `;
   return (
     <>
-      <section className={defaultContainer}>
+      <section
+        className={css`
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          font-family: BauerGroteskOTW03;
+          text-align: center;
+          color: #ffffff;
+          height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          overflow: hidden;
+        `}
+      >
         <div
           className={css`
             font-size: 20px;

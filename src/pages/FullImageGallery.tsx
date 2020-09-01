@@ -6,17 +6,24 @@ import { useParams, useHistory } from "react-router-dom";
 import usePublicationIndex from "../utils/usePublicationIndex";
 import { makeUrl } from "../config/url";
 import useExhibitionIndex from "../utils/useExhibitionIndex";
+import useArtistIndex from "../utils/useArtistIndex ";
 export default function FullImageGallery({ type = "publication" }) {
   const { index, id } = useParams();
   const pItem = usePublicationIndex(id);
   const eItem = useExhibitionIndex(id);
+  const { replace } = useHistory();
+  const aItem = useArtistIndex(id);
   let item = null;
   if (type === "publication") {
     item = pItem;
-  } else {
+  } else if (type === "artist") {
+    item = aItem;
+  } else if (type === "exhibition") {
     item = eItem;
+  } else {
+    item = pItem;
   }
-  const { push, replace } = useHistory();
+
   function onSlideHandler(currentIndex: number) {
     replace(`/${type}/${id}/images/${currentIndex}`);
   }
@@ -30,7 +37,6 @@ export default function FullImageGallery({ type = "publication" }) {
         top: 0;
         left: 0;
         padding: 38px;
-        background-color: white;
         box-sizing: border-box;
       `}
     >
@@ -48,7 +54,7 @@ export default function FullImageGallery({ type = "publication" }) {
         autoPlay={false}
         onSlide={onSlideHandler}
         additionalClass="contain-image"
-        onClick={() => push(`/${type}/${id}`)}
+        onClick={() => replace(`/${type}/${id}`)}
         renderLeftNav={function (onClick, disabled) {
           return (
             <Arrow
