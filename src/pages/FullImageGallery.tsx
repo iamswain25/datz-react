@@ -5,12 +5,20 @@ import Arrow from "../components/Arrow";
 import { useParams, useHistory } from "react-router-dom";
 import usePublicationIndex from "../utils/usePublicationIndex";
 import { makeUrl } from "../config/url";
-export default function PublicationImageGallery() {
+import useExhibitionIndex from "../utils/useExhibitionIndex";
+export default function FullImageGallery({ type = "publication" }) {
   const { index, id } = useParams();
-  const item = usePublicationIndex(id);
+  const pItem = usePublicationIndex(id);
+  const eItem = useExhibitionIndex(id);
+  let item = null;
+  if (type === "publication") {
+    item = pItem;
+  } else {
+    item = eItem;
+  }
   const { push, replace } = useHistory();
   function onSlideHandler(currentIndex: number) {
-    replace(`/publication/${id}/images/${currentIndex}`);
+    replace(`/${type}/${id}/images/${currentIndex}`);
   }
   return (
     <section
@@ -40,7 +48,7 @@ export default function PublicationImageGallery() {
         autoPlay={false}
         onSlide={onSlideHandler}
         additionalClass="contain-image"
-        onClick={() => push(`/publication/${id}`)}
+        onClick={() => push(`/${type}/${id}`)}
         renderLeftNav={function (onClick, disabled) {
           return (
             <Arrow

@@ -30,7 +30,7 @@ import Support from "../pages/Support";
 import News from "../pages/News";
 import NewsItem from "../pages/NewsItem";
 import { css } from "emotion";
-import PublicationImageGallery from "../pages/PublicationImageGallery";
+import FullImageGallery from "../pages/FullImageGallery";
 export default function Routes() {
   return (
     <Router>
@@ -42,7 +42,12 @@ export default function Routes() {
         <Route
           exact
           path="/publication/:id/images/:index"
-          component={PublicationImageGallery}
+          render={() => <FullImageGallery type="publication" />}
+        />
+        <Route
+          exact
+          path="/exhibition/:id/images/:index"
+          render={() => <FullImageGallery type="exhibition" />}
         />
         <Route exact path="/event" component={Event} />
         <Route exact path="/events">
