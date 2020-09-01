@@ -30,6 +30,7 @@ import Support from "../pages/Support";
 import News from "../pages/News";
 import NewsItem from "../pages/NewsItem";
 import { css } from "emotion";
+import PublicationImageGallery from "../pages/PublicationImageGallery";
 export default function Routes() {
   return (
     <Router>
@@ -38,6 +39,11 @@ export default function Routes() {
         <Route exact path="/publication" component={Publication} />
         <Route exact path="/exhibition" component={Exhibition} />
         <Route exact path="/publication/:id" component={PublicationItem} />
+        <Route
+          exact
+          path="/publication/:id/images/:index"
+          component={PublicationImageGallery}
+        />
         <Route exact path="/event" component={Event} />
         <Route exact path="/events">
           <Redirect to="/events/all" />

@@ -198,6 +198,12 @@ select[multiple] {
   max-height: none;
   object-fit: cover;
 }
+.image-gallery.contain-image
+  .image-gallery-content
+  .image-gallery-slide
+  .image-gallery-image {
+  object-fit: contain;
+}
 @font-face {
   font-family: BauerGroteskOTW03-Book;
   src: local(BauerGroteskOTW03-Book),

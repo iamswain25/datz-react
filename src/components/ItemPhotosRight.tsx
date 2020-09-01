@@ -1,11 +1,10 @@
 import React from "react";
 import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
-import ImageGallery from "react-image-gallery";
-import Arrow from "./Arrow";
 import { bottomBtn37 } from "./styles";
 import { makeUrl } from "../config/url";
 import { LazyImage } from "react-lazy-images";
+import { Link, useParams } from "react-router-dom";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -40,9 +39,7 @@ export default function ItemPhotosRight({
   images: string[];
   type?: string;
 }) {
-  const [isVisible, setVisible] = React.useState(false);
-  const full = React.useRef<ImageGallery>(null);
-
+  const { id } = useParams();
   return (
     <>
       <section
@@ -51,50 +48,46 @@ export default function ItemPhotosRight({
         `}
       >
         {images.map((src, i) => {
-          function imageClickHandler() {
-            full.current?.slideToIndex(i);
-            setVisible(true);
-          }
           return (
-            <div
-              key={i}
-              className={css`
-                position: relative;
-                margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
-                ::before {
-                  content: "";
-                  display: inline-block;
-                  padding-bottom: 60.98%;
-                  vertical-align: top;
-                }
-              `}
-            >
-              <LazyImage
-                alt={`image-${i}`}
-                placeholder={({ ref }) => (
-                  <div ref={ref} className={classes.placeholder} />
-                )}
-                src={makeUrl(src)}
-                actual={({ imageProps }) => (
-                  <img
-                    {...imageProps}
-                    alt={imageProps.alt}
-                    className={classes.img}
-                    onClick={imageClickHandler}
+            <Link to={`/${type}/${id}/images/${i}`} key={i}>
+              <div
+                className={css`
+                  position: relative;
+                  margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
+                  ::before {
+                    content: "";
+                    display: inline-block;
+                    padding-bottom: 60.98%;
+                    vertical-align: top;
+                  }
+                `}
+              >
+                <LazyImage
+                  alt={`image-${i}`}
+                  placeholder={({ ref }) => (
+                    <div ref={ref} className={classes.placeholder} />
+                  )}
+                  src={makeUrl(src)}
+                  actual={({ imageProps }) => (
+                    <img
+                      {...imageProps}
+                      alt={imageProps.alt}
+                      className={classes.img}
+                    />
+                  )}
+                />
+                {i === 0 && (
+                  <Datzpress
+                    color="#808080"
+                    className={css`
+                      position: absolute;
+                      left: 30px;
+                      bottom: 30px;
+                    `}
                   />
                 )}
-              />
-              {i === 0 && (
-                <Datzpress
-                  color="#808080"
-                  className={css`
-                    position: absolute;
-                    left: 30px;
-                    bottom: 30px;
-                  `}
-                />
-              )}
-            </div>
+              </div>
+            </Link>
           );
         })}
         <button
@@ -108,65 +101,6 @@ export default function ItemPhotosRight({
         >
           Top {">"}
         </button>
-        <div
-          className={
-            isVisible
-              ? css`
-                  position: fixed;
-                  width: 100%;
-                  height: 100%;
-                  z-index: 2;
-                  top: 0;
-                  left: 0;
-                  padding: 38px;
-                  background-color: white;
-                `
-              : css`
-                  display: none;
-                `
-          }
-        >
-          <ImageGallery
-            ref={full}
-            infinite={false}
-            items={images.map((i) => ({ original: makeUrl(i) }))}
-            showNav={true}
-            showThumbnails={false}
-            showFullscreenButton={false}
-            showPlayButton={false}
-            showBullets={false}
-            autoPlay={false}
-            onClick={() => setVisible(false)}
-            renderLeftNav={function (onClick, disabled) {
-              return (
-                <Arrow
-                  children={"←"}
-                  onClick={onClick}
-                  className={css`
-                    left: -34px;
-                    padding: 50px 10px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                  `}
-                />
-              );
-            }}
-            renderRightNav={function (onClick, disabled) {
-              return (
-                <Arrow
-                  children={"→"}
-                  onClick={onClick}
-                  className={css`
-                    right: -34px;
-                    padding: 50px 10px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                  `}
-                />
-              );
-            }}
-          />
-        </div>
       </section>
     </>
   );
