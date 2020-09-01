@@ -53,6 +53,7 @@ export default function ItemPhotosRight({
               <div
                 className={css`
                   position: relative;
+                  background-color: lightgrey;
                   margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
                   ::before {
                     content: "";
