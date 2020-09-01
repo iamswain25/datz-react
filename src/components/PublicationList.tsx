@@ -115,48 +115,50 @@ export default function PublicationList() {
             its books it shares their art. As a rule, all work presented at Datz
             Museum are recorded and preserved in book form.
           </p>
-          <Grid
-            container
-            spacing={4}
+          <section
             className={css`
               flex: 1;
               font-family: BauerGroteskOTW03;
-              padding-bottom: 40px;
+              margin: 40px 0;
             `}
           >
-            {list
-              .filter((f) => (selected === "all" ? true : f.type === selected))
-              .slice(0, limit)
-              .map((item, i) => {
-                return (
-                  <Grid item key={i} xs={12} sm={12} md={6} lg={4} xl={3}>
-                    <Link
-                      to={`publication/${item.id}`}
-                      className={classes.link}
-                    >
-                      <LazyImage alt={item.title} link={item.image_cover} />
-                      <span
-                        className={css`
-                          font-size: 19px;
-                          line-height: 1.21;
-                        `}
+            <Grid container spacing={4}>
+              {list
+                .filter((f) =>
+                  selected === "all" ? true : f.type === selected
+                )
+                .slice(0, limit)
+                .map((item, i) => {
+                  return (
+                    <Grid item key={i} xs={12} sm={12} md={6} lg={4} xl={3}>
+                      <Link
+                        to={`publication/${item.id}`}
+                        className={classes.link}
                       >
-                        {item.title}
-                      </span>
-                      <span
-                        className={css`
-                          margin-top: 4px;
-                          font-size: 17px;
-                          line-height: 1.35;
-                        `}
-                      >
-                        {item.artist}
-                      </span>
-                    </Link>
-                  </Grid>
-                );
-              })}
-          </Grid>
+                        <LazyImage alt={item.title} link={item.image_cover} />
+                        <span
+                          className={css`
+                            font-size: 19px;
+                            line-height: 1.21;
+                          `}
+                        >
+                          {item.title}
+                        </span>
+                        <span
+                          className={css`
+                            margin-top: 4px;
+                            font-size: 17px;
+                            line-height: 1.35;
+                          `}
+                        >
+                          {item.artist}
+                        </span>
+                      </Link>
+                    </Grid>
+                  );
+                })}
+            </Grid>
+          </section>
           <button
             onClick={loadMoreHandler}
             className={css`
