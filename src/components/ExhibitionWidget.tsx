@@ -46,6 +46,7 @@ const afterClass = (i: number) => css`
   flex: 1;
   padding-left: 4px;
   padding-right: 4px;
+  overflow: hidden;
 `;
 const itemClass = css`
   display: flex;
