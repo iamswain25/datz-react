@@ -37,32 +37,36 @@ export default function PublicationItemLeft({ item }: { item: any }) {
           flex: 1;
         `}
       >
-        <div
-          className={css`
-            font-family: ArnoPro-Subhead;
-            font-size: 20px;
-            line-height: 1.4;
-            letter-spacing: 0.4px;
-            text-align: center;
-            color: #707070;
-            margin-top: 18px;
-          `}
-        >
-          {item.edition}
-        </div>
-        <div
-          className={css`
-            font-family: ArnoPro-Subhead;
-            font-size: 16px;
-            line-height: 1.38;
-            letter-spacing: 0.32px;
-            text-align: center;
-            color: #afafaf;
-            margin-top: 3px;
-          `}
-        >
-          {item.copies_count}
-        </div>
+        {item.edition && (
+          <div
+            className={css`
+              font-family: ArnoPro-Subhead;
+              font-size: 20px;
+              line-height: 1.4;
+              letter-spacing: 0.4px;
+              text-align: center;
+              color: #707070;
+              margin-top: 18px;
+            `}
+          >
+            {item.edition}
+          </div>
+        )}
+        {item.copies_count && (
+          <div
+            className={css`
+              font-family: ArnoPro-Subhead;
+              font-size: 16px;
+              line-height: 1.38;
+              letter-spacing: 0.32px;
+              text-align: center;
+              color: #afafaf;
+              margin-top: 3px;
+            `}
+          >
+            {item.copies_count} copies
+          </div>
+        )}
         <div
           className={css`
             font-family: ArnoPro-Subhead;
