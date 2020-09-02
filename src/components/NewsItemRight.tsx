@@ -99,7 +99,6 @@ export default function NewsItemRight({
         >
           <div
             className={css`
-              height: 59px;
               font-size: 25px;
               color: ${color};
               text-align: center;
@@ -109,6 +108,7 @@ export default function NewsItemRight({
           </div>
           <div
             className={css`
+              margin-top: 20px;
               font-size: 18px;
               line-height: 1.5;
               text-align: left;

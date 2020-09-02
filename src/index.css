@@ -2,9 +2,9 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: BauerGroteskOTW03, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -326,11 +326,18 @@ hr {
   border-bottom: 0;
 }
 
-.home .react-multi-carousel-track div,
-.home .react-multi-carousel-track ul,
-.home .react-multi-carousel-track img,
-.home .react-multi-carousel-track li {
+.height .react-multi-carousel-track div,
+.height .react-multi-carousel-track ul,
+.height .react-multi-carousel-track img,
+.height .react-multi-carousel-track li {
   height: 100%;
+}
+
+.width .react-multi-carousel-track div,
+.width .react-multi-carousel-track ul,
+.width .react-multi-carousel-track img,
+.width .react-multi-carousel-track li {
+  width: 100%;
 }
 /* 
 ::-webkit-scrollbar {

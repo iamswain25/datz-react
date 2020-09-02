@@ -4,36 +4,36 @@ import NewsItemRight from "../components/NewsItemRight";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
-import { flexrow, paddingH37 } from "../components/styles";
+import { paddingH37 } from "../components/styles";
+import { Grid } from "@material-ui/core";
 const desktopContainer = css`
-  ${flexrow}
   ${paddingH37}
+  position: relative;
+  overflow: hidden;
 `;
 export default function NewsItem() {
   const isDesktop = useDesktop();
   if (isDesktop) {
     return (
-      <div
-        className={css`
-          background-color: #afafaf;
-        `}
-      >
+      <>
         <ArtistHeader sticky />
         <section className={desktopContainer}>
-          <NewsItemLeftSticky />
-          <NewsItemRight color="white" />
+          <Grid container spacing={3}>
+            <Grid item sm={6}>
+              <NewsItemLeftSticky />
+            </Grid>
+            <Grid item sm={6} container>
+              <NewsItemRight color="white" />
+            </Grid>
+          </Grid>
         </section>
-      </div>
+      </>
     );
   }
   return (
-    <div
-      className={css`
-        background-color: #afafaf;
-      `}
-    >
+    <>
       <ArtistHeader sticky />
       <NewsItemRight color="white" children={<NewsItemLeftSticky />} />
-    </div>
+    </>
   );
 }

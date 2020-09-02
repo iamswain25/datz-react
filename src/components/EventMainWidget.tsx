@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { Link, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -17,8 +17,7 @@ const listClass = (dark = false) => css`
 `;
 const afterClass = (i: number) => css`
   position: relative;
-  width: inherit;
-  height: inherit;
+  width: 100%;
 `;
 const itemClass = css`
   display: flex;
@@ -39,24 +38,24 @@ export default function EventCoverWidget({
   dark = false,
   images,
   objectFit = "cover",
-  type = "event",
-  fit = "height",
 }: {
   dark?: boolean;
   images: any[];
   objectFit?: string;
-  fit?: string;
-  type?: string;
 }) {
   const isDesktop = useDesktop();
-  const { id } = useParams();
+  const history = useHistory();
+  function clickHandler() {
+    history.push("/publication/nothingwill");
+  }
   return (
     <div
-      className={`${fit} ${css`
-        ${fit}: 100%;
+      className={`home ${css`
+        height: 100%;
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        padding-bottom: 37px;
       `}`}
     >
       <Carousel
@@ -71,7 +70,7 @@ export default function EventCoverWidget({
       >
         {images.map((img, i) => {
           return (
-            <Link key={i} className={afterClass(i)} to={`/${type}/${id}`}>
+            <div key={i} className={afterClass(i)} onClick={clickHandler}>
               <div className={listClass(dark)}>
                 <img
                   src={makeUrl(img)}
@@ -81,7 +80,7 @@ export default function EventCoverWidget({
                   `}
                 />
               </div>
-            </Link>
+            </div>
           );
         })}
       </Carousel>
