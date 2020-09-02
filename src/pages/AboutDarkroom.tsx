@@ -54,10 +54,10 @@ export default function AboutDatzpress() {
   }, []);
   const history = useHistory();
   function onLeft() {
-    history.push("/about/datzpress");
+    history.replace("/about/datzpress");
   }
   function onRight() {
-    history.push("/about/datzmuseum");
+    history.replace("/about/datzmuseum");
   }
   return (
     <>
@@ -157,7 +157,7 @@ export default function AboutDatzpress() {
                 >
                   CONTACT
                 </h2>
-                <p
+                <div
                   className={css`
                     ${pStyle}
                     margin-top: 18px;
@@ -178,7 +178,7 @@ export default function AboutDatzpress() {
                       </a>
                     </Grid>
                   </Grid>
-                </p>
+                </div>
                 <BtnBack dark full borderTop />
               </div>
             </div>
