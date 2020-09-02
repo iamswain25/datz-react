@@ -79,7 +79,7 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    background-color: lightgrey;
+                    background-color: #ececec;
                     top: 0;
                   `}
                   img={css`

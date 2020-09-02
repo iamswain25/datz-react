@@ -182,7 +182,7 @@ function classes(en: boolean): { [key: string]: any } {
         ${getSizeBauer(19, 1.42)}
         margin-top: 13px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
-        height: 196px;
+        max-height: 196px;
         line-height: 28px;
         white-space: break-spaces;
       `,
@@ -216,7 +216,7 @@ function classes(en: boolean): { [key: string]: any } {
         line-height: 28px;
         margin-top: 13px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
-        height: 196px;
+        max-height: 196px;
         white-space: break-spaces;
       `,
     },

@@ -17,11 +17,11 @@ const classes = {
     text-align: center;
   `,
   placeholder: css`
-    background-color: lightgrey;
+    background-color: #ececec;
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: lightgrey;
+    background-color: #ececec;
     top: 0;
   `,
   img: css`
@@ -55,7 +55,7 @@ export default function ItemPhotosRight({
               <div
                 className={css`
                   position: relative;
-                  background-color: lightgrey;
+                  background-color: #ececec;
                   margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
                   ::before {
                     content: "";

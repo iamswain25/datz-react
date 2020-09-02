@@ -19,7 +19,7 @@ const classes = {
     text-align: center;
   `,
   placeholder: css`
-    background-color: grey;
+    background-color: #ececec;
     // width: 100%;
     min-width: 280px;
     min-height: 280px;

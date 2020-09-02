@@ -24,7 +24,7 @@ export default function ViewAllCard({
             ? css`
                 position: relative;
                 margin-top: 26px;
-                background-color: grey;
+                background-color: #ececec;
                 margin-left: ${isDesktop ? 0 : 17}px;
                 margin-right: ${isDesktop ? 0 : 17}px;
                 ::before {
@@ -37,7 +37,7 @@ export default function ViewAllCard({
             : css`
                 position: relative;
                 margin-top: 26px;
-                background-color: grey;
+                background-color: #ececec;
                 ::before {
                   content: "";
                   display: inline-block;
@@ -54,7 +54,7 @@ export default function ViewAllCard({
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: lightgrey;
+            background-color: #ececec;
             top: 0;
           `}
           img={css`
