@@ -5,6 +5,7 @@ import useDesktop from "./useDesktop";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import LazyImage from "./LazyImage";
 import Logo from "./Logo";
+import { bottomBtn37, marginH17 } from "./styles";
 const headerStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -22,134 +23,126 @@ export default function MainCard({
   const { date, title, body, id } = item;
   const isDesktop = useDesktop();
   return (
-    <section
-      className={css`
-        position: relative;
-        margin-bottom: 27px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      `}
-    >
-      <div
+    <Link to={`/${type}/${id}`}>
+      <section
         className={css`
           position: relative;
-          height: ${isDesktop ? "auto" : "588px"};
-          ::before {
-            content: "";
-            display: inline-block;
-            padding-bottom: 60.98%;
-            vertical-align: top;
-          }
-        `}
-      >
-        <LazyImage
-          alt={title}
-          link={item.images[0]}
-          placeholder={css`
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: lightgrey;
-            top: 0;
-          `}
-          img={css`
-            position: absolute;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-          `}
-        />
-        <Logo
-          type={item.type}
-          color="#fff"
-          className={css`
-            position: absolute;
-            left: 32px;
-            bottom: 29px;
-          `}
-        />
-      </div>
-      <div
-        className={css`
+          margin-bottom: 27px;
           flex: 1;
           display: flex;
           flex-direction: column;
-          overflow: hidden;
-          padding-left: ${isDesktop ? 17 : 27}px;
-          padding-right: ${isDesktop ? 17 : 27}px;
+          font-family: BauerGroteskOTW03;
         `}
       >
         <div
           className={css`
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            position: relative;
+            height: ${isDesktop ? "auto" : "588px"};
+            ::before {
+              content: "";
+              display: inline-block;
+              padding-bottom: 60.98%;
+              vertical-align: top;
+            }
           `}
         >
-          <div className={headerStyle}>
-            {date ?? item.start_date + " - " + item.end_date}
-          </div>
-          <div className={headerStyle}>
-            {type === "event"
-              ? item.type
-              : exhibitionCurrentPast(item.start_date, item.end_date)}
-          </div>
+          <LazyImage
+            alt={title}
+            link={item.images[0]}
+            placeholder={css`
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-color: lightgrey;
+              top: 0;
+            `}
+            img={css`
+              position: absolute;
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+            `}
+          />
+          <Logo
+            type={item.type}
+            color="#fff"
+            className={css`
+              position: absolute;
+              left: 32px;
+              bottom: 29px;
+            `}
+          />
         </div>
         <div
           className={css`
-            overflow: hidden;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding-left: ${isDesktop ? 17 : 27}px;
+            padding-right: ${isDesktop ? 17 : 27}px;
           `}
         >
-          <p
+          <div
             className={css`
-              font-family: BauerGroteskOTW03-Book;
-              font-size: 20px;
-              line-height: 1.35;
-              text-align: center;
-              color: #4b4b4b;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding-top: 10px;
+              padding-bottom: 10px;
             `}
           >
-            {title}
-          </p>
-          <p
+            <div className={headerStyle}>
+              {date ?? item.start_date + " - " + item.end_date}
+            </div>
+            <div className={headerStyle}>
+              {type === "event"
+                ? item.type
+                : exhibitionCurrentPast(item.start_date, item.end_date)}
+            </div>
+          </div>
+          <div
             className={css`
-              font-family: BauerGroteskOTW03;
-              font-size: 19px;
-              line-height: 1.42;
-              text-align: left;
-              color: #4b4b4b;
-              margin-top: 10px;
-              height: 178px;
-              white-space: break-spaces;
+              overflow: hidden;
+              flex: 1;
             `}
           >
-            {body}
-          </p>
+            <p
+              className={css`
+                font-family: BauerGroteskOTW03-Book;
+                font-size: 20px;
+                line-height: 1.35;
+                text-align: center;
+                color: #4b4b4b;
+              `}
+            >
+              {title}
+            </p>
+            <p
+              className={css`
+                font-size: 19px;
+                line-height: 1.42;
+                text-align: left;
+                color: #4b4b4b;
+                margin-top: 10px;
+                height: 178px;
+                white-space: break-spaces;
+              `}
+            >
+              {body}
+            </p>
+          </div>
+          <button
+            className={css`
+              ${bottomBtn37}
+              ${marginH17}
+              border-bottom: solid 1px #707070;
+            `}
+          >
+            read more {">"}
+          </button>
         </div>
-
-        <Link
-          to={`/${type}/${id}`}
-          className={css`
-            height: 17px;
-            border-bottom: solid 1px #707070;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            text-align: center;
-            font-family: BauerGroteskOTW03;
-            font-size: 14px;
-            line-height: 1.21;
-            color: #707070;
-            margin-left: 17px;
-            margin-right: 17px;
-          `}
-        >
-          read more {">"}
-        </Link>
-      </div>
-    </section>
+      </section>
+    </Link>
   );
 }
