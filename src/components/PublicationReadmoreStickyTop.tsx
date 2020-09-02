@@ -151,6 +151,7 @@ export default function PublicationStickyTop() {
             className={css`
               text-align: left;
               color: ${lang === "ko" ? "#5d5d5d" : "#4b4b4b"};
+              white-space: break-spaces;
             `}
           >
             <Linkify>

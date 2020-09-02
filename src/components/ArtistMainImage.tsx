@@ -75,6 +75,7 @@ export default function ArtistMainImage() {
             position: relative;
             padding-bottom: 70px;
             overflow: hidden;
+            width: 100%;
           `}
         >
           <ArtistImageRolling images={images} />

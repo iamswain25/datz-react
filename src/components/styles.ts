@@ -11,6 +11,7 @@ export const bottomBtn37 = css`
   line-height: 1.21;
   color: #707070;
 `;
+
 export const flexrow = css`
   display: flex;
   flex-direction: row;
