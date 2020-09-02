@@ -1,10 +1,10 @@
 import React from "react";
-import Datzpress from "../assets/svg/Datzpress";
 import { css } from "emotion";
 import { bottomBtn37 } from "./styles";
 import { makeUrl } from "../config/url";
 import { LazyImage } from "react-lazy-images";
 import { Link, useParams } from "react-router-dom";
+import Logo from "./Logo";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -35,9 +35,11 @@ const classes = {
 export default function ItemPhotosRight({
   images,
   type = "publication",
+  logo = "D'Ark Room",
 }: {
   images: string[];
   type?: string;
+  logo?: string;
 }) {
   const { id } = useParams();
   return (
@@ -78,7 +80,8 @@ export default function ItemPhotosRight({
                   )}
                 />
                 {i === 0 && (
-                  <Datzpress
+                  <Logo
+                    type={logo}
                     color="#808080"
                     className={css`
                       position: absolute;

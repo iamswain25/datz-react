@@ -2,10 +2,11 @@ import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 import { flexrowcenter } from "./styles";
-import DatzMuseum from "../assets/svg/DatzMuseum";
+import Logo from "./Logo";
 
 export default function DatzmuseumOrder({
   order = "https://datzpress.com/product/offerings-se",
+  logo = "D'Ark Room",
 }) {
   return (
     <div
@@ -23,7 +24,7 @@ export default function DatzmuseumOrder({
       `}
     >
       <Link to="/" className={flexrowcenter}>
-        <DatzMuseum />
+        <Logo type={logo} color="#707070" />
       </Link>
       <a
         href={order}

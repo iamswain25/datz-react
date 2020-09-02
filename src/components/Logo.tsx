@@ -13,10 +13,10 @@ export default function Logo({
   color?: string;
 }) {
   if (type === "D'Ark Room") {
-    return <Darkroom color="#fff" className={className} />;
+    return <Darkroom color={color} className={className} />;
   }
   if (type === "Datz Museum of Art") {
-    return <DatzMuseum color="#fff" className={className} />;
+    return <DatzMuseum color={color} className={className} />;
   }
-  return <Datzpress color="#fff" className={className} />;
+  return <Datzpress color={color} className={className} />;
 }
