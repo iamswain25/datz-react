@@ -32,12 +32,6 @@ const descClass = (dark = false) => css`
 const listClass = (dark = false) => css`
   color: ${dark ? "#ffffff" : "#707070"};
   position: relative;
-  ::before {
-    content: "";
-    display: inline-block;
-    padding-bottom: 50.51%;
-    vertical-align: top;
-  }
 `;
 const afterClass = (i: number) => css`
   display: flex;
@@ -113,15 +107,12 @@ export default function PublicationWidget({
                     alt={item.title}
                     link={image_cover}
                     placeholder={css`
-                      position: absolute;
                       width: 100%;
                       height: 100%;
                       background-color: lightgrey;
-                      top: 0;
                     `}
                     img={css`
-                      position: absolute;
-                      object-fit: cover;
+                      object-fit: contain;
                       width: 100%;
                       height: 100%;
                     `}
