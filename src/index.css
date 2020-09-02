@@ -200,6 +200,9 @@ select[multiple] {
   max-height: none;
   object-fit: cover;
 }
+.contain-image {
+  width: 100%;
+}
 .image-gallery.contain-image
   .image-gallery-content
   .image-gallery-slide
@@ -306,6 +309,15 @@ select[multiple] {
       format("woff"),
     url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansThin.ttf")
       format("truetype");
+}
+
+@font-face {
+  font-family: EBGaramond;
+  src: local(EBGaramond),
+    url(./assets/fonts/EBGaramond/EBGaramond-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
 }
 
 .ko {
