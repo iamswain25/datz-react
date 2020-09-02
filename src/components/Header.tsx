@@ -29,7 +29,7 @@ export default function Header({
   sticky = false,
   change = false,
   color = "#707070",
-  backgroundColor = "rgba(255,255,255,0.5)",
+  backgroundColor = "rgba(255,255,255,0.8)",
 }) {
   const [text, setText] = React.useState("");
   const [colors, setColors] = React.useState({ color, backgroundColor });
@@ -235,7 +235,7 @@ export default function Header({
             ? () =>
                 setColors({
                   color: "#707070",
-                  backgroundColor: "rgba(255,255,255,0.5)",
+                  backgroundColor: "rgba(255,255,255,0.8)",
                 })
             : undefined
         }
