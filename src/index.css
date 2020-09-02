@@ -210,8 +210,8 @@ select[multiple] {
   object-fit: contain;
 }
 @font-face {
-  font-family: BauerGroteskOTW03-Book;
-  src: local(BauerGroteskOTW03-Book),
+  font-family: BauerGroteskOTW03;
+  src: local(BauerGroteskOTW03),
     url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.woff2)
       format("woff2"),
     url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.woff)
@@ -223,9 +223,9 @@ select[multiple] {
   font-stretch: normal;
 }
 @font-face {
-  font-family: BauerGroteskOTW03;
+  font-family: BauerGroteskOTW03-Regular;
   src: url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.eot"); /* IE9*/
-  src: local(BauerGroteskOTW03-Book),
+  src: local(BauerGroteskOTW03-Regular),
     url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.woff2")
       format("woff2"),
     /* chrome、firefox */

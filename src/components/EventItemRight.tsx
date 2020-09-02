@@ -4,6 +4,7 @@ import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import { paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
+import useLang from "./useLang";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
@@ -24,6 +25,7 @@ export default function EventItemRight({
 }) {
   const isDesktop = useDesktop();
   const { type, date, title, body, place } = item;
+  const [classes] = useLang("event");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
       {isDesktop && <PublicationCloseBtn noClose />}
@@ -43,34 +45,9 @@ export default function EventItemRight({
             margin-bottom: ${isDesktop ? 0 : 17}px;
           `}
         >
-          <div
-            className={css`
-              font-size: 17px;
-              border-bottom: solid 1px #707070;
-              padding-bottom: 7px;
-              margin-bottom: 16px;
-            `}
-          >
-            {type}
-          </div>
-          <div
-            className={css`
-              font-size: 17px;
-              letter-spacing: 0.34px;
-            `}
-          >
-            {date}
-          </div>
-          <div
-            className={css`
-              font-size: 14px;
-              letter-spacing: 0.28px;
-              color: #afafaf;
-              height: 36px;
-            `}
-          >
-            {place}
-          </div>
+          <div className={classes.type}>{type}</div>
+          <div className={classes.date}>{date}</div>
+          <div className={classes.place}>{place}</div>
         </div>
         {children}
         <section
@@ -82,27 +59,8 @@ export default function EventItemRight({
               : mobileContainer
           }
         >
-          <div
-            className={css`
-              height: 59px;
-              font-size: 25px;
-              color: #4b4b4b;
-              text-align: center;
-            `}
-          >
-            {title}
-          </div>
-          <div
-            className={css`
-              font-size: 18px;
-              line-height: 1.5;
-              text-align: left;
-              color: #4b4b4b;
-              padding-bottom: 49px;
-            `}
-          >
-            {body}
-          </div>
+          <div className={classes.title}>{title}</div>
+          <div className={classes.body}>{body}</div>
         </section>
         <div
           className={css`

@@ -5,14 +5,8 @@ import useDesktop from "./useDesktop";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import LazyImage from "./LazyImage";
 import Logo from "./Logo";
-import { bottomBtn37, marginH17 } from "./styles";
-const headerStyle = css`
-  font-family: BauerGroteskOTW03;
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: right;
-  color: #707070;
-`;
+import { bottomBtn37 } from "./styles";
+import useLang from "./useLang";
 export default function MainCard({
   item,
   type = "exhibition",
@@ -22,6 +16,7 @@ export default function MainCard({
 }) {
   const { date, title, body, id } = item;
   const isDesktop = useDesktop();
+  const [classes] = useLang(`${type}MainCard`);
   return (
     <Link to={`/${type}/${id}`}>
       <section
@@ -92,10 +87,10 @@ export default function MainCard({
               padding-bottom: 10px;
             `}
           >
-            <div className={headerStyle}>
+            <div className={classes.date}>
               {date ?? item.start_date + " - " + item.end_date}
             </div>
-            <div className={headerStyle}>
+            <div className={classes.type}>
               {type === "event"
                 ? item.type
                 : exhibitionCurrentPast(item.start_date, item.end_date)}
@@ -107,35 +102,12 @@ export default function MainCard({
               flex: 1;
             `}
           >
-            <p
-              className={css`
-                font-family: BauerGroteskOTW03-Book;
-                font-size: 20px;
-                line-height: 1.35;
-                text-align: center;
-                color: #4b4b4b;
-              `}
-            >
-              {title}
-            </p>
-            <p
-              className={css`
-                font-size: 19px;
-                line-height: 1.42;
-                text-align: left;
-                color: #4b4b4b;
-                margin-top: 10px;
-                height: 178px;
-                white-space: break-spaces;
-              `}
-            >
-              {body}
-            </p>
+            <p className={classes.title}>{title}</p>
+            <p className={classes.body}>{body}</p>
           </div>
           <button
             className={css`
               ${bottomBtn37}
-              ${marginH17}
               border-bottom: solid 1px #707070;
             `}
           >
