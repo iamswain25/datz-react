@@ -73,6 +73,7 @@ export default function Routes() {
         <Route exact path="/artist/:id" component={ArtistPage} />
         <Route exact path="/artist" component={Artist} />
         <Route exact path="/login" component={Signin} />
+        <PrivateRoute path="/admin" component={AdminHome} />
         <React.Fragment>
           <main
             className={css`
@@ -83,30 +84,39 @@ export default function Routes() {
               font-family: BauerGroteskOTW03;
             `}
           >
-            <Route
-              exact
-              path="/artist/:id/images/:index"
-              render={() => <FullImageGallery type="artist" />}
-            />
-            <Route exact path="/events/:filter" component={Events} />
-            <Route exact path="/exhibitions/:filter" component={Exhibitions} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/about/datzpress" component={AboutDatzpress} />
-            <Route exact path="/about/darkroom" component={AboutDarkroom} />
-            <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/support" component={Support} />
-            <Route exact path="/news">
-              <Redirect to="/news/all" />
-            </Route>
-            <Route exact path="/news/:filter" component={News} />
-            <Route exact path="/newsitem/:id" component={NewsItem} />
+            <Switch>
+              <Route
+                exact
+                path="/artist/:id/images/:index"
+                render={() => <FullImageGallery type="artist" />}
+              />
+              <Route exact path="/events/:filter" component={Events} />
+              <Route
+                exact
+                path="/exhibitions/:filter"
+                component={Exhibitions}
+              />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/about/datzpress" component={AboutDatzpress} />
+              <Route exact path="/about/darkroom" component={AboutDarkroom} />
+              <Route
+                exact
+                path="/about/datzmuseum"
+                component={AboutDatzmuseum}
+              />
+              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/support" component={Support} />
+              <Route exact path="/news">
+                <Redirect to="/news/all" />
+              </Route>
+              <Route exact path="/news/:filter" component={News} />
+              <Route exact path="/newsitem/:id" component={NewsItem} />
+              <Route path="*">
+                <Redirect to="/" />
+              </Route>
+            </Switch>
           </main>
         </React.Fragment>
-        <PrivateRoute path="/admin" component={AdminHome} />
-        <Route exact path="*">
-          <Redirect to="/" />
-        </Route>
       </Switch>
     </Router>
   );
