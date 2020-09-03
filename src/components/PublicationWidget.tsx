@@ -6,6 +6,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import usePublications from "../utils/usePublications";
 import LazyImage from "./LazyImage";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -109,7 +110,7 @@ export default function PublicationWidget({
                     placeholder={css`
                       width: 100%;
                       height: 100%;
-                      background-color: #ececec;
+                      background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
                     `}
                     img={css`
                       object-fit: contain;

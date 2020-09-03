@@ -7,6 +7,7 @@ import LazyImage from "./LazyImage";
 import Logo from "./Logo";
 import { bottomBtn37 } from "./styles";
 import useLang from "./useLang";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 export default function MainCard({
   item,
   type = "exhibition",
@@ -48,7 +49,7 @@ export default function MainCard({
               position: absolute;
               width: 100%;
               height: 100%;
-              background-color: #ececec;
+              background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
               top: 0;
             `}
             img={css`

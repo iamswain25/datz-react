@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
 import useLang from "./useLang";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 const titleStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 23px;
@@ -172,7 +173,8 @@ export default function AboutImages1() {
                   `}
                   placeholder={css`
                     ${fullCoverImg}
-                    height: ${isDesktop ? 455 : 588}px
+                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                    height: ${isDesktop ? 455 : 588}px;
                   `}
                 />
                 <div className={liTextStyle(isDesktop)}>

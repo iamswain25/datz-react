@@ -5,6 +5,7 @@ import { filterExhibitionCurrent } from "../utils/datefns";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 import Logo from "./Logo";
+import { DEFAULT_LAZY_IMAGE_COLOR, BLEND_SCREEN_COLOR } from "../config/params";
 export default function ViewAllCard({
   item,
   type = "exhibition",
@@ -24,7 +25,7 @@ export default function ViewAllCard({
             ? css`
                 position: relative;
                 margin-top: 26px;
-                background-color: #ececec;
+                background-color: ${BLEND_SCREEN_COLOR};
                 margin-left: ${isDesktop ? 0 : 17}px;
                 margin-right: ${isDesktop ? 0 : 17}px;
                 ::before {
@@ -37,7 +38,7 @@ export default function ViewAllCard({
             : css`
                 position: relative;
                 margin-top: 26px;
-                background-color: #ececec;
+                background-color: ${BLEND_SCREEN_COLOR};
                 ::before {
                   content: "";
                   display: inline-block;
@@ -54,7 +55,7 @@ export default function ViewAllCard({
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #ececec;
+            background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
             top: 0;
           `}
           img={css`

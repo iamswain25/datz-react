@@ -4,6 +4,7 @@ import useDesktop from "./useDesktop";
 import { filterExhibitionCurrent } from "../utils/datefns";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
+import { DEFAULT_LAZY_IMAGE_COLOR, BLEND_SCREEN_COLOR } from "../config/params";
 export default function NewsCard({ item }: { item: any }) {
   const isDesktop = useDesktop(false);
   const isCurrent = filterExhibitionCurrent(item);
@@ -12,7 +13,7 @@ export default function NewsCard({ item }: { item: any }) {
       <div
         className={css`
           position: relative;
-          background-color: #afafaf;
+          background-color: ${BLEND_SCREEN_COLOR};
           margin-top: 26px;
           display: flex;
           ::before {
@@ -30,7 +31,7 @@ export default function NewsCard({ item }: { item: any }) {
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #ececec;
+            background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
             top: 0;
           `}
           img={css`

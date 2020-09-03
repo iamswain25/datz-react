@@ -7,7 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 import useNews from "../utils/useNews";
 import { news } from "../@type/news";
 import LazyImage from "./LazyImage";
-import { DEFAULT_COUNT } from "../config/params";
+import { DEFAULT_COUNT, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -80,7 +80,7 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    background-color: #ececec;
+                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
                     top: 0;
                   `}
                   img={css`
