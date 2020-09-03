@@ -1,8 +1,8 @@
 import React from "react";
 import { css } from "emotion";
-import DatzBooks from "../assets/svg/DatzBooks";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
+import Logo from "./Logo";
 export default function Residence() {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -73,19 +73,22 @@ export default function Residence() {
             Apply {">"}
           </a>
         </div>
-        <div
-          className={css`
-            margin-top: ${isDesktop ? 100 : 23}px;
-          `}
-        >
-          <DatzBooks color="#5d5d5d" />
-        </div>
       </div>
       <div
         className={css`
           margin-bottom: 12px;
         `}
       >
+        <div>
+          <Logo
+            type="culture"
+            color="#5d5d5d"
+            className={css`
+              margin: ${isDesktop ? 100 : 54}px 0 ${isDesktop ? 32 : 50}px;
+              width: 200px;
+            `}
+          />
+        </div>
         <a
           href="datz"
           className={css`

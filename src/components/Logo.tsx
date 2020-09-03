@@ -4,6 +4,7 @@ import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
 import { Link } from "react-router-dom";
 import DatzBooks from "../assets/svg/DatzBooks";
+import Cultural from "../assets/svg/Cultural";
 
 export default function Logo({
   className,
@@ -54,6 +55,11 @@ export default function Logo({
     case "books":
     case "DatzBooks": {
       let logo = <DatzBooks color={color} className={className} />;
+      return logo;
+    }
+    case "culture":
+    case "Cultural": {
+      let logo = <Cultural color={color} className={className} />;
       return logo;
     }
     case "datzpress": {

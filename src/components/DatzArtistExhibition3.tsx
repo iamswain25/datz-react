@@ -5,6 +5,7 @@ import insta from "../assets/images/artist/insta.png";
 import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 export default function DatzArtistExhibition3() {
   const isDesktop = useDesktop();
   return (
@@ -65,8 +66,8 @@ export default function DatzArtistExhibition3() {
               align-items: center;
             `}
           >
-            <a
-              href="/"
+            <Link
+              to="/exhibitions"
               className={css`
                 text-decoration: underline;
                 font-size: 16px;
@@ -74,7 +75,7 @@ export default function DatzArtistExhibition3() {
               `}
             >
               Past Exhibition {">"}
-            </a>
+            </Link>
           </Grid>
           <Grid
             item
@@ -83,8 +84,8 @@ export default function DatzArtistExhibition3() {
               align-items: center;
             `}
           >
-            <a
-              href="community"
+            <Link
+              to="/events"
               className={css`
                 text-decoration: underline;
                 font-size: 16px;
@@ -92,7 +93,7 @@ export default function DatzArtistExhibition3() {
               `}
             >
               Past Event {">"}
-            </a>
+            </Link>
           </Grid>
         </Grid>
       </div>
