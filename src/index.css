@@ -320,15 +320,6 @@ select[multiple] {
   font-stretch: normal;
 }
 
-.ko {
-  font-family: "SpoqaHanSans", "SpoqaHanSans JP", "Sans-serif" !important;
-}
-.react-multi-carousel-list.carousel-container-custom {
-  /* min-width: 100%;
-  width: 0; */
-  flex: 1;
-  align-items: normal;
-}
 h1,
 h2,
 h3,

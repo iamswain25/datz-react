@@ -19,8 +19,7 @@ const textClass = (dark = false) => css`
 const listClass = (dark = false) => css`
   color: ${dark ? "#ffffff" : "#707070"};
   position: relative;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin: 0 6px;
   ::before {
     content: "";
     display: inline-block;
@@ -54,12 +53,17 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
   return (
     <div
       className={css`
-        margin-top: 21px;
+        margin-top: 10px;
       `}
     >
       <Carousel
         responsive={responsive}
-        containerClass="carousel-container-custom"
+        containerClass={css`
+          flex: 1;
+          align-items: normal;
+        `}
+        // sliderClass={css``}
+        // additionalTransfrom={-100}
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}

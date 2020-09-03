@@ -45,9 +45,7 @@ export default function PublicationStickyTop() {
         className={css`
           flex: 1;
           overflow-y: auto;
-          padding-left: 10px;
-          padding-right: 10px;
-          font-family: ArnoPro-Subhead;
+          padding: 0 ${isDesktop ? 10 : 0}px;
         `}
       >
         {item?.edition && (

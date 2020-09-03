@@ -41,8 +41,7 @@ export default function ExhibitionMoreLeft() {
         className={css`
           flex: 1;
           overflow-y: auto;
-          padding-left: 10px;
-          padding-right: 10px;
+          padding: 0 ${isDesktop ? 10 : 0}px;
         `}
       >
         <div className={classes.date}>

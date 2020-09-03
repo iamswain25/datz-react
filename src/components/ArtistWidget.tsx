@@ -49,7 +49,8 @@ export default function ArtistWidget({
       >
         <Carousel
           responsive={responsive}
-          containerClass="carousel-container-custom"
+          containerClass={css`flex: 1;
+  align-items: normal;`}
           itemClass={itemClass}
           renderButtonGroupOutside={true}
           arrows={false}
