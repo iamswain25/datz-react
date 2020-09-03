@@ -43,6 +43,8 @@ const liStyle = (isDesktop: boolean) => {
   if (isDesktop) {
     return css`
       overflow: hidden;
+      height: 100%;
+      position: relative;
       ${flexcolumncenter}
     `;
   } else {
@@ -50,7 +52,6 @@ const liStyle = (isDesktop: boolean) => {
       overflow: hidden;
       width: 100%;
       margin-top: 30px;
-
       ${flexcolumncenter}
     `;
   }
@@ -144,7 +145,16 @@ export default function AboutImages1() {
   const isDesktop = useDesktop();
   const [classes] = useLang("About");
   return (
-    <>
+    <section
+      className={
+        isDesktop
+          ? css`
+              height: calc(100vh - 79px);
+              position: relative;
+            `
+          : undefined
+      }
+    >
       <section className={isDesktop ? marginH18 : marginH10}>
         <div className={titleStyle}>The community of Datz</div>
         <div className={descStyle}>
@@ -153,47 +163,58 @@ export default function AboutImages1() {
           grows from pure motives.
         </div>
       </section>
-      <Grid
-        container
-        spacing={isDesktop ? 3 : 0}
-        className={css`
-          padding-top: ${isDesktop ? 37 : 10}px;
-        `}
+      <section
+        className={
+          isDesktop
+            ? css`
+                height: 100%;
+                position: relative;
+              `
+            : undefined
+        }
       >
-        {arr.map(([imgsrc, title, desc, link], i) => {
-          return (
-            <Grid item key={i} xs={12} sm={4}>
-              <Link to={link} className={liStyle(isDesktop)}>
-                <LazyImage
-                  link={imgsrc}
-                  alt={title}
-                  img={css`
-                    ${fullCoverImg}
-                    height: ${isDesktop ? 455 : 588}px
-                  `}
-                  placeholder={css`
-                    ${fullCoverImg}
-                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    height: ${isDesktop ? 455 : 588}px;
-                  `}
-                />
-                <div className={liTextStyle(isDesktop)}>
-                  {isDesktop ? title : title.substr(0, title.length - 2)}
-                  <div className={liDescStyle(isDesktop)}>
-                    <div className={classes.body}>{desc}</div>
+        <Grid
+          container
+          spacing={isDesktop ? 3 : 0}
+          className={css`
+            padding-top: ${isDesktop ? 37 : 10}px;
+          `}
+        >
+          {arr.map(([imgsrc, title, desc, link], i) => {
+            return (
+              <Grid item key={i} xs={12} sm={4}>
+                <Link to={link} className={liStyle(isDesktop)}>
+                  <LazyImage
+                    link={imgsrc}
+                    alt={title}
+                    img={css`
+                      ${fullCoverImg}
+                      height: ${isDesktop ? "auto" : "588px"}
+                    `}
+                    placeholder={css`
+                      ${fullCoverImg}
+                      background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                      height: ${isDesktop ? "auto" : "588px"};
+                    `}
+                  />
+                  <div className={liTextStyle(isDesktop)}>
+                    {isDesktop ? title : title.substr(0, title.length - 2)}
+                    <div className={liDescStyle(isDesktop)}>
+                      <div className={classes.body}>{desc}</div>
+                    </div>
                   </div>
-                </div>
-                {!isDesktop && (
-                  <div className={linkStyle(isDesktop)}>{title}</div>
-                )}
-              </Link>
-            </Grid>
-          );
-        })}
-      </Grid>
+                  {!isDesktop && (
+                    <div className={linkStyle(isDesktop)}>{title}</div>
+                  )}
+                </Link>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </section>
       <a className={messagesStyle(isDesktop)} href="/message">
         message {">"}
       </a>
-    </>
+    </section>
   );
 }

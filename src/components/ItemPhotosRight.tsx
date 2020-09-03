@@ -4,7 +4,7 @@ import { bottomBtn37 } from "./styles";
 import { makeUrl } from "../config/url";
 import { LazyImage } from "react-lazy-images";
 import { Link, useParams } from "react-router-dom";
-import Logo from "./Logo";
+// import Logo from "./Logo";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -79,7 +79,7 @@ export default function ItemPhotosRight({
                     />
                   )}
                 />
-                {i === 0 && (
+                {/* {i === 0 && (
                   <Logo
                     type={logo}
                     color="#808080"
@@ -89,7 +89,7 @@ export default function ItemPhotosRight({
                       bottom: 30px;
                     `}
                   />
-                )}
+                )} */}
               </div>
             </Link>
           );
