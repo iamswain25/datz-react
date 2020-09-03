@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import EventCoverWidget from "./EventCoverWidget";
-import { marginH17, flexcolumn } from "./styles";
+import { flexcolumn } from "./styles";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
