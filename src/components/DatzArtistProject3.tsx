@@ -5,6 +5,7 @@ import r1 from "../assets/images/artist/r1.png";
 import r2 from "../assets/images/artist/r2.png";
 import r3 from "../assets/images/artist/r3.png";
 import { Grid } from "@material-ui/core";
+import useDesktop from "./useDesktop";
 const classes = {
   image: css`
     width: 100%;
@@ -41,6 +42,7 @@ const items = [
   },
 ];
 export default function DatzArtistProject3() {
+  const isDesktop = useDesktop();
   return (
     <Grid
       className={css`
@@ -75,7 +77,7 @@ export default function DatzArtistProject3() {
           Visit DMA for more information {">"}
         </Grid>
       </Grid>
-      <Grid container spacing={3}>
+      <Grid container spacing={isDesktop ? 3 : 0}>
         {items.map((item, i) => {
           const { title, link, artist, image } = item;
           return (

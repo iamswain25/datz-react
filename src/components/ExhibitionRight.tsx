@@ -23,7 +23,7 @@ export default function ExhibitionRight() {
         margin-left: ${isDesktop ? 27 : 0}px;
       `}
     >
-      <Grid container spacing={3}>
+      <Grid container spacing={isDesktop ? 3 : 0}>
         {currentExhibitions.map((item, i) => (
           <Grid
             item
@@ -49,7 +49,7 @@ export default function ExhibitionRight() {
       >
         Past Exhibition
       </h1>
-      <Grid container spacing={3}>
+      <Grid container spacing={isDesktop ? 3 : 0}>
         {list
           .filter(filterExhibitionPast)
           .slice(0, 6)

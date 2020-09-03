@@ -6,6 +6,7 @@ import i2 from "../assets/images/artist/i2.png";
 import i3 from "../assets/images/artist/i3.png";
 import { Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import useDesktop from "./useDesktop";
 const classes = {
   image: css`
     width: 100%;
@@ -39,6 +40,7 @@ const items = [
   },
 ];
 export default function DatzArtistProject2() {
+  const isDesktop = useDesktop();
   return (
     <Grid
       className={css`
@@ -62,11 +64,11 @@ export default function DatzArtistProject2() {
       >
         Projects
       </Grid>
-      <Grid container spacing={3}>
+      <Grid container spacing={isDesktop ? 3 : 0}>
         {items.map((item, i) => {
           const { title, link, artist, image } = item;
           return (
-            <Grid item xs={12} key={i}>
+            <Grid item xs={12} sm={4} key={i}>
               <img className={classes.image} src={image} alt={title} />
               <div className={classes.h5}>{title}</div>
               <div className={classes.h6}>{artist}</div>

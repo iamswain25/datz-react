@@ -158,7 +158,7 @@ export default function AboutImages1() {
       </section>
       <Grid
         container
-        spacing={3}
+        spacing={isDesktop ? 3 : 0}
         className={css`
           padding-top: ${isDesktop ? 37 : 10}px;
         `}

@@ -19,7 +19,7 @@ export default function EventRight() {
         margin-left: ${isDesktop ? 27 : 0}px;
       `}
     >
-      <Grid container spacing={3}>
+      <Grid container spacing={isDesktop ? 3 : 0}>
         {list.slice(0, 2).map((item, i) => (
           <Grid item xs={12} xl={6} key={i}>
             <MainCard item={item} type="event" />
@@ -40,7 +40,7 @@ export default function EventRight() {
       >
         Past Event
       </h1>
-      <Grid container spacing={3}>
+      <Grid container spacing={isDesktop ? 3 : 0}>
         {list.slice(2, 8).map((a, i) => (
           <Grid item key={i} xs={12} md={6} xl={4}>
             <ViewAllCard item={a} type="event" nonWhite />

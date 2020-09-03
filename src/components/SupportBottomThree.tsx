@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import { paddingH37 } from "./styles";
 import { Grid } from "@material-ui/core";
+import useDesktop from "./useDesktop";
 const classes = {
   title: css`
     font-size: 21px;
@@ -35,6 +36,7 @@ const items = [
   },
 ];
 export default function SupportBottomThree() {
+  const isDesktop = useDesktop();
   return (
     <Grid
       className={css`
@@ -49,7 +51,7 @@ export default function SupportBottomThree() {
         ${paddingH37}
       `}
     >
-      <Grid container spacing={3}>
+      <Grid container spacing={isDesktop ? 3 : 0}>
         {items.map((item, i) => {
           const { title, price, desc } = item;
           return (
