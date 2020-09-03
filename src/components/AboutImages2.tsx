@@ -1,13 +1,11 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-// import { useGlobalState, LANG } from "../store/useGlobalState";
 import {
   flexrowcenter,
   fullHeightCoverImg,
   paddingH55,
   marginH24,
-  bottomBtn37,
 } from "./styles";
 import m1 from "../assets/images/about/m1.png";
 import Datzpress from "../assets/svg/Datzpress";

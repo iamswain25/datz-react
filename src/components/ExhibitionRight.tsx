@@ -12,6 +12,7 @@ import { Grid } from "@material-ui/core";
 import ViewAllCard from "./ViewAllCard";
 import MainCard from "./MainCard";
 import useExhibitions from "../utils/useExhibitions";
+import { DEFAULT_COUNT } from "../config/params";
 
 export default function ExhibitionRight() {
   const isDesktop = useDesktop();
@@ -52,7 +53,7 @@ export default function ExhibitionRight() {
       <Grid container spacing={isDesktop ? 3 : 0}>
         {list
           .filter(filterExhibitionPast)
-          .slice(0, 6)
+          .slice(0, DEFAULT_COUNT)
           .map((a, i) => (
             <Grid item key={i} xs={12} md={6} xl={4}>
               <ViewAllCard item={a} type="exhibition" nonWhite />

@@ -7,6 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 import useNews from "../utils/useNews";
 import { news } from "../@type/news";
 import LazyImage from "./LazyImage";
+import { DEFAULT_COUNT } from "../config/params";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -49,7 +50,7 @@ const responsive = {
   },
 };
 export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
-  const list = useNews(news.slice(0, 6));
+  const list = useNews(news.slice(0, DEFAULT_COUNT));
   return (
     <div
       className={css`

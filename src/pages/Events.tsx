@@ -13,6 +13,7 @@ import { useParams, NavLink } from "react-router-dom";
 import { events } from "../@type/events";
 import ViewAllCard from "../components/ViewAllCard";
 import useEvents from "../utils/useEvents";
+import { DEFAULT_COUNT } from "../config/params";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   talk: "Artist Talk / Lecture",
@@ -21,7 +22,7 @@ const FILTERS: { [key: string]: string } = {
 };
 export default function Events() {
   const { filter = "all" } = useParams();
-  const [limit, setLimit] = React.useState(6);
+  const [limit, setLimit] = React.useState(DEFAULT_COUNT);
   const isDesktop = useDesktop();
   const list = useEvents(events.slice(2));
   function viewMoreHandler() {
