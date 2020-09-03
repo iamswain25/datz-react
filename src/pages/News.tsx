@@ -57,7 +57,9 @@ export default function News() {
           `}
         >
           <a
-            href="newsletter"
+            href="https://page.stibee.com/subscriptions/19745"
+            target="_blank"
+            rel="noopener noreferrer"
             className={css`
               text-decoration: underline;
             `}

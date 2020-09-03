@@ -98,8 +98,10 @@ export default function Footer() {
     />
   );
   const signup = (
-    <Link
-      to="/"
+    <a
+      href="https://page.stibee.com/subscriptions/19745"
+      target="_blank"
+      rel="noopener noreferrer"
       className={css`
         font-family: BauerGroteskOTW03;
         font-size: ${isDesktop ? 21 : 19}px;
@@ -109,7 +111,7 @@ export default function Footer() {
       `}
     >
       Sign up for Datz newsletter {">"}
-    </Link>
+    </a>
   );
   if (!isDesktop) {
     return (
