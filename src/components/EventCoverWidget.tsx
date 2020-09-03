@@ -61,13 +61,19 @@ export default function EventCoverWidget({
     >
       <Carousel
         responsive={responsive}
-        containerClass={css`flex: 1;
-  align-items: normal;`}
+        containerClass={css`
+          flex: 1;
+          align-items: normal;
+        `}
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}
         customButtonGroup={
-          <CarouselBtnGroup dark={dark} noBorderBottom={!isDesktop} />
+          <CarouselBtnGroup
+            dark={dark}
+            noBorderBottom={!isDesktop}
+            plusMargin={fit === "width" ? 20 : 0}
+          />
         }
       >
         {images.map((img, i) => {

@@ -31,7 +31,6 @@ export default function NewsItemLeftSticky() {
               color: #ffffff;
               overflow: hidden;
               max-height: 588px;
-              ${marginH17}
             `
       }
     >

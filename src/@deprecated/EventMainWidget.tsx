@@ -1,10 +1,10 @@
 import React from "react";
 import { css } from "emotion";
 import { useHistory } from "react-router-dom";
-import CarouselBtnGroup from "./CarouselBtnGroup";
+import CarouselBtnGroup from "../components/CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import useDesktop from "./useDesktop";
+import useDesktop from "../components/useDesktop";
 import { makeUrl } from "../config/url";
 const listClass = (dark = false) => css`
   display: flex;
@@ -34,7 +34,7 @@ const responsive = {
     items: 1,
   },
 };
-export default function EventCoverWidget({
+export default function EventMainWidget({
   dark = false,
   images,
   objectFit = "cover",
@@ -60,8 +60,10 @@ export default function EventCoverWidget({
     >
       <Carousel
         responsive={responsive}
-        containerClass={css`flex: 1;
-  align-items: normal;`}
+        containerClass={css`
+          flex: 1;
+          align-items: normal;
+        `}
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}

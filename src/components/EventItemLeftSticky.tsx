@@ -18,7 +18,6 @@ const mobileContainer = css`
   overflow: hidden;
   max-height: 588px;
   ${flexcolumn}
-  ${marginH17}
 `;
 export default function EventItemLeftSticky({ images }: { images: string[] }) {
   const isDesktop = useDesktop();
