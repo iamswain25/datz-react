@@ -18,6 +18,7 @@ import a3 from "../assets/images/about/a3.png";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
+import useLang from "./useLang";
 const titleStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 23px;
@@ -85,16 +86,11 @@ const liDescStyle = (isDesktop: boolean) => {
   if (isDesktop) {
     return css`
       margin-top: 4px;
-      font-size: 17px;
-      line-height: 1.47;
       text-align: left;
     `;
   } else {
     return css`
       margin-top: 4px;
-      font-size: 17px;
-      line-height: 1.47;
-      text-align: left;
       margin-top: 2px;
       border-top: 1px solid #ffffff;
       text-align: center;
@@ -145,7 +141,7 @@ const arr = [
 ];
 export default function AboutImages1() {
   const isDesktop = useDesktop();
-  // const [lang] = useGlobalState(LANG);
+  const [classes] = useLang("About");
   return (
     <>
       <section className={isDesktop ? marginH18 : marginH10}>
@@ -181,7 +177,9 @@ export default function AboutImages1() {
                 />
                 <div className={liTextStyle(isDesktop)}>
                   {isDesktop ? title : title.substr(0, title.length - 2)}
-                  <div className={liDescStyle(isDesktop)}>{desc}</div>
+                  <div className={liDescStyle(isDesktop)}>
+                    <div className={classes.body}>{desc}</div>
+                  </div>
                 </div>
                 {!isDesktop && (
                   <div className={linkStyle(isDesktop)}>{title}</div>

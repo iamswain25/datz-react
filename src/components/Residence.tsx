@@ -2,8 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import DatzBooks from "../assets/svg/DatzBooks";
 import useDesktop from "./useDesktop";
+import useLang from "./useLang";
 export default function Residence() {
   const isDesktop = useDesktop();
+  const [classes] = useLang("ArtistPage");
   return (
     <section
       className={css`
@@ -43,13 +45,7 @@ export default function Residence() {
             Datz Artist Residency {">"}
           </a>
         </div>
-        <div
-          className={css`
-            font-size: 18px;
-            line-height: 1.39;
-            margin-top: 37px;
-          `}
-        >
+        <div className={classes.body}>
           Datz Artist Residency, which can breathe close to nature, is the
           cradle of creation that can focus on the energy for new creations or
           carry out location-specific projects, allowing artists to participate

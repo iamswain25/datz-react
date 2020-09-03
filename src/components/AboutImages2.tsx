@@ -4,7 +4,7 @@ import useDesktop from "./useDesktop";
 // import { useGlobalState, LANG } from "../store/useGlobalState";
 import {
   flexrowcenter,
-  fullCoverImg,
+  fullHeightCoverImg,
   paddingH55,
   marginH24,
   bottomBtn37,
@@ -28,9 +28,6 @@ const desc2Style = css`
   text-align: left;
   color: #ffffff;
   margin-top: 24px;
-`;
-const sectionStyle = css`
-  position: relative;
 `;
 const absoluteStyle = css`
   position: absolute;
@@ -57,8 +54,14 @@ export default function AboutImages2() {
   // const [lang] = useGlobalState(LANG);
   return (
     <>
-      <section className={sectionStyle}>
-        <img src={m1} alt="cover" className={fullCoverImg} />
+      <section
+        className={css`
+          position: relative;
+          overflow: hidden;
+          height: ${isDesktop ? "auto" : "588px"};
+        `}
+      >
+        <img src={m1} alt="cover" className={fullHeightCoverImg} />
         <div className={absoluteStyle}>
           {isDesktop && (
             <div className={flexrowcenter}>

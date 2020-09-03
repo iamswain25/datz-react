@@ -5,7 +5,7 @@ import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 export default function BookProject() {
   const isDesktop = useDesktop();
-  const [classes] = useLang("BookProject");
+  const [classes] = useLang("ArtistPage");
   return (
     <section
       className={css`

@@ -274,13 +274,23 @@ const classes: { [key: string]: any } = {
       `,
     };
   },
-  BookProject: (en: boolean) => {
+  ArtistPage: (en: boolean) => {
     const getSize = getFont("BauerGroteskOTW03-Regular", en);
     return {
       body: css`
         ${getSize(18, 1.39)}
         line-height: 28px;
         margin-top: 37px;
+        white-space: break-spaces;
+      `,
+    };
+  },
+  About: (en: boolean) => {
+    const getSize = getFont("BauerGroteskOTW03-Regular", en);
+    return {
+      body: css`
+        ${getSize(17, 1.47)}
+        // line-height: 28px;
         white-space: break-spaces;
       `,
     };
