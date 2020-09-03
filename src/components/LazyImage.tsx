@@ -4,7 +4,7 @@ import { makeUrl } from "../config/url";
 import { LazyImage as LI } from "react-lazy-images";
 const classes = {
   placeholder: css`
-    background-color: #ececec;
+    background-color: #fff;
     min-width: 280px;
     min-height: 280px;
   `,
