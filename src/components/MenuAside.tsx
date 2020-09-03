@@ -50,7 +50,12 @@ export default function MenuAside(props: {
           padding-left: 5px;
         `}
       >
-        <Datz color="white" />
+        <Datz
+          color="white"
+          className={css`
+            margin-bottom: 8px;
+          `}
+        />
         <div
           className={css`
             flex: 1;
