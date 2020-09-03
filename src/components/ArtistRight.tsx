@@ -84,7 +84,7 @@ export default function PublicationItemPhotos() {
               border-top: solid 1px #ffffff;
             `}
           />
-          {!isDesktop && <BtnBack dark />}
+          {!isDesktop && <BtnBack color="#fff" />}
         </div>
       )}
     </section>

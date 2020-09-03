@@ -39,7 +39,7 @@ export default function NewsItemRight({
             margin-bottom: 20px;
           `}
         >
-          <ShareButtons color="white" />
+          <ShareButtons color={color} />
         </div>
       )}
       <div
@@ -124,10 +124,11 @@ export default function NewsItemRight({
             ${isDesktop ? undefined : marginH27}
             border-top: solid 1px ${color};
             text-align: center;
+            color: ${color};
             margin-bottom: ${isDesktop ? 37 : 0}px;
           `}
         >
-          {!isDesktop && <BtnBack />}
+          {!isDesktop && <BtnBack color={color} />}
         </div>
       </div>
     </div>

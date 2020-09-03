@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useBtnBack from "./useBtnBack";
 
 export default function BtnBack({
-  dark = false,
+  color = "#707070",
   full = false,
   borderTop = false,
 }) {
@@ -18,8 +18,8 @@ export default function BtnBack({
         text-align: center;
         padding: 10px;
         width: ${full ? "100%" : "auto"};
-        border-top: ${borderTop ? 1 : 0}px solid ${dark ? "#ffffff" : "#707070"};
-        color: ${dark ? "#ffffff" : "#707070"};
+        border-top: ${borderTop ? 1 : 0}px solid ${color};
+        color: ${color};
       `}
     >
       {"<"} back

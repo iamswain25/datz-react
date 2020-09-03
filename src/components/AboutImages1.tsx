@@ -8,7 +8,6 @@ import {
   paddingH15,
   bottomBtn37,
   marginH10,
-  fullCoverImg,
   marginH17,
   marginH37,
 } from "./styles";

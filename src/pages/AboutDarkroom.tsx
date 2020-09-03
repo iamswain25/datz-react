@@ -173,7 +173,7 @@ export default function AboutDatzpress() {
                     </Grid>
                   </Grid>
                 </div>
-                <BtnBack dark full borderTop />
+                <BtnBack color="#fff" full borderTop />
               </div>
             </div>
           </Grid>
