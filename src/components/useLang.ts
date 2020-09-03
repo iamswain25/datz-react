@@ -1,22 +1,22 @@
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { css } from "emotion";
-
-function classes(en: boolean): { [key: string]: any } {
-  function getSize(size: number, lineHeight: number) {
-    return `
-      font-size: ${en ? size : size - 3}px;
-      line-height: ${size * lineHeight}px;
-      font-family: ${en ? "EBGaramond" : "SpoqaHanSans"};
-    `;
-  }
-  function getSizeBauer(size: number, lineHeight: number) {
-    return `
-      font-size: ${en ? size : size - 2}px;
-      line-height: ${size * lineHeight}px;
-    `;
-  }
-  return {
-    publication: {
+const getFont = (
+  font:
+    | "EBGaramond"
+    | "BauerGroteskOTW03-Regular"
+    | "BauerGroteskOTW03" = "EBGaramond",
+  en: boolean = false
+) => (size: number, lineHeight: number) => {
+  return css`
+    font-family: ${en ? font : "SpoqaHanSans"};
+    font-size: ${en ? size : size - (font === "EBGaramond" ? 3 : 2)}px;
+    line-height: ${size * lineHeight}px;
+  `;
+};
+const classes: { [key: string]: any } = {
+  publication: (en: boolean) => {
+    const getSize = getFont("EBGaramond", en);
+    return {
       edition: css`
         font-family: EBGaramond;
         font-size: 19px;
@@ -70,8 +70,11 @@ function classes(en: boolean): { [key: string]: any } {
         margin-bottom: 30px;
         line-height: 25px;
       `,
-    },
-    exhibition: {
+    };
+  },
+  exhibition: (en: boolean) => {
+    const getSize = getFont("EBGaramond", en);
+    return {
       date: css`
         font-family: EBGaramond;
         font-size: 19px;
@@ -108,8 +111,11 @@ function classes(en: boolean): { [key: string]: any } {
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
       `,
-    },
-    event: {
+    };
+  },
+  event: (en: boolean) => {
+    const getSize = getFont("BauerGroteskOTW03", en);
+    return {
       type: css`
         font-family: BauerGroteskOTW03-Book;
         font-size: 17px;
@@ -128,10 +134,9 @@ function classes(en: boolean): { [key: string]: any } {
         color: #707070;
         margin-top: 15px;
       `,
-
       place: css`
+        ${getSize(14, 1.21)}
         font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
-        ${getSizeBauer(14, 1.21)}
         margin-top: 3px;
         text-align: center;
         color: #afafaf;
@@ -139,22 +144,24 @@ function classes(en: boolean): { [key: string]: any } {
       `,
 
       title: css`
-        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
-        ${getSizeBauer(25, 1.08)}
+        ${getSize(25, 1.08)}
         margin-top: 15px;
         text-align: center;
         color: #4b4b4b;
       `,
       body: css`
+        ${getSize(18, 1.5)}
         font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
-        ${getSizeBauer(18, 1.5)}
         margin-top: 21px;
         line-height: 28px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
       `,
-    },
-    eventMainCard: {
+    };
+  },
+  eventMainCard: (en: boolean) => {
+    const getSize = getFont("BauerGroteskOTW03", en);
+    return {
       type: css`
         font-family: BauerGroteskOTW03;
         font-size: 16px;
@@ -178,16 +185,19 @@ function classes(en: boolean): { [key: string]: any } {
         color: #4b4b4b;
       `,
       body: css`
+        ${getSize(19, 1.42)}
         font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
-        ${getSizeBauer(19, 1.42)}
         margin-top: 13px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         max-height: 196px;
         line-height: 28px;
         white-space: break-spaces;
       `,
-    },
-    exhibitionMainCard: {
+    };
+  },
+  exhibitionMainCard: (en: boolean) => {
+    const getSize = getFont("EBGaramond", en);
+    return {
       type: css`
         font-family: BauerGroteskOTW03;
         font-size: 16px;
@@ -219,11 +229,32 @@ function classes(en: boolean): { [key: string]: any } {
         max-height: 196px;
         white-space: break-spaces;
       `,
-    },
-  };
-}
+    };
+  },
+  artistWidget: (en: boolean) => {
+    const getSize = getFont("EBGaramond", en);
+    return {
+      title: css`
+        ${getSize(22, 1.23)}
+        letter-spacing: 0.44px;
+        text-align: center;
+        color: #4b4b4b;
+      `,
+      body: css`
+        ${getSize(17, 1.47)}
+        font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
+        line-height: 28px;
+        margin-top: 12px;
+        color: #707070;
+        max-height: 112px;
+        white-space: break-spaces;
+      `,
+    };
+  },
+};
+
 export default function useLang(type = "exhibition") {
   const [lang] = useGlobalState(LANG);
   const en = lang !== "ko";
-  return [classes(en)[type], en];
+  return [classes[type](en), en];
 }

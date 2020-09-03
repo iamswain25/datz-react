@@ -1,51 +1,12 @@
 import React from "react";
 import { css } from "emotion";
-import { useGlobalState, LANG } from "../store/useGlobalState";
 import { Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useDesktop from "./useDesktop";
 import useArtists from "../utils/useArtists";
-const artistNameClass = css`
-  font-family: ArnoPro-Display;
-  font-size: 23px;
-  line-height: 1.17;
-  letter-spacing: 0.46px;
-  color: #4b4b4b;
-  margin-bottom: 20px;
-`;
-const artistNameClassKo = css`
-  margin-bottom: 20px;
-  font-family: SpoqaHanSans;
-  font-size: 19px;
-  font-weight: normal;
-  font-stretch: normal;
-
-  line-height: 1.42;
-  color: #4b4b4b;
-`;
-
-const descClass = css`
-  height: 100px;
-  font-family: BauerGroteskOTW03;
-  font-size: 17px;
-  line-height: 1.47;
-  text-align: left;
-  color: #707070;
-  overflow: hidden;
-  margin-top: 12px;
-`;
-const descClassKo = css`
-  height: 100px;
-  font-family: SpoqaHanSans;
-  font-size: 14px;
-  line-height: 1.79;
-  text-align: left;
-  color: #707070;
-  overflow: hidden;
-  margin-top: 11px;
-`;
+import useLang from "./useLang";
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -71,7 +32,7 @@ export default function ArtistWidget({
   dark?: boolean;
   artists: any[];
 }) {
-  const [lang] = useGlobalState(LANG);
+  const [classes, en] = useLang("artistWidget");
   const isDesktop = useDesktop();
   const list = useArtists(artists);
   if (!list.length) {
@@ -81,7 +42,7 @@ export default function ArtistWidget({
     <div>
       <div
         className={css`
-          margin-top: ${lang === "ko" ? 45 : 49}px;
+          margin-top: ${!en ? 45 : 49}px;
           padding-left: ${isDesktop ? 17 : 0}px;
           padding-right: ${isDesktop ? 17 : 0}px;
         `}
@@ -100,19 +61,11 @@ export default function ArtistWidget({
         >
           {list.map(({ name, bio, id }, i) => {
             return (
-              <Link
-                to={`/artist/${id}`}
-                key={i}
-                className={lang === "ko" ? artistNameClassKo : artistNameClass}
-              >
-                <p
-                  className={css`
-                    text-align: center;
-                  `}
-                >
+              <Link to={`/artist/${id}`} key={i}>
+                <p className={classes.title}>
                   {name} {">"}
                 </p>
-                <p className={lang === "ko" ? descClassKo : descClass}>{bio}</p>
+                <p className={classes.body}>{bio}</p>
               </Link>
             );
           })}
