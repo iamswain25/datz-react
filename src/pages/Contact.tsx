@@ -96,6 +96,8 @@ export default function Contact() {
             </h1>
             <a
               href="mailto:datzpress@datzpress.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className={css`
                 font-size: 16px;
                 line-height: 1.19;
@@ -188,22 +190,84 @@ export default function Contact() {
             `}
           >
             <h1 className={h1Style}>CONTACT</h1>
-            <p
+            <div
               className={css`
                 line-height: 1.39;
                 font-size: 18px;
                 white-space: break-spaces;
               `}
             >
-              {`Phone
-+82 2 447 2581
--
-Email
-Datz Press      datzpress@datzpress.com
-Datz Books      books@datzpress.com
-D’Ark Room      darkroom@datzpress.com
-DMA      museum@datzpress.com`}
-            </p>
+              <div>Phone</div>
+              <div>
+                <a href="tel:+82 2 447 2581">+82 2 447 2581</a>
+              </div>
+              <div>-</div>
+              <div>Email</div>
+              <div>
+                <span
+                  className={css`
+                    margin-right: 16px;
+                  `}
+                >
+                  Datz Press
+                </span>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="datzpress@datzpress.com"
+                >
+                  datzpress@datzpress.com
+                </a>
+              </div>
+              <div>
+                <span
+                  className={css`
+                    margin-right: 16px;
+                  `}
+                >
+                  Datz Books
+                </span>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="books@datzpress.com"
+                >
+                  books@datzpress.com
+                </a>
+              </div>
+              <div>
+                <span
+                  className={css`
+                    margin-right: 16px;
+                  `}
+                >
+                  D’Ark Room
+                </span>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="darkroom@datzpress.com"
+                >
+                  darkroom@datzpress.com
+                </a>
+              </div>
+              <div>
+                <span
+                  className={css`
+                    margin-right: 16px;
+                  `}
+                >
+                  DMA
+                </span>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="darkroom@datzpress.com"
+                >
+                  museum@datzpress.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         {!isDesktop && <BtnTop color="white" />}

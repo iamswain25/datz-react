@@ -192,7 +192,11 @@ export default function AboutDatzpress() {
                   <Grid container spacing={3} justify="center">
                     <Grid item>D’Ark Room</Grid>
                     <Grid item>
-                      <a href="mailto:darkroom@datzpress.com">
+                      <a
+                        href="mailto:darkroom@datzpress.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         darkroom@datzpress.com
                       </a>
                     </Grid>

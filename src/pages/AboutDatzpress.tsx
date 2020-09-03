@@ -173,7 +173,11 @@ export default function AboutDatzpress() {
                   <Grid container spacing={3} justify="center">
                     <Grid item>Enquiry</Grid>
                     <Grid item>
-                      <a href="mailto:datzpress@datzpress.com">
+                      <a
+                        href="mailto:datzpress@datzpress.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         datzpress@datzpress.com
                       </a>
                     </Grid>
@@ -181,7 +185,11 @@ export default function AboutDatzpress() {
                   <Grid container spacing={3} justify="center">
                     <Grid item>D’Ark Room</Grid>
                     <Grid item>
-                      <a href="mailto:books@datzpress.com">
+                      <a
+                        href="mailto:books@datzpress.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         books@datzpress.com
                       </a>
                     </Grid>

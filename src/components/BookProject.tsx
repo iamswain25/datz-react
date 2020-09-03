@@ -74,6 +74,8 @@ export default function BookProject() {
           </div>
           <a
             href="mailto:submission@datzpress.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className={css`
               text-decoration: underline;
             `}
