@@ -2,8 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import DatzBooks from "../assets/svg/DatzBooks";
 import useDesktop from "./useDesktop";
+import useLang from "./useLang";
 export default function BookProject() {
   const isDesktop = useDesktop();
+  const [classes] = useLang("BookProject");
   return (
     <section
       className={css`
@@ -52,11 +54,7 @@ export default function BookProject() {
             line-height: 1.39;
           `}
         >
-          <div
-            className={css`
-              margin-top: 37px;
-            `}
-          >
+          <div className={classes.body}>
             Creating books is done through collaboration of artists, planners,
             editors, designers, printing and bookmakers. Opportunities for
             publication with Datz Press are provided by the course of selection

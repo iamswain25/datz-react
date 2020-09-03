@@ -274,6 +274,17 @@ const classes: { [key: string]: any } = {
       `,
     };
   },
+  BookProject: (en: boolean) => {
+    const getSize = getFont("BauerGroteskOTW03-Regular", en);
+    return {
+      body: css`
+        ${getSize(18, 1.39)}
+        line-height: 28px;
+        margin-top: 37px;
+        white-space: break-spaces;
+      `,
+    };
+  },
 };
 
 export default function useLang(type = "exhibition") {
