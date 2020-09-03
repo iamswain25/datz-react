@@ -116,7 +116,7 @@ export default function Artist() {
         images={[e1, e1, e1]}
         additionalClass="white-bullets"
         className={css`
-          ${isDesktop ? marginH37 : marginH17}
+          ${isDesktop ? marginH37 : undefined}
           height: ${isDesktop ? "auto" : "588px"};
         `}
         children={<DatzArtistExhibition />}
@@ -126,7 +126,7 @@ export default function Artist() {
         additionalClass="white-bullets"
         className={css`
           margin-top: 21px;
-          ${isDesktop ? marginH37 : marginH17}
+          ${isDesktop ? marginH37 : undefined}
           height: ${isDesktop ? "auto" : "588px"};
         `}
         children={<DatzArtistExhibition2 />}
@@ -136,7 +136,7 @@ export default function Artist() {
         additionalClass="white-bullets"
         className={css`
           margin-top: 21px;
-          ${isDesktop ? marginH37 : marginH17}
+          ${isDesktop ? marginH37 : undefined}
           height: ${isDesktop ? "auto" : "588px"};
         `}
         children={<DatzArtistExhibition3 />}

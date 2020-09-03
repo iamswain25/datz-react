@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { paddingH37 } from "./styles";
+import { paddingH37, paddingH17 } from "./styles";
 import i1 from "../assets/images/artist/i1.png";
 import i2 from "../assets/images/artist/i2.png";
 import i3 from "../assets/images/artist/i3.png";
@@ -52,7 +52,7 @@ export default function DatzArtistProject2() {
         line-height: 1.19;
         text-align: center;
         color: #707070;
-        ${paddingH37}
+        ${isDesktop ? paddingH37 : paddingH17}
       `}
     >
       <Grid
