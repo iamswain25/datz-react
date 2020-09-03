@@ -8,6 +8,8 @@ import { exhibitions } from "../@type/exhibitions";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import DatzmuseumOrder from "./DatzmuseumOrder";
+import useLang from "./useLang";
+import Linkify from "./Linkify";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -23,10 +25,10 @@ const mobileContainer = css`
   position: relative;
   ${paddingH27}
 `;
-export default function ExhibitionItemLeft({ item = exhibitions[1] }) {
+export default function ExhibitionItemLeft({ item }: { item: any }) {
   const { id = 1 } = useParams();
   const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
+  const [classes] = useLang("exhibition");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <CloseShare close="/exhibition" />
@@ -36,64 +38,20 @@ export default function ExhibitionItemLeft({ item = exhibitions[1] }) {
           display: flex;
           flex-direction: column;
           overflow: hidden;
-          padding-left: ${isDesktop ? 10 : 0}px;
-          padding-right: ${isDesktop ? 10 : 0}px;
+          padding: 0 ${isDesktop ? 10 : 0}px ${isDesktop ? 0 : 40}px;
           flex: 1;
         `}
       >
-        <div
-          className={css`
-            font-family: ArnoPro-Subhead;
-            font-size: 20px;
-            line-height: 1.4;
-            letter-spacing: 0.4px;
-            text-align: center;
-            color: #707070;
-            margin-top: 18px;
-          `}
-        >
+        <div className={classes.date}>
           {item.start_date} - {item.end_date}
         </div>
-        <div
-          className={css`
-            font-family: ArnoPro-Subhead;
-            font-size: 16px;
-            line-height: 1.38;
-            letter-spacing: 0.32px;
-            text-align: center;
-            color: #afafaf;
-            margin-top: 3px;
-          `}
-        >
+        <div className={classes.type}>
           {exhibitionCurrentPast(item.start_date, item.end_date)}
         </div>
-        <div
-          className={css`
-            font-family: ArnoPro-Subhead;
-            font-size: 27px;
-            line-height: 1.19;
-            letter-spacing: 0.54px;
-            text-align: center;
-            color: #4b4b4b;
-            margin-top: 28px;
-          `}
-        >
-          {lang === "ko" ? item.title_ko : item.title_en}
-        </div>
-        <div
-          className={css`
-            font-family: ArnoPro-Display;
-            font-size: 20px;
-            line-height: 1.35;
-            letter-spacing: 0.4px;
-            text-align: left;
-            color: #4b4b4b;
-            margin-top: 30px;
-            overflow: hidden;
-          `}
-        >
-          {lang === "ko" ? item.body_ko : item.body_en}
-        </div>
+        <div className={classes.title}>{item.title}</div>
+        <Linkify>
+          <div className={classes.body}>{item.body}</div>
+        </Linkify>
       </div>
       <Link
         to={`/exhibition/${id}/readmore`}

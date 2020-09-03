@@ -79,7 +79,7 @@ const classes: { [key: string]: any } = {
       notes: css`
         ${getSize(16, 1.69)}
         margin-top: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         line-height: 25px;
       `,
     };
@@ -122,6 +122,7 @@ const classes: { [key: string]: any } = {
         line-height: 25px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
+        margin-bottom: 40px;
       `,
     };
   },
