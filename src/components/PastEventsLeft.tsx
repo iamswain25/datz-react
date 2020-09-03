@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "emotion";
-import Darkroom from "../assets/svg/Darkroom";
 import EventCoverWidget from "./EventCoverWidget";
 import useDesktop from "./useDesktop";
 import half from "../assets/images/legacy/half.jpg";
+import Logo from "./Logo";
 const list = [half, half, half];
 export default function PastEventsLeft() {
   const isDesktop = useDesktop();
@@ -79,7 +79,8 @@ export default function PastEventsLeft() {
           </div>
           <div className={authorClass}>2019.11.11</div>
         </div>
-        <Darkroom
+        <Logo
+          type="darkroom"
           color="#ffffff"
           className={css`
             position: absolute;

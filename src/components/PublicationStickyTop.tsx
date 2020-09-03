@@ -1,8 +1,9 @@
 import React from "react";
 import pside1 from "../assets/images/legacy/pside1.png";
-import Datzpress from "../assets/svg/Datzpress";
+
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
+import Logo from "./Logo";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -95,7 +96,8 @@ export default function PublicationStickyTop() {
         >
           Linda Connor
         </div>
-        <Datzpress
+        <Logo
+          type="datzpress"
           color="#ffffff"
           className={css`
             position: absolute;

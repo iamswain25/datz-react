@@ -1,9 +1,10 @@
 import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
-import Datzpress from "../assets/svg/Datzpress";
+
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
+import Logo from "./Logo";
 const flex = css`
   display: flex;
   align-items: center;
@@ -36,9 +37,7 @@ export default function DatzSvgs({ color = "#707070" }) {
         overflow: hidden;
       `}
     >
-      <Link to="/press" className={flex}>
-        <Datzpress color={color} />
-      </Link>
+      <Logo type="datzpress" color={color} className={flex} />
       {dividerV(css`
         margin-left: 28px;
         margin-right: 25px;

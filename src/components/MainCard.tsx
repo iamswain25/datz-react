@@ -60,6 +60,7 @@ export default function MainCard({
             `}
           />
           <Logo
+            offLink
             type={item.type}
             color="#fff"
             className={css`

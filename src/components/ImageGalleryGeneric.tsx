@@ -3,7 +3,8 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import Datzpress from "../assets/svg/Datzpress";
+
+import Logo from "./Logo";
 export default function ImageGalleryGeneric({ images }: { images: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
@@ -77,7 +78,8 @@ export default function ImageGalleryGeneric({ images }: { images: any[] }) {
         />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{sub}</div>
-        <Datzpress
+        <Logo
+          type="datzpress"
           color={color}
           className={css`
             bottom: ${isDesktop ? 29 : 25}px;

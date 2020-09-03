@@ -68,6 +68,7 @@ export default function ViewAllCard({
         />
         {type === "exhibition" && (
           <Logo
+            offLink
             type={item.type}
             color="#fff"
             className={css`

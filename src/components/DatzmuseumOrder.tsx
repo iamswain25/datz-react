@@ -23,9 +23,7 @@ export default function DatzmuseumOrder({
         font-family: BauerGroteskOTW03;
       `}
     >
-      <Link to="/" className={flexrowcenter}>
-        <Logo type={logo} color="#707070" />
-      </Link>
+      <Logo type={logo} color="#707070" className={flexrowcenter} />
       <a
         href={order}
         target="_blank"

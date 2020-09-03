@@ -3,10 +3,8 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import { Flex, FlexRow, F1 } from "./div";
 import Shares from "./Shares";
-import Datzpress from "../assets/svg/Datzpress";
-import Darkroom from "../assets/svg/Darkroom";
-import DatzMuseum from "../assets/svg/DatzMuseum";
 import useDesktop from "./useDesktop";
+import Logo from "./Logo";
 const menu = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -19,11 +17,6 @@ const padding = css`
   padding: 11px;
   color: #707070;
 `;
-const flex = css`
-  display: flex;
-  align-items: center;
-`;
-
 const dividerV = (className = "") => (
   <div
     className={css`
@@ -66,23 +59,17 @@ const Menus = (
 );
 const dotzsvgs = (
   <>
-    <Link to="/press" className={flex}>
-      <Datzpress />
-    </Link>
+    <Logo type="datzpress" color="#404041" />
     {dividerV(css`
       margin-left: 28px;
       margin-right: 25px;
     `)}
-    <Link to="/darkroom" className={flex}>
-      <Darkroom />
-    </Link>
+    <Logo type="darkroom" color="#404041" />
     {dividerV(css`
       margin-left: 33px;
       margin-right: 25px;
     `)}
-    <Link to="/museum" className={flex}>
-      <DatzMuseum />
-    </Link>
+    <Logo type="museum" color="#404041" />
   </>
 );
 export default function Footer() {
@@ -130,9 +117,10 @@ export default function Footer() {
           {signup}
         </section>
 
-        <FlexRow
+        <div
           className={css`
             height: 71px;
+            display: flex;
             margin-left: 37px;
             margin-right: 37px;
             padding-left: 30px;
@@ -142,7 +130,7 @@ export default function Footer() {
           `}
         >
           {dotzsvgs}
-        </FlexRow>
+        </div>
         {divider}
         <F1
           className={css`
@@ -228,7 +216,13 @@ export default function Footer() {
           />
           <Shares />
         </FlexRow>
-        <FlexRow className={css``}>{dotzsvgs}</FlexRow>
+        <div
+          className={css`
+            display: flex;
+          `}
+        >
+          {dotzsvgs}
+        </div>
       </FlexRow>
       {divider}
       <FlexRow

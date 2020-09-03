@@ -1,8 +1,7 @@
 import React from "react";
 import { css } from "emotion";
-import { Link } from "react-router-dom";
-import Datzpress from "../assets/svg/Datzpress";
 import { flexrowcenter } from "./styles";
+import Logo from "./Logo";
 
 export default function DatzpressOrder({
   order = "https://datzpress.com/product/offerings-se",
@@ -18,9 +17,7 @@ export default function DatzpressOrder({
         height: 31px;
       `}
     >
-      <Link to="/" className={flexrowcenter}>
-        <Datzpress />
-      </Link>
+      <Logo type="datzpress" className={flexrowcenter} />
       <a
         href={order}
         target="_blank"

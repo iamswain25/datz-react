@@ -2,45 +2,69 @@ import React from "react";
 import Datzpress from "../assets/svg/Datzpress";
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
+import { Link } from "react-router-dom";
 
 export default function Logo({
   className,
   type = "D'Ark Room",
   color = "#fff",
+  offLink = false,
 }: {
   className?: string;
   type?: string;
   color?: string;
+  offLink?: boolean;
 }) {
-  if (type === "D'Ark Room") {
-    return (
-      <a
-        href="https://www.instagram.com/d.ark.room/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Darkroom color={color} className={className} />
-      </a>
-    );
+  switch (type) {
+    case "darkroom":
+    case "D'Ark Room": {
+      let logo = <Darkroom color={color} className={className} />;
+      if (offLink) {
+        return logo;
+      } else {
+        return (
+          <a
+            href="https://www.instagram.com/d.ark.room/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {logo}
+          </a>
+        );
+      }
+    }
+    case "museum":
+    case "Datz Museum of Art": {
+      let logo = <DatzMuseum color={color} className={className} />;
+      if (offLink) {
+        return logo;
+      } else {
+        return (
+          <a
+            href="https://www.datzmuseum.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {logo}
+          </a>
+        );
+      }
+    }
+    case "datzpress": {
+      let logo = <Datzpress color={color} className={className} />;
+      if (offLink) {
+        return logo;
+      } else {
+        return <Link to="/">{logo}</Link>;
+      }
+    }
+    default: {
+      let logo = <Datzpress color={color} className={className} />;
+      if (offLink) {
+        return logo;
+      } else {
+        return <Link to="/">{logo}</Link>;
+      }
+    }
   }
-  if (type === "Datz Museum of Art") {
-    return (
-      <a
-        href="https://www.datzmuseum.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <DatzMuseum color={color} className={className} />
-      </a>
-    );
-  }
-  return (
-    <a
-      href="https://www.datzpress.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Datzpress color={color} className={className} />
-    </a>
-  );
 }

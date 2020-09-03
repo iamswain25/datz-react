@@ -11,12 +11,13 @@ import {
   paddingH17,
   paddingH12,
 } from "../components/styles";
-import Datzpress from "../assets/svg/Datzpress";
+
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
+import Logo from "../components/Logo";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -101,7 +102,8 @@ export default function AboutDatzpress() {
                   min-height: 0;
                 `}
               />
-              <Datzpress
+              <Logo
+                type="datzpress"
                 color="#afafaf"
                 className={css`
                   bottom: 29px;

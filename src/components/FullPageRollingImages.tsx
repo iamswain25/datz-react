@@ -4,7 +4,7 @@ import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import Datzpress from "../assets/svg/Datzpress";
+import Logo from "./Logo";
 export default function FullPageRollingImages(props: {
   images: Array<Main> | undefined;
   style?: React.CSSProperties;
@@ -91,7 +91,9 @@ export default function FullPageRollingImages(props: {
         />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
-        <Datzpress
+        <Logo
+          type="datzpress"
+          color={color}
           className={css`
             bottom: ${isDesktop ? 29 : 25}px;
             left: ${isDesktop ? 32 : 23}px;

@@ -8,10 +8,11 @@ import {
   marginH24,
 } from "./styles";
 import m1 from "../assets/images/about/m1.png";
-import Datzpress from "../assets/svg/Datzpress";
+
 import DatzBooks from "../assets/svg/DatzBooks";
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
+import Logo from "./Logo";
 const desc2Style = css`
   font-family: ArnoPro-Display;
   font-size: 20px;
@@ -58,7 +59,7 @@ export default function AboutImages2() {
         <div className={absoluteStyle}>
           {isDesktop && (
             <div className={flexrowcenter}>
-              <Datzpress className={svgStyle} color="#ffffff" />
+              <Logo type="datzpress" className={svgStyle} color="#ffffff" />
               {vertical}
               <DatzBooks className={svgStyle} color="#ffffff" />
               {vertical}

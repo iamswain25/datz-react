@@ -3,8 +3,8 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
-import DatzMuseum from "../assets/svg/DatzMuseum";
 import useDesktop from "./useDesktop";
+import Logo from "./Logo";
 export default (props: { images: Array<Main> | undefined }) => {
   const images =
     (props.images && props.images.map((a) => ({ original: a.image }))) || [];
@@ -86,7 +86,8 @@ export default (props: { images: Array<Main> | undefined }) => {
         />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{author}</div>
-        <DatzMuseum
+        <Logo
+          type="museum"
           color={color}
           className={css`
             left: ${isDesktop ? 69 : 40}px;
