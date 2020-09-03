@@ -1,10 +1,10 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useParams } from "react-router-dom";
 import useArtistIndex from "../utils/useArtistIndex ";
 import Linkify from "./Linkify";
+import useLang from "./useLang";
 const stickyContainer = css`
   border-top: 1px solid #ffffff;
   padding-top: 43px;
@@ -23,7 +23,7 @@ const mobileContainer = css`
 `;
 export default function ArtistLeft() {
   const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
+  const [classes] = useLang("ArtistLeft");
   const { id } = useParams();
   const { homepage, bio } = useArtistIndex(id);
   return (
@@ -47,17 +47,7 @@ export default function ArtistLeft() {
         >
           Biography
         </div>
-        <div
-          className={css`
-            font-family: ${lang === "ko" ? "SpoqaHanSans" : "ArnoPro-Subhead"};
-            font-size: ${lang === "ko" ? 16 : 19}px;
-            line-height: ${lang === "ko" ? 1.69 : 1.42};
-            text-align: left;
-            color: #ffffff;
-          `}
-        >
-          {bio}
-        </div>
+        <div className={classes.bio}>{bio}</div>
       </section>
       {isDesktop && (
         <div

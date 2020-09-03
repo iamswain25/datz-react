@@ -6,12 +6,24 @@ const getFont = (
     | "BauerGroteskOTW03-Regular"
     | "BauerGroteskOTW03" = "EBGaramond",
   en: boolean = false
-) => (size: number, lineHeight: number) => {
-  return css`
-    font-family: ${en ? font : "SpoqaHanSans"};
-    font-size: ${en ? size : size - (font === "EBGaramond" ? 3 : 2)}px;
-    line-height: ${size * lineHeight}px;
-  `;
+) => {
+  const minus = (() => {
+    switch (font) {
+      case "BauerGroteskOTW03":
+        return 2;
+      case "BauerGroteskOTW03-Regular":
+        return 2;
+      case "EBGaramond":
+        return 3;
+    }
+  })();
+  return (size: number, lineHeight: number) => {
+    return css`
+      font-family: ${en ? font : "SpoqaHanSans"};
+      font-size: ${en ? size : size - minus}px;
+      line-height: ${size * lineHeight}px;
+    `;
+  };
 };
 const classes: { [key: string]: any } = {
   publication: (en: boolean) => {
@@ -247,6 +259,17 @@ const classes: { [key: string]: any } = {
         margin-top: 12px;
         color: #707070;
         max-height: 112px;
+        white-space: break-spaces;
+      `,
+    };
+  },
+  ArtistLeft: (en: boolean) => {
+    const getSize = getFont("BauerGroteskOTW03-Regular", en);
+    return {
+      bio: css`
+        ${getSize(15, 1.8)}
+        line-height: 28px;
+        margin-top: 17px;
         white-space: break-spaces;
       `,
     };
