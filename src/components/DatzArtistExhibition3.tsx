@@ -1,10 +1,12 @@
 import React from "react";
 import { css } from "emotion";
 import { paddingH55 } from "./styles";
-import DatzMuseum from "../assets/svg/DatzMuseum";
 import insta from "../assets/images/artist/insta.png";
 import { Grid } from "@material-ui/core";
+import useDesktop from "./useDesktop";
+import Logo from "./Logo";
 export default function DatzArtistExhibition3() {
+  const isDesktop = useDesktop();
   return (
     <div
       className={css`
@@ -36,7 +38,7 @@ export default function DatzArtistExhibition3() {
           align-items: center;
         `}
       >
-        <DatzMuseum color="white" />
+        {isDesktop && <Logo type="museum" color="white" />}
         <div
           className={css`
             margin-top: 34px;

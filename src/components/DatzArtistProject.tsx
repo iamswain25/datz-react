@@ -54,7 +54,7 @@ export default function DatzArtistProject() {
             align-items: center;
           `}
         >
-          <DatzSvgs color="white" />
+          {isDesktop && <DatzSvgs color="white" />}
           <div
             className={css`
               max-width: 600px;

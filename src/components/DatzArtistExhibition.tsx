@@ -47,7 +47,7 @@ export default function DatzArtistExhibition() {
           align-items: center;
         `}
       >
-        <DatzSvgs color="white" />
+        {isDesktop && <DatzSvgs color="white" />}
         <div
           className={css`
             margin-top: 34px;
