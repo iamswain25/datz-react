@@ -13,10 +13,34 @@ export default function Logo({
   color?: string;
 }) {
   if (type === "D'Ark Room") {
-    return <Darkroom color={color} className={className} />;
+    return (
+      <a
+        href="https://www.instagram.com/d.ark.room/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Darkroom color={color} className={className} />
+      </a>
+    );
   }
   if (type === "Datz Museum of Art") {
-    return <DatzMuseum color={color} className={className} />;
+    return (
+      <a
+        href="https://www.datzmuseum.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <DatzMuseum color={color} className={className} />
+      </a>
+    );
   }
-  return <Datzpress color={color} className={className} />;
+  return (
+    <a
+      href="https://www.datzpress.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Datzpress color={color} className={className} />
+    </a>
+  );
 }
