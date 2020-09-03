@@ -119,12 +119,9 @@ export default function Footer() {
 
         <div
           className={css`
-            height: 71px;
+            padding: 25px 30px;
             display: flex;
-            margin-left: 37px;
-            margin-right: 37px;
-            padding-left: 30px;
-            padding-right: 30px;
+            margin: 0 37px;
             justify-content: center;
             overflow: hidden;
           `}

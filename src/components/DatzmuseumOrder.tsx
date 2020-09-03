@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import { Link } from "react-router-dom";
 import { flexrowcenter } from "./styles";
 import Logo from "./Logo";
 
