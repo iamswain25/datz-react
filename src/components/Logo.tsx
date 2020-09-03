@@ -3,6 +3,7 @@ import Datzpress from "../assets/svg/Datzpress";
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
 import { Link } from "react-router-dom";
+import DatzBooks from "../assets/svg/DatzBooks";
 
 export default function Logo({
   className,
@@ -49,6 +50,11 @@ export default function Logo({
           </a>
         );
       }
+    }
+    case "books":
+    case "DatzBooks": {
+      let logo = <DatzBooks color={color} className={className} />;
+      return logo;
     }
     case "datzpress": {
       let logo = <Datzpress color={color} className={className} />;

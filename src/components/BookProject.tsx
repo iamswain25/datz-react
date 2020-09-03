@@ -3,6 +3,7 @@ import { css } from "emotion";
 import DatzBooks from "../assets/svg/DatzBooks";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
+import Logo from "./Logo";
 export default function BookProject() {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -93,12 +94,15 @@ export default function BookProject() {
         >
           In collaboration with
         </div>
-        <div
-          className={css`
-            margin-top: 25px;
-          `}
-        >
-          <DatzBooks color="#5d5d5d" />
+        <div>
+          <Logo
+            type="books"
+            color="#5d5d5d"
+            className={css`
+              width: 80px;
+              margin: 25px 0;
+            `}
+          />
         </div>
       </div>
       <div
