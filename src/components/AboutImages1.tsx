@@ -43,9 +43,11 @@ const liStyle = (isDesktop: boolean) => {
   if (isDesktop) {
     return css`
       overflow: hidden;
-      height: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
       position: relative;
-      ${flexcolumncenter}
     `;
   } else {
     return css`
@@ -61,6 +63,7 @@ const liTextStyle = (isDesktop: boolean) => {
   if (isDesktop) {
     return css`
       margin-top: 19px;
+      height: 150px;
       font-family: BauerGroteskOTW03;
       font-size: 19px;
       line-height: 1.42;
@@ -102,7 +105,7 @@ const liDescStyle = (isDesktop: boolean) => {
 const messagesStyle = (isDesktop: boolean) => css`
   ${bottomBtn37}
   color: #ffffff;
-  margin-top: ${isDesktop ? 47 : 0}px;
+  margin-top: ${isDesktop ? 30 : 0}px;
   border-top: solid ${isDesktop ? 1 : 0}px #ffffff;
   ${isDesktop ? "" : marginH17}
   width: ${isDesktop ? "100%" : "calc(100% - 34px)"};
@@ -151,6 +154,8 @@ export default function AboutImages1() {
           ? css`
               height: calc(100vh - 79px);
               position: relative;
+              display: flex;
+              flex-direction: column;
             `
           : undefined
       }
@@ -163,55 +168,48 @@ export default function AboutImages1() {
           grows from pure motives.
         </div>
       </section>
-      <section
-        className={
-          isDesktop
-            ? css`
-                height: 100%;
-                position: relative;
-              `
-            : undefined
-        }
+      <Grid
+        container
+        spacing={isDesktop ? 3 : 0}
+        className={css`
+          padding-top: ${isDesktop ? 37 : 10}px;
+          flex: 1;
+        `}
       >
-        <Grid
-          container
-          spacing={isDesktop ? 3 : 0}
-          className={css`
-            padding-top: ${isDesktop ? 37 : 10}px;
-          `}
-        >
-          {arr.map(([imgsrc, title, desc, link], i) => {
-            return (
-              <Grid item key={i} xs={12} sm={4}>
-                <Link to={link} className={liStyle(isDesktop)}>
-                  <LazyImage
-                    link={imgsrc}
-                    alt={title}
-                    img={css`
-                      ${fullCoverImg}
-                      height: ${isDesktop ? "auto" : "588px"}
-                    `}
-                    placeholder={css`
-                      ${fullCoverImg}
-                      background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                      height: ${isDesktop ? "auto" : "588px"};
-                    `}
-                  />
-                  <div className={liTextStyle(isDesktop)}>
-                    {isDesktop ? title : title.substr(0, title.length - 2)}
-                    <div className={liDescStyle(isDesktop)}>
-                      <div className={classes.body}>{desc}</div>
-                    </div>
+        {arr.map(([imgsrc, title, desc, link], i) => {
+          return (
+            <Grid item container key={i} xs={12} sm={4}>
+              <Link to={link} className={liStyle(isDesktop)}>
+                <LazyImage
+                  link={imgsrc}
+                  alt={title}
+                  img={css`
+                    object-fit: cover;
+                    height: ${isDesktop ? "100%" : "588px"};
+                    min-height: 0;
+                    min-width: 0;
+                    flex: 1;
+                  `}
+                  placeholder={css`
+                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                    height: ${isDesktop ? "100%" : "588px"};
+                    flex: 1;
+                  `}
+                />
+                <div className={liTextStyle(isDesktop)}>
+                  {isDesktop ? title : title.substr(0, title.length - 2)}
+                  <div className={liDescStyle(isDesktop)}>
+                    <div className={classes.body}>{desc}</div>
                   </div>
-                  {!isDesktop && (
-                    <div className={linkStyle(isDesktop)}>{title}</div>
-                  )}
-                </Link>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </section>
+                </div>
+                {!isDesktop && (
+                  <div className={linkStyle(isDesktop)}>{title}</div>
+                )}
+              </Link>
+            </Grid>
+          );
+        })}
+      </Grid>
       <a className={messagesStyle(isDesktop)} href="/message">
         message {">"}
       </a>
