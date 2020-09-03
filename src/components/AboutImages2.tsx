@@ -14,7 +14,7 @@ import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
 import Logo from "./Logo";
 const desc2Style = css`
-  font-family: ArnoPro-Display;
+  font-family: BauerGroteskOTW03;
   font-size: 20px;
   line-height: 1.35;
   letter-spacing: 0.4px;
