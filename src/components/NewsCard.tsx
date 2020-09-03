@@ -5,7 +5,7 @@ import { filterExhibitionCurrent } from "../utils/datefns";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 export default function NewsCard({ item }: { item: any }) {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(false);
   const isCurrent = filterExhibitionCurrent(item);
   return (
     <Link to={`/newsitem/${item.id}`}>
