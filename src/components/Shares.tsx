@@ -26,7 +26,12 @@ export default function Shares() {
         display: flex;
       `}
     >
-      <Link to="/mail" className={padding}>
+      <a
+        href="mailto:datzpress@datzpress.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={padding}
+      >
         <img
           src={mail}
           alt="share"
@@ -35,7 +40,7 @@ export default function Shares() {
             margin-right: 21px;
           `}
         />
-      </Link>
+      </a>
       <Link to="/share" className={padding}>
         <img
           src={share}
@@ -46,7 +51,12 @@ export default function Shares() {
           `}
         />
       </Link>
-      <Link to="/insta" className={padding}>
+      <a
+        href="https://www.instagram.com/datzpress/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={padding}
+      >
         <img
           src={insta}
           alt="insta"
@@ -55,8 +65,13 @@ export default function Shares() {
             margin-right: 23px;
           `}
         />
-      </Link>
-      <Link to="/fb" className={padding}>
+      </a>
+      <a
+        href="https://www.facebook.com/datzpresspage"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={padding}
+      >
         <img
           src={fb}
           alt="fb"
@@ -65,8 +80,13 @@ export default function Shares() {
             margin-right: 20px;
           `}
         />
-      </Link>
-      <Link to="/twitter" className={padding}>
+      </a>
+      <a
+        href="https://twitter.com/datzpress"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={padding}
+      >
         <img
           src={twitter}
           alt="twitter"
@@ -75,8 +95,13 @@ export default function Shares() {
             margin-right: 16px;
           `}
         />
-      </Link>
-      <Link to="/blog" className={padding}>
+      </a>
+      <a
+        href="https://blog.naver.com/datzpress"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={padding}
+      >
         <img
           src={blog}
           alt="blog"
@@ -84,7 +109,7 @@ export default function Shares() {
             height: 24px;
           `}
         />
-      </Link>
+      </a>
     </div>
   );
 }
