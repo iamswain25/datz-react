@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { paddingH55 } from "./styles";
+import { paddingH55, paddingH27 } from "./styles";
 import insta from "../assets/images/artist/insta.png";
 import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
@@ -22,7 +22,7 @@ export default function DatzArtistExhibition3() {
         flex-direction: column;
         align-items: center;
         top: 0;
-        ${paddingH55}
+        ${isDesktop ? paddingH55 : paddingH27}
       `}
     >
       <div

@@ -10,9 +10,11 @@ import useDesktop from "./useDesktop";
 const classes = {
   image: css`
     width: 100%;
+    margin-top: 19px;
     object-fit: contain;
   `,
   h6: css`
+    margin-top: 6px;
     color: #aaaaaa;
   `,
   h5: css`
@@ -59,7 +61,7 @@ export default function DatzArtistProject2() {
         className={css`
           font-size: 19px;
           line-height: 1.21;
-          margin-bottom: 30px;
+          margin-bottom: 11px;
         `}
       >
         Projects

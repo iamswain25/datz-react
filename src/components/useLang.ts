@@ -280,6 +280,7 @@ const classes: { [key: string]: any } = {
     return {
       body: css`
         ${getSize(18, 1.39)}
+        text-align: left;
         line-height: 28px;
         margin-top: 37px;
         white-space: break-spaces;

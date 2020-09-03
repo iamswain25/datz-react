@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import DatzBooks from "../assets/svg/DatzBooks";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";

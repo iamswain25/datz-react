@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { paddingH55 } from "./styles";
+import { paddingH55, paddingH27 } from "./styles";
 import DatzSvgs from "./DatzSvgs";
 import useDesktop from "./useDesktop";
 export default function DatzArtistProject() {
@@ -18,7 +18,7 @@ export default function DatzArtistProject() {
     >
       <div
         className={css`
-          ${paddingH55}
+          ${isDesktop ? paddingH55 : paddingH27}
           font-family: BauerGroteskOTW03;
           font-size: 23px;
           line-height: 1.17;
