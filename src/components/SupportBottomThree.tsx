@@ -10,9 +10,11 @@ const classes = {
   `,
   price: css`
     margin-top: 10px;
+    font-family: BauerGroteskOTW03-Regular;
   `,
   desc: css`
     margin-top: 10px;
+    font-family: BauerGroteskOTW03-Regular;
   `,
 };
 const items = [

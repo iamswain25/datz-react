@@ -42,6 +42,7 @@ export default function Contact() {
   }, []);
   const h1Style = React.useMemo(
     () => css`
+      font-family: BauerGroteskOTW03;
       font-size: 17px;
       line-height: 1.24;
       padding-bottom: 6px;
@@ -57,7 +58,7 @@ export default function Contact() {
       <div
         className={css`
           background-color: #afafaf;
-          font-family: BauerGroteskOTW03;
+          font-family: BauerGroteskOTW03-Regular;
           text-align: center;
           color: #ffffff;
           height: ${isDesktop ? "100vh" : "auto"};
