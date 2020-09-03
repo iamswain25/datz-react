@@ -122,7 +122,7 @@ export default function PublicationList() {
               margin: 40px 0;
             `}
           >
-            <Grid container spacing={4}>
+            <Grid container spacing={isDesktop ? 4 : 0}>
               {list
                 .filter((f) =>
                   selected === "all" ? true : f.type === selected

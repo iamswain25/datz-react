@@ -40,6 +40,10 @@ export const paddingH10 = css`
   padding-left: 10px;
   padding-right: 10px;
 `;
+export const paddingH12 = css`
+  padding-left: 12px;
+  padding-right: 12px;
+`;
 export const paddingH15 = css`
   padding-left: 15px;
   padding-right: 15px;

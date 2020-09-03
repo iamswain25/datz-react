@@ -3,28 +3,20 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import BtnBack from "../components/BtnBack";
 import d2 from "../assets/images/about/d2.png";
-import m2 from "../assets/images/about/m2.png";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
   flexcolumnstretch,
-  marginH10,
   flexcolumn,
   paddingH17,
+  paddingH12,
 } from "../components/styles";
 import Datzpress from "../assets/svg/Datzpress";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
-const twoColumns = css`
-  ${paddingH37}
-  position: relative;
-  height: calc(100vh - 79px);
-`;
-const mobileContainer = css`
-  ${paddingH17}
-  ${flexcolumn}
-`;
+import useLang from "../components/useLang";
+import LazyImage from "../components/LazyImage";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -34,25 +26,9 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const h2Style = css`
-  font-size: 20px;
-  line-height: 1.25;
-  text-align: center;
-  margin-bottom: 25px;
-  margin-bottom: 8px;
-  margin-top: 34px;
-  text-align: left;
-`;
-const pStyle = css`
-  font-size: 18px;
-  line-height: 1.39;
-  text-align: left;
-`;
 export default function AboutDatzpress() {
   const isDesktop = useDesktop();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [classes] = useLang("About");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzmuseum");
@@ -87,25 +63,38 @@ export default function AboutDatzpress() {
         </div>
       )}
       <ArtistHeader sticky />
-      <div className={isDesktop ? twoColumns : mobileContainer}>
+      <div
+        className={css`
+          ${isDesktop ? paddingH37 : paddingH17}
+          ${flexcolumn}
+          position: relative;
+          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          padding-bottom: 16px;
+        `}
+      >
         <Grid
           container
-          spacing={4}
+          spacing={isDesktop ? 4 : 0}
           className={css`
-            height: 100%;
+            flex: 1;
           `}
         >
           <Grid item xs={12} sm={6}>
             <div
               className={css`
-                height: ${isDesktop ? "calc(100% - 37px)" : "588px"};
-                background-image: url(${isDesktop ? d2 : m2});
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
                 position: relative;
+                overflow: hidden;
+                height: ${isDesktop ? "100%" : "588px"};
               `}
             >
+              <LazyImage
+                link={d2}
+                img={css`
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                `}
+              />
               <Datzpress
                 color="#afafaf"
                 className={css`
@@ -120,7 +109,11 @@ export default function AboutDatzpress() {
             <div
               className={css`
                 ${flexcolumnstretch}
-                ${marginH10}
+                ${paddingH12}
+                max-height: ${isDesktop
+                  ? "calc(100vh - 79px - 32px)"
+                  : "auto"};
+                overflow: auto;
               `}
             >
               <div
@@ -129,16 +122,15 @@ export default function AboutDatzpress() {
                 `}
               >
                 <h1 className={h1Style(isDesktop)}>Datz Press</h1>
-
-                <p className={pStyle}>
+                <p className={classes.desc}>
                   Datz Press is an art book press that works with photographers,
                   designers, and bookmakers. We create, publish, and exhibit
                   books centered on photography. We advocates for the growth of
                   participatory artistic activity through exhibiting and
                   publishing art, as well as art education.
                 </p>
-                <h2 className={h2Style}>Datz Books</h2>
-                <p className={pStyle}>
+                <h2 className={classes.title}>Datz Books</h2>
+                <p className={classes.desc}>
                   Datz Books is a bookmaking studio. We collaborate with artists
                   who want to create artist books. We suggest appropriate
                   designs, materials, and binding procedures and complete a
@@ -161,7 +153,7 @@ export default function AboutDatzpress() {
                 </h2>
                 <div
                   className={css`
-                    ${pStyle}
+                    ${classes.desc}
                     margin-top: 18px;
                     text-align: center;
                     white-space: break-spaces;

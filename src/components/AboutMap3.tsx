@@ -64,7 +64,7 @@ export default function AboutMap3() {
   return (
     <>
       <section className={sectionStyle(isDesktop)}>
-        <Grid container spacing={4}>
+        <Grid container spacing={isDesktop ? 4 : 0}>
           <Grid
             item
             xs={12}

@@ -7,7 +7,7 @@ import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
   flexcolumnstretch,
-  marginH10,
+  paddingH12,
   flexcolumn,
   paddingH17,
 } from "../components/styles";
@@ -15,15 +15,8 @@ import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
 import Darkroom from "../assets/svg/Darkroom";
 import { Grid } from "@material-ui/core";
-const twoColumns = css`
-  ${paddingH37}
-  position: relative;
-  height: calc(100vh - 79px);
-`;
-const mobileContainer = css`
-  ${paddingH17}
-  ${flexcolumn}
-`;
+import useLang from "../components/useLang";
+import LazyImage from "../components/LazyImage";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -33,25 +26,9 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const h2Style = css`
-  font-size: 20px;
-  line-height: 1.25;
-  text-align: center;
-  margin-bottom: 25px;
-  margin-bottom: 8px;
-  margin-top: 34px;
-  text-align: left;
-`;
-const pStyle = css`
-  font-size: 18px;
-  line-height: 1.39;
-  text-align: left;
-`;
 export default function AboutDatzpress() {
   const isDesktop = useDesktop();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [classes] = useLang("About");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzpress");
@@ -86,25 +63,38 @@ export default function AboutDatzpress() {
         </div>
       )}
       <ArtistHeader sticky />
-      <div className={isDesktop ? twoColumns : mobileContainer}>
+      <div
+        className={css`
+          ${isDesktop ? paddingH37 : paddingH17}
+          ${flexcolumn}
+          position: relative;
+          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          padding-bottom: 16px;
+        `}
+      >
         <Grid
           container
-          spacing={4}
+          spacing={isDesktop ? 4 : 0}
           className={css`
-            height: 100%;
+            flex: 1;
           `}
         >
           <Grid item xs={12} sm={6}>
             <div
               className={css`
-                height: ${isDesktop ? "calc(100% - 37px)" : "588px"};
-                background-image: url(${d3});
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
                 position: relative;
+                overflow: hidden;
+                height: ${isDesktop ? "100%" : "588px"};
               `}
             >
+              <LazyImage
+                link={d3}
+                img={css`
+                  width: 100%;
+                  height: inherit;
+                  object-fit: cover;
+                `}
+              />
               <Darkroom
                 color="#fff"
                 className={css`
@@ -119,7 +109,11 @@ export default function AboutDatzpress() {
             <div
               className={css`
                 ${flexcolumnstretch}
-                ${marginH10}
+                ${paddingH12}
+                max-height: ${isDesktop
+                  ? "calc(100vh - 79px - 32px)"
+                  : "auto"};
+                overflow: auto;
               `}
             >
               <div
@@ -129,15 +123,15 @@ export default function AboutDatzpress() {
               >
                 <h1 className={h1Style(isDesktop)}>D’Ark Room</h1>
 
-                <p className={pStyle}>
+                <p className={classes.desc}>
                   D’ark Room is a project space for showcasing photographs and
                   books. We hosts lectures, artist talks, and portfolio reviews
                   in collaboration with various artist. Archive Room has over
                   1,000 photo books and offers a reading room for artists
                   documentaries and DVDs.
                 </p>
-                <h2 className={h2Style}>D’Front Space</h2>
-                <p className={pStyle}>
+                <h2 className={classes.title}>D’Front Space</h2>
+                <p className={classes.desc}>
                   D’Front Space is a gallery space that naturally connects to
                   D’Ark Room and invites and welcomes the outside gaze. It
                   displays various projects underway at D’ARK ROOM, and is a
@@ -159,7 +153,7 @@ export default function AboutDatzpress() {
                 </h2>
                 <div
                   className={css`
-                    ${pStyle}
+                    ${classes.desc}
                     margin-top: 18px;
                     text-align: center;
                     white-space: break-spaces;

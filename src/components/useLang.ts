@@ -291,7 +291,22 @@ const classes: { [key: string]: any } = {
       body: css`
         ${getSize(17, 1.47)}
         // line-height: 28px;
+        text-align: left;
         white-space: break-spaces;
+      `,
+      title: css`
+        ${getSize(20, 1.25)}
+        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
+        text-align: center;
+        white-space: break-spaces;
+        margin-top: 34px;
+      `,
+      desc: css`
+        ${getSize(18, 1.39)}
+        line-height: 28px;
+        text-align: left;
+        white-space: break-spaces;
+        flex: 1;
       `,
     };
   },

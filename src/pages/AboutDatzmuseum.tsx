@@ -7,24 +7,17 @@ import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
   flexcolumnstretch,
-  marginH10,
   flexcolumn,
   paddingH17,
   flexcolumncenter,
+  paddingH12,
 } from "../components/styles";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
 import { Grid } from "@material-ui/core";
-const twoColumns = css`
-  ${paddingH37}
-  position: relative;
-  height: calc(100vh - 79px);
-`;
-const mobileContainer = css`
-  ${paddingH17}
-  ${flexcolumn}
-`;
+import useLang from "../components/useLang";
+import LazyImage from "../components/LazyImage";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -42,9 +35,7 @@ const pStyle = css`
 `;
 export default function AboutDatzpress() {
   const isDesktop = useDesktop();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [classes] = useLang("About");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/darkroom");
@@ -79,25 +70,38 @@ export default function AboutDatzpress() {
         </div>
       )}
       <ArtistHeader sticky />
-      <div className={isDesktop ? twoColumns : mobileContainer}>
+      <div
+        className={css`
+          ${isDesktop ? paddingH37 : paddingH17}
+          ${flexcolumn}
+          position: relative;
+          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          padding-bottom: 16px;
+        `}
+      >
         <Grid
           container
-          spacing={4}
+          spacing={isDesktop ? 4 : 0}
           className={css`
-            height: 100%;
+            flex: 1;
           `}
         >
           <Grid item xs={12} sm={6}>
             <div
               className={css`
-                height: ${isDesktop ? "calc(100% - 37px)" : "588px"};
-                background-image: url(${d4});
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
                 position: relative;
+                overflow: hidden;
+                height: ${isDesktop ? "100%" : "588px"};
               `}
             >
+              <LazyImage
+                link={d4}
+                img={css`
+                  width: 100%;
+                  height: inherit;
+                  object-fit: cover;
+                `}
+              />
               <DatzMuseum
                 color="#fff"
                 className={css`
@@ -112,7 +116,11 @@ export default function AboutDatzpress() {
             <div
               className={css`
                 ${flexcolumnstretch}
-                ${marginH10}
+                ${paddingH12}
+                max-height: ${isDesktop
+                  ? "calc(100vh - 79px - 32px)"
+                  : "auto"};
+                overflow: auto;
               `}
             >
               <div
@@ -133,7 +141,7 @@ export default function AboutDatzpress() {
                 >
                   Visit Website {">"}
                 </a>
-                <p className={pStyle}>
+                <p className={classes.desc}>
                   Datz Museum of Art is a meeting place of nature’s beauty and
                   art. Set conveniently away from the busy city.
                   {"\n"}
