@@ -14,11 +14,7 @@ export default function EventRight() {
   // const currentEvents = list.filter(filterExhibitionCurrent);
   const isDesktop = useDesktop();
   return (
-    <main
-      className={css`
-        margin-left: ${isDesktop ? 27 : 0}px;
-      `}
-    >
+    <main>
       <Grid container spacing={isDesktop ? 3 : 0}>
         {list.slice(0, 2).map((item, i) => (
           <Grid item xs={12} xl={6} key={i}>
