@@ -32,7 +32,7 @@ export default function ArtistWidget({
   dark?: boolean;
   artists: any[];
 }) {
-  const [classes, en] = useLang("artistWidget");
+  const [classes] = useLang("artistWidget");
   const isDesktop = useDesktop();
   const list = useArtists(artists);
   if (!list.length) {
@@ -42,15 +42,17 @@ export default function ArtistWidget({
     <div>
       <div
         className={css`
-          margin-top: ${!en ? 45 : 49}px;
+          margin-top: 45px;
           padding-left: ${isDesktop ? 17 : 0}px;
           padding-right: ${isDesktop ? 17 : 0}px;
         `}
       >
         <Carousel
           responsive={responsive}
-          containerClass={css`flex: 1;
-  align-items: normal;`}
+          containerClass={css`
+            flex: 1;
+            align-items: normal;
+          `}
           itemClass={itemClass}
           renderButtonGroupOutside={true}
           arrows={false}
