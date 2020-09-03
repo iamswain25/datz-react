@@ -19,7 +19,12 @@ export default function HomeEventCard({
   const isDesktop = useDesktop();
   const [classes] = useLang(`${type}MainCard`);
   return (
-    <Link to={`/${type}/${id}`}>
+    <Link
+      to={`/${type}/${id}`}
+      className={css`
+        flex: 1;
+      `}
+    >
       <section
         className={css`
           position: relative;
