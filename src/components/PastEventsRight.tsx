@@ -11,14 +11,9 @@ export default function PastEventsRight() {
     <>
       <HomeEventCard item={item} type="event" />
       <div
-        className={
-          isDesktop
-            ? ""
-            : css`
-                padding-left: 27px;
-                padding-right: 27px;
-              `
-        }
+        className={css`
+          padding: 0 ${isDesktop ? -6 : 21}px;
+        `}
       >
         <UpcomingWidget />
       </div>

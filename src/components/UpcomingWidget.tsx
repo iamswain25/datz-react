@@ -68,7 +68,7 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
         renderButtonGroupOutside={true}
         arrows={false}
         customButtonGroup={
-          <CarouselBtnGroup dark={dark}>
+          <CarouselBtnGroup dark={dark} plusMargin={6}>
             <div className={textClass(dark)}>Upcoming Events/News</div>
           </CarouselBtnGroup>
         }
