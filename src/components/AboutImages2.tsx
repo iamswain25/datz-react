@@ -14,12 +14,6 @@ import Datzpress from "../assets/svg/Datzpress";
 import DatzBooks from "../assets/svg/DatzBooks";
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
-const messagesStyle = css`
-  ${bottomBtn37}
-  color: #ffffff;
-  margin-top: 47px;
-  border-top: solid 1px #ffffff;
-`;
 const desc2Style = css`
   font-family: ArnoPro-Display;
   font-size: 20px;
@@ -28,6 +22,7 @@ const desc2Style = css`
   text-align: left;
   color: #ffffff;
   margin-top: 24px;
+  margin-bottom: 47px;
 `;
 const absoluteStyle = css`
   position: absolute;
@@ -82,9 +77,6 @@ export default function AboutImages2() {
             the positive functionality that is inherent in art through random
             acts of art kindness.
           </div>
-          <a className={messagesStyle} href="/visit">
-            visit {">"}
-          </a>
         </div>
       </section>
     </>

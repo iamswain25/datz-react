@@ -36,6 +36,7 @@ const h2Style = css`
   margin-top: 46px;
 `;
 const pStyle = css`
+  font-family: BauerGroteskOTW03-Regular;
   font-size: 18px;
   line-height: 1.39;
   text-align: center;
