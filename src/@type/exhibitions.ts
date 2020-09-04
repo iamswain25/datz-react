@@ -40,9 +40,9 @@ export const exhibitions = [
       "/Exhibition/43/17.jpg",
       "/Exhibition/43/18.jpg",
     ],
-    rel_artists: [],
-    rel_publications: [],
-    rel_events: [],
+    rel_artists: [18],
+    rel_publications: [3, 50, 61, 64],
+    rel_events: [30],
   },
   {
     address: "2020_art-of-imagination",

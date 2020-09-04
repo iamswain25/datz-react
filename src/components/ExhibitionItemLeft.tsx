@@ -48,7 +48,7 @@ export default function ExhibitionItemLeft({ item }: { item: any }) {
         </div>
         <div className={classes.title}>{item.title}</div>
         <Linkify>
-          <div className={classes.body}>{item.body}</div>
+          <div className={classes.body}>{item.preview_body}</div>
         </Linkify>
       </div>
       <Link
