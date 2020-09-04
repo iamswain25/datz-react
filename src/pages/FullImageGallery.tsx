@@ -3,26 +3,16 @@ import { css } from "emotion";
 import ImageGallery from "react-image-gallery";
 import Arrow from "../components/Arrow";
 import { useParams, useHistory } from "react-router-dom";
-import usePublicationIndex from "../utils/usePublicationIndex";
 import { makeUrl } from "../config/url";
-import useExhibitionIndex from "../utils/useExhibitionIndex";
-import useArtistIndex from "../utils/useArtistIndex ";
-export default function FullImageGallery({ type = "publication" }) {
+import useItemIndex from "../utils/useItemIndex";
+export default function FullImageGallery({
+  type = "publication",
+}: {
+  type: "publication" | "artist" | "event" | "exhibition";
+}) {
   const { index, id } = useParams();
-  const pItem = usePublicationIndex(id);
-  const eItem = useExhibitionIndex(id);
   const { replace } = useHistory();
-  const aItem = useArtistIndex(id);
-  let item = null;
-  if (type === "publication") {
-    item = pItem;
-  } else if (type === "artist") {
-    item = aItem;
-  } else if (type === "exhibition") {
-    item = eItem;
-  } else {
-    item = pItem;
-  }
+  const item = useItemIndex(id, type);
 
   function onSlideHandler(currentIndex: number) {
     replace(`/${type}/${id}/images/${currentIndex}`);
@@ -43,7 +33,7 @@ export default function FullImageGallery({ type = "publication" }) {
       <ImageGallery
         infinite={false}
         startIndex={Number(index)}
-        items={item.images.map((i) => ({
+        items={item.images.map((i: string) => ({
           original: makeUrl(i),
         }))}
         showNav={true}
