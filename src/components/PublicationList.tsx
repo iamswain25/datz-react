@@ -18,17 +18,6 @@ const classes = {
     color: #707070;
     text-align: center;
   `,
-  placeholder: css`
-    background-color: #ececec;
-    // width: 100%;
-    min-width: 280px;
-    min-height: 280px;
-  `,
-  img: css`
-    object-fit: contain;
-    width: 280px;
-    height: 280px;
-  `,
 };
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
@@ -135,7 +124,20 @@ export default function PublicationList() {
                         to={`publication/${item.id}`}
                         className={classes.link}
                       >
-                        <LazyImage alt={item.title} link={item.image_cover} />
+                        <LazyImage
+                          alt={item.title}
+                          link={item.image_cover}
+                          img={css`
+                            object-fit: contain;
+                            width: 280px;
+                            height: 280px;
+                          `}
+                          placeholder={css`
+                            background-color: #fff;
+                            min-width: 280px;
+                            min-height: 280px;
+                          `}
+                        />
                         <span
                           className={css`
                             font-size: 19px;

@@ -7,6 +7,7 @@ import SupportTexts from "../components/SupportTexts";
 import SupportBottomThree from "../components/SupportBottomThree";
 import BtnTop from "../components/BtnTop";
 import { paddingH55 } from "../components/styles";
+import LazyImage from "../components/LazyImage";
 export default function Support() {
   const isDesktop = useDesktop();
   console.log(isDesktop);
@@ -20,13 +21,11 @@ export default function Support() {
           height: 100vh;
         `}
       >
-        <img
-          src={supportImg}
-          alt="supportImg"
-          className={css`
+        <LazyImage
+          link={supportImg}
+          img={css`
             width: 100%;
-            min-height: 724px;
-            // position: absolute;
+            object-fit: cover;
           `}
         />
         <SupportTexts />

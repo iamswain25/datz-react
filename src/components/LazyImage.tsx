@@ -2,16 +2,17 @@ import React from "react";
 import { css } from "emotion";
 import { makeUrl } from "../config/url";
 import { LazyImage as LI } from "react-lazy-images";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 const classes = {
   placeholder: css`
-    background-color: #fff;
-    min-width: 280px;
-    min-height: 280px;
+    width: 100%;
+    height: 100%;
+    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
   `,
   img: css`
     object-fit: contain;
-    width: 280px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
   `,
 };
 export default function LazyImage({
