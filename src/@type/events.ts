@@ -1,12 +1,14 @@
 export const events = [
   {
+    address: "2020_fnl24",
     id: 1,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2020.8.7",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#24 Round Table ‘Material, Intersections’",
     body_en:
-      'As a combined event with the exhibition ‘Art of Imagination’, first FNL of this year, the round table ‘Material, Intersections’ was held in D’ark Room.  Young korean artists, Hyunjeong Kimbak, Meen Yea Oh, Hyunseon Son and Hyejin Jo talked about the process of art making. Hyunjeong Kimbak(Photography) turns the imagination of reassembling images and materials into material again. Hyunseon Son(Painting) explores the surface of a material that is not directly related to its original functional purpose. Hyejin Jo(Installation) questions the value of an object’s essential shape and reconstructs it into space. . In Meen Yea Oh expanded her imagination by introducing an art book with its original function "Reading" erased. It was a time to take a deeper look at the artist\'s inspiration in everyday life, interpreted through visual language and creative thinking. In the exhibition ‘Art of Imagination’, you can see the works of four artists, as well as artist books from various countries selected by Datz.\n \nFeaturing: \nHyunjeong Kimbak(Artist), Hyunseon Son(Artist), Meen Yea Oh(Artist), Hyejin Jo(Artist)\n \nLead by Minkyung Lee(Project Manager) ',
+      'As a combined event with the exhibition ‘Art of Imagination’, first FNL of this year, the round table ‘Material, Intersections’ was held in D’ark Room.  Young korean artists, Hyunjeong Kimbak, Meen Yea Oh, Hyunseon Son and Hyejin Jo talked about the process of art making. Hyunjeong Kimbak(Photography) turns the imagination of reassembling images and materials into material again. Hyunseon Son(Painting) explores the surface of a material that is not directly related to its original functional purpose. Hyejin Jo(Installation) questions the value of an object’s essential shape and reconstructs it into space. . In Meen Yea Oh expanded her imagination by introducing an art book with its original function "Reading" erased. It was a time to take a deeper look at the artist\'s inspiration in everyday life, interpreted through visual language and creative thinking. In the exhibition ‘Art of Imagination’, you can see the works of four artists, as well as artist books from various countries selected by Datz.\n \nFeaturing: \nHyunjeong Kimbak(Artist), Hyunseon Son(Artist), Meen Yea Oh(Artist), Hyejin Jo(Artist) \nLead by Minkyung Lee(Project Manager)',
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#24 라운드 테이블 <물질, 교차점>",
     body_ko:
@@ -26,7 +28,9 @@ export const events = [
     ],
   },
   {
+    address: "2020_nature-conversations",
     id: 2,
+    logo: "Datz Press",
     type: "Exhibition",
     date: "2020.4.20 - 2020.6.12",
     place_en: "Space B-E, the gallery of YUNHYUN Trading",
@@ -51,7 +55,9 @@ export const events = [
     ],
   },
   {
+    address: "2019_farm-to-table",
     id: 3,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2019.11.1",
     place_en: "Cafe Dotz, Datz Museum of Art",
@@ -61,7 +67,7 @@ export const events = [
     place_ko: "닻미술관, 카페 돛",
     title_ko: "전시 오프닝 행사: ‘팜 투 테이블’",
     body_ko:
-      "‘팜 투 테이블’은 <다른 감각들의 공간Synesthesia: The Space Between>전시 오프닝 이벤트로 전시에 참여한 조성연 작가가 기획하였습니다. 아티스트북 「지고 맺다Arranging Life」에서 씨앗이 발아하는 성장과정과 소멸의 과정을 식물학자처럼 조사하고, 분석하는 등 오랜 기간 동안 느린 태도로 관찰하며 세련되고 정적인 조형의 사진작업을 해온 조성연은 몇 해 전부터 도시농부로서의 삶을 체험하기 시작했습니다. 몸소 작물을 경작하며 자연의 이치와 질서, 그리고 물질성을 경험한 작가의 시야는 자연스레 확장되어 쓸모없이 버려지고 죽은 듯 보이는 것들에 숨결을 불어 넣었습니다. ‘팜 투 테이블’ 이벤트는 작가가 직접 재배한 농작물로 다채로운 시감각을 구성해 테이블에 올려냅니다.\n조성연 작가가 준비한 이벤트는 자연과 생성과 소멸의 순환 과정을 테이블위에 아름답게 재현해 시각적으로 아름다울 뿐만 아니라 참여자들과 함께 나누는 과정을 포함해 다른 감각들과 소통의 과정이 융화된 이벤트였습니다.\n",
+      "‘팜 투 테이블’은 <다른 감각들의 공간Synesthesia: The Space Between>전시 오프닝 이벤트로 전시에 참여한 조성연 작가가 기획하였습니다. 아티스트북 「지고 맺다Arranging Life」에서 씨앗이 발아하는 성장과정과 소멸의 과정을 식물학자처럼 조사하고, 분석하는 등 오랜 기간 동안 느린 태도로 관찰하며 세련되고 정적인 조형의 사진작업을 해온 조성연은 몇 해 전부터 도시농부로서의 삶을 체험하기 시작했습니다. 몸소 작물을 경작하며 자연의 이치와 질서, 그리고 물질성을 경험한 작가의 시야는 자연스레 확장되어 쓸모없이 버려지고 죽은 듯 보이는 것들에 숨결을 불어 넣었습니다. ‘팜 투 테이블’ 이벤트는 작가가 직접 재배한 농작물로 다채로운 시감각을 구성해 테이블에 올려냅니다.\n\n조성연 작가가 준비한 이벤트는 자연과 생성과 소멸의 순환 과정을 테이블위에 아름답게 재현해 시각적으로 아름다울 뿐만 아니라 참여자들과 함께 나누는 과정을 포함해 다른 감각들과 소통의 과정이 융화된 이벤트였습니다.",
     images: [
       "/Event/03/01.jpg",
       "/Event/03/02.jpg",
@@ -73,9 +79,11 @@ export const events = [
     ],
   },
   {
+    address: "2019_material-memory",
     id: 4,
+    logo: "Datz Press",
     type: "Exhibition",
-    date: "2019.9.28 - ",
+    date: "2019.9.28 - 2019.12.4",
     place_en: "Outside Gallery, North Adams, MA, USA",
     title_en: "Material, Memory",
     body_en:
@@ -96,13 +104,15 @@ export const events = [
     ],
   },
   {
+    address: "2019_nypl",
     id: 5,
+    logo: "Datz Press",
     type: "Artist Talk / Lecture",
     date: "2019.9.25",
     place_en: "The New York Public Library, Wachenheim Trustees Room",
     title_en: "From South Korea to NYPL: Datz Press",
     body_en:
-      "“Datz Press understands and responds sensitively to what an artist is trying to imply, making it near perfection through a delicate process. The only publisher that can fully digest the spirit of my work for 30 years and deliver all of my photos is the Datz Press.” _Lonnie Graham\n \nThe New York Public Library(NYPL), one of the world’s four largest libraries, decided to own the entire publication of Datz Press and hosted the lecture on September 25 under the title ‘From South Korea to NYPL: Datz Press’. Sangyon Joo, the head of Datz Press and Datz Museum of Art, along with three artists, Amanda Marchand(photographer/writer), Minny Lee(photographer/poet), and Lonnie Graham(photographer/professor at Pennsylvania State University).\n \nThe lecture, which began with the greeting of Sangyon Joo, described the establishment background of Datz Museum of Art and Datz Press, the space that embodies the merits of exhibitions and books in an effective way, introduced the project space D’Ark Room, where the space that communicates with the public. \n \nAmanda Marchand, Minny Lee and Lonnie Graham had time to introduce their books published in Datz Press. The lecture is the significant event to introduce Datz Press to book lovers and the sponsors of the public library, with the NYPL’s collection which Datz Press’ publications are included.",
+      "“Datz Press understands and responds sensitively to what an artist is trying to imply, making it near perfection through a delicate process. The only publisher that can fully digest the spirit of my work for 30 years and deliver all of my photos is the Datz Press.” _Lonnie Graham\n \nThe New York Public Library(NYPL), one of the world’s four largest libraries, decided to acquire the entire publication catalogue of Datz Press and hosted a lecture on September 25 under the title ‘From South Korea to NYPL: Datz Press’ in celebration of this event. The lecture introduced Sangyon Joo, director of Datz Press and Datz Museum of Art, along with three artists, Amanda Marchand(photographer/writer), Minny Lee(photographer/poet), and Lonnie Graham(photographer/professor at Pennsylvania State University). The lecture began with the greeting of Sangyon Joo followed by an introduction of the establishment background of Datz Museum of Art, Datz Press, book making studio Datz Books and project exhibition space D’Ark Room. Then artists Amanda Marchand, Minny Lee, and Lonnie Graham stepped up to the podium to speak about  their books published with Datz Press, Nothing Will Ever be the Same Again, Million Years, and A Conversation with the World, respectively. The lecture was a significant milestone inintroducing Datz Press to book lovers and sponsors of the public library.\n \nFeaturing:\nLonnie Graham(Artist), Minny Lee(Artist), Amanda Marchand(Artist) Sangyon Joo(Publisher)\\",
     place_ko: "뉴욕 공립도서관, Wachenheim Trustees Room",
     title_ko: "From South Korea to NYPL: Datz Press",
     body_ko:
@@ -110,13 +120,15 @@ export const events = [
     images: ["/Event/05/01.jpg", "/Event/05/02.jpg", "/Event/05/03.jpg"],
   },
   {
+    address: "2019_ny-art-book-fair",
     id: 6,
+    logo: "Datz Press",
     type: "Book Fair",
     date: "2019.9.20 - 2019.9.22",
     place_en: "Printed Matter, MoMA PS 1",
     title_en: "NY ART BOOK FAIR 2019",
     body_en:
-      "The NY Art Book Fair (NYABF) was held at MoMA PS1 in Long Island City and 369 organizations from 31 countries participated. Every year, more than 40,000 visitors, including book and art lovers, collectors, artists and art experts gather for this event. NY Art Book Fair is the place where people experiment by forming a community centered on books and interacting with the possibilities of various art publications. Datz Press, the only Korean publisher to participate for four consecutive years, received a positive response by introducing more than 30 publications, including 10 artist books/art books published in 2019. \n\nOne of the biggest achievements of consistently participating in the book fair over the past four years is that the entire publication of Datz Press gets included in the collection of New York Public Library and International Center of Photography(ICP).\n",
+      "The NY Art Book Fair (NYABF) was held at MoMA PS1 in Long Island City and 369 organizations from 31 countries participated. Every year, more than 40,000 visitors, including book and art lovers, collectors, artists and art experts gather for this event. NY Art Book Fair is the place where people experiment by forming a community centered on books and interacting with the possibilities of various art publications. Datz Press, the only Korean publisher to participate for four consecutive years, received a positive response by introducing more than 30 publications, including 10 artist books/art books published in 2019. \n \nOur consistent participation at events such as the NYABF has led us to reach great milestones such as the entire Datz catalogue being acquired by the New York Public Library(NYPL) and the International Center of Photography (ICP). A lecture titled <From South Korea to NYPL: Datz Press> was held at the NYPL with Datz Press and its published artists in celebration of this event. ",
     place_ko: "Printed Matter, MoMA PS 1",
     title_ko: "뉴욕 아트북 페어 2019 ",
     body_ko:
@@ -130,13 +142,15 @@ export const events = [
     ],
   },
   {
+    address: "2019_fnl23",
     id: 7,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2019.9.6",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#23 Artist Talk ‘Photography?’",
     body_en:
-      "To celebrate the publication of Alan Eglinton's ‘poems,’ we hosted an artist talk. Alan Eglinton created a new story by combining photographic images with poetry. He shared stories about his work process which involved interactions between awakened synesthesia. It was time to have a deep understanding of Eglinton’s art world by listening to the story of the photo book ‘Only the fires says',a collection of photos taken without planning and ‘Yes, No, Maybe’, the image works with the poems dedicated to the artist’s wife.\nIt was a time for us to feel the artist’s images which were made through the process of focusing on emotions, senses, and stimuli.\n \nFeaturing: Alan Eglinton(Photographer)\n",
+      "To celebrate the publication of Alan Eglinton's ‘poems,’ we hosted an artist talk. Alan Eglinton created a new story by combining photographic images with poetry. He shared stories about his work process which involved interactions between awakened synesthesia. We were able to gain deeper knowledge of Eglinton’s working process through the introduction of his books ‘Only the fire says’, which was made through a compilation of unplanned photographs, and ‘Yes, No, Maybe’, which was made with images and poems dedicated to his wife. Alan Eglinton’s work helped us approach his work with newly gained understandings of his artistic process involving detailed emotions, sensibilities, and stimuli. \n \nFeaturing: Alan Eglinton(Photographer)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#23 아티스트 토크 <Photography?>",
     body_ko:
@@ -151,13 +165,15 @@ export const events = [
     ],
   },
   {
+    address: "2019_fnl22",
     id: 8,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2019.8.23",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#22 Book Talk ‘Interpreting Text in Typography’",
     body_en:
-      "Here's the 22nd FNL talking about delivering the story about typography. Prior to Hyunmee Kimi's book talk,we heard about Xianlu Yi’s artist book ‘Grass, Kim Su-yong’ as an intro book talk. Yi talked about how the typography art book, which he created during a class of Kim Hyunmee, became published through collaboration with Datz Press. Hyunmee Kim talked about how her interest started with typography that visually conveys text and accomplished with studying deeply with the possibility of typography. Kim shared the story of making process for typography books: ‘ODE TO TYPOGRAPHY’, initially created through the process of understanding the visual forms and vocabulary of words in early stage: TYPE LIBRARY’, a new book published with 62 typefaces and commentary: ‘HEART SUTRA’. \nIn the <Book of Lights> exhibition,  Dark Room, you can see the works of Hyunmee Kim and Xianlu Yi.\n \nFeaturing: Hyunmee Kim(Designer), Xianlu Yi(Designer/Intro)",
+      "The 22nd FNL talked about delivering a story through typography. Prior to Hyunmee Kim's book talk, the FNL opened with Xianlu Yi’s explanation of his artist book ‘Grass, Kim Su-yong’. He shared the story of how his artist book, which was started in a class taught by Hyunmee Kim, was published in collaboration with Datz Press.  \n \nFollowing Yi’s talk, Hyunmee Kim gave a comprehensive talk that examined the possibilities of typography, enhancing our understanding of art of visually conveying text.Kim shared her art making process for typography book: through ‘ODE TO TYPOGRAPHY’, which was created through a process of understanding the vocabularies of typography and its visual forms,  and introduced TYPE LIBRARY’, a new book  elaborating ‘HEART SUTRA’  in 62 typefaces with additional commentary. You can see the works of Hyunmee Kim and Xianlu Yi, in the <Book of Lights> exhibition held at D’ark Room.\n \nFeaturing: Hyunmee Kim(Designer), Xianlu Yi(Designer)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#22 북토크 <타이포그래피로 텍스트 해석하기>",
     body_ko:
@@ -175,7 +191,9 @@ export const events = [
     ],
   },
   {
+    address: "2019_fnl21",
     id: 9,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2019.8.2",
     place_en: "Friday Night Lecture, D’Ark Room",
@@ -197,17 +215,19 @@ export const events = [
     ],
   },
   {
+    address: "2019_fnl20",
     id: 10,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2019.7.26",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#20 Lecture ‘Photo-Poetics’",
     body_en:
-      "In FNL #20, we had time to consider ‘Photography’ in various ways that we encountered and used every day. We had time to think about photography as a tool of recording and expression, and to relearn photography as a poem by looking at images and the photo books. The exhibition ‘Book of Lights’ at D’ark Room consists of works with photos and poems. The exhibition will run until the end of August.\n \n \nFeaturing: Sangyon Joo",
+      "In FNL #20, we had time to consider ‘Photography’ in various ways that we encountered and used every day. We had time to think about photography as a tool of recording and expression, and to relearn photography as a poem by looking at images and the photo books. The exhibition ‘Book of Lights’ at D’ark Room consists of works with photos and poems. The exhibition will run until the end of August.\n \nFeaturing: Sangyon Joo\n ",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#20 강연 <사진·시 作>",
     body_ko:
-      "7월 26일 다크룸에서 진행된 <사진·시 作>의 모습입니다. 매일 접하고 사용하는 ‘사진’을 다양하게 인식하며 바라볼 수 있는 시간을 가졌습니다. 필요에 의해, 기록을 위해 혹은 표현 수단으로의 사진에 대해 생각해보고, 강연이 끝난 후엔 시처럼 쓰여진 이미지들과 그를 담아낸 사진책들을 보며 ‘시’로서의 사진을 다시 깨닫는 시간을 가졌습니다. 다크룸에서 진행되고 있는 <빛들의 책> 전시는 사진과 시가 함께하는 작품들로 구성되어 있습니다. 전시는 8월 말까지 진행됩니다.\n \n강연자: 주상연\n",
+      "7월 26일 다크룸에서 진행된 <사진·시 作>의 모습입니다. 매일 접하고 사용하는 ‘사진’을 다양하게 인식하며 바라볼 수 있는 시간을 가졌습니다. 필요에 의해, 기록을 위해 혹은 표현 수단으로의 사진에 대해 생각해보고, 강연이 끝난 후엔 시처럼 쓰여진 이미지들과 그를 담아낸 사진책들을 보며 ‘시’로서의 사진을 다시 깨닫는 시간을 가졌습니다. 다크룸에서 진행되고 있는 <빛들의 책> 전시는 사진과 시가 함께하는 작품들로 구성되어 있습니다. 전시는 8월 말까지 진행됩니다.\n \n강연자: 주상연",
     images: [
       "/Event/10/01.jpg",
       "/Event/10/02.jpg",
@@ -218,13 +238,15 @@ export const events = [
     ],
   },
   {
+    address: "2019_the-lumen-project",
     id: 11,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2019.7.20",
     place_en: "Datz Museum of Art",
     title_en: "The Lumen Project",
     body_en:
-      "‘The Lumen Project’ by Amanda Machand, who participated in  Datz Residency, was held in Datz Museum of Art. This project, which started in 2017, was conducted for the third time in Korean. \nParticipants sat on photo paper and meditated, and while sitting, sunlight reacted to the photo paper, leaving a trace. After about 30 minutes of meditation, a large circle was drawn on photo paper to follow the shape of the person sitting, and a large lumen print was created. The lumen print created through this event can be seen as the part of works in the next exhibition ‘Synesthesia : The Space Between’ at Datz Museum of Art.\n \nFeaturing: Amanda Marchand(Artist)",
+      "‘The Lumen Project’ by Amanda Machand, who participated in  Datz Residency, was held in Datz Museum of Art. This project, which started in 2017, was conducted for the third time in Korean. \nParticipants sat on photo paper and meditated, and while sitting, sunlight reacted to the photo paper, leaving a trace. After about 30 minutes of meditation, a large circle was drawn on photo paper to follow the shape of the person sitting, and a large lumen print was created. The lumen print created through this event can be seen as the part of works in the next exhibition ‘Synesthesia : The Space Between’ at Datz Museum of Art.\n \nFeaturing: Amanda Marchand(Artist) ",
     place_ko: "닻미술관",
     title_ko: "루멘 프로젝트",
     body_ko:
@@ -232,13 +254,15 @@ export const events = [
     images: ["/Event/11/01.jpg", "/Event/11/02.jpg", "/Event/11/03.jpg"],
   },
   {
+    address: "2019_fnl19",
     id: 12,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2019.7.19",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#19 Book Talk <Yes, to everything>",
     body_en:
-      "‘The Lumen Project’ by Amanda Machand, who participated in  Datz Residency, was held in Datz Museum of Art. This project, which started in 2017, was conducted for the third time in Korean. \nParticipants sat on photo paper and meditated, and while sitting, sunlight reacted to the photo paper, leaving a trace. After about 30 minutes of meditation, a large circle was drawn on photo paper to follow the shape of the person sitting, and a large lumen print was created. The lumen print created through this event can be seen as the part of works in the next exhibition ‘Synesthesia : The Space Between’ at Datz Museum of Art.\n \nFeaturing: Amanda Marchand(Artist)",
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Amanda Marchand(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#19 북토크 <Yes, to everything>",
     body_ko:
@@ -255,7 +279,9 @@ export const events = [
     ],
   },
   {
+    address: "2019_fnl18",
     id: 13,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2019.6.7",
     place_en: "Friday Night Lecture, D’Ark Room",
@@ -275,13 +301,15 @@ export const events = [
     ],
   },
   {
+    address: "2019_la-art-book-fair",
     id: 14,
+    logo: "Datz Press",
     type: "Book Fair",
     date: "2019.4.12 - 2019.4.14 ",
     place_en: "Printed Matter, The Geffen Contemporary at MOCA",
     title_en: "LA ART BOOK FAIR 2019",
     body_en:
-      "LA Art Book Fair is a book fair specializing in art books hosted by Printed Matter, Inc. Printed Matter is a non-profit organization founded in 1976 and has had a great influence on the dissemination of art books and the development of the independent publishing market. Currently, it operates an independent bookstore specializing in artbooks located in New York and hosts the book art fair twice a year: New York Art Book Fair and LA Art Book Fair twice a year.\nOver 390 artists, collectors, publishers, and organizations from all over the world participated at the fair. This was Datz’s second participation and we were included in the section of ‘Focus:Photography’ in which the gathered publishers focused on photography. \nBy meeting people who loved artbooks in person and seeing how people are moved by books, we confirmed our efforts. It was a meaningful time to meet people who willingly own great artist books and to get strength from their warm cheerful words and the appearance to move forward.",
+      "LA Art Book Fair is a book fair specializing in art books hosted by Printed Matter, Inc. Printed Matter is a non-profit organization founded in 1976 and has had a great influence on the dissemination of art books and the development of the independent publishing market. Currently, it operates an independent bookstore specializing in artbooks located in New York and hosts the book art fair twice a year: New York Art Book Fair and LA Art Book Fair twice a year.\nOver 390 artists, collectors, publishers, and organizations from all over the world participated at the fair. This was Datz’s second participation and we were included in the section of ‘Focus:Photography’ in which the gathered publishers focused on photography. \n\nBy meeting people who loved artbooks in person and seeing how people are moved by books, we confirmed our efforts. It was a meaningful time to meet people who willingly own great artist books and to get strength from their warm cheerful words and the appearance to move forward. ",
     place_ko: "Printed Matter, The Geffen Contemporary at MOCA",
     title_ko: "LA 아트북 페어 2019 ",
     body_ko:
@@ -296,17 +324,19 @@ export const events = [
     ],
   },
   {
+    address: "2019_codex-photo-alliance",
     id: 15,
+    logo: "Datz Press",
     type: "Book Fair",
     date: "2019.2.2 - 2019.2.6",
     place_en: "Craneway Pavilion & San Francisco Art Institute Graduate Center",
     title_en: "CODEX 2019 & Lecture at Photo Alliance ",
     body_en:
-      "In 2019, Datz Press's first official event was the Codex Book fair, which had been held for three days and recently has been held for four days. Codex Book Fair is the world's three largest artbook fairs held every two years in San Francisco. Book artists, artists, collectors and interested people from all over the world gather to share their publications and ideas with each other for four days in The Craneway Pavilion. \nXianlu Yi's art book 'Grass', which reconstructed Kim Su-yong's poem 'Grass', was also introduced for the first time in the Codex book fair. It is the most liked and most described book in the book fair. Prior to the book fair, CEO of Datz Press, Sangyon Joo, attended the annual event of the nonprofit photo organization, Photo Alliance, and gave a presentation on the theme of 'Exhibits and Books'. We thank Linda Connor, Lonnie Graham, Minny Lee, Mary Daniel Hobson, Peter P. Blank, Anne Veh, Amanda Marchand and Hendrik Paul for their support.\n",
+      "In 2019, Datz Press's first official event was the Codex Book fair, which had been held for three days and recently has been held for four days. Codex Book Fair is the world's three largest artbook fairs held every two years in San Francisco. Book artists, artists, collectors and interested people from all over the world gather to share their publications and ideas with each other for four days in The Craneway Pavilion. \nXianlu Yi's art book 'Grass', which reconstructed Kim Su-yong's poem 'Grass', was also introduced for the first time in the Codex book fair. It is the most liked and most described book in the book fair. Prior to the book fair, CEO of Datz Press, Sangyon Joo, attended the annual event of the nonprofit photo organization, Photo Alliance, and gave a presentation on the theme of 'Exhibits and Books'. We thank Linda Connor, Lonnie Graham, Minny Lee, Mary Daniel Hobson, Peter P. Blank, Anne Veh, Amanda Marchand and Hendrik Paul for their support.",
     place_ko: "Craneway Pavilion & San Francisco Art Institute Graduate Center",
     title_ko: "CODEX 2019 & 포토 얼라이언스 강연",
     body_ko:
-      "2019년 첫 공식 행사로 CODEX 북페어를 풍성히 마쳤습니다.​ 코덱 북페어는 샌프란시스코에서 2년마다 열리는 세계 3대 아트북 페어입니다. 전세계의 북 아티스트, 예술가, 수집가 및 관심있는 모두가 모여 서로의 출판물과 아이디어를 공유하는 자리로써, 높아지는 관심을 반영하듯 이번 회부터 3일간 열리던 북페어가 4일 동안 크래인웨이 파빌리온The Craneway Pavilion에서 진행되고 있습니다. 올해도 많은 관심 가운데 닻프레스가 마음을 담아 제작한 출판물들을 소개했으며 그 중 김수영 시인의 시 ‘풀’을 재구성한 이현노 디자이너의 아트북 '풀'은 큰 관심을 받았습니다. 코덱 북페어에서 가장 많은 분들이 좋아해 주시고 또 가장 많이 설명한 책입니다.\n \n코덱 북페어에 앞서 미국 서부 사진계의 허브 역할을 하는 비영리 사진 조직 포토 얼라이언스Photo Alliance의 연례행사에 참가하여 닻프레스의 주상연 대표가 ‘전시와 책’이라는 주제로 강연을 진행했습니다. 먼길까지 찾아와주신 모든 분들과 도움 주시고 응원해 주신 닻프레스의 작가들, 린다 코너Linda connor, 로니 그래험Lonnie Graham, 미니 리Minny Lee, 메리 다니엘 홉슨Mary Dary Hobson, 피터 블랭크Peter P. Blank, 아만다 마찬드Amanda Marchand, 헨드릭 폴Hendrik Paul, 큐레이터 앤 베이Anne Veh께 진심으로 감사의 말씀드립니다.\n",
+      "2019년 첫 공식 행사로 CODEX 북페어를 풍성히 마쳤습니다.​ 코덱 북페어는 샌프란시스코에서 2년마다 열리는 세계 3대 아트북 페어입니다. 전세계의 북 아티스트, 예술가, 수집가 및 관심있는 모두가 모여 서로의 출판물과 아이디어를 공유하는 자리로써, 높아지는 관심을 반영하듯 이번 회부터 3일간 열리던 북페어가 4일 동안 크래인웨이 파빌리온The Craneway Pavilion에서 진행되고 있습니다. 올해도 많은 관심 가운데 닻프레스가 마음을 담아 제작한 출판물들을 소개했으며 그 중 김수영 시인의 시 ‘풀’을 재구성한 이현노 디자이너의 아트북 '풀'은 큰 관심을 받았습니다. 코덱 북페어에서 가장 많은 분들이 좋아해 주시고 또 가장 많이 설명한 책입니다.\n \n코덱 북페어에 앞서 미국 서부 사진계의 허브 역할을 하는 비영리 사진 조직 포토 얼라이언스Photo Alliance의 연례행사에 참가하여 닻프레스의 주상연 대표가 ‘전시와 책’이라는 주제로 강연을 진행했습니다. 먼길까지 찾아와주신 모든 분들과 도움 주시고 응원해 주신 닻프레스의 작가들, 린다 코너Linda connor, 로니 그래험Lonnie Graham, 미니 리Minny Lee, 메리 다니엘 홉슨Mary Dary Hobson, 피터 블랭크Peter P. Blank, 아만다 마찬드Amanda Marchand, 헨드릭 폴Hendrik Paul, 큐레이터 앤 베이Anne Veh께 진심으로 감사의 말씀드립니다.",
     images: [
       "/Event/15/01.jpg",
       "/Event/15/02.jpg",
@@ -317,7 +347,9 @@ export const events = [
     ],
   },
   {
+    address: "2018_writing-art-drawing-books",
     id: 16,
+    logo: "Datz Press",
     type: "Exhibition",
     date: "2018.11.21 - 2019.1.29",
     place_en: "Kyungpook National University Art museum",
@@ -331,12 +363,15 @@ export const events = [
     images: ["/Event/16/01.jpg", "/Event/16/02.jpg", "/Event/16/03.jpg"],
   },
   {
+    address: "2018_round-talk_journey-of-transformation",
     id: 17,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2018.11.3",
     place_en: "Datz Museum of Art",
     title_en: "Round Talk: Exhibition ‘Journey of Transformation’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: \nMary Daniel Hobson(Artist), Bryant Austin(Artist), Ann veh(Co-Curator), Sangyon Joo(Publisher)",
     place_ko: "닻미술관 라운지",
     title_ko: "전시연계 라운드 토크: <변화의 여정>",
     body_ko:
@@ -350,12 +385,15 @@ export const events = [
     ],
   },
   {
+    address: "2018_fnl17",
     id: 18,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.11.2",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#17 Book Talk: ‘Million Years’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Minny Lee(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#17 북토크: 「Million Years」",
     body_ko:
@@ -373,12 +411,15 @@ export const events = [
     ],
   },
   {
+    address: "2018_fnl16",
     id: 19,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.10.26",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#16 Book Talk: Gitz vol.10 ‘Process and Attitude’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: \nMary Daniel Hobson(Artist), Bryant Austin(Artist), Ann veh(Co-Curator), Sangyon Joo(Publisher)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#16 북토크: 깃10호 「과정과 태도」",
     body_ko:
@@ -402,16 +443,19 @@ export const events = [
     ],
   },
   {
+    address: "2018_fnl15",
     id: 20,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.9.14",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#15 Artist Talk: Seongyeon Jo",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Seongyeon Jo",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#15 아티스트 토크: 조성연",
     body_ko:
-      "지난 금요일, 사진가 조성연 작가의 새로운 사진집 「지고 맺다Arranging Life」의 출판 기념전과 함께 아티스트 토크가 진행되었습니다. 이전의 작업들에서부터 새롭게 선보인 ‘지고맺다Arranging Life’ 시리즈까지, 조성연 작가님의 시선과 생각의 흐름을 들을 수 있었던 시간이었습니다. 최근 도시 농부로서 삶의 시작한 작가는 삶과 작업이 일치되는 과정 가운데 있습니다. 책을 통해 보여지는 시리즈인 식물이 피고 지고 맺기까지의 흔적들이 배어있는 사진들에 관한 자세한 설명과 해석을 들을 수 있었습니다. 이번 아티스트 토크에서는 작가님이 직접 준비하신 케이터링 덕에 음식을 함께 즐기며 이야기를 나눌 수 있었습니다.\n조성연 작가의 ‘지고 맺다 Arranging Life’는 약 한 달간 다크룸에서 전시됩니다.\n \n참여작가: 조성연",
+      "지난 금요일, 사진가 조성연 작가의 새로운 사진집 「지고 맺다Arranging Life」의 출판 기념전과 함께 아티스트 토크가 진행되었습니다. 이전의 작업들에서부터 새롭게 선보인 ‘지고맺다Arranging Life’ 시리즈까지, 조성연 작가님의 시선과 생각의 흐름을 들을 수 있었던 시간이었습니다. 최근 도시 농부로서 삶의 시작한 작가는 삶과 작업이 일치되는 과정 가운데 있습니다. 책을 통해 보여지는 시리즈인 식물이 피고 지고 맺기까지의 흔적들이 배어있는 사진들에 관한 자세한 설명과 해석을 들을 수 있었습니다. 이번 아티스트 토크에서는 작가님이 직접 준비하신 케이터링 덕에 음식을 함께 즐기며 이야기를 나눌 수 있었습니다.\n\n조성연 작가의 ‘지고 맺다 Arranging Life’는 약 한 달간 다크룸에서 전시됩니다.\n \n참여작가: 조성연",
     images: [
       "/Event/20/01.jpg",
       "/Event/20/02.jpg",
@@ -425,12 +469,15 @@ export const events = [
     ],
   },
   {
+    address: "2018_fnl14",
     id: 21,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.7.27",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#14 Book Talk ‘Deer Book, From Tree’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Sangyon Joo",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#14 북토크 <Dear Book, From Tree> ",
     body_ko:
@@ -445,16 +492,19 @@ export const events = [
     ],
   },
   {
+    address: "2018_fnl13",
     id: 22,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.7.13",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#13 Artist Talk: Mikyung Kim",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Mikyung Kim(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#13 아티스트 토크: 김미경",
     body_ko:
-      "화가 김미경 작가의 아티스트 토크가 있었던 7월 13일 저녁의 모습입니다. 작가는 개인의 정서를 평면의 기하학 형태로 쌓아나가는 회화작업을 해오고 있습니다. 오늘은 특별히 이번에 출간된 책 「나무에게Tree Though」에서 선보인 작품 세계에 대해 설명하는 시간을 가졌습니다. 작가가 흑백 필름에 담았던 나무들을 17년 뒤에 암실에서 인화지에 다시 새기고, 각각의 나무에 이름을 지어준 이야기를 들을 수 있었습니다. 작가의 잔잔한 목소리가 나무들의 이미지와 잘 어우러 졌습니다. 책에 실린 18점의 오리지널 젤라틴 실버프린트는 다크룸에서 이번 달 말까지 전시됩니다.\n \n참여작가: 김미경\n",
+      "화가 김미경 작가의 아티스트 토크가 있었던 7월 13일 저녁의 모습입니다. 작가는 개인의 정서를 평면의 기하학 형태로 쌓아나가는 회화작업을 해오고 있습니다. 오늘은 특별히 이번에 출간된 책 「나무에게Tree Though」에서 선보인 작품 세계에 대해 설명하는 시간을 가졌습니다. 작가가 흑백 필름에 담았던 나무들을 17년 뒤에 암실에서 인화지에 다시 새기고, 각각의 나무에 이름을 지어준 이야기를 들을 수 있었습니다. 작가의 잔잔한 목소리가 나무들의 이미지와 잘 어우러 졌습니다. 책에 실린 18점의 오리지널 젤라틴 실버프린트는 다크룸에서 이번 달 말까지 전시됩니다.\n \n참여작가: 김미경",
     images: [
       "/Event/22/01.jpg",
       "/Event/22/02.jpg",
@@ -469,29 +519,35 @@ export const events = [
     ],
   },
   {
+    address: "2018_artist-talk_the-artists-garden",
     id: 23,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2018.5.26",
     place_en: "Datz Museum of Art",
     title_en: "Artist Talk: Exhibition ‘The Artist’s Garden’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing:\nHyein Lee(Artist), Seongyeon Jo(Artist), Kuyoung Heo(Artist)",
     place_ko: "닻미술관 기획전시실 및 라운지",
     title_ko: "전시연계 아티스트 토크: <예술가의 정원>",
     body_ko:
-      "<예술가의 정원The Artist’s Garden> 전시에 참여한 4인의 작가 중 이해인, 조성연, 허구영 3명의 작가와 함께 아티스트 토크 시간을 가졌습니다. ‘예술가에게 정원이란 어떤 의미인가’라는 질문에서 시작한 전시의 의미를 되새기며, 작가들에게 정원이 어떻게 영감을 주었는지 관객과 대화를 나누었습니다. \n \n이해인은 2008년부터 2010년까지 이어온 ‘Memory’ 작업에서 뉴타운 개발로 사라진 집과 가족들, 이웃에 관한 기억들을 끄집어내고 다시 그림으로 재조합하는 과정을 담았습니다. 조성연은 발아된 싹을 보며, 씨앗은 생명이 다한 흔적이 아니라 새로운 시작을 지닌 무한한 에너지의 응축이라는 생각을 했다고 합니다. 아무런 움직임 없이 숨도 쉬지 않을 것 같던 씨앗들은, 빛, 공기, 물만으로 세상과의 만남을 준비 중이었음 깨달으며, 작가는 그 씨앗들은 생명력을 품은 작은 우주라고 말하고 있습니다. 작가는 예술은 삶의 경작임을 몸소 실천하며 그 과정을 기록합니다. 허구영은 이번 전시에서 선보인 ‘낭만정원’ 시리즈를 제작하며, 낭만적인 정원에서 낭만적 그림을 그리는 시대 착오적인 실행을 했다고 합니다. 주체의 시대성에 거스르고 역행하는 행위를 통해 주체의 균열과 이반의 쾌감을 맛보았다고 유쾌하게 말합니다. 오랜시간 다채롭게 예술가의 뮤즈가 되어온 정원에서 내밀하고 아름다운 이야기를 나눈 시간이었습니다. \n \n참여작가: 이해인, 조성연, 허구영",
+      "<예술가의 정원The Artist’s Garden> 전시에 참여한 4인의 작가 중 이해인, 조성연, 허구영 3명의 작가와 함께 아티스트 토크 시간을 가졌습니다. ‘예술가에게 정원이란 어떤 의미인가’라는 질문에서 시작한 전시의 의미를 되새기며, 작가들에게 정원이 어떻게 영감을 주었는지 관객과 대화를 나누었습니다. \n \n이해인은 2008년부터 2010년까지 이어온 ‘Memory’ 작업에서 뉴타운 개발로 사라진 집과 가족들, 이웃에 관한 기억들을 끄집어내고 다시 그림으로 재조합하는 과정을 담았습니다. 조성연은 발아된 싹을 보며, 씨앗은 생명이 다한 흔적이 아니라 새로운 시작을 지닌 무한한 에너지의 응축이라는 생각을 했다고 합니다. 아무런 움직임 없이 숨도 쉬지 않을 것 같던 씨앗들은, 빛, 공기, 물만으로 세상과의 만남을 준비 중이었음 깨달으며, 작가는 그 씨앗들은 생명력을 품은 작은 우주라고 말하고 있습니다. 작가는 예술은 삶의 경작임을 몸소 실천하며 그 과정을 기록합니다. 허구영은 이번 전시에서 선보인 ‘낭만정원’ 시리즈를 제작하며, 낭만적인 정원에서 낭만적 그림을 그리는 시대 착오적인 실행을 했다고 합니다. 주체의 시대성에 거스르고 역행하는 행위를 통해 주체의 균열과 이반의 쾌감을 맛보았다고 유쾌하게 말합니다. 오랜시간 다채롭게 예술가의 뮤즈가 되어온 정원에서 내밀하고 아름다운 이야기를 나눈 시간이었습니다. \n \n참여작가: 이해인, 조성연, 허구영\n",
     images: ["/Event/23/01.jpg"],
   },
   {
+    address: "2018_fnl12",
     id: 24,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.4.6",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#12 Book Talk: ‘Silent Prayer’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Jeongin Kim(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#12 북토크: 「묵안 默安」 ",
     body_ko:
-      "김정인 작가의 사진집 「묵안Silent Prayer」의 출간을 기념하여 전시가 열리고, 오픈 첫날 북토크가 진행되었습니다. 작업 ‘묵안’의 시작부터 제목이 만들어진 과정, 그리고 책이 만들어지기까지의 과정을 차근차근히 듣는 시간을 가졌습니다. 책이 만들어지는 과정이 담긴 사진과 영상를 보며 작가의 설명이 더해져 책으로 구현되는 사진언어를 깊이 이해할 수 있는 시간이었습니다. 책이 세상에 나온지 이틀만이었던 행사 당일에 1st 에디션이 완판되는 기쁜 소식도 있었습니다. 북토크에 자리해주신 많은 분들께 감사함을 전합니다.\n \n참여작가: 김정인\n",
+      "김정인 작가의 사진집 「묵안Silent Prayer」의 출간을 기념하여 전시가 열리고, 오픈 첫날 북토크가 진행되었습니다. 작업 ‘묵안’의 시작부터 제목이 만들어진 과정, 그리고 책이 만들어지기까지의 과정을 차근차근히 듣는 시간을 가졌습니다. 책이 만들어지는 과정이 담긴 사진과 영상를 보며 작가의 설명이 더해져 책으로 구현되는 사진언어를 깊이 이해할 수 있는 시간이었습니다. 책이 세상에 나온지 이틀만이었던 행사 당일에 1st 에디션이 완판되는 기쁜 소식도 있었습니다. 북토크에 자리해주신 많은 분들께 감사함을 전합니다.\n \n참여작가: 김정인",
     images: [
       "/Event/24/01.jpg",
       "/Event/24/02.jpg",
@@ -506,16 +562,19 @@ export const events = [
     ],
   },
   {
+    address: "2018_fnl11",
     id: 25,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.2.23",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#11 Book Talk: ‘Art is already in you mind’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: U Sunok(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#11 북토크: 「예술은 이미 당신의 마음속에 있다」",
     body_ko:
-      "우순옥 작가의 새로운 작품집 '예술은 이미 당신의 마음속에 있다' 북토크가 진행된 2월 23일 저녁의 모습입니다. 책을 함께 보며 삶이 예술이자 예술이 삶이 되는 우순옥 작가의 태도에 대한 생각을 들으며 작업 하나 하나에 대한 친절한 설명과 뒷이야기, 에피소드 등을 들을 수 있는 시간이었습니다. 이번 책은 작가의 초기 작품부터 지금까지의 작업까지 모두 담긴 작품집인 만큼, 작가의 작품세계를 넓고 깊게 들을 수 있는 시간이었습니다. 책이 만들어지기까지의 디자인과 제작 과정을 닻프레스의 디자이너를 통해 듣고 북사이닝 시간도 함께 가졌습니다. \n \n참여작가: 우순옥\n",
+      "우순옥 작가의 새로운 작품집 '예술은 이미 당신의 마음속에 있다' 북토크가 진행된 2월 23일 저녁의 모습입니다. 책을 함께 보며 삶이 예술이자 예술이 삶이 되는 우순옥 작가의 태도에 대한 생각을 들으며 작업 하나 하나에 대한 친절한 설명과 뒷이야기, 에피소드 등을 들을 수 있는 시간이었습니다. 이번 책은 작가의 초기 작품부터 지금까지의 작업까지 모두 담긴 작품집인 만큼, 작가의 작품세계를 넓고 깊게 들을 수 있는 시간이었습니다. 책이 만들어지기까지의 디자인과 제작 과정을 닻프레스의 디자이너를 통해 듣고 북사이닝 시간도 함께 가졌습니다. \n \n참여작가: 우순옥",
     images: [
       "/Event/25/01.jpg",
       "/Event/25/02.jpg",
@@ -527,12 +586,15 @@ export const events = [
     ],
   },
   {
+    address: "2018_fnl10",
     id: 26,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2018.1.19",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#10 Artist Talk: Hye-Ryoung Min",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Hye-Ryoung Min(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#10 아티스트 토크: 민혜령",
     body_ko:
@@ -549,12 +611,15 @@ export const events = [
     ],
   },
   {
+    address: "2017_round-talk_resonant-voices",
     id: 27,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2017.9.15",
     place_en: "Datz Museum of Art",
     title_en: "Round Talk: Exhibition ‘Resonant Voices’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing:\nLonnie Graham(Artist), Jane Baldwin(Artist), Ann veh(Co-Curator)",
     place_ko: "닻미술관 라운지",
     title_ko: "전시연계 라운드 토크: <공명의 소리>",
     body_ko:
@@ -570,12 +635,15 @@ export const events = [
     ],
   },
   {
+    address: "2017_fnl9",
     id: 28,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2017.9.8",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#9 Artist Talk: Jane Baldwin, Lonnie Graham",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing:\nLonnie Graham(Artist), Jane Baldwin(Artist), Ann veh(Co-Curator)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#9 아티스트 토크: 제인 볼드윈, 로니 그래험",
     body_ko:
@@ -594,16 +662,19 @@ export const events = [
     ],
   },
   {
+    address: "2017_fnl8",
     id: 29,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2017.7.14",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#8 Artist Talk: Andrew Gold",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Andrew Gold(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#8 아티스트 토크: 앤드류 골드",
     body_ko:
-      "현재 닻미술관에서 진행중인 <물오르다, 물만나다, 물들다water in between>의 참여작가로 한국에 처음 방문한 앤드류 골드가 7월 15일에 열린 전시 오프닝에 앞서 다크룸에서 아티스트 토크를 가졌습니다. 사진작가가 된 배경, 바다와 파도의 사진을 찍고 컬러 암실에서 프린트를 하는 과정, 파도의 형성 과정, 모양과 형태에 관한 과학적인 설명까지 그의 작가로서의 태도와 여정을 흥미롭게 들을 수 있는 시간이었습니다. 진지하고 진솔한 그의 작가적 태도가 관중들에게 좋은 영감을 주었습니다.  \n \n참여작가: 앤드류 골드\n",
+      "현재 닻미술관에서 진행중인 <물오르다, 물만나다, 물들다water in between>의 참여작가로 한국에 처음 방문한 앤드류 골드가 7월 15일에 열린 전시 오프닝에 앞서 다크룸에서 아티스트 토크를 가졌습니다. 사진작가가 된 배경, 바다와 파도의 사진을 찍고 컬러 암실에서 프린트를 하는 과정, 파도의 형성 과정, 모양과 형태에 관한 과학적인 설명까지 그의 작가로서의 태도와 여정을 흥미롭게 들을 수 있는 시간이었습니다. 진지하고 진솔한 그의 작가적 태도가 관중들에게 좋은 영감을 주었습니다.  \n \n참여작가: 앤드류 골드",
     images: [
       "/Event/29/01.jpg",
       "/Event/29/02.jpg",
@@ -614,16 +685,19 @@ export const events = [
     ],
   },
   {
+    address: "2017_fnl7",
     id: 30,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
-    date: "2017.7.7-2017.7.8",
+    date: "2017.7.7 - 2017.7.8",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#7 Artist Talk, Critic Class: Linda Connor",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Linda Connor(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#7 아티스트 토크, 크리틱 클래스: 린다 코너",
     body_ko:
-      "지난 7월 7일의 린다코너의 아티스트 토크 모습입니다. 린다코너의 신비로운 작업들과 그녀의 진지하고도 유쾌한 이야기들에 빠져들었던 시간이었습니다. 토크가 끝난 뒤에는 이런저런 질문과 답변이 오갔고 다크룸이 소장하고 있는 린다코너의 여러가지 종류의 프린트와 출판물들을 직접 볼 수 있는 시간도 진행되었습니다. \n \n또한 7월 8일에는 학교를 준비하는 학생들과 작품세계가 깊어지고 있는 작가들이 리뷰이로 참여하여 린다코너와 크리틱 클래스를 가졌습니다. 린다 코너는 한명 한명 작업을 진지하게 대하고 다각도로 바라본 뒤 새로운 시선을 제시하였고 오랜 시간 학교에서 학생들을 가르치고 있는 린다코너의 연륜을 체감할 수 있는 시간이었습니다.\n \n참여작가: 린다 코너\n",
+      "지난 7월 7일의 린다코너의 아티스트 토크 모습입니다. 린다코너의 신비로운 작업들과 그녀의 진지하고도 유쾌한 이야기들에 빠져들었던 시간이었습니다. 토크가 끝난 뒤에는 이런저런 질문과 답변이 오갔고 다크룸이 소장하고 있는 린다코너의 여러가지 종류의 프린트와 출판물들을 직접 볼 수 있는 시간도 진행되었습니다. \n \n또한 7월 8일에는 학교를 준비하는 학생들과 작품세계가 깊어지고 있는 작가들이 리뷰이로 참여하여 린다코너와 크리틱 클래스를 가졌습니다. 린다 코너는 한명 한명 작업을 진지하게 대하고 다각도로 바라본 뒤 새로운 시선을 제시하였고 오랜 시간 학교에서 학생들을 가르치고 있는 린다코너의 연륜을 체감할 수 있는 시간이었습니다.\n \n참여작가: 린다 코너",
     images: [
       "/Event/30/01.jpg",
       "/Event/30/02.jpg",
@@ -638,16 +712,19 @@ export const events = [
     ],
   },
   {
+    address: "2017_fnl6",
     id: 31,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2017.6.30",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#6 Photo Book Talk: Barbara Bosworth’s Photo Book",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Barbara Bosworth(Artist)",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#6 포토북토크: 바바라 보스워스",
     body_ko:
-      "닻미술관에서 열리는 <하늘, 바람, 별 그리고 詩> 전시를 기념해 바바라 보스워스가 한국에 두번째 방문을 하였습니다. 닻프레스가 애정하는 작가, 바바라 보스워스의 두번 째 FNL은 그녀의 작품집 「The Meadow」, 「Natural Histories」, 「Behold」를 중심으로 한 북토크였습니다. 눈물과 웃음이 함께한 그녀의 북토크를 통해 책과 작품의 비하인드 스토리들을 깊이 나누며 그녀의 아름다운 영혼을 더 자세히 들여다 볼수 있는 좋은 시간이었습니다. 작가의 작품에 대해 깊이 알게 될 수록 삶과 예술이 하나된 진정한 아티스트의 모습을 엿볼 수 있었습니다.\n \n참여작가: 바바라 보스워스\n",
+      "닻미술관에서 열리는 <하늘, 바람, 별 그리고 詩> 전시를 기념해 바바라 보스워스가 한국에 두번째 방문을 하였습니다. 닻프레스가 애정하는 작가, 바바라 보스워스의 두번 째 FNL은 그녀의 작품집 「The Meadow」, 「Natural Histories」, 「Behold」를 중심으로 한 북토크였습니다. 눈물과 웃음이 함께한 그녀의 북토크를 통해 책과 작품의 비하인드 스토리들을 깊이 나누며 그녀의 아름다운 영혼을 더 자세히 들여다 볼수 있는 좋은 시간이었습니다. 작가의 작품에 대해 깊이 알게 될 수록 삶과 예술이 하나된 진정한 아티스트의 모습을 엿볼 수 있었습니다.\n \n참여작가: 바바라 보스워스",
     images: [
       "/Event/31/01.jpg",
       "/Event/31/02.jpg",
@@ -662,7 +739,9 @@ export const events = [
     ],
   },
   {
+    address: "2017_codex-photo-alliance",
     id: 32,
+    logo: "Datz Press",
     type: "Book Fair",
     date: "2017.2.3 - 2017.2.8",
     place_en: "Craneway Pavilion & San Francisco Art Institute Graduate Center",
@@ -687,16 +766,19 @@ export const events = [
     ],
   },
   {
+    address: "2016_fnl4",
     id: 33,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2016.1.20",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#4 Artist Talk: Gap Chul Lee",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing: Gap Chul Lee(Artist) ",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#4 아티스트 토크: 이갑철",
     body_ko:
-      "지난 1월 20일 닻프레스 다크룸의 네 번째 FNL 아티스트 토크 및 북 사인회가 있었습니다. 이갑철 작가의 새로운 책 「검은 바람」의 출판 기념으로 열린 이번 행사에는 책에 대한 설명과 함께 작품에 관한 전반적인 내용을 나누었고, 책이 만들어지게 된 과정 또한 깊이있게 들을 수 있는 시간이었습니다. 아티스트 토크 이후 Q&A시간을 통해 작가와 관객들의 심도있는 질문과 대화가 오고 행사 후 직접 작가에게 사인을 받으며 미처 나누지 못한 대화를 나눌 수 있는 시간도 가졌습니다.\n \n참여작가: 이갑철\n",
+      "지난 1월 20일 닻프레스 다크룸의 네 번째 FNL 아티스트 토크 및 북 사인회가 있었습니다. 이갑철 작가의 새로운 책 「검은 바람」의 출판 기념으로 열린 이번 행사에는 책에 대한 설명과 함께 작품에 관한 전반적인 내용을 나누었고, 책이 만들어지게 된 과정 또한 깊이있게 들을 수 있는 시간이었습니다. 아티스트 토크 이후 Q&A시간을 통해 작가와 관객들의 심도있는 질문과 대화가 오고 행사 후 직접 작가에게 사인을 받으며 미처 나누지 못한 대화를 나눌 수 있는 시간도 가졌습니다.\n \n참여작가: 이갑철",
     images: [
       "/Event/33/01.jpg",
       "/Event/33/02.jpg",
@@ -707,12 +789,15 @@ export const events = [
     ],
   },
   {
+    address: "2016_artist-talk_artist-book-space",
     id: 34,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2016.9.24",
     place_en: "Datz Museum of Art",
     title_en: "Artist Talk: ‘Artist Book Space’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing:\nKim Yunsoo(Artist), Changhoon Lee(Artist)",
     place_ko: "닻미술관",
     title_ko: "전시연계 아티스트 토크: <아티스트 북 스페이스>",
     body_ko:
@@ -727,12 +812,15 @@ export const events = [
     ],
   },
   {
+    address: "2015_artist-talk_darkness",
     id: 35,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2015.12.5",
     place_en: "Datz Museum of Art",
     title_en: "Artist Talk: ‘DARKNESS’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing:\nYooyun Yang(Artist), Hee Ah Yang(Artist), Jiyu Lee(Artist), Younghea Kim(Artist)",
     place_ko: "닻미술관",
     title_ko: "전시연계 아티스트 토크: <DARKNESS>",
     body_ko:
@@ -751,12 +839,15 @@ export const events = [
     ],
   },
   {
+    address: "2015_book-talk_island-jeju",
     id: 36,
+    logo: "Datz Museum of Art",
     type: "Artist Talk / Lecture",
     date: "2015.10.24",
     place_en: "Datz Museum of Art",
     title_en: "Book Talk: ‘Island, Jeju’",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing:\nJuyoung Jung(Bookmaker/Datz Press), Jeongin Kim(Project Manager/Datz Press) ",
     place_ko: "닻미술관",
     title_ko: "전시연계 북토크: 「Island, Jeju」",
     body_ko:
@@ -773,12 +864,15 @@ export const events = [
     ],
   },
   {
+    address: "2014_fnl1",
     id: 37,
+    logo: "D'Ark Room",
     type: "Artist Talk / Lecture",
     date: "2014.10.17",
     place_en: "Friday Night Lecture, D’Ark Room",
     title_en: "FNL#1 Artist Talk: Wayne Levin, Barbara Bosworth",
-    body_en: "",
+    body_en:
+      "An English translation of this article is currently unavailable. Please check back at a later date. \n\nFeaturing:\nWayne Levin(Artist), Barbara Bosworth(Artist) ",
     place_ko: "Friday Night Lecture, D’Ark Room",
     title_ko: "FNL#1 아티스트 토크: 웨인 레빈, 바바라 보스워스",
     body_ko:
@@ -804,4 +898,3 @@ export const events = [
     ],
   },
 ];
-export type Event = typeof events[0];

@@ -1,8 +1,54 @@
 export const exhibitions = [
   {
+    address: "2020_reflection",
+    id: 43,
+    type: "Datz Museum of Art",
+    visit_url: "https://www.datzmuseum.org/exhibition_current",
+    start_date: "2020.9.5",
+    end_date: "2020.11.22",
+    title_en: "REFLECTION",
+    body_en:
+      "During the past 50 years, Linda Connor has made numerous pilgrimages to countries harboring traces of primordial human life and relics of the past, such as India, Mexico, Thailand, Ireland, Peru, Nepal and Egypt, working with her 8x10 large-format camera. She has left places familiar to her and gone exploring in the spiritual places of remote lands, moving back in time in search of connecting points between the present and lives of the past. Like a conjuror decrypting the codes of the universe, she connects signs of the visible world. These images, collected at the doorway to the world beyond, which we cannot see while standing on this land, lead to countless questions about heaven and earth, the sacred and profane, humans and the universe transcending time and space, God, and other realms of the unknown. She demonstrates that, like the constellations, the universe will reveal itself to those who can connect, name and imagine.\n\nMarking the 10th anniversary of Datz Museum of Art, the exhibition of Linda Connor's photography will tell us, those weary of our endless consumption of instantaneous images, a story about the original light remembered by humankind. This will be the first story, about primordial landscapes touched by the light of the beginning. As it is impossible for a single exhibition to show the massive quantity of the artist's works and the broadness of her world, there is a second exhibition scheduled at Datz Museum of Art to tell the stories yet untold.",
+    notes_en:
+      "Related Event\nOct 10, Lecture ‘Female artist and Landscape’\nNov 13, Artist Talk: Linda Connor",
+    preview_body_en:
+      "Marking the 10th anniversary of Datz Museum of Art, the exhibition of Linda Connor's photography will tell us, those weary of our endless consumption of instantaneous images, a story about the original light remembered by humankind. This will be the first story, about primordial landscapes touched by the light of the beginning. As it is impossible for a single exhibition to show the massive quantity of the artist's works and the broadness of her world, there is a second exhibition scheduled at Datz Museum of Art to tell the stories yet untold.",
+    title_ko: "REFLECTION",
+    body_ko:
+      "린다 코너는 50여 년간 8×10인치 대형카메라를 들고, 인디아, 멕시코, 태국, 아일랜드, 페루, 네팔, 이집트 등 인류의 원형적 삶과 과거의 유적이 남아있는 장소들을 순례하며 작업 해왔다. 익숙한 곳을 떠나 이국의 영적인 장소를 탐험하고, 현재의 시간을 거슬러 과거의 삶과 연결된 지점을 찾아간다. 작가는 마치 우주의 암호를 해독하는 주술사처럼, 보이는 세계의 표지들을 연결한다. 이 땅에 발을 딛고 보이지 않는 저 너머 세계의 문 앞에서 수집된 이미지들은, 하늘과 땅, 성스러움과 속됨, 시공간을 초월한 인간과 우주, 신과 미지의 영역에 대한 무수한 질문들로 이어져 있다. 마치 별자리처럼, 이를 연결하여 이름 짓고 상상할 수 있는 자에게 우주는 스스로를 드러내고 있음을 보여준다.\n\n닻미술관 개관 10주년을 맞이하여 기획된 린다 코너의 사진전은, 즉흥적인 이미지를 끝없이 소비하며 피로해진 우리에게 인류가 기억해온 근원의 빛에 대한 이야기를 들려준다. 이 전시는 태초의 빛이 닿은 원형적인 풍경에 대한 첫 번째 이야기로, 작가의 방대한 작업량과 그 세계의 넓이를 한번에 모두 담아낼 수 없기에 못다 한 이야기는 두 번째 기획으로 이어진다.",
+    notes_ko:
+      "연계행사\n10월 10일, 렉쳐 <여성 예술가와 풍경>\n11월 14일, 아티스트 토크: 린다 코너",
+    preview_body_ko:
+      "닻미술관 개관 10주년을 맞이하여 기획된 린다 코너의 사진전은, 즉흥적인 이미지를 끝없이 소비하며 피로해진 우리에게 인류가 기억해온 근원의 빛에 대한 이야기를 들려준다. 이 전시는 태초의 빛이 닿은 원형적인 풍경에 대한 첫 번째 이야기로, 작가의 방대한 작업량과 그 세계의 넓이를 한번에 모두 담아낼 수 없기에 못다 한 이야기는 두 번째 기획으로 이어진다.",
+    images: [
+      "/Exhibition/43/01.jpg",
+      "/Exhibition/43/02.jpg",
+      "/Exhibition/43/03.jpg",
+      "/Exhibition/43/04.jpg",
+      "/Exhibition/43/05.jpg",
+      "/Exhibition/43/06.jpg",
+      "/Exhibition/43/07.jpg",
+      "/Exhibition/43/08.jpg",
+      "/Exhibition/43/09.jpg",
+      "/Exhibition/43/10.jpg",
+      "/Exhibition/43/11.jpg",
+      "/Exhibition/43/12.jpg",
+      "/Exhibition/43/13.jpg",
+      "/Exhibition/43/14.jpg",
+      "/Exhibition/43/15.jpg",
+      "/Exhibition/43/16.jpg",
+      "/Exhibition/43/17.jpg",
+      "/Exhibition/43/18.jpg",
+    ],
+    rel_artists: [],
+    rel_publications: [],
+    rel_events: [],
+  },
+  {
+    address: "2020_art-of-imagination",
     id: 1,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2020.8.7 ",
     end_date: "2020.10.31",
     title_en: "Art of Imagination",
@@ -39,12 +85,13 @@ export const exhibitions = [
     rel_events: [1],
   },
   {
+    address: "2020_philosophers-stone",
     id: 2,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-314",
     start_date: "2020.3.28",
     end_date: "2020.8.16",
-    title_en: "Philosopher's Stone",
+    title_en: "Philosopher’s Stone",
     body_en:
       "‘Philosopher's Stone’ introduces the works of photographers from western side of the United States. ‘The philosopher's stone’, which was sought by alchemists in the past, means a mysterious material that turns nothing into gold. Four contemporary artists, Ville Kansanen, Gretchen LeMaistre, Rhonda Lashley Lope, and Diane Pierce, make the invisible spiritual through their own unique methods and creative processes which are similar to alchemy.This exhibition, which depicts the meaningful vibrations of nature, human beings, art and between them as the light of the photography, suggests the value of art gone through time for the nobility.",
     notes_en:
@@ -77,6 +124,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2019_synesthesia",
     id: 3,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-300",
@@ -109,9 +157,10 @@ export const exhibitions = [
     ],
     rel_artists: [3, 4, 13, 25, 40, 41, 42],
     rel_publications: [8],
-    rel_events: [],
+    rel_events: [3, 11],
   },
   {
+    address: "2019_the-texture-of-temperature",
     id: 4,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/thetextureoftemperature",
@@ -152,9 +201,10 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2019_book-of-lights",
     id: 5,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2019.7.5",
     end_date: "2019.9.30",
     title_en: "Book of Lights",
@@ -189,9 +239,10 @@ export const exhibitions = [
     ],
     rel_artists: [3, 12, 25, 26, 29],
     rel_publications: [9, 10, 12, 13, 17],
-    rel_events: [],
+    rel_events: [8, 9, 10],
   },
   {
+    address: "2019_image-poetics",
     id: 6,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-295",
@@ -232,6 +283,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2018_journey-of-transformation",
     id: 7,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-284",
@@ -274,9 +326,10 @@ export const exhibitions = [
     rel_events: [17, 19],
   },
   {
+    address: "2019_flowing_book-launch",
     id: 8,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2019.4.10",
     end_date: "2019.6.20",
     title_en: "‘FLOWING’ 3rd Edition exhibition for book launch",
@@ -311,9 +364,10 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2018_gitz10_book-launch",
     id: 9,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2018.10.26",
     end_date: "2018.12.31",
     title_en: "Magazine Gitz Vol.10 exhibition for book launch",
@@ -354,9 +408,10 @@ export const exhibitions = [
     rel_events: [19],
   },
   {
+    address: "2018_arranging-life_book-launch",
     id: 10,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2018.9.14",
     end_date: "2018.10.20",
     title_en: "‘Arranging Life’ exhibition for book launch",
@@ -392,6 +447,7 @@ export const exhibitions = [
     rel_events: [20],
   },
   {
+    address: "2018_hear-now",
     id: 11,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/herenow",
@@ -431,9 +487,10 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2018_dear-tree-from-book",
     id: 12,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2018.7.3",
     end_date: "2018.9.1",
     title_en: "Dear Tree, From Book",
@@ -465,14 +522,15 @@ export const exhibitions = [
       "/Exhibition/12/12.jpg",
       "/Exhibition/12/13.jpg",
     ],
-    rel_artists: [],
+    rel_artists: [8, 10],
     rel_publications: [19, 25],
     rel_events: [22],
   },
   {
+    address: "2018_silent-prayer_book-launch",
     id: 13,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2018.4.6",
     end_date: "2018.5.31",
     title_en: "‘Silent Prayer’ exhibition for book launch",
@@ -504,6 +562,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2018_the-artists-garden",
     id: 14,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-3",
@@ -542,9 +601,10 @@ export const exhibitions = [
     rel_events: [23],
   },
   {
+    address: "2018_re-membrance-of-the-remembrance_book-launch",
     id: 15,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2018.1.19",
     end_date: "2018.2.10",
     title_en: "‘Re-membrance of the Remembrance’ exhibition for book launch",
@@ -577,6 +637,7 @@ export const exhibitions = [
     rel_events: [26],
   },
   {
+    address: "2017_resonant-voices",
     id: 16,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-60",
@@ -612,6 +673,7 @@ export const exhibitions = [
     rel_events: [27, 28],
   },
   {
+    address: "2017_water-in-between",
     id: 17,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-59",
@@ -649,6 +711,7 @@ export const exhibitions = [
     rel_events: [29],
   },
   {
+    address: "2017_heaven-wind-stars-and-poems",
     id: 18,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-58",
@@ -688,9 +751,10 @@ export const exhibitions = [
     rel_events: [31],
   },
   {
+    address: "2017_black-wind_book-launch",
     id: 19,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2017.1.25",
     end_date: "2017.2.25",
     title_en: "‘Black Wind’ exhibition for book launch",
@@ -722,6 +786,7 @@ export const exhibitions = [
     rel_events: [33],
   },
   {
+    address: "2016_from-walden",
     id: 20,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-57",
@@ -759,9 +824,10 @@ export const exhibitions = [
     rel_events: [2],
   },
   {
+    address: "2016_nature-and-art",
     id: 21,
     type: "D'Ark Room",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2016.11.9",
     end_date: "2016.12.31",
     title_en: "Nature and Art",
@@ -793,6 +859,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2016_artist-book-space",
     id: 22,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-56",
@@ -838,6 +905,7 @@ export const exhibitions = [
     rel_events: [34],
   },
   {
+    address: "2016_our-time-between",
     id: 23,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-54",
@@ -870,6 +938,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2015_darkness",
     id: 24,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-53",
@@ -911,6 +980,7 @@ export const exhibitions = [
     rel_events: [35],
   },
   {
+    address: "2015_island-jeju",
     id: 25,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-52",
@@ -949,6 +1019,7 @@ export const exhibitions = [
     rel_events: [36],
   },
   {
+    address: "2015_mind-scape",
     id: 26,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-49",
@@ -987,6 +1058,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2015_silence-poem",
     id: 27,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/silencepoem",
@@ -1018,6 +1090,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2014_flow",
     id: 28,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-42",
@@ -1056,6 +1129,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2014_daily-thoughts-stars-and-people",
     id: 29,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-41",
@@ -1094,6 +1168,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2014_our-world",
     id: 30,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-39",
@@ -1119,6 +1194,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2014_wind-and-sunlight-through-the-window",
     id: 31,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/windandlight",
@@ -1153,6 +1229,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2013_art-on-paper",
     id: 32,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/artonpaper",
@@ -1186,6 +1263,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2013_photographic-moment",
     id: 33,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-1",
@@ -1222,6 +1300,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2013_woods-breath",
     id: 34,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/WoodsBreath",
@@ -1259,6 +1338,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2012_tracing-light",
     id: 35,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/TracingLight",
@@ -1296,6 +1376,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2012_when-heaven-meets-earth",
     id: 36,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/whenheavenmeetsearth",
@@ -1332,6 +1413,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2012_imogen-cunningham-photographs",
     id: 37,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/imogen",
@@ -1361,9 +1443,10 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2011_1st-bookmaking-studio-exhibition",
     id: 38,
     type: "Datz Press Gallery",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2011.11.12",
     end_date: "2011.11.30",
     title_en: "Book Exhibition: Sunmee Kang, On Kim, Heejung Kim",
@@ -1394,6 +1477,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2011_eleven-fantasy-poems",
     id: 39,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-14",
@@ -1426,9 +1510,10 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2011_book-exhibition_empty-space",
     id: 40,
     type: "Datz Press Gallery",
-    visit_url: undefined,
+    visit_url: "X",
     start_date: "2011.7.16",
     end_date: "2011.9.2",
     title_en: "Book Exhibition: EMPTY SPACE",
@@ -1454,6 +1539,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2011_disease-leading-to-anxiety",
     id: 41,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/pain",
@@ -1488,6 +1574,7 @@ export const exhibitions = [
     rel_events: [],
   },
   {
+    address: "2010_press-on",
     id: 42,
     type: "Datz Museum of Art",
     visit_url: "https://datzmuseum.org/blogPost/untitled-4",
