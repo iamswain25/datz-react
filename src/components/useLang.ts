@@ -236,7 +236,7 @@ const classes: { [key: string]: any } = {
         color: #4b4b4b;
       `,
       body: css`
-        ${getSize(19, 1.42)}
+        ${getSize(20, 1.42)}
         line-height: 28px;
         margin-top: 13px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
