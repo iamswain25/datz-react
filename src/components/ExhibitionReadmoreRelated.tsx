@@ -14,7 +14,7 @@ const mobileContainer = css`
   margin-top: 48px;
 `;
 const desktopContainer = css`
-  width: calc(50vw - 30px - 37px);
+  width: calc(50% - 30px - 37px);
   display: flex;
   flex-direction: column;
   padding-left: 30px;
