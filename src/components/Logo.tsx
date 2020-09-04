@@ -62,6 +62,7 @@ export default function Logo({
       let logo = <Cultural color={color} className={className} />;
       return logo;
     }
+    case "Datz Press":
     case "datzpress": {
       let logo = <Datzpress color={color} className={className} />;
       if (offLink) {

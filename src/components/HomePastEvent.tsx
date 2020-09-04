@@ -3,7 +3,7 @@ import { css } from "emotion";
 import PastEventsLeft from "./PastEventsLeft";
 import PastEventsRight from "./PastEventsRight";
 import useDesktop from "./useDesktop";
-export default function EventCoverPage() {
+export default function HomePastEvent() {
   const isDesktop = useDesktop();
   return (
     <div
@@ -14,6 +14,7 @@ export default function EventCoverPage() {
         position: relative;
         display: flex;
         flex-direction: ${isDesktop ? "row" : "column"};
+        max-height: ${isDesktop ? "100vh" : "auto"};
       `}
     >
       {isDesktop ? (
@@ -21,8 +22,8 @@ export default function EventCoverPage() {
       ) : (
         <div
           className={css`
-            max-height: 100vh;
             min-height: 588px;
+            max-height: 100vh;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
@@ -33,16 +34,17 @@ export default function EventCoverPage() {
           <PastEventsLeft />
         </div>
       )}
-      <div
+      <section
         className={css`
           width: ${isDesktop ? "calc(50% - 14px)" : "100%"};
           display: flex;
           flex-direction: column;
+          overflow: hidden;
           margin-left: ${isDesktop ? 14 : 0}px;
         `}
       >
         <PastEventsRight />
-      </div>
+      </section>
     </div>
   );
 }

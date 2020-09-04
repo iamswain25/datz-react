@@ -2,11 +2,11 @@ import React from "react";
 import { css } from "emotion";
 import EventCoverWidget from "./EventCoverWidget";
 import useDesktop from "./useDesktop";
-import half from "../assets/images/legacy/half.jpg";
 import Logo from "./Logo";
-const list = [half, half, half];
+import useBanners from "../utils/useBanners";
 export default function PastEventsLeft() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(false);
+  const items = useBanners("home", "Past Event");
   const typeClass = css`
     font-family: BauerGroteskOTW03;
     font-size: ${isDesktop ? 19 : 16}px;
@@ -41,7 +41,7 @@ export default function PastEventsLeft() {
         position: relative;
       `}
     >
-      <EventCoverWidget images={list} fit="height" />
+      <EventCoverWidget images={items.map((e) => e.image)} fit="height" />
       <div
         className={css`
           padding: 37px;

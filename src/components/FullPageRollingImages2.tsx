@@ -1,20 +1,21 @@
 import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
-import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
-export default (props: { images: Array<Main> | undefined }) => {
+import { makeUrl } from "../config/url";
+import { Link } from "react-router-dom";
+export default function FullPageRollingImages2({ items }: { items: any[] }) {
+  const isDesktop = useDesktop(false);
   const images =
-    (props.images && props.images.map((a) => ({ original: a.image }))) || [];
+    (items && items.map((a) => ({ original: makeUrl(a.image) }))) || [];
   const [index, setIndex] = React.useState(0);
+  const item = items[index];
   function onslideHandler(index: number) {
     setIndex(index);
   }
-  const isDesktop = useDesktop();
-  const { type, title, author, color } =
-    (props.images && props.images[index]) || newMain;
+  const { type, title, subtitle, color = "#fff", logo } = item;
   const typeClass = css`
     font-family: BauerGroteskOTW03;
     font-size: ${isDesktop ? 19 : 16}px;
@@ -75,19 +76,21 @@ export default (props: { images: Array<Main> | undefined }) => {
           color: ${color ?? "#ffffff"};
         `}
       >
-        <div className={typeClass}>{type}</div>
-        <hr
-          className={css`
-            border-top: 1px solid ${color};
-            width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
-            margin-top: ${isDesktop ? 8 : 3}px;
-            margin-bottom: ${isDesktop ? 18 : 16}px;
-          `}
-        />
-        <div className={titleClass}>{title}</div>
-        <div className={authorClass}>{author}</div>
+        <Link to={item.url}>
+          <div className={typeClass}>{type}</div>
+          <hr
+            className={css`
+              border-top: 1px solid ${color};
+              width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
+              margin-top: ${isDesktop ? 8 : 3}px;
+              margin-bottom: ${isDesktop ? 18 : 16}px;
+            `}
+          />
+          <div className={titleClass}>{title}</div>
+          <div className={authorClass}>{subtitle}</div>
+        </Link>
         <Logo
-          type="museum"
+          type={logo}
           color={color}
           className={css`
             left: ${isDesktop ? 69 : 40}px;
@@ -98,4 +101,4 @@ export default (props: { images: Array<Main> | undefined }) => {
       </div>
     </div>
   );
-};
+}

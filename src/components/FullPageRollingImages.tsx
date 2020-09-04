@@ -1,19 +1,23 @@
 import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
-import { Main, newMain } from "../@type/main";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
-export default function FullPageRollingImages(props: {
-  images: Array<Main> | undefined;
+import { makeUrl } from "../config/url";
+import { Link } from "react-router-dom";
+export default function FullPageRollingImages({
+  style,
+  items,
+}: {
+  items: any[];
   style?: React.CSSProperties;
 }) {
-  const { style } = props;
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(false);
   const images =
-    (props.images && props.images.map((a) => ({ original: a.image }))) || [];
+    (items && items.map((a) => ({ original: makeUrl(a.image) }))) || [];
   const [index, setIndex] = React.useState(0);
+  const item = items[index];
   function onslideHandler(index: number) {
     setIndex(index);
   }
@@ -39,8 +43,7 @@ export default function FullPageRollingImages(props: {
     text-align: center;
     margin-top: ${isDesktop ? 4 : 3}px;
   `;
-  const { type, title, author, color } =
-    (props.images && props.images[index]) || newMain;
+  const { type, title, subtitle, color = "#5d5d5d", logo } = item;
   return (
     <div
       style={{
@@ -80,19 +83,21 @@ export default function FullPageRollingImages(props: {
           color,
         }}
       >
-        <div className={typeClass}>{type}</div>
-        <hr
-          className={css`
-            border-top: 1px solid ${color};
-            width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
-            margin-top: ${isDesktop ? 8 : 3}px;
-            margin-bottom: ${isDesktop ? 18 : 16}px;
-          `}
-        />
-        <div className={titleClass}>{title}</div>
-        <div className={authorClass}>{author}</div>
+        <Link to={item.url}>
+          <div className={typeClass}>{type}</div>
+          <hr
+            className={css`
+              border-top: 1px solid ${color};
+              width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
+              margin-top: ${isDesktop ? 8 : 3}px;
+              margin-bottom: ${isDesktop ? 18 : 16}px;
+            `}
+          />
+          <div className={titleClass}>{title}</div>
+          <div className={authorClass}>{subtitle}</div>
+        </Link>
         <Logo
-          type="datzpress"
+          type={logo}
           color={color}
           className={css`
             bottom: ${isDesktop ? 29 : 25}px;

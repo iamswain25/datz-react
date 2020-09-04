@@ -4,13 +4,13 @@ import Twitter from "../assets/svg/Twitter";
 import Fb from "../assets/svg/Fb";
 import Close from "../assets/svg/Close";
 import { css } from "emotion";
-import { Link } from "react-router-dom";
-// import useDesktop from "./useDesktop";
+import useBtnBack from "./useBtnBack";
 export default function PublicationCloseBtn({
   noClose = false,
 }: {
   noClose?: boolean;
 }) {
+  const goBack = useBtnBack();
   return (
     <div
       className={css`
@@ -22,8 +22,8 @@ export default function PublicationCloseBtn({
       `}
     >
       {!noClose && (
-        <Link
-          to="/publication"
+        <button
+          onClick={goBack}
           className={css`
             height: 13px;
             font-size: 10px;
@@ -42,7 +42,7 @@ export default function PublicationCloseBtn({
             `}
           />
           <span>CLOSE</span>
-        </Link>
+        </button>
       )}
       <Share
         color="#cccccc"

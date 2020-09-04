@@ -49,7 +49,7 @@ export default function EventCoverWidget({
   fit?: string;
   type?: string;
 }) {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(false);
   const { address } = useParams();
   return (
     <div

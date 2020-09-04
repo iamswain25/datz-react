@@ -23,6 +23,9 @@ export default function HomeEventCard({
       to={`/${type}/${address}`}
       className={css`
         flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
       `}
     >
       <section
@@ -33,6 +36,7 @@ export default function HomeEventCard({
           display: flex;
           flex-direction: column;
           font-family: BauerGroteskOTW03;
+          min-height: 0;
         `}
       >
         <div
@@ -106,6 +110,7 @@ export default function HomeEventCard({
             className={css`
               overflow: hidden;
               flex: 1;
+              min-height: 0;
             `}
           >
             <p className={classes.title}>{title}</p>
