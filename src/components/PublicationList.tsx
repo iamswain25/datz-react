@@ -10,7 +10,7 @@ import useLang from "./useLang";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
-  const [limit, setLimit] = React.useState<number | undefined>(12);
+  const [limit, setLimit] = React.useState<number | undefined>(24);
   const list = usePublications(publications);
   const isDesktop = useDesktop();
   const [classes] = useLang("PublicationList");
