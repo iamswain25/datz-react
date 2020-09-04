@@ -10,12 +10,12 @@ import useLang from "./useLang";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
-  const [limit, setLimit] = React.useState(12);
+  const [limit, setLimit] = React.useState<number | undefined>(12);
   const list = usePublications(publications);
   const isDesktop = useDesktop();
   const [classes] = useLang("PublicationList");
   function loadMoreHandler() {
-    setLimit((l) => l + 6);
+    setLimit(undefined);
   }
   return (
     <>
@@ -135,22 +135,24 @@ export default function PublicationList() {
                 })}
             </Grid>
           </section>
-          <button
-            onClick={loadMoreHandler}
-            className={css`
-              height: 38px;
-              border-top: solid 1px #707070;
-              padding-bottom: 9px;
-              padding-top: 9px;
-              text-align: center;
-              font-family: BauerGroteskOTW03;
-              font-size: 14px;
-              line-height: 1.21;
-              color: #707070;
-            `}
-          >
-            view more {">"}
-          </button>
+          {limit && (
+            <button
+              onClick={loadMoreHandler}
+              className={css`
+                height: 38px;
+                border-top: solid 1px #707070;
+                padding-bottom: 9px;
+                padding-top: 9px;
+                text-align: center;
+                font-family: BauerGroteskOTW03;
+                font-size: 14px;
+                line-height: 1.21;
+                color: #707070;
+              `}
+            >
+              view all {">"}
+            </button>
+          )}
         </div>
       </div>
     </>
