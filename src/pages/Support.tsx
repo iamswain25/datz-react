@@ -6,7 +6,7 @@ import supportImg from "../assets/images/about/support.png";
 import SupportTexts from "../components/SupportTexts";
 import SupportBottomThree from "../components/SupportBottomThree";
 import BtnTop from "../components/BtnTop";
-import { paddingH55 } from "../components/styles";
+import { paddingH55, paddingH27 } from "../components/styles";
 import LazyImage from "../components/LazyImage";
 export default function Support() {
   const isDesktop = useDesktop();
@@ -38,7 +38,7 @@ export default function Support() {
           align-items: center;
           justify-content: center;
           background-color: #afafaf;
-          ${paddingH55}
+          ${isDesktop ? paddingH55 : paddingH27}
         `}
       >
         <BtnTop color="white" borderTop full />

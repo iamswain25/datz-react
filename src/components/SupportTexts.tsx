@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { paddingH55 } from "./styles";
+import { paddingH55, paddingH27 } from "./styles";
 import useDesktop from "./useDesktop";
 export default function SupportTexts() {
   const isDesktop = useDesktop();
@@ -19,7 +19,7 @@ export default function SupportTexts() {
         flex-direction: column;
         align-items: center;
         top: 0;
-        ${paddingH55}
+        ${isDesktop ? paddingH55 : paddingH27}
       `}
     >
       <div

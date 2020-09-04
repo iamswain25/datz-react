@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import {
-  paddingH27,
+  paddingH17,
   paddingH37,
   marginH8,
   marginH18,
@@ -36,7 +36,7 @@ export default function News() {
           background-color: #afafaf;
           text-align: center;
           color: #ffffff;
-          ${isDesktop ? paddingH37 : paddingH27}
+          ${isDesktop ? paddingH37 : paddingH17}
         `}
       >
         <div

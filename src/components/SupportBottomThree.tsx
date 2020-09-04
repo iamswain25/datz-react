@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { paddingH37 } from "./styles";
+import { paddingH37, paddingH17 } from "./styles";
 import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
 const classes = {
@@ -50,7 +50,7 @@ export default function SupportBottomThree() {
         color: #ffffff;
         text-align: center;
         background-color: #afafaf;
-        ${paddingH37}
+        ${isDesktop ? paddingH37 : paddingH17}
       `}
     >
       <Grid container spacing={isDesktop ? 3 : 0}>
