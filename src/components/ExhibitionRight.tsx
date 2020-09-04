@@ -22,12 +22,7 @@ export default function ExhibitionRight() {
     <main>
       <Grid container spacing={isDesktop ? 3 : 0}>
         {currentExhibitions.map((item, i) => (
-          <Grid
-            item
-            xs={12}
-            sm={currentExhibitions.length > 1 ? 6 : 12}
-            key={i}
-          >
+          <Grid item xs={12} key={i}>
             <MainCard item={item} type="exhibition" />
           </Grid>
         ))}
