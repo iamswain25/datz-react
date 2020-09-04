@@ -40,7 +40,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
       >
         {item.edition && <div className={classes.edition}>{item.edition}</div>}
         {item.copies_count && (
-          <div className={classes.copies_count}>{item.copies_count} copies</div>
+          <div className={classes.copies_count}>{item.copies_count}</div>
         )}
         <div className={classes.title}>{title}</div>
         <div className={classes.artist}>{artist}</div>
