@@ -6,14 +6,14 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { flexcolumn, flexrow, paddingH37 } from "../components/styles";
-import useExhibitionIndex from "../utils/useExhibitionIndex";
+import useItemIndex from "../utils/useItemIndex";
 const desktopContainer = css`
   ${flexrow}
   ${paddingH37}
 `;
 export default function ExhibitionItem() {
   const { id = 1 } = useParams();
-  const item = useExhibitionIndex(id);
+  const item = useItemIndex(id, "exhibition");
   const isDesktop = useDesktop();
   return (
     <>

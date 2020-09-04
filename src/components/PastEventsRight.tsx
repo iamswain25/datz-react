@@ -3,10 +3,10 @@ import { css } from "emotion";
 import UpcomingWidget from "./UpcomingWidget";
 import HomeEventCard from "./HomeEventCard";
 import useDesktop from "./useDesktop";
-import useEventIndex from "../utils/useEventIndex";
+import useItemIndex from "../utils/useItemIndex";
 export default function PastEventsRight() {
   const isDesktop = useDesktop();
-  const item = useEventIndex(1);
+  const item = useItemIndex(1, "event");
   return (
     <>
       <HomeEventCard item={item} type="event" />

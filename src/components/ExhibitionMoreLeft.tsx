@@ -8,8 +8,8 @@ import CloseShare from "./CloseShare";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import useBtnBack from "./useBtnBack";
 import Linkify from "react-linkify";
-import useExhibitionIndex from "../utils/useExhibitionIndex";
 import useLang from "./useLang";
+import useItemIndex from "../utils/useItemIndex";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -30,7 +30,7 @@ const mobileContainer = css`
 export default function ExhibitionMoreLeft() {
   const isDesktop = useDesktop();
   const { id = 1 } = useParams();
-  const item = useExhibitionIndex(id);
+  const item = useItemIndex(id, "exhibition");
   const goBack = useBtnBack();
   const [classes] = useLang("exhibition");
   return (

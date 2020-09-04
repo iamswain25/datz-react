@@ -6,9 +6,9 @@ import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
 import BtnBack from "./BtnBack";
 import { useParams } from "react-router-dom";
-import useArtistIndex from "../utils/useArtistIndex ";
 import { Grid } from "@material-ui/core";
 import Linkify from "./Linkify";
+import useItemIndex from "../utils/useItemIndex";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -26,7 +26,10 @@ const desktopContainer = css`
 export default function PublicationItemPhotos() {
   const isDesktop = useDesktop();
   const { id } = useParams();
-  const { publications, exhibitions, events, homepage } = useArtistIndex(id);
+  const { publications, exhibitions, events, homepage } = useItemIndex(
+    id,
+    "artist"
+  );
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <PublicationWidget publications={publications} dark />

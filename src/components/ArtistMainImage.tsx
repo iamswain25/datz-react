@@ -4,12 +4,12 @@ import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { useParams } from "react-router-dom";
-import useArtistIndex from "../utils/useArtistIndex ";
+import useItemIndex from "../utils/useItemIndex";
 export default function ArtistMainImage() {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
   const { id } = useParams();
-  const { name, genre, images } = useArtistIndex(id);
+  const { name, genre, images } = useItemIndex(id, "artist");
   const nameClassEn = css`
     height: 27px;
     font-family: ArnoPro-Display;
