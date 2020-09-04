@@ -30,6 +30,10 @@ export function filterExhibitionCurrent(e: any): boolean {
   if (start_date && end_date) {
     const start = parse(start_date, "yyyy.MM.dd", new Date());
     const end = parse(end_date, "yyyy.MM.dd", new Date());
+    if (isBefore(new Date(), start)) {
+      // future event as current
+      return true;
+    }
     return isWithinInterval(new Date(), {
       start,
       end,
@@ -59,6 +63,10 @@ export function filterExhibitionPast(e: any) {
   if (start_date && end_date) {
     const start = parse(start_date, "yyyy.MM.dd", new Date());
     const end = parse(end_date, "yyyy.MM.dd", new Date());
+    if (isBefore(new Date(), start)) {
+      // future event as current
+      return false;
+    }
     return !isWithinInterval(new Date(), {
       start,
       end,
