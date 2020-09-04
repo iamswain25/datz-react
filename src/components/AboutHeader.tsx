@@ -40,7 +40,17 @@ export default function AboutHeader({
   }
 
   const innerHeader = (
-    <>
+    <div
+      className={css`
+        display: flex;
+        align-items: center;
+        height: 79px;
+        max-width: 1920px;
+        padding: 0 ${isDesktop ? 37 : 17}px;
+        color: ${colors.color};
+        margin: 0 auto;
+      `}
+    >
       <Link
         to="/"
         className={css`
@@ -123,7 +133,7 @@ export default function AboutHeader({
           </>
         )}
       </div>
-    </>
+    </div>
   );
   if (sticky) {
     return (
@@ -132,14 +142,8 @@ export default function AboutHeader({
           className={css`
             position: sticky;
             top: 0;
-            height: 79px;
-            display: flex;
-            align-items: center;
             z-index: 2;
-            padding-left: ${isDesktop ? 37 : 17}px;
-            padding-right: ${isDesktop ? 37 : 17}px;
             background-color: ${colors.backgroundColor};
-            color: ${color};
           `}
         >
           {innerHeader}
@@ -156,13 +160,7 @@ export default function AboutHeader({
             position: fixed;
             width: 100%;
             top: 0;
-            height: 79px;
-            display: flex;
-            align-items: center;
             z-index: 2;
-            padding-left: ${isDesktop ? 37 : 17}px;
-            padding-right: ${isDesktop ? 37 : 17}px;
-            color: ${colors.color};
           `}
         >
           {innerHeader}
@@ -175,7 +173,9 @@ export default function AboutHeader({
     <>
       <Headroom
         wrapperStyle={
-          change ? { position: "absolute", width: "100%" } : undefined
+          change
+            ? { maxWidth: 1920, width: "100%", position: "absolute" }
+            : undefined
         }
         onPin={
           change
@@ -189,13 +189,7 @@ export default function AboutHeader({
             : undefined
         }
         style={{
-          height: 79,
-          paddingLeft: isDesktop ? 37 : 17,
-          paddingRight: isDesktop ? 37 : 17,
-          display: "flex",
-          alignItems: "center",
           backgroundColor: colors.backgroundColor,
-          color: colors.color,
         }}
       >
         {innerHeader}

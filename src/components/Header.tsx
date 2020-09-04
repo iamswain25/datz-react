@@ -83,7 +83,17 @@ export default function Header({
     );
   }
   const innerHeader = (
-    <>
+    <div
+      className={css`
+        display: flex;
+        align-items: center;
+        height: 79px;
+        max-width: 1920px;
+        padding: 0 ${isDesktop ? 37 : 17}px;
+        color: ${colors.color};
+        margin: 0 auto;
+      `}
+    >
       <NavLink
         className={css`
           ${flexrowcenter}
@@ -176,7 +186,7 @@ export default function Header({
           </>
         )}
       </div>
-    </>
+    </div>
   );
   if (sticky) {
     return (
@@ -185,14 +195,8 @@ export default function Header({
           className={css`
             position: sticky;
             top: 0;
-            height: 79px;
-            display: flex;
-            align-items: center;
             z-index: 5;
-            padding-left: ${isDesktop ? 37 : 17}px;
-            padding-right: ${isDesktop ? 37 : 17}px;
             background-color: ${backgroundColor};
-            color: ${colors.color};
           `}
         >
           {innerHeader}
@@ -209,13 +213,7 @@ export default function Header({
             position: fixed;
             width: 100%;
             top: 0;
-            height: 79px;
-            display: flex;
-            align-items: center;
             z-index: 5;
-            padding-left: ${isDesktop ? 37 : 17}px;
-            padding-right: ${isDesktop ? 37 : 17}px;
-            color: ${colors.color};
           `}
         >
           {innerHeader}
@@ -228,7 +226,9 @@ export default function Header({
     <>
       <Headroom
         wrapperStyle={
-          change ? { position: "absolute", width: "100%" } : undefined
+          change
+            ? { maxWidth: 1920, width: "100%", position: "absolute" }
+            : undefined
         }
         onPin={
           change
@@ -247,13 +247,8 @@ export default function Header({
         }
         style={{
           zIndex: 5,
-          display: "flex",
-          alignItems: "center",
-          height: 79,
           backgroundColor: colors.backgroundColor,
-          paddingLeft: isDesktop ? 37 : 17,
-          paddingRight: isDesktop ? 37 : 17,
-          color: colors.color,
+          margin: "0 auto",
         }}
       >
         {innerHeader}
