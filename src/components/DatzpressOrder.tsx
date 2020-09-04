@@ -17,7 +17,7 @@ export default function DatzpressOrder({
         height: 31px;
       `}
     >
-      <Logo type="datzpress" className={flexrowcenter} />
+      <Logo type="datzpress" className={flexrowcenter} color="#707070" />
       <a
         href={order}
         target="_blank"
