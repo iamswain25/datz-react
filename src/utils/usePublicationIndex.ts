@@ -9,7 +9,7 @@ export default function usePublicationIndex(index: string | number) {
   const [lang] = useGlobalState(LANG);
   const item = publications[Number(index) - 1];
   const rel_publications = item.rel_publications as number[];
-  const rel_exhibition = item.rel_exhibition as number[];
+  const rel_exhibitions = item.rel_exhibitions as number[];
   const rel_events = item.rel_events as number[];
   const title = lang === "ko" ? item.title_ko : item.title_en;
   const artist = lang === "ko" ? item.artist_ko : item.artist_en;
@@ -30,8 +30,8 @@ export default function usePublicationIndex(index: string | number) {
     [rel_events]
   );
   const exhibitionsObj = useMemo(
-    () => exhibitions.filter((a) => rel_exhibition.includes(a.id)),
-    [rel_exhibition]
+    () => exhibitions.filter((a) => rel_exhibitions.includes(a.id)),
+    [rel_exhibitions]
   );
   const publicationsObj = useMemo(
     () => publications.filter((a) => rel_publications.includes(a.id)),

@@ -13,7 +13,7 @@ export default function useItemIndex(
   const items = types[type + "s"];
   const item = items.find((e: any) => e.id === Number(index)) || types[type][0];
   const rel_publications = item.rel_publications as number[];
-  const rel_exhibition = item.rel_exhibition as number[];
+  const rel_exhibitions = item.rel_exhibitions as number[];
   const rel_events = item.rel_events as number[];
   const rel_artists = item.rel_artists as number[];
   const title = lang === "ko" ? item.title_ko : item.title_en;
@@ -38,8 +38,8 @@ export default function useItemIndex(
     [rel_events]
   );
   const exhibitionsObj = useMemo(
-    () => exhibitions.filter((a) => rel_exhibition?.includes(a.id)),
-    [rel_exhibition]
+    () => exhibitions.filter((a) => rel_exhibitions?.includes(a.id)),
+    [rel_exhibitions]
   );
   const publicationsObj = useMemo(
     () => publications.filter((a) => rel_publications?.includes(a.id)),
