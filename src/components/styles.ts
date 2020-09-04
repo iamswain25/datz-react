@@ -71,6 +71,11 @@ export const paddingH55 = css`
   padding-right: 55px;
 `;
 
+export const marginH8 = css`
+  margin-left: 8px;
+  margin-right: 8px;
+`;
+
 export const marginH10 = css`
   margin-left: 10px;
   margin-right: 10px;

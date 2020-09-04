@@ -4,7 +4,7 @@ import useDesktop from "../components/useDesktop";
 import {
   paddingH27,
   paddingH37,
-  marginH10,
+  marginH8,
   marginH18,
 } from "../components/styles";
 import { Grid } from "@material-ui/core";
@@ -77,7 +77,6 @@ export default function News() {
             line-height: 1.19;
             margin-top: 50px;
             margin-bottom: 45px;
-            // text-transform: uppercase;
           `}
         >
           {Object.keys(FILTERS).map((f) => (
@@ -90,7 +89,7 @@ export default function News() {
                 text-decoration: underline;
               `}
               className={css`
-                ${marginH10}
+                ${marginH8}
               `}
             >
               {FILTERS[f]}

@@ -4,8 +4,8 @@ import useDesktop from "../components/useDesktop";
 import {
   paddingH27,
   paddingH37,
-  marginH20,
   marginH18,
+  marginH8,
 } from "../components/styles";
 import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
@@ -59,7 +59,7 @@ export default function Events() {
             color: #cccccc;
             font-size: 16px;
             line-height: 1.19;
-            margin-bottom: 12px;
+            margin-bottom: 45px;
           `}
         >
           {Object.keys(FILTERS).map((f) => (
@@ -72,7 +72,7 @@ export default function Events() {
                 text-decoration: underline;
               `}
               className={css`
-                ${marginH20}
+                ${marginH8}
               `}
             >
               {FILTERS[f]}
