@@ -166,6 +166,7 @@ const classes: { [key: string]: any } = {
         ${getSize(18, 1.5)}
         font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
         margin-top: 21px;
+        margin-bottom: 40px;
         line-height: 28px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
