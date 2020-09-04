@@ -1,5 +1,5 @@
 import React from "react";
-import PublicationStickyTop from "../components/PublicationStickyTop";
+import PublicationLeft from "../components/PublicationLeft";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
@@ -22,9 +22,9 @@ export default function Publication() {
   const isDesktop = useDesktop();
   return (
     <>
-     <Header sticky />
+      <Header sticky />
       <section className={isDesktop ? desktopContainer : mobileContainer}>
-        <PublicationStickyTop />
+        <PublicationLeft />
         <PublicationList />
       </section>
     </>

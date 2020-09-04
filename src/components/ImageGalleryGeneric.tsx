@@ -5,9 +5,11 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 
 import Logo from "./Logo";
-export default function ImageGalleryGeneric({ images }: { images: any[] }) {
+import { makeUrl } from "../config/url";
+export default function ImageGalleryGeneric({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
+  const item = items[index];
   function onslideHandler(index: number) {
     setIndex(index);
   }
@@ -34,10 +36,10 @@ export default function ImageGalleryGeneric({ images }: { images: any[] }) {
     margin-top: ${isDesktop ? 4 : 3}px;
   `;
   const originalImages = React.useMemo(
-    () => images.map((a) => ({ original: a.image })),
-    [images]
+    () => items.map((a) => ({ original: makeUrl(a.image) })),
+    [items]
   );
-  const { type = "", title = "", sub = "", color = "#fff" } = images[index];
+  const { type = "", title = "", subtitle = "", color = "#fff" } = item;
   return (
     <>
       <ImageGallery
@@ -77,9 +79,9 @@ export default function ImageGalleryGeneric({ images }: { images: any[] }) {
           `}
         />
         <div className={titleClass}>{title}</div>
-        <div className={authorClass}>{sub}</div>
+        <div className={authorClass}>{subtitle}</div>
         <Logo
-          type="datzpress"
+          type={item.logo}
           color={color}
           className={css`
             bottom: ${isDesktop ? 29 : 25}px;

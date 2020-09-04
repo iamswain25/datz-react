@@ -46,8 +46,7 @@ export const home = [
     subtitle_en: "Amanda Marchand",
     title_ko: "모두 다른 하나의 순간들(SE) ",
     subtitle_ko: "아만다 마찬드",
-    url:
-      "/publication/2019_nothing-will-ever-be-the-same-again_se",
+    url: "/publication/2019_nothing-will-ever-be-the-same-again_se",
     image: "/Main/01/05.jpg",
   },
   {
@@ -149,5 +148,48 @@ export const home = [
     subtitle_ko: "2019.9.28 - 2019.12.31",
     url: "/event/2020_nature-conversations",
     image: "/Main/03/03.jpg",
+  },
+];
+
+export const leftSide = [
+  {
+    logo: "Datz Press",
+    type: "Upcoming Book",
+    title_en: "sun, water, being",
+    subtitle_en: "Braynt Austin",
+    title_ko: "sun, water, being",
+    subtitle_ko: "브라이언 오스틴",
+    url: null,
+    image: "/Banner/01.jpg",
+  },
+  {
+    logo: "Datz Press",
+    type: "Upcoming Book",
+    title_en: "Constellation",
+    subtitle_en: "Linda Connor",
+    title_ko: "Constellation",
+    subtitle_ko: "린다 코너",
+    url: null,
+    image: "/Banner/02.jpg",
+  },
+  {
+    logo: "Datz Museum of Art",
+    type: "Current Exhibition",
+    title_en: "REFLECTION",
+    subtitle_en: "2020.9.5 - 2020.11.22",
+    title_ko: "REFLECTION",
+    subtitle_ko: "2020.9.5 - 2020.11.22",
+    url: "",
+    image: "/Banner/03.jpg",
+  },
+  {
+    logo: "Datz Press",
+    type: "Upcoming Event",
+    title_en: "FNL#25 Lecture ‘Art of Curation’",
+    subtitle_en: "2020.10.30",
+    title_ko: "FNL#25 강연 <선택의 기술>",
+    subtitle_ko: "2020.10.30",
+    url: null,
+    image: "/Banner/04.jpg",
   },
 ];

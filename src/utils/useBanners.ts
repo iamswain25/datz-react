@@ -1,7 +1,10 @@
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import * as types from "../@type/banners";
 
-export default function useBanners(page: "home" = "home", type = "New Books") {
+export default function useBanners(
+  page: "home" | "leftSide" = "home",
+  type = "New Books"
+) {
   const [lang] = useGlobalState(LANG);
   const en = lang !== "ko";
   const items = types[page].filter((e) => e.type === type);

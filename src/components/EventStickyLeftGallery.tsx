@@ -31,7 +31,7 @@ const images = [
     image: banner,
     type: "Upcoming Event",
     title: "LA Art Book Fair",
-    sub: "2020.4",
+    subtitle: "2020.4",
     color: "#fff",
     isShowing: true,
     id: "",
@@ -40,7 +40,7 @@ const images = [
     image: pside1,
     type: "Upcoming Event",
     title: "LA Art Book Fair",
-    sub: "2020.4",
+    subtitle: "2020.4",
     color: "green",
     isShowing: true,
     id: "",
@@ -51,7 +51,7 @@ export default function EventStickyLeftGallery() {
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>
-        <ImageGalleryGeneric images={images} />
+        <ImageGalleryGeneric items={images} />
       </div>
       {!isDesktop && (
         <hr

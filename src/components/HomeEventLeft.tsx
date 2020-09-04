@@ -7,6 +7,7 @@ import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel, { StateCallBack } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import LazyImage from "./LazyImage";
+import { Link } from "react-router-dom";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
@@ -123,7 +124,8 @@ export default function HomeEventLeft() {
           position: absolute;
         `}
       >
-        <div
+        <Link
+          to={item.url || ""}
           className={css`
             text-align: center;
             color: #ffffff;
@@ -140,7 +142,7 @@ export default function HomeEventLeft() {
           />
           <div className={titleClass}>{item.title}</div>
           <div className={authorClass}>{item.subtitle}</div>
-        </div>
+        </Link>
         <Logo
           type={item.logo}
           color="#ffffff"

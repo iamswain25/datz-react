@@ -6,11 +6,10 @@ import ImageGalleryGeneric from "./ImageGalleryGeneric";
 import { marginH17 } from "./styles";
 const stickyContainer = css`
   align-self: flex-start;
-  position: -webkit-sticky;
   position: sticky;
   top: 79px;
   height: calc(100vh - 79px - 37px);
-  min-width: 386px;
+  min-width: 384px;
   margin-right: 22px;
   .image-gallery .image-gallery-bullets .image-gallery-bullet.active {
     background-color: #cccccc;
@@ -30,7 +29,7 @@ const images = [
     image: banner,
     type: "Upcoming Exhibition",
     title: "Heaven On Earth",
-    sub: "2020.4",
+    subtitle: "2020.4",
     color: "#fff",
     isShowing: true,
     id: "",
@@ -41,7 +40,7 @@ export default function ExhibitionLeft() {
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>
-        <ImageGalleryGeneric images={images} />
+        <ImageGalleryGeneric items={images} />
       </div>
       {!isDesktop && (
         <hr
