@@ -42,12 +42,13 @@ export function filterExhibitionCurrent(e: any): boolean {
     return isAfter(new Date(), parse(start_date, "yyyy.MM.dd", new Date()));
   }
   if (date) {
-    if (date.indexOf("-") > -1) {
+    if (date.indexOf("/") > -1) {
       const [start, end] = date.split("-").map((a: string) => a.trim());
-      return filterExhibitionCurrent({ start_date: start, end_date: end });
-    } else if (date.indexOf("/") > -1) {
-      const dateOnly = date.substr(0, date.indexOf("/")).trim();
-      return isBefore(new Date(), parse(dateOnly, "yyyy.MM.dd", new Date()));
+      if (end && end.length > 6) {
+        return filterExhibitionCurrent({ start_date: start, end_date: end });
+      } else {
+        return isBefore(new Date(), parse(start, "yyyy.MM.dd", new Date()));
+      }
     }
     return isBefore(new Date(), parse(date, "yyyy.MM.dd", new Date()));
   }
