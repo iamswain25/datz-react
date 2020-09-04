@@ -8,6 +8,8 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
         path={[
           "/artist/:address/images/:index",
           "/events/:filter",
+          "/artist/:address",
+          "/exhibitions/:filter",
           "/about",
           "/about/datzpress",
           "/about/darkroom",
