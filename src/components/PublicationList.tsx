@@ -135,24 +135,19 @@ export default function PublicationList() {
                 })}
             </Grid>
           </section>
-          {limit && (
-            <button
-              onClick={loadMoreHandler}
-              className={css`
-                height: 38px;
-                border-top: solid 1px #707070;
-                padding-bottom: 9px;
-                padding-top: 9px;
-                text-align: center;
-                font-family: BauerGroteskOTW03;
-                font-size: 14px;
-                line-height: 1.21;
-                color: #707070;
-              `}
-            >
-              view all {">"}
-            </button>
-          )}
+          <div
+            className={css`
+              height: 38px;
+              border-top: solid 1px #707070;
+              padding: 9px 0;
+              text-align: center;
+              font-size: 14px;
+              line-height: 1.21;
+              color: #707070;
+            `}
+          >
+            {limit && <button onClick={loadMoreHandler}>view all {">"}</button>}
+          </div>
         </div>
       </div>
     </>

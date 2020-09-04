@@ -14,7 +14,6 @@ import ViewAllCard from "../components/ViewAllCard";
 import { exhibitions } from "../@type/exhibitions";
 import useExhibitions from "../utils/useExhibitions";
 import { filterExhibitionPast } from "../utils/datefns";
-import { DEFAULT_COUNT } from "../config/params";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   darkroom: "D'Ark Room",
@@ -22,11 +21,7 @@ const FILTERS: { [key: string]: string } = {
 };
 export default function Exhibitions() {
   const { filter = "all" } = useParams();
-  const [limit, setLimit] = React.useState<number | undefined>(DEFAULT_COUNT);
   const list = useExhibitions(exhibitions).filter(filterExhibitionPast);
-  function viewAllHandler() {
-    setLimit(undefined);
-  }
   const isDesktop = useDesktop();
   return (
     <>
@@ -84,7 +79,6 @@ export default function Exhibitions() {
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
-            .slice(0, limit)
             .map((c, i) => (
               <Grid key={i} item xs={12} sm={6} xl={4}>
                 <ViewAllCard item={c} type="exhibition" />
@@ -109,9 +103,7 @@ export default function Exhibitions() {
             className={css`
               height: 28px;
             `}
-          >
-            {limit && <button onClick={viewAllHandler}>view all {">"}</button>}
-          </Grid>
+          ></Grid>
         </div>
       </section>
     </>
