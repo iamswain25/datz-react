@@ -41,7 +41,7 @@ export default function PastEventsLeft() {
         position: relative;
       `}
     >
-      <EventCoverWidget images={list} />
+      <EventCoverWidget images={list} fit="height" />
       <div
         className={css`
           padding: 37px;

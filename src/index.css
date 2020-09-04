@@ -329,15 +329,15 @@ hr {
   border-bottom: 0;
 }
 
+.height ul.react-multi-carousel-track,
 .height .react-multi-carousel-track div,
-.height .react-multi-carousel-track ul,
 .height .react-multi-carousel-track img,
 .height .react-multi-carousel-track li {
   height: 100%;
 }
 
+.width ul.react-multi-carousel-track,
 .width .react-multi-carousel-track div,
-.width .react-multi-carousel-track ul,
 .width .react-multi-carousel-track img,
 .width .react-multi-carousel-track li {
   width: 100%;
