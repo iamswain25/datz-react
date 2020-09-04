@@ -187,7 +187,9 @@ export default function AboutImages1() {
                     height: ${isDesktop ? "100%" : "588px"};
                     min-height: 0;
                     min-width: 0;
+                    max-height: ${isDesktop ? "auto" : "588px"};
                     flex: 1;
+                    width: ${isDesktop ? "auto" : "100%"};
                   `}
                   placeholder={css`
                     background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
