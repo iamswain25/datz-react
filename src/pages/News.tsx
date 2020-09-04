@@ -22,9 +22,9 @@ const FILTERS: { [key: string]: string } = {
 export default function News() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop();
-  const [limit, setLimit] = React.useState(DEFAULT_COUNT);
-  function viewMoreHandler() {
-    setLimit((l) => l + 6);
+  const [limit, setLimit] = React.useState<number | undefined>(DEFAULT_COUNT);
+  function viewAllHandler() {
+    setLimit(undefined);
   }
   const list = useNews(news);
   return (
@@ -127,7 +127,7 @@ export default function News() {
               height: 28px;
             `}
           >
-            <button onClick={viewMoreHandler}>view more {">"}</button>
+            {limit && <button onClick={viewAllHandler}>view all {">"}</button>}
           </Grid>
         </div>
       </section>

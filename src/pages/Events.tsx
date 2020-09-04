@@ -22,11 +22,11 @@ const FILTERS: { [key: string]: string } = {
 };
 export default function Events() {
   const { filter = "all" } = useParams();
-  const [limit, setLimit] = React.useState(DEFAULT_COUNT);
+  const [limit, setLimit] = React.useState<number | undefined>(DEFAULT_COUNT);
   const isDesktop = useDesktop();
   const list = useEvents(events.slice(2));
-  function viewMoreHandler() {
-    setLimit((l) => l + 6);
+  function viewAllHandler() {
+    setLimit(undefined);
   }
   return (
     <>
@@ -110,7 +110,7 @@ export default function Events() {
               height: 28px;
             `}
           >
-            <button onClick={viewMoreHandler}>view more {">"}</button>
+            {limit && <button onClick={viewAllHandler}>view all {">"}</button>}
           </Grid>
         </div>
       </section>
