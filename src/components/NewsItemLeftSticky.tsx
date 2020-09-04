@@ -35,6 +35,7 @@ export default function NewsItemLeftSticky() {
       }
     >
       <EventCoverWidget
+        linkDisabled
         dark
         type="newsitem"
         images={item.images}
