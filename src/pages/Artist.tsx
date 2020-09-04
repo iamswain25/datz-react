@@ -26,6 +26,7 @@ import DatzArtistProject3 from "../components/DatzArtistProject3";
 import BtnBack from "../components/BtnBack";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 export default function Artist() {
   const isDesktop = useDesktop();
   return (
@@ -40,6 +41,7 @@ export default function Artist() {
         additionalClass="white-bullets"
         className={css`
           height: ${isDesktop ? "100vh" : "588px"};
+          background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
         `}
         children={<DatzArtistProject />}
       />
