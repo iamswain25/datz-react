@@ -26,7 +26,7 @@ export default function NewsCard({ item }: { item: any }) {
       >
         <LazyImage
           alt={`image-${item.id}`}
-          link={item.images[0]}
+          link={item.image_cover}
           placeholder={css`
             position: absolute;
             width: 100%;
