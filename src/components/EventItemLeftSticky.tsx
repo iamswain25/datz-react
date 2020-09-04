@@ -26,6 +26,7 @@ export default function EventItemLeftSticky({ images }: { images: string[] }) {
       <EventCoverWidget
         images={images}
         type="event"
+        linkDisabled
         fit={isDesktop ? "height" : "width"}
       />
     </div>

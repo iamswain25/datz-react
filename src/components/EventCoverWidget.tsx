@@ -10,7 +10,6 @@ const listClass = (dark = false) => css`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  cursor: pointer;
   flex: 1;
   color: ${dark ? "#ffffff" : "#707070"};
   width: 100%;
@@ -37,12 +36,14 @@ const responsive = {
 };
 export default function EventCoverWidget({
   dark = false,
+  linkDisabled = false,
   images,
   objectFit = "cover",
   type = "event",
   fit = "height",
 }: {
   dark?: boolean;
+  linkDisabled?: boolean;
   images: any[];
   objectFit?: string;
   fit?: string;
@@ -77,17 +78,27 @@ export default function EventCoverWidget({
         }
       >
         {images.map((img, i) => {
+          const content = (
+            <div className={listClass(dark)}>
+              <img
+                src={makeUrl(img)}
+                alt="event"
+                className={css`
+                  object-fit: ${objectFit};
+                `}
+              />
+            </div>
+          );
+          if (linkDisabled) {
+            return (
+              <span key={i} className={afterClass(i)}>
+                {content}
+              </span>
+            );
+          }
           return (
             <Link key={i} className={afterClass(i)} to={`/${type}/${id}`}>
-              <div className={listClass(dark)}>
-                <img
-                  src={makeUrl(img)}
-                  alt="event"
-                  className={css`
-                    object-fit: ${objectFit};
-                  `}
-                />
-              </div>
+              {content}
             </Link>
           );
         })}
