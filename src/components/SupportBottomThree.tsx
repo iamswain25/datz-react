@@ -7,6 +7,7 @@ const classes = {
   title: css`
     font-size: 21px;
     line-height: 1.29;
+    margin-top: 54px;
   `,
   price: css`
     margin-top: 10px;
@@ -42,7 +43,6 @@ export default function SupportBottomThree() {
   return (
     <Grid
       className={css`
-        padding-top: 54px;
         padding-bottom: 43px;
         font-family: BauerGroteskOTW03;
         font-size: 17px;
