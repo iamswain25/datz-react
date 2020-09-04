@@ -1,12 +1,42 @@
 import React from "react";
 import { css } from "emotion";
-import EventCoverWidget from "./EventCoverWidget";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 import useBanners from "../utils/useBanners";
-export default function PastEventsLeft() {
+import CarouselBtnGroup from "./CarouselBtnGroup";
+import Carousel, { StateCallBack } from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import LazyImage from "./LazyImage";
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1000 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 999, min: 0 },
+    items: 1,
+  },
+};
+const classes = {
+  list: css`
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    color: "#707070";
+    width: 100%;
+    position: relative;
+    height: inherit;
+  `,
+  objectFitCover: css`
+    object-fit: cover;
+  `,
+};
+export default function HomeEventLeft() {
   const isDesktop = useDesktop(false);
   const items = useBanners("home", "Past Event");
+  const [index, setIndex] = React.useState(0);
+  const item = items[index];
   const typeClass = css`
     font-family: BauerGroteskOTW03;
     font-size: ${isDesktop ? 19 : 16}px;
@@ -31,6 +61,9 @@ export default function PastEventsLeft() {
     text-align: center;
     margin-top: ${isDesktop ? 4 : 3}px;
   `;
+  function afterChangeHandler(previousSlide: number, state: StateCallBack) {
+    setIndex(state.currentSlide);
+  }
   return (
     <section
       className={css`
@@ -41,7 +74,38 @@ export default function PastEventsLeft() {
         position: relative;
       `}
     >
-      <EventCoverWidget images={items.map((e) => e.image)} fit="height" />
+      <div
+        className={`height ${css`
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        `}`}
+      >
+        <Carousel
+          responsive={responsive}
+          afterChange={afterChangeHandler}
+          containerClass={css`
+            flex: 1;
+            align-items: normal;
+          `}
+          itemClass={css`
+            display: flex;
+            align-items: center;
+          `}
+          renderButtonGroupOutside={true}
+          arrows={false}
+          customButtonGroup={<CarouselBtnGroup noBorderBottom={!isDesktop} />}
+        >
+          {items.map((item, i) => {
+            return (
+              <div className={classes.list} key={i}>
+                <LazyImage link={item.image} img={classes.objectFitCover} />
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
       <div
         className={css`
           padding: 37px;
@@ -65,7 +129,7 @@ export default function PastEventsLeft() {
             color: #ffffff;
           `}
         >
-          <div className={typeClass}>Past Events {">"}</div>
+          <div className={typeClass}>{item.type}</div>
           <hr
             className={css`
               height: 0;
@@ -74,13 +138,11 @@ export default function PastEventsLeft() {
               margin-bottom: ${isDesktop ? 18 : 16}px;
             `}
           />
-          <div className={titleClass}>
-            FNL#6 Barbara Bosworth’s Photobook Talk
-          </div>
-          <div className={authorClass}>2019.11.11</div>
+          <div className={titleClass}>{item.title}</div>
+          <div className={authorClass}>{item.subtitle}</div>
         </div>
         <Logo
-          type="darkroom"
+          type={item.logo}
           color="#ffffff"
           className={css`
             position: absolute;

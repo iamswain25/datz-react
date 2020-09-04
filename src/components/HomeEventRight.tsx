@@ -4,7 +4,7 @@ import UpcomingWidget from "./UpcomingWidget";
 import HomeEventCard from "./HomeEventCard";
 import useDesktop from "./useDesktop";
 import useItemIndex from "../utils/useItemIndex";
-export default function PastEventsRight() {
+export default function HomeEventRight() {
   const isDesktop = useDesktop(false);
   const item = useItemIndex(1, "event");
   return (

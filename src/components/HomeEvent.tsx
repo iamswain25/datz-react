@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "emotion";
-import PastEventsLeft from "./PastEventsLeft";
-import PastEventsRight from "./PastEventsRight";
+import HomeEventLeft from "./HomeEventLeft";
+import HomeEventRight from "./HomeEventRight";
 import useDesktop from "./useDesktop";
-export default function HomePastEvent() {
+export default function HomeEvent() {
   const isDesktop = useDesktop();
   return (
     <div
@@ -18,7 +18,7 @@ export default function HomePastEvent() {
       `}
     >
       {isDesktop ? (
-        <PastEventsLeft />
+        <HomeEventLeft />
       ) : (
         <div
           className={css`
@@ -31,7 +31,7 @@ export default function HomePastEvent() {
             padding-top: 0;
           `}
         >
-          <PastEventsLeft />
+          <HomeEventLeft />
         </div>
       )}
       <section
@@ -43,7 +43,7 @@ export default function HomePastEvent() {
           margin-left: ${isDesktop ? 14 : 0}px;
         `}
       >
-        <PastEventsRight />
+        <HomeEventRight />
       </section>
     </div>
   );

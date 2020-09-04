@@ -1,7 +1,7 @@
 import React from "react";
 import FullPageRollingImages from "../components/FullPageRollingImages";
 import FullPageRollingImages2 from "../components/FullPageRollingImages2";
-import HomePastEvent from "../components/HomePastEvent";
+import HomeEvent from "../components/HomeEvent";
 import Footer from "../components/Footer";
 import useDevider from "../components/useDevider";
 import Header from "../components/Header";
@@ -17,7 +17,7 @@ export default () => {
       {devider}
       <FullPageRollingImages2 items={data2} />
       {devider}
-      <HomePastEvent />
+      <HomeEvent />
       <Footer />
     </>
   );
