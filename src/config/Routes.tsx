@@ -29,95 +29,75 @@ import Artist from "../pages/Artist";
 import Support from "../pages/Support";
 import News from "../pages/News";
 import NewsItem from "../pages/NewsItem";
-import { css } from "emotion";
 import FullImageGallery from "../pages/FullImageGallery";
+import Layout from "../components/Layout";
 export default function Routes() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/publication" component={Publication} />
-        <Route exact path="/exhibition" component={Exhibition} />
-        <Route exact path="/publication/:id" component={PublicationItem} />
-        <Route
-          exact
-          path="/publication/:id/images/:index"
-          render={() => <FullImageGallery type="publication" />}
-        />
-        <Route
-          exact
-          path="/exhibition/:id/images/:index"
-          render={() => <FullImageGallery type="exhibition" />}
-        />
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/publication" component={Publication} />
+          <Route exact path="/exhibition" component={Exhibition} />
+          <Route exact path="/publication/:id" component={PublicationItem} />
+          <Route
+            exact
+            path="/publication/:id/images/:index"
+            render={() => <FullImageGallery type="publication" />}
+          />
+          <Route
+            exact
+            path="/exhibition/:id/images/:index"
+            render={() => <FullImageGallery type="exhibition" />}
+          />
 
-        <Route exact path="/event" component={Event} />
-        <Route exact path="/events">
-          <Redirect to="/events/all" />
-        </Route>
-        <Route exact path="/Exhibitions">
-          <Redirect to="/exhibitions/all" />
-        </Route>
+          <Route exact path="/event" component={Event} />
+          <Route exact path="/events">
+            <Redirect to="/events/all" />
+          </Route>
+          <Route exact path="/Exhibitions">
+            <Redirect to="/exhibitions/all" />
+          </Route>
 
-        <Route exact path="/event/:id" component={EventItem} />
-        <Route exact path="/exhibition/:id" component={ExhibitionItem} />
-        <Route
-          exact
-          path="/publication/:id/readmore"
-          component={PublicationReadmore}
-        />
-        <Route
-          exact
-          path="/exhibition/:id/readmore"
-          component={ExhibitionReadmore}
-        />
-        <Route exact path="/artist/:id" component={ArtistPage} />
-        <Route exact path="/artist" component={Artist} />
-        <Route exact path="/login" component={Signin} />
-        <PrivateRoute path="/admin" component={AdminHome} />
-        <React.Fragment>
-          <main
-            className={css`
-              min-height: 100vh;
-              background-color: #afafaf;
-              color: #ffffff;
-              position: relative;
-              font-family: BauerGroteskOTW03;
-            `}
-          >
-            <Switch>
-              <Route
-                exact
-                path="/artist/:id/images/:index"
-                render={() => <FullImageGallery type="artist" />}
-              />
-              <Route exact path="/events/:filter" component={Events} />
-              <Route
-                exact
-                path="/exhibitions/:filter"
-                component={Exhibitions}
-              />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/about/datzpress" component={AboutDatzpress} />
-              <Route exact path="/about/darkroom" component={AboutDarkroom} />
-              <Route
-                exact
-                path="/about/datzmuseum"
-                component={AboutDatzmuseum}
-              />
-              <Route exact path="/contact" component={Contact} />
-              <Route exact path="/support" component={Support} />
-              <Route exact path="/news">
-                <Redirect to="/news/all" />
-              </Route>
-              <Route exact path="/news/:filter" component={News} />
-              <Route exact path="/newsitem/:id" component={NewsItem} />
-              <Route path="*">
-                <Redirect to="/" />
-              </Route>
-            </Switch>
-          </main>
-        </React.Fragment>
-      </Switch>
+          <Route exact path="/event/:id" component={EventItem} />
+          <Route exact path="/exhibition/:id" component={ExhibitionItem} />
+          <Route
+            exact
+            path="/publication/:id/readmore"
+            component={PublicationReadmore}
+          />
+          <Route
+            exact
+            path="/exhibition/:id/readmore"
+            component={ExhibitionReadmore}
+          />
+          <Route exact path="/artist/:id" component={ArtistPage} />
+          <Route exact path="/artist" component={Artist} />
+          <Route exact path="/login" component={Signin} />
+          <PrivateRoute path="/admin" component={AdminHome} />
+          <Route
+            exact
+            path="/artist/:id/images/:index"
+            render={() => <FullImageGallery type="artist" />}
+          />
+          <Route exact path="/events/:filter" component={Events} />
+          <Route exact path="/exhibitions/:filter" component={Exhibitions} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/about/datzpress" component={AboutDatzpress} />
+          <Route exact path="/about/darkroom" component={AboutDarkroom} />
+          <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/support" component={Support} />
+          <Route exact path="/news">
+            <Redirect to="/news/all" />
+          </Route>
+          <Route exact path="/news/:filter" component={News} />
+          <Route exact path="/newsitem/:id" component={NewsItem} />
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </Layout>
     </Router>
   );
 }
