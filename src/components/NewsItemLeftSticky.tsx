@@ -4,7 +4,7 @@ import useDesktop from "./useDesktop";
 import EventCoverWidget from "./EventCoverWidget";
 import { flexcolumn } from "./styles";
 import { useParams } from "react-router-dom";
-import useNewsIndex from "../utils/useNewsIndex";
+import useItemIndex from "../utils/useItemIndex";
 const stickyContainer = css`
   position: sticky;
   top: 79px;
@@ -17,8 +17,8 @@ const stickyContainer = css`
 `;
 export default function NewsItemLeftSticky() {
   const isDesktop = useDesktop();
-  const { id } = useParams();
-  const item = useNewsIndex(id);
+  const { address } = useParams();
+  const item = useItemIndex(address, "new");
   return (
     <section
       className={

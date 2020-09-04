@@ -3,15 +3,25 @@ import { useGlobalState, LANG } from "../store/useGlobalState";
 import { publications } from "../@type/publications";
 import { artists } from "../@type/artists";
 import { events } from "../@type/events";
+import { news } from "../@type/news";
 import { exhibitions } from "../@type/exhibitions";
-const types: any = { publications, artists, events, exhibitions };
+const types: any = { publications, artists, events, exhibitions, news };
 export default function useItemIndex(
-  index: string | number,
-  type: "publication" | "artist" | "event" | "exhibition" = "publication"
+  address: string | number,
+  type:
+    | "publication"
+    | "artist"
+    | "event"
+    | "exhibition"
+    | "new" = "publication"
 ) {
   const [lang] = useGlobalState(LANG);
   const items = types[type + "s"];
-  const item = items.find((e: any) => e.id === Number(index)) || types[type][0];
+
+  const item =
+    items.find((e: any) =>
+      typeof address === "string" ? e.address === address : e.id === address
+    ) || types[type][0];
   const rel_publications = item.rel_publications as number[];
   const rel_exhibitions = item.rel_exhibitions as number[];
   const rel_events = item.rel_events as number[];

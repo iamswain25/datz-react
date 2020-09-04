@@ -8,6 +8,7 @@ import SupportBottomThree from "../components/SupportBottomThree";
 import BtnTop from "../components/BtnTop";
 import { paddingH55, paddingH27 } from "../components/styles";
 import LazyImage from "../components/LazyImage";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 export default function Support() {
   const isDesktop = useDesktop();
   console.log(isDesktop);
@@ -25,6 +26,7 @@ export default function Support() {
           link={supportImg}
           img={css`
             width: 100%;
+            background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
             object-fit: cover;
           `}
         />

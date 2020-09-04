@@ -50,7 +50,7 @@ export default function EventCoverWidget({
   type?: string;
 }) {
   const isDesktop = useDesktop();
-  const { id } = useParams();
+  const { address } = useParams();
   return (
     <div
       className={`${fit} ${css`
@@ -97,7 +97,7 @@ export default function EventCoverWidget({
             );
           }
           return (
-            <Link key={i} className={afterClass(i)} to={`/${type}/${id}`}>
+            <Link key={i} className={afterClass(i)} to={`/${type}/${address}`}>
               {content}
             </Link>
           );

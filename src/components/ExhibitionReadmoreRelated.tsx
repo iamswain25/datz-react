@@ -22,8 +22,8 @@ const desktopContainer = css`
 `;
 export default function ExhibitionReadmoreRelated() {
   const isDesktop = useDesktop();
-  const { id } = useParams();
-  const { artists, publications, events } = useItemIndex(id, "exhibition");
+  const { address } = useParams();
+  const { artists, publications, events } = useItemIndex(address, "exhibition");
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div

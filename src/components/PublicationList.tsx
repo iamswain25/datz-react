@@ -110,7 +110,7 @@ export default function PublicationList() {
                   return (
                     <Grid item key={i} xs={12} sm={12} md={6} lg={4} xl={3}>
                       <Link
-                        to={`publication/${item.id}`}
+                        to={`publication/${item.address}`}
                         className={classes.link}
                       >
                         <LazyImage

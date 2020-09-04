@@ -62,9 +62,9 @@ export default function ArtistWidget({
             </CarouselBtnGroup>
           }
         >
-          {list.map(({ name, bio, id }, i) => {
+          {list.map(({ name, bio, address }, i) => {
             return (
-              <Link to={`/artist/${id}`} key={i}>
+              <Link to={`/artist/${address}`} key={i}>
                 <p className={classes.title}>
                   {name} {">"}
                 </p>

@@ -101,9 +101,9 @@ export default function PublicationWidget({
           }
         >
           {list.map((item, i) => {
-            const { image_cover, title, id } = item;
+            const { image_cover, title, address } = item;
             return (
-              <Link key={i} to={`/publication/${id}`} className={afterClass(i)}>
+              <Link key={i} to={`/publication/${address}`} className={afterClass(i)}>
                 <div className={listClass(dark)}>
                   <LazyImage
                     alt={item.title}

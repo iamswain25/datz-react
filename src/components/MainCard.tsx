@@ -15,11 +15,11 @@ export default function MainCard({
   item: any;
   type: string;
 }) {
-  const { date, title, body, id } = item;
+  const { date, title, body, address } = item;
   const isDesktop = useDesktop();
   const [classes] = useLang(`${type}MainCard`);
   return (
-    <Link to={`/${type}/${id}`}>
+    <Link to={`/${type}/${address}`}>
       <section
         className={css`
           position: relative;

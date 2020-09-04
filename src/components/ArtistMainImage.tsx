@@ -8,8 +8,8 @@ import useItemIndex from "../utils/useItemIndex";
 export default function ArtistMainImage() {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
-  const { id } = useParams();
-  const { name, genre, images } = useItemIndex(id, "artist");
+  const { address } = useParams();
+  const { name, genre, images } = useItemIndex(address, "artist");
   const nameClassEn = css`
     height: 27px;
     font-family: ArnoPro-Display;

@@ -24,8 +24,8 @@ const mobileContainer = css`
 export default function ArtistLeft() {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistLeft");
-  const { id } = useParams();
-  const { homepage, bio } = useItemIndex(id, "artist");
+  const { address } = useParams();
+  const { homepage, bio } = useItemIndex(address, "artist");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <section

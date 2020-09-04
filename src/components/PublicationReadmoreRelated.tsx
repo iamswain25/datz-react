@@ -6,8 +6,8 @@ import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
 import { useParams } from "react-router-dom";
-import usePublicationIndex from "../utils/usePublicationIndex";
 import { bottomBtn37 } from "./styles";
+import useItemIndex from "../utils/useItemIndex";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -23,10 +23,8 @@ const desktopContainer = css`
 `;
 export default function PublicationReadmoreRelated() {
   const isDesktop = useDesktop();
-  const { id } = useParams();
-  const { artists, publications, exhibitions, events } = usePublicationIndex(
-    id
-  );
+  const { address } = useParams();
+  const { artists, publications, exhibitions, events } = useItemIndex(address);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div

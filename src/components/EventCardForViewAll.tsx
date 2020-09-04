@@ -4,10 +4,10 @@ import useDesktop from "./useDesktop";
 import { makeUrl } from "../config/url";
 import { Link } from "react-router-dom";
 export default function EventCardForViewAll({ event }: { event: any }) {
-  const { images, date, title, id } = event;
+  const { images, date, title, address } = event;
   const isDesktop = useDesktop(false);
   return (
-    <Link to={`/event/${id}`}>
+    <Link to={`/event/${address}`}>
       <div
         className={css`
           position: relative;

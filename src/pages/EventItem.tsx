@@ -12,8 +12,8 @@ const desktopContainer = css`
   ${paddingH37}
 `;
 export default function EventItem() {
-  const { id } = useParams();
-  const item = useItemIndex(id, "event");
+  const { address } = useParams();
+  const item = useItemIndex(address, "event");
   const isDesktop = useDesktop();
   if (isDesktop) {
     return (

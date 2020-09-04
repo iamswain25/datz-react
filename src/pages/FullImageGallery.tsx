@@ -10,12 +10,12 @@ export default function FullImageGallery({
 }: {
   type: "publication" | "artist" | "event" | "exhibition";
 }) {
-  const { index, id } = useParams();
+  const { index, address } = useParams();
   const { replace } = useHistory();
-  const item = useItemIndex(id, type);
+  const item = useItemIndex(address, type);
 
   function onSlideHandler(currentIndex: number) {
-    replace(`/${type}/${id}/images/${currentIndex}`);
+    replace(`/${type}/${address}/images/${currentIndex}`);
   }
   return (
     <section
@@ -44,7 +44,7 @@ export default function FullImageGallery({
         autoPlay={false}
         onSlide={onSlideHandler}
         additionalClass="contain-image"
-        onClick={() => replace(`/${type}/${id}`)}
+        onClick={() => replace(`/${type}/${address}`)}
         renderLeftNav={function (onClick, disabled) {
           return (
             <Arrow

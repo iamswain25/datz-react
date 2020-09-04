@@ -6,7 +6,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
     <Switch>
       <Route
         path={[
-          "/artist/:id/images/:index",
+          "/artist/:address/images/:index",
           "/events/:filter",
           "/about",
           "/about/datzpress",
@@ -17,7 +17,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
           "/news",
           "/news/all",
           "/news/:filter",
-          "/newsitem/:id",
+          "/newsitem/:address",
         ]}
         render={() => (
           <main

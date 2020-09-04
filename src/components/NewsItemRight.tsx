@@ -5,7 +5,7 @@ import { paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
 import ShareButtons from "./ShareButtons";
 import { useParams } from "react-router-dom";
-import useNewsIndex from "../utils/useNewsIndex";
+import useItemIndex from "../utils/useItemIndex";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
@@ -25,8 +25,8 @@ export default function NewsItemRight({
   color?: string;
 }) {
   const isDesktop = useDesktop();
-  const { id } = useParams();
-  const item = useNewsIndex(id);
+  const { address } = useParams();
+  const item = useItemIndex(address, "new");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
       {isDesktop && (

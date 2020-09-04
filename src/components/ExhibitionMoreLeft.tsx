@@ -29,13 +29,13 @@ const mobileContainer = css`
 
 export default function ExhibitionMoreLeft() {
   const isDesktop = useDesktop();
-  const { id = 1 } = useParams();
-  const item = useItemIndex(id, "exhibition");
+  const { address } = useParams();
+  const item = useItemIndex(address, "exhibition");
   const goBack = useBtnBack();
   const [classes] = useLang("exhibition");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <CloseShare close={`/exhibition/${id}`} />
+      <CloseShare close={`/exhibition/${address}`} />
       <DatzmuseumOrder order={item.visit_url} />
       <section
         className={css`

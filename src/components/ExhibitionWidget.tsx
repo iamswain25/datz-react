@@ -97,9 +97,9 @@ export default function ExhibitionWidget({
         }
       >
         {list.map((item, i) => {
-          const { images, title, id } = item;
+          const { images, title, address } = item;
           return (
-            <Link key={i} className={afterClass(i)} to={`/exhibition/${id}`}>
+            <Link key={i} className={afterClass(i)} to={`/exhibition/${address}`}>
               <div className={listClass(dark)}>
                 <LazyImage
                   alt={item.title}

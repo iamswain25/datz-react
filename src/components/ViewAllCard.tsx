@@ -18,7 +18,7 @@ export default function ViewAllCard({
   const isDesktop = useDesktop();
   const isCurrent = filterExhibitionCurrent(item);
   return (
-    <Link to={`/${type}/${item.id}`}>
+    <Link to={`/${type}/${item.address}`}>
       <div
         className={
           nonWhite

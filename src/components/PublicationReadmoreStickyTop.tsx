@@ -5,11 +5,10 @@ import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
 import { bottomBtn37 } from "./styles";
-import { publications } from "../@type/publications";
-import usePublicationItem from "../utils/usePublicationItem";
 import Linkify from "react-linkify";
 import useBtnBack from "./useBtnBack";
 import useLang from "./useLang";
+import useItemIndex from "../utils/useItemIndex";
 
 const stickyContainer = css`
   align-self: flex-start;
@@ -28,13 +27,11 @@ const mobileContainer = css`
   position: relative;
 `;
 export default function PublicationStickyTop() {
-  const { id } = useParams();
+  const { address } = useParams();
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
-  const item = publications.find((p) => p.id === Number(id));
-  const { title, artist, quotes, body, notes, order_url } = usePublicationItem(
-    item
-  );
+  const item = useItemIndex(address, "publication");
+  const { title, artist, quotes, body, notes, order_url } = item;
   const goBack = useBtnBack();
 
   return (

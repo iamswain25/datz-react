@@ -9,7 +9,7 @@ export default function NewsCard({ item }: { item: any }) {
   const isDesktop = useDesktop(false);
   const isCurrent = filterExhibitionCurrent(item);
   return (
-    <Link to={`/newsitem/${item.id}`}>
+    <Link to={`/newsitem/${item.address}`}>
       <div
         className={css`
           position: relative;
@@ -25,7 +25,7 @@ export default function NewsCard({ item }: { item: any }) {
         `}
       >
         <LazyImage
-          alt={`image-${item.id}`}
+          alt={`image-${item.address}`}
           link={item.image_cover}
           placeholder={css`
             position: absolute;

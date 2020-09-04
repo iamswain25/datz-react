@@ -25,9 +25,9 @@ const desktopContainer = css`
 `;
 export default function PublicationItemPhotos() {
   const isDesktop = useDesktop();
-  const { id } = useParams();
+  const { address } = useParams();
   const { publications, exhibitions, events, homepage } = useItemIndex(
-    id,
+    address,
     "artist"
   );
   return (
