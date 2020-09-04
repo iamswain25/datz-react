@@ -6,24 +6,14 @@ import { publications } from "../@type/publications";
 import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
 import usePublications from "../utils/usePublications";
+import useLang from "./useLang";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
-const classes = {
-  link: css`
-    padding-left: 18px;
-    padding-right: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #707070;
-    text-align: center;
-  `,
-};
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
   const [limit, setLimit] = React.useState(12);
   const list = usePublications(publications);
   const isDesktop = useDesktop();
+  const [classes] = useLang("PublicationList");
   function loadMoreHandler() {
     setLimit((l) => l + 6);
   }
@@ -107,7 +97,6 @@ export default function PublicationList() {
           <section
             className={css`
               flex: 1;
-              font-family: BauerGroteskOTW03;
               margin: 40px 0;
             `}
           >
@@ -138,23 +127,8 @@ export default function PublicationList() {
                             min-height: 280px;
                           `}
                         />
-                        <span
-                          className={css`
-                            font-size: 19px;
-                            line-height: 1.21;
-                          `}
-                        >
-                          {item.title}
-                        </span>
-                        <span
-                          className={css`
-                            margin-top: 4px;
-                            font-size: 17px;
-                            line-height: 1.35;
-                          `}
-                        >
-                          {item.artist}
-                        </span>
+                        <div className={classes.title}>{item.title}</div>
+                        <div className={classes.artist}>{item.artist}</div>
                       </Link>
                     </Grid>
                   );

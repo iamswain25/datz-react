@@ -276,6 +276,27 @@ const classes: { [key: string]: any } = {
       `,
     };
   },
+  PublicationList: (en: boolean) => {
+    const getSize = getFont("BauerGroteskOTW03", en);
+    return {
+      link: css`
+        padding: 0 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #707070;
+        text-align: center;
+      `,
+      title: css`
+        ${getSize(19, 1.21)}
+      `,
+      artist: css`
+        ${getSize(17, 1.35)}
+        margin-top: 4px;
+      `,
+    };
+  },
   ArtistPage: (en: boolean) => {
     const getSize = getFont("BauerGroteskOTW03-Regular", en);
     return {
