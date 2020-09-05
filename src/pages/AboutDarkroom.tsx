@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import BtnBack from "../components/BtnBack";
-import d3 from "../assets/images/about/d3.png";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
@@ -10,6 +9,7 @@ import {
   paddingH12,
   flexcolumn,
   paddingH17,
+  marginRight30,
 } from "../components/styles";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
@@ -17,6 +17,7 @@ import Darkroom from "../assets/svg/Darkroom";
 import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
+import useBanners from "../utils/useBanners";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -28,7 +29,8 @@ const h1Style = (isDesktop = false) => css`
 `;
 export default function AboutDatzpress() {
   const isDesktop = useDesktop();
-  const [classes] = useLang("About");
+  const [classes, en] = useLang("About");
+  const [item] = useBanners("about", "D'Ark Room");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzpress");
@@ -68,7 +70,7 @@ export default function AboutDatzpress() {
           ${isDesktop ? paddingH37 : paddingH17}
           ${flexcolumn}
           position: relative;
-          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          min-height: ${isDesktop ? "calc(100vh - 79px - 37px)" : "auto"};
           padding-bottom: 16px;
         `}
       >
@@ -88,7 +90,7 @@ export default function AboutDatzpress() {
               `}
             >
               <LazyImage
-                link={d3}
+                link={item.image}
                 img={css`
                   width: 100%;
                   height: inherit;
@@ -121,22 +123,8 @@ export default function AboutDatzpress() {
                   flex: 1;
                 `}
               >
-                <h1 className={h1Style(isDesktop)}>D’Ark Room</h1>
-
-                <p className={classes.desc}>
-                  D’ark Room is a project space for showcasing photographs and
-                  books. We hosts lectures, artist talks, and portfolio reviews
-                  in collaboration with various artist. Archive Room has over
-                  1,000 photo books and offers a reading room for artists
-                  documentaries and DVDs.
-                </p>
-                <h2 className={classes.title}>D’Front Space</h2>
-                <p className={classes.desc}>
-                  D’Front Space is a gallery space that naturally connects to
-                  D’Ark Room and invites and welcomes the outside gaze. It
-                  displays various projects underway at D’ARK ROOM, and is a
-                  12.65 m² area featuring a show window exposed outside.
-                </p>
+                <h1 className={h1Style(isDesktop)}>{item.title}</h1>
+                <p className={classes.desc}>{item.text}</p>
               </div>
               <div>
                 <h2
@@ -160,13 +148,15 @@ export default function AboutDatzpress() {
                     margin-bottom: 42px;
                   `}
                 >
-                  <div>Phone</div>
+                  <div>{en ? "Phone" : "전화"}</div>
                   <div>+82 2 447 2581</div>
                   <div>-</div>
-                  <div>Email</div>
-                  <Grid container spacing={3} justify="center">
-                    <Grid item>D’Ark Room</Grid>
-                    <Grid item>
+                  <div>{en ? "Email" : "이메일"}</div>
+                  <div>
+                    <span className={marginRight30}>
+                      {en ? "D’Ark Room" : "다크룸"}
+                    </span>
+                    <span className={marginRight30}>
                       <a
                         href="mailto:darkroom@datzpress.com"
                         target="_blank"
@@ -174,8 +164,8 @@ export default function AboutDatzpress() {
                       >
                         darkroom@datzpress.com
                       </a>
-                    </Grid>
-                  </Grid>
+                    </span>
+                  </div>
                 </div>
                 <BtnBack color="#fff" full borderTop />
               </div>

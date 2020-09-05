@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import BtnBack from "../components/BtnBack";
-import d2 from "../assets/images/about/d2.png";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
@@ -10,14 +9,15 @@ import {
   flexcolumn,
   paddingH17,
   paddingH12,
+  marginRight30,
 } from "../components/styles";
-
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
 import Logo from "../components/Logo";
+import useBanners from "../utils/useBanners";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -29,7 +29,8 @@ const h1Style = (isDesktop = false) => css`
 `;
 export default function AboutDatzpress() {
   const isDesktop = useDesktop();
-  const [classes] = useLang("About");
+  const [classes, en] = useLang("About");
+  const [item] = useBanners("about", "Datz Press");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzmuseum");
@@ -69,7 +70,7 @@ export default function AboutDatzpress() {
           ${isDesktop ? paddingH37 : paddingH17}
           ${flexcolumn}
           position: relative;
-          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          min-height: ${isDesktop ? "calc(100vh - 79px - 37px)" : "auto"};
           padding-bottom: 16px;
         `}
       >
@@ -93,7 +94,7 @@ export default function AboutDatzpress() {
               `}
             >
               <LazyImage
-                link={d2}
+                link={item.image}
                 img={css`
                   flex: 1;
                   height: 100%;
@@ -129,22 +130,8 @@ export default function AboutDatzpress() {
                   flex: 1;
                 `}
               >
-                <h1 className={h1Style(isDesktop)}>Datz Press</h1>
-                <p className={classes.desc}>
-                  Datz Press is an art book press that works with photographers,
-                  designers, and bookmakers. We create, publish, and exhibit
-                  books centered on photography. We advocates for the growth of
-                  participatory artistic activity through exhibiting and
-                  publishing art, as well as art education.
-                </p>
-                <h2 className={classes.title}>Datz Books</h2>
-                <p className={classes.desc}>
-                  Datz Books is a bookmaking studio. We collaborate with artists
-                  who want to create artist books. We suggest appropriate
-                  designs, materials, and binding procedures and complete a
-                  book. We assure an excellent book through a direct management
-                  of the whole delicate process handcrafted to perfection.
-                </p>
+                <h1 className={h1Style(isDesktop)}>{item.title}</h1>
+                <p className={classes.desc}>{item.text}</p>
               </div>
               <div>
                 <h2
@@ -168,13 +155,15 @@ export default function AboutDatzpress() {
                     margin-bottom: 42px;
                   `}
                 >
-                  <div>Phone</div>
+                  <div>{en ? "Phone" : "전화"}</div>
                   <div>+82 2 447 2581</div>
                   <div>-</div>
-                  <div>Email</div>
-                  <Grid container spacing={3} justify="center">
-                    <Grid item>Enquiry</Grid>
-                    <Grid item>
+                  <div>{en ? "Email" : "이메일"}</div>
+                  <div>
+                    <span className={marginRight30}>
+                      {en ? "Enquiry" : "문의"}
+                    </span>
+                    <span>
                       <a
                         href="mailto:datzpress@datzpress.com"
                         target="_blank"
@@ -182,11 +171,13 @@ export default function AboutDatzpress() {
                       >
                         datzpress@datzpress.com
                       </a>
-                    </Grid>
-                  </Grid>
-                  <Grid container spacing={3} justify="center">
-                    <Grid item>D’Ark Room</Grid>
-                    <Grid item>
+                    </span>
+                  </div>
+                  <div>
+                    <span className={marginRight30}>
+                      {en ? "Datz Books" : "닻북스"}
+                    </span>
+                    <span>
                       <a
                         href="mailto:books@datzpress.com"
                         target="_blank"
@@ -194,8 +185,8 @@ export default function AboutDatzpress() {
                       >
                         books@datzpress.com
                       </a>
-                    </Grid>
-                  </Grid>
+                    </span>
+                  </div>
                 </div>
                 <BtnBack color="#fff" full borderTop />
               </div>

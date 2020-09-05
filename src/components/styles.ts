@@ -125,3 +125,6 @@ export const fullHeightCoverImg = css`
   width: 100%;
   height: 100%;
 `;
+export const marginRight30 = css`
+  margin-right: 30px;
+`;

@@ -1,7 +1,6 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-// import { useGlobalState, LANG } from "../store/useGlobalState";
 import {
   marginH18,
   flexcolumncenter,
@@ -11,14 +10,12 @@ import {
   marginH17,
   marginH37,
 } from "./styles";
-import a1 from "../assets/images/about/a1.png";
-import a2 from "../assets/images/about/a2.png";
-import a3 from "../assets/images/about/a3.png";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
 import useLang from "./useLang";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import useBanners from "../utils/useBanners";
 const titleStyle = css`
   font-family: BauerGroteskOTW03;
   font-size: 23px;
@@ -121,31 +118,11 @@ const linkStyle = (isDesktop: boolean) => css`
   padding-top: 15px;
   padding-bottom: 30px;
   border-bottom: ${isDesktop ? 0 : 1}px solid #fff;
-  // margin-bottom: ${isDesktop ? 0 : 30}px;
 `;
-const arr = [
-  [
-    a1,
-    "Datz Press  >",
-    "Datz Press is an art book press that works with photographers, designers, and bookmakers. \nWe create, publish, and exhibit books centered on photography.",
-    "about/datzpress",
-  ],
-  [
-    a2,
-    "D’Ark Room  >",
-    "D’Ark Room is a project space for showcasing photographs and books. \nWe hosts lectures, artist talks, and portfolio reviews in collaboration with various artist.",
-    "about/darkroom",
-  ],
-  [
-    a3,
-    "Datz Museum of Art  >",
-    "Datz Museum of Art is a meeting place of nature’s beauty and art. \nWe have curatorial exhibitions revolving around photography and art books as well as carpentry workshops.",
-    "about/datzmuseum",
-  ],
-];
 export default function AboutImages1() {
   const isDesktop = useDesktop();
   const [classes] = useLang("About");
+  const items = useBanners("about", "About");
   return (
     <section
       className={
@@ -175,19 +152,20 @@ export default function AboutImages1() {
           flex: 1;
         `}
       >
-        {arr.map(([imgsrc, title, desc, link], i) => {
+        {items.map((item, i) => {
+          const { title, text, url, image } = item;
           return (
             <Grid item container key={i} xs={12} sm={4}>
-              <Link to={link} className={liStyle(isDesktop)}>
+              <Link to={url} className={liStyle(isDesktop)}>
                 <LazyImage
-                  link={imgsrc}
+                  link={image}
                   alt={title}
                   img={css`
                     object-fit: cover;
                     height: ${isDesktop ? "100%" : "588px"};
                     min-height: 0;
                     min-width: 0;
-                    max-height: ${isDesktop ? "auto" : "588px"};
+                    max-height: ${isDesktop ? "none" : "588px"};
                     flex: 1;
                     width: ${isDesktop ? "auto" : "100%"};
                   `}
@@ -200,7 +178,7 @@ export default function AboutImages1() {
                 <div className={liTextStyle(isDesktop)}>
                   {isDesktop ? title : title.substr(0, title.length - 2)}
                   <div className={liDescStyle(isDesktop)}>
-                    <div className={classes.body}>{desc}</div>
+                    <div className={classes.body}>{text}</div>
                   </div>
                 </div>
                 {!isDesktop && (
