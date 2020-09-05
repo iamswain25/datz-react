@@ -3,11 +3,10 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import AdminMainEdit from "./AdminMainEdit";
 import AdminMainNew from "./AdminMainNew";
-import { Main, newMain } from "../@type/main";
 // import { firestore } from "../firebase";
 import Popup from "reactjs-popup";
-export default (props: { images: Array<Main>; collection: string }) => {
-  const images = props.images.map(a => ({ original: a.image }));
+export default (props: { images: Array<any>; collection: string }) => {
+  const images = props.images.map((a) => ({ original: a.image }));
   console.log(images);
   const [index, setIndex] = React.useState(0);
   function onslideHandler(index: number) {
@@ -21,7 +20,7 @@ export default (props: { images: Array<Main>; collection: string }) => {
         height: "calc(100vh - 79px)",
         overflow: "hidden",
         padding: 37,
-        position: "relative"
+        position: "relative",
       }}
     >
       <ImageGallery
@@ -44,14 +43,14 @@ export default (props: { images: Array<Main>; collection: string }) => {
       >
         <AdminMainNew
           setNew={setNew}
-          data={newMain}
+          data={null}
           collection={props.collection}
         />
       </Popup>
       <input
         type="button"
         value="new"
-        onClick={_ => setNew(true)}
+        onClick={(_) => setNew(true)}
         style={{ position: "absolute", zIndex: 1, top: 0, left: 0 }}
       />
     </div>

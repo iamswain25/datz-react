@@ -1,14 +1,9 @@
 import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
-import { Main } from "../@type/main";
 import { firestore, storage } from "../config/firebase";
 import ImageUploader from "react-images-upload";
 let imageFile: File;
-export default (props: {
-  data: Main;
-  setNew: Function;
-  collection: string;
-}) => {
+export default (props: { data: any; setNew: Function; collection: string }) => {
   if (!props.data) {
     return null;
   }
