@@ -1,10 +1,9 @@
 import React from "react";
-import banner from "../assets/images/event/banner.png";
-import pside1 from "../assets/images/legacy/pside1.png";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ImageGalleryGeneric from "./ImageGalleryGeneric";
 import { marginH17 } from "./styles";
+import useBanners from "../utils/useBanners";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -26,32 +25,13 @@ const mobileContainer = css`
   position: relative;
   ${marginH17}
 `;
-const images = [
-  {
-    image: banner,
-    type: "Upcoming Event",
-    title: "LA Art Book Fair",
-    subtitle: "2020.4",
-    color: "#fff",
-    isShowing: true,
-    id: "",
-  },
-  {
-    image: pside1,
-    type: "Upcoming Event",
-    title: "LA Art Book Fair",
-    subtitle: "2020.4",
-    color: "green",
-    isShowing: true,
-    id: "",
-  },
-];
-export default function EventStickyLeftGallery() {
+export default function EventLeft() {
   const isDesktop = useDesktop();
+  const items = useBanners("leftSide", "Upcoming Event");
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>
-        <ImageGalleryGeneric items={images} />
+        <ImageGalleryGeneric items={items} />
       </div>
       {!isDesktop && (
         <hr

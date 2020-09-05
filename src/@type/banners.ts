@@ -191,5 +191,6 @@ export const leftSide = [
     subtitle_ko: "2020.10.30",
     url: null,
     image: "/Banner/04.jpg",
+    color: "#707070",
   },
 ];

@@ -7,7 +7,7 @@ export default function useBanners(
 ) {
   const [lang] = useGlobalState(LANG);
   const en = lang !== "ko";
-  const items = types[page].filter((e) => e.type === type);
+  const items = (types[page] as any[]).filter((e) => e.type === type);
   return items.map((item) => {
     const title = en ? item.title_en : item.title_ko;
     const subtitle = en ? item.subtitle_en : item.subtitle_ko;

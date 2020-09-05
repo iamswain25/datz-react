@@ -1,9 +1,9 @@
 import React from "react";
-import banner from "../assets/images/exhibition/banner1.png";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ImageGalleryGeneric from "./ImageGalleryGeneric";
 import { marginH17 } from "./styles";
+import useBanners from "../utils/useBanners";
 const stickyContainer = css`
   align-self: flex-start;
   position: sticky;
@@ -24,23 +24,13 @@ const mobileContainer = css`
   position: relative;
   ${marginH17}
 `;
-const images = [
-  {
-    image: banner,
-    type: "Upcoming Exhibition",
-    title: "Heaven On Earth",
-    subtitle: "2020.4",
-    color: "#fff",
-    isShowing: true,
-    id: "",
-  },
-];
 export default function ExhibitionLeft() {
   const isDesktop = useDesktop();
+  const items = useBanners("leftSide", "Current Exhibition");
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>
-        <ImageGalleryGeneric items={images} />
+        <ImageGalleryGeneric items={items} />
       </div>
       {!isDesktop && (
         <hr
