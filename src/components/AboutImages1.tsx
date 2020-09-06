@@ -123,6 +123,7 @@ export default function AboutImages1() {
   const isDesktop = useDesktop();
   const [classes] = useLang("About");
   const items = useBanners("about", "About");
+  const [main] = useBanners("about", "AboutMain");
   return (
     <section
       className={
@@ -137,12 +138,8 @@ export default function AboutImages1() {
       }
     >
       <section className={isDesktop ? marginH18 : marginH10}>
-        <div className={titleStyle}>The community of Datz</div>
-        <div className={descStyle}>
-          We are a community of creators, curators, enthusiasts and spectators
-          of the art world, {"\n"}for whom the work and life of sharing art
-          grows from pure motives.
-        </div>
+        <div className={titleStyle}>{main.title}</div>
+        <div className={descStyle}>{main.text}</div>
       </section>
       <Grid
         container

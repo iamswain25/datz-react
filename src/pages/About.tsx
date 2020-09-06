@@ -11,10 +11,7 @@ const bgContainer = css`
   background-color: #afafaf;
 `;
 export default function About() {
-  const isDesktop = useDesktop();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const isDesktop = useDesktop(true);
   return (
     <>
       <div className={bgContainer}>

@@ -201,9 +201,9 @@ export const about = [
     title_en: "The community of Datz",
     title_ko: "The community of Datz",
     text_en:
-      "We are a community of creators, curators, art enthusiasts, and spectators of the art world, for whom the work and life of sharing art grow from pure motives.",
+      "We are a community of creators, curators, art enthusiasts, and spectators of the art world, \nfor whom the work and life of sharing art grow from pure motives.",
     text_ko:
-      "닻 커뮤니티는 사진과 예술, 책을 사랑하는 모두가 함께하는 공동체입니다. 창작자와 기획자, 참여자가 함께 모여 전시, 출판, 교육을 통해 삶 속에 적용되는 순수한 예술적 나눔을 실천하고 있습니다.",
+      "닻 커뮤니티는 사진과 예술, 책을 사랑하는 모두가 함께하는 공동체입니다. \n창작자와 기획자, 참여자가 함께 모여 전시, 출판, 교육을 통해 삶 속에 적용되는 순수한 예술적 나눔을 실천하고 있습니다.",
     url: null,
     image: null,
   },
@@ -252,13 +252,21 @@ export const about = [
     image: "/About/04.jpg",
   },
   {
-    type: "Visit Us",
-    title_en: "Visit Us",
-    title_ko: null,
+    type: "Visit",
+    title_en: "Working Hour",
+    title_ko: "운영시간",
+    text_en: "Datz Press / D’Ark Room\nOpen Mon - Fri\nFrom 10am to 6pm.",
+    text_ko: "닻프레스 / 다크룸\n월-금 10am - 6pm (공휴일 휴무)",
+    url: null,
+    image: null,
+  },
+  {
+    type: "Visit",
+    title_en: "Address",
+    title_ko: "주소",
     text_en:
-      "Working Hour\n\nDatz Press / D’Ark Room\nOpen Mon - Fri\nFrom 10am to 6pm.\n\nAddress\n\nDatz Press\nAchasan-ro 471, CS Plaza #B102\nGwangjin-gu, Seoul\nSouth Korea, 05035",
-    text_ko:
-      "운영시간\n\n닻프레스 / 다크룸\n월-금 10am - 6pm (공휴일 휴무)\n\n주소\n\n닻프레스\n서울시 광진구 아차산로 471\nCS Plaza B102 (05035)",
+      "Datz Press\nAchasan-ro 471, CS Plaza #B102\nGwangjin-gu, Seoul\nSouth Korea, 05035",
+    text_ko: "닻프레스\n서울시 광진구 아차산로 471\nCS Plaza B102 (05035)",
     url: null,
     image: null,
   },

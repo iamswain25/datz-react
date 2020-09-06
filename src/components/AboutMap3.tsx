@@ -13,33 +13,12 @@ import {
 
 import GoogleMapReact from "google-map-react";
 import { Grid } from "@material-ui/core";
+import useBanners from "../utils/useBanners";
+import useLang from "./useLang";
 const sectionStyle = (isDesktop: boolean) => css`
   position: relative;
   margin-top: ${isDesktop ? 41 : 19}px;
   ${isDesktop ? paddingH37 : paddingH17}
-  color: #ffffff;
-`;
-const h1Style = css`
-  margin-top: 33px;
-  margin-bottom: 60px;
-  font-size: 23px;
-  line-height: 1.17;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #ffffff;
-  text-align: center;
-`;
-const h2Style = css`
-  font-size: 17px;
-  line-height: 1.24;
-  text-align: center;
-  margin-bottom: 25px;
-  margin-top: 46px;
-`;
-const pStyle = css`
-  font-family: BauerGroteskOTW03-Regular;
-  font-size: 18px;
-  line-height: 1.39;
-  text-align: center;
   color: #ffffff;
 `;
 const topStyle = (isDesktop: boolean) => css`
@@ -61,7 +40,9 @@ const defaultProps = {
 };
 export default function AboutMap3() {
   const isDesktop = useDesktop();
-  // const [lang] = useGlobalState(LANG);
+  const visits = useBanners("about", "Visit");
+  const [classes] = useLang("body");
+  const [gettinghere] = useBanners("about", "Getting here");
   return (
     <>
       <section className={sectionStyle(isDesktop)}>
@@ -83,32 +64,46 @@ export default function AboutMap3() {
           <Grid item xs={12} sm={6}>
             <div className={paddingH10}>
               <div>
-                <h1 className={h1Style}>Visit Us</h1>
-                <h2 className={h2Style}>Working Hour</h2>
-                <p className={pStyle}>
-                  Datz Press/D’ark Room
-                  <br />
-                  Open Mon - Fri
-                  <br />
-                  From 10 am to 6pm.
-                  <br />
-                </p>
-                <h2 className={h2Style}>Address</h2>
-                <p className={pStyle}>
-                  Datz Press
-                  <br />
-                  Achasan-ro 471, CS Plaza #B102
-                  <br />
-                  Gwangjin-gu, Seoul
-                  <br />
-                  South Korea, 05035
-                  <br />
-                </p>
+                <h1
+                  className={css`
+                    margin-top: 33px;
+                    margin-bottom: 60px;
+                    ${classes.book(23, 1.17)}
+                    padding-bottom: 6px;
+                    border-bottom: 1px solid #ffffff;
+                  `}
+                >
+                  Visit Us
+                </h1>
+                {visits.map((e, i) => (
+                  <div key={i}>
+                    <h2
+                      className={css`
+                        ${classes.book(17, 1.24)}
+                        margin-bottom: 25px;
+                        margin-top: 46px;
+                      `}
+                    >
+                      {e.title}
+                    </h2>
+                    <p
+                      className={css`
+                        ${classes.regular(18, 1.39)}
+                        text-align: center;
+                      `}
+                    >
+                      {e.text}
+                    </p>
+                  </div>
+                ))}
               </div>
               <div>
                 <h2
                   className={css`
-                    ${h2Style}
+                    ${classes.book(17, 1.24)}
+                    text-align: center;
+                    margin-bottom: 25px;
+                    margin-top: 46px;
                     padding-bottom: 6px;
                     border-bottom: 1px solid #ffffff;
                   `}
@@ -117,15 +112,11 @@ export default function AboutMap3() {
                 </h2>
                 <p
                   className={css`
-                    ${pStyle}
+                    ${classes.regular(18, 1.39)}
                     margin-top: 18px;
-                    text-align: left;
                   `}
                 >
-                  Find us at Achasan-ro 471, CS Plaza #B102, Gwangjin-gu, Seoul,
-                  South Korea, 05035. Underground parking is available on-site.
-                  Enter CS Plaza building at Achasan ro. Metro lines is Green
-                  line No. 2, Gangbyeon Station.
+                  {gettinghere.text}
                 </p>
               </div>
             </div>

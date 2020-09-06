@@ -7,22 +7,13 @@ import {
   paddingH55,
   marginH24,
 } from "./styles";
-import m1 from "../assets/images/about/m1.png";
-
 import DatzBooks from "../assets/svg/DatzBooks";
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
 import Logo from "./Logo";
-const desc2Style = css`
-  font-family: BauerGroteskOTW03;
-  font-size: 20px;
-  line-height: 1.35;
-  letter-spacing: 0.4px;
-  text-align: left;
-  color: #ffffff;
-  margin-top: 24px;
-  margin-bottom: 47px;
-`;
+import useBanners from "../utils/useBanners";
+import LazyImage from "./LazyImage";
+import useLang from "./useLang";
 const absoluteStyle = css`
   position: absolute;
   bottom: 0;
@@ -45,7 +36,8 @@ const vertical = (
 );
 export default function AboutImages2() {
   const isDesktop = useDesktop();
-  // const [lang] = useGlobalState(LANG);
+  const [message] = useBanners("about", "Message");
+  const [classes] = useLang("body");
   return (
     <>
       <section
@@ -53,9 +45,11 @@ export default function AboutImages2() {
           position: relative;
           overflow: hidden;
           height: ${isDesktop ? "auto" : "588px"};
+          color: #ffffff;
+          max-height: ${isDesktop ? "calc(100vh - 79px)" : "none"};
         `}
       >
-        <img src={m1} alt="cover" className={fullHeightCoverImg} />
+        <LazyImage link={message.image} img={fullHeightCoverImg} />
         <div className={absoluteStyle}>
           {isDesktop && (
             <div className={flexrowcenter}>
@@ -68,13 +62,15 @@ export default function AboutImages2() {
               <DatzMuseum className={svgStyle} color="#ffffff" />
             </div>
           )}
-          <div className={desc2Style}>
-            Datz is a home for a collaborative community that shares inspiration
-            and looks to restore the positive functionality that is inherent in
-            art through random acts of art kindness. Datz is a home for a
-            collaborative community that shares inspiration and looks to restore
-            the positive functionality that is inherent in art through random
-            acts of art kindness.
+          <div
+            className={css`
+              ${classes.book(20, 1.35)}
+              text-align: left;
+              margin-bottom: 47px;
+              margin-top: 24px;
+            `}
+          >
+            {message.text}
           </div>
         </div>
       </section>

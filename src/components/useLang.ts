@@ -334,6 +334,37 @@ const classes: { [key: string]: any } = {
       `,
     };
   },
+  body: (en: boolean) => {
+    return {
+      regular: (fontSize = 17, lineHeight = 1.5) => {
+        const getSize = getFont("BauerGroteskOTW03-Regular", en);
+        return css`
+          ${getSize(fontSize, lineHeight)}
+          line-height: 28px;
+          text-align: left;
+          white-space: break-spaces;
+        `;
+      },
+      book: (fontSize = 17, lineHeight = 1.5) => {
+        const getSize = getFont("BauerGroteskOTW03", en);
+        return css`
+          ${getSize(fontSize, lineHeight)}
+          line-height: 28px;
+          text-align: center;
+          white-space: break-spaces;
+        `;
+      },
+      ebgaramond: (fontSize = 17, lineHeight = 1.5) => {
+        const getSize = getFont("EBGaramond", en);
+        return css`
+          ${getSize(fontSize, lineHeight)}
+          line-height: 28px;
+          text-align: left;
+          white-space: break-spaces;
+        `;
+      },
+    };
+  },
 };
 
 export default function useLang(type = "exhibition") {
