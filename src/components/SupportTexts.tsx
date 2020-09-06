@@ -2,8 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import { paddingH55, paddingH27 } from "./styles";
 import useDesktop from "./useDesktop";
-export default function SupportTexts() {
+import useLang from "./useLang";
+export default function SupportTexts({ item }: { item: any }) {
   const isDesktop = useDesktop();
+  const [classes] = useLang("body");
   return (
     <div
       className={css`
@@ -29,14 +31,7 @@ export default function SupportTexts() {
           width: 100%;
         `}
       >
-        <div
-          className={css`
-            font-size: 23px;
-            line-height: 1.17;
-          `}
-        >
-          Datz Membership
-        </div>
+        <div className={classes.book(23, 1.17)}>{item.title}</div>
         <hr
           className={css`
             margin-top: 5px;
@@ -77,21 +72,11 @@ export default function SupportTexts() {
       >
         <div
           className={css`
+            ${classes.book(16, 1)}
             margin-top: 34px;
           `}
         >
-          This membership is an annual membership for the integration of anchor
-          press and anchor art museum.
-          <br />
-          <br />
-          Based on our expertise in the field of visual arts, we shared “Random
-          Actions of Art Kindness” and gathered together to restore the true,
-          good, and beautiful natural functions of art in our lives. I want to
-          grow into a healthy tree that takes root in life by making art into
-          creation, research, exhibition, publishing, and education. Your
-          sponsorship serves as a foundation for planning exhibitions and
-          providing more opportunities for young artists, as well as funding for
-          children and youth education programs.
+          {item.text}
         </div>
         <div
           className={css`

@@ -349,7 +349,6 @@ const classes: { [key: string]: any } = {
         const getSize = getFont("BauerGroteskOTW03", en);
         return css`
           ${getSize(fontSize, lineHeight)}
-          line-height: 28px;
           text-align: center;
           white-space: break-spaces;
         `;
@@ -358,7 +357,6 @@ const classes: { [key: string]: any } = {
         const getSize = getFont("EBGaramond", en);
         return css`
           ${getSize(fontSize, lineHeight)}
-          line-height: 28px;
           text-align: left;
           white-space: break-spaces;
         `;

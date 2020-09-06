@@ -31,7 +31,7 @@ export default function Support() {
             object-fit: cover;
           `}
         />
-        <SupportTexts />
+        <SupportTexts item={item} />
       </div>
       <SupportBottomThree />
       <div
