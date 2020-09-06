@@ -354,7 +354,7 @@ export const about = [
     image: null,
   },
   {
-    type: "Support",
+    type: "SupportMain",
     title_en: "Datz Membership",
     title_ko: null,
     text_en:

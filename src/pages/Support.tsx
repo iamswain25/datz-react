@@ -2,16 +2,17 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import AboutHeader from "../components/AboutHeader";
-import supportImg from "../assets/images/about/support.png";
 import SupportTexts from "../components/SupportTexts";
 import SupportBottomThree from "../components/SupportBottomThree";
 import BtnTop from "../components/BtnTop";
 import { paddingH55, paddingH27 } from "../components/styles";
 import LazyImage from "../components/LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import useBanners from "../utils/useBanners";
 export default function Support() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   console.log(isDesktop);
+  const [item] = useBanners("about", "SupportMain");
   return (
     <>
       <AboutHeader change backgroundColor="transparent" />
@@ -23,7 +24,7 @@ export default function Support() {
         `}
       >
         <LazyImage
-          link={supportImg}
+          link={item.image}
           img={css`
             width: 100%;
             background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
