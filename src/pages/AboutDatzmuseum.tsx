@@ -77,7 +77,7 @@ export default function AboutDatzpress() {
           ${isDesktop ? paddingH37 : paddingH17}
           ${flexcolumn}
           position: relative;
-          min-height: ${isDesktop ? "calc(100vh - 79px - 37px)" : "auto"};
+          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
           padding-bottom: 16px;
         `}
       >
@@ -120,7 +120,7 @@ export default function AboutDatzpress() {
                 ${flexcolumnstretch}
                 ${paddingH12}
                 max-height: ${isDesktop
-                  ? "calc(100vh - 79px - 32px)"
+                  ? "calc(100vh - 79px - 16px)"
                   : "auto"};
                 overflow: auto;
               `}
