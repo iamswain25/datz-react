@@ -423,7 +423,7 @@ export const artists = [
     image: "/Artist_Project/02.jpg",
   },
   {
-    type: "Book Project",
+    type: "BookProjectMain",
     text_en:
       "Creating a book is done through collaboration of artists, planners, editors, designers, printing and bookmakers. Opportunities for publication with Datz Press are provided through a course of selection of applicants who are in need of these collaborative services. Different collaboration conditions apply to each project, such as books serving as another exhibition space or artist books as pure object creations. Due to the nature of our book production studio, where a handful of bookmakers handcraft each book, only a limited number of projects are fulfilled each year.",
     artist_en: null,
@@ -431,14 +431,14 @@ export const artists = [
       "책을 만드는 일은 작가와 기획자, 편집자, 디자이너, 인쇄 및 제책 등 여러 전문가의 협업을 통해 이루어집니다. 이를 필요로 하는 지원자들의 작업을 선별하여 닻프레스와의 출판의 기회가 제공됩니다. 전시의 또 다른 공간으로서의 책, 또는 순수 창작물로서의 아티스트 북 등, 개별의 프로젝트에 따라 각기 다른 협업의 조건이 적용됩니다. 책의 내용과 물성에 대한 아이디어가 담긴 포트폴리오와 제안서를 보내주시면 공정한 과정을 통해 선별하여 협업의 조건을 제안드립니다. 단, 소수의 작업자가 수제작의 공정으로 일하는 책제작 스튜디오의 특성상 매년 한정된 프로젝트만을 진행하게 됩니다. \n\n아래의 메일로 pdf형식의 c.v가 포함된 pdf 포트폴리오와 자유형식의 제안서를 보내주세요.",
     artist_ko: null,
     url: "http://www.datzpress.com/about/datzbooks",
-    image: "/Artist_Project/03.jpg\n/Artist_Project/04.jpg",
+    image: ["/Artist_Project/03.jpg", "/Artist_Project/04.jpg"],
   },
   {
     type: "Book Project",
     text_en: "Nothing Will Ever be the Same Again ",
     artist_en: "Amanda Marchand",
     text_ko: "모두 다른 하나의 순간들 ",
-    artist_ko: "아만다 마찬드  ",
+    artist_ko: "아만다 마찬드",
     url: null,
     image: "/Artist_Project/05.jpg",
   },
@@ -469,7 +469,7 @@ export const artists = [
       "전시공간에서는 닻프레스의 출판 컨텐츠와 함께하는 전시가 이루어집니다. \n\n* 두 공간은 북프로젝트의 지원과 연동하여 운영됨으로 별도의 전시지원을 받지 않습니다. ",
     artist_ko: null,
     url: null,
-    image: "/Artist_Project/08.jpg\n/Artist_Project/09.jpg",
+    image: ["/Artist_Project/08.jpg", "/Artist_Project/09.jpg"],
   },
   {
     type: "Exhibition",
@@ -480,8 +480,11 @@ export const artists = [
       "자연 속에 위치한 닻미술관은 예술을 통해 인간과 환경의 관계를 질문하며 개인의 감성과 직관을 회복시키는 성찰의 공간입니다. 매년 3-4회의 전시를 기획하고 작가들의 창작을 지원하는 레지던시와 나무공방, 흙공방, 사진공방, 온실 등을 갖추고 있습니다. ",
     artist_ko: null,
     url: null,
-    image:
-      "/Artist_Project/10.jpg\n/Artist_Project/11.jpg\n/Artist_Project/12.jpg",
+    image: [
+      "/Artist_Project/10.jpg",
+      "/Artist_Project/11.jpg",
+      "/Artist_Project/12.jpg",
+    ],
   },
   {
     type: "Exhibition",
@@ -492,11 +495,14 @@ export const artists = [
       "도심 속 복합문화공간인 다크룸/디프런트 스페이스는 책과 함께 전시를 기획하는 닻프레스의 북프로젝트 공간으로서 아티스트 토크, 포트폴리오 리뷰 등을 통해 관객을 만나고 있습니다. ",
     artist_ko: null,
     url: null,
-    image:
-      "/Artist_Project/13.jpg\n/Artist_Project/14.jpg\n/Artist_Project/15.jpg",
+    image: [
+      "/Artist_Project/13.jpg",
+      "/Artist_Project/14.jpg",
+      "/Artist_Project/15.jpg",
+    ],
   },
   {
-    type: "Datz Artist Residency",
+    type: "ResidencyMain",
     text_en:
       "The Datz Artist Residency, which allows you to breathe closer to nature, offers itself as a cradle of creation that allows artists to focus their energy for new work or carry out location-specific projects, allowing artists to participate in publications or exhibitions in collaboration withDatz Press. In particular, the residency program, which began through continuous international exchanges in photography and publishing, is open to all domestic and foreign artists regardless of nationality, religion, gender, or academic background.",
     artist_en: "",

@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
-export default function Residence() {
+export default function ResidencyRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
   return (
@@ -26,7 +26,6 @@ export default function Residence() {
           flex: 1;
           display: flex;
           flex-direction: column;
-          justify-content: center;
           ${isDesktop ? "" : "margin-top: 25px"}
         `}
       >
@@ -45,16 +44,7 @@ export default function Residence() {
             Datz Artist Residency {">"}
           </a>
         </div>
-        <div className={classes.body}>
-          Datz Artist Residency, which can breathe close to nature, is the
-          cradle of creation that can focus on the energy for new creations or
-          carry out location-specific projects, allowing artists to participate
-          in publications or exhibitions through collaboration with the Datz
-          Press. In particular, the residency program, which began through
-          continuous international exchanges in photography and publishing, is
-          open to all domestic and foreign artists regardless of nationality,
-          religion, gender, or academic background.
-        </div>
+        <div className={classes.body}>{item.text}</div>
         <div
           className={css`
             font-size: 16px;

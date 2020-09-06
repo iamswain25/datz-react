@@ -3,8 +3,23 @@ import { css } from "emotion";
 import { paddingH17 } from "./styles";
 import DatzSvgs from "./DatzSvgs";
 import useDesktop from "./useDesktop";
-export default function DatzArtistExhibition() {
+import Logo from "./Logo";
+function logo(key: number) {
+  switch (key) {
+    case 0:
+      return <DatzSvgs color="white" />;
+    case 1:
+      return <Logo type="museum" color="white" />;
+    case 2:
+      return <Logo type="museum" color="white" />;
+    default:
+      return <DatzSvgs color="white" />;
+  }
+}
+export default function DatzArtistExhibition({ item }: { item: any }) {
   const isDesktop = useDesktop();
+  const [text1, text2] = item.text.split("\n\n");
+
   return (
     <div
       className={css`
@@ -23,22 +38,30 @@ export default function DatzArtistExhibition() {
         ${paddingH17}
       `}
     >
-      <div
-        className={css`
-          margin-top: ${isDesktop ? 50 : 21}px;
-          flex: 1;
-          width: 100%;
-        `}
-      >
-        Exhibition
-        <hr
+      {item.key ? (
+        <div
           className={css`
-            margin-top: 5px;
-            border-top-color: white;
-            border-style: solid;
+            flex: 1;
           `}
         />
-      </div>
+      ) : (
+        <div
+          className={css`
+            margin-top: ${isDesktop ? 50 : 21}px;
+            flex: 1;
+            width: 100%;
+          `}
+        >
+          Exhibition
+          <hr
+            className={css`
+              margin-top: 5px;
+              border-top-color: white;
+              border-style: solid;
+            `}
+          />
+        </div>
+      )}
       <div
         className={css`
           margin-bottom: 93px;
@@ -47,7 +70,7 @@ export default function DatzArtistExhibition() {
           align-items: center;
         `}
       >
-        {isDesktop && <DatzSvgs color="white" />}
+        {isDesktop && logo(item.key)}
         <div
           className={css`
             margin-top: 34px;
@@ -56,8 +79,7 @@ export default function DatzArtistExhibition() {
             line-height: 1.42;
           `}
         >
-          In the exhibition space, there is an exhibition with the contents of
-          Datz Press.
+          {text1}
           <div
             className={css`
               font-size: 14px;
@@ -65,8 +87,7 @@ export default function DatzArtistExhibition() {
               margin-top: 3px;
             `}
           >
-            *The two spaces are operated in conjunction with the support of the
-            book project, so there is no separate submission for a exhibition.
+            {text2}
           </div>
         </div>
       </div>

@@ -12,11 +12,13 @@ export default function useBanners(
     const title = (en ? item.title_en : item.title_ko) ?? item.title_en;
     const subtitle = en ? item.subtitle_en : item.subtitle_ko;
     const text = en ? item.text_en : item.text_ko;
+    const artist = en ? item.artist_en : item.artist_ko;
     return {
       ...item,
       title,
       subtitle,
       text,
+      artist,
     };
   });
 }

@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
-export default function BookProject() {
+export default function BookProject({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
   return (
@@ -54,17 +54,7 @@ export default function BookProject() {
             line-height: 1.39;
           `}
         >
-          <div className={classes.body}>
-            Creating books is done through collaboration of artists, planners,
-            editors, designers, printing and bookmakers. Opportunities for
-            publication with Datz Press are provided by the course of selection
-            for applicants’ works. Different collaboration conditions apply to
-            individual projects, such as books as another space in an exhibition
-            or artist books as pure creations. However, due to the nature of
-            book production studios, where a handful of workers work in the
-            process of hand-made, only a limited number of projects are
-            performed each year.
-          </div>
+          <div className={classes.body}>{item.text}</div>
           <div
             className={css`
               margin-top: 37px;
@@ -109,17 +99,19 @@ export default function BookProject() {
           margin-bottom: 12px;
         `}
       >
-        <a
-          href="datz"
-          className={css`
-            font-size: 16px;
-            line-height: 1.19;
-            color: #aaaaaa;
-            text-decoration: underline;
-          `}
-        >
-          About Datz Books {">"}
-        </a>
+        {item.link && (
+          <a
+            href={item.link}
+            className={css`
+              font-size: 16px;
+              line-height: 1.19;
+              color: #aaaaaa;
+              text-decoration: underline;
+            `}
+          >
+            About Datz Books {">"}
+          </a>
+        )}
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import { paddingH55, paddingH27 } from "./styles";
 import useDesktop from "./useDesktop";
-export default function DatzArtistExhibition4() {
+export default function ResidencyLeft({ item }: { item?: any }) {
   const isDesktop = useDesktop();
   return (
     <div

@@ -6,7 +6,7 @@ import insta from "../assets/images/artist/insta.png";
 import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
-export default function DatzArtistExhibition2() {
+export default function DatzArtistExhibition2({ item }: { item: any }) {
   const isDesktop = useDesktop();
   return (
     <div
@@ -49,12 +49,7 @@ export default function DatzArtistExhibition2() {
             margin-bottom: 27px;
           `}
         >
-          Datz Museum of Art located in nature is a space of reflection that
-          asks about the relationship between human beings and the environment
-          through art and restores individual sensitivity and intuition. It is
-          equipped with a residency space, wood workshop, ceramic workshop,
-          photography studio, and greenhouse to plan 3-4 exhibitions every year
-          and support the creation of artists.
+          {item.text}
         </div>
         <Grid container alignItems="center" justify="center" spacing={3}>
           <Grid item>
@@ -75,7 +70,7 @@ export default function DatzArtistExhibition2() {
             `}
           >
             <a
-              href="community"
+              href={item.link}
               className={css`
                 text-decoration: underline;
                 font-size: 16px;

@@ -3,7 +3,7 @@ import { css } from "emotion";
 import { paddingH55, paddingH27 } from "./styles";
 import DatzSvgs from "./DatzSvgs";
 import useDesktop from "./useDesktop";
-export default function DatzArtistProject() {
+export default function DatzArtistProject({ item }: { item: any }) {
   const isDesktop = useDesktop();
   return (
     <div
@@ -63,9 +63,7 @@ export default function DatzArtistProject() {
               margin-top: 34px;
             `}
           >
-            Datz Artist Project, run by Datz Community, is a program that
-            supports ideal collaboration among curators, artists, designers and
-            bookmakers based on their expertise in the field of visual arts.
+            {item.text}
           </div>
           <div
             className={css`

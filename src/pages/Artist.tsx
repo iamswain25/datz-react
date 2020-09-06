@@ -1,11 +1,6 @@
 import React from "react";
 import RollingImages from "../components/RollingImages";
-import a1 from "../assets/images/artist/artist1.png";
-import a2 from "../assets/images/artist/artist2.png";
-import e1 from "../assets/images/artist/exhi1.png";
-import ai1 from "../assets/images/artist/ai1.png";
-import ai2 from "../assets/images/artist/ai2.png";
-import ai3 from "../assets/images/artist/ai3.png";
+import RollingImages2 from "../components/RollingImages2";
 import { css } from "emotion";
 import { Divider } from "@material-ui/core";
 import {
@@ -18,17 +13,20 @@ import BookProject from "../components/BookProject";
 import DatzArtistProject from "../components/DatzArtistProject";
 import DatzArtistExhibition from "../components/DatzArtistExhibition";
 import DatzArtistProject2 from "../components/DatzArtistProject2";
-import DatzArtistExhibition2 from "../components/DatzArtistExhibition2";
-import DatzArtistExhibition3 from "../components/DatzArtistExhibition3";
-import Residence from "../components/Residence";
-import DatzArtistExhibition4 from "../components/DatzArtistExhibition4";
-import DatzArtistProject3 from "../components/DatzArtistProject3";
+import ResidencyRight from "../components/ResidencyRight";
+import ResidencyLeft from "../components/ResidencyLeft";
+import Facilities from "../components/Facilities";
 import BtnBack from "../components/BtnBack";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import useBanners from "../utils/useBanners";
 export default function Artist() {
   const isDesktop = useDesktop();
+  const items1 = useBanners("artists", "Datz Aritst Projects");
+  const [BookProjectMain] = useBanners("artists", "BookProjectMain");
+  const items2 = useBanners("artists", "Exhibition");
+  const ResidencyMain = useBanners("artists", "ResidencyMain");
   return (
     <>
       <Header
@@ -37,13 +35,13 @@ export default function Artist() {
         color={isDesktop ? "white" : undefined}
       />
       <RollingImages
-        images={[a1, a1, a1]}
+        items={items1}
         additionalClass="white-bullets"
         className={css`
           height: ${isDesktop ? "100vh" : "588px"};
           background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
         `}
-        children={<DatzArtistProject />}
+        children={(props) => <DatzArtistProject {...props} />}
       />
       <div
         className={css`
@@ -60,8 +58,8 @@ export default function Artist() {
           flex-direction: ${isDesktop ? "row" : "column"};
         `}
       >
-        <RollingImages
-          images={[a2, a1, a1]}
+        <RollingImages2
+          items={BookProjectMain.image}
           children={
             isDesktop ? undefined : (
               <div
@@ -110,39 +108,28 @@ export default function Artist() {
               : undefined
           }
         >
-          <BookProject />
+          <BookProject item={BookProjectMain} />
         </div>
       </div>
       <DatzArtistProject2 />
-      <RollingImages
-        images={[e1, e1, e1]}
-        additionalClass="white-bullets"
-        className={css`
-          ${isDesktop ? marginH37 : undefined}
-          height: ${isDesktop ? "auto" : "588px"};
-        `}
-        children={<DatzArtistExhibition />}
-      />
-      <RollingImages
-        images={[ai1, ai2, ai3]}
-        additionalClass="white-bullets"
-        className={css`
-          margin-top: 21px;
-          ${isDesktop ? marginH37 : undefined}
-          height: ${isDesktop ? "auto" : "588px"};
-        `}
-        children={<DatzArtistExhibition2 />}
-      />
-      <RollingImages
-        images={[ai2, ai3, ai1]}
-        additionalClass="white-bullets"
-        className={css`
-          margin-top: 21px;
-          ${isDesktop ? marginH37 : undefined}
-          height: ${isDesktop ? "auto" : "588px"};
-        `}
-        children={<DatzArtistExhibition3 />}
-      />
+      {items2.map((item, key) => {
+        item.key = key;
+        return (
+          <RollingImages2
+            key={key}
+            items={item.image}
+            additionalClass="white-bullets"
+            className={css`
+              margin-top: 21px;
+              ${isDesktop ? marginH37 : undefined}
+              height: ${isDesktop ? "auto" : "588px"};
+              max-height: 100vh;
+            `}
+            children={<DatzArtistExhibition item={item} />}
+          />
+        );
+      })}
+
       <div
         className={css`
           ${marginH55}
@@ -159,13 +146,14 @@ export default function Artist() {
         `}
       >
         <RollingImages
-          images={[ai3, ai1, ai2]}
-          children={<DatzArtistExhibition4 />}
+          items={ResidencyMain}
+          children={() => <ResidencyLeft />}
           className={
             isDesktop
               ? css`
                   width: calc(50% - 23px);
                   margin-right: 23px;
+                  min-height: 588px;
                 `
               : css`
                   height: 588px;
@@ -182,10 +170,10 @@ export default function Artist() {
               : undefined
           }
         >
-          <Residence />
+          <ResidencyRight item={ResidencyMain[0]} />
         </div>
       </div>
-      <DatzArtistProject3 />
+      <Facilities />
       <div
         className={css`
           margin-top: 70px;
