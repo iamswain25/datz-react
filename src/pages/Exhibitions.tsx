@@ -14,6 +14,7 @@ import ViewAllCard from "../components/ViewAllCard";
 import { exhibitions } from "../@type/exhibitions";
 import useExhibitions from "../utils/useExhibitions";
 import { filterExhibitionPast } from "../utils/datefns";
+import BtnTop from "../components/BtnTop";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   darkroom: "D'Ark Room",
@@ -29,9 +30,8 @@ export default function Exhibitions() {
       <section
         className={css`
           font-family: BauerGroteskOTW03;
-          background-color: #afafaf;
-          color: #ffffff;
           ${isDesktop ? paddingH37 : paddingH27}
+          padding-bottom: 20px;
         `}
       >
         <div
@@ -95,16 +95,17 @@ export default function Exhibitions() {
             color: #ffffff;
             transform: translateY(-1px);
           `}
+        ></div>
+        <Grid
+          container
+          alignItems="center"
+          justify="center"
+          className={css`
+            height: 28px;
+          `}
         >
-          <Grid
-            container
-            alignItems="center"
-            justify="center"
-            className={css`
-              height: 28px;
-            `}
-          ></Grid>
-        </div>
+          <BtnTop color="#fff" />
+        </Grid>
       </section>
     </>
   );

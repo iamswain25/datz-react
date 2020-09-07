@@ -7,6 +7,7 @@ import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
 import usePublications from "../utils/usePublications";
 import useLang from "./useLang";
+import BtnTop from "./BtnTop";
 const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("all");
@@ -146,7 +147,11 @@ export default function PublicationList() {
               color: #707070;
             `}
           >
-            {limit && <button onClick={loadMoreHandler}>view all {">"}</button>}
+            {limit ? (
+              <button onClick={loadMoreHandler}>view all {">"}</button>
+            ) : (
+              <BtnTop />
+            )}
           </div>
         </div>
       </div>

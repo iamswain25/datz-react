@@ -13,6 +13,7 @@ import { useParams, NavLink } from "react-router-dom";
 import { events } from "../@type/events";
 import ViewAllCard from "../components/ViewAllCard";
 import useEvents from "../utils/useEvents";
+import BtnTop from "../components/BtnTop";
 const FILTERS: { [key: string]: string } = {
   all: "all",
   talk: "Artist Talk / Lecture",
@@ -29,8 +30,7 @@ export default function Events() {
       <section
         className={css`
           font-family: BauerGroteskOTW03;
-          background-color: #afafaf;
-          color: #ffffff;
+          padding-bottom: 20px;
           ${isDesktop ? paddingH37 : paddingH27}
         `}
       >
@@ -103,7 +103,9 @@ export default function Events() {
             className={css`
               height: 28px;
             `}
-          ></Grid>
+          >
+            <BtnTop color="#fff" />
+          </Grid>
         </div>
       </section>
     </>
