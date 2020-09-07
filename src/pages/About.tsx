@@ -20,7 +20,7 @@ export default function About() {
           <AboutImages1 />
         </div>
         <AboutImages2 />
-        <AboutMap3 />
+        {/* <AboutMap3 /> */}
       </div>
     </>
   );

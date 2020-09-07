@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import useBanners from "../utils/useBanners";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel, { StateCallBack } from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+
 import LazyImage from "./LazyImage";
 import { Link } from "react-router-dom";
 const responsive = {

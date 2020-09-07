@@ -1,5 +1,5 @@
 import React from "react";
-import "react-image-gallery/styles/css/image-gallery.css";
+
 import { firestore, storage } from "../config/firebase";
 import ImageUploader from "react-images-upload";
 let imageFile: File;

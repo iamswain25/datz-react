@@ -3,7 +3,7 @@ import { css } from "emotion";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+
 import usePublications from "../utils/usePublications";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";

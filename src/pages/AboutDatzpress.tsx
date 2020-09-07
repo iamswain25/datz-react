@@ -84,23 +84,17 @@ export default function AboutDatzpress() {
           <Grid container item xs={12} sm={6}>
             <div
               className={css`
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
                 position: relative;
                 overflow: hidden;
-                height: ${isDesktop ? "auto" : "588px"};
+                height: ${isDesktop ? "100%" : "588px"};
               `}
             >
               <LazyImage
                 link={item.image}
                 img={css`
-                  flex: 1;
-                  height: 100%;
+                  width: 100%;
+                  height: inherit;
                   object-fit: cover;
-                  min-width: 0;
-                  min-height: 0;
                 `}
               />
               <Logo

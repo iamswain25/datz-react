@@ -1,5 +1,5 @@
 import React from "react";
-import "react-image-gallery/styles/css/image-gallery.css";
+
 import { firestore, storage } from "../config/firebase";
 export default (props: { data: any; collection: string }) => {
   if (!props.data) {

@@ -3,7 +3,7 @@ import { css } from "emotion";
 import { Link, useParams } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+
 import useDesktop from "./useDesktop";
 import { makeUrl } from "../config/url";
 const listClass = (dark = false) => css`
