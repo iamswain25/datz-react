@@ -13,7 +13,7 @@ const desktopContainer = css`
   overflow: hidden;
 `;
 export default function NewsItem() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   if (isDesktop) {
     return (
       <>

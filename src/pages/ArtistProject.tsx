@@ -21,7 +21,7 @@ import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useBanners from "../utils/useBanners";
-export default function Artist() {
+export default function ArtistProject() {
   const isDesktop = useDesktop();
   const items1 = useBanners("artists", "Datz Aritst Projects");
   const [BookProjectMain] = useBanners("artists", "BookProjectMain");

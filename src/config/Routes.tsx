@@ -25,7 +25,7 @@ import Exhibition from "../pages/Exhibition";
 import Exhibitions from "../pages/Exhibitions";
 import ExhibitionItem from "../pages/ExhibitionItem";
 import ExhibitionReadmore from "../pages/ExhibitionReadmore";
-import Artist from "../pages/Artist";
+import ArtistProject from "../pages/ArtistProject";
 import Support from "../pages/Support";
 import News from "../pages/News";
 import NewsItem from "../pages/NewsItem";
@@ -72,7 +72,7 @@ export default function Routes() {
             component={ExhibitionReadmore}
           />
           <Route exact path="/artist/:address" component={ArtistPage} />
-          <Route exact path="/artist" component={Artist} />
+          <Route exact path="/artist" component={ArtistProject} />
           <Route exact path="/login" component={Signin} />
           <PrivateRoute path="/admin" component={AdminHome} />
           <Route

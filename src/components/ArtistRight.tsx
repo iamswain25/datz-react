@@ -42,51 +42,25 @@ export default function PublicationItemPhotos() {
             justify-content: flex-end;
             display: flex;
             flex-direction: column;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            padding: 20px 0;
             font-family: BauerGroteskOTW03;
             font-size: 17px;
             line-height: 1.47;
             color: #ffffff;
           `}
         >
-          <Grid container>
-            {!!homepage && (
-              <Grid container>
-                <span
-                  className={css`
-                    width: 70px;
-                  `}
-                >
-                  Website
-                </span>
-                <Linkify children={homepage} />
-              </Grid>
-            )}
-            {/* <Grid container>
-              <span
+          {!!homepage && (
+            <Grid container justify="center">
+              <Linkify children={homepage} />
+              <hr
                 className={css`
-                  width: 70px;
+                  margin-top: 20px;
+                  width: 100%;
+                  border-top: solid 1px #ffffff;
                 `}
-              >
-                Email
-              </span>
-              <a
-                href="mailto:marydaniel.hobson.gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                marydaniel.hobson.gmail.com
-              </a>
-            </Grid> */}
-          </Grid>
-          <hr
-            className={css`
-              margin-top: 24px;
-              width: 100%;
-              border-top: solid 1px #ffffff;
-            `}
-          />
+              />
+            </Grid>
+          )}
           {!isDesktop && <BtnBack color="#fff" />}
         </div>
       )}

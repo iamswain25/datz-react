@@ -6,7 +6,7 @@ import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
 import ArtistMainImage from "../components/ArtistMainImage";
 import {
-  paddingH27,
+  paddingH17,
   paddingH55,
   flexrow,
   flexcolumn,
@@ -22,7 +22,7 @@ export default function ArtistPage() {
     <>
       <div className={bgContainer}>
         <ArtistHeader sticky shared />
-        <div className={isDesktop ? paddingH55 : paddingH27}>
+        <div className={isDesktop ? paddingH55 : paddingH17}>
           <ArtistMainImage />
           <section className={isDesktop ? flexrow : flexcolumn}>
             <ArtistLeft />
