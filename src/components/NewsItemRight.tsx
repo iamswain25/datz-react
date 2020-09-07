@@ -6,27 +6,28 @@ import BtnBack from "./BtnBack";
 import ShareButtons from "./ShareButtons";
 import { useParams } from "react-router-dom";
 import useItemIndex from "../utils/useItemIndex";
+import useLang from "./useLang";
+import Linkify from "./Linkify";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
   font-family: BauerGroteskOTW03;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  max-height: calc(100vh - 79px);
+  overflow: auto;
+  color: #fff;
 `;
 const mobileContainer = css`
   position: relative;
   ${paddingH27}
 `;
-export default function NewsItemRight({
-  children,
-  color = "#707070",
-}: {
-  children?: any;
-  color?: string;
-}) {
+export default function NewsItemRight({ children }: { children?: any }) {
   const isDesktop = useDesktop();
   const { address } = useParams();
   const item = useItemIndex(address, "new");
+  const [classes] = useLang("body");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
       {isDesktop && (
@@ -39,21 +40,19 @@ export default function NewsItemRight({
             margin-bottom: 20px;
           `}
         >
-          <ShareButtons color={color} />
+          <ShareButtons color="#fff" />
         </div>
       )}
       <div
         className={css`
           display: flex;
           flex-direction: column;
-          overflow: hidden;
           flex: 1;
         `}
       >
         <div
           className={css`
             text-align: center;
-            color: ${color};
             ${isDesktop ? undefined : mobileContainer}
             margin-bottom: ${isDesktop ? 0 : 17}px;
           `}
@@ -61,7 +60,7 @@ export default function NewsItemRight({
           <div
             className={css`
               font-size: 17px;
-              border-bottom: solid 1px ${color};
+              border-bottom: solid 1px #fff;
               padding-bottom: 7px;
               margin-bottom: 16px;
             `}
@@ -78,10 +77,8 @@ export default function NewsItemRight({
           </div>
           <div
             className={css`
-              font-size: 14px;
-              letter-spacing: 0.28px;
-              color: ${color};
-              height: 36px;
+              ${classes.book(14, 1)}
+              margin-top: 3px;
             `}
           >
             {item.place}
@@ -99,36 +96,31 @@ export default function NewsItemRight({
         >
           <div
             className={css`
-              font-size: 25px;
-              color: ${color};
-              text-align: center;
+              ${classes.book(25, 1)}
+              margin-top: 20px;
             `}
           >
             {item.title}
           </div>
           <div
             className={css`
+              ${classes.regular(18, 1.5)}
               margin-top: 20px;
-              font-size: 18px;
-              line-height: 1.5;
-              text-align: left;
-              color: ${color};
               padding-bottom: 49px;
             `}
           >
-            {item.body}
+            <Linkify>{item.body}</Linkify>
           </div>
         </section>
         <div
           className={css`
             ${isDesktop ? undefined : marginH27}
-            border-top: solid 1px ${color};
+            border-top: solid 1px #fff;
             text-align: center;
-            color: ${color};
             margin-bottom: ${isDesktop ? 37 : 0}px;
           `}
         >
-          {!isDesktop && <BtnBack color={color} />}
+          {!isDesktop && <BtnBack color="#fff" />}
         </div>
       </div>
     </div>

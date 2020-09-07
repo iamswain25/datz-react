@@ -1,5 +1,5 @@
 import React from "react";
-import NewsItemLeftSticky from "../components/NewsItemLeftSticky";
+import NewsItemLeft from "../components/NewsItemLeft";
 import NewsItemRight from "../components/NewsItemRight";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
@@ -8,6 +8,7 @@ import { paddingH37 } from "../components/styles";
 import { Grid } from "@material-ui/core";
 const desktopContainer = css`
   ${paddingH37}
+  height: calc(100vh - 79px);
   position: relative;
   overflow: hidden;
 `;
@@ -20,10 +21,10 @@ export default function NewsItem() {
         <section className={desktopContainer}>
           <Grid container spacing={3}>
             <Grid item sm={6}>
-              <NewsItemLeftSticky />
+              <NewsItemLeft />
             </Grid>
             <Grid item sm={6} container>
-              <NewsItemRight color="white" />
+              <NewsItemRight />
             </Grid>
           </Grid>
         </section>
@@ -33,7 +34,7 @@ export default function NewsItem() {
   return (
     <>
       <ArtistHeader sticky />
-      <NewsItemRight color="white" children={<NewsItemLeftSticky />} />
+      <NewsItemRight children={<NewsItemLeft />} />
     </>
   );
 }

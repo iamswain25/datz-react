@@ -15,7 +15,7 @@ const stickyContainer = css`
   box-sizing: border-box;
   padding-bottom: 37px;
 `;
-export default function NewsItemLeftSticky() {
+export default function NewsItemLeft() {
   const isDesktop = useDesktop();
   const { address } = useParams();
   const item = useItemIndex(address, "new");
