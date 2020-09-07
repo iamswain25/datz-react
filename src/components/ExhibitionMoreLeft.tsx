@@ -36,7 +36,7 @@ export default function ExhibitionMoreLeft() {
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <CloseShare close={`/exhibition/${address}`} />
-      <DatzmuseumOrder order={item.visit_url} />
+      <DatzmuseumOrder order={item.visit_url} logo={item.type} />
       <section
         className={css`
           flex: 1;
