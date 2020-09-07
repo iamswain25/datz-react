@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import {
-  paddingH27,
+  paddingH17,
   paddingH37,
   marginH18,
   marginH8,
@@ -31,7 +31,7 @@ export default function Events() {
         className={css`
           font-family: BauerGroteskOTW03;
           padding-bottom: 20px;
-          ${isDesktop ? paddingH37 : paddingH27}
+          ${isDesktop ? paddingH37 : paddingH17}
         `}
       >
         <div
