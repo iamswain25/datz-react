@@ -27,6 +27,7 @@ export default function AboutImages1() {
       className={
         isDesktop
           ? css`
+              // height: calc(100vh - 79px);
               position: relative;
               display: flex;
               flex-direction: column;
@@ -93,31 +94,45 @@ export default function AboutImages1() {
                       `
                 }
               >
-                <LazyImage
-                  link={image}
-                  alt={title}
-                  img={
-                    isDesktop
-                      ? css`
-                          object-fit: cover;
-                          height: 455px;
-                          min-height: 0;
-                          min-width: 0;
-                          max-height: none;
-                          flex: 1;
-                        `
-                      : css`
-                          object-fit: cover;
-                          height: 588px;
-                          width: 100%;
-                        `
-                  }
-                  placeholder={css`
-                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    height: ${isDesktop ? "100%" : "588px"};
-                    flex: 1;
+                <div
+                  className={css`
+                    position: relative;
+                    display: flex;
+                    :after {
+                      ${isDesktop ? "" : "content: ''"};
+                      position: absolute;
+                      top: 0;
+                      width: 100%;
+                      height: 100%;
+                      background-color: rgba(0, 0, 0, 0.2);
+                    }
                   `}
-                />
+                >
+                  <LazyImage
+                    link={image}
+                    alt={title}
+                    img={
+                      isDesktop
+                        ? css`
+                            object-fit: cover;
+                            height: 455px;
+                            min-height: 0;
+                            min-width: 0;
+                            flex: 1;
+                          `
+                        : css`
+                            object-fit: cover;
+                            height: 588px;
+                            width: 100%;
+                          `
+                    }
+                    placeholder={css`
+                      background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                      height: ${isDesktop ? "100%" : "588px"};
+                      flex: 1;
+                    `}
+                  />
+                </div>
                 <div
                   className={
                     isDesktop
