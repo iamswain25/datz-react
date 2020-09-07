@@ -31,7 +31,6 @@ export default function ArtistLeft() {
       <section
         className={css`
           flex: 1;
-          // overflow-x: scroll;
           padding-left: 10px;
           padding-right: 10px;
         `}

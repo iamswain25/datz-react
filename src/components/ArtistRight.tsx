@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import Linkify from "./Linkify";
 import useItemIndex from "../utils/useItemIndex";
+import Divider from "./Divider";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -32,6 +33,25 @@ export default function PublicationItemPhotos() {
   );
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
+      {!isDesktop && (
+        <Grid container justify="center">
+          <div
+            className={css`
+              font-size: 17px;
+              line-height: 1.24;
+            `}
+          >
+            Related
+          </div>
+          <Divider
+            color="#fff"
+            className={css`
+              margin-top: 8px;
+              width: 100%;
+            `}
+          />
+        </Grid>
+      )}
       <PublicationWidget publications={publications} dark />
       <ExhibitionWidget exhibitions={exhibitions} dark />
       <EventWidget events={events} dark />
@@ -42,7 +62,7 @@ export default function PublicationItemPhotos() {
             justify-content: flex-end;
             display: flex;
             flex-direction: column;
-            padding: 20px 0;
+            padding: 30px 0;
             font-family: BauerGroteskOTW03;
             font-size: 17px;
             line-height: 1.47;
@@ -54,7 +74,7 @@ export default function PublicationItemPhotos() {
               <Linkify children={homepage} />
               <hr
                 className={css`
-                  margin-top: 20px;
+                  margin-top: 30px;
                   width: 100%;
                   border-top: solid 1px #ffffff;
                 `}
