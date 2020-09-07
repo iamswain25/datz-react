@@ -39,7 +39,7 @@ export default function SupportTexts({ item }: { item: any }) {
             border-style: solid;
           `}
         />
-        <div
+        {/* <div
           className={css`
             margin-top: 12px;
           `}
@@ -60,7 +60,7 @@ export default function SupportTexts({ item }: { item: any }) {
             By becoming a Datz supporter, you allow Datz to continue to grow
           </div>
           <div>and flourish by showcasing the art of today and tomorrow.</div>
-        </div>
+        </div> */}
       </div>
       <div
         className={css`
