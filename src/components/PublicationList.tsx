@@ -8,12 +8,13 @@ import { Grid } from "@material-ui/core";
 import usePublications from "../utils/usePublications";
 import useLang from "./useLang";
 import BtnTop from "./BtnTop";
-const subCategories = [["all"], ["Book"], ["Artist book"], ["Magazine"]];
+import useBanners from "../utils/useBanners";
 export default function PublicationList() {
-  const [selected, setSelected] = React.useState("all");
+  const [selected, setSelected] = React.useState("All");
   const [limit, setLimit] = React.useState<number | undefined>(24);
   const list = usePublications(publications);
   const isDesktop = useDesktop();
+  const subCategories = useBanners("publications");
   const [classes] = useLang("PublicationList");
   function loadMoreHandler() {
     setLimit(undefined);
@@ -44,16 +45,16 @@ export default function PublicationList() {
             color: #cccccc;
           `}
         >
-          {subCategories.map(([label], i) => {
+          {subCategories.map(({ type }, i) => {
             let selectedCss = null;
-            if (selected === label) {
+            if (selected === type) {
               selectedCss = css`
                 text-decoration: underline;
                 color: #383838;
               `;
             }
             function selectHandler() {
-              setSelected(label);
+              setSelected(type);
             }
             return (
               <div
@@ -66,7 +67,7 @@ export default function PublicationList() {
                   ${selectedCss}
                 `}
               >
-                {label}
+                {type}
               </div>
             );
           })}
@@ -90,10 +91,7 @@ export default function PublicationList() {
               color: #4b4b4b;
             `}
           >
-            Datz specializes in planning and publishing books of artists’ works.
-            We looks to preserve artists’ works through publication, and with
-            its books it shares their art. As a rule, all work presented at Datz
-            Museum are recorded and preserved in book form.
+            {subCategories.find((e) => e.type === selected).text}
           </p>
           <section
             className={css`
@@ -104,7 +102,7 @@ export default function PublicationList() {
             <Grid container spacing={isDesktop ? 4 : 0}>
               {list
                 .filter((f) =>
-                  selected === "all" ? true : f.type === selected
+                  selected === "All" ? true : f.type === selected
                 )
                 .slice(0, limit)
                 .map((item, i) => {

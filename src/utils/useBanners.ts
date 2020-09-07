@@ -3,11 +3,13 @@ import * as types from "../@type/banners";
 
 export default function useBanners(
   page: "home" | "leftSide" | "about" | "artists" | "publications" = "home",
-  type = "New Books"
+  type?: string
 ) {
   const [lang] = useGlobalState(LANG);
   const en = lang !== "ko";
-  const items = (types[page] as any[]).filter((e) => e.type === type);
+  const items = (types[page] as any[]).filter((e) =>
+    type ? e.type === type : true
+  );
   return items.map((item) => {
     const title = (en ? item.title_en : item.title_ko) ?? item.title_en;
     const subtitle = en ? item.subtitle_en : item.subtitle_ko;
