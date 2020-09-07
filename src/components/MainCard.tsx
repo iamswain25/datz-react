@@ -61,7 +61,7 @@ export default function MainCard({
           />
           <Logo
             offLink
-            type={item.type}
+            type={type === "event" ? item.logo : item.type}
             color="#fff"
             className={css`
               position: absolute;
