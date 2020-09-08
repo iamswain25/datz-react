@@ -46,6 +46,8 @@ export default function PublicationList() {
           `}
         >
           {subCategories.map(({ type }, i) => {
+            const isLast = subCategories.length - 1 === i;
+            const isFirst = i === 0;
             let selectedCss = null;
             if (selected === type) {
               selectedCss = css`
@@ -53,6 +55,13 @@ export default function PublicationList() {
                 color: #383838;
               `;
             }
+            const minusMobile = isDesktop ? 0 : 10;
+            const paddingLeft = isFirst ? 0 : 18 - minusMobile;
+            const paddingRight = isFirst
+              ? 49 - minusMobile
+              : isLast
+              ? 0
+              : 18 - minusMobile;
             function selectHandler() {
               setSelected(type);
             }
@@ -61,8 +70,8 @@ export default function PublicationList() {
                 key={i}
                 onClick={selectHandler}
                 className={css`
-                  padding-left: 18px;
-                  padding-right: ${type === "All" ? 49 : 18}px;
+                  padding-left: ${paddingLeft}px;
+                  padding-right: ${paddingRight}px;
                   cursor: pointer;
                   ${selectedCss}
                 `}
