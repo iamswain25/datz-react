@@ -6,6 +6,7 @@ import {
   fullHeightCoverImg,
   paddingH55,
   marginH24,
+  paddingH27,
 } from "./styles";
 import DatzBooks from "../assets/svg/DatzBooks";
 import Darkroom from "../assets/svg/Darkroom";
@@ -14,12 +15,6 @@ import Logo from "./Logo";
 import useBanners from "../utils/useBanners";
 import LazyImage from "./LazyImage";
 import useLang from "./useLang";
-const absoluteStyle = css`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  ${paddingH55}
-`;
 const svgStyle = css`
   height: 30px;
   color: #ffffff;
@@ -50,27 +45,42 @@ export default function AboutImages2() {
         `}
       >
         <LazyImage link={message.image} img={fullHeightCoverImg} />
-        <div className={absoluteStyle}>
-          {isDesktop && (
-            <div className={flexrowcenter}>
-              <Logo type="datzpress" className={svgStyle} color="#ffffff" />
-              {vertical}
-              <DatzBooks className={svgStyle} color="#ffffff" />
-              {vertical}
-              <Darkroom className={svgStyle} color="#ffffff" />
-              {vertical}
-              <DatzMuseum className={svgStyle} color="#ffffff" />
-            </div>
-          )}
+        <div
+          className={css`
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            ${isDesktop ? paddingH55 : paddingH27}
+          `}
+        >
           <div
             className={css`
-              ${classes.book(20, 1.35)}
-              text-align: left;
-              margin-bottom: 47px;
-              margin-top: 24px;
+              max-width: 840px;
             `}
           >
-            {message.text}
+            {isDesktop && (
+              <div className={flexrowcenter}>
+                <Logo type="datzpress" className={svgStyle} color="#ffffff" />
+                {vertical}
+                <DatzBooks className={svgStyle} color="#ffffff" />
+                {vertical}
+                <Darkroom className={svgStyle} color="#ffffff" />
+                {vertical}
+                <DatzMuseum className={svgStyle} color="#ffffff" />
+              </div>
+            )}
+            <div
+              className={css`
+                ${classes.book(20, 1.35)}
+                text-align: left;
+                margin-bottom: 47px;
+                margin-top: 24px;
+              `}
+            >
+              {message.text}
+            </div>
           </div>
         </div>
       </section>
