@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import usePublications from "../utils/usePublications";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import useDesktop from "./useDesktop";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -29,28 +30,6 @@ const descClass = (dark = false) => css`
   white-space: nowrap;
   padding-left: 8px;
   padding-right: 8px;
-`;
-const listClass = (dark = false) => css`
-  color: ${dark ? "#ffffff" : "#707070"};
-  position: relative;
-`;
-const afterClass = (i: number) => css`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  padding-left: 4px;
-  padding-right: 4px;
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  ::before {
-    content: "";
-    height: 86px;
-    border-right: solid ${i === 0 ? 0 : 1}px #cccccc;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) translateX(-1px);
-  }
 `;
 const itemClass = css`
   display: flex;
@@ -76,6 +55,7 @@ export default function PublicationWidget({
   publications: any[];
   dark?: boolean;
 }) {
+  const isDesktop = useDesktop();
   const list = usePublications(publications);
   if (!list.length) {
     return null;
@@ -89,8 +69,10 @@ export default function PublicationWidget({
       >
         <Carousel
           responsive={responsive}
-          containerClass={css`flex: 1;
-  align-items: normal;`}
+          containerClass={css`
+            flex: 1;
+            align-items: normal;
+          `}
           itemClass={itemClass}
           renderButtonGroupOutside={true}
           arrows={false}
@@ -103,8 +85,34 @@ export default function PublicationWidget({
           {list.map((item, i) => {
             const { image_cover, title, address } = item;
             return (
-              <Link key={i} to={`/publication/${address}`} className={afterClass(i)}>
-                <div className={listClass(dark)}>
+              <Link
+                key={i}
+                to={`/publication/${address}`}
+                className={css`
+                  display: flex;
+                  flex-direction: column;
+                  align-items: stretch;
+                  padding-left: 4px;
+                  padding-right: 4px;
+                  flex: 1;
+                  position: relative;
+                  overflow: hidden;
+                `}
+              >
+                <div
+                  className={css`
+                    color: ${dark ? "#ffffff" : "#707070"};
+                    position: relative;
+                    ::before {
+                      content: "";
+                      height: ${isDesktop ? "86px" : "50%"};
+                      border-right: solid ${i === 0 ? 0 : 1}px #cccccc;
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%) translateX(-1px);
+                    }
+                  `}
+                >
                   <LazyImage
                     alt={item.title}
                     link={image_cover}
