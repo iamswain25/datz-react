@@ -99,7 +99,7 @@ export default function Header({
           ${flexrowcenter}
           ${headerText}
           padding-left: ${isDesktop ? 16 : 5}px;
-          padding-right: ${isDesktop ? 16 : 5}px;
+          padding-right: ${isDesktop ? 32 : 5}px;
           margin-bottom: 8px;
         `}
         to="/"
