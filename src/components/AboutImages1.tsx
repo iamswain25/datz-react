@@ -11,11 +11,11 @@ import {
   marginH37,
 } from "./styles";
 import { Link } from "react-router-dom";
-import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
 import useLang from "./useLang";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useBanners from "../utils/useBanners";
+import { makeUrl } from "../config/url";
 
 export default function AboutImages1() {
   const isDesktop = useDesktop();
@@ -27,7 +27,7 @@ export default function AboutImages1() {
       className={
         isDesktop
           ? css`
-              // height: calc(100vh - 79px);
+              height: calc(100vh - 79px);
               position: relative;
               display: flex;
               flex-direction: column;
@@ -76,61 +76,53 @@ export default function AboutImages1() {
             <Grid item container key={i} xs={12} sm={4}>
               <Link
                 to={url}
-                className={
-                  isDesktop
-                    ? css`
-                        overflow: hidden;
-                        flex: 1;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: stretch;
-                        position: relative;
-                      `
-                    : css`
-                        overflow: hidden;
-                        width: 100%;
-                        margin-top: 30px;
-                        ${flexcolumncenter}
-                      `
-                }
+                className={css`
+                  overflow: hidden;
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: stretch;
+                  position: relative;
+                  width: 100%;
+                  margin-top: ${isDesktop ? 0 : 30}px;
+                `}
               >
                 <div
                   className={css`
-                    position: relative;
+                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                    height: ${isDesktop ? "100%" : "588px"};
                     display: flex;
-                    :after {
-                      ${isDesktop ? "" : "content: ''"};
-                      position: absolute;
-                      top: 0;
-                      width: 100%;
-                      height: 100%;
-                      background-color: rgba(0, 0, 0, 0.2);
-                    }
+                    flex: 1;
                   `}
                 >
-                  <LazyImage
-                    link={image}
-                    alt={title}
-                    img={
+                  <div
+                    className={
                       isDesktop
                         ? css`
-                            object-fit: cover;
-                            height: 455px;
+                            background-image: url(${makeUrl(image)});
+                            background-position: center;
+                            background-size: cover;
                             min-height: 0;
                             min-width: 0;
                             flex: 1;
                           `
                         : css`
-                            object-fit: cover;
+                            background-image: url(${makeUrl(image)});
+                            background-position: center;
+                            background-size: cover;
                             height: 588px;
                             width: 100%;
+                            position: relative;
+                            :after {
+                              content: "";
+                              position: absolute;
+                              top: 0;
+                              width: 100%;
+                              height: 100%;
+                              background-color: rgba(0, 0, 0, 0.2);
+                            }
                           `
                     }
-                    placeholder={css`
-                      background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                      height: ${isDesktop ? "100%" : "588px"};
-                      flex: 1;
-                    `}
                   />
                 </div>
                 <div
