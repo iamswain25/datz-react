@@ -20,7 +20,10 @@ export default function BtnTop({
         font-size: 14px;
         line-height: 1.21;
         text-align: center;
-        padding: 10px;
+        height: 37px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: ${full ? "100%" : "auto"};
         border-top: ${borderTop ? 1 : 0}px solid ${color};
         color: ${color};

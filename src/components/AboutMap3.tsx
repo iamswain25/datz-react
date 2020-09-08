@@ -1,36 +1,19 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-// import { useGlobalState, LANG } from "../store/useGlobalState";
 import {
-  bottomBtn37,
   paddingH37,
   paddingH17,
   paddingH10,
   marginH55,
-  marginH27,
+  marginH17,
 } from "./styles";
 
 import GoogleMapReact from "google-map-react";
 import { Grid } from "@material-ui/core";
 import useBanners from "../utils/useBanners";
 import useLang from "./useLang";
-const sectionStyle = (isDesktop: boolean) => css`
-  position: relative;
-  margin-top: ${isDesktop ? 41 : 19}px;
-  ${isDesktop ? paddingH37 : paddingH17}
-  color: #ffffff;
-`;
-const topStyle = (isDesktop: boolean) => css`
-  ${bottomBtn37}
-  ${isDesktop ? marginH55 : marginH27}
-  width: calc(100% - ${isDesktop
-    ? 110
-    : 54}px);
-  color: #ffffff;
-  margin-top: 27px;
-  border-top: solid 1px #ffffff;
-`;
+import BtnTop from "./BtnTop";
 const defaultProps = {
   center: {
     lat: 59.95,
@@ -45,7 +28,18 @@ export default function AboutMap3() {
   const [gettinghere] = useBanners("about", "Getting here");
   return (
     <>
-      <section className={sectionStyle(isDesktop)}>
+      <section
+        className={css`
+          position: relative;
+          height: ${isDesktop
+            ? "calc(100vh - 79px - 41px -27px -37px)"
+            : "auto"};
+          margin-top: ${isDesktop ? 41 : 19}px;
+          ${isDesktop ? paddingH37 : paddingH17}
+          color: #ffffff;
+          display: flex;
+        `}
+      >
         <Grid container spacing={isDesktop ? 4 : 0}>
           <Grid
             item
@@ -61,79 +55,89 @@ export default function AboutMap3() {
               defaultZoom={defaultProps.zoom}
             ></GoogleMapReact>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <div className={paddingH10}>
-              <div>
-                <h1
-                  className={css`
-                    margin-top: 33px;
-                    margin-bottom: 60px;
-                    ${classes.book(23, 1.17)}
-                    padding-bottom: 6px;
-                    border-bottom: 1px solid #ffffff;
-                  `}
-                >
-                  Visit Us
-                </h1>
-                {visits.map((e, i) => (
-                  <div key={i}>
-                    <h2
-                      className={css`
-                        ${classes.book(17, 1.24)}
-                        margin-bottom: 25px;
-                        margin-top: 46px;
-                      `}
-                    >
-                      {e.title}
-                    </h2>
-                    <p
-                      className={css`
-                        ${classes.regular(18, 1.39)}
-                        text-align: center;
-                      `}
-                    >
-                      {e.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <div>
-                <h2
-                  className={css`
-                    ${classes.book(17, 1.24)}
-                    text-align: center;
-                    margin-bottom: 25px;
-                    margin-top: 46px;
-                    padding-bottom: 6px;
-                    border-bottom: 1px solid #ffffff;
-                  `}
-                >
-                  Getting here
-                </h2>
-                <p
-                  className={css`
-                    ${classes.regular(18, 1.39)}
-                    margin-top: 18px;
-                  `}
-                >
-                  {gettinghere.text}
-                </p>
-              </div>
+          <Grid container item xs={12} sm={6} direction="column">
+            <div
+              className={css`
+                flex: 1;
+                ${paddingH10}
+              `}
+            >
+              <h1
+                className={css`
+                  margin-top: 33px;
+                  margin-bottom: 60px;
+                  font-size: 23px;
+                  text-align: center;
+                  line-height: 1.17;
+                  padding-bottom: 6px;
+                  border-bottom: 1px solid #ffffff;
+                `}
+              >
+                Visit Us
+              </h1>
+              {visits.map((e, i) => (
+                <div key={i}>
+                  <h2
+                    className={css`
+                      ${classes.book(17, 1.24)}
+                      margin-bottom: 25px;
+                      margin-top: 46px;
+                    `}
+                  >
+                    {e.title}
+                  </h2>
+                  <p
+                    className={css`
+                      ${classes.regular(18, 1.39)}
+                      text-align: center;
+                    `}
+                  >
+                    {e.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div
+              className={css`
+                display: flex;
+                flex-direction: column;
+              `}
+            >
+              <h2
+                className={css`
+                  font-size: 17px;
+                  line-height: 1.24;
+                  text-align: center;
+                  margin-bottom: 25px;
+                  margin-top: 46px;
+                  padding-bottom: 6px;
+                  border-bottom: 1px solid #ffffff;
+                `}
+              >
+                Getting here
+              </h2>
+              <p
+                className={css`
+                  ${classes.regular(18, 1.39)}
+                  margin-top: 18px;
+                `}
+              >
+                {gettinghere.text}
+              </p>
             </div>
           </Grid>
         </Grid>
       </section>
-      <button
-        onClick={(e) =>
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          })
-        }
-        className={topStyle(isDesktop)}
+      <div
+        className={css`
+          ${isDesktop ? marginH55 : marginH17}
+          color: #ffffff;
+          margin-top: 27px;
+          border-top: solid 1px #ffffff;
+        `}
       >
-        Top {">"}
-      </button>
+        <BtnTop full color="#fff" />
+      </div>
     </>
   );
 }
