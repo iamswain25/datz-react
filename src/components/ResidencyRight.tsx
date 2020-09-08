@@ -23,7 +23,6 @@ export default function ResidencyRight({ item }: { item: any }) {
       <div
         className={css`
           max-width: 600px;
-          flex: 1;
           display: flex;
           flex-direction: column;
           ${isDesktop ? "" : "margin-top: 25px"}
@@ -75,7 +74,7 @@ export default function ResidencyRight({ item }: { item: any }) {
             color="#5d5d5d"
             className={css`
               margin: ${isDesktop ? 100 : 54}px 0 ${isDesktop ? 32 : 50}px;
-              width: 200px;
+              width: 98px;
             `}
           />
         </div>

@@ -84,7 +84,7 @@ export default function ArtistProject() {
                   ${paddingH20}
                 `}
               >
-                Residence
+                Residency
                 <hr
                   className={css`
                     margin-top: 5px;
@@ -100,6 +100,7 @@ export default function ArtistProject() {
               ? css`
                   width: calc(50% - 23px);
                   margin-right: 23px;
+                  min-height: 100vh;
                 `
               : css`
                   height: 588px;
@@ -161,7 +162,7 @@ export default function ArtistProject() {
               ? css`
                   width: calc(50% - 23px);
                   margin-right: 23px;
-                  min-height: 588px;
+                  min-height: 100vh;
                 `
               : css`
                   height: 588px;
