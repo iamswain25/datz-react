@@ -31,7 +31,14 @@ export default function SupportTexts({ item }: { item: any }) {
           width: 100%;
         `}
       >
-        <div className={classes.book(23, 1.17)}>{item.title}</div>
+        <div
+          className={css`
+            font-size: 23px;
+            line-height: 1.17;
+          `}
+        >
+          {item.title}
+        </div>
         <hr
           className={css`
             margin-top: 5px;
