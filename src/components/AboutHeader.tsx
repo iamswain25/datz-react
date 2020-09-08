@@ -64,7 +64,13 @@ export default function AboutHeader({
         <Datz color={colors.color} />
       </Link>
       {isDesktop && (
-        <div>
+        <div
+          className={css`
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          `}
+        >
           {otherLinks.map(([label, link], i) => {
             return (
               <NavLink
