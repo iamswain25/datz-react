@@ -78,17 +78,26 @@ export default function FullPageRollingImages({
           left: 0,
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "stretch",
           padding: isDesktop ? 37 : 17,
           color,
         }}
       >
-        <Link to={item.url}>
+        <Link
+          to={item.url}
+          className={css`
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+          `}
+        >
           <div className={typeClass}>{type}</div>
           <hr
             className={css`
               border-top: 1px solid ${color};
-              width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
+              width: ${isDesktop ? "555px" : "auto"};
+              align-self: ${isDesktop ? "auto" : "stretch"};
               margin-top: ${isDesktop ? 8 : 3}px;
               margin-bottom: ${isDesktop ? 18 : 16}px;
             `}

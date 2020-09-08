@@ -69,19 +69,28 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
           left: 0;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: stretch;
           margin-top: 28px;
           margin-bottom: 28px;
           padding-top: 37px;
           color: ${color ?? "#ffffff"};
         `}
       >
-        <Link to={item.url}>
+        <Link
+          to={item.url}
+          className={css`
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+          `}
+        >
           <div className={typeClass}>{type}</div>
           <hr
             className={css`
               border-top: 1px solid ${color};
-              width: ${isDesktop ? "555px" : "calc(100% - 40px)"};
+              width: ${isDesktop ? "555px" : "auto"};
+              align-self: ${isDesktop ? "auto" : "stretch"};
               margin-top: ${isDesktop ? 8 : 3}px;
               margin-bottom: ${isDesktop ? 18 : 16}px;
             `}
