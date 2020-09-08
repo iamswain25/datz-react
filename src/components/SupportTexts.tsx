@@ -3,6 +3,7 @@ import { css } from "emotion";
 import { paddingH55, paddingH27 } from "./styles";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
+import Divider from "./Divider";
 export default function SupportTexts({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("body");
@@ -39,11 +40,10 @@ export default function SupportTexts({ item }: { item: any }) {
         >
           {item.title}
         </div>
-        <hr
+        <Divider
+          color="#fff"
           className={css`
             margin-top: 5px;
-            border-top-color: white;
-            border-style: solid;
           `}
         />
         {/* <div

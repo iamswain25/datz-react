@@ -16,6 +16,7 @@ import useLang from "./useLang";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useBanners from "../utils/useBanners";
 import { makeUrl } from "../config/url";
+import Divider from "./Divider";
 
 export default function AboutImages1() {
   const isDesktop = useDesktop();
@@ -31,21 +32,30 @@ export default function AboutImages1() {
               position: relative;
               display: flex;
               flex-direction: column;
+              margin-top: 32px;
             `
-          : undefined
+          : css`
+              margin-top: 32px;
+            `
       }
     >
       <section className={isDesktop ? marginH18 : marginH10}>
         <div
           className={css`
-            ${classes.h1}
+            font-size: 23px;
+            line-height: 1.17;
+            text-align: center;
             color: #ffffff;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #ffffff;
           `}
         >
           {main.title}
         </div>
+        <Divider
+          color="#fff"
+          className={css`
+            margin-top: 5px;
+          `}
+        />
         <div
           className={css`
             ${classes.h2}

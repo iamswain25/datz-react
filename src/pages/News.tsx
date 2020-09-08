@@ -9,6 +9,7 @@ import { news } from "../@type/news";
 import AboutHeader from "../components/AboutHeader";
 import useNews from "../utils/useNews";
 import BtnTop from "../components/BtnTop";
+import Divider from "../components/Divider";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   notice: "Notice",
@@ -24,6 +25,7 @@ export default function News() {
       <AboutHeader sticky />
       <section
         className={css`
+          margin-top: 32px;
           font-family: BauerGroteskOTW03;
           background-color: #afafaf;
           text-align: center;
@@ -35,13 +37,16 @@ export default function News() {
           className={css`
             font-size: 23px;
             line-height: 1.17;
-            padding-bottom: 6px;
-            border-bottom: solid 1px #ffffff;
-            margin-bottom: 12px;
           `}
         >
           Datz Newsletter
         </div>
+        <Divider
+          color="#fff"
+          className={css`
+            margin: 5px 18px 12px 18px;
+          `}
+        />
         <div
           className={css`
             font-size: 16px;

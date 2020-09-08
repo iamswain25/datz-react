@@ -4,6 +4,7 @@ import useDesktop from "../components/useDesktop";
 import AboutHeader from "../components/AboutHeader";
 import { marginH55, flexcolumncenter, marginH27 } from "../components/styles";
 import BtnTop from "../components/BtnTop";
+import Divider from "../components/Divider";
 
 const aStyle = css`
   text-decoration: underline;
@@ -81,19 +82,28 @@ export default function Contact() {
         >
           <div
             className={css`
+              ${flexcolumncenter}
               grid-column: 1/3;
               grid-row: 1;
-              ${flexcolumncenter}
+              align-items: stretch;
             `}
           >
             <h1
               className={css`
-                ${h1Style}
-                margin-top: 35px;
+                font-family: BauerGroteskOTW03;
+                margin-top: 32px;
+                font-size: 23px;
+                line-height: 1.17;
               `}
             >
               Enquiry
             </h1>
+            <Divider
+              color="#fff"
+              className={css`
+                margin-top: 5px;
+              `}
+            />
             <a
               href="mailto:datzpress@datzpress.com"
               target="_blank"
