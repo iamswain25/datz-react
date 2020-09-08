@@ -30,7 +30,7 @@ export default function NewsItemLeft() {
               text-align: center;
               color: #ffffff;
               overflow: hidden;
-              max-height: 588px;
+              max-height: 100vw;
             `
       }
     >

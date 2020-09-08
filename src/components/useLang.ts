@@ -261,6 +261,11 @@ const classes: { [key: string]: any } = {
         margin-top: 12px;
         color: #707070;
         max-height: 112px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
         white-space: break-spaces;
       `,
     };

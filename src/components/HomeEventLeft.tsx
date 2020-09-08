@@ -5,9 +5,8 @@ import Logo from "./Logo";
 import useBanners from "../utils/useBanners";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel, { StateCallBack } from "react-multi-carousel";
-
-import LazyImage from "./LazyImage";
 import { Link } from "react-router-dom";
+import { makeUrl } from "../config/url";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
@@ -17,21 +16,6 @@ const responsive = {
     breakpoint: { max: 999, min: 0 },
     items: 1,
   },
-};
-const classes = {
-  list: css`
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex: 1;
-    color: "#707070";
-    width: 100%;
-    position: relative;
-    height: inherit;
-  `,
-  objectFitCover: css`
-    object-fit: cover;
-  `,
 };
 export default function HomeEventLeft() {
   const isDesktop = useDesktop(false);
@@ -100,9 +84,22 @@ export default function HomeEventLeft() {
         >
           {items.map((item, i) => {
             return (
-              <div className={classes.list} key={i}>
-                <LazyImage link={item.image} img={classes.objectFitCover} />
-              </div>
+              <div
+                className={css`
+                  background-image: url(${makeUrl(item.image)});
+                  background-position: center;
+                  background-size: cover;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: stretch;
+                  flex: 1;
+                  color: "#707070";
+                  width: 100%;
+                  position: relative;
+                  height: inherit;
+                `}
+                key={i}
+              />
             );
           })}
         </Carousel>

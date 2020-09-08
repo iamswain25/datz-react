@@ -14,7 +14,6 @@ export default function HomeEvent() {
         position: relative;
         display: flex;
         flex-direction: ${isDesktop ? "row" : "column"};
-        max-height: ${isDesktop ? "100vh" : "auto"};
       `}
     >
       {isDesktop ? (

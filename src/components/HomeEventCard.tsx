@@ -114,7 +114,19 @@ export default function HomeEventCard({
             `}
           >
             <p className={classes.title}>{title}</p>
-            <p className={classes.body}>{body}</p>
+            <p
+              className={css`
+                ${classes.body}
+                height: 84px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+              `}
+            >
+              {body}
+            </p>
           </div>
           <button
             className={css`
