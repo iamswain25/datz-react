@@ -1,12 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
-import {
-  paddingH17,
-  paddingH37,
-  marginH18,
-  marginH8,
-} from "../components/styles";
+import { paddingH17, paddingH37, marginH18 } from "../components/styles";
 import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
 import { useParams, NavLink } from "react-router-dom";
@@ -22,7 +17,8 @@ const FILTERS: { [key: string]: string } = {
 };
 export default function Events() {
   const { filter = "all" } = useParams();
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
+  const minusMobile = isDesktop ? 0 : 10;
   const list = useEvents(events.slice(2));
   return (
     <>
@@ -57,22 +53,33 @@ export default function Events() {
             margin-bottom: 45px;
           `}
         >
-          {Object.keys(FILTERS).map((f) => (
-            <NavLink
-              key={f}
-              exact
-              to={f}
-              activeClassName={css`
-                color: #ffffff;
-                text-decoration: underline;
-              `}
-              className={css`
-                ${marginH8}
-              `}
-            >
-              {FILTERS[f]}
-            </NavLink>
-          ))}
+          {Object.keys(FILTERS).map((f, i) => {
+            const isFirst = i === 0;
+            const isLast = Object.keys(FILTERS).length - 1 === i;
+            const marginLeft = isFirst ? 0 : 11 - minusMobile;
+            const marginRight = isFirst
+              ? 36 - minusMobile
+              : isLast
+              ? 0
+              : 11 - minusMobile;
+            return (
+              <NavLink
+                key={f}
+                exact
+                to={f}
+                activeClassName={css`
+                  color: #ffffff;
+                  text-decoration: underline;
+                `}
+                className={css`
+                  margin-left: ${marginLeft}px;
+                  margin-right: ${marginRight}px;
+                `}
+              >
+                {FILTERS[f]}
+              </NavLink>
+            );
+          })}
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
           {list
