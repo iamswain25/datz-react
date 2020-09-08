@@ -9,13 +9,18 @@ import { paddingH55, paddingH27 } from "../components/styles";
 import LazyImage from "../components/LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useBanners from "../utils/useBanners";
+import useIsTop from "../components/useIsTop";
 export default function Support() {
   const isDesktop = useDesktop(true);
-  console.log(isDesktop);
+  const isTop = useIsTop();
   const [item] = useBanners("about", "SupportMain");
   return (
     <>
-      <AboutHeader change backgroundColor="transparent" />
+      <AboutHeader
+        fixed
+        backgroundColor={isTop ? "transparent" : "#afafaf"}
+        color={isTop ? "white" : "#707070"}
+      />
       <div
         className={css`
           position: relative;
