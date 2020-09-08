@@ -38,9 +38,7 @@ export default function AboutImages1() {
       <section className={isDesktop ? marginH18 : marginH10}>
         <div
           className={css`
-            font-size: 23px;
-            line-height: 1.17;
-            text-align: center;
+            ${classes.h1}
             color: #ffffff;
             padding-bottom: 6px;
             border-bottom: 1px solid #ffffff;
@@ -50,9 +48,7 @@ export default function AboutImages1() {
         </div>
         <div
           className={css`
-            font-size: 16px;
-            line-height: 1.19;
-            text-align: center;
+            ${classes.h2}
             color: #ffffff;
             margin-top: 12px;
             white-space: break-spaces;

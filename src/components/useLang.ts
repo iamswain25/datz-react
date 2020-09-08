@@ -337,6 +337,18 @@ const classes: { [key: string]: any } = {
         white-space: break-spaces;
         flex: 1;
       `,
+      h1: css`
+        ${getSize(23, 1.17)}
+        line-height: 27px;
+        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
+        text-align: center;
+      `,
+      h2: css`
+        ${getSize(18, 1.56)}
+        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
+        text-align: center;
+        line-height: 28px;
+      `,
     };
   },
   body: (en: boolean) => {
