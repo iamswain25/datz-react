@@ -1,14 +1,14 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
-import { paddingH17, paddingH37, marginH18 } from "../components/styles";
+import { paddingH17, paddingH37, marginH17 } from "../components/styles";
 import { Grid } from "@material-ui/core";
 import { useParams, NavLink } from "react-router-dom";
 import NewsCard from "../components/NewsCard";
 import { news } from "../@type/news";
 import AboutHeader from "../components/AboutHeader";
 import useNews from "../utils/useNews";
-import { DEFAULT_COUNT } from "../config/params";
+import BtnTop from "../components/BtnTop";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   notice: "Notice",
@@ -17,11 +17,7 @@ const FILTERS: { [key: string]: string } = {
 export default function News() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop(true);
-  const [limit, setLimit] = React.useState<number | undefined>(DEFAULT_COUNT);
   const minusMobile = isDesktop ? 0 : 0;
-  function viewAllHandler() {
-    setLimit(undefined);
-  }
   const list = useNews(news);
   return (
     <>
@@ -108,7 +104,6 @@ export default function News() {
             .filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
-            .slice(0, limit)
             .map((c, i) => (
               <Grid key={i} item xs={12} sm={6} lg={4}>
                 <NewsCard item={c} />
@@ -118,24 +113,11 @@ export default function News() {
         <div
           className={css`
             border-top: 1px solid #fff;
-            ${marginH18}
-            font-size: 14px;
-            line-height: 1.21;
-            text-align: center;
-            color: #ffffff;
+            ${isDesktop ? marginH17 : undefined}
             transform: translateY(-1px);
           `}
         >
-          <Grid
-            container
-            alignItems="center"
-            justify="center"
-            className={css`
-              height: 28px;
-            `}
-          >
-            {limit && <button onClick={viewAllHandler}>view all {">"}</button>}
-          </Grid>
+          <BtnTop full color="#fff" />
         </div>
       </section>
     </>
