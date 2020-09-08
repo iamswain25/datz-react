@@ -23,8 +23,15 @@ const mobileContainer = css`
 `;
 export default function PublicationItemLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const [classes] = useLang("publication");
-  const { title, artist, preview_quote, preview_body, order_url, address } = item;
+  const [classes, en] = useLang("publication");
+  const {
+    title,
+    artist,
+    preview_quote,
+    preview_body,
+    order_url,
+    address,
+  } = item;
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
@@ -36,6 +43,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
           overflow: hidden;
           padding: 0 ${isDesktop ? 10 : 0}px ${isDesktop ? 0 : 40}px;
           flex: 1;
+          color: ${!en ? "#5d5d5d" : "#4b4b4b"};
         `}
       >
         {item.edition && <div className={classes.edition}>{item.edition}</div>}
