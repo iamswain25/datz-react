@@ -29,14 +29,12 @@ export default function AboutImages1() {
         isDesktop
           ? css`
               height: calc(100vh - 79px);
+              min-height: 600px;
               position: relative;
               display: flex;
               flex-direction: column;
-              margin-top: 32px;
             `
-          : css`
-              margin-top: 32px;
-            `
+          : undefined
       }
     >
       <section className={isDesktop ? marginH18 : marginH10}>
@@ -46,6 +44,7 @@ export default function AboutImages1() {
             line-height: 1.17;
             text-align: center;
             color: #ffffff;
+            margin-top: 32px;
           `}
         >
           {main.title}
