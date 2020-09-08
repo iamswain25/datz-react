@@ -4,9 +4,10 @@ import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 import useBanners from "../utils/useBanners";
 import CarouselBtnGroup from "./CarouselBtnGroup";
-import Carousel, { StateCallBack } from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
 import { makeUrl } from "../config/url";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
@@ -20,8 +21,6 @@ const responsive = {
 export default function HomeEventLeft() {
   const isDesktop = useDesktop(false);
   const items = useBanners("home", "Past Event");
-  const [index, setIndex] = React.useState(0);
-  const item = items[index];
   const typeClass = css`
     font-family: BauerGroteskOTW03;
     font-size: ${isDesktop ? 19 : 16}px;
@@ -46,9 +45,6 @@ export default function HomeEventLeft() {
     text-align: center;
     margin-top: ${isDesktop ? 4 : 3}px;
   `;
-  function afterChangeHandler(previousSlide: number, state: StateCallBack) {
-    setIndex(state.currentSlide);
-  }
   return (
     <section
       className={css`
@@ -69,7 +65,6 @@ export default function HomeEventLeft() {
       >
         <Carousel
           responsive={responsive}
-          afterChange={afterChangeHandler}
           containerClass={css`
             flex: 1;
             align-items: normal;
@@ -85,70 +80,59 @@ export default function HomeEventLeft() {
           {items.map((item, i) => {
             return (
               <div
-                className={css`
-                  background-image: url(${makeUrl(item.image)});
-                  background-position: center;
-                  background-size: cover;
-                  display: flex;
-                  flex-direction: column;
-                  align-items: stretch;
-                  flex: 1;
-                  color: "#707070";
-                  width: 100%;
-                  position: relative;
-                  height: inherit;
-                `}
                 key={i}
-              />
+                className={css`
+                  background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                  flex: 1;
+                `}
+              >
+                <div
+                  className={css`
+                    background-image: url(${makeUrl(item.image)});
+                    background-position: center;
+                    background-size: cover;
+                    color: #707070;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    justify-content: space-between;
+                    padding: 37px 17px;
+                    position: relative;
+                  `}
+                >
+                  <Link
+                    to={item.url || ""}
+                    className={css`
+                      text-align: center;
+                      color: #ffffff;
+                    `}
+                  >
+                    <p className={typeClass}>{item.type}</p>
+                    <hr
+                      className={css`
+                        height: 0;
+                        border-top: solid 1px #ffffff;
+                        margin-top: ${isDesktop ? 8 : 3}px;
+                        margin-bottom: ${isDesktop ? 18 : 16}px;
+                      `}
+                    />
+                    <p className={titleClass}>{item.title}</p>
+                    <p className={authorClass}>{item.subtitle}</p>
+                  </Link>
+                  <Logo
+                    type={item.logo}
+                    color="#ffffff"
+                    className={css`
+                      position: absolute;
+                      left: ${isDesktop ? 23 : 32}px;
+                      bottom: ${isDesktop ? 29 : 32}px;
+                    `}
+                  />
+                </div>
+              </div>
             );
           })}
         </Carousel>
-      </div>
-      <div
-        className={css`
-          padding: 37px;
-          padding-left: 17px;
-          padding-right: 17px;
-          width: 100%;
-          height: calc(100% - 40px);
-          background-repeat: no-repeat;
-          flex-direction: column;
-          background-size: cover;
-          display: flex;
-          align-items: stretch;
-          justify-content: space-between;
-          flex: 1;
-          position: absolute;
-        `}
-      >
-        <Link
-          to={item.url || ""}
-          className={css`
-            text-align: center;
-            color: #ffffff;
-          `}
-        >
-          <div className={typeClass}>{item.type}</div>
-          <hr
-            className={css`
-              height: 0;
-              border-top: solid 1px #ffffff;
-              margin-top: ${isDesktop ? 8 : 3}px;
-              margin-bottom: ${isDesktop ? 18 : 16}px;
-            `}
-          />
-          <div className={titleClass}>{item.title}</div>
-          <div className={authorClass}>{item.subtitle}</div>
-        </Link>
-        <Logo
-          type={item.logo}
-          color="#ffffff"
-          className={css`
-            position: absolute;
-            left: ${isDesktop ? 23 : 32}px;
-            bottom: ${isDesktop ? 29 : 32}px;
-          `}
-        />
       </div>
     </section>
   );
