@@ -12,13 +12,6 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
   function onslideHandler(index: number) {
     setIndex(index);
   }
-  const typeClass = css`
-    font-family: BauerGroteskOTW03;
-    font-size: ${isDesktop ? 19 : 16}px;
-    line-height: ${isDesktop ? 1.21 : 1.19};
-    text-align: center;
-    margin-top: ${isDesktop ? 0 : 5}px;
-  `;
   const titleClass = css`
     font-family: ArnoPro-Subhead;
     font-size: ${isDesktop ? 27 : 22}px;
@@ -63,12 +56,21 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
           display: flex;
           flex-direction: column;
           align-itmes: center;
-          padding: 17px;
-          padding-top: 37px;
+          padding: ${isDesktop ? 37 : 22}px 17px 0 17px;
           color: ${color};
         `}
       >
-        <div className={typeClass}>{type}</div>
+        <div
+          className={css`
+            font-family: BauerGroteskOTW03;
+            font-size: ${isDesktop ? 19 : 16}px;
+            line-height: ${isDesktop ? 1.21 : 1.19};
+            text-align: center;
+            height: 23px;
+          `}
+        >
+          {type}
+        </div>
         <hr
           className={css`
             border-top: 1px solid ${color};
