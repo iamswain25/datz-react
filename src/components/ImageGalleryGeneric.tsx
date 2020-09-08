@@ -43,6 +43,7 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
         showPlayButton={false}
         showBullets={true}
         autoPlay={true}
+        additionalClass={originalImages.length > 1 ? undefined : "no-bullets"}
         onSlide={onslideHandler}
         slideInterval={5000}
       />

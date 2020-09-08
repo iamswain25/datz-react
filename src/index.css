@@ -191,6 +191,9 @@ select[multiple] {
   .image-gallery-bullet {
   border: 1px solid white;
 }
+.image-gallery.no-bullets .image-gallery-bullets-container {
+  display: none;
+}
 .image-gallery
   .image-gallery-content
   .image-gallery-slide
