@@ -2,14 +2,13 @@ import React from "react";
 import { css } from "emotion";
 import { useParams } from "react-router-dom";
 import useDesktop from "./useDesktop";
-import { bottomBtn37 } from "./styles";
 import DatzmuseumOrder from "./DatzmuseumOrder";
 import CloseShare from "./CloseShare";
 import { exhibitionCurrentPast } from "../utils/datefns";
-import useBtnBack from "./useBtnBack";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
 import useItemIndex from "../utils/useItemIndex";
+import BtnBack from "./BtnBack";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -31,7 +30,6 @@ export default function ExhibitionMoreLeft() {
   const isDesktop = useDesktop();
   const { address } = useParams();
   const item = useItemIndex(address, "exhibition");
-  const goBack = useBtnBack();
   const [classes] = useLang("exhibition");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
@@ -70,17 +68,10 @@ export default function ExhibitionMoreLeft() {
             justify-content: flex-end;
             display: flex;
             flex-direction: column;
+            border-top: solid 1px #707070;
           `}
         >
-          <button
-            onClick={goBack}
-            className={css`
-              border-top: solid 1px #707070;
-              ${bottomBtn37}
-            `}
-          >
-            {"<"} back
-          </button>
+          <BtnBack />
         </div>
       )}
     </div>

@@ -4,7 +4,7 @@ import useBtnBack from "./useBtnBack";
 
 export default function BtnBack({
   color = "#707070",
-  full = false,
+  width = "100%",
   borderTop = false,
 }) {
   const goBack = useBtnBack();
@@ -19,7 +19,8 @@ export default function BtnBack({
         height: 37px;
         display: flex;
         align-items: center;
-        width: ${full ? "100%" : "auto"};
+        justify-content: center;
+        width: ${width};
         border-top: ${borderTop ? 1 : 0}px solid ${color};
         color: ${color};
       `}

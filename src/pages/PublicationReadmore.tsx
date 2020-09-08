@@ -1,6 +1,6 @@
 import React from "react";
-import PublicationReadmoreStickyTop from "../components/PublicationReadmoreStickyTop";
-import PublicationReadmoreRelated from "../components/PublicationReadmoreRelated";
+import PublicationMoreLeft from "../components/PublicationMoreLeft";
+import PublicationMoreRight from "../components/PublicationMoreRight";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import {
@@ -16,8 +16,8 @@ export default function Publication() {
       <Header sticky={isDesktop} />
       <div className={isDesktop ? paddingH37 : paddingH27}>
         <section className={isDesktop ? flexrow : flexcolumn}>
-          <PublicationReadmoreStickyTop />
-          <PublicationReadmoreRelated />
+          <PublicationMoreLeft />
+          <PublicationMoreRight />
         </section>
       </div>
     </>

@@ -6,14 +6,7 @@ import Carousel from "react-multi-carousel";
 
 import useDesktop from "./useDesktop";
 import { makeUrl } from "../config/url";
-const listClass = (dark = false) => css`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  flex: 1;
-  color: ${dark ? "#ffffff" : "#707070"};
-  width: 100%;
-`;
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 const afterClass = (i: number) => css`
   position: relative;
   width: inherit;
@@ -79,12 +72,22 @@ export default function EventCoverWidget({
       >
         {images.map((img, i) => {
           const content = (
-            <div className={listClass(dark)}>
-              <img
-                src={makeUrl(img)}
-                alt="event"
+            <div
+              className={css`
+                background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                display: flex;
+                flex: 1;
+              `}
+            >
+              <div
                 className={css`
-                  object-fit: ${objectFit};
+                  background-image: url(${makeUrl(img)});
+                  background-position: center;
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  flex: 1;
+                  height: 100vw;
+                  color: ${dark ? "#ffffff" : "#707070"};
                 `}
               />
             </div>

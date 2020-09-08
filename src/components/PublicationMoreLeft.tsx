@@ -4,11 +4,10 @@ import { useParams } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
-import { bottomBtn37 } from "./styles";
 import Linkify from "react-linkify";
-import useBtnBack from "./useBtnBack";
 import useLang from "./useLang";
 import useItemIndex from "../utils/useItemIndex";
+import BtnBack from "./BtnBack";
 
 const stickyContainer = css`
   align-self: flex-start;
@@ -26,13 +25,12 @@ const stickyContainer = css`
 const mobileContainer = css`
   position: relative;
 `;
-export default function PublicationStickyTop() {
+export default function PublicationMoreLeft() {
   const { address } = useParams();
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
   const item = useItemIndex(address, "publication");
   const { title, artist, quotes, body, notes, order_url } = item;
-  const goBack = useBtnBack();
 
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
@@ -76,17 +74,10 @@ export default function PublicationStickyTop() {
             justify-content: flex-end;
             display: flex;
             flex-direction: column;
+            border-top: solid 1px #707070;
           `}
         >
-          <button
-            onClick={goBack}
-            className={css`
-              border-top: solid 1px #707070;
-              ${bottomBtn37}
-            `}
-          >
-            {"<"} back
-          </button>
+          <BtnBack />
         </div>
       )}
     </div>

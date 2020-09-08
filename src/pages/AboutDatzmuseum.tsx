@@ -78,7 +78,7 @@ export default function AboutDatzpress() {
           ${flexcolumn}
           position: relative;
           min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
-          padding-bottom: 16px;
+          padding-bottom: ${isDesktop ? 16 : 0}px;
         `}
       >
         <Grid
@@ -185,7 +185,7 @@ export default function AboutDatzpress() {
                     </span>
                   </div>
                 </div>
-                <BtnBack color="#fff" full borderTop />
+                <BtnBack color="#fff" borderTop />
               </div>
             </div>
           </Grid>

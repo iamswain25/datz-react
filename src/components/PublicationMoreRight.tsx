@@ -21,7 +21,7 @@ const desktopContainer = css`
   padding-left: 30px;
   padding-top: 40px;
 `;
-export default function PublicationReadmoreRelated() {
+export default function PublicationMoreRight() {
   const isDesktop = useDesktop();
   const { address } = useParams();
   const { artists, publications, exhibitions, events } = useItemIndex(address);
