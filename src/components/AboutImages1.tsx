@@ -144,16 +144,15 @@ export default function AboutImages1() {
                           font-family: BauerGroteskOTW03;
                           text-align: center;
                           color: #ffffff;
-                          ${marginH37}
+                          ${isDesktop ? marginH37 : marginH10}
                           left: 0;
-                          width: calc(100% - 74px);
                           font-size: 16px;
                           line-height: 1.19;
                           white-space: break-spaces;
                         `
                   }
                 >
-                  {isDesktop ? title : title.substr(0, title.length - 2)}
+                  {title}
                   <div
                     className={
                       isDesktop
@@ -169,7 +168,14 @@ export default function AboutImages1() {
                           `
                     }
                   >
-                    <div className={classes.body}>{text}</div>
+                    <div
+                      className={css`
+                        ${classes.body}
+                        text-align: center;
+                      `}
+                    >
+                      {text}
+                    </div>
                   </div>
                 </div>
                 {!isDesktop && (
