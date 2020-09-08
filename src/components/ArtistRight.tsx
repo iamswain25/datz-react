@@ -62,7 +62,7 @@ export default function PublicationItemPhotos() {
             justify-content: flex-end;
             display: flex;
             flex-direction: column;
-            padding: 30px 0;
+
             font-family: BauerGroteskOTW03;
             font-size: 17px;
             line-height: 1.47;
@@ -71,10 +71,17 @@ export default function PublicationItemPhotos() {
         >
           {!!homepage && (
             <Grid container justify="center">
-              <Linkify children={homepage} />
+              <Linkify>
+                <div
+                  className={css`
+                    padding: 30px 0;
+                  `}
+                >
+                  {homepage}
+                </div>
+              </Linkify>
               <hr
                 className={css`
-                  margin-top: 30px;
                   width: 100%;
                   border-top: solid 1px #ffffff;
                 `}
