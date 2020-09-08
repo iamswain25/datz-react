@@ -100,7 +100,7 @@ export default function Header({
         `}
         to="/"
       >
-        <Datz color={color} />
+        <Datz color={color === "#707070" ? "#383838" : color} />
       </NavLink>
       {links}
       <div
