@@ -21,18 +21,26 @@ import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useBanners from "../utils/useBanners";
+import useIsTop from "../components/useIsTop";
 export default function ArtistProject() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   const items1 = useBanners("artists", "Datz Aritst Projects");
   const [BookProjectMain] = useBanners("artists", "BookProjectMain");
   const items2 = useBanners("artists", "Exhibition");
   const ResidencyMain = useBanners("artists", "ResidencyMain");
+  const isTop = useIsTop();
   return (
     <>
       <Header
-        change={isDesktop}
-        backgroundColor={isDesktop ? "transparent" : undefined}
-        color={isDesktop ? "white" : undefined}
+        fixed
+        backgroundColor={
+          !isDesktop
+            ? undefined
+            : isTop
+            ? "transparent"
+            : "rgba(255,255,255,0.8)"
+        }
+        color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
       />
       <RollingImages
         items={items1}

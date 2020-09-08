@@ -62,7 +62,7 @@ export default function PublicationList() {
                 onClick={selectHandler}
                 className={css`
                   padding-left: 18px;
-                  padding-right: 18px;
+                  padding-right: ${type === "All" ? 49 : 18}px;
                   cursor: pointer;
                   ${selectedCss}
                 `}

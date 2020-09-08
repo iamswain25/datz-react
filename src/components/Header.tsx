@@ -27,12 +27,10 @@ const linkActiveClass = css`
 export default function Header({
   fixed = false,
   sticky = false,
-  change = false,
   color = "#707070",
   backgroundColor = "rgba(255,255,255,0.8)",
 }) {
   const [text, setText] = React.useState("");
-  const [colors, setColors] = React.useState({ color, backgroundColor });
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
@@ -53,9 +51,7 @@ export default function Header({
               to={link}
               key={i}
               activeClassName={css`
-                ${linkActiveClass} ${colors.color === "white"
-                  ? "color: white"
-                  : ""}
+                ${linkActiveClass} ${color === "white" ? "color: white" : ""}
               `}
             >
               {label}
@@ -67,7 +63,7 @@ export default function Header({
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px ${colors.color};
+            border-left: solid 1px ${color};
             ${marginH16}
           `}
         />
@@ -90,7 +86,7 @@ export default function Header({
         height: 79px;
         max-width: 1920px;
         padding: 0 ${isDesktop ? 37 : 17}px;
-        color: ${colors.color};
+        color: ${color};
         margin: 0 auto;
       `}
     >
@@ -104,7 +100,7 @@ export default function Header({
         `}
         to="/"
       >
-        <Datz color={colors.color} />
+        <Datz color={color} />
       </NavLink>
       {links}
       <div
@@ -131,7 +127,7 @@ export default function Header({
               onChange={textHandler}
               className={css`
                 ${headerText};
-                border-bottom: solid 1px ${colors.color};
+                border-bottom: solid 1px ${color};
                 width: 56px;
                 margin-left: 5px;
                 margin-right: 8px;
@@ -144,7 +140,7 @@ export default function Header({
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "en" ? colors.color : "#cccccc"};
+            color: ${lang === "en" ? color : "#cccccc"};
           `}
           onClick={() => setLang("en")}
         >
@@ -154,7 +150,7 @@ export default function Header({
           className={css`
             width: 0;
             height: 12px;
-            border-left: solid 1px ${colors.color};
+            border-left: solid 1px ${color};
           `}
         />
         <button
@@ -162,7 +158,7 @@ export default function Header({
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "ko" ? colors.color : "#cccccc"};
+            color: ${lang === "ko" ? color : "#cccccc"};
           `}
         >
           KR
@@ -214,6 +210,8 @@ export default function Header({
             width: 100%;
             top: 0;
             z-index: 5;
+            color: ${color};
+            background-color: ${backgroundColor};
           `}
         >
           {innerHeader}
@@ -225,29 +223,9 @@ export default function Header({
   return (
     <>
       <Headroom
-        wrapperStyle={
-          change
-            ? { maxWidth: 1920, width: "100%", position: "absolute" }
-            : undefined
-        }
-        onPin={
-          change
-            ? () =>
-                setColors({
-                  color: "#707070",
-                  backgroundColor: "rgba(255,255,255,0.8)",
-                })
-            : undefined
-        }
-        onUnfix={
-          change
-            ? () =>
-                setColors({ color: color, backgroundColor: backgroundColor })
-            : undefined
-        }
         style={{
           zIndex: 5,
-          backgroundColor: colors.backgroundColor,
+          backgroundColor: backgroundColor,
           margin: "0 auto",
         }}
       >
