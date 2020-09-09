@@ -11,14 +11,10 @@ import BtnTop from "./BtnTop";
 import useBanners from "../utils/useBanners";
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("All");
-  const [limit, setLimit] = React.useState<number | undefined>(24);
   const list = usePublications(publications);
   const isDesktop = useDesktop();
   const subCategories = useBanners("publications");
   const [classes] = useLang("PublicationList");
-  function loadMoreHandler() {
-    setLimit(undefined);
-  }
   return (
     <>
       <div
@@ -126,7 +122,6 @@ export default function PublicationList() {
                 .filter((f) =>
                   selected === "All" ? true : f.type === selected
                 )
-                .slice(0, limit)
                 .map((item, i) => {
                   return (
                     <Grid item key={i} xs={12} sm={12} md={6} lg={4} xl={3}>
@@ -150,7 +145,7 @@ export default function PublicationList() {
                         />
                         <div className={classes.title}>{item.title}</div>
                       </Link>
-                      {item.artistAddress ? (
+                      {item.artistAddress && item.type !== "Magazine" ? (
                         <Link
                           to={`artist/${item.artistAddress}`}
                           className={classes.link}
@@ -172,23 +167,7 @@ export default function PublicationList() {
               border-top: solid 1px #707070;
             `}
           >
-            {limit ? (
-              <button
-                className={css`
-                  height: 37px;
-                  text-align: center;
-                  width: 100%;
-                  font-size: 14px;
-                  line-height: 1.21;
-                  color: #707070;
-                `}
-                onClick={loadMoreHandler}
-              >
-                view all {">"}
-              </button>
-            ) : (
-              <BtnTop full />
-            )}
+            <BtnTop full />
           </div>
         </div>
       </div>
