@@ -63,14 +63,7 @@ export default function ResidencyLeft({ item }: { item?: any }) {
               line-height: 1.35;
               margin-bottom: 27px;
             `}
-          >
-            “Datz Press understands and responds sensitively to what an artist
-            is trying to imply, making it near perfection through a delicate
-            process. The only publisher that can fully digest the spirit of my
-            work for 30 years and deliver all of my photos is the Datz Press.”
-            <br />
-            <br />- Lonnie Graham
-          </div>
+          ></div>
         )}
       </div>
     </div>
