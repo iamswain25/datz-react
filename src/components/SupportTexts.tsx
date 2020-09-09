@@ -81,6 +81,7 @@ export default function SupportTexts({ item }: { item: any }) {
           className={css`
             ${classes.book(16, 1)}
             margin-top: 34px;
+            max-width: 890px;
           `}
         >
           {item.text}
