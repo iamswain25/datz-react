@@ -157,30 +157,21 @@ export default function AboutImages1() {
                         `
                   }
                 >
-                  {title}
+                  <div>{title}</div>
+                  <Divider
+                    color="#fff"
+                    className={css`
+                      margin-top: 5px;
+                    `}
+                  />
                   <div
-                    className={
-                      isDesktop
-                        ? css`
-                            margin-top: 4px;
-                            text-align: left;
-                          `
-                        : css`
-                            margin-top: 4px;
-                            margin-top: 2px;
-                            border-top: 1px solid #ffffff;
-                            text-align: center;
-                          `
-                    }
+                    className={css`
+                      ${classes.body}
+                      margin-top: 12px;
+                      text-align: center;
+                    `}
                   >
-                    <div
-                      className={css`
-                        ${classes.body}
-                        text-align: center;
-                      `}
-                    >
-                      {text}
-                    </div>
+                    {text}
                   </div>
                 </div>
                 {!isDesktop && (
