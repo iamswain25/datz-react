@@ -13,10 +13,6 @@ const classes = {
     margin-top: 19px;
     object-fit: contain;
   `,
-  h6: css`
-    margin-top: 6px;
-    color: #aaaaaa;
-  `,
   h5: css`
     margin-top: 10px;
   `,
@@ -86,7 +82,14 @@ export default function DatzArtistProject2() {
                 />
               </div>
               <div className={classes.h5}>{text}</div>
-              <div className={classes.h6}>{artist}</div>
+              <div
+                className={css`
+                  margin-top: 6px;
+                  color: #aaaaaa;
+                `}
+              >
+                {artist}
+              </div>
               <div
                 className={css`
                   border-top: solid 1px #aaaaaa;
@@ -96,7 +99,14 @@ export default function DatzArtistProject2() {
                   margin-right: 16px;
                 `}
               >
-                <Link to={link || ""} className={classes.h6}>
+                <Link
+                  to={link || ""}
+                  className={css`
+                    font-size: 14px;
+                    margin-top: 6px;
+                    color: #aaaaaa;
+                  `}
+                >
                   read more {">"}
                 </Link>
               </div>
