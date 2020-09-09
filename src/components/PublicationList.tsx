@@ -45,41 +45,51 @@ export default function PublicationList() {
             color: #cccccc;
           `}
         >
-          {subCategories.map(({ type }, i) => {
-            const isLast = subCategories.length - 1 === i;
-            const isFirst = i === 0;
-            let selectedCss = null;
-            if (selected === type) {
-              selectedCss = css`
-                text-decoration: underline;
-                color: #383838;
-              `;
-            }
-            const minusMobile = isDesktop ? 0 : 10;
-            const paddingLeft = isFirst ? 0 : 18 - minusMobile;
-            const paddingRight = isFirst
-              ? 49 - minusMobile
-              : isLast
-              ? 0
-              : 18 - minusMobile;
-            function selectHandler() {
-              setSelected(type);
-            }
-            return (
-              <div
-                key={i}
-                onClick={selectHandler}
-                className={css`
-                  padding-left: ${paddingLeft}px;
-                  padding-right: ${paddingRight}px;
-                  cursor: pointer;
-                  ${selectedCss}
-                `}
-              >
-                {type}
-              </div>
-            );
-          })}
+          <div
+            className={css`
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              max-width: 400px;
+              flex: 1;
+            `}
+          >
+            {subCategories.map(({ type }, i) => {
+              const isLast = subCategories.length - 1 === i;
+              const isFirst = i === 0;
+              let selectedCss = null;
+              if (selected === type) {
+                selectedCss = css`
+                  text-decoration: underline;
+                  color: #383838;
+                `;
+              }
+
+              let paddingLeft = isFirst ? 0 : 18;
+              let paddingRight = isFirst ? 49 : isLast ? 0 : 18;
+              if (!isDesktop) {
+                paddingLeft = isFirst ? 0 : 5;
+                paddingRight = isFirst ? 9 : isLast ? 0 : 5;
+              }
+              function selectHandler() {
+                setSelected(type);
+              }
+              return (
+                <div
+                  key={i}
+                  onClick={selectHandler}
+                  className={css`
+                    padding-left: ${paddingLeft}px;
+                    padding-right: ${paddingRight}px;
+                    cursor: pointer;
+                    ${selectedCss}
+                  `}
+                >
+                  {type}
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div
           className={css`

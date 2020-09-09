@@ -10,7 +10,7 @@ import ViewAllCard from "../components/ViewAllCard";
 import useEvents from "../utils/useEvents";
 import BtnTop from "../components/BtnTop";
 const FILTERS: { [key: string]: string } = {
-  all: "all",
+  all: "All",
   talk: "Artist Talk / Lecture",
   exhibition: "Exhibition",
   bookfair: "Book Fair",
@@ -18,7 +18,6 @@ const FILTERS: { [key: string]: string } = {
 export default function Events() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop(true);
-  const minusMobile = isDesktop ? 0 : 10;
   const list = useEvents(events.slice(2));
   return (
     <>
@@ -53,33 +52,43 @@ export default function Events() {
             margin-bottom: 45px;
           `}
         >
-          {Object.keys(FILTERS).map((f, i) => {
-            const isFirst = i === 0;
-            const isLast = Object.keys(FILTERS).length - 1 === i;
-            const marginLeft = isFirst ? 0 : 11 - minusMobile;
-            const marginRight = isFirst
-              ? 36 - minusMobile
-              : isLast
-              ? 0
-              : 11 - minusMobile;
-            return (
-              <NavLink
-                key={f}
-                exact
-                to={f}
-                activeClassName={css`
-                  color: #ffffff;
-                  text-decoration: underline;
-                `}
-                className={css`
-                  margin-left: ${marginLeft}px;
-                  margin-right: ${marginRight}px;
-                `}
-              >
-                {FILTERS[f]}
-              </NavLink>
-            );
-          })}
+          <div
+            className={css`
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              max-width: 400px;
+              flex: 1;
+            `}
+          >
+            {Object.keys(FILTERS).map((f, i) => {
+              const isFirst = i === 0;
+              const isLast = Object.keys(FILTERS).length - 1 === i;
+              let marginLeft = isFirst ? 0 : 11;
+              let marginRight = isFirst ? 36 : isLast ? 0 : 11;
+              if (!isDesktop) {
+                marginLeft = isFirst ? 0 : 5;
+                marginRight = isFirst ? 9 : isLast ? 0 : 5;
+              }
+              return (
+                <NavLink
+                  key={f}
+                  exact
+                  to={f}
+                  activeClassName={css`
+                    color: #ffffff;
+                    text-decoration: underline;
+                  `}
+                  className={css`
+                    margin-left: ${marginLeft}px;
+                    margin-right: ${marginRight}px;
+                  `}
+                >
+                  {FILTERS[f]}
+                </NavLink>
+              );
+            })}
+          </div>
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
           {list
