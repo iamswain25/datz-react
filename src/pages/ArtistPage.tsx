@@ -16,7 +16,7 @@ const bgContainer = css`
   background-color: #afafaf;
 `;
 export default function ArtistPage() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
 
   return (
     <>

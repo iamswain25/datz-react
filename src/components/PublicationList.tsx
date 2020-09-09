@@ -149,8 +149,19 @@ export default function PublicationList() {
                           `}
                         />
                         <div className={classes.title}>{item.title}</div>
-                        <div className={classes.artist}>{item.artist}</div>
                       </Link>
+                      {item.artistAddress ? (
+                        <Link
+                          to={`artist/${item.artistAddress}`}
+                          className={classes.link}
+                        >
+                          <div className={classes.artist}>{item.artist}</div>
+                        </Link>
+                      ) : (
+                        <div className={classes.link}>
+                          <div className={classes.artist}>{item.artist}</div>
+                        </div>
+                      )}
                     </Grid>
                   );
                 })}

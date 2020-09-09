@@ -1,5 +1,5 @@
 import { useGlobalState, LANG } from "../store/useGlobalState";
-
+import { artists } from "../@type/artists";
 export default function usePublications(items: any[]) {
   const [lang] = useGlobalState(LANG);
   return items.map((item) => {
@@ -13,6 +13,8 @@ export default function usePublications(items: any[]) {
     const preview_body =
       lang === "ko" ? item.preview_body_ko : item.preview_body_en;
     const order_url = lang === "ko" ? item.order_url_ko : item.order_url_en;
+    const artistAddress = artists.find((a) => a.id === item.rel_artists?.[0])
+      ?.address;
     return {
       ...item,
       title,
@@ -23,6 +25,7 @@ export default function usePublications(items: any[]) {
       preview_quote,
       preview_body,
       order_url,
+      artistAddress,
     };
   });
 }

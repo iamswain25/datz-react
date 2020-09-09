@@ -8,6 +8,7 @@ export const home = [
     subtitle_ko: "린다 코너 ",
     url: "/publication/2019_peru",
     image: "/Main/01/01.jpg",
+    artistLink: "/artist/linda-connor",
   },
   {
     logo: "Datz Press",
@@ -18,6 +19,7 @@ export const home = [
     subtitle_ko: "린다 코너 ",
     url: "/publication/2019_peru",
     image: "/Main/01/02.jpg",
+    artistLink: "/artist/linda-connor",
   },
   {
     logo: "Datz Press",
@@ -28,6 +30,7 @@ export const home = [
     subtitle_ko: "김윤숙",
     url: "/publication/2020_here-to-stay",
     image: "/Main/01/03.jpg",
+    artistLink: "/artist/yoonsuk-kim",
   },
   {
     logo: "Datz Press",
@@ -38,6 +41,7 @@ export const home = [
     subtitle_ko: "살 테일러 키드",
     url: "/publication/2020_landfall",
     image: "/Main/01/04.jpg",
+    artistLink: "/artist/sal-taylor-kydd",
   },
   {
     logo: "Datz Press",
@@ -48,6 +52,7 @@ export const home = [
     subtitle_ko: "아만다 마찬드",
     url: "/publication/2019_nothing-will-ever-be-the-same-again_se",
     image: "/Main/01/05.jpg",
+    artistLink: "/artist/amanda-marchand",
   },
   {
     logo: "Datz Press",
@@ -58,6 +63,7 @@ export const home = [
     subtitle_ko: "메리 다니엘 홉슨",
     url: "/publication/2019_offerings_se",
     image: "/Main/01/06.jpg",
+    artistLink: "/artist/mary-daniel-hobson",
   },
   {
     logo: "Datz Museum of Art",
