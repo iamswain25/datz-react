@@ -50,7 +50,7 @@ export default function PublicationList() {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
-              max-width: 400px;
+              max-width: 320px;
               flex: 1;
             `}
           >

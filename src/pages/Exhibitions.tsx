@@ -57,7 +57,7 @@ export default function Exhibitions() {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
-              max-width: 300px;
+              max-width: 282px;
               flex: 1;
             `}
           >

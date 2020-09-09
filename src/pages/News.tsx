@@ -80,7 +80,7 @@ export default function News() {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
-              max-width: 250px;
+              max-width: 230px;
               flex: 1;
             `}
           >

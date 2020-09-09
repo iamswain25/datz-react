@@ -57,7 +57,7 @@ export default function Events() {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
-              max-width: 400px;
+              max-width: 350px;
               flex: 1;
             `}
           >
