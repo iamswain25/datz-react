@@ -93,8 +93,7 @@ export default function FullPageRollingImages({
           color: ${color};
         `}
       >
-        <Link
-          to={item.url}
+        <div
           className={css`
             display: flex;
             flex-direction: column;
@@ -102,19 +101,30 @@ export default function FullPageRollingImages({
             margin: 0 20px;
           `}
         >
-          <div className={typeClass}>{type}</div>
-          <hr
+          <Link
+            to={item.url}
             className={css`
-              border-top: 1px solid ${color};
-              width: ${isDesktop ? "555px" : "auto"};
-              align-self: ${isDesktop ? "auto" : "stretch"};
-              margin-top: ${isDesktop ? 8 : 3}px;
-              margin-bottom: ${isDesktop ? 18 : 16}px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
             `}
-          />
-          <div className={titleClass}>{title}</div>
-          <div className={authorClass}>{subtitle}</div>
-        </Link>
+          >
+            <div className={typeClass}>{type}</div>
+            <hr
+              className={css`
+                border-top: 1px solid ${color};
+                width: ${isDesktop ? "555px" : "auto"};
+                align-self: ${isDesktop ? "auto" : "stretch"};
+                margin-top: ${isDesktop ? 8 : 3}px;
+                margin-bottom: ${isDesktop ? 18 : 16}px;
+              `}
+            />
+            <div className={titleClass}>{title}</div>
+          </Link>
+          <Link to={item.artistLink}>
+            <div className={authorClass}>{subtitle}</div>
+          </Link>
+        </div>
         <Link
           to={item.url}
           className={css`

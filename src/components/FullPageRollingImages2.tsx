@@ -108,6 +108,13 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
           <div className={titleClass}>{title}</div>
           <div className={authorClass}>{subtitle}</div>
         </Link>
+        <Link
+          to={item.url}
+          className={css`
+            display: flex;
+            flex: 1;
+          `}
+        />
         <Logo
           type={logo}
           color={color}
