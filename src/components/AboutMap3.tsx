@@ -32,7 +32,7 @@ export default function AboutMap3() {
         className={css`
           position: relative;
           height: ${isDesktop
-            ? "calc(100vh - 79px - 41px -27px -37px)"
+            ? "calc(100vh - 79px - 41px - 27px - 37px)"
             : "auto"};
           margin-top: ${isDesktop ? 41 : 19}px;
           ${isDesktop ? paddingH37 : paddingH17}
