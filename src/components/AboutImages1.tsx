@@ -4,7 +4,7 @@ import useDesktop from "./useDesktop";
 import {
   marginH18,
   flexcolumncenter,
-  paddingH15,
+  paddingH17,
   bottomBtn37,
   marginH10,
   marginH17,
@@ -140,7 +140,7 @@ export default function AboutImages1() {
                           line-height: 1.42;
                           text-align: center;
                           color: #ffffff;
-                          ${paddingH15}
+                          ${paddingH17}
                         `
                       : css`
                           position: absolute;
@@ -196,19 +196,25 @@ export default function AboutImages1() {
           );
         })}
       </Grid>
-      <a
+      <div
         className={css`
-          ${bottomBtn37}
-          color: #ffffff;
-          margin-top: ${isDesktop ? 30 : 0}px;
-          border-top: solid ${isDesktop ? 1 : 0}px #ffffff;
-          ${isDesktop ? "" : marginH17}
-          width: ${isDesktop ? "100%" : "calc(100% - 34px)"};
+          margin: 0 17px;
         `}
-        href="/message"
       >
-        message {">"}
-      </a>
+        <a
+          className={css`
+            ${bottomBtn37}
+            color: #ffffff;
+            margin-top: ${isDesktop ? 30 : 0}px;
+            border-top: solid ${isDesktop ? 1 : 0}px #ffffff;
+            ${isDesktop ? "" : marginH17}
+            width: ${isDesktop ? "100%" : "calc(100% - 34px)"};
+          `}
+          href="/message"
+        >
+          message {">"}
+        </a>
+      </div>
     </section>
   );
 }

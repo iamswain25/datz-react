@@ -4,11 +4,10 @@ import useDesktop from "./useDesktop";
 import {
   paddingH37,
   paddingH17,
-  paddingH10,
   marginH55,
-  marginH17,
+  marginH27,
+  marginH10,
 } from "./styles";
-
 import GoogleMapReact from "google-map-react";
 import { Grid } from "@material-ui/core";
 import useBanners from "../utils/useBanners";
@@ -59,7 +58,7 @@ export default function AboutMap3() {
             <div
               className={css`
                 flex: 1;
-                ${paddingH10}
+                ${isDesktop ? paddingH17 : marginH10}
               `}
             >
               <h1
@@ -101,6 +100,7 @@ export default function AboutMap3() {
               className={css`
                 display: flex;
                 flex-direction: column;
+                ${isDesktop ? paddingH17 : marginH10}
               `}
             >
               <h2
@@ -130,7 +130,7 @@ export default function AboutMap3() {
       </section>
       <div
         className={css`
-          ${isDesktop ? marginH55 : marginH17}
+          ${isDesktop ? marginH55 : marginH27}
           color: #ffffff;
           margin-top: 27px;
           border-top: solid 1px #ffffff;
