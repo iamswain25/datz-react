@@ -35,7 +35,7 @@ const pStyle = css`
   white-space: break-spaces;
 `;
 export default function AboutDatzpress() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   const [classes, en] = useLang("About");
   const history = useHistory();
   const [item] = useBanners("about", "Datz Museum of Art");

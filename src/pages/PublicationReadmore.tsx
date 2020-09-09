@@ -10,7 +10,7 @@ import {
   paddingH27,
 } from "../components/styles";
 export default function Publication() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
       <Header sticky={isDesktop} />

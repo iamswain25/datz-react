@@ -10,7 +10,7 @@ import {
 } from "../components/styles";
 import ExhibitionMoreLeft from "../components/ExhibitionMoreLeft";
 export default function ExhibitionReadmore() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
       <Header sticky={isDesktop} />

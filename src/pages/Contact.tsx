@@ -37,10 +37,7 @@ function mapLinks(top: any, i: number) {
   }
 }
 export default function Contact() {
-  const isDesktop = useDesktop();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const isDesktop = useDesktop(true);
   const h1Style = React.useMemo(
     () => css`
       font-family: BauerGroteskOTW03;

@@ -5,7 +5,7 @@ import HomeEventCard from "./HomeEventCard";
 import useDesktop from "./useDesktop";
 import useItemIndex from "../utils/useItemIndex";
 export default function HomeEventRight() {
-  const isDesktop = useDesktop(false);
+  const isDesktop = useDesktop();
   const item = useItemIndex(1, "event");
   return (
     <>

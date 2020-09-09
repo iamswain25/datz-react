@@ -14,7 +14,7 @@ const desktopContainer = css`
 export default function ExhibitionItem() {
   const { address } = useParams();
   const item = useItemIndex(address, "exhibition");
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
       <Header sticky />

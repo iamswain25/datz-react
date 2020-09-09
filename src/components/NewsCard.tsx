@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR, BLEND_SCREEN_COLOR } from "../config/params";
 export default function NewsCard({ item }: { item: any }) {
-  const isDesktop = useDesktop(false);
+  const isDesktop = useDesktop();
   const isCurrent = filterExhibitionCurrent(item);
   return (
     <Link to={`/newsitem/${item.address}`}>

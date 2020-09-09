@@ -28,7 +28,7 @@ const h1Style = (isDesktop = false) => css`
   text-align: center;
 `;
 export default function AboutDatzpress() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   const [classes, en] = useLang("About");
   const [item] = useBanners("about", "D'Ark Room");
   const history = useHistory();

@@ -13,10 +13,10 @@ const mobileContainer = css`
   ${flexcolumn}
 `;
 export default function Event() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
-     <Header sticky />
+      <Header sticky />
       <section className={isDesktop ? desktopContainer : mobileContainer}>
         <ExhibitionLeft />
         <ExhibitionRight />

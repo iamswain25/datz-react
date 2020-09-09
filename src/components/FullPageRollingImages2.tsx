@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import { makeUrl } from "../config/url";
 import { Link } from "react-router-dom";
 export default function FullPageRollingImages2({ items }: { items: any[] }) {
-  const isDesktop = useDesktop(false);
+  const isDesktop = useDesktop();
   const images =
     (items && items.map((a) => ({ original: makeUrl(a.image) }))) || [];
   const [index, setIndex] = React.useState(0);

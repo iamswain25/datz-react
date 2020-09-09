@@ -11,7 +11,7 @@ import useDesktop from "../components/useDesktop";
 export default () => {
   const data1 = useBanners("home", "New Books");
   const data2 = useBanners("home", "Current Exhibition");
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
       <Header sticky />

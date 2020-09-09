@@ -13,7 +13,7 @@ const mobileContainer = css`
   ${flexcolumn}
 `;
 export default function Event() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
       <Header sticky />

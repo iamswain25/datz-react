@@ -19,7 +19,7 @@ const responsive = {
   },
 };
 export default function HomeEventLeft() {
-  const isDesktop = useDesktop(false);
+  const isDesktop = useDesktop();
   const items = useBanners("home", "Past Event");
   const typeClass = css`
     font-family: BauerGroteskOTW03;

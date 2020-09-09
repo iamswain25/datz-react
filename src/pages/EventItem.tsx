@@ -14,7 +14,7 @@ const desktopContainer = css`
 export default function EventItem() {
   const { address } = useParams();
   const item = useItemIndex(address, "event");
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   if (isDesktop) {
     return (
       <>

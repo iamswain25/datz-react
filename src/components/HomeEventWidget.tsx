@@ -49,7 +49,7 @@ export default function HomeEventWidget({
   fit?: string;
   type?: string;
 }) {
-  const isDesktop = useDesktop(false);
+  const isDesktop = useDesktop();
   const { address } = useParams();
   return (
     <div

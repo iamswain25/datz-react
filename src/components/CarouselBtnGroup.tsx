@@ -31,7 +31,7 @@ export default function CarouselBtnGroup({
 }>) {
   const { totalItems = 0, currentSlide = 0, slidesToShow = 0 } =
     carouselState ?? {};
-  const isDesktop = useDesktop(false);
+  const isDesktop = useDesktop();
   const isBeginning = currentSlide === 0;
   const isEnding = currentSlide >= totalItems - slidesToShow;
   return (

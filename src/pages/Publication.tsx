@@ -19,7 +19,7 @@ const mobileContainer = css`
   ${paddingH17}
 `;
 export default function Publication() {
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
       <Header sticky />

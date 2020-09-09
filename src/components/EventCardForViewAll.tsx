@@ -5,7 +5,7 @@ import { makeUrl } from "../config/url";
 import { Link } from "react-router-dom";
 export default function EventCardForViewAll({ event }: { event: any }) {
   const { images, date, title, address } = event;
-  const isDesktop = useDesktop(false);
+  const isDesktop = useDesktop();
   return (
     <Link to={`/event/${address}`}>
       <div
