@@ -1,9 +1,16 @@
 import React from "react";
 import Close from "../assets/svg/Close";
 import { css } from "emotion";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import ShareButtons from "./ShareButtons";
-export default function CloseShare({ close = "/publication" }) {
+import useBtnBack from "./useBtnBack";
+export default function CloseShare({ close = "" }) {
+  const goBack = useBtnBack();
+  const history = useHistory();
+  function handler() {
+    if (close) history.push(close);
+    else goBack();
+  }
   return (
     <div
       className={css`
@@ -14,8 +21,8 @@ export default function CloseShare({ close = "/publication" }) {
         margin-bottom: 20px;
       `}
     >
-      <Link
-        to={close}
+      <button
+        onClick={handler}
         className={css`
           height: 13px;
           font-size: 10px;
@@ -34,7 +41,7 @@ export default function CloseShare({ close = "/publication" }) {
           `}
         />
         <span>CLOSE</span>
-      </Link>
+      </button>
       <ShareButtons />
     </div>
   );

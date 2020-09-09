@@ -29,7 +29,7 @@ export default function ExhibitionItemLeft({ item }: { item: any }) {
   const [classes] = useLang("exhibition");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <CloseShare close="/exhibition" />
+      <CloseShare />
       <DatzmuseumOrder order={item.visit_url} logo={item.type} />
       <div
         className={css`
