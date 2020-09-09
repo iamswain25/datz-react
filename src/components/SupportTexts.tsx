@@ -82,6 +82,7 @@ export default function SupportTexts({ item }: { item: any }) {
             ${classes.book(16, 1)}
             margin-top: 34px;
             max-width: 890px;
+            line-height: 20px;
           `}
         >
           {item.text}
