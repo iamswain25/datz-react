@@ -155,19 +155,25 @@ export default function PublicationList() {
           </section>
           <div
             className={css`
-              height: 38px;
               border-top: solid 1px #707070;
-              padding: 9px 0;
-              text-align: center;
-              font-size: 14px;
-              line-height: 1.21;
-              color: #707070;
             `}
           >
             {limit ? (
-              <button onClick={loadMoreHandler}>view all {">"}</button>
+              <button
+                className={css`
+                  height: 37px;
+                  text-align: center;
+                  width: 100%;
+                  font-size: 14px;
+                  line-height: 1.21;
+                  color: #707070;
+                `}
+                onClick={loadMoreHandler}
+              >
+                view all {">"}
+              </button>
             ) : (
-              <BtnTop />
+              <BtnTop full />
             )}
           </div>
         </div>
