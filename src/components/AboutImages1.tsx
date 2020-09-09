@@ -95,7 +95,6 @@ export default function AboutImages1() {
                 <div
                   className={css`
                     background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    height: ${isDesktop ? "100%" : "588px"};
                     display: flex;
                     flex: 1;
                   `}
@@ -107,7 +106,7 @@ export default function AboutImages1() {
                             background-image: url(${makeUrl(image)});
                             background-position: center;
                             background-size: cover;
-                            min-height: 0;
+                            min-height: 400px;
                             min-width: 0;
                             flex: 1;
                           `
