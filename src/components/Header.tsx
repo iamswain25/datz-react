@@ -29,6 +29,7 @@ export default function Header({
   sticky = false,
   color = "#707070",
   backgroundColor = "rgba(255,255,255,0.8)",
+  darkerLogo = false,
 }) {
   const [text, setText] = React.useState("");
   const isDesktop = useDesktop();
@@ -100,7 +101,7 @@ export default function Header({
         `}
         to="/"
       >
-        <Datz color={color === "#707070" ? "#383838" : color} />
+        <Datz color={darkerLogo && color === "#707070" ? "#383838" : color} />
       </NavLink>
       {links}
       <div

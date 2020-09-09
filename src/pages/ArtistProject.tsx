@@ -33,6 +33,7 @@ export default function ArtistProject() {
     <>
       <Header
         fixed
+        darkerLogo
         backgroundColor={
           !isDesktop
             ? undefined
