@@ -17,6 +17,9 @@ const headerText = css`
   color: #ffffff;
   margin-left: 16px;
   margin-right: 16px;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 export default function ArtistHeader({

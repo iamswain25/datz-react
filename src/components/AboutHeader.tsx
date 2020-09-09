@@ -17,6 +17,9 @@ const headerText = css`
   text-align: center;
   color: #ffffff;
   ${marginH16}
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 const linkActiveClass = css`

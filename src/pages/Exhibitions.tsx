@@ -78,6 +78,9 @@ export default function Exhibitions() {
                   className={css`
                     margin-left: ${marginLeft}px;
                     margin-right: ${marginRight}px;
+                    :hover {
+                      text-decoration: underline;
+                    }
                   `}
                 >
                   {FILTERS[f]}

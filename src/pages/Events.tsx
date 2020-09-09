@@ -82,6 +82,9 @@ export default function Events() {
                   className={css`
                     margin-left: ${marginLeft}px;
                     margin-right: ${marginRight}px;
+                    :hover {
+                      text-decoration: underline;
+                    }
                   `}
                 >
                   {FILTERS[f]}

@@ -17,6 +17,9 @@ const headerText = css`
   line-height: 1.19;
   text-align: center;
   color: inherit;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 const linkActiveClass = css`

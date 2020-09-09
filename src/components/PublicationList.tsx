@@ -83,6 +83,9 @@ export default function PublicationList() {
                     padding-right: ${paddingRight}px;
                     cursor: pointer;
                     ${selectedCss}
+                    :hover {
+                      text-decoration: underline;
+                    }
                   `}
                 >
                   {type}
