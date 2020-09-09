@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
 import useBanners from "../utils/useBanners";
 import LazyImage from "./LazyImage";
+import { BLEND_SCREEN_COLOR, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 const classes = {
   h5: css`
     margin-top: 10px;
@@ -59,15 +60,39 @@ export default function Facilities() {
           const { text, link, artist, image } = item;
           return (
             <Grid item xs={12} sm={4} key={i}>
-              <LazyImage
-                link={image}
-                img={css`
-                  width: 100%;
+              <div
+                className={css`
+                  position: relative;
                   margin-top: ${isDesktop ? "0" : "30px"};
-                  height: ${isDesktop ? "100%" : "auto"};
-                  object-fit: cover;
+                  background-color: ${BLEND_SCREEN_COLOR};
+                  ::before {
+                    content: "";
+                    display: inline-block;
+                    padding-bottom: 52.91%;
+                    vertical-align: top;
+                  }
                 `}
-              />
+              >
+                <LazyImage
+                  link={image}
+                  placeholder={css`
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                    top: 0;
+                    left: 0;
+                  `}
+                  img={css`
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                  `}
+                />
+              </div>
               <div className={classes.h5}>{text}</div>
               <div
                 className={css`

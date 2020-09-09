@@ -186,7 +186,7 @@ export default function ArtistProject() {
       <Facilities />
       <div
         className={css`
-          margin-top: 70px;
+          margin-top: ${isDesktop ? 70 : 0}px;
           display: flex;
           justify-content: center;
         `}
