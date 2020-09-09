@@ -18,8 +18,15 @@ export default function FullPageRollingImages({
     (items && items.map((a) => ({ original: makeUrl(a.image) }))) || [];
   const [index, setIndex] = React.useState(0);
   const item = items[index];
+  const galleryRef = React.useRef<ImageGallery | null>(null);
   function onslideHandler(index: number) {
     setIndex(index);
+  }
+  function mouseOverHandler() {
+    galleryRef.current?.pause();
+  }
+  function mouseLeaveHandler() {
+    galleryRef.current?.play();
   }
   const typeClass = css`
     font-family: BauerGroteskOTW03;
@@ -57,6 +64,7 @@ export default function FullPageRollingImages({
       }}
     >
       <ImageGallery
+        ref={galleryRef}
         infinite={true}
         items={images}
         showNav={false}
@@ -70,18 +78,20 @@ export default function FullPageRollingImages({
         slideInterval={5000}
       />
       <div
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "stretch",
-          padding: isDesktop ? 37 : 17,
-          color,
-        }}
+        onMouseOver={mouseOverHandler}
+        onMouseLeave={mouseLeaveHandler}
+        className={css`
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          padding: ${isDesktop ? 37 : 17}px;
+          color: ${color};
+        `}
       >
         <Link
           to={item.url}

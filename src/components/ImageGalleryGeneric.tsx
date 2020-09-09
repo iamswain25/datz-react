@@ -9,8 +9,15 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
   const item = items[index];
+  const galleryRef = React.useRef<ImageGallery | null>(null);
   function onslideHandler(index: number) {
     setIndex(index);
+  }
+  function mouseOverHandler() {
+    galleryRef.current?.pause();
+  }
+  function mouseLeaveHandler() {
+    galleryRef.current?.play();
   }
   const titleClass = css`
     font-family: ArnoPro-Subhead;
@@ -35,6 +42,7 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
   return (
     <>
       <ImageGallery
+        ref={galleryRef}
         infinite={true}
         items={originalImages}
         showNav={false}
@@ -48,7 +56,10 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
         slideInterval={5000}
       />
       <div
+        onMouseOver={mouseOverHandler}
+        onMouseLeave={mouseLeaveHandler}
         className={css`
+          position: absolute;
           width: 100%;
           height: 100%;
           position: absolute;

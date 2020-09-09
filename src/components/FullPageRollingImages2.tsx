@@ -12,8 +12,15 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
     (items && items.map((a) => ({ original: makeUrl(a.image) }))) || [];
   const [index, setIndex] = React.useState(0);
   const item = items[index];
+  const galleryRef = React.useRef<ImageGallery | null>(null);
   function onslideHandler(index: number) {
     setIndex(index);
+  }
+  function mouseOverHandler() {
+    galleryRef.current?.pause();
+  }
+  function mouseLeaveHandler() {
+    galleryRef.current?.play();
   }
   const { type, title, subtitle, color = "#fff", logo } = item;
   const typeClass = css`
@@ -49,6 +56,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
       }}
     >
       <ImageGallery
+        ref={galleryRef}
         infinite={true}
         items={images}
         showNav={false}
@@ -61,6 +69,8 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         slideInterval={5000}
       />
       <div
+        onMouseOver={mouseOverHandler}
+        onMouseLeave={mouseLeaveHandler}
         className={css`
           width: 100%;
           height: calc(100vh - 56px);
