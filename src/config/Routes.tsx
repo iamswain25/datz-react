@@ -31,6 +31,7 @@ import News from "../pages/News";
 import NewsItem from "../pages/NewsItem";
 import FullImageGallery from "../pages/FullImageGallery";
 import Layout from "../components/Layout";
+import Search from "../pages/Search";
 export default function Routes() {
   return (
     <Router>
@@ -39,7 +40,11 @@ export default function Routes() {
           <Route exact path="/" component={Home} />
           <Route exact path="/publication" component={Publication} />
           <Route exact path="/exhibition" component={Exhibition} />
-          <Route exact path="/publication/:address" component={PublicationItem} />
+          <Route
+            exact
+            path="/publication/:address"
+            component={PublicationItem}
+          />
           <Route
             exact
             path="/publication/:address/images/:index"
@@ -87,6 +92,7 @@ export default function Routes() {
           <Route exact path="/about/darkroom" component={AboutDarkroom} />
           <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/search" component={Search} />
           <Route exact path="/support" component={Support} />
           <Route exact path="/news">
             <Redirect to="/news/all" />
