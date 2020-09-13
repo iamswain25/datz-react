@@ -13,12 +13,13 @@ import { Grid } from "@material-ui/core";
 import useBanners from "../utils/useBanners";
 import useLang from "./useLang";
 import BtnTop from "./BtnTop";
+import MapMarker from "./MapMarker";
 const defaultProps = {
   center: {
-    lat: 59.95,
-    lng: 30.33,
+    lat: 37.540535,
+    lng: 127.0922978,
   },
-  zoom: 11,
+  zoom: 16,
 };
 export default function AboutMap3() {
   const isDesktop = useDesktop();
@@ -49,10 +50,19 @@ export default function AboutMap3() {
             `}
           >
             <GoogleMapReact
-              bootstrapURLKeys={{ key: "" }}
+              bootstrapURLKeys={{
+                key: "AIzaSyBLWcym-3i-U68oKTFMpLZEVDed0K9fZuw",
+              }}
               defaultCenter={defaultProps.center}
               defaultZoom={defaultProps.zoom}
-            ></GoogleMapReact>
+            >
+              <MapMarker
+                {...defaultProps.center}
+                className={css`
+                  color: red;
+                `}
+              />
+            </GoogleMapReact>
           </Grid>
           <Grid container item xs={12} sm={6} direction="column">
             <div
