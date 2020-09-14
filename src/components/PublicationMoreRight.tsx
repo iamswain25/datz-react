@@ -5,7 +5,7 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import { bottomBtn37 } from "./styles";
 import useItemIndex from "../utils/useItemIndex";
 const mobileContainer = css`
@@ -23,7 +23,7 @@ const desktopContainer = css`
 `;
 export default function PublicationMoreRight() {
   const isDesktop = useDesktop();
-  const { address } = useParams<{ address: string }>();
+  const { address } = useParams();
   const { artists, publications, exhibitions, events } = useItemIndex(address);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>

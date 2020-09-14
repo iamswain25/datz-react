@@ -1,7 +1,7 @@
 import React from "react";
 import EventItemLeftSticky from "../components/EventItemLeftSticky";
 import EventItemRight from "../components/EventItemRight";
-import { useParams } from "react-router-dom";
+import useParams from "../components/useParams";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";

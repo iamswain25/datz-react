@@ -4,7 +4,7 @@ import useDesktop from "./useDesktop";
 import { paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
 import ShareButtons from "./ShareButtons";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import useItemIndex from "../utils/useItemIndex";
 import useLang from "./useLang";
 import Linkify from "./Linkify";

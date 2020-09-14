@@ -5,7 +5,7 @@ import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
 import BtnBack from "./BtnBack";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import { Grid } from "@material-ui/core";
 import Linkify from "./Linkify";
 import useItemIndex from "../utils/useItemIndex";

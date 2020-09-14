@@ -4,7 +4,7 @@ import useDesktop from "./useDesktop";
 import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import EventWidget from "./EventWidget";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import { bottomBtn37 } from "./styles";
 import useItemIndex from "../utils/useItemIndex";
 const mobileContainer = css`

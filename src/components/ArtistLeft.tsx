@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import Linkify from "./Linkify";
 import useLang from "./useLang";
 import useItemIndex from "../utils/useItemIndex";

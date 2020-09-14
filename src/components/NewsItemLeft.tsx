@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import EventCoverWidget from "./EventCoverWidget";
 import { flexcolumn } from "./styles";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import useItemIndex from "../utils/useItemIndex";
 const stickyContainer = css`
   position: sticky;

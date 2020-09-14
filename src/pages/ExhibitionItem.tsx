@@ -1,7 +1,7 @@
 import React from "react";
 import ExhibitionItemLeft from "../components/ExhibitionItemLeft";
 import ItemPhotosRight from "../components/ItemPhotosRight";
-import { useParams } from "react-router-dom";
+import useParams from "../components/useParams";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";

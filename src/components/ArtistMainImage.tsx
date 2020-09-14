@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
 import { useGlobalState, LANG } from "../store/useGlobalState";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import useItemIndex from "../utils/useItemIndex";
 export default function ArtistMainImage() {
   const isDesktop = useDesktop();

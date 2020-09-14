@@ -3,7 +3,8 @@ import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import Arrow from "./Arrow";
 import { makeUrl } from "../config/url";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import useParams from "./useParams";
 import ReactImageGallery from "react-image-gallery";
 function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
   return (

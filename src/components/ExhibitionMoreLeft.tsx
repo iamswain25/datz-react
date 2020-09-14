@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { useParams } from "react-router-dom";
+import useParams from "./useParams";
 import useDesktop from "./useDesktop";
 import DatzmuseumOrder from "./DatzmuseumOrder";
 import CloseShare from "./CloseShare";
