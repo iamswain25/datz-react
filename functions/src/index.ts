@@ -14,6 +14,7 @@ exports.onWrite = functions
       case "artist":
       case "exhibition":
       case "event":
+        // case "news":
         break;
       default:
         return null;
@@ -24,6 +25,7 @@ exports.onWrite = functions
       if (!data) return new Error("no data");
       // Add an 'objectID' field which Algolia requires
       data.objectID = documentId;
+      data.collection = collectionId;
       return index.saveObject(data);
     } else {
       return index.deleteObject(documentId);

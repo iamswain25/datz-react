@@ -44,6 +44,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "firebase deploy --only hosting",
+    "local": "tsc --esModuleInterop ./local/go.ts && node ./local/go.js",
     "bd": "yarn build && yarn deploy"
   },
   "eslintConfig": {
@@ -61,5 +62,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "firebase-admin": "^9.1.1"
   }
 }

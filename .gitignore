@@ -13,6 +13,7 @@
 /local
 /.firebase
 src/config/firebaseConfig.ts
+serviceAccountKey.json
 
 # misc
 .DS_Store
