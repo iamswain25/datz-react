@@ -23,7 +23,7 @@ const desktopContainer = css`
 `;
 export default function PublicationMoreRight() {
   const isDesktop = useDesktop();
-  const { address } = useParams();
+  const { address } = useParams<{ address: string }>();
   const { artists, publications, exhibitions, events } = useItemIndex(address);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>

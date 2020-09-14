@@ -2,19 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { publications } from "../@type/publications";
+import { Publication } from "../@type";
 import LazyImage from "./LazyImage";
 import { Grid } from "@material-ui/core";
 import usePublications from "../utils/usePublications";
 import useLang from "./useLang";
 import BtnTop from "./BtnTop";
 import useBanners from "../utils/useBanners";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("All");
+  const [publications, loading, error] = useCollectionDataOnce<Publication>(
+    firestore.collection("publication").orderBy("order", "desc"),
+    { idField: "id" }
+  );
   const list = usePublications(publications);
   const isDesktop = useDesktop();
   const subCategories = useBanners("publications");
   const [classes] = useLang("PublicationList");
+  if (loading) {
+    return null;
+  }
+  if (!list) {
+    return null;
+  }
+  if (error) {
+    return <div>{JSON.stringify(error)}</div>;
+  }
   return (
     <>
       <div

@@ -57,7 +57,7 @@ export default function PublicationWidget({
 }) {
   const isDesktop = useDesktop();
   const list = usePublications(publications);
-  if (!list.length) {
+  if (!(list && list.length)) {
     return null;
   }
   return (
