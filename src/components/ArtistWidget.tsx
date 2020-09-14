@@ -29,7 +29,7 @@ export default function ArtistWidget({
   artists,
 }: {
   dark?: boolean;
-  artists: any[];
+  artists: string[];
 }) {
   const [classes] = useLang("artistWidget");
   const isDesktop = useDesktop();
