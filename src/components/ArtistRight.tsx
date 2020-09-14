@@ -24,13 +24,10 @@ const desktopContainer = css`
   border-top: 1px solid #ffffff;
   margin-bottom: 36px;
 `;
-export default function PublicationItemPhotos() {
+export default function ArtistRight() {
   const isDesktop = useDesktop();
   const { address } = useParams();
-  const { publications, exhibitions, events, homepage } = useItemIndex(
-    address,
-    "artist"
-  );
+  const { homepage } = useItemIndex(address, "artist");
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       {!isDesktop && (
@@ -52,9 +49,9 @@ export default function PublicationItemPhotos() {
           />
         </Grid>
       )}
-      <PublicationWidget publications={publications} dark />
-      <ExhibitionWidget exhibitions={exhibitions} dark />
-      <EventWidget events={events} dark />
+      <PublicationWidget rel_publications={[]} dark />
+      <ExhibitionWidget rel_exhibitions={[]} dark />
+      <EventWidget rel_events={[]} dark />
       {!isDesktop && (
         <div
           className={css`

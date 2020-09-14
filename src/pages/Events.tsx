@@ -95,10 +95,10 @@ export default function Events() {
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
           {list
-            .filter((f) =>
+            ?.filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
-            .map((c, i) => (
+            ?.map((c, i) => (
               <Grid key={i} item xs={12} sm={6} xl={4}>
                 <ViewAllCard item={c} type="event" />
               </Grid>

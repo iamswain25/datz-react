@@ -8,6 +8,7 @@ import usePublications from "../utils/usePublications";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useDesktop from "./useDesktop";
+import { firestore } from "../config/firebase";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -50,13 +51,28 @@ const responsive = {
 };
 export default function PublicationWidget({
   dark = false,
-  publications,
+  rel_publications,
 }: {
-  publications: any[];
+  rel_publications: string[];
   dark?: boolean;
 }) {
   const isDesktop = useDesktop();
-  const list = usePublications(publications);
+  const [items, setItems] = React.useState<undefined | any[]>(undefined);
+  React.useEffect(() => {
+    if (!rel_publications) return;
+    Promise.all(
+      rel_publications?.map((id) =>
+        firestore
+          .collection("artist")
+          .doc(id)
+          .get()
+          .then(({ data, id }) => ({ ...data(), id }))
+      )
+    ).then((arr) => {
+      setItems(arr);
+    });
+  }, [rel_publications]);
+  const list = usePublications(items);
   if (!(list && list.length)) {
     return null;
   }

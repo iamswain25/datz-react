@@ -1,12 +1,10 @@
 import React from "react";
 import { css } from "emotion";
-import useParams from "./useParams";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
-import useItemIndex from "../utils/useItemIndex";
 import BtnBack from "./BtnBack";
 
 const stickyContainer = css`
@@ -25,13 +23,10 @@ const stickyContainer = css`
 const mobileContainer = css`
   position: relative;
 `;
-export default function PublicationMoreLeft() {
-  const { address } = useParams();
+export default function PublicationMoreLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
-  const item = useItemIndex(address, "publication");
   const { title, artist, quotes, body, notes, order_url } = item;
-
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />

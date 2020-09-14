@@ -6,6 +6,7 @@ import Carousel from "react-multi-carousel";
 import useDesktop from "./useDesktop";
 import useArtists from "../utils/useArtists";
 import useLang from "./useLang";
+import { firestore } from "../config/firebase";
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -26,15 +27,34 @@ const itemClass = css`
 `;
 export default function ArtistWidget({
   dark = false,
-  artists,
+  rel_artists,
 }: {
   dark?: boolean;
-  artists: string[];
+  rel_artists: string[];
 }) {
   const [classes] = useLang("artistWidget");
+  const [items, setItems] = React.useState<undefined | any[]>(undefined);
+  React.useEffect(() => {
+    if (!rel_artists) return;
+    if (!rel_artists.length) return;
+    Promise.all(
+      rel_artists.map((id) =>
+        firestore
+          .collection("artist")
+          .doc(id)
+          .get()
+          .then((snap) => {
+            return { ...snap.data(), id: snap.id };
+          })
+      )
+    ).then((arr) => {
+      setItems(arr);
+    });
+  }, [rel_artists]);
+  console.log(rel_artists);
   const isDesktop = useDesktop();
-  const list = useArtists(artists);
-  if (!list.length) {
+  const list = useArtists(items);
+  if (!list) {
     return null;
   }
   return (

@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import useEvents from "../utils/useEvents";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import { firestore } from "../config/firebase";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -69,13 +70,28 @@ const responsive = {
 };
 export default function EventWidget({
   dark = false,
-  events,
+  rel_events,
 }: {
   dark?: boolean;
-  events: any[];
+  rel_events: any[];
 }) {
-  const list = useEvents(events);
-  if (!list.length) {
+  const [items, setItems] = React.useState<undefined | any[]>(undefined);
+  React.useEffect(() => {
+    if (!rel_events) return;
+    Promise.all(
+      rel_events?.map((id) =>
+        firestore
+          .collection("artist")
+          .doc(id)
+          .get()
+          .then(({ data, id }) => ({ ...data(), id }))
+      )
+    ).then((arr) => {
+      setItems(arr);
+    });
+  }, [rel_events]);
+  const list = useEvents(items);
+  if (!(list && list.length)) {
     return null;
   }
   return (
@@ -86,8 +102,10 @@ export default function EventWidget({
     >
       <Carousel
         responsive={responsive}
-        containerClass={css`flex: 1;
-  align-items: normal;`}
+        containerClass={css`
+          flex: 1;
+          align-items: normal;
+        `}
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}

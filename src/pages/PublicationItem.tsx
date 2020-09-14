@@ -17,7 +17,8 @@ const desktopContainer = css`
 export default function PublicationItem() {
   const { address } = useParams();
   const [publicaiton, loading, error] = useDocumentDataOnce<Publication>(
-    firestore.collection("publication").doc(address.toLowerCase())
+    firestore.collection("publication").doc(address.toLowerCase()),
+    { idField: "id" }
   );
   const item = useItem(publicaiton);
   const isDesktop = useDesktop(true);

@@ -5,9 +5,7 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
-import useParams from "./useParams";
 import { bottomBtn37 } from "./styles";
-import useItemIndex from "../utils/useItemIndex";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -21,10 +19,10 @@ const desktopContainer = css`
   padding-left: 30px;
   padding-top: 40px;
 `;
-export default function PublicationMoreRight() {
+export default function PublicationMoreRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const { address } = useParams();
-  const { artists, publications, exhibitions, events } = useItemIndex(address);
+  const { rel_artists, rel_publications, rel_exhibitions, rel_events } = item;
+  console.log(rel_artists);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div
@@ -52,10 +50,10 @@ export default function PublicationMoreRight() {
         >
           Related
         </div>
-        <ArtistWidget artists={artists} />
-        <PublicationWidget publications={publications} />
-        <ExhibitionWidget exhibitions={exhibitions} />
-        <EventWidget events={events} />
+        <ArtistWidget rel_artists={rel_artists} />
+        <PublicationWidget rel_publications={rel_publications} />
+        <ExhibitionWidget rel_exhibitions={rel_exhibitions} />
+        <EventWidget rel_events={rel_events} />
       </div>
       <div className={bottomBtn37} />
     </section>

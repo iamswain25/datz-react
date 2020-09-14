@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import useExhibitions from "../utils/useExhibitions";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import { firestore } from "../config/firebase";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -68,13 +69,29 @@ const responsive = {
 };
 export default function ExhibitionWidget({
   dark = false,
-  exhibitions,
+  rel_exhibitions,
 }: {
-  exhibitions: any[];
+  rel_exhibitions: string[];
   dark?: boolean;
 }) {
-  const list = useExhibitions(exhibitions);
-  if (!list.length) {
+  const [items, setItems] = React.useState<undefined | any[]>(undefined);
+  React.useEffect(() => {
+    if (!rel_exhibitions) return;
+    if (!rel_exhibitions.length) return;
+    Promise.all(
+      rel_exhibitions?.map((id) =>
+        firestore
+          .collection("artist")
+          .doc(id)
+          .get()
+          .then(({ data, id }) => ({ ...data(), id }))
+      )
+    ).then((arr) => {
+      setItems(arr);
+    });
+  }, [rel_exhibitions]);
+  const list = useExhibitions(items);
+  if (!(list && list.length)) {
     return null;
   }
   return (
@@ -85,8 +102,10 @@ export default function ExhibitionWidget({
     >
       <Carousel
         responsive={responsive}
-        containerClass={css`flex: 1;
-  align-items: normal;`}
+        containerClass={css`
+          flex: 1;
+          align-items: normal;
+        `}
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}
@@ -99,7 +118,11 @@ export default function ExhibitionWidget({
         {list.map((item, i) => {
           const { images, title, address } = item;
           return (
-            <Link key={i} className={afterClass(i)} to={`/exhibition/${address}`}>
+            <Link
+              key={i}
+              className={afterClass(i)}
+              to={`/exhibition/${address}`}
+            >
               <div className={listClass(dark)}>
                 <LazyImage
                   alt={item.title}

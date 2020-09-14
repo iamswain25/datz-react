@@ -3,7 +3,7 @@ import { artists } from "../@type/artists";
 export default function usePublications(items?: any[]) {
   const [lang] = useGlobalState(LANG);
   if (!items) {
-    return null;
+    return undefined;
   }
   return items.map((item) => {
     const title = lang === "ko" ? item.title_ko : item.title_en;

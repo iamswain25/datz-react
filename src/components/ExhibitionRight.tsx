@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { bottomBtn37, marginH10, marginH27 } from "../components/styles";
-import { exhibitions } from "../@type/exhibitions";
 import { Link } from "react-router-dom";
 import {
   filterExhibitionCurrent,
@@ -13,15 +12,21 @@ import ViewAllCard from "./ViewAllCard";
 import MainCard from "./MainCard";
 import useExhibitions from "../utils/useExhibitions";
 import { DEFAULT_COUNT } from "../config/params";
+import { firestore } from "../config/firebase";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 
 export default function ExhibitionRight() {
   const isDesktop = useDesktop();
+  const [exhibitions] = useCollectionDataOnce<any>(
+    firestore.collection("exhibition").orderBy("order", "desc"),
+    { idField: "id" }
+  );
   const list = useExhibitions(exhibitions);
-  const currentExhibitions = list.filter(filterExhibitionCurrent);
+  const currentExhibitions = list?.filter(filterExhibitionCurrent);
   return (
     <main>
       <Grid container spacing={isDesktop ? 3 : 0}>
-        {currentExhibitions.map((item, i) => (
+        {currentExhibitions?.map((item, i) => (
           <Grid item xs={12} key={i}>
             <MainCard item={item} type="exhibition" />
           </Grid>
@@ -43,9 +48,9 @@ export default function ExhibitionRight() {
       </h1>
       <Grid container spacing={isDesktop ? 3 : 0}>
         {list
-          .filter(filterExhibitionPast)
-          .slice(0, DEFAULT_COUNT)
-          .map((a, i) => (
+          ?.filter(filterExhibitionPast)
+          ?.slice(0, DEFAULT_COUNT)
+          ?.map((a, i) => (
             <Grid item key={i} xs={12} md={6} xl={4}>
               <ViewAllCard item={a} type="exhibition" nonWhite />
             </Grid>

@@ -6,18 +6,23 @@ import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
 import { useParams, NavLink } from "react-router-dom";
 import ViewAllCard from "../components/ViewAllCard";
-import { exhibitions } from "../@type/exhibitions";
 import useExhibitions from "../utils/useExhibitions";
 import { filterExhibitionPast } from "../utils/datefns";
 import BtnTop from "../components/BtnTop";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   darkroom: "D'Ark Room",
   museum: "Datz Museum of Art",
 };
 export default function Exhibitions() {
-  const { filter = "all" } = useParams();
-  const list = useExhibitions(exhibitions).filter(filterExhibitionPast);
+  const { filter = "all" } = useParams<{ filter: string }>();
+  const [exhibitions] = useCollectionDataOnce<any>(
+    firestore.collection("exhibition").orderBy("order", "desc"),
+    { idField: "id" }
+  );
+  const list = useExhibitions(exhibitions)?.filter(filterExhibitionPast);
   const isDesktop = useDesktop(true);
   return (
     <>
@@ -91,10 +96,10 @@ export default function Exhibitions() {
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
           {list
-            .filter((f) =>
+            ?.filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
-            .map((c, i) => (
+            ?.map((c, i) => (
               <Grid key={i} item xs={12} sm={6} xl={4}>
                 <ViewAllCard item={c} type="exhibition" />
               </Grid>

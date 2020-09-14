@@ -24,14 +24,7 @@ const mobileContainer = css`
 export default function PublicationItemLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
-  const {
-    title,
-    artist,
-    preview_quote,
-    preview_body,
-    order_url,
-    address,
-  } = item;
+  const { title, artist, preview_quote, preview_body, order_url, id } = item;
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
@@ -56,7 +49,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
         <div className={classes.body}>{preview_body}</div>
       </div>
       <Link
-        to={`/publication/${address}/readmore`}
+        to={`/publication/${id}/readmore`}
         className={css`
           border-top: solid 1px #707070;
           ${bottomBtn37}
