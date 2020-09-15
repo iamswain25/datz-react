@@ -21,8 +21,6 @@ const desktopContainer = css`
 `;
 export default function PublicationMoreRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const { rel_artists, rel_publications, rel_exhibitions, rel_events } = item;
-  console.log(rel_artists);
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div
@@ -50,10 +48,10 @@ export default function PublicationMoreRight({ item }: { item: any }) {
         >
           Related
         </div>
-        <ArtistWidget rel_artists={rel_artists} />
-        <PublicationWidget rel_publications={rel_publications} />
-        <ExhibitionWidget rel_exhibitions={rel_exhibitions} />
-        <EventWidget rel_events={rel_events} />
+        <ArtistWidget rel_artists={item.rel_artists} />
+        <PublicationWidget rel_publications={item.rel_publications} />
+        <ExhibitionWidget rel_exhibitions={item.rel_exhibitions} />
+        <EventWidget rel_events={item.rel_events} />
       </div>
       <div className={bottomBtn37} />
     </section>

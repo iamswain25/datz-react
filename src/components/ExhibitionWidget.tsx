@@ -7,7 +7,7 @@ import Carousel from "react-multi-carousel";
 import useExhibitions from "../utils/useExhibitions";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
-import { firestore } from "../config/firebase";
+import useDocs from "../utils/useDocs";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -74,22 +74,7 @@ export default function ExhibitionWidget({
   rel_exhibitions: string[];
   dark?: boolean;
 }) {
-  const [items, setItems] = React.useState<undefined | any[]>(undefined);
-  React.useEffect(() => {
-    if (!rel_exhibitions) return;
-    if (!rel_exhibitions.length) return;
-    Promise.all(
-      rel_exhibitions?.map((id) =>
-        firestore
-          .collection("artist")
-          .doc(id)
-          .get()
-          .then(({ data, id }) => ({ ...data(), id }))
-      )
-    ).then((arr) => {
-      setItems(arr);
-    });
-  }, [rel_exhibitions]);
+  const items = useDocs("exhibition", rel_exhibitions);
   const list = useExhibitions(items);
   if (!(list && list.length)) {
     return null;
@@ -118,11 +103,7 @@ export default function ExhibitionWidget({
         {list.map((item, i) => {
           const { images, title, id } = item;
           return (
-            <Link
-              key={i}
-              className={afterClass(i)}
-              to={`/exhibition/${id}`}
-            >
+            <Link key={i} className={afterClass(i)} to={`/exhibition/${id}`}>
               <div className={listClass(dark)}>
                 <LazyImage
                   alt={item.title}

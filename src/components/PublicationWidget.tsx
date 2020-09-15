@@ -3,12 +3,11 @@ import { css } from "emotion";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
-
 import usePublications from "../utils/usePublications";
 import LazyImage from "./LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useDesktop from "./useDesktop";
-import { firestore } from "../config/firebase";
+import useDocs from "../utils/useDocs";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -57,21 +56,7 @@ export default function PublicationWidget({
   dark?: boolean;
 }) {
   const isDesktop = useDesktop();
-  const [items, setItems] = React.useState<undefined | any[]>(undefined);
-  React.useEffect(() => {
-    if (!rel_publications) return;
-    Promise.all(
-      rel_publications?.map((id) =>
-        firestore
-          .collection("artist")
-          .doc(id)
-          .get()
-          .then(({ data, id }) => ({ ...data(), id }))
-      )
-    ).then((arr) => {
-      setItems(arr);
-    });
-  }, [rel_publications]);
+  const items = useDocs("publication", rel_publications);
   const list = usePublications(items);
   if (!(list && list.length)) {
     return null;

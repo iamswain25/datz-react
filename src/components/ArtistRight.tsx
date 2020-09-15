@@ -46,9 +46,9 @@ export default function ArtistRight({ item }: { item: any }) {
           />
         </Grid>
       )}
-      <PublicationWidget rel_publications={[]} dark />
-      <ExhibitionWidget rel_exhibitions={[]} dark />
-      <EventWidget rel_events={[]} dark />
+      <PublicationWidget rel_publications={item.rel_publications} dark />
+      <ExhibitionWidget rel_exhibitions={item.rel_exhibitions} dark />
+      <EventWidget rel_events={item.rel_events} dark />
       {!isDesktop && (
         <div
           className={css`
