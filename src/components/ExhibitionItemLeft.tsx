@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import CloseShare from "./CloseShare";
 import { bottomBtn37, paddingH27 } from "./styles";
@@ -24,7 +24,6 @@ const mobileContainer = css`
   ${paddingH27}
 `;
 export default function ExhibitionItemLeft({ item }: { item: any }) {
-  const { id } = useParams();
   const isDesktop = useDesktop();
   const [classes] = useLang("exhibition");
   return (
@@ -52,7 +51,7 @@ export default function ExhibitionItemLeft({ item }: { item: any }) {
         </Linkify>
       </div>
       <Link
-        to={`/exhibition/${id}/readmore`}
+        to={`/exhibition/${item.id}/readmore`}
         className={css`
           border-top: solid 1px #707070;
           ${bottomBtn37}

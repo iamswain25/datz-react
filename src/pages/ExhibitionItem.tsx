@@ -18,7 +18,7 @@ export default function ExhibitionItem() {
       <Header sticky />
       <section className={isDesktop ? desktopContainer : flexcolumn}>
         <ExhibitionItemLeft item={item} />
-        <ItemPhotosRight images={item.images} type="exhibition" />
+        <ItemPhotosRight item={item} type="exhibition" />
       </section>
     </>
   );

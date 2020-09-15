@@ -3,8 +3,7 @@ import { css } from "emotion";
 import { bottomBtn37 } from "./styles";
 import { makeUrl } from "../config/url";
 import { LazyImage } from "react-lazy-images";
-import { Link, useParams } from "react-router-dom";
-// import Logo from "./Logo";
+import { Link } from "react-router-dom";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -33,15 +32,16 @@ const classes = {
   `,
 };
 export default function ItemPhotosRight({
-  images,
+  item,
   type = "publication",
   logo = "D'Ark Room",
 }: {
-  images: string[];
+  item: any;
   type?: string;
   logo?: string;
 }) {
-  const { id } = useParams();
+  if (!item) return null;
+  const { images, id } = item as { images: string[]; id: string };
   return (
     <>
       <section
@@ -49,7 +49,7 @@ export default function ItemPhotosRight({
           flex: 1;
         `}
       >
-        {images.map((src, i) => {
+        {images?.map((src, i) => {
           return (
             <Link to={`/${type}/${id}/images/${i}`} key={i}>
               <div

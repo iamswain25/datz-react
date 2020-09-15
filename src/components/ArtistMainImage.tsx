@@ -6,7 +6,7 @@ import { useGlobalState, LANG } from "../store/useGlobalState";
 export default function ArtistMainImage({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
-  const { name, genre, images } = item;
+  const { name, genre } = item;
   const nameClassEn = css`
     height: 27px;
     font-family: ArnoPro-Display;
@@ -75,7 +75,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
             width: 100%;
           `}
         >
-          <ArtistImageRolling images={images} />
+          <ArtistImageRolling item={item} />
         </div>
       </section>
     </>

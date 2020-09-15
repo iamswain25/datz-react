@@ -4,7 +4,6 @@ import { css } from "emotion";
 import Arrow from "./Arrow";
 import { makeUrl } from "../config/url";
 import { useHistory } from "react-router-dom";
-import useParams from "./useParams";
 import ReactImageGallery from "react-image-gallery";
 function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
   return (
@@ -21,9 +20,9 @@ function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
     />
   );
 }
-export default function ArtistImageRolling({ images }: { images: string[] }) {
+export default function ArtistImageRolling({ item }: { item: any }) {
   const history = useHistory();
-  const { id } = useParams();
+  const images = (item.images || []) as string[];
   const ref = React.useRef<ReactImageGallery>(null);
   return (
     <ImageGallery
@@ -33,7 +32,7 @@ export default function ArtistImageRolling({ images }: { images: string[] }) {
       showNav={true}
       onClick={() =>
         history.replace(
-          `/artist/${id}/images/${ref.current?.getCurrentIndex()}`
+          `/artist/${item.id}/images/${ref.current?.getCurrentIndex()}`
         )
       }
       showThumbnails={false}

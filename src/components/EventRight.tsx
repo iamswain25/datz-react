@@ -11,7 +11,7 @@ import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
 export default function EventRight() {
   const [events] = useCollectionDataOnce<any>(
-    firestore.collection("event").orderBy("order", "desc"),
+    firestore.collection("event").orderBy("order", "desc").limit(8),
     { idField: "id" }
   );
   const list = useEvents(events);
