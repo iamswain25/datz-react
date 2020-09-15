@@ -7,6 +7,7 @@ import { firebaseConfig } from "./firebaseConfig";
 
 Firebase.initializeApp(firebaseConfig);
 const firestore = Firebase.firestore();
+firestore.enablePersistence();
 const auth = Firebase.auth();
 const storage = Firebase.storage();
 Firebase.analytics();
