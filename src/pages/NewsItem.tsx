@@ -6,6 +6,7 @@ import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
 import { paddingH37 } from "../components/styles";
 import { Grid } from "@material-ui/core";
+import useDoc from "../utils/useDoc";
 const desktopContainer = css`
   ${paddingH37}
   height: calc(100vh - 79px);
@@ -14,6 +15,7 @@ const desktopContainer = css`
 `;
 export default function NewsItem() {
   const isDesktop = useDesktop(true);
+  const item = useDoc("news");
   if (isDesktop) {
     return (
       <>
@@ -21,10 +23,10 @@ export default function NewsItem() {
         <section className={desktopContainer}>
           <Grid container spacing={3}>
             <Grid item sm={6}>
-              <NewsItemLeft />
+              <NewsItemLeft item={item} />
             </Grid>
             <Grid item sm={6} container>
-              <NewsItemRight />
+              <NewsItemRight item={item} />
             </Grid>
           </Grid>
         </section>
@@ -34,7 +36,7 @@ export default function NewsItem() {
   return (
     <>
       <ArtistHeader sticky />
-      <NewsItemRight children={<NewsItemLeft />} />
+      <NewsItemRight item={item} children={<NewsItemLeft item={item} />} />
     </>
   );
 }

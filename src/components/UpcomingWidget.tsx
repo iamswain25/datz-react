@@ -73,7 +73,7 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
           </CarouselBtnGroup>
         }
       >
-        {list.map((item, i) => {
+        {list?.map((item, i) => {
           return (
             <Link
               key={i}

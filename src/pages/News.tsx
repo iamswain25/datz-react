@@ -3,13 +3,15 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { paddingH17, paddingH37, marginH17 } from "../components/styles";
 import { Grid } from "@material-ui/core";
-import { useParams, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NewsCard from "../components/NewsCard";
-import { news } from "../@type/news";
 import AboutHeader from "../components/AboutHeader";
 import useNews from "../utils/useNews";
 import BtnTop from "../components/BtnTop";
 import Divider from "../components/Divider";
+import useParams from "../components/useParams";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   notice: "Notice",
@@ -18,7 +20,11 @@ const FILTERS: { [key: string]: string } = {
 export default function News() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop(true);
-  const list = useNews(news);
+  const [items] = useCollectionDataOnce<any>(
+    firestore.collection("news").orderBy("order", "desc"),
+    { idField: "id" }
+  );
+  const list = useNews(items);
   return (
     <>
       <AboutHeader sticky />
@@ -118,10 +124,10 @@ export default function News() {
         </Grid>
         <Grid container alignItems="center" spacing={isDesktop ? 3 : 1}>
           {list
-            .filter((f) =>
+            ?.filter((f) =>
               filter === "all" ? true : f.type === FILTERS[filter]
             )
-            .map((c, i) => (
+            ?.map((c, i) => (
               <Grid key={i} item xs={12} sm={6} lg={4}>
                 <NewsCard item={c} />
               </Grid>

@@ -4,8 +4,6 @@ import useDesktop from "./useDesktop";
 import { paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
 import ShareButtons from "./ShareButtons";
-import useParams from "./useParams";
-import useItemIndex from "../utils/useItemIndex";
 import useLang from "./useLang";
 import Linkify from "./Linkify";
 const stickyContainer = css`
@@ -23,10 +21,14 @@ const mobileContainer = css`
   position: relative;
   ${paddingH27}
 `;
-export default function NewsItemRight({ children }: { children?: any }) {
+export default function NewsItemRight({
+  children,
+  item,
+}: {
+  children?: any;
+  item: any;
+}) {
   const isDesktop = useDesktop();
-  const { id } = useParams();
-  const item = useItemIndex(id, "new");
   const [classes] = useLang("body");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
