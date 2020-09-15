@@ -3,11 +3,11 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
-
 import useNews from "../utils/useNews";
-import { news } from "../@type/news";
 import LazyImage from "./LazyImage";
 import { DEFAULT_COUNT, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
 
 const textClass = (dark = false) => css`
   font-family: BauerGroteskOTW03;
@@ -49,7 +49,11 @@ const responsive = {
   },
 };
 export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
-  const list = useNews(news.slice(0, DEFAULT_COUNT));
+  const [items] = useCollectionDataOnce<any>(
+    firestore.collection("news").orderBy("order", "desc").limit(DEFAULT_COUNT),
+    { idField: "id" }
+  );
+  const list = useNews(items);
   return (
     <div
       className={css`
@@ -75,11 +79,7 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
       >
         {list?.map((item, i) => {
           return (
-            <Link
-              key={i}
-              className={afterClass(i)}
-              to={`/newsitem/${item.address}`}
-            >
+            <Link key={i} className={afterClass(i)} to={`/newsitem/${item.id}`}>
               <div className={listClass(dark)}>
                 <LazyImage
                   alt={item.title}
@@ -101,7 +101,7 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
               </div>
             </Link>
           );
-        })}
+        }) || []}
       </Carousel>
     </div>
   );

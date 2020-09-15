@@ -15,7 +15,7 @@ export default function HomeEventCard({
   item: any;
   type: string;
 }) {
-  const { date, title, body, id } = item;
+  const { date, title, body, id } = item || {};
   const isDesktop = useDesktop();
   const [classes] = useLang(`${type}MainCard`);
   return (
@@ -52,7 +52,7 @@ export default function HomeEventCard({
         >
           <LazyImage
             alt={title}
-            link={item.images[0]}
+            link={item?.images?.[0]}
             placeholder={css`
               position: absolute;
               width: 100%;
@@ -69,7 +69,7 @@ export default function HomeEventCard({
           />
           <Logo
             offLink
-            type={item.type}
+            type={item?.type}
             color="#fff"
             className={css`
               position: absolute;
@@ -98,12 +98,12 @@ export default function HomeEventCard({
             `}
           >
             <div className={classes.date}>
-              {date ?? item.start_date + " - " + item.end_date}
+              {date ?? item?.start_date + " - " + item?.end_date}
             </div>
             <div className={classes.type}>
               {type === "event"
-                ? item.type
-                : exhibitionCurrentPast(item.start_date, item.end_date)}
+                ? item?.type
+                : exhibitionCurrentPast(item?.start_date, item?.end_date)}
             </div>
           </div>
           <div

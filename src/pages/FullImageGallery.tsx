@@ -3,20 +3,21 @@ import { css } from "emotion";
 import ImageGallery from "react-image-gallery";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
-import { makeUrl } from "../config/url";
-import useItemIndex from "../utils/useItemIndex";
 import useParams from "../components/useParams";
+import useDoc from "../utils/useDoc";
+import useStorages from "../components/useStorages";
 export default function FullImageGallery({
   type = "publication",
 }: {
   type: "publication" | "artist" | "event" | "exhibition";
 }) {
-  const { index, id } = useParams();
+  const { index } = useParams();
   const { replace } = useHistory();
-  const item = useItemIndex(id, type);
-
+  const item = useDoc(type);
+  const nullImages = useStorages(item?.images);
+  const images = nullImages?.map((a) => ({ original: a })) || [];
   function onSlideHandler(currentIndex: number) {
-    replace(`/${type}/${id}/images/${currentIndex}`);
+    replace(`/${type}/${item?.id}/images/${currentIndex}`);
   }
   return (
     <section
@@ -34,9 +35,7 @@ export default function FullImageGallery({
       <ImageGallery
         infinite={false}
         startIndex={Number(index)}
-        items={item.images.map((i: string) => ({
-          original: makeUrl(i),
-        }))}
+        items={images}
         showNav={true}
         showThumbnails={false}
         showFullscreenButton={false}
@@ -45,7 +44,7 @@ export default function FullImageGallery({
         autoPlay={false}
         onSlide={onSlideHandler}
         additionalClass="contain-image"
-        onClick={() => replace(`/${type}/${id}`)}
+        onClick={() => replace(`/${type}/${item?.id}`)}
         renderLeftNav={function (onClick, disabled) {
           return (
             <Arrow

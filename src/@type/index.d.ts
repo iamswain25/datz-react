@@ -1,2 +1,29 @@
-import { publications } from "./publications";
-export type Publication = typeof publications[0];
+export interface Publication {
+  address: string;
+  id: number;
+  type: string;
+  edition: string;
+  copies_count: string;
+  title_en: string;
+  artist_en: string;
+  quotes_en: string;
+  body_en: string;
+  notes_en: string;
+  preview_quote_en: string;
+  preview_body_en: string;
+  title_ko: string;
+  artist_ko: string;
+  quotes_ko: string;
+  body_ko: string;
+  notes_ko: string;
+  preview_quote_ko: string;
+  preview_body_ko: string;
+  order_url_en: string;
+  order_url_ko: string;
+  images: string[];
+  rel_artists: number[];
+  rel_publications: never[];
+  rel_exhibitions: number[];
+  rel_events: never[];
+  image_cover: string;
+}

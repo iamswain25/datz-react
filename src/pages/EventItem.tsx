@@ -1,19 +1,17 @@
 import React from "react";
 import EventItemLeftSticky from "../components/EventItemLeftSticky";
 import EventItemRight from "../components/EventItemRight";
-import useParams from "../components/useParams";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
 import { flexrow, paddingH37 } from "../components/styles";
-import useItemIndex from "../utils/useItemIndex";
+import useDoc from "../utils/useDoc";
 const desktopContainer = css`
   ${flexrow}
   ${paddingH37}
 `;
 export default function EventItem() {
-  const { id } = useParams();
-  const item = useItemIndex(id, "event");
+  const item = useDoc("event");
   const isDesktop = useDesktop(true);
   if (isDesktop) {
     return (
