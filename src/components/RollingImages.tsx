@@ -1,7 +1,7 @@
 import React from "react";
 
 import ImageGallery from "react-image-gallery";
-import { makeUrl } from "../config/url";
+import useStorages from "./useStorages";
 export default function RollingImages(props: {
   items: Array<any>;
   className?: string;
@@ -9,7 +9,8 @@ export default function RollingImages(props: {
   children?: (props: { item: any }) => React.ReactNode;
 }) {
   const [index, setIndex] = React.useState(0);
-  const images = props.items.map((a) => ({ original: makeUrl(a.image) }));
+  const nullImages = useStorages(props.items.map((a) => a.image));
+  const images = nullImages?.map((a) => ({ original: a })) || [];
   const item = props.items[index];
   function onslideHandler(index: number) {
     setIndex(index);

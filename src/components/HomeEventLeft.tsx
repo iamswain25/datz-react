@@ -6,8 +6,8 @@ import useBanners from "../utils/useBanners";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
-import { makeUrl } from "../config/url";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import useStorage from "./useStorage";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
@@ -86,20 +86,7 @@ export default function HomeEventLeft() {
                   flex: 1;
                 `}
               >
-                <div
-                  className={css`
-                    background-image: url(${makeUrl(item.image)});
-                    background-position: center;
-                    background-size: cover;
-                    color: #707070;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: stretch;
-                    justify-content: space-between;
-                    padding: 37px 17px;
-                    position: relative;
-                  `}
-                >
+                <Sub image={item.image}>
                   <Link
                     to={item.url || ""}
                     className={css`
@@ -128,12 +115,34 @@ export default function HomeEventLeft() {
                       bottom: ${isDesktop ? 29 : 32}px;
                     `}
                   />
-                </div>
+                </Sub>
               </div>
             );
           })}
         </Carousel>
       </div>
     </section>
+  );
+}
+
+function Sub({ children, image }: React.PropsWithChildren<{ image: string }>) {
+  const img = useStorage(image);
+  return (
+    <div
+      className={css`
+        background-image: url(${img});
+        background-position: center;
+        background-size: cover;
+        color: #707070;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 37px 17px;
+        position: relative;
+      `}
+    >
+      {children}
+    </div>
   );
 }

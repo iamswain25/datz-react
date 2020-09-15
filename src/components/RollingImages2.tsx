@@ -1,14 +1,15 @@
 import React from "react";
 
 import ImageGallery from "react-image-gallery";
-import { makeUrl } from "../config/url";
+import useStorages from "./useStorages";
 export default function RollingImages2(props: {
   items: Array<any>;
   className?: string;
   additionalClass?: string;
   children?: React.ReactNode;
 }) {
-  const images = props.items.map((a) => ({ original: makeUrl(a) }));
+  const nullImages = useStorages(props.items);
+  const images = nullImages?.map((a) => ({ original: a })) || [];
   return (
     <div
       className={props.className}

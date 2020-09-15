@@ -1,12 +1,10 @@
 import React from "react";
 import { css } from "emotion";
-import { Link, useParams } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
-
 import useDesktop from "./useDesktop";
-import { makeUrl } from "../config/url";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import useStorage from "./useStorage";
 const afterClass = (i: number) => css`
   position: relative;
   width: inherit;
@@ -29,21 +27,14 @@ const responsive = {
 };
 export default function EventCoverWidget({
   dark = false,
-  linkDisabled = false,
   images,
-  objectFit = "cover",
-  type = "event",
   fit = "height",
 }: {
   dark?: boolean;
-  linkDisabled?: boolean;
   images: any[];
-  objectFit?: string;
   fit?: string;
-  type?: string;
 }) {
   const isDesktop = useDesktop();
-  const { id } = useParams();
   return (
     <div
       className={`${fit} ${css`
@@ -70,42 +61,37 @@ export default function EventCoverWidget({
           />
         }
       >
-        {images.map((img, i) => {
-          const content = (
-            <div
-              className={css`
-                background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                display: flex;
-                flex: 1;
-              `}
-            >
-              <div
-                className={css`
-                  background-image: url(${makeUrl(img)});
-                  background-position: center;
-                  background-size: cover;
-                  background-repeat: no-repeat;
-                  flex: 1;
-                  height: 100vw;
-                  color: ${dark ? "#ffffff" : "#707070"};
-                `}
-              />
-            </div>
-          );
-          if (linkDisabled) {
-            return (
-              <span key={i} className={afterClass(i)}>
-                {content}
-              </span>
-            );
-          }
-          return (
-            <Link key={i} className={afterClass(i)} to={`/${type}/${id}`}>
-              {content}
-            </Link>
-          );
-        })}
+        {images.map((img, i) => (
+          <span key={i} className={afterClass(i)}>
+            <Sub dark={dark} image={img} />
+          </span>
+        ))}
       </Carousel>
+    </div>
+  );
+}
+
+function Sub({ dark, image }: { dark: boolean; image: string }) {
+  const img = useStorage(image);
+  return (
+    <div
+      className={css`
+        background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+        display: flex;
+        flex: 1;
+      `}
+    >
+      <div
+        className={css`
+          background-image: url(${img});
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          flex: 1;
+          height: 100vw;
+          color: ${dark ? "#ffffff" : "#707070"};
+        `}
+      />
     </div>
   );
 }

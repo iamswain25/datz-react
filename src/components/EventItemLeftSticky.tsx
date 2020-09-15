@@ -23,12 +23,7 @@ export default function EventItemLeftSticky({ images }: { images: string[] }) {
   const isDesktop = useDesktop();
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <EventCoverWidget
-        images={images}
-        type="event"
-        linkDisabled
-        fit={isDesktop ? "height" : "width"}
-      />
+      <EventCoverWidget images={images} fit={isDesktop ? "height" : "width"} />
     </div>
   );
 }

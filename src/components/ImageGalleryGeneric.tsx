@@ -2,9 +2,8 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-
 import Logo from "./Logo";
-import { makeUrl } from "../config/url";
+import useStorages from "./useStorages";
 export default function ImageGalleryGeneric({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
@@ -34,24 +33,22 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
     text-align: center;
     margin-top: ${isDesktop ? 4 : 3}px;
   `;
-  const originalImages = React.useMemo(
-    () => items.map((a) => ({ original: makeUrl(a.image) })),
-    [items]
-  );
+  const nullImages = useStorages(items.map((a) => a.image));
+  const images = nullImages?.map((a) => ({ original: a })) || [];
   const { type = "", title = "", subtitle = "", color = "#fff" } = item;
   return (
     <>
       <ImageGallery
         ref={galleryRef}
         infinite={true}
-        items={originalImages}
+        items={images}
         showNav={false}
         showThumbnails={false}
         showFullscreenButton={false}
         showPlayButton={false}
         showBullets={true}
         autoPlay={true}
-        additionalClass={originalImages.length > 1 ? undefined : "no-bullets"}
+        additionalClass={images.length > 1 ? undefined : "no-bullets"}
         onSlide={onslideHandler}
         slideInterval={5000}
       />

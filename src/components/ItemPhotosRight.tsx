@@ -1,9 +1,8 @@
 import React from "react";
 import { css } from "emotion";
 import { bottomBtn37 } from "./styles";
-import { makeUrl } from "../config/url";
-import { LazyImage } from "react-lazy-images";
 import { Link } from "react-router-dom";
+import LazyImage from "./LazyImage";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -67,29 +66,10 @@ export default function ItemPhotosRight({
               >
                 <LazyImage
                   alt={`image-${i}`}
-                  placeholder={({ ref }) => (
-                    <div ref={ref} className={classes.placeholder} />
-                  )}
-                  src={makeUrl(src)}
-                  actual={({ imageProps }) => (
-                    <img
-                      {...imageProps}
-                      alt={imageProps.alt}
-                      className={classes.img}
-                    />
-                  )}
+                  placeholder={classes.placeholder}
+                  link={src}
+                  img={classes.img}
                 />
-                {/* {i === 0 && (
-                  <Logo
-                    type={logo}
-                    color="#808080"
-                    className={css`
-                      position: absolute;
-                      left: 30px;
-                      bottom: 30px;
-                    `}
-                  />
-                )} */}
               </div>
             </Link>
           );

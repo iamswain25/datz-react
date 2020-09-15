@@ -2,9 +2,9 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import Arrow from "./Arrow";
-import { makeUrl } from "../config/url";
 import { useHistory } from "react-router-dom";
 import ReactImageGallery from "react-image-gallery";
+import useStorages from "./useStorages";
 function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
   return (
     <button
@@ -22,13 +22,14 @@ function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
 }
 export default function ArtistImageRolling({ item }: { item: any }) {
   const history = useHistory();
-  const images = (item.images || []) as string[];
+  const images = useStorages(item.images);
   const ref = React.useRef<ReactImageGallery>(null);
+  if (!images) return null;
   return (
     <ImageGallery
       ref={ref}
       infinite={false}
-      items={images.map((i) => ({ original: makeUrl(i) }))}
+      items={images.map((i) => ({ original: i }))}
       showNav={true}
       onClick={() =>
         history.replace(

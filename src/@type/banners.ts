@@ -7,7 +7,7 @@ export const home = [
     title_ko: "PERU",
     subtitle_ko: "린다 코너 ",
     url: "/publication/2019_peru",
-    image: "/Main/01/01.jpg",
+    image: "/main/01/01.jpg",
     artistLink: "/artist/linda-connor",
   },
   {
@@ -18,7 +18,7 @@ export const home = [
     title_ko: "PERU",
     subtitle_ko: "린다 코너 ",
     url: "/publication/2019_peru",
-    image: "/Main/01/02.jpg",
+    image: "/main/01/02.jpg",
     artistLink: "/artist/linda-connor",
   },
   {
@@ -29,7 +29,7 @@ export const home = [
     title_ko: "우리는 이곳에서",
     subtitle_ko: "김윤숙",
     url: "/publication/2020_here-to-stay",
-    image: "/Main/01/03.jpg",
+    image: "/main/01/03.jpg",
     artistLink: "/artist/yoonsuk-kim",
   },
   {
@@ -40,7 +40,7 @@ export const home = [
     title_ko: "LANDFALL",
     subtitle_ko: "살 테일러 키드",
     url: "/publication/2020_landfall",
-    image: "/Main/01/04.jpg",
+    image: "/main/01/04.jpg",
     artistLink: "/artist/sal-taylor-kydd",
   },
   {
@@ -51,7 +51,7 @@ export const home = [
     title_ko: "모두 다른 하나의 순간들(SE) ",
     subtitle_ko: "아만다 마찬드",
     url: "/publication/2019_nothing-will-ever-be-the-same-again_se",
-    image: "/Main/01/05.jpg",
+    image: "/main/01/05.jpg",
     artistLink: "/artist/amanda-marchand",
   },
   {
@@ -62,7 +62,7 @@ export const home = [
     title_ko: "Offerings(SE)",
     subtitle_ko: "메리 다니엘 홉슨",
     url: "/publication/2019_offerings_se",
-    image: "/Main/01/06.jpg",
+    image: "/main/01/06.jpg",
     artistLink: "/artist/mary-daniel-hobson",
   },
   {
@@ -73,7 +73,7 @@ export const home = [
     title_ko: "REFLECTION",
     subtitle_ko: "2020.9.5 - 2020.11.22",
     url: "/exhibition/2020_reflection",
-    image: "/Main/02/01.jpg",
+    image: "/main/02/01.jpg",
   },
   {
     logo: "Datz Museum of Art",
@@ -83,7 +83,7 @@ export const home = [
     title_ko: "REFLECTION",
     subtitle_ko: "2020.9.5 - 2020.11.22",
     url: "/exhibition/2020_reflection",
-    image: "/Main/02/02.jpg",
+    image: "/main/02/02.jpg",
   },
   {
     logo: "Datz Museum of Art",
@@ -93,7 +93,7 @@ export const home = [
     title_ko: "REFLECTION",
     subtitle_ko: "2020.9.5 - 2020.11.22",
     url: "/exhibition/2020_reflection",
-    image: "/Main/02/03.jpg",
+    image: "/main/02/03.jpg",
   },
   {
     logo: "Datz Museum of Art",
@@ -103,7 +103,7 @@ export const home = [
     title_ko: "REFLECTION",
     subtitle_ko: "2020.9.5 - 2020.11.22",
     url: "/exhibition/2020_reflection",
-    image: "/Main/02/04.jpg",
+    image: "/main/02/04.jpg",
   },
   {
     logo: "D'Ark Room",
@@ -113,7 +113,7 @@ export const home = [
     title_ko: "상상의 기술",
     subtitle_ko: "2020.8.7 - 2020.10.31",
     url: "/exhibition/2020_art-of-imagination",
-    image: "/Main/02/05.jpg",
+    image: "/main/02/05.jpg",
   },
   {
     logo: "D'Ark Room",
@@ -123,7 +123,7 @@ export const home = [
     title_ko: "상상의 기술",
     subtitle_ko: "2020.8.7 - 2020.10.31",
     url: "/exhibition/2020_art-of-imagination",
-    image: "/Main/02/06.jpg",
+    image: "/main/02/06.jpg",
   },
   {
     logo: "D'Ark Room",
@@ -133,7 +133,7 @@ export const home = [
     title_ko: "From South Korea to NYPL: Datz Press",
     subtitle_ko: "2019.9.25",
     url: "/event/2019_nypl",
-    image: "/Main/03/01.jpg",
+    image: "/main/03/01.jpg",
   },
   {
     logo: "Datz Press",
@@ -143,7 +143,7 @@ export const home = [
     title_ko: "자연, 그리고 우리가 이어갈 대화",
     subtitle_ko: "2020.4.20 - 2020.6.12",
     url: "/event//2019_material-memory",
-    image: "/Main/03/02.jpg",
+    image: "/main/03/02.jpg",
   },
   {
     logo: "Datz Press",
@@ -153,7 +153,7 @@ export const home = [
     title_ko: "물질 기억: Material, Memory",
     subtitle_ko: "2019.9.28 - 2019.12.31",
     url: "/event/2020_nature-conversations",
-    image: "/Main/03/03.jpg",
+    image: "/main/03/03.jpg",
   },
 ];
 
@@ -166,7 +166,7 @@ export const leftSide = [
     title_ko: "sun, water, being",
     subtitle_ko: "브라이언 오스틴",
     url: null,
-    image: "/Banner/01.jpg",
+    image: "/banner/publication/01.jpg",
   },
   {
     logo: "Datz Press",
@@ -176,7 +176,7 @@ export const leftSide = [
     title_ko: "Constellation",
     subtitle_ko: "린다 코너",
     url: null,
-    image: "/Banner/02.jpg",
+    image: "/banner/publication/02.jpg",
   },
   {
     logo: "Datz Museum of Art",
@@ -186,7 +186,7 @@ export const leftSide = [
     title_ko: "REFLECTION",
     subtitle_ko: "2020.9.5 - 2020.11.22",
     url: "",
-    image: "/Banner/03.jpg",
+    image: "/banner/exhibition/01.jpg",
   },
   {
     logo: "Datz Press",
@@ -196,7 +196,7 @@ export const leftSide = [
     title_ko: "FNL#25 강연 <선택의 기술>",
     subtitle_ko: "2020.10.30",
     url: null,
-    image: "/Banner/04.jpg",
+    image: "/banner/event/01.jpg",
     color: "#707070",
   },
 ];
@@ -222,7 +222,7 @@ export const about = [
     text_ko:
       "닻프레스는 예술가들과의 이상적인 협업을 통한 독자적인 출판 시스템을 가지고 있습니다. 사진가와 디자이너, 북아티스트가 작가와의 협업을 통해 사진 중심의 아티스트 북과 시각예술 분야의 작품집을 만듭니다.",
     url: "/about/datzpress",
-    image: "/About/01.jpg",
+    image: "/about/banner_datzpress.jpg",
   },
   {
     type: "About",
@@ -233,7 +233,7 @@ export const about = [
     text_ko:
       "닻프레스와 함께 서울에 위치한 다크룸은 사진과 책을 전시하는 프로젝트 공간입니다. 시각예술을 중심으로 보는 것, 사유하는 것, 쉼, 노님, 나눔의 역할을 할 새로운 형태의 복합문화공간을 지향합니다. 작가와의 협업을 통한 북프로젝트, 렉쳐, 아티스트 토크, 포트폴리오 리뷰 등의 다양한 프로그램을 기획하고 있습니다.",
     url: "/about/darkroom",
-    image: "/About/02.jpg",
+    image: "/about/banner_darkroom.jpg",
   },
   {
     type: "About",
@@ -244,7 +244,7 @@ export const about = [
     text_ko:
       "경기도 광주 진새골 숲 속에 위치한 닻미술관은 자연과 예술이 하나가 되고 예술이 삶이 되는 공간입니다. 사진과 책을 중심으로 전시를 기획하고 체험학습을 위한 나무공방, 빛공방, 온실을 운영합니다.",
     url: "/about/datzmuseum",
-    image: "/About/03.jpg",
+    image: "/about/banner_datzmuseum.jpg",
   },
   {
     type: "Message",
@@ -255,7 +255,7 @@ export const about = [
     text_ko:
       "닻의 물리적 공간은 예술가의 일터이자 창조적 영감을 구현하는 공동작업실입니다. 시각예술 분야의 전문성을 바탕으로  삶의 양분이 되는 예술 본연의 순기능을 회복하고자 함께 모였습니다. 닻프레스는 창작, 연구, 전시, 출판, 교육 등으로 예술을 구체화하여 삶 속에 뿌리내리는 건강한 나무로 성장하고자 합니다.",
     url: null,
-    image: "/About/04.jpg",
+    image: "/about/message.jpg",
   },
   {
     type: "Visit",
@@ -296,7 +296,7 @@ export const about = [
     text_ko:
       "닻프레스는 시각예술을 중심으로 한 특별한 책을 만드고 있습니다. 닻프레스의 출판물은 전시와 연계된 자체기획물이거나, 혹은 작가의 제안과 협업의 조건을 통해 진행됩니다. 닻프레스와의 작업을 원하시는 분은 메일을 통해 포트폴리오와 출판 기획서를 보내주시면 검토후에 연락드립니다. 단, 숙련된 소수의 작업자가 일함으로 인해 작업을 신중히 선별하는 점을 양해부탁드립니다. \n\n닻북스\n\n닻북스는 소량제작(Print On Demand)을 위한 책제작 시스템을 갖춘 북 메이킹 스튜디오입니다. 사진작품을 위한 최적의 프린팅, 좋은 재료의 사용, 숙련된 북메이커의 수제작 공정을 통해 책이 완성되며, 개별적인 다양한 제작 옵션으로 창작자와 협업하고 있습니다. 닻북스와의 작업을 원하시는 분은 메일을 통해 견적과 상담을 요청하실 수 있습니다. \n\n주문제작 안내 >",
     url: "https://www.instagram.com/datzbooks/",
-    image: "/About/01.jpg",
+    image: "/about/datzpress/01.jpg",
   },
   {
     type: "Datz Press",
@@ -318,7 +318,7 @@ export const about = [
     text_ko:
       "다크룸은 전시와 서점, 카페가 함께 하는 복합문화공간으로 선별된 아티스트 북과 예술서적을 소개하는 곳입니다. 예술가들과의 협업을 통해 다양한 강연, 아티스트 토크, 포트폴리오 리뷰 등의 프로그램을 진행합니다. 다크룸 내 아카이브룸에는 천여권 이상의 사진관련 서적과 예술관련 dvd를 시청할 수 있습니다. 방문객들의 안전과 편의를 위해 다크룸은 사전 예약제로 운영되고 있습니다. 예약은 전화 또는 다크룸 인스타그램 DM을 통해 가능합니다.\n\n디프론트 스페이스\n\n디프론트 스페이스는 다크룸과 자연스럽게 연결되며 오고 가는 관람객을 적극적으로 초대하는 개방형 전시공간입니다. 다크룸에서 진행하는 다양한 프로젝트는 1층 로비의 전시 공간과 외부 쇼윈도를 통해 먼저 대중에게 가까이 다가갑니다. ",
     url: null,
-    image: "/About/02.jpg",
+    image: "/about/darkroom/01.jpg",
   },
   {
     type: "D'Ark Room",
@@ -339,7 +339,7 @@ export const about = [
     text_ko:
       "경기도 광주 진새골에 위치한 닻미술관은 예술을 통한 창조성과 영성 회복을 기치로 2010년 10월 개관했습니다. 복잡한 도심에서 벗어나 자연과 함께 호흡하면서 내면적인 성찰이 이루어지는 유기적인 공간을 제안합니다. 이곳에 깃든 사람들이 예술적 체험을 함께 나눔으로써 개인의 상상력, 감성, 직관을 회복하고 참된 아름다움에 눈 떠 다시 일상으로 돌아갈 생기를 얻는 치유의 공간으로 자리잡고 있습니다. \n\n닻 아티스트 레지던시\n\n아티스트 레지던시는 자연과 가까이 호흡하며 작업에 집중할 수 있는 진정한 창작의 산실입니다. 레지던시 결과물로 닻미술관 전시나 닻프레스 출판에 함께 참여할 수 있습니다. 사진과 출판 분야를 통해 지속적인 국제교류를 구축해온 닻은 국내외 모든 장르의 예술가에게 열려있는 레지던시를 지향합니다.\n",
     url: "https://www.datzmuseum.org/",
-    image: "/About/03.jpg",
+    image: "/about/datzmuseum/01.jpg",
   },
   {
     type: "Datz Museum of Art",
@@ -368,7 +368,7 @@ export const about = [
     text_ko:
       "본 멤버십은 닻미술관과 닻프레스 통합 연간 멤버십입니다. \n \n여러분의 후원은 더 의미있는 책을 만들고 전시를 기획할 수 있게 합니다. 재능있는 작가들을 발굴하고 창작과 출판의 기회를 제공하며, 어린이 및 청소년 문화 예술 프로그램을 위한 지원금으로 쓰입니다.",
     url: "https://datzpress.com/product/year-membership",
-    image: "/About/05.jpg",
+    image: "/about/support/01.jpg",
   },
   {
     type: "Support",
@@ -415,7 +415,7 @@ export const artists = [
       "닻 커뮤니티가 운영하는 아티스트 프로젝트는 시각 예술 분야의 전문성을 바탕으로 기획자, 작가, 디자이너, 제책가의 이상적인 협업을 지원하는 프로그램입니다.",
     artist_ko: null,
     url: "http://www.datzpress.com/about",
-    image: "/Artist_Project/01.jpg",
+    image: "/artist-project/top/01.jpg",
   },
   {
     type: "Datz Aritst Projects",
@@ -426,7 +426,7 @@ export const artists = [
       "지난 10여년간 전시공간과 함께 독자적인 책제작 스튜디오를 운영하면서 예술가를 위한 이상적인 창작의 산실이 될 수 있는 유기적인 시스템을 구축하였습니다. 국내외 창작자와 전문가들을 매칭하는 교류의 장이자 소통의 허브로서, 전시, 출판, 교육의 다양한 협업의 기회를 제공하여 삶 속에 예술이 건강히 뿌리내릴 수 있는 양질의 토양을 일구어 가고자 합니다.",
     artist_ko: null,
     url: null,
-    image: "/Artist_Project/02.jpg",
+    image: "/artist-project/top/02.jpg",
   },
   {
     type: "BookProjectMain",
@@ -437,7 +437,7 @@ export const artists = [
       "책을 만드는 일은 작가와 기획자, 편집자, 디자이너, 인쇄 및 제책 등 여러 전문가의 협업을 통해 이루어집니다. 이를 필요로 하는 지원자들의 작업을 선별하여 닻프레스와의 출판의 기회가 제공됩니다. 전시의 또 다른 공간으로서의 책, 또는 순수 창작물로서의 아티스트 북 등, 개별의 프로젝트에 따라 각기 다른 협업의 조건이 적용됩니다. 책의 내용과 물성에 대한 아이디어가 담긴 포트폴리오와 제안서를 보내주시면 공정한 과정을 통해 선별하여 협업의 조건을 제안드립니다. 단, 소수의 작업자가 수제작의 공정으로 일하는 책제작 스튜디오의 특성상 매년 한정된 프로젝트만을 진행하게 됩니다. \n\n아래의 메일로 pdf형식의 c.v가 포함된 pdf 포트폴리오와 자유형식의 제안서를 보내주세요.",
     artist_ko: null,
     url: "http://www.datzpress.com/about/datzbooks",
-    image: ["/Artist_Project/03.jpg", "/Artist_Project/04.jpg"],
+    image: ["/artist-project/book/01.jpg", "/artist-project/book/02.jpg"],
   },
   {
     type: "Book Project",
@@ -446,7 +446,7 @@ export const artists = [
     text_ko: "모두 다른 하나의 순간들 ",
     artist_ko: "아만다 마찬드",
     url: null,
-    image: "/Artist_Project/05.jpg",
+    image: "/artist-project/projects/01.jpg",
   },
   {
     type: "Book Project",
@@ -455,7 +455,7 @@ export const artists = [
     text_ko: "Offerings",
     artist_ko: "메리 다니엘 홉슨",
     url: null,
-    image: "/Artist_Project/06.jpg",
+    image: "/artist-project/projects/02.jpg",
   },
   {
     type: "Book Project",
@@ -464,7 +464,7 @@ export const artists = [
     text_ko: "중력과 은총",
     artist_ko: "주상연",
     url: null,
-    image: "/Artist_Project/07.jpg",
+    image: "/artist-project/projects/03.jpg",
   },
   {
     type: "Exhibition",
@@ -475,7 +475,10 @@ export const artists = [
       "전시공간에서는 닻프레스의 출판 컨텐츠와 함께하는 전시가 이루어집니다. \n\n* 두 공간은 북프로젝트의 지원과 연동하여 운영됨으로 별도의 전시지원을 받지 않습니다. ",
     artist_ko: null,
     url: null,
-    image: ["/Artist_Project/08.jpg", "/Artist_Project/09.jpg"],
+    image: [
+      "/artist-project/exhibition/01.jpg",
+      "/artist-project/exhibition/02.jpg",
+    ],
   },
   {
     type: "Exhibition",
@@ -487,9 +490,9 @@ export const artists = [
     artist_ko: null,
     url: null,
     image: [
-      "/Artist_Project/10.jpg",
-      "/Artist_Project/11.jpg",
-      "/Artist_Project/12.jpg",
+      "/artist-project/museum/01.jpg",
+      "/artist-project/museum/02.jpg",
+      "/artist-project/museum/03.jpg",
     ],
   },
   {
@@ -502,9 +505,9 @@ export const artists = [
     artist_ko: null,
     url: null,
     image: [
-      "/Artist_Project/13.jpg",
-      "/Artist_Project/14.jpg",
-      "/Artist_Project/15.jpg",
+      "/artist-project/darkroom/01.jpg",
+      "/artist-project/darkroom/02.jpg",
+      "/artist-project/darkroom/03.jpg",
     ],
   },
   {
@@ -516,7 +519,7 @@ export const artists = [
       "자연과 가까이 호흡할 수 있는 닻미술관의 아티스트 레지던시는 새로운 창작의 에너지에 집중하거나, 장소 특정적 프로젝트를 수행할 수 있는 창작의 산실로서, 닻프레스와의 협업을 통한 출판이나 전시에 참여할 수 있습니다. 특히 사진예술과 출판분야의 지속적인 국제교류를 통해 시작된 레지던시 프로그램은 국적, 종교, 성별, 학력에 관계없이 모든 국내외 예술가에게 열려있습니다. ",
     artist_ko: "",
     url: "https://datzmuseum.org/DAR\nhttps://www.datzmuseum.org/blog",
-    image: "/Artist_Project/16.jpg",
+    image: "/artist-project/residency/01.jpg",
   },
   {
     type: "Datz Artist Residency",
@@ -525,7 +528,7 @@ export const artists = [
     text_ko: "레지던스",
     artist_ko: "",
     url: null,
-    image: "/Artist_Project/17.jpg",
+    image: "/artist-project/facilities/01.jpg",
   },
   {
     type: "Datz Artist Residency",
@@ -534,7 +537,7 @@ export const artists = [
     text_ko: "스튜디오",
     artist_ko: "",
     url: null,
-    image: "/Artist_Project/18.jpg",
+    image: "/artist-project/facilities/02.jpg",
   },
   {
     type: "Datz Artist Residency",
@@ -543,7 +546,7 @@ export const artists = [
     text_ko: "갤러리",
     artist_ko: "",
     url: null,
-    image: "/Artist_Project/19.jpg",
+    image: "/artist-project/facilities/03.jpg",
   },
 ];
 

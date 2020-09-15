@@ -4,8 +4,8 @@ import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
-import { makeUrl } from "../config/url";
 import { Link } from "react-router-dom";
+import useStorages from "./useStorages";
 export default function FullPageRollingImages({
   style,
   items,
@@ -14,8 +14,8 @@ export default function FullPageRollingImages({
   style?: React.CSSProperties;
 }) {
   const isDesktop = useDesktop(false);
-  const images =
-    (items && items.map((a) => ({ original: makeUrl(a.image) }))) || [];
+  const nullImages = useStorages(items.map((a) => a.image));
+  const images = nullImages?.map((a) => ({ original: a })) || [];
   const [index, setIndex] = React.useState(0);
   const item = items[index];
   const galleryRef = React.useRef<ImageGallery | null>(null);

@@ -1,0 +1,12 @@
+import React from "react";
+import { storage } from "../config/firebase";
+export default function useStorage(path: string) {
+  const [image, setImage] = React.useState<undefined | string>(undefined);
+  React.useEffect(() => {
+    storage
+      .ref(path)
+      .getDownloadURL()
+      .then((url) => setImage(url));
+  }, [path]);
+  return image;
+}

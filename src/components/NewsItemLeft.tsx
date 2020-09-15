@@ -34,9 +34,7 @@ export default function NewsItemLeft() {
       }
     >
       <EventCoverWidget
-        linkDisabled
         dark
-        type="newsitem"
         images={item.images}
         fit={isDesktop ? "height" : "width"}
       />
