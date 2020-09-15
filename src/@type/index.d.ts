@@ -1,6 +1,7 @@
 export interface Publication {
+  created_at: firebase.firestore.Timestamp;
   address: string;
-  id: number;
+  id: string;
   type: string;
   edition: string;
   copies_count: string;
@@ -25,5 +26,71 @@ export interface Publication {
   rel_publications: never[];
   rel_exhibitions: number[];
   rel_events: never[];
+  image_cover: string;
+}
+export interface Event {
+  created_at: firebase.firestore.Timestamp;
+  address: string;
+  id: string;
+  logo: string;
+  type: string;
+  date: string;
+  place_en: string;
+  title_en: string;
+  body_en: string;
+  place_ko: string;
+  title_ko: string;
+  body_ko: string;
+  images: string[];
+}
+export interface Exhibition {
+  created_at: firebase.firestore.Timestamp;
+  address: string;
+  id: string;
+  type: string;
+  visit_url: string;
+  start_date: string;
+  end_date: string;
+  title_en: string;
+  body_en: string;
+  notes_en: string;
+  preview_body_en: string;
+  title_ko: string;
+  body_ko: string;
+  notes_ko: string;
+  preview_body_ko: string;
+  images: string[];
+  rel_artists: number[];
+  rel_publications: number[];
+  rel_events: number[];
+}
+export interface Artists {
+  created_at: firebase.firestore.Timestamp;
+  address: string;
+  id: string;
+  genre: string;
+  name_en: string;
+  bio_en: string;
+  name_ko: string;
+  bio_ko: string;
+  homepage: string;
+  images: string[];
+  rel_publications: number[];
+  rel_exhibitions: number[];
+  rel_events: number[];
+}
+export interface News {
+  created_at: firebase.firestore.Timestamp;
+  address: string;
+  id: string;
+  type: string;
+  date: string;
+  place_en: string;
+  title_en: string;
+  body_en: string;
+  place_ko: string;
+  title_ko: string;
+  body_ko: string;
+  images: string[];
   image_cover: string;
 }

@@ -1,6 +1,5 @@
 import { useGlobalState, LANG } from "../store/useGlobalState";
-import { events } from "../@type/events";
-type Event = typeof events[0];
+import { Event } from "../@type";
 export default function useEvents(items?: Event[]) {
   const [lang] = useGlobalState(LANG);
   if (!items) {
