@@ -4,20 +4,21 @@ import useDesktop from "../components/useDesktop";
 import { paddingH17, paddingH37, marginH18 } from "../components/styles";
 import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
-import { useParams, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ViewAllCard from "../components/ViewAllCard";
 import useExhibitions from "../utils/useExhibitions";
 import { filterExhibitionPast } from "../utils/datefns";
 import BtnTop from "../components/BtnTop";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
+import useParams from "../components/useParams";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   darkroom: "D'Ark Room",
   museum: "Datz Museum of Art",
 };
 export default function Exhibitions() {
-  const { filter = "all" } = useParams<{ filter: string }>();
+  const { filter = "all" } = useParams();
   const [exhibitions] = useCollectionDataOnce<any>(
     firestore.collection("exhibition").orderBy("order", "desc"),
     { idField: "id" }

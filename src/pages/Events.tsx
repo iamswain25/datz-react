@@ -4,11 +4,13 @@ import useDesktop from "../components/useDesktop";
 import { paddingH17, paddingH37, marginH18 } from "../components/styles";
 import ArtistHeader from "../components/ArtistHeader";
 import { Grid } from "@material-ui/core";
-import { useParams, NavLink } from "react-router-dom";
-import { events } from "../@type/events";
+import { NavLink } from "react-router-dom";
 import ViewAllCard from "../components/ViewAllCard";
 import useEvents from "../utils/useEvents";
 import BtnTop from "../components/BtnTop";
+import useParams from "../components/useParams";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   talk: "Artist Talk / Lecture",
@@ -18,7 +20,11 @@ const FILTERS: { [key: string]: string } = {
 export default function Events() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop(true);
-  const list = useEvents(events.slice(2));
+  const [events] = useCollectionDataOnce<any>(
+    firestore.collection("event").orderBy("order", "desc"),
+    { idField: "id" }
+  );
+  const list = useEvents(events?.slice(2));
   return (
     <>
       <ArtistHeader sticky closeTo="/event" />
