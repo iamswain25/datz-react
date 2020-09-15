@@ -3,13 +3,10 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
 import { useGlobalState, LANG } from "../store/useGlobalState";
-import useParams from "./useParams";
-import useItemIndex from "../utils/useItemIndex";
-export default function ArtistMainImage() {
+export default function ArtistMainImage({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [lang] = useGlobalState(LANG);
-  const { address } = useParams();
-  const { name, genre, images } = useItemIndex(address, "artist");
+  const { name, genre, images } = item;
   const nameClassEn = css`
     height: 27px;
     font-family: ArnoPro-Display;

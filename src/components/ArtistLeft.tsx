@@ -1,10 +1,8 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import useParams from "./useParams";
 import Linkify from "./Linkify";
 import useLang from "./useLang";
-import useItemIndex from "../utils/useItemIndex";
 const stickyContainer = css`
   border-top: 1px solid #ffffff;
   padding-top: 43px;
@@ -21,11 +19,10 @@ const mobileContainer = css`
   position: relative;
   color: #ffffff;
 `;
-export default function ArtistLeft() {
+export default function ArtistLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistLeft");
-  const { address } = useParams();
-  const { homepage, bio } = useItemIndex(address, "artist");
+  const { homepage, bio } = item;
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <section

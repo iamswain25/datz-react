@@ -5,10 +5,8 @@ import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
 import BtnBack from "./BtnBack";
-import useParams from "./useParams";
 import { Grid } from "@material-ui/core";
 import Linkify from "./Linkify";
-import useItemIndex from "../utils/useItemIndex";
 import Divider from "./Divider";
 const mobileContainer = css`
   flex: 1;
@@ -24,10 +22,9 @@ const desktopContainer = css`
   border-top: 1px solid #ffffff;
   margin-bottom: 36px;
 `;
-export default function ArtistRight() {
+export default function ArtistRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const { address } = useParams();
-  const { homepage } = useItemIndex(address, "artist");
+  const { homepage } = item;
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       {!isDesktop && (

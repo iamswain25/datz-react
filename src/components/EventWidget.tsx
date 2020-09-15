@@ -116,9 +116,9 @@ export default function EventWidget({
         }
       >
         {list.map((item, i) => {
-          const { images, title, address } = item;
+          const { images, title, id } = item;
           return (
-            <Link key={i} className={afterClass(i)} to={`/event/${address}`}>
+            <Link key={i} className={afterClass(i)} to={`/event/${id}`}>
               <div className={listClass(dark)}>
                 <LazyImage
                   alt={item.title}

@@ -99,11 +99,11 @@ export default function PublicationWidget({
           }
         >
           {list.map((item, i) => {
-            const { image_cover, title, address } = item;
+            const { image_cover, title, id } = item;
             return (
               <Link
                 key={i}
-                to={`/publication/${address}`}
+                to={`/publication/${id}`}
                 className={css`
                   display: flex;
                   flex-direction: column;

@@ -24,7 +24,7 @@ const mobileContainer = css`
   ${paddingH27}
 `;
 export default function ExhibitionItemLeft({ item }: { item: any }) {
-  const { address } = useParams();
+  const { id } = useParams();
   const isDesktop = useDesktop();
   const [classes] = useLang("exhibition");
   return (
@@ -52,7 +52,7 @@ export default function ExhibitionItemLeft({ item }: { item: any }) {
         </Linkify>
       </div>
       <Link
-        to={`/exhibition/${address}/readmore`}
+        to={`/exhibition/${id}/readmore`}
         className={css`
           border-top: solid 1px #707070;
           ${bottomBtn37}

@@ -2,20 +2,21 @@ import React from "react";
 import { css } from "emotion";
 import ImageGallery from "react-image-gallery";
 import Arrow from "../components/Arrow";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { makeUrl } from "../config/url";
 import useItemIndex from "../utils/useItemIndex";
+import useParams from "../components/useParams";
 export default function FullImageGallery({
   type = "publication",
 }: {
   type: "publication" | "artist" | "event" | "exhibition";
 }) {
-  const { index, address } = useParams();
+  const { index, id } = useParams();
   const { replace } = useHistory();
-  const item = useItemIndex(address, type);
+  const item = useItemIndex(id, type);
 
   function onSlideHandler(currentIndex: number) {
-    replace(`/${type}/${address}/images/${currentIndex}`);
+    replace(`/${type}/${id}/images/${currentIndex}`);
   }
   return (
     <section
@@ -44,7 +45,7 @@ export default function FullImageGallery({
         autoPlay={false}
         onSlide={onSlideHandler}
         additionalClass="contain-image"
-        onClick={() => replace(`/${type}/${address}`)}
+        onClick={() => replace(`/${type}/${id}`)}
         renderLeftNav={function (onClick, disabled) {
           return (
             <Arrow

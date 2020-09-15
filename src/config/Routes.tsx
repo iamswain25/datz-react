@@ -42,17 +42,17 @@ export default function Routes() {
           <Route exact path="/exhibition" component={Exhibition} />
           <Route
             exact
-            path="/publication/:address"
+            path="/publication/:id"
             component={PublicationItem}
           />
           <Route
             exact
-            path="/publication/:address/images/:index"
+            path="/publication/:id/images/:index"
             render={() => <FullImageGallery type="publication" />}
           />
           <Route
             exact
-            path="/exhibition/:address/images/:index"
+            path="/exhibition/:id/images/:index"
             render={() => <FullImageGallery type="exhibition" />}
           />
 
@@ -64,25 +64,25 @@ export default function Routes() {
             <Redirect to="/exhibitions/all" />
           </Route>
 
-          <Route exact path="/event/:address" component={EventItem} />
-          <Route exact path="/exhibition/:address" component={ExhibitionItem} />
+          <Route exact path="/event/:id" component={EventItem} />
+          <Route exact path="/exhibition/:id" component={ExhibitionItem} />
           <Route
             exact
-            path="/publication/:address/readmore"
+            path="/publication/:id/readmore"
             component={PublicationReadmore}
           />
           <Route
             exact
-            path="/exhibition/:address/readmore"
+            path="/exhibition/:id/readmore"
             component={ExhibitionReadmore}
           />
-          <Route exact path="/artist/:address" component={ArtistPage} />
+          <Route exact path="/artist/:id" component={ArtistPage} />
           <Route exact path="/artist" component={ArtistProject} />
           <Route exact path="/login" component={Signin} />
           <PrivateRoute path="/admin" component={AdminHome} />
           <Route
             exact
-            path="/artist/:address/images/:index"
+            path="/artist/:id/images/:index"
             render={() => <FullImageGallery type="artist" />}
           />
           <Route exact path="/events/:filter" component={Events} />
@@ -98,7 +98,7 @@ export default function Routes() {
             <Redirect to="/news/all" />
           </Route>
           <Route exact path="/news/:filter" component={News} />
-          <Route exact path="/newsitem/:address" component={NewsItem} />
+          <Route exact path="/newsitem/:id" component={NewsItem} />
           <Route path="*">
             <Redirect to="/" />
           </Route>

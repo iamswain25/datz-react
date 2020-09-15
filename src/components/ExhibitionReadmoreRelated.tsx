@@ -4,9 +4,8 @@ import useDesktop from "./useDesktop";
 import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import EventWidget from "./EventWidget";
-import useParams from "./useParams";
 import { bottomBtn37 } from "./styles";
-import useItemIndex from "../utils/useItemIndex";
+import useDoc from "../utils/useDoc";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -22,8 +21,7 @@ const desktopContainer = css`
 `;
 export default function ExhibitionReadmoreRelated() {
   const isDesktop = useDesktop();
-  const { address } = useParams();
-  const { artists } = useItemIndex(address, "exhibition");
+  const item = useDoc("exhibition");
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div
@@ -51,9 +49,9 @@ export default function ExhibitionReadmoreRelated() {
         >
           Related
         </div>
-        <ArtistWidget rel_artists={artists} />
-        <PublicationWidget rel_publications={[]} />
-        <EventWidget rel_events={[]} />
+        <ArtistWidget rel_artists={item.rel_artists} />
+        <PublicationWidget rel_publications={item.rel_publications} />
+        <EventWidget rel_events={item.rel_events} />
       </div>
       <div className={bottomBtn37} />
     </section>

@@ -23,7 +23,7 @@ function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
 }
 export default function ArtistImageRolling({ images }: { images: string[] }) {
   const history = useHistory();
-  const { address } = useParams();
+  const { id } = useParams();
   const ref = React.useRef<ReactImageGallery>(null);
   return (
     <ImageGallery
@@ -33,7 +33,7 @@ export default function ArtistImageRolling({ images }: { images: string[] }) {
       showNav={true}
       onClick={() =>
         history.replace(
-          `/artist/${address}/images/${ref.current?.getCurrentIndex()}`
+          `/artist/${id}/images/${ref.current?.getCurrentIndex()}`
         )
       }
       showThumbnails={false}

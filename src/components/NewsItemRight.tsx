@@ -25,8 +25,8 @@ const mobileContainer = css`
 `;
 export default function NewsItemRight({ children }: { children?: any }) {
   const isDesktop = useDesktop();
-  const { address } = useParams();
-  const item = useItemIndex(address, "new");
+  const { id } = useParams();
+  const item = useItemIndex(id, "new");
   const [classes] = useLang("body");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>

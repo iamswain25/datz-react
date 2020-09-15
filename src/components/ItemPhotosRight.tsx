@@ -41,7 +41,7 @@ export default function ItemPhotosRight({
   type?: string;
   logo?: string;
 }) {
-  const { address } = useParams();
+  const { id } = useParams();
   return (
     <>
       <section
@@ -51,7 +51,7 @@ export default function ItemPhotosRight({
       >
         {images.map((src, i) => {
           return (
-            <Link to={`/${type}/${address}/images/${i}`} key={i}>
+            <Link to={`/${type}/${id}/images/${i}`} key={i}>
               <div
                 className={css`
                   position: relative;

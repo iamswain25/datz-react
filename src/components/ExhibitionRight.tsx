@@ -18,7 +18,10 @@ import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 export default function ExhibitionRight() {
   const isDesktop = useDesktop();
   const [exhibitions] = useCollectionDataOnce<any>(
-    firestore.collection("exhibition").orderBy("order", "desc"),
+    firestore
+      .collection("exhibition")
+      .orderBy("order", "desc")
+      .limit(DEFAULT_COUNT + 4),
     { idField: "id" }
   );
   const list = useExhibitions(exhibitions);

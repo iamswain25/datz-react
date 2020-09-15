@@ -50,7 +50,7 @@ export default function HomeEventWidget({
   type?: string;
 }) {
   const isDesktop = useDesktop();
-  const { address } = useParams();
+  const { id } = useParams();
   return (
     <div
       className={`${fit} ${css`
@@ -97,7 +97,7 @@ export default function HomeEventWidget({
             );
           }
           return (
-            <Link key={i} className={afterClass(i)} to={`/${type}/${address}`}>
+            <Link key={i} className={afterClass(i)} to={`/${type}/${id}`}>
               {content}
             </Link>
           );

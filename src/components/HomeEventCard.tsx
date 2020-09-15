@@ -15,12 +15,12 @@ export default function HomeEventCard({
   item: any;
   type: string;
 }) {
-  const { date, title, body, address } = item;
+  const { date, title, body, id } = item;
   const isDesktop = useDesktop();
   const [classes] = useLang(`${type}MainCard`);
   return (
     <Link
-      to={`/${type}/${address}`}
+      to={`/${type}/${id}`}
       className={css`
         flex: 1;
         min-height: 0;

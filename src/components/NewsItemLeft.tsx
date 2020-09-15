@@ -17,8 +17,8 @@ const stickyContainer = css`
 `;
 export default function NewsItemLeft() {
   const isDesktop = useDesktop();
-  const { address } = useParams();
-  const item = useItemIndex(address, "new");
+  const { id } = useParams();
+  const item = useItemIndex(id, "new");
   return (
     <section
       className={

@@ -11,22 +11,23 @@ import {
   flexrow,
   flexcolumn,
 } from "../components/styles";
+import useDoc from "../utils/useDoc";
 
 const bgContainer = css`
   background-color: #afafaf;
 `;
 export default function ArtistPage() {
   const isDesktop = useDesktop(true);
-
+  const item = useDoc("artist");
   return (
     <>
       <div className={bgContainer}>
         <ArtistHeader sticky shared />
         <div className={isDesktop ? paddingH55 : paddingH17}>
-          <ArtistMainImage />
+          <ArtistMainImage item={item} />
           <section className={isDesktop ? flexrow : flexcolumn}>
-            <ArtistLeft />
-            <ArtistRight />
+            <ArtistLeft item={item} />
+            <ArtistRight item={item} />
           </section>
         </div>
       </div>

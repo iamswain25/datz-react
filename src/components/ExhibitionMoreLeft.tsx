@@ -1,14 +1,13 @@
 import React from "react";
 import { css } from "emotion";
-import useParams from "./useParams";
 import useDesktop from "./useDesktop";
 import DatzmuseumOrder from "./DatzmuseumOrder";
 import CloseShare from "./CloseShare";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
-import useItemIndex from "../utils/useItemIndex";
 import BtnBack from "./BtnBack";
+import useDoc from "../utils/useDoc";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -28,12 +27,11 @@ const mobileContainer = css`
 
 export default function ExhibitionMoreLeft() {
   const isDesktop = useDesktop();
-  const { address } = useParams();
-  const item = useItemIndex(address, "exhibition");
+  const item = useDoc("exhibition");
   const [classes] = useLang("exhibition");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <CloseShare close={`/exhibition/${address}`} />
+      <CloseShare close={`/exhibition/${item.id}`} />
       <DatzmuseumOrder order={item.visit_url} logo={item.type} />
       <section
         className={css`
