@@ -40,11 +40,7 @@ export default function Routes() {
           <Route exact path="/" component={Home} />
           <Route exact path="/publication" component={Publication} />
           <Route exact path="/exhibition" component={Exhibition} />
-          <Route
-            exact
-            path="/publication/:id"
-            component={PublicationItem}
-          />
+          <Route exact path="/publication/:id" component={PublicationItem} />
           <Route
             exact
             path="/publication/:id/images/:index"
@@ -92,7 +88,10 @@ export default function Routes() {
           <Route exact path="/about/darkroom" component={AboutDarkroom} />
           <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/search" component={Search} />
+          <Route exact path="/search/:filter" component={Search} />
+          <Route exact path="/search">
+            <Redirect to="/search/all" />
+          </Route>
           <Route exact path="/support" component={Support} />
           <Route exact path="/news">
             <Redirect to="/news/all" />

@@ -17,8 +17,9 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
           "/contact",
           "/support",
           "/news",
-          "/news/all",
           "/news/:filter",
+          "/search",
+          "/search/:filter",
           "/newsitem/:address",
         ]}
         render={() => (

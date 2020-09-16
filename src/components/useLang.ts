@@ -385,5 +385,5 @@ const classes: { [key: string]: any } = {
 export default function useLang(type = "exhibition") {
   const [lang] = useGlobalState(LANG);
   const en = lang !== "ko";
-  return [classes[type](en), en];
+  return [classes[type](en), en, lang];
 }
