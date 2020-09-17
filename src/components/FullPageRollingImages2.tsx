@@ -87,7 +87,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         `}
       >
         <Link
-          to={item?.url}
+          to={item?.url || ""}
           className={css`
             display: flex;
             flex-direction: column;
@@ -109,7 +109,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
           <div className={authorClass}>{subtitle}</div>
         </Link>
         <Link
-          to={item?.url}
+          to={item?.url || ""}
           className={css`
             display: flex;
             flex: 1;

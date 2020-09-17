@@ -4,7 +4,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 import useStorages from "./useStorages";
-export default function ImageGalleryGeneric({ items }: { items: any[] }) {
+export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
   const item = items[index];
@@ -35,7 +35,7 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
   `;
   const nullImages = useStorages(items.map((a) => a.image));
   const images = nullImages?.map((a) => ({ original: a })) || [];
-  const { type = "", title = "", subtitle = "", color = "#fff" } = item;
+  const { type = "", title = "", subtitle = "", color = "#fff" } = item || {};
   return (
     <>
       <ImageGallery
@@ -91,7 +91,7 @@ export default function ImageGalleryGeneric({ items }: { items: any[] }) {
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{subtitle}</div>
         <Logo
-          type={item.logo}
+          type={item?.logo}
           color={color}
           className={css`
             bottom: ${isDesktop ? 29 : 25}px;

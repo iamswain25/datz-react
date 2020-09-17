@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ImageGalleryGeneric from "./ImageGalleryGeneric";
-import useBanners from "../utils/useBanners";
+import useCollectionWhere from "../utils/useCollectionWhere";
 const stickyContainer = css`
   align-self: flex-start;
   position: sticky;
@@ -24,7 +24,7 @@ const mobileContainer = css`
 `;
 export default function PublicationLeft() {
   const isDesktop = useDesktop();
-  const items = useBanners("leftSide", "Upcoming Book");
+  const items = useCollectionWhere("banner", "publication");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <ImageGalleryGeneric items={items} />
