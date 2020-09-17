@@ -263,7 +263,7 @@ export default function Search() {
               return (
                 <NavLink
                   key={f}
-                  to={`/search/${f}`}
+                  to={`/search/${f}/${text}`}
                   replace
                   activeClassName={css`
                     color: #ffffff;
