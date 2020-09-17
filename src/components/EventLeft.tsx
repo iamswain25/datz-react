@@ -11,6 +11,7 @@ const stickyContainer = css`
   top: 79px;
   height: calc(100vh - 79px - 37px);
   min-width: 384px;
+  width: 384px;
   margin-right: 22px;
   .image-gallery .image-gallery-bullets .image-gallery-bullet.active {
     background-color: #cccccc;
