@@ -61,11 +61,11 @@ export default function EventCoverWidget({
           />
         }
       >
-        {images.map((img, i) => (
+        {images?.map((img, i) => (
           <span key={i} className={afterClass(i)}>
             <Sub dark={dark} image={img} />
           </span>
-        ))}
+        )) || []}
       </Carousel>
     </div>
   );
