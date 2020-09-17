@@ -1,6 +1,6 @@
 import React from "react";
 import Headroom from "react-headroom";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
@@ -117,14 +117,8 @@ export default function Header({
         `}
       >
         {isDesktop && (
-          <>
-            <span
-              className={css`
-                margin: 0;
-              `}
-            >
-              Search
-            </span>
+          <Link to="/search">
+            <span>Search</span>
             <input
               type="text"
               value={text}
@@ -138,7 +132,7 @@ export default function Header({
                 margin-bottom: 7px;
               `}
             />
-          </>
+          </Link>
         )}
         <button
           className={css`
@@ -169,11 +163,15 @@ export default function Header({
         </button>
         {!isDesktop && (
           <>
-            <Search
-              className={css`
-                margin-right: 20px;
-              `}
-            />
+            <Link to="/search">
+              <Search
+                className={css`
+                  margin-right: 20px;
+                  width: 15px;
+                  height: 15px;
+                `}
+              />
+            </Link>
             <HamburgerButton
               open={isOpen}
               onClick={openHandler}

@@ -124,12 +124,16 @@ export default function AboutHeader({
         </button>
         {!isDesktop && (
           <>
-            <Search
-              color={colors.color}
-              className={css`
-                margin-right: 20px;
-              `}
-            />
+            <Link to="/search">
+              <Search
+                color={colors.color}
+                className={css`
+                width: 15px;
+                      height: 15px;
+                  margin-right: 20px;
+                `}
+              />
+            </Link>
             <HamburgerButton
               open={isOpen}
               onClick={openHandler}

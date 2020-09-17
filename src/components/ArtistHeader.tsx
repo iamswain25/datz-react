@@ -9,6 +9,7 @@ import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
+import { Link } from "react-router-dom";
 const headerText = css`
   font-family: BauerGroteskOTW03;
   font-size: 16px;
@@ -66,7 +67,7 @@ export default function ArtistHeader({
         `}
       >
         {isDesktop && (
-          <>
+          <Link to="/search">
             <span
               className={css`
                 font-size: 16px;
@@ -89,7 +90,7 @@ export default function ArtistHeader({
                 margin-bottom: 7px;
               `}
             />
-          </>
+          </Link>
         )}
         <button
           className={css`
@@ -128,12 +129,16 @@ export default function ArtistHeader({
         </button>
         {!isDesktop && (
           <>
-            <Search
-              color={isWhite ? "#707070" : "#ffffff"}
-              className={css`
-                margin-right: 20px;
-              `}
-            />
+            <Link to="/search">
+              <Search
+                color={isWhite ? "#707070" : "#ffffff"}
+                className={css`
+                  margin-right: 20px;
+                  width: 15px;
+                      height: 15px;
+                `}
+              />
+            </Link>
             <HamburgerButton
               open={isOpen}
               onClick={openHandler}
