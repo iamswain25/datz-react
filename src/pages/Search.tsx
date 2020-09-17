@@ -329,6 +329,11 @@ export default function Search() {
                       margin-top: 10px;
                       font-size: 17px;
                       line-height: 1.47;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      display: -webkit-box;
+                      -webkit-line-clamp: 6;
+                      -webkit-box-orient: vertical;
                     `}
                   >
                     <p
@@ -348,7 +353,7 @@ export default function Search() {
             );
           })}
         </ul>
-        <BtnTop full color="#fff" />
+        {result?.hits?.length > 5 && <BtnTop full color="#fff" />}
       </section>
     </main>
   );
