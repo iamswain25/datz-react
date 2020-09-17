@@ -50,7 +50,7 @@ export default function FullPageRollingImages({
     text-align: center;
     margin-top: ${isDesktop ? 4 : 3}px;
   `;
-  const { type, title, subtitle, color = "#5d5d5d", logo } = item;
+  const { type, title, subtitle, color = "#5d5d5d", logo } = item || {};
   return (
     <div
       style={{
@@ -102,7 +102,7 @@ export default function FullPageRollingImages({
           `}
         >
           <Link
-            to={item.url}
+            to={item?.url || ""}
             className={css`
               display: flex;
               flex-direction: column;
@@ -120,13 +120,11 @@ export default function FullPageRollingImages({
               `}
             />
             <div className={titleClass}>{title}</div>
-          </Link>
-          <Link to={item.artistLink}>
             <div className={authorClass}>{subtitle}</div>
           </Link>
         </div>
         <Link
-          to={item.url}
+          to={item?.url || ""}
           className={css`
             display: flex;
             flex: 1;

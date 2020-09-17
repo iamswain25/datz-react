@@ -2,7 +2,7 @@ import { useGlobalState, LANG } from "../store/useGlobalState";
 import * as types from "../@type/banners";
 
 export default function useBanners(
-  page: "home" | "leftSide" | "about" | "publications" = "home",
+  page: "leftSide" | "about" | "publications" = "leftSide",
   type?: string
 ) {
   const [lang] = useGlobalState(LANG);

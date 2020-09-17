@@ -22,7 +22,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
   function mouseLeaveHandler() {
     galleryRef.current?.play();
   }
-  const { type, title, subtitle, color = "#fff", logo } = item;
+  const { type, title, subtitle, color = "#fff", logo } = item || {};
   const typeClass = css`
     font-family: BauerGroteskOTW03;
     font-size: ${isDesktop ? 19 : 16}px;
@@ -87,7 +87,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         `}
       >
         <Link
-          to={item.url}
+          to={item?.url}
           className={css`
             display: flex;
             flex-direction: column;
@@ -109,7 +109,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
           <div className={authorClass}>{subtitle}</div>
         </Link>
         <Link
-          to={item.url}
+          to={item?.url}
           className={css`
             display: flex;
             flex: 1;

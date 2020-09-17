@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
-import useBanners from "../utils/useBanners";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
@@ -18,9 +17,8 @@ const responsive = {
     items: 1,
   },
 };
-export default function HomeEventLeft() {
+export default function HomeEventLeft({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
-  const items = useBanners("home", "Past Event");
   const typeClass = css`
     font-family: BauerGroteskOTW03;
     font-size: ${isDesktop ? 19 : 16}px;

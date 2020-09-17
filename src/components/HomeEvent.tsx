@@ -3,7 +3,7 @@ import { css } from "emotion";
 import HomeEventLeft from "./HomeEventLeft";
 import HomeEventRight from "./HomeEventRight";
 import useDesktop from "./useDesktop";
-export default function HomeEvent() {
+export default function HomeEvent({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   return (
     <div
@@ -17,7 +17,7 @@ export default function HomeEvent() {
       `}
     >
       {isDesktop ? (
-        <HomeEventLeft />
+        <HomeEventLeft items={items} />
       ) : (
         <div
           className={css`
@@ -30,7 +30,7 @@ export default function HomeEvent() {
             padding-top: 0;
           `}
         >
-          <HomeEventLeft />
+          <HomeEventLeft items={items} />
         </div>
       )}
       <section
