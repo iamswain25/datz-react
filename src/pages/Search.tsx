@@ -42,14 +42,13 @@ export default function Search() {
   const [isOpen, setOpen] = React.useState(false);
   const goBack = useBtnBack();
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setText(e.currentTarget.value);
+    const t = e.currentTarget.value;
+    setText(t);
+    history.replace(`/search/${filter}/${t}`);
   }
   function openHandler() {
     setOpen(!isOpen);
   }
-  React.useEffect(() => {
-    history.replace(`/search/${filter}/${text}`);
-  }, [text, filter, history]);
   React.useEffect(() => {
     const options: RequestOptions = {
       hitsPerPage: 200,
