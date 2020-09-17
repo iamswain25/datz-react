@@ -35,7 +35,7 @@ export default function ResidencyRight({ item }: { item: any }) {
           `}
         >
           <a
-            href="residency"
+            href={item?.url?.[0]}
             className={css`
               text-decoration: underline;
             `}
@@ -43,7 +43,7 @@ export default function ResidencyRight({ item }: { item: any }) {
             Datz Artist Residency {">"}
           </a>
         </div>
-        <div className={classes.body}>{item.text}</div>
+        <div className={classes.body}>{item?.text}</div>
         <div
           className={css`
             font-size: 16px;
@@ -53,7 +53,7 @@ export default function ResidencyRight({ item }: { item: any }) {
           `}
         >
           <a
-            href="apply"
+            href={item?.url?.[1]}
             className={css`
               margin-top: 37px;
               text-decoration: underline;
@@ -79,7 +79,7 @@ export default function ResidencyRight({ item }: { item: any }) {
           />
         </div>
         <a
-          href="datz"
+          href={item?.url?.[2]}
           className={css`
             font-size: 16px;
             line-height: 1.19;

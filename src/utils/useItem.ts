@@ -8,6 +8,7 @@ export default function useItem(item: any = {}) {
   const quotes = lang === "ko" ? item.quotes_ko : item.quotes_en;
   const body = lang === "ko" ? item.body_ko : item.body_en;
   const notes = lang === "ko" ? item.notes_ko : item.notes_en;
+  const text = lang === "ko" ? item.text_ko : item.text_en;
   const place = lang === "ko" ? item.place_ko : item.place_en;
   const preview_quote =
     lang === "ko" ? item.preview_quote_ko : item.preview_quote_en;
@@ -23,6 +24,7 @@ export default function useItem(item: any = {}) {
     name,
     bio,
     notes,
+    text,
     preview_quote,
     preview_body,
     order_url,

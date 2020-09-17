@@ -3,17 +3,10 @@ import { css } from "emotion";
 import { paddingH37, paddingH17 } from "./styles";
 import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
-import useBanners from "../utils/useBanners";
 import LazyImage from "./LazyImage";
 import { BLEND_SCREEN_COLOR, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
-const classes = {
-  h5: css`
-    margin-top: 10px;
-  `,
-};
-export default function Facilities() {
+export default function Facilities({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
-  const items = useBanners("artists", "Datz Artist Residency");
   return (
     <div
       className={css`
@@ -56,7 +49,7 @@ export default function Facilities() {
           position: relative;
         `}
       >
-        {items.map((item, i) => {
+        {items?.map((item, i) => {
           const { text, link, artist, image } = item;
           return (
             <Grid item xs={12} sm={4} key={i}>
@@ -93,7 +86,13 @@ export default function Facilities() {
                   `}
                 />
               </div>
-              <div className={classes.h5}>{text}</div>
+              <div
+                className={css`
+                  margin-top: 10px;
+                `}
+              >
+                {text}
+              </div>
               <div
                 className={css`
                   color: #aaaaaa;

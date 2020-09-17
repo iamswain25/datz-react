@@ -4,7 +4,6 @@ import { paddingH37, paddingH17 } from "./styles";
 import { Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
-import useBanners from "../utils/useBanners";
 import LazyImage from "./LazyImage";
 import { BLEND_SCREEN_COLOR, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 const classes = {
@@ -17,9 +16,8 @@ const classes = {
     margin-top: 10px;
   `,
 };
-export default function DatzArtistProject2() {
+export default function DatzArtistProject2({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
-  const items = useBanners("artists", "Book Project");
   return (
     <Grid
       className={css`
@@ -45,7 +43,7 @@ export default function DatzArtistProject2() {
       </Grid>
       <Grid container spacing={isDesktop ? 3 : 0}>
         {items.map((item, i) => {
-          const { text, link, artist, image } = item;
+          const { text, url, artist, image } = item;
           return (
             <Grid item xs={12} sm={4} key={i}>
               <div
@@ -90,26 +88,28 @@ export default function DatzArtistProject2() {
               >
                 {artist}
               </div>
-              <div
-                className={css`
-                  border-top: solid 1px #aaaaaa;
-                  padding-top: 10px;
-                  margin-top: 20px;
-                  margin-left: 16px;
-                  margin-right: 16px;
-                `}
-              >
-                <Link
-                  to={link || ""}
+              {url && (
+                <div
                   className={css`
-                    font-size: 14px;
-                    margin-top: 6px;
-                    color: #aaaaaa;
+                    border-top: solid 1px #aaaaaa;
+                    padding-top: 10px;
+                    margin-top: 20px;
+                    margin-left: 16px;
+                    margin-right: 16px;
                   `}
                 >
-                  read more {">"}
-                </Link>
-              </div>
+                  <Link
+                    to={url}
+                    className={css`
+                      font-size: 14px;
+                      margin-top: 6px;
+                      color: #aaaaaa;
+                    `}
+                  >
+                    read more {">"}
+                  </Link>
+                </div>
+              )}
             </Grid>
           );
         })}

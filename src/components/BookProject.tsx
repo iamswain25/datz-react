@@ -54,7 +54,7 @@ export default function BookProject({ item }: { item: any }) {
             line-height: 1.39;
           `}
         >
-          <div className={classes.body}>{item.text}</div>
+          <div className={classes.body}>{item?.text}</div>
           <div
             className={css`
               margin-top: 37px;
@@ -99,9 +99,11 @@ export default function BookProject({ item }: { item: any }) {
           margin-bottom: 12px;
         `}
       >
-        {item.link && (
+        {item?.url && (
           <a
-            href={item.link}
+            rel="noopener noreferrer"
+            target="_blank"
+            href={item?.url}
             className={css`
               font-size: 16px;
               line-height: 1.19;

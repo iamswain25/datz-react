@@ -20,15 +20,25 @@ import BtnBack from "../components/BtnBack";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
-import useBanners from "../utils/useBanners";
 import useIsTop from "../components/useIsTop";
+import useCollection from "../utils/useCollection";
 export default function ArtistProject() {
   const isDesktop = useDesktop(true);
-  const items1 = useBanners("artists", "Datz Aritst Projects");
-  const [BookProjectMain] = useBanners("artists", "BookProjectMain");
-  const items2 = useBanners("artists", "Exhibition");
-  const ResidencyMain = useBanners("artists", "ResidencyMain");
   const isTop = useIsTop();
+  const collection = useCollection("artist-project");
+  const items = React.useMemo(() => {
+    const c = collection || [];
+    const top = c.filter((d) => d.type === "top");
+    const [book] = c.filter((d) => d.type === "book");
+    const projects = c.filter((d) => d.type === "projects");
+    const exhibition = c.filter((d) =>
+      ["exhibition", "museum", "darkroom"].includes(d.type)
+    );
+    const residency = c.filter((d) => d.type === "residency");
+    const facilities = c.filter((d) => d.type === "facilities");
+    return { top, book, projects, exhibition, residency, facilities };
+  }, [collection]);
+  const { top, book, projects, exhibition, residency, facilities } = items;
   return (
     <>
       <Header
@@ -44,7 +54,7 @@ export default function ArtistProject() {
         color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
       />
       <RollingImages
-        items={items1}
+        items={top}
         additionalClass="white-bullets"
         className={css`
           height: ${isDesktop ? "100vh" : "588px"};
@@ -68,7 +78,7 @@ export default function ArtistProject() {
         `}
       >
         <RollingImages2
-          items={BookProjectMain.image}
+          items={book?.image}
           children={
             isDesktop ? undefined : (
               <div
@@ -118,27 +128,28 @@ export default function ArtistProject() {
               : undefined
           }
         >
-          <BookProject item={BookProjectMain} />
+          <BookProject item={book} />
         </div>
       </div>
-      <DatzArtistProject2 />
-      {items2.map((item, key) => {
-        item.key = key;
-        return (
-          <RollingImages2
-            key={key}
-            items={item.image}
-            additionalClass="white-bullets"
-            className={css`
-              margin-top: 21px;
-              ${isDesktop ? marginH37 : undefined}
-              height: ${isDesktop ? "auto" : "588px"};
-              max-height: 100vh;
-            `}
-            children={<DatzArtistExhibition item={item} />}
-          />
-        );
-      })}
+      <DatzArtistProject2 items={projects} />
+      {exhibition.length &&
+        exhibition.map((item, key) => {
+          item.key = key;
+          return (
+            <RollingImages2
+              key={key}
+              items={item.image}
+              additionalClass="white-bullets"
+              className={css`
+                margin-top: 21px;
+                ${isDesktop ? marginH37 : undefined}
+                height: ${isDesktop ? "auto" : "588px"};
+                max-height: 100vh;
+              `}
+              children={<DatzArtistExhibition item={item} />}
+            />
+          );
+        })}
 
       <div
         className={css`
@@ -151,12 +162,13 @@ export default function ArtistProject() {
       </div>
       <div
         className={css`
-          ${isDesktop ? marginH37 : marginH17} display:flex;
+          display: flex;
           flex-direction: ${isDesktop ? "row" : "column"};
+          ${isDesktop ? marginH37 : marginH17}
         `}
       >
         <RollingImages
-          items={ResidencyMain}
+          items={residency}
           children={() => <ResidencyLeft />}
           className={
             isDesktop
@@ -180,10 +192,10 @@ export default function ArtistProject() {
               : undefined
           }
         >
-          <ResidencyRight item={ResidencyMain[0]} />
+          <ResidencyRight item={residency[0]} />
         </div>
       </div>
-      <Facilities />
+      <Facilities items={facilities} />
       <div
         className={css`
           margin-top: ${isDesktop ? 70 : 0}px;

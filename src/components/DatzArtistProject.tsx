@@ -63,7 +63,7 @@ export default function DatzArtistProject({ item }: { item: any }) {
               margin-top: 34px;
             `}
           >
-            {item.text}
+            {item?.text}
           </div>
           <div
             className={css`
@@ -71,7 +71,9 @@ export default function DatzArtistProject({ item }: { item: any }) {
             `}
           >
             <a
-              href="community"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={item?.url}
               className={css`
                 text-decoration: underline;
                 font-size: 16px;

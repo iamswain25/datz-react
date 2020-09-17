@@ -9,7 +9,7 @@ export default function RollingImages(props: {
   children?: (props: { item: any }) => React.ReactNode;
 }) {
   const [index, setIndex] = React.useState(0);
-  const nullImages = useStorages(props.items.map((a) => a.image));
+  const nullImages = useStorages(props.items?.map((a) => a.image));
   const images = nullImages?.map((a) => ({ original: a })) || [];
   const item = props.items[index];
   function onslideHandler(index: number) {
