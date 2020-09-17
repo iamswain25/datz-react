@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ImageGalleryGeneric from "./ImageGalleryGeneric";
 import { marginH17 } from "./styles";
-import useBanners from "../utils/useBanners";
+import useCollectionWhere from "../utils/useCollectionWhere";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -28,7 +28,7 @@ const mobileContainer = css`
 `;
 export default function EventLeft() {
   const isDesktop = useDesktop();
-  const items = useBanners("leftSide", "Upcoming Event");
+  const items = useCollectionWhere("banner", "event");
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>
