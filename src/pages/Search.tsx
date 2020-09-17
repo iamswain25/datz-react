@@ -11,6 +11,7 @@ import useBtnBack from "../components/useBtnBack";
 import algoliasearch from "algoliasearch";
 import { RequestOptions } from "@algolia/transporter";
 import useLang from "../components/useLang";
+import BtnTop from "../components/BtnTop";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   artist: "Artist",
@@ -347,6 +348,7 @@ export default function Search() {
             );
           })}
         </ul>
+        <BtnTop full color="#fff" />
       </section>
     </main>
   );
