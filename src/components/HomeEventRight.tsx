@@ -9,7 +9,7 @@ import useNews from "../utils/useNews";
 export default function HomeEventRight() {
   const isDesktop = useDesktop();
   const [items] = useCollectionDataOnce<any>(
-    firestore.collection("news").orderBy("order", "desc").limit(1),
+    firestore.collection("event").orderBy("order", "desc").limit(1),
     { idField: "id" }
   );
   const list = useNews(items);
