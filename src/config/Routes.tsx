@@ -88,9 +88,10 @@ export default function Routes() {
           <Route exact path="/about/darkroom" component={AboutDarkroom} />
           <Route exact path="/about/datzmuseum" component={AboutDatzmuseum} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/search/:filter/:query" component={Search} />
           <Route exact path="/search/:filter" component={Search} />
           <Route exact path="/search">
-            <Redirect to="/search/all" />
+            <Redirect to="/search/all/" />
           </Route>
           <Route exact path="/support" component={Support} />
           <Route exact path="/news">

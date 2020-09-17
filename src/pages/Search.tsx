@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
@@ -33,13 +33,14 @@ const client = algoliasearch("DIKGD6O10A", "85dcb1bdb7312f2719d1c098d2f968c2");
 const index = client.initIndex("datzpress");
 export default function Search() {
   const isDesktop = useDesktop(true);
+  const history = useHistory();
   const [, en] = useLang();
-  const [text, setText] = React.useState("");
+  const { filter = "all", query } = useParams();
+  const [text, setText] = React.useState(query);
   const [result, setResult] = React.useState<undefined | any>(undefined);
   const [lang, setLang] = useGlobalState(LANG);
   const [isOpen, setOpen] = React.useState(false);
   const goBack = useBtnBack();
-  const { filter = "all" } = useParams();
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
   }
@@ -47,15 +48,19 @@ export default function Search() {
     setOpen(!isOpen);
   }
   React.useEffect(() => {
+    history.replace(`/search/${filter}/${text}`);
+  }, [text, filter, history]);
+  React.useEffect(() => {
     const options: RequestOptions = {
       hitsPerPage: 6,
+      facetFilters: [`collection:${filter}`],
     };
-    if (filter !== "all") {
-      options.facetFilters = [`collection:${filter}`];
+    if (filter === "all") {
+      options.facetFilters = undefined;
+      if (!query) return;
     }
-    if (!text) return;
-    index.search(text, options).then(setResult);
-  }, [text, filter]);
+    index.search(query, options).then(setResult);
+  }, [query, filter, history]);
 
   return (
     <main>
@@ -260,8 +265,7 @@ export default function Search() {
               return (
                 <NavLink
                   key={f}
-                  exact
-                  to={f}
+                  to={`/search/${f}`}
                   replace
                   activeClassName={css`
                     color: #ffffff;
