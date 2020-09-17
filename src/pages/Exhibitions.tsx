@@ -76,6 +76,7 @@ export default function Exhibitions() {
                 <NavLink
                   key={f}
                   exact
+                  replace
                   to={f}
                   activeClassName={css`
                     color: #ffffff;

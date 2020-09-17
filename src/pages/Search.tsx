@@ -129,16 +129,16 @@ export default function Search() {
             {!isDesktop && (
               <>
                 <button
-                  onClick={() => {}}
+                  onClick={goBack}
                   className={css`
                     display: flex;
                     align-items: center;
+                    margin-right: 20px;
                   `}
                 >
                   <Close
                     color="#fff"
                     className={css`
-                      margin-right: 8px;
                       width: 15px;
                       height: 15px;
                     `}
@@ -262,6 +262,7 @@ export default function Search() {
                   key={f}
                   exact
                   to={f}
+                  replace
                   activeClassName={css`
                     color: #ffffff;
                     text-decoration: underline;

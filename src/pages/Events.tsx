@@ -80,6 +80,7 @@ export default function Events() {
                 <NavLink
                   key={f}
                   exact
+                  replace
                   to={f}
                   activeClassName={css`
                     color: #ffffff;
