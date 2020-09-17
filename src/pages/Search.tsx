@@ -36,7 +36,7 @@ export default function Search() {
   const history = useHistory();
   const [, en] = useLang();
   const { filter = "all", query } = useParams();
-  const [text, setText] = React.useState(query);
+  const [text, setText] = React.useState(query ?? "");
   const [result, setResult] = React.useState<undefined | any>(undefined);
   const [lang, setLang] = useGlobalState(LANG);
   const [isOpen, setOpen] = React.useState(false);
@@ -52,7 +52,7 @@ export default function Search() {
   }, [text, filter, history]);
   React.useEffect(() => {
     const options: RequestOptions = {
-      hitsPerPage: 6,
+      hitsPerPage: 200,
       facetFilters: [`collection:${filter}`],
     };
     if (filter === "all") {
@@ -61,7 +61,6 @@ export default function Search() {
     }
     index.search(query, options).then(setResult);
   }, [query, filter, history]);
-
   return (
     <main>
       <section
