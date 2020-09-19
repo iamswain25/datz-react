@@ -10,10 +10,11 @@ import {
 } from "./styles";
 import GoogleMapReact from "google-map-react";
 import { Grid } from "@material-ui/core";
-import useBanners from "../utils/useBanners";
 import useLang from "./useLang";
 import BtnTop from "./BtnTop";
 import MapMarker from "./MapMarker";
+import useDocs from "../utils/useDocs";
+import useItems from "../utils/useItems";
 const defaultProps = {
   center: {
     lat: 37.540535,
@@ -21,11 +22,12 @@ const defaultProps = {
   },
   zoom: 16,
 };
+const data = ["getting-here", "address", "working-hour"];
 export default function AboutMap3() {
   const isDesktop = useDesktop();
-  const visits = useBanners("about", "Visit");
+  const items = useDocs("about", data);
+  const [gettingHere, address, workingHour] = useItems(items) || [];
   const [classes] = useLang("body");
-  const [gettinghere] = useBanners("about", "Getting here");
   return (
     <>
       <section
@@ -84,7 +86,7 @@ export default function AboutMap3() {
               >
                 Visit Us
               </h1>
-              {visits.map((e, i) => (
+              {[address, workingHour].map((e, i) => (
                 <div key={i}>
                   <h2
                     className={css`
@@ -93,7 +95,7 @@ export default function AboutMap3() {
                       margin-top: 46px;
                     `}
                   >
-                    {e.title}
+                    {e?.title}
                   </h2>
                   <p
                     className={css`
@@ -101,7 +103,7 @@ export default function AboutMap3() {
                       text-align: center;
                     `}
                   >
-                    {e.text}
+                    {e?.text}
                   </p>
                 </div>
               ))}
@@ -132,7 +134,7 @@ export default function AboutMap3() {
                   margin-top: 18px;
                 `}
               >
-                {gettinghere.text}
+                {gettingHere?.text}
               </p>
             </div>
           </Grid>

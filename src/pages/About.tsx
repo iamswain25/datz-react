@@ -6,7 +6,6 @@ import { paddingH37, paddingH17 } from "../components/styles";
 import AboutImages1 from "../components/AboutImages1";
 import AboutImages2 from "../components/AboutImages2";
 import AboutMap3 from "../components/AboutMap3";
-
 const bgContainer = css`
   background-color: #afafaf;
 `;

@@ -12,9 +12,10 @@ import DatzBooks from "../assets/svg/DatzBooks";
 import Darkroom from "../assets/svg/Darkroom";
 import DatzMuseum from "../assets/svg/DatzMuseum";
 import Logo from "./Logo";
-import useBanners from "../utils/useBanners";
 import LazyImage from "./LazyImage";
 import useLang from "./useLang";
+import useDocs from "../utils/useDocs";
+import useItems from "../utils/useItems";
 const svgStyle = css`
   height: 30px;
   color: #ffffff;
@@ -29,9 +30,11 @@ const vertical = (
     `}
   />
 );
+const data = ["message"];
 export default function AboutImages2() {
   const isDesktop = useDesktop();
-  const [message] = useBanners("about", "Message");
+  const items = useDocs("about", data);
+  const [message] = useItems(items) || [];
   const [classes] = useLang("body");
   return (
     <>
@@ -44,7 +47,7 @@ export default function AboutImages2() {
           max-height: ${isDesktop ? "calc(100vh - 79px)" : "none"};
         `}
       >
-        <LazyImage link={message.image} img={fullHeightCoverImg} />
+        <LazyImage link={message?.image} img={fullHeightCoverImg} />
         <div
           className={css`
             position: absolute;
@@ -79,7 +82,7 @@ export default function AboutImages2() {
                 margin-top: 24px;
               `}
             >
-              {message.text}
+              {message?.text}
             </div>
           </div>
         </div>
