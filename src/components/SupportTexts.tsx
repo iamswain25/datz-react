@@ -38,7 +38,7 @@ export default function SupportTexts({ item }: { item: any }) {
             line-height: 1.17;
           `}
         >
-          {item.title}
+          {item?.title}
         </div>
         <Divider
           color="#fff"
@@ -85,7 +85,7 @@ export default function SupportTexts({ item }: { item: any }) {
             line-height: 20px;
           `}
         >
-          {item.text}
+          {item?.text}
         </div>
         <div
           className={css`

@@ -4,7 +4,6 @@ export default function useDocs(collection: string, ids: string[]) {
   const [items, setItems] = React.useState<undefined | any[]>(undefined);
   React.useEffect(() => {
     if (!ids) return;
-    console.log(ids, collection);
     Promise.all(
       ids?.map((id) =>
         firestore

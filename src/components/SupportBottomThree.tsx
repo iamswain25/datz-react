@@ -3,11 +3,13 @@ import { css } from "emotion";
 import { paddingH37, paddingH17 } from "./styles";
 import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
-import useBanners from "../utils/useBanners";
 import useLang from "./useLang";
+import useCollectionWhere from "../utils/useCollectionWhere";
+import useItems from "../utils/useItems";
 export default function SupportBottomThree() {
   const isDesktop = useDesktop();
-  const items = useBanners("about", "Support");
+  const items = useCollectionWhere("support", "membership", "type");
+  const memberships = useItems(items);
   const [classes] = useLang("body");
   return (
     <Grid
@@ -20,7 +22,7 @@ export default function SupportBottomThree() {
       `}
     >
       <Grid container spacing={isDesktop ? 3 : 0}>
-        {items.map((item, i) => {
+        {memberships?.map((item, i) => {
           const { title, text } = item;
           return (
             <Grid item xs={12} sm={4} key={i}>

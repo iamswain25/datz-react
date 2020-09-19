@@ -8,12 +8,15 @@ import BtnTop from "../components/BtnTop";
 import { paddingH55, paddingH27 } from "../components/styles";
 import LazyImage from "../components/LazyImage";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
-import useBanners from "../utils/useBanners";
 import useIsTop from "../components/useIsTop";
+import useDocs from "../utils/useDocs";
+import useItems from "../utils/useItems";
+const data = ["main"];
 export default function Support() {
   const isDesktop = useDesktop(true);
   const isTop = useIsTop();
-  const [item] = useBanners("about", "SupportMain");
+  const items = useDocs("support", data);
+  const [support] = useItems(items) || [];
   return (
     <>
       <AboutHeader
@@ -29,14 +32,14 @@ export default function Support() {
         `}
       >
         <LazyImage
-          link={item.image}
+          link={support?.image}
           img={css`
             width: 100%;
             background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
             object-fit: cover;
           `}
         />
-        <SupportTexts item={item} />
+        <SupportTexts item={support} />
       </div>
       <SupportBottomThree />
       <div
