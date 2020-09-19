@@ -8,27 +8,22 @@ import { Grid } from "@material-ui/core";
 import usePublications from "../utils/usePublications";
 import useLang from "./useLang";
 import BtnTop from "./BtnTop";
-import useBanners from "../utils/useBanners";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("All");
-  const [publications, loading, error] = useCollectionDataOnce<Publication>(
+  const [publications] = useCollectionDataOnce<Publication>(
     firestore.collection("publication").orderBy("order", "desc"),
     { idField: "id" }
   );
   const list = usePublications(publications);
   const isDesktop = useDesktop();
-  const subCategories = useBanners("publications");
+  const [categories] = useCollectionDataOnce<any>(
+    firestore.collection("publication_category").orderBy("order", "asc")
+  );
   const [classes] = useLang("PublicationList");
-  if (loading) {
-    return null;
-  }
   if (!list) {
     return null;
-  }
-  if (error) {
-    return <div>{JSON.stringify(error)}</div>;
   }
   return (
     <>
@@ -65,8 +60,8 @@ export default function PublicationList() {
               flex: 1;
             `}
           >
-            {subCategories.map(({ type }, i) => {
-              const isLast = subCategories.length - 1 === i;
+            {categories?.map(({ type }, i) => {
+              const isLast = categories?.length - 1 === i;
               const isFirst = i === 0;
               let selectedCss = null;
               if (selected === type) {
@@ -124,7 +119,7 @@ export default function PublicationList() {
               color: #4b4b4b;
             `}
           >
-            {subCategories.find((e) => e.type === selected).text}
+            {categories?.find((e) => e.type === selected)?.text}
           </p>
           <section
             className={css`
