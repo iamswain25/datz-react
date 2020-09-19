@@ -9,7 +9,6 @@ import {
   flexcolumn,
   paddingH17,
   paddingH12,
-  marginRight30,
 } from "../components/styles";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
@@ -17,7 +16,8 @@ import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
 import Logo from "../components/Logo";
-import useBanners from "../utils/useBanners";
+import useDocs from "../utils/useDocs";
+import useItems from "../utils/useItems";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -27,10 +27,12 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
+const data = ["darkroom-1", "darkroom-2"];
 export default function AboutDatzpress() {
+  const items = useDocs("about", data);
+  const [d1, d2] = useItems(items) || [];
   const isDesktop = useDesktop(true);
-  const [classes, en] = useLang("About");
-  const [item] = useBanners("about", "Datz Press");
+  const [classes] = useLang("About");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzmuseum");
@@ -90,7 +92,7 @@ export default function AboutDatzpress() {
               `}
             >
               <LazyImage
-                link={item.image}
+                link={d1?.image}
                 img={css`
                   width: 100%;
                   height: inherit;
@@ -124,8 +126,8 @@ export default function AboutDatzpress() {
                   flex: 1;
                 `}
               >
-                <h1 className={h1Style(isDesktop)}>{item.title}</h1>
-                <p className={classes.desc}>{item.text}</p>
+                <h1 className={h1Style(isDesktop)}>{d1?.title}</h1>
+                <p className={classes.desc}>{d1?.text}</p>
               </div>
               <div>
                 <h2
@@ -149,38 +151,7 @@ export default function AboutDatzpress() {
                     margin-bottom: 42px;
                   `}
                 >
-                  <div>{en ? "Phone" : "전화"}</div>
-                  <div>+82 2 447 2581</div>
-                  <div>-</div>
-                  <div>{en ? "Email" : "이메일"}</div>
-                  <div>
-                    <span className={marginRight30}>
-                      {en ? "Enquiry" : "문의"}
-                    </span>
-                    <span>
-                      <a
-                        href="mailto:datzpress@datzpress.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        datzpress@datzpress.com
-                      </a>
-                    </span>
-                  </div>
-                  <div>
-                    <span className={marginRight30}>
-                      {en ? "Datz Books" : "닻북스"}
-                    </span>
-                    <span>
-                      <a
-                        href="mailto:books@datzpress.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        books@datzpress.com
-                      </a>
-                    </span>
-                  </div>
+                  {d2?.text}
                 </div>
                 <BtnBack color="#fff" borderTop />
               </div>
