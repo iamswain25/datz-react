@@ -121,7 +121,6 @@ export default function AboutMap3() {
                   font-size: 17px;
                   line-height: 1.24;
                   text-align: center;
-                  margin-bottom: 25px;
                   margin-top: 46px;
                   padding-bottom: 6px;
                   border-bottom: 1px solid #ffffff;
