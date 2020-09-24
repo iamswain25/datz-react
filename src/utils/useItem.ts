@@ -1,7 +1,8 @@
 import { useGlobalState, LANG } from "../store/useGlobalState";
 export default function useItem(item: any = {}) {
   const [lang] = useGlobalState(LANG);
-  const title = lang === "ko" ? item.title_ko : item.title_en;
+  const title =
+    (lang === "ko" ? item.title_ko : item.title_en) ?? item.title_en;
   const name = lang === "ko" ? item.name_ko : item.name_en;
   const bio = lang === "ko" ? item.bio_ko : item.bio_en;
   const artist = lang === "ko" ? item.artist_ko : item.artist_en;
