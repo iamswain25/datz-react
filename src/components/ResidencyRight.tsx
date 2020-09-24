@@ -14,82 +14,92 @@ export default function ResidencyRight({ item }: { item: any }) {
         display: flex;
         flex-direction: column;
         height: 100%;
-        justify-content: center;
         align-items: center;
         color: #5d5d5d;
         border-bottom: 1px solid #5d5d5d;
       `}
     >
-      <div
+      <section
         className={css`
-          max-width: 600px;
           display: flex;
           flex-direction: column;
-          ${isDesktop ? "" : "margin-top: 25px"}
+          justify-content: center;
+          align-items: center;
+          flex: 1;
         `}
       >
         <div
           className={css`
-            font-size: 23px;
-            line-height: 1.17;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            ${isDesktop ? "" : "margin-top: 25px"}
           `}
         >
-          <a
-            href={item?.url?.[0]}
+          <div
             className={css`
-              text-decoration: underline;
+              font-size: 23px;
+              line-height: 1.17;
             `}
           >
-            Datz Artist Residency {">"}
-          </a>
+            <a
+              href={item?.url?.[0]}
+              className={css`
+                text-decoration: underline;
+              `}
+            >
+              Datz Artist Residency {">"}
+            </a>
+          </div>
+          <div className={classes.body}>{item?.text}</div>
+          <div
+            className={css`
+              font-size: 16px;
+              line-height: 1.19;
+              color: #aaaaaa;
+              margin-top: 30px;
+            `}
+          >
+            <a
+              href={item?.url?.[1]}
+              className={css`
+                margin-top: 37px;
+                text-decoration: underline;
+              `}
+            >
+              Apply {">"}
+            </a>
+          </div>
         </div>
-        <div className={classes.body}>{item?.text}</div>
         <div
           className={css`
-            font-size: 16px;
-            line-height: 1.19;
-            color: #aaaaaa;
-            margin-top: 30px;
+            margin-bottom: 12px;
           `}
         >
-          <a
-            href={item?.url?.[1]}
-            className={css`
-              margin-top: 37px;
-              text-decoration: underline;
-            `}
-          >
-            Apply {">"}
-          </a>
+          <div>
+            <Logo
+              type="culture"
+              color="#5d5d5d"
+              className={css`
+                margin: ${isDesktop ? 100 : 54}px 0 ${isDesktop ? 32 : 50}px;
+                width: 98px;
+              `}
+            />
+          </div>
         </div>
-      </div>
-      <div
+      </section>
+      <a
+        href={item?.url?.[2]}
         className={css`
+          font-size: 16px;
+          line-height: 1.19;
+          color: #aaaaaa;
+          text-decoration: underline;
           margin-bottom: 12px;
         `}
       >
-        <div>
-          <Logo
-            type="culture"
-            color="#5d5d5d"
-            className={css`
-              margin: ${isDesktop ? 100 : 54}px 0 ${isDesktop ? 32 : 50}px;
-              width: 98px;
-            `}
-          />
-        </div>
-        <a
-          href={item?.url?.[2]}
-          className={css`
-            font-size: 16px;
-            line-height: 1.19;
-            color: #aaaaaa;
-            text-decoration: underline;
-          `}
-        >
-          About Datz Cultural Foundation {">"}
-        </a>
-      </div>
+        About Datz Cultural Foundation {">"}
+      </a>
     </section>
   );
 }
