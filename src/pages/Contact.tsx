@@ -33,7 +33,7 @@ const mapLinks = (en: boolean = false) => (stock: any, i: number) => {
       <span>{title}</span>
       {list?.map((l: any, i2: number) => (
         <a
-          href={"http://" + l.url}
+          href={l.url}
           key={i2}
           className={aStyle}
           target="_blank"
@@ -59,7 +59,7 @@ export default function Contact() {
     const phone = items.find((i) => i.type === "phone");
     const email = items.find((i) => i.type === "email");
     const catalog = items.find((i) => i.type === "catalog");
-    const stocklist = items.filter((i) => i.type === "stocklist");
+    const stocklist = items.filter((i) => i.type === "stockist");
     const collections = items.filter((i) => i.type === "collections");
     return { stocklist, enquiry, collections, phone, email, catalog };
   }, [items]);
@@ -126,7 +126,7 @@ export default function Contact() {
           >
             <Grid container spacing={isDesktop ? 4 : 0}>
               <Grid item xs={12} sm={6}>
-                <h1 className={h1Style}>STOCKLIST</h1>
+                <h1 className={h1Style}>STOCKIST</h1>
                 <div
                   className={css`
                     font-size: 18px;
