@@ -32,15 +32,16 @@ export default function AboutMap3() {
     <>
       <section
         className={css`
+          ${isDesktop ? paddingH37 : paddingH17}
           position: relative;
+          min-height: 600px;
+          padding-top: ${isDesktop ? 41 : 19}px;
           height: ${isDesktop
             ? "calc(100vh - 79px - 41px - 27px - 37px)"
             : "auto"};
-          min-height: 750px;
-          margin-top: ${isDesktop ? 41 : 19}px;
-          ${isDesktop ? paddingH37 : paddingH17}
           color: #ffffff;
           display: flex;
+          overflow: hidden;
         `}
       >
         <Grid container spacing={isDesktop ? 4 : 0}>
@@ -50,6 +51,7 @@ export default function AboutMap3() {
             sm={6}
             className={css`
               min-height: 588px;
+              height: 100%;
             `}
           >
             <GoogleMapReact
