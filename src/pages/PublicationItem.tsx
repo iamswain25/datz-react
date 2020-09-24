@@ -12,7 +12,7 @@ const desktopContainer = css`
 `;
 export default function PublicationItem() {
   const item = useDoc("publication");
-  const isDesktop = useDesktop();
+  const isDesktop = useDesktop(true);
   return (
     <>
       <Header sticky />

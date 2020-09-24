@@ -44,7 +44,12 @@ export default function FullImageGallery({
         autoPlay={false}
         onSlide={onSlideHandler}
         additionalClass="contain-image"
-        onClick={() => replace(`/${type}/${item?.id}`)}
+        onClick={() =>
+          replace({
+            pathname: `/${type}/${item?.id}`,
+            state: { index: Number(index) },
+          })
+        }
         renderLeftNav={function (onClick, disabled) {
           return (
             <Arrow

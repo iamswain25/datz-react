@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import { bottomBtn37 } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LazyImage from "./LazyImage";
 const classes = {
   link: css`
@@ -39,11 +39,15 @@ export default function ItemPhotosRight({
   type?: string;
   logo?: string;
 }) {
+  const location = useLocation<{ index: number }>();
+  const refs = React.useRef<any>();
+  const index = location?.state?.index ?? 0;
   if (!item) return null;
   const { images, id } = item as { images: string[]; id: string };
   return (
     <>
       <section
+        ref={refs}
         className={css`
           flex: 1;
         `}
@@ -52,6 +56,11 @@ export default function ItemPhotosRight({
           return (
             <Link to={`/${type}/${id}/images/${i}`} key={i} replace>
               <div
+                ref={(r) => {
+                  if (index === i) {
+                    r?.scrollIntoView({ behavior: "auto", block: "center" });
+                  }
+                }}
                 className={css`
                   position: relative;
                   background-color: #ececec;
