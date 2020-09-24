@@ -22,7 +22,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
   function mouseLeaveHandler() {
     galleryRef.current?.play();
   }
-  const { type, title, subtitle, color = "#fff", logo } = item || {};
+  const { type, title, text, color = "#fff", logo } = item || {};
   const typeClass = css`
     font-family: BauerGroteskOTW03;
     font-size: ${isDesktop ? 19 : 16}px;
@@ -106,7 +106,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
             `}
           />
           <div className={titleClass}>{title}</div>
-          <div className={authorClass}>{subtitle}</div>
+          <div className={authorClass}>{text}</div>
         </Link>
         <Link
           to={item?.url || ""}

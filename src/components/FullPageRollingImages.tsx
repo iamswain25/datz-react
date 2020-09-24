@@ -50,7 +50,7 @@ export default function FullPageRollingImages({
     text-align: center;
     margin-top: ${isDesktop ? 4 : 3}px;
   `;
-  const { type, title, subtitle, color = "#5d5d5d", logo } = item || {};
+  const { type, title, text, color = "#5d5d5d", logo } = item || {};
   return (
     <div
       style={{
@@ -120,7 +120,7 @@ export default function FullPageRollingImages({
               `}
             />
             <div className={titleClass}>{title}</div>
-            <div className={authorClass}>{subtitle}</div>
+            <div className={authorClass}>{text}</div>
           </Link>
         </div>
         <Link
