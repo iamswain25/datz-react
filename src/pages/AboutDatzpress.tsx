@@ -27,7 +27,8 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const data = ["darkroom-1", "darkroom-2"];
+
+const data = ["datzpress-1", "datzpress-2"];
 export default function AboutDatzpress() {
   const items = useDocs("about", data);
   const [d1, d2] = useItems(items) || [];

@@ -27,7 +27,7 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const data = ["datzpress-1", "datzpress-2"];
+const data = ["darkroom-1", "darkroom-2"];
 export default function AboutDarkroom() {
   const isDesktop = useDesktop(true);
   const [classes] = useLang("About");
