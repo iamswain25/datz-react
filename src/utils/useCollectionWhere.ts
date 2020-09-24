@@ -9,7 +9,6 @@ export default function useCollectionWhere(
   const [items, setItems] = React.useState<undefined | any[]>(undefined);
   const convertedItems = useItems(items);
   React.useEffect(() => {
-    console.log(collection, where, field);
     firestore
       .collection(collection)
       .where(field, "==", where)

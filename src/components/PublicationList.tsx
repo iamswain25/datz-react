@@ -10,6 +10,7 @@ import useLang from "./useLang";
 import BtnTop from "./BtnTop";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
+import useItems from "../utils/useItems";
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("All");
   const [publications] = useCollectionDataOnce<Publication>(
@@ -18,9 +19,10 @@ export default function PublicationList() {
   );
   const list = usePublications(publications);
   const isDesktop = useDesktop();
-  const [categories] = useCollectionDataOnce<any>(
+  const [items] = useCollectionDataOnce<any>(
     firestore.collection("publication_category").orderBy("order", "asc")
   );
+  const categories = useItems(items);
   const [classes] = useLang("PublicationList");
   if (!list) {
     return null;
