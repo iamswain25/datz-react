@@ -2,22 +2,28 @@ import React from "react";
 
 import ImageGallery from "react-image-gallery";
 import useStorages from "./useStorages";
-export default function RollingImages(props: {
+export default function RollingImages({
+  className,
+  items,
+  additionalClass,
+  children,
+}: {
   items: Array<any>;
   className?: string;
   additionalClass?: string;
   children?: (props: { item: any }) => React.ReactNode;
 }) {
   const [index, setIndex] = React.useState(0);
-  const nullImages = useStorages(props.items?.map((a) => a.image));
+  const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
+  const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];
-  const item = props.items[index];
+  const item = items[index];
   function onslideHandler(index: number) {
     setIndex(index);
   }
   return (
     <div
-      className={props.className}
+      className={className}
       style={{
         overflow: "hidden",
         position: "relative",
@@ -33,10 +39,10 @@ export default function RollingImages(props: {
         showBullets={true}
         autoPlay={false}
         slideInterval={5000}
-        additionalClass={props.additionalClass}
+        additionalClass={additionalClass}
         onSlide={onslideHandler}
       />
-      {props.children && props.children({ item })}
+      {children && children({ item })}
     </div>
   );
 }

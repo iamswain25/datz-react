@@ -14,7 +14,8 @@ export default function FullPageRollingImages({
   style?: React.CSSProperties;
 }) {
   const isDesktop = useDesktop(false);
-  const nullImages = useStorages(items.map((a) => a.image));
+  const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
+  const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];
   const [index, setIndex] = React.useState(0);
   const item = items[index];
