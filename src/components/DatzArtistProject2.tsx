@@ -84,6 +84,9 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
                 className={css`
                   margin-top: 6px;
                   color: #aaaaaa;
+                  border-bottom: solid 1px #aaaaaa;
+                  margin-bottom: 20px;
+                  padding-bottom: 10px;
                 `}
               >
                 {artist}
@@ -91,9 +94,6 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
               {url && (
                 <div
                   className={css`
-                    border-top: solid 1px #aaaaaa;
-                    padding-top: 10px;
-                    margin-top: 20px;
                     margin-left: 16px;
                     margin-right: 16px;
                   `}
