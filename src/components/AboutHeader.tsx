@@ -51,7 +51,6 @@ export default function AboutHeader({
         max-width: 1920px;
         padding: 0 ${isDesktop ? 37 : 17}px;
         color: ${colors.color};
-        margin: 0 auto;
       `}
     >
       <Link
@@ -128,8 +127,8 @@ export default function AboutHeader({
               <Search
                 color={colors.color}
                 className={css`
-                width: 15px;
-                      height: 15px;
+                  width: 15px;
+                  height: 15px;
                   margin-right: 20px;
                 `}
               />
@@ -172,6 +171,7 @@ export default function AboutHeader({
           className={css`
             position: fixed;
             width: 100%;
+            max-width: 1920px;
             top: 0;
             z-index: 5;
             color: ${color};

@@ -91,7 +91,6 @@ export default function Header({
         max-width: 1920px;
         padding: 0 ${isDesktop ? 37 : 17}px;
         color: ${color};
-        margin: 0 auto;
       `}
     >
       <NavLink
