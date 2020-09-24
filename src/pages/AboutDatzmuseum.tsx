@@ -95,21 +95,21 @@ export default function AboutDatzmuseum() {
               className={css`
                 position: relative;
                 overflow: hidden;
-                height: ${isDesktop ? "100%" : "588px"};
+                height: ${isDesktop ? "calc(100% - 36px)" : "588px"};
               `}
             >
               <LazyImage
                 link={d1?.image}
                 img={css`
                   width: 100%;
-                  height: inherit;
+                  height: 100%;
                   object-fit: cover;
                 `}
               />
               <DatzMuseum
                 color="#fff"
                 className={css`
-                  bottom: 29px;
+                  bottom: 66px;
                   left: 32px;
                   position: absolute;
                 `}
