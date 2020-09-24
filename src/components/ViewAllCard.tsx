@@ -66,18 +66,16 @@ export default function ViewAllCard({
             mix-blend-mode: ${isCurrent ? "normal" : "screen"};
           `}
         />
-        {type === "exhibition" && (
-          <Logo
-            offLink
-            type={item.type}
-            color="#fff"
-            className={css`
-              position: absolute;
-              left: 32px;
-              bottom: 29px;
-            `}
-          />
-        )}
+        <Logo
+          offLink
+          type={type === "exhibition" ? item.type : item.logo}
+          color="#fff"
+          className={css`
+            position: absolute;
+            left: 32px;
+            bottom: 29px;
+          `}
+        />
       </div>
       <div
         className={

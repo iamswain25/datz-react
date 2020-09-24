@@ -69,7 +69,7 @@ export default function HomeEventCard({
           />
           <Logo
             offLink
-            type={item?.type}
+            type={item?.logo}
             color="#fff"
             className={css`
               position: absolute;
