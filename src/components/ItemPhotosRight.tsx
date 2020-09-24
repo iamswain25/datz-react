@@ -50,7 +50,7 @@ export default function ItemPhotosRight({
       >
         {images?.map((src, i) => {
           return (
-            <Link to={`/${type}/${id}/images/${i}`} key={i}>
+            <Link to={`/${type}/${id}/images/${i}`} key={i} replace>
               <div
                 className={css`
                   position: relative;
