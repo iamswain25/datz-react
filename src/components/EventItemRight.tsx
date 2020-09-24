@@ -11,6 +11,7 @@ const stickyContainer = css`
   font-family: BauerGroteskOTW03;
   display: flex;
   flex-direction: column;
+  flex: 1;
 `;
 const mobileContainer = css`
   position: relative;
