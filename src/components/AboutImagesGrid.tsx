@@ -43,7 +43,7 @@ export default function AboutImagesGrid({ item }: { item: any }) {
                     background-image: url(${img});
                     background-position: center;
                     background-size: cover;
-                    min-height: 400px;
+                    min-height: 250px;
                     min-width: 0;
                     flex: 1;
                   `
