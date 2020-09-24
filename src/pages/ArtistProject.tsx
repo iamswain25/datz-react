@@ -16,12 +16,12 @@ import DatzArtistProject2 from "../components/DatzArtistProject2";
 import ResidencyRight from "../components/ResidencyRight";
 import ResidencyLeft from "../components/ResidencyLeft";
 import Facilities from "../components/Facilities";
-import BtnBack from "../components/BtnBack";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useIsTop from "../components/useIsTop";
 import useCollection from "../utils/useCollection";
+import BtnTop from "../components/BtnTop";
 export default function ArtistProject() {
   const isDesktop = useDesktop(true);
   const isTop = useIsTop();
@@ -202,12 +202,12 @@ export default function ArtistProject() {
       <Facilities items={facilities} />
       <div
         className={css`
-          margin-top: ${isDesktop ? 70 : 0}px;
+          margin-top: ${isDesktop ? 30 : 0}px;
           display: flex;
           justify-content: center;
         `}
       >
-        <BtnBack />
+        <BtnTop full />
       </div>
     </>
   );
