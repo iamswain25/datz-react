@@ -23,7 +23,7 @@ export default function AboutImages1() {
         isDesktop
           ? css`
               height: calc(100vh - 79px);
-              min-height: 600px;
+              min-height: 900px;
               position: relative;
               display: flex;
               flex-direction: column;
