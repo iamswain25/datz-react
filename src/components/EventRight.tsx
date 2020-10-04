@@ -16,6 +16,7 @@ export default function EventRight() {
   );
   const list = useEvents(events);
   const isDesktop = useDesktop();
+  if (!list) return null;
   return (
     <main>
       <Grid container spacing={isDesktop ? 3 : 0}>
@@ -50,9 +51,7 @@ export default function EventRight() {
         to="events"
         className={css`
           ${bottomBtn37}
-          ${isDesktop
-            ? marginH10
-            : marginH27}
+          ${isDesktop ? marginH10 : marginH27}
           width: calc(100% - ${isDesktop ? 20 : 54}px);
           transform: translateY(-1px);
           border-top: 1px solid #707070;

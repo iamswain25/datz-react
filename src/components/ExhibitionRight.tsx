@@ -26,6 +26,7 @@ export default function ExhibitionRight() {
   );
   const list = useExhibitions(exhibitions);
   const currentExhibitions = list?.filter(filterExhibitionCurrent);
+  if (!list) return null;
   return (
     <main>
       <Grid container spacing={isDesktop ? 3 : 0}>
@@ -63,9 +64,7 @@ export default function ExhibitionRight() {
         to="exhibitions"
         className={css`
           ${bottomBtn37}
-          ${isDesktop
-            ? marginH10
-            : marginH27}
+          ${isDesktop ? marginH10 : marginH27}
           width: calc(100% - ${isDesktop ? 20 : 54}px);
           transform: translateY(-1px);
           border-top: 1px solid #707070;

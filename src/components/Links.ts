@@ -8,7 +8,7 @@ export const store = ["Store", "/store"];
 export const otherLinks = [
   ["About", "/about"],
   ["Contact", "/contact"],
-  ["News", "/news"],
+  ["News", "/newslist"],
   ["Support", "/support"],
 ];
 export const terms = [
