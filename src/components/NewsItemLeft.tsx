@@ -33,6 +33,7 @@ export default function NewsItemLeft({ item }: { item: any }) {
         dark
         images={item.images}
         fit={isDesktop ? "height" : "width"}
+        type="news"
       />
     </section>
   );

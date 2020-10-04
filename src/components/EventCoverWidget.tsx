@@ -5,6 +5,8 @@ import Carousel from "react-multi-carousel";
 import useDesktop from "./useDesktop";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useStorage from "./useStorage";
+import { Link } from "react-router-dom";
+import useParams from "./useParams";
 const afterClass = (i: number) => css`
   position: relative;
   width: inherit;
@@ -29,10 +31,12 @@ export default function EventCoverWidget({
   dark = false,
   images,
   fit = "height",
+  type = "event",
 }: {
   dark?: boolean;
   images: any[];
   fit?: string;
+  type?: "event" | "news";
 }) {
   const isDesktop = useDesktop();
   return (
@@ -63,7 +67,7 @@ export default function EventCoverWidget({
       >
         {images?.map((img, i) => (
           <span key={i} className={afterClass(i)}>
-            <Sub dark={dark} image={img} />
+            <Sub dark={dark} image={img} type={type} index={i} />
           </span>
         )) || []}
       </Carousel>
@@ -71,8 +75,19 @@ export default function EventCoverWidget({
   );
 }
 
-function Sub({ dark, image }: { dark: boolean; image: string }) {
+function Sub({
+  dark,
+  image,
+  type,
+  index,
+}: {
+  dark: boolean;
+  image: string;
+  type: "event" | "news";
+  index: number;
+}) {
   const img = useStorage(image);
+  const { id } = useParams();
   return (
     <div
       className={css`
@@ -81,7 +96,9 @@ function Sub({ dark, image }: { dark: boolean; image: string }) {
         flex: 1;
       `}
     >
-      <div
+      <Link
+        to={`/${type}/${id}/images/${index}`}
+        replace
         className={css`
           background-image: url(${img});
           background-position: center;

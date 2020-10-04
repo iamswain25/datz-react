@@ -51,6 +51,16 @@ export default function Routes() {
             path="/exhibition/:id/images/:index"
             render={() => <FullImageGallery type="exhibition" />}
           />
+          <Route
+            exact
+            path="/event/:id/images/:index"
+            render={() => <FullImageGallery type="event" />}
+          />
+          <Route
+            exact
+            path="/news/:id/images/:index"
+            render={() => <FullImageGallery type="news" />}
+          />
 
           <Route exact path="/event" component={Event} />
           <Route exact path="/events">
@@ -94,11 +104,11 @@ export default function Routes() {
             <Redirect to="/search/all/" />
           </Route>
           <Route exact path="/support" component={Support} />
-          <Route exact path="/news">
-            <Redirect to="/news/all" />
+          <Route exact path="/newslist">
+            <Redirect to="/newslist/all" />
           </Route>
-          <Route exact path="/news/:filter" component={News} />
-          <Route exact path="/newsitem/:id" component={NewsItem} />
+          <Route exact path="/newslist/:filter" component={News} />
+          <Route exact path="/news/:id" component={NewsItem} />
           <Route path="*">
             <Redirect to="/" />
           </Route>

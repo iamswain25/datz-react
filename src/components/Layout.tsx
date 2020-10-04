@@ -16,11 +16,11 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
           "/about/datzmuseum",
           "/contact",
           "/support",
-          "/news",
-          "/news/:filter",
+          "/newslist",
+          "/newslist/:filter",
           "/search",
           "/search/:filter",
-          "/newsitem/:address",
+          "/news/:address",
         ]}
         render={() => (
           <main

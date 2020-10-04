@@ -9,7 +9,7 @@ import useStorages from "../components/useStorages";
 export default function FullImageGallery({
   type = "publication",
 }: {
-  type: "publication" | "artist" | "event" | "exhibition";
+  type: "publication" | "artist" | "event" | "exhibition" | "news";
 }) {
   const { index } = useParams();
   const { replace } = useHistory();
@@ -30,6 +30,9 @@ export default function FullImageGallery({
         left: 0;
         padding: 38px;
         box-sizing: border-box;
+        .image-gallery-slide.center {
+          z-index: 9;
+        }
       `}
     >
       <ImageGallery

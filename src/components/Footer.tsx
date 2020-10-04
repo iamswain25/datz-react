@@ -49,7 +49,7 @@ const Menus = (
     <Link to="/contact" className={padding}>
       Contact
     </Link>
-    <Link to="/news" className={padding}>
+    <Link to="/newslist" className={padding}>
       News
     </Link>
     <Link to="/support" className={padding}>

@@ -9,7 +9,7 @@ export default function NewsCard({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const isCurrent = filterExhibitionCurrent(item);
   return (
-    <Link to={`/newsitem/${item.address}`}>
+    <Link to={`/news/${item.address}`}>
       <div
         className={css`
           position: relative;

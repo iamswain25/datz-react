@@ -1,5 +1,5 @@
 import React from "react";
-import EventItemLeftSticky from "../components/EventItemLeftSticky";
+import EventItemLeft from "../components/EventItemLeft";
 import EventItemRight from "../components/EventItemRight";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
@@ -18,7 +18,7 @@ export default function EventItem() {
       <>
         <ArtistHeader sticky isWhite closeTo="/event" />
         <section className={desktopContainer}>
-          <EventItemLeftSticky images={item.images} />
+          <EventItemLeft images={item.images} />
           <EventItemRight item={item} />
         </section>
       </>
@@ -29,7 +29,7 @@ export default function EventItem() {
       <ArtistHeader sticky isWhite closeTo="/event" />
       <EventItemRight
         item={item}
-        children={<EventItemLeftSticky images={item.images} />}
+        children={<EventItemLeft images={item.images} />}
       />
     </>
   );
