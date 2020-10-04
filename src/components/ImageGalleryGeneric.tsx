@@ -36,7 +36,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
   const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];
-  const { type = "", title = "", subtitle = "", color = "#fff" } = item || {};
+  const { type = "", title = "", text = "", color = "#fff" } = item || {};
   return (
     <>
       <ImageGallery
@@ -90,7 +90,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
           `}
         />
         <div className={titleClass}>{title}</div>
-        <div className={authorClass}>{subtitle}</div>
+        <div className={authorClass}>{text}</div>
         <Logo
           type={item?.logo}
           color={color}
