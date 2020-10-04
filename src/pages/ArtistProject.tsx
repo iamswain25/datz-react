@@ -147,7 +147,7 @@ export default function ArtistProject() {
               className={css`
                 margin-top: 21px;
                 ${isDesktop ? marginH37 : undefined}
-                height: ${isDesktop ? "auto" : "588px"};
+                height: ${isDesktop ? "calc(100vh - 79px)" : "588px"};
                 max-height: 100vh;
               `}
               children={<DatzArtistExhibition item={item} />}
