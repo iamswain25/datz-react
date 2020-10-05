@@ -13,13 +13,22 @@ export default ({
   if (isInit) {
     return <div>"loading..."</div>;
   } else if (error) {
-    return <div>JSON.stringify(error)</div>;
+    return <div>{JSON.stringify(error)}</div>;
   }
   return (
     <Route
       {...rest}
-      render={props =>
-        !!user ? <Component {...props} /> : <Redirect to="/login" />
+      render={(props) =>
+        !!user ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: props.location },
+            }}
+          />
+        )
       }
     />
   );
