@@ -59,7 +59,8 @@ export default function AdminEventItemRight({
       firestore
         .collection("event")
         .doc(id)
-        .update({ ["bodyDraft_" + lang]: bodyDraft, ["body" + lang]: body });
+        .update({ ["bodyDraft_" + lang]: bodyDraft, ["body" + lang]: body })
+        .catch(window.alert);
     }
   }
   return (
