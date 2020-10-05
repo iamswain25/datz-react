@@ -8,6 +8,7 @@ export default function useItem(item: any = {}) {
   const artist = lang === "ko" ? item.artist_ko : item.artist_en;
   const quotes = lang === "ko" ? item.quotes_ko : item.quotes_en;
   const body = lang === "ko" ? item.body_ko : item.body_en;
+  const bodyDraft = lang === "ko" ? item.bodyDraft_ko : item.bodyDraft_en;
   const notes = lang === "ko" ? item.notes_ko : item.notes_en;
   const text = lang === "ko" ? item.text_ko : item.text_en;
   const place = lang === "ko" ? item.place_ko : item.place_en;
@@ -30,5 +31,6 @@ export default function useItem(item: any = {}) {
     preview_body,
     order_url,
     place,
+    bodyDraft,
   };
 }

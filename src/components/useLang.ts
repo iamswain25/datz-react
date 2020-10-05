@@ -170,6 +170,9 @@ const classes: { [key: string]: any } = {
         line-height: 28px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
+        a {
+          text-decoration: underline;
+        }
       `,
     };
   },

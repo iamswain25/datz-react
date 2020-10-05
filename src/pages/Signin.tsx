@@ -1,13 +1,24 @@
 import React from "react";
 import { auth, Firebase } from "../config/firebase";
-import { RouteComponentProps } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Container } from "@material-ui/core";
 const provider = new Firebase.auth.GoogleAuthProvider();
-export default (props: RouteComponentProps) => {
+export default function Signin() {
+  const [user] = useAuthState(auth);
+  const history = useHistory();
+  React.useEffect(() => {
+    if (user) {
+      history.replace("/admin");
+    }
+  }, [user, history]);
   function signin() {
-    auth
-      .signInWithPopup(provider)
-      .then(() => props.history.push("/admin"))
-      .catch(console.error);
+    auth.signInWithPopup(provider).catch(console.error);
   }
-  return <button onClick={signin}>Sign in</button>;
-};
+  return (
+    <Container maxWidth="sm">
+      <h1>관리자 로그인 페이지</h1>
+      <button onClick={signin}>구글 계정으로 로그인 하세요</button>
+    </Container>
+  );
+}

@@ -2,10 +2,16 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
-import draftToHtml from "draftjs-to-html";
 import { paddingH27, marginH27 } from "./styles";
-import BtnBack from "./BtnBack";
 import useLang from "./useLang";
+import LinkPluginEditor from "./LinkPluginEditor";
+import { firestore } from "../config/firebase";
+import {
+  ContentState,
+  EditorState,
+  convertToRaw,
+  convertFromRaw,
+} from "draft-js";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
@@ -18,7 +24,7 @@ const mobileContainer = css`
   position: relative;
   ${paddingH27}
 `;
-export default function EventItemRight({
+export default function AdminEventItemRight({
   children,
   item,
 }: {
@@ -26,8 +32,34 @@ export default function EventItemRight({
   item: any;
 }) {
   const isDesktop = useDesktop();
-  const { type, date, title, body, place, bodyDraft } = item;
+  const lang = useLang()[2];
+  const { type, date, title, body, place, id, bodyDraft } = item;
   const [classes] = useLang("event");
+  const [editorState, setEditorState] = React.useState<EditorState | undefined>(
+    undefined
+  );
+  React.useEffect(() => {
+    if (bodyDraft) {
+      setEditorState(EditorState.createWithContent(convertFromRaw(bodyDraft)));
+    } else if (body) {
+      setEditorState(
+        EditorState.createWithContent(ContentState.createFromText(body))
+      );
+    }
+  }, [body, bodyDraft]);
+  function onChange(editorState: EditorState) {
+    setEditorState(editorState);
+  }
+  function save() {
+    if (window.confirm("저장하겠습니까?") && editorState) {
+      const bodyDraft = convertToRaw(editorState.getCurrentContent());
+      // const body = draftToHtml(raw);
+      firestore
+        .collection("event")
+        .doc(id)
+        .update({ ["bodyDraft_" + lang]: bodyDraft });
+    }
+  }
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
       {isDesktop && <PublicationCloseBtn noClose />}
@@ -35,7 +67,6 @@ export default function EventItemRight({
         className={css`
           display: flex;
           flex-direction: column;
-          overflow: hidden;
           flex: 1;
         `}
       >
@@ -62,37 +93,32 @@ export default function EventItemRight({
           }
         >
           <div className={classes.title}>{title}</div>
-          <div
-            className={classes.body}
-            dangerouslySetInnerHTML={{
-              __html: bodyDraft
-                ? draftToHtml(
-                    bodyDraft,
-                    undefined,
-                    undefined,
-                    (entity, text) => {
-                      if (entity.type === "LINK") {
-                        var targetOption = entity.data.targetOption || "_blank";
-                        return '<a href="'
-                          .concat(entity.data.url, '" target="')
-                          .concat(targetOption, '">')
-                          .concat(text, "</a>");
-                      }
-                    }
-                  )
-                : body,
-            }}
-          />
+          <div className={classes.body}>
+            <LinkPluginEditor onChange={onChange} editorState={editorState} />
+          </div>
         </section>
         <div
           className={css`
             ${isDesktop ? undefined : marginH27}
             border-top: solid 1px #707070;
             text-align: center;
-            margin-bottom: ${isDesktop ? 37 : 0}px;
           `}
         >
-          {!isDesktop && <BtnBack />}
+          <button
+            onClick={save}
+            className={css`
+              font-size: 14px;
+              line-height: 1.21;
+              text-align: center;
+              height: 37px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+            `}
+          >
+            save
+          </button>
         </div>
       </div>
     </div>

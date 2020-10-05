@@ -1,30 +1,33 @@
+import { Container } from "@material-ui/core";
+import { css } from "emotion";
 import React from "react";
-import FullPageRollingImagesEdit from "../components/FullPageRollingImagesEdit";
-import { firestore } from "../config/firebase";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-export default () => {
-  const [dataArray, loading, error] = useCollectionData<any>(
-    firestore.collection("main").orderBy("isShowing", "desc").limit(5),
+import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import { auth, firestore } from "../config/firebase";
+
+export default function AdminHome() {
+  const [doc] = useDocumentDataOnce<any>(
+    firestore.collection("users").doc(auth.currentUser?.uid),
     { idField: "id" }
   );
-  const [dataArray2, loading2, error2] = useCollectionData<any>(
-    firestore.collection("main2").orderBy("isShowing", "desc").limit(5),
-    { idField: "id" }
-  );
-  if (loading) {
-    return null;
-  }
-  if (error) {
-    return <>{JSON.stringify(error)}</>;
-  }
   return (
-    <>
-      {!loading && !error && (
-        <FullPageRollingImagesEdit images={dataArray!} collection="main" />
-      )}
-      {!loading2 && !error2 && (
-        <FullPageRollingImagesEdit images={dataArray2!} collection="main2" />
-      )}
-    </>
+    <Container maxWidth="sm">
+      <h1>로그인 된 관리자 정보</h1>
+      <ul
+        className={css`
+          display: flex;
+          flex-direction: column;
+        `}
+      >
+        <li>
+          <img src={auth.currentUser?.photoURL || ""} alt="photoUrl" />
+        </li>
+        <li>{auth.currentUser?.email}</li>
+        <li>{auth.currentUser?.displayName}</li>
+        <li>편집권한: {String(doc?.admin)}</li>
+        <li>
+          <button onClick={() => auth.signOut()}>logout</button>
+        </li>
+      </ul>
+    </Container>
   );
-};
+}
