@@ -53,11 +53,13 @@ export default function AdminEventItemRight({
   function save() {
     if (window.confirm("저장하겠습니까?") && editorState) {
       const bodyDraft = convertToRaw(editorState.getCurrentContent());
-      // const body = draftToHtml(raw);
+      const body = bodyDraft.blocks
+        .map((block) => (!block.text.trim() && "\n") || block.text)
+        .join("\n");
       firestore
         .collection("event")
         .doc(id)
-        .update({ ["bodyDraft_" + lang]: bodyDraft });
+        .update({ ["bodyDraft_" + lang]: bodyDraft, ["body" + lang]: body });
     }
   }
   return (
