@@ -16,7 +16,7 @@ export default function BtnTop({
     <button
       onClick={handler}
       className={css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 14px;
         line-height: 1.21;
         text-align: center;

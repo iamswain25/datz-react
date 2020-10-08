@@ -18,7 +18,7 @@ const aStyle = css`
   font-size: 18px;
 `;
 const h1Style = css`
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 17px;
   line-height: 1.24;
   padding-bottom: 6px;
@@ -68,7 +68,7 @@ export default function Contact() {
       <div
         className={css`
           background-color: #afafaf;
-          font-family: BauerGroteskOTW03-Regular;
+          font-family: datz-regular;
           text-align: center;
           color: #ffffff;
         `}
@@ -93,7 +93,7 @@ export default function Contact() {
           >
             <h1
               className={css`
-                font-family: BauerGroteskOTW03;
+                font-family: datz-medium;
                 font-size: 23px;
                 line-height: 1.17;
               `}

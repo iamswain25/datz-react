@@ -27,7 +27,7 @@ export default function MainCard({
           flex: 1;
           display: flex;
           flex-direction: column;
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
         `}
       >
         <div

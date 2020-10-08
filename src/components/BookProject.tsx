@@ -9,7 +9,7 @@ export default function BookProject({ item }: { item: any }) {
   return (
     <section
       className={css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         text-align: center;
         display: flex;
         flex-direction: column;

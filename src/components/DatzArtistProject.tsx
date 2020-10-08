@@ -19,7 +19,7 @@ export default function DatzArtistProject({ item }: { item: any }) {
       <div
         className={css`
           ${isDesktop ? paddingH55 : paddingH27}
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
           font-size: 23px;
           line-height: 1.17;
           text-align: center;

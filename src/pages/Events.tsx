@@ -30,7 +30,7 @@ export default function Events() {
       <ArtistHeader sticky closeTo="/event" />
       <section
         className={css`
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
           padding-bottom: 20px;
           ${isDesktop ? paddingH37 : paddingH17}
         `}

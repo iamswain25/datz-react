@@ -19,7 +19,7 @@ const asideClass = css`
   width: 100vw;
   height: 100vh;
   background-color: #afafaf;
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 19px;
   line-height: 1.21;
   text-align: left;

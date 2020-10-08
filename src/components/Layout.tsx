@@ -29,7 +29,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
               background-color: #afafaf;
               color: #ffffff;
               position: relative;
-              font-family: BauerGroteskOTW03;
+              font-family: datz-medium;
             `}
           >
             <main

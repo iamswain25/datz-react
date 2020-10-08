@@ -11,7 +11,7 @@ import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
 import { Link } from "react-router-dom";
 const headerText = css`
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -63,7 +63,7 @@ export default function ArtistHeader({
           ${flexrowcenter}
           flex: 1;
           justify-content: flex-end;
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
         `}
       >
         {isDesktop && (

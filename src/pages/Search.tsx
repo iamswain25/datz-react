@@ -20,7 +20,7 @@ const FILTERS: { [key: string]: string } = {
   event: "Event",
 };
 const headerText = css`
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 16px;
   text-decoration: none;
   line-height: 1.19;

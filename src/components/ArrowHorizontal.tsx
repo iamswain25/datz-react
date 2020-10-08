@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 const headerStyle = css`
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 16px;
 
   line-height: 1.19;

@@ -11,7 +11,7 @@ import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
 const headerText = css`
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 16px;
   text-decoration: none;
   line-height: 1.19;
@@ -112,7 +112,7 @@ export default function Header({
           flex: 1;
           justify-content: flex-end;
           font-size: 16px;
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
         `}
       >
         {isDesktop && (

@@ -39,7 +39,7 @@ export default function ExhibitionRight() {
       <h1
         className={css`
           height: 37px;
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
           font-size: 22px;
           line-height: 1.23;
           text-align: center;

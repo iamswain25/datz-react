@@ -19,14 +19,14 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
     galleryRef.current?.play();
   }
   const titleClass = css`
-    font-family: ArnoPro-Subhead;
+    font-family: EBGaramond;
     font-size: ${isDesktop ? 27 : 22}px;
     line-height: ${isDesktop ? 1.37 : 1.36};
     letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
     text-align: center;
   `;
   const authorClass = css`
-    font-family: ArnoPro-Display;
+    font-family: EBGaramond;
     font-size: ${isDesktop ? 21 : 20}px;
     line-height: ${isDesktop ? 1.38 : 1.4};
     letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
@@ -72,7 +72,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
       >
         <div
           className={css`
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: ${isDesktop ? 19 : 16}px;
             line-height: ${isDesktop ? 1.21 : 1.19};
             text-align: center;

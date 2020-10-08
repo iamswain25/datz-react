@@ -12,7 +12,7 @@ export default function Facilities({ items }: { items: any[] }) {
       className={css`
         margin: 43px 0;
         position: relative;
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: center;

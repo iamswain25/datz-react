@@ -57,7 +57,7 @@ export default function ArtistRight({ item }: { item: any }) {
             display: flex;
             flex-direction: column;
 
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: 17px;
             line-height: 1.47;
             color: #ffffff;

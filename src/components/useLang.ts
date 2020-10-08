@@ -1,25 +1,10 @@
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { css } from "emotion";
-const getFont = (
-  font:
-    | "EBGaramond"
-    | "BauerGroteskOTW03-Regular"
-    | "BauerGroteskOTW03" = "EBGaramond",
-  en: boolean = false
-) => {
-  const minus = (() => {
-    switch (font) {
-      case "BauerGroteskOTW03":
-        return 2;
-      case "BauerGroteskOTW03-Regular":
-        return 2;
-      case "EBGaramond":
-        return 3;
-    }
-  })();
+const getFont = (en: boolean = false) => {
+  const minus = 1;
   return (size: number, lineHeight: number) => {
     return css`
-      font-family: ${en ? font : "SpoqaHanSans"};
+      font-family: ${en ? "EBGaramond" : "datz-regular"};
       font-size: ${en ? size : size - minus}px;
       line-height: ${size * lineHeight}px;
     `;
@@ -27,7 +12,7 @@ const getFont = (
 };
 const classes: { [key: string]: any } = {
   publication: (en: boolean) => {
-    const getSize = getFont("EBGaramond", en);
+    const getSize = getFont(en);
     return {
       edition: css`
         font-family: EBGaramond;
@@ -54,7 +39,9 @@ const classes: { [key: string]: any } = {
         margin-top: 1px;
       `,
       title: css`
-        ${getSize(26, 1.31)}
+        font-family: datz-medium;
+        font-size: 26px;
+        line-height: 1.31;
         margin-top: 13px;
         text-align: center;
         color: #4b4b4b;
@@ -88,7 +75,7 @@ const classes: { [key: string]: any } = {
     };
   },
   exhibition: (en: boolean) => {
-    const getSize = getFont("EBGaramond", en);
+    const getSize = getFont(en);
     return {
       date: css`
         font-family: EBGaramond;
@@ -107,7 +94,9 @@ const classes: { [key: string]: any } = {
         margin-top: 1px;
       `,
       title: css`
-        ${getSize(26, 1.31)}
+        font-family: datz-medium;
+        font-size: 26px;
+        line-height: 1.31;
         margin-top: 15px;
         text-align: center;
         color: #4b4b4b;
@@ -133,10 +122,9 @@ const classes: { [key: string]: any } = {
     };
   },
   event: (en: boolean) => {
-    const getSize = getFont("BauerGroteskOTW03", en);
     return {
       type: css`
-        font-family: BauerGroteskOTW03-Book;
+        font-family: datz-medium;
         font-size: 17px;
         line-height: 1.24;
         text-align: center;
@@ -145,7 +133,7 @@ const classes: { [key: string]: any } = {
         padding-bottom: 7px;
       `,
       date: css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 17px;
         line-height: 1.18;
         letter-spacing: 0.34px;
@@ -154,8 +142,9 @@ const classes: { [key: string]: any } = {
         margin-top: 15px;
       `,
       place: css`
-        ${getSize(14, 1.21)}
-        font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
+        font-family: datz-regular;
+        font-size: 14px;
+        line-height: 1.21;
         margin-top: 3px;
         text-align: center;
         color: #afafaf;
@@ -163,14 +152,17 @@ const classes: { [key: string]: any } = {
       `,
 
       title: css`
-        ${getSize(25, 1.08)}
+        font-family: datz-medium;
+        font-size: 25px;
+        line-height: 1.08;
         margin-top: 15px;
         text-align: center;
         color: #4b4b4b;
       `,
       body: css`
-        ${getSize(18, 1.5)}
-        font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
+        font-family: datz-regular;
+        font-size: 18px;
+        line-height: 1.5;
         margin-top: 21px;
         margin-bottom: 40px;
         line-height: 28px;
@@ -183,33 +175,33 @@ const classes: { [key: string]: any } = {
     };
   },
   eventMainCard: (en: boolean) => {
-    const getSize = getFont("BauerGroteskOTW03", en);
     return {
       type: css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: right;
         color: #707070;
       `,
       date: css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: right;
         color: #707070;
       `,
       title: css`
-        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
-        font-size: ${en ? 22 : 21}px;
+        font-family: datz-medium;
+        font-size: 22px;
         line-height: 27px;
         margin-top: 12px;
         text-align: center;
         color: #4b4b4b;
       `,
       body: css`
-        ${getSize(19, 1.42)}
-        font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
+        font-family: datz-regular;
+        font-size: 19px;
+        line-height: 1.42px;
         margin-top: 13px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         max-height: 196px;
@@ -224,25 +216,25 @@ const classes: { [key: string]: any } = {
     };
   },
   exhibitionMainCard: (en: boolean) => {
-    const getSize = getFont("EBGaramond", en);
+    const getSize = getFont(en);
     return {
       type: css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: right;
         color: #707070;
       `,
       date: css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: right;
         color: #707070;
       `,
       title: css`
-        font-family: ${en ? "EBGaramond" : "SpoqaHanSans"};
-        font-size: ${en ? 24 : 21}px;
+        font-family: datz-medium;
+        font-size: 24px;
         letter-spacing: 0.48px;
         line-height: 27px;
         margin-top: 12px;
@@ -265,17 +257,19 @@ const classes: { [key: string]: any } = {
     };
   },
   artistWidget: (en: boolean) => {
-    const getSize = getFont("EBGaramond", en);
+    const getSize = getFont(en);
     return {
       title: css`
-        ${getSize(22, 1.23)}
+        font-family: datz-medium;
+        font-size: 22px;
+        line-height: 1.23;
         letter-spacing: 0.44px;
         text-align: center;
         color: #4b4b4b;
       `,
       body: css`
         ${getSize(17, 1.47)}
-        font-family: ${en ? "BauerGroteskOTW03-Regular" : "SpoqaHanSans"};
+        font-family: datz-regular;
         line-height: 28px;
         margin-top: 12px;
         color: #707070;
@@ -290,18 +284,17 @@ const classes: { [key: string]: any } = {
     };
   },
   ArtistLeft: (en: boolean) => {
-    const getSize = getFont("BauerGroteskOTW03-Regular", en);
     return {
       bio: css`
-        ${getSize(15, 1.8)}
-        line-height: 28px;
+        font-family: datz-regular;
+        font-size: 15px;
+        line-height: 1.8;
         margin-top: 17px;
         white-space: break-spaces;
       `,
     };
   },
   PublicationList: (en: boolean) => {
-    const getSize = getFont("BauerGroteskOTW03", en);
     return {
       link: css`
         padding: 0 18px;
@@ -313,19 +306,24 @@ const classes: { [key: string]: any } = {
         text-align: center;
       `,
       title: css`
-        ${getSize(19, 1.21)}
+        font-family: datz-medium;
+        font-size: 19px;
+        line-height: 1.21;
       `,
       artist: css`
-        ${getSize(17, 1.35)}
+        font-family: datz-medium;
+        font-size: 17px;
+        line-height: 1.35;
         margin-top: 4px;
       `,
     };
   },
   ArtistPage: (en: boolean) => {
-    const getSize = getFont("BauerGroteskOTW03-Regular", en);
     return {
       body: css`
-        ${getSize(18, 1.39)}
+        font-family: datz-regular;
+        font-size: 18px;
+        line-height: 1.39;
         text-align: left;
         line-height: 28px;
         margin-top: 37px;
@@ -334,11 +332,11 @@ const classes: { [key: string]: any } = {
     };
   },
   About: (en: boolean) => {
-    const getSize = getFont("BauerGroteskOTW03-Regular", en);
     return {
       body: css`
-        ${getSize(17, 1.47)}
-        // line-height: 28px;
+        font-family: datz-regular;
+        font-size: 17px;
+        line-height: 1.47;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -348,39 +346,41 @@ const classes: { [key: string]: any } = {
         white-space: break-spaces;
       `,
       title: css`
-        ${getSize(20, 1.25)}
-        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
+        font-family: datz-medium;
+        font-size: 20px;
+        line-height: 1.25;
         text-align: center;
         white-space: break-spaces;
         margin-top: 34px;
       `,
       desc: css`
-        ${getSize(18, 1.39)}
-        line-height: 28px;
+        font-family: datz-regular;
+        font-size: 18px;
+        line-height: 1.39;
         text-align: left;
         white-space: break-spaces;
         flex: 1;
       `,
       h1: css`
-        ${getSize(23, 1.17)}
-        line-height: 27px;
-        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
+        font-family: datz-medium
+        font-size: 23px;
+        line-height: 1.17;
         text-align: center;
       `,
       h2: css`
-        ${getSize(18, 1.56)}
-        font-family: ${en ? "BauerGroteskOTW03" : "SpoqaHanSans"};
+        font-family: datz-medium
+        font-size: 18px;
+        line-height: 1.56;
         text-align: center;
-        line-height: 28px;
       `,
     };
   },
   body: (en: boolean) => {
     return {
       regular: (fontSize = 17, lineHeight = 1.5) => {
-        const getSize = getFont("BauerGroteskOTW03-Regular", en);
         return css`
-          ${getSize(fontSize, lineHeight)}
+          font-family: datz-regular;
+          font-size: ${fontSize}px;
           line-height: 28px;
           text-align: left;
           white-space: break-spaces;
@@ -390,9 +390,10 @@ const classes: { [key: string]: any } = {
         `;
       },
       book: (fontSize = 17, lineHeight = 1.5) => {
-        const getSize = getFont("BauerGroteskOTW03", en);
         return css`
-          ${getSize(fontSize, lineHeight)}
+          font-family: datz-medium;
+          font-size: ${fontSize}px;
+          line-height: ${lineHeight}px;
           text-align: center;
           white-space: break-spaces;
           a {
@@ -401,7 +402,7 @@ const classes: { [key: string]: any } = {
         `;
       },
       ebgaramond: (fontSize = 17, lineHeight = 1.5) => {
-        const getSize = getFont("EBGaramond", en);
+        const getSize = getFont(en);
         return css`
           ${getSize(fontSize, lineHeight)}
           text-align: left;

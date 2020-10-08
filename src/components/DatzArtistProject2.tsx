@@ -22,7 +22,7 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
     <Grid
       className={css`
         margin: 43px 0;
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: center;

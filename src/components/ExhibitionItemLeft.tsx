@@ -15,7 +15,7 @@ const stickyContainer = css`
   height: calc(100vh - 79px);
   margin-left: 18px;
   margin-right: 40px;
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   display: flex;
   flex-direction: column;
 `;

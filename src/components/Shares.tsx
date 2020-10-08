@@ -18,7 +18,7 @@ export default function Shares() {
   return (
     <div
       className={css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: center;

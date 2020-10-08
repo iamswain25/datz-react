@@ -47,7 +47,7 @@ export default function PublicationList() {
             min-height: 77px;
             justify-content: center;
             align-items: center;
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: 16px;
             line-height: 1.19;
             color: #cccccc;
@@ -113,7 +113,7 @@ export default function PublicationList() {
         >
           <p
             className={css`
-              font-family: ArnoPro-Display;
+              font-family: EBGaramond;
               font-size: 18px;
               line-height: 1.5;
               letter-spacing: 0.36px;

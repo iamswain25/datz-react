@@ -1,8 +1,8 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+/* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css); */
 body {
   margin: 0;
-  font-family: BauerGroteskOTW03, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: datz-medium, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +27,7 @@ textarea {
   color: inherit;
   /* Browsers have different default form fonts */
   font-size: 13px;
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
 }
 a {
   text-decoration: none;
@@ -210,113 +210,28 @@ select[multiple] {
   .image-gallery-image {
   object-fit: contain;
 }
-@font-face {
-  font-family: BauerGroteskOTW03;
-  src: local(BauerGroteskOTW03),
-    url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.woff2)
-      format("woff2"),
-    url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.woff)
-      format("woff"),
-    url(./assets/fonts/bauer/BauerGroteskOTW03-Book/@font-face/BauerGroteskOTW03-Book.ttf)
-      format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-family: BauerGroteskOTW03-Regular;
-  src: url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.eot"); /* IE9*/
-  src: local(BauerGroteskOTW03-Regular),
-    url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.woff2")
-      format("woff2"),
-    /* chrome、firefox */
-      url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.woff")
-      format("woff"),
-    /* chrome、firefox */
-      url("./assets/fonts/bauer/BauerGroteskOTW03-Regular/@font-face/BauerGroteskOTW03-Regular.ttf")
-      format("truetype");
-}
-@font-face {
-  font-family: ArnoPro-Subhead;
-  src: local(ArnoPro-Subhead),
-    url(./assets/fonts/arno_pro/ArnoPro-Subhead/@font-face/ArnoPro-Subhead.woff2)
-      format("woff2"),
-    url(./assets/fonts/arno_pro/ArnoPro-Subhead/@font-face/ArnoPro-Subhead.woff)
-      format("woff"),
-    url(./assets/fonts/arno_pro/ArnoPro-Subhead/@font-face/ArnoPro-Subhead.ttf)
-      format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: ArnoPro-Display;
-  src: local(ArnoPro-Display),
-    url(./assets/fonts/arno_pro/ArnoPro-Display/@font-face/ArnoPro-Display.woff2)
-      format("woff2"),
-    url(./assets/fonts/arno_pro/ArnoPro-Display/@font-face/ArnoPro-Display.woff)
-      format("woff"),
-    url(./assets/fonts/arno_pro/ArnoPro-Display/@font-face/ArnoPro-Display.ttf)
-      format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "SpoqaHanSans";
-  font-weight: 700;
-  src: local("SpoqaHanSans Bold"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansBold.woff2")
-      format("woff2"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansBold.woff")
-      format("woff"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansBold.ttf")
-      format("truetype");
-}
-
-@font-face {
-  font-family: "SpoqaHanSans";
-  font-weight: 400;
-  src: local("SpoqaHanSans Regular"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansRegular.woff2")
-      format("woff2"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansRegular.woff")
-      format("woff"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansRegular.ttf")
-      format("truetype");
-}
-
-@font-face {
-  font-family: "SpoqaHanSans";
-  font-weight: 300;
-  src: local("SpoqaHanSans Light"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansLight.woff2")
-      format("woff2"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansLight.woff")
-      format("woff"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansLight.ttf")
-      format("truetype");
-}
-
-@font-face {
-  font-family: "SpoqaHanSans";
-  font-weight: 100;
-  src: local("SpoqaHanSans Thin"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansThin.woff2")
-      format("woff2"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansThin.woff")
-      format("woff"),
-    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans/SpoqaHanSansThin.ttf")
-      format("truetype");
-}
 
 @font-face {
   font-family: EBGaramond;
   src: local(EBGaramond),
     url(./assets/fonts/EBGaramond/EBGaramond-Regular.ttf) format("truetype");
   font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: datz-regular;
+  src: local(datz), url(./assets/fonts/datz/Datz-Regular.otf) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: datz-medium;
+  src: local(datz), url(./assets/fonts/datz/Datz-Medium.otf) format("opentype");
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
 }

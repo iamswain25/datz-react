@@ -6,7 +6,7 @@ export const bottomBtn37 = css`
   width: 100%;
   min-height: 37px;
   text-align: center;
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 14px;
   line-height: 1.21;
   color: #707070;

@@ -72,7 +72,7 @@ export default function AboutImagesGrid({ item }: { item: any }) {
               ? css`
                   margin-top: 19px;
                   height: 150px;
-                  font-family: BauerGroteskOTW03;
+                  font-family: datz-medium;
                   font-size: 19px;
                   line-height: 1.42;
                   text-align: center;
@@ -82,7 +82,7 @@ export default function AboutImagesGrid({ item }: { item: any }) {
               : css`
                   position: absolute;
                   margin-top: 19px;
-                  font-family: BauerGroteskOTW03;
+                  font-family: datz-medium;
                   text-align: center;
                   color: #ffffff;
                   ${isDesktop ? marginH37 : marginH10}

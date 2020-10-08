@@ -30,7 +30,7 @@ export default function Exhibitions() {
       <ArtistHeader sticky closeTo="/exhibition" />
       <section
         className={css`
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
           ${isDesktop ? paddingH37 : paddingH17}
           padding-bottom: 20px;
         `}

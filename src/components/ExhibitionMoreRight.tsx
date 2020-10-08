@@ -34,7 +34,7 @@ export default function ExhibitionMoreRight() {
         <div
           className={css`
             height: 31px;
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: 17px;
             line-height: 1.24;
             text-align: center;

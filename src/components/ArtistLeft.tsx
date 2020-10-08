@@ -9,7 +9,7 @@ const stickyContainer = css`
   // top: 79px;
   flex: 1;
   margin-right: 30px;
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   display: flex;
   flex-direction: column;
   color: #ffffff;
@@ -34,7 +34,7 @@ export default function ArtistLeft({ item }: { item: any }) {
       >
         <div
           className={css`
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: 20px;
             line-height: 1.35;
             text-align: center;
@@ -53,7 +53,7 @@ export default function ArtistLeft({ item }: { item: any }) {
             display: flex;
             flex-direction: column;
             padding-top: 20px;
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: 17px;
             line-height: 1.47;
             text-align: center;

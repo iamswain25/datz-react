@@ -14,7 +14,7 @@ export default function DatzArtistExhibition2({ item }: { item: any }) {
         height: 100%;
         width: 100%;
         position: absolute;
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 23px;
         line-height: 1.17;
         text-align: center;

@@ -8,7 +8,7 @@ import useArtists from "../utils/useArtists";
 import useLang from "./useLang";
 import useDocs from "../utils/useDocs";
 const textClass = (dark = false) => css`
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 16px;
   line-height: 1.19;
   text-align: right;

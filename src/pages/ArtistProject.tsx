@@ -90,7 +90,7 @@ export default function ArtistProject() {
                   margin-top: 21px;
                   width: 100%;
                   position: absolute;
-                  font-family: BauerGroteskOTW03;
+                  font-family: datz-medium;
                   font-size: 23px;
                   line-height: 1.17;
                   text-align: center;

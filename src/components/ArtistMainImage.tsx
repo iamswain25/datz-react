@@ -9,7 +9,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
   const { name, genre } = item;
   const nameClassEn = css`
     height: 27px;
-    font-family: ArnoPro-Display;
+    font-family: EBGaramond;
     font-size: ${isDesktop ? 27 : 22}px;
     line-height: ${isDesktop ? 1.37 : 1.36};
     letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
@@ -37,7 +37,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
           display: flex;
           flex-direction: column;
           position: relative;
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
           text-align: center;
           color: #ffffff;
           height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};

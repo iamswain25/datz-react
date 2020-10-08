@@ -13,7 +13,7 @@ export default function SupportTexts({ item }: { item: any }) {
         height: 100%;
         width: 100%;
         position: absolute;
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 16px;
         line-height: 1.19;
         text-align: center;

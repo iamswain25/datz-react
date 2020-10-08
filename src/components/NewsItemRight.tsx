@@ -9,7 +9,7 @@ import BodyDraftHtml from "./BodyDraftHtml";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   display: flex;
   flex-direction: column;
   flex: 1;

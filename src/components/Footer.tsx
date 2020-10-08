@@ -6,7 +6,7 @@ import Shares from "./Shares";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 const menu = css`
-  font-family: BauerGroteskOTW03;
+  font-family: datz-medium;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -90,7 +90,7 @@ export default function Footer() {
       target="_blank"
       rel="noopener noreferrer"
       className={css`
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: ${isDesktop ? 21 : 19}px;
         line-height: ${isDesktop ? 1.24 : 1.42};
         text-align: left;
@@ -106,7 +106,7 @@ export default function Footer() {
         <section
           className={css`
             margin-top: 40px;
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             height: 73px;
             background-color: #ececec;
             display: flex;
@@ -147,7 +147,7 @@ export default function Footer() {
         >
           <F1
             className={css`
-              font-family: BauerGroteskOTW03;
+              font-family: datz-medium;
               font-size: 11px;
               color: #707070;
               line-height: 2;
@@ -195,7 +195,7 @@ export default function Footer() {
         <FlexRow
           className={css`
             height: 26px;
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: 21px;
             line-height: 1.24;
             text-align: left;
@@ -233,7 +233,7 @@ export default function Footer() {
       >
         <Flex
           className={css`
-            font-family: BauerGroteskOTW03;
+            font-family: datz-medium;
             font-size: 11px;
             line-height: 1.27;
             text-align: left;

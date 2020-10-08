@@ -19,7 +19,7 @@ export default function DatzmuseumOrder({
         font-size: 16px;
         line-height: 1.19;
         color: #707070;
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
       `}
     >
       <Logo type={logo} color="#707070" className={flexrowcenter} />

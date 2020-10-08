@@ -31,7 +31,7 @@ export default function News() {
       <section
         className={css`
           margin-top: 32px;
-          font-family: BauerGroteskOTW03;
+          font-family: datz-medium;
           background-color: #afafaf;
           text-align: center;
           color: #ffffff;

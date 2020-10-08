@@ -10,7 +10,7 @@ export default function ResidencyLeft({ item }: { item?: any }) {
         height: 100%;
         width: 100%;
         position: absolute;
-        font-family: BauerGroteskOTW03;
+        font-family: datz-medium;
         font-size: 23px;
         line-height: 1.17;
         text-align: center;
@@ -58,7 +58,7 @@ export default function ResidencyLeft({ item }: { item?: any }) {
           <div
             className={css`
               max-width: 600px;
-              font-family: ArnoPro-Subhead;
+              font-family: EBGaramond;
               font-size: 20px;
               line-height: 1.35;
               margin-bottom: 27px;
