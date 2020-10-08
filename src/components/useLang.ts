@@ -58,7 +58,9 @@ const classes: { [key: string]: any } = {
         margin-top: 30px;
         line-height: 28px;
         font-style: ${en ? "italic" : "normal"};
-        ${en ? "font-family: 'Cormorant Garamond';" : undefined};
+        ${en
+          ? "font-family: 'Cormorant Garamond'; font-weight: 500;"
+          : undefined};
       `,
       body: css`
         ${getSize(19, 1.42)}
