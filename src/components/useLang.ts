@@ -2,9 +2,9 @@ import { useGlobalState, LANG } from "../store/useGlobalState";
 import { css } from "emotion";
 const getFont = (en: boolean = false) => {
   const minus = 1;
-  return (size: number, lineHeight: number) => {
+  return (size: number, lineHeight: number, font = "datz-regular") => {
     return css`
-      font-family: ${en ? "'EB Garamond'" : "datz-regular"};
+      font-family: ${en ? "'EB Garamond'" : font};
       font-size: ${en ? size : size - minus}px;
       line-height: ${size * lineHeight}px;
     `;
@@ -39,9 +39,10 @@ const classes: { [key: string]: any } = {
         margin-top: 1px;
       `,
       title: css`
-        font-family: datz-medium;
-        font-size: 26px;
-        line-height: 1.31;
+        // font-family: datz-medium;
+        // font-size: 26px;
+        // line-height: 1.31;
+        ${getSize(26, 1.31, "datz-medium")}
         margin-top: 13px;
         text-align: center;
         color: #4b4b4b;
@@ -94,9 +95,10 @@ const classes: { [key: string]: any } = {
         margin-top: 1px;
       `,
       title: css`
-        font-family: datz-medium;
-        font-size: 26px;
-        line-height: 1.31;
+        // font-family: datz-medium;
+        // font-size: 26px;
+        // line-height: 1.31;
+        ${getSize(26, 1.31, "datz-medium")}
         margin-top: 15px;
         text-align: center;
         color: #4b4b4b;
@@ -233,10 +235,11 @@ const classes: { [key: string]: any } = {
         color: #707070;
       `,
       title: css`
-        font-family: datz-medium;
-        font-size: 24px;
+        // font-family: datz-medium;
+        // font-size: 24px;
+        // line-height: 27px;
+        ${getSize(24, 1.19, "datz-medium")}
         letter-spacing: 0.48px;
-        line-height: 27px;
         margin-top: 12px;
         text-align: center;
         color: #4b4b4b;
@@ -260,16 +263,16 @@ const classes: { [key: string]: any } = {
     const getSize = getFont(en);
     return {
       title: css`
-        font-family: datz-medium;
-        font-size: 22px;
-        line-height: 1.23;
+        // font-family: datz-medium;
+        // font-size: 22px;
+        // line-height: 1.23;
+        ${getSize(22, 1.23, "datz-medium")}
         letter-spacing: 0.44px;
         text-align: center;
         color: #4b4b4b;
       `,
       body: css`
         ${getSize(17, 1.47)}
-        font-family: datz-regular;
         line-height: 28px;
         margin-top: 12px;
         color: #707070;
