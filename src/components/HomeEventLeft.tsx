@@ -102,7 +102,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
                       `}
                     />
                     <p className={titleClass}>{item.title}</p>
-                    <p className={authorClass}>{item.subtitle}</p>
+                    <p className={authorClass}>{item.text}</p>
                   </Link>
                   <Logo
                     type={item.logo}
