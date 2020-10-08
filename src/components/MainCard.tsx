@@ -15,7 +15,7 @@ export default function MainCard({
   item: any;
   type: string;
 }) {
-  const { date, title, body, id } = item;
+  const { date, title, body, id, preview_body } = item;
   const isDesktop = useDesktop();
   const [classes] = useLang(`${type}MainCard`);
   return (
@@ -105,7 +105,7 @@ export default function MainCard({
             `}
           >
             <p className={classes.title}>{title}</p>
-            <p className={classes.body}>{body}</p>
+            <p className={classes.body}>{preview_body ?? body}</p>
           </div>
           <button
             className={css`
