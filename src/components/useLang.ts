@@ -209,6 +209,11 @@ const classes: { [key: string]: any } = {
         max-height: 196px;
         line-height: 28px;
         white-space: break-spaces;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
       `,
     };
   },
@@ -245,6 +250,11 @@ const classes: { [key: string]: any } = {
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         max-height: 196px;
         white-space: break-spaces;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
       `,
     };
   },
