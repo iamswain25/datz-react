@@ -46,7 +46,8 @@ export default function ArtistProject() {
   return (
     <>
       <Header
-        fixed
+        fixed={isDesktop}
+        sticky={!isDesktop}
         darkerLogo
         backgroundColor={
           !isDesktop
