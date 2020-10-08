@@ -98,7 +98,7 @@ export default function FullPageRollingImages({
           className={css`
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             margin: 0 20px;
           `}
         >
