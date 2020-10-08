@@ -112,6 +112,9 @@ export default function Routes() {
           <Route exact path="/newslist">
             <Redirect to="/newslist/all" />
           </Route>
+          <Route exact path="/news">
+            <Redirect to="/newslist/all" />
+          </Route>
           <Route exact path="/newslist/:filter" component={News} />
           <Route exact path="/news/:id" component={NewsItem} />
           <PrivateRoute path="/admin" component={AdminHome} />
