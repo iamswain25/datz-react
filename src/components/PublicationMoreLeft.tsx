@@ -6,6 +6,7 @@ import DatzpressOrder from "./DatzpressOrder";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
 import BtnBack from "./BtnBack";
+import BodyDraftHtml from "./BodyDraftHtml";
 
 const stickyContainer = css`
   align-self: flex-start;
@@ -26,7 +27,7 @@ const mobileContainer = css`
 export default function PublicationMoreLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
-  const { title, artist, quotes, body, notes, order_url } = item;
+  const { title, artist, quotes, notes, order_url } = item;
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <PublicationCloseBtn />
@@ -56,7 +57,11 @@ export default function PublicationMoreLeft({ item }: { item: any }) {
           >
             <Linkify>
               <p className={classes.quotes}>{quotes}</p>
-              <p className={classes.body}>{body}</p>
+            </Linkify>
+            <div className={classes.body}>
+              <BodyDraftHtml item={item} />
+            </div>
+            <Linkify>
               <p className={classes.notes}>{notes}</p>
             </Linkify>
           </div>

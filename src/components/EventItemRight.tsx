@@ -2,10 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import PublicationCloseBtn from "./PublicationCloseBtn";
-import draftToHtml from "draftjs-to-html";
 import { paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
 import useLang from "./useLang";
+import BodyDraftHtml from "./BodyDraftHtml";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
@@ -26,7 +26,7 @@ export default function EventItemRight({
   item: any;
 }) {
   const isDesktop = useDesktop();
-  const { type, date, title, body, place, bodyDraft } = item;
+  const { type, date, title, place } = item;
   const [classes] = useLang("event");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
@@ -62,27 +62,9 @@ export default function EventItemRight({
           }
         >
           <div className={classes.title}>{title}</div>
-          <div
-            className={classes.body}
-            dangerouslySetInnerHTML={{
-              __html: bodyDraft
-                ? draftToHtml(
-                    bodyDraft,
-                    undefined,
-                    undefined,
-                    (entity, text) => {
-                      if (entity.type === "LINK") {
-                        var targetOption = entity.data.targetOption || "_blank";
-                        return '<a href="'
-                          .concat(entity.data.url, '" target="')
-                          .concat(targetOption, '">')
-                          .concat(text, "</a>");
-                      }
-                    }
-                  )
-                : body,
-            }}
-          />
+          <div className={classes.body}>
+            <BodyDraftHtml item={item} />
+          </div>
         </section>
         <div
           className={css`

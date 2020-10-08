@@ -5,7 +5,7 @@ import { paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
 import ShareButtons from "./ShareButtons";
 import useLang from "./useLang";
-import Linkify from "./Linkify";
+import BodyDraftHtml from "./BodyDraftHtml";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
@@ -111,7 +111,7 @@ export default function NewsItemRight({
               padding-bottom: 49px;
             `}
           >
-            <Linkify>{item.body}</Linkify>
+            <BodyDraftHtml item={item} />
           </div>
         </section>
         <div

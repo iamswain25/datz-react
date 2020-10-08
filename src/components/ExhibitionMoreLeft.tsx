@@ -8,6 +8,7 @@ import Linkify from "react-linkify";
 import useLang from "./useLang";
 import BtnBack from "./BtnBack";
 import useDoc from "../utils/useDoc";
+import BodyDraftHtml from "./BodyDraftHtml";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -53,8 +54,10 @@ export default function ExhibitionMoreLeft() {
             white-space: break-spaces;
           `}
         >
+          <div className={classes.body}>
+            <BodyDraftHtml item={item} />
+          </div>
           <Linkify>
-            <div className={classes.body}>{item.body}</div>
             <div className={classes.notes}>{item.notes}</div>
           </Linkify>
         </div>

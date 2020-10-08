@@ -75,6 +75,9 @@ const classes: { [key: string]: any } = {
         ${getSize(19, 1.42)}
         margin-top: 20px;
         line-height: 28px;
+        a {
+          text-decoration: underline;
+        }
       `,
       notes: css`
         ${getSize(16, 1.69)}
@@ -115,6 +118,9 @@ const classes: { [key: string]: any } = {
         line-height: 28px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
+        a {
+          text-decoration: underline;
+        }
       `,
       notes: css`
         ${getSize(16, 1.69)}
@@ -378,6 +384,9 @@ const classes: { [key: string]: any } = {
           line-height: 28px;
           text-align: left;
           white-space: break-spaces;
+          a {
+            text-decoration: underline;
+          }
         `;
       },
       book: (fontSize = 17, lineHeight = 1.5) => {
@@ -386,6 +395,9 @@ const classes: { [key: string]: any } = {
           ${getSize(fontSize, lineHeight)}
           text-align: center;
           white-space: break-spaces;
+          a {
+            text-decoration: underline;
+          }
         `;
       },
       ebgaramond: (fontSize = 17, lineHeight = 1.5) => {
@@ -394,6 +406,9 @@ const classes: { [key: string]: any } = {
           ${getSize(fontSize, lineHeight)}
           text-align: left;
           white-space: break-spaces;
+          a {
+            text-decoration: underline;
+          }
         `;
       },
     };

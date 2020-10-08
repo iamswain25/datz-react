@@ -32,7 +32,6 @@ import NewsItem from "../pages/NewsItem";
 import FullImageGallery from "../pages/FullImageGallery";
 import Layout from "../components/Layout";
 import Search from "../pages/Search";
-import AdminEventItem from "../pages/AdminEventItem";
 export default function Routes() {
   return (
     <Router>
@@ -72,11 +71,18 @@ export default function Routes() {
           </Route>
 
           <Route exact path="/event/:id" component={EventItem} />
+          <PrivateRoute exact path="/admin/event/:id" component={EventItem} />
           <PrivateRoute
             exact
-            path="/admin/event/:id"
-            component={AdminEventItem}
+            path="/admin/publication/:id/readmore"
+            component={PublicationReadmore}
           />
+          <PrivateRoute
+            exact
+            path="/admin/exhibition/:id/readmore"
+            component={ExhibitionReadmore}
+          />
+          <PrivateRoute exact path="/admin/news/:id" component={NewsItem} />
           <Route exact path="/exhibition/:id" component={ExhibitionItem} />
           <Route
             exact
@@ -117,7 +123,7 @@ export default function Routes() {
           </Route>
           <Route exact path="/newslist/:filter" component={News} />
           <Route exact path="/news/:id" component={NewsItem} />
-          <PrivateRoute path="/admin" component={AdminHome} />
+          <PrivateRoute exact path="/admin" component={AdminHome} />
           <Route path="*">
             <Redirect to="/" />
           </Route>
