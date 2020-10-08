@@ -9,7 +9,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
   const { name, genre } = item;
   const nameClassEn = css`
     height: 27px;
-    font-family: EBGaramond;
+    font-family: "EB Garamond";
     font-size: ${isDesktop ? 27 : 22}px;
     line-height: ${isDesktop ? 1.37 : 1.36};
     letter-spacing: ${isDesktop ? 0.54 : 0.44}px;

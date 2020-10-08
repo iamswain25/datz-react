@@ -113,7 +113,7 @@ export default function PublicationList() {
         >
           <p
             className={css`
-              font-family: EBGaramond;
+              font-family: "EB Garamond";
               font-size: 18px;
               line-height: 1.5;
               letter-spacing: 0.36px;

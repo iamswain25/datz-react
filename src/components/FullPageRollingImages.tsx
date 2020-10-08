@@ -37,14 +37,14 @@ export default function FullPageRollingImages({
     margin-top: ${isDesktop ? 0 : 5}px;
   `;
   const titleClass = css`
-    font-family: EBGaramond;
+    font-family: "EB Garamond";
     font-size: ${isDesktop ? 27 : 22}px;
     line-height: ${isDesktop ? 1.37 : 1.36};
     letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
     text-align: center;
   `;
   const authorClass = css`
-    font-family: EBGaramond;
+    font-family: "EB Garamond";
     font-size: ${isDesktop ? 21 : 20}px;
     line-height: ${isDesktop ? 1.38 : 1.4};
     letter-spacing: ${isDesktop ? 0.42 : 0.4}px;

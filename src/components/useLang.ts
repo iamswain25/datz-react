@@ -4,7 +4,7 @@ const getFont = (en: boolean = false) => {
   const minus = 1;
   return (size: number, lineHeight: number) => {
     return css`
-      font-family: ${en ? "EBGaramond" : "datz-regular"};
+      font-family: ${en ? "'EB Garamond'" : "datz-regular"};
       font-size: ${en ? size : size - minus}px;
       line-height: ${size * lineHeight}px;
     `;
@@ -15,7 +15,7 @@ const classes: { [key: string]: any } = {
     const getSize = getFont(en);
     return {
       edition: css`
-        font-family: EBGaramond;
+        font-family: "EB Garamond";
         font-size: 19px;
         font-weight: normal;
         font-stretch: normal;
@@ -27,7 +27,7 @@ const classes: { [key: string]: any } = {
         margin-top: 12px;
       `,
       copies_count: css`
-        font-family: EBGaramond;
+        font-family: "EB Garamond";
         font-size: 15px;
         font-weight: normal;
         font-stretch: normal;
@@ -78,7 +78,7 @@ const classes: { [key: string]: any } = {
     const getSize = getFont(en);
     return {
       date: css`
-        font-family: EBGaramond;
+        font-family: "EB Garamond";
         font-size: 19px;
         line-height: 1.32;
         text-align: center;
@@ -86,7 +86,7 @@ const classes: { [key: string]: any } = {
         margin-top: 13px;
       `,
       type: css`
-        font-family: EBGaramond;
+        font-family: "EB Garamond";
         font-size: 15px;
         line-height: 1.27;
         text-align: center;
@@ -393,7 +393,7 @@ const classes: { [key: string]: any } = {
         return css`
           font-family: datz-medium;
           font-size: ${fontSize}px;
-          line-height: ${lineHeight}px;
+          line-height: ${lineHeight};
           text-align: center;
           white-space: break-spaces;
           a {

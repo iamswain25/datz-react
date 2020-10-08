@@ -58,7 +58,7 @@ export default function ResidencyLeft({ item }: { item?: any }) {
           <div
             className={css`
               max-width: 600px;
-              font-family: EBGaramond;
+              font-family: "EB Garamond";
               font-size: 20px;
               line-height: 1.35;
               margin-bottom: 27px;

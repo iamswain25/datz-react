@@ -1,5 +1,4 @@
-/* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css); */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap');
 body {
   margin: 0;
   font-family: datz-medium, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -209,15 +208,6 @@ select[multiple] {
   .image-gallery-slide
   .image-gallery-image {
   object-fit: contain;
-}
-
-@font-face {
-  font-family: EBGaramond;
-  src: local(EBGaramond),
-    url(./assets/fonts/EBGaramond/EBGaramond-Regular.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
 }
 
 @font-face {
