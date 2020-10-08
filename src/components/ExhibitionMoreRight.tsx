@@ -13,13 +13,14 @@ const mobileContainer = css`
   margin-top: 48px;
 `;
 const desktopContainer = css`
-  width: calc(50% - 30px - 37px);
+  width: 50%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding-left: 30px;
   padding-top: 40px;
 `;
-export default function ExhibitionReadmoreRelated() {
+export default function ExhibitionMoreRight() {
   const isDesktop = useDesktop();
   const item = useDoc("exhibition");
   return (

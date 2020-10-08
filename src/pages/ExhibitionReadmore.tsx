@@ -1,5 +1,5 @@
 import React from "react";
-import ExhibitionReadmoreRelated from "../components/ExhibitionReadmoreRelated";
+import ExhibitionMoreRight from "../components/ExhibitionMoreRight";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
 import {
@@ -17,7 +17,7 @@ export default function ExhibitionReadmore() {
       <div className={isDesktop ? paddingH37 : paddingH27}>
         <section className={isDesktop ? flexrow : flexcolumn}>
           <ExhibitionMoreLeft />
-          <ExhibitionReadmoreRelated />
+          <ExhibitionMoreRight />
         </section>
       </div>
     </>
