@@ -29,12 +29,7 @@ export default function NewsItemLeft({ item }: { item: any }) {
             `
       }
     >
-      <EventCoverWidget
-        dark
-        images={item.images}
-        fit={isDesktop ? "height" : "width"}
-        type="news"
-      />
+      <EventCoverWidget dark images={item.images} type="news" />
     </section>
   );
 }

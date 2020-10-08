@@ -4,14 +4,9 @@ import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import useDesktop from "./useDesktop";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
-import useStorage from "./useStorage";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useParams from "./useParams";
-const afterClass = (i: number) => css`
-  position: relative;
-  width: inherit;
-  height: inherit;
-`;
+import LazyImage from "./LazyImage";
 const itemClass = css`
   display: flex;
   align-items: center;
@@ -30,23 +25,28 @@ const responsive = {
 export default function EventCoverWidget({
   dark = false,
   images,
-  fit = "height",
   type = "event",
 }: {
   dark?: boolean;
   images: any[];
-  fit?: string;
   type?: "event" | "news";
 }) {
   const isDesktop = useDesktop();
+  const refs = React.useRef<any>();
+  const location = useLocation<{ index: number }>();
+  const index = location?.state?.index ?? 0;
+  if (index && refs.current) {
+    setTimeout(() => refs.current.goToSlide(index, true), 500);
+  }
   return (
     <div
-      className={`${fit} ${css`
-        ${fit}: 100%;
+      className={css`
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         overflow: hidden;
-      `}`}
+      `}
     >
       <Carousel
         responsive={responsive}
@@ -54,6 +54,7 @@ export default function EventCoverWidget({
           flex: 1;
           align-items: normal;
         `}
+        ref={refs}
         itemClass={itemClass}
         renderButtonGroupOutside={true}
         arrows={false}
@@ -61,14 +62,12 @@ export default function EventCoverWidget({
           <CarouselBtnGroup
             dark={dark}
             noBorderBottom={!isDesktop}
-            plusMargin={fit === "width" ? 20 : 0}
+            plusMargin={isDesktop ? 0 : 20}
           />
         }
       >
         {images?.map((img, i) => (
-          <span key={i} className={afterClass(i)}>
-            <Sub dark={dark} image={img} type={type} index={i} />
-          </span>
+          <Sub dark={dark} image={img} type={type} index={i} key={i} />
         )) || []}
       </Carousel>
     </div>
@@ -86,7 +85,7 @@ function Sub({
   type: "event" | "news";
   index: number;
 }) {
-  const img = useStorage(image);
+  // const img = useStorage(image);
   const { id } = useParams();
   return (
     <div
@@ -94,21 +93,32 @@ function Sub({
         background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
         display: flex;
         flex: 1;
+        height: 100%;
       `}
     >
       <Link
         to={`/${type}/${id}/images/${index}`}
         replace
         className={css`
-          background-image: url(${img});
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
+          // background-image: url();
+          // background-position: center;
+          // background-size: cover;
+          // background-repeat: no-repeat;
           flex: 1;
-          height: 100vw;
+          // height: 100%;
+          // width: 100%;
           color: ${dark ? "#ffffff" : "#707070"};
         `}
-      />
+      >
+        <LazyImage
+          link={image}
+          img={css`
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          `}
+        />
+      </Link>
     </div>
   );
 }

@@ -16,18 +16,14 @@ const stickyContainer = css`
 const mobileContainer = css`
   position: relative;
   overflow: hidden;
-  max-height: 588px;
+  // max-height: 588px;
   ${flexcolumn}
 `;
 export default function EventItemLeft({ images }: { images: string[] }) {
   const isDesktop = useDesktop();
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <EventCoverWidget
-        images={images}
-        fit={isDesktop ? "height" : "width"}
-        type="event"
-      />
+      <EventCoverWidget images={images} type="event" />
     </div>
   );
 }
