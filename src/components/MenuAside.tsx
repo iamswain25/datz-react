@@ -5,6 +5,7 @@ import { HamburgerButton } from "react-hamburger-button";
 import Datz from "../assets/svg/Datz";
 import Search from "../assets/svg/Search";
 import { headerLinkArr, otherLinks, store } from "./Links";
+import useLang from "./useLang";
 const headerText = css`
   color: #ffffff;
   height: 23px;
@@ -35,6 +36,7 @@ export default function MenuAside(props: {
   setValue: () => any;
 }) {
   const { value, setValue } = props;
+  const lang: "ko" | "en" = useLang()[2];
   function clickHandler() {
     setValue();
   }
@@ -114,9 +116,15 @@ export default function MenuAside(props: {
           padding-left: 5px;
         `}
       >
-        <Link className={headerText} to={store[1]} onClick={clickHandler}>
-          {store[0]}
-        </Link>
+        <a
+          className={headerText}
+          href={store[lang]}
+          onClick={clickHandler}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {store.label}
+        </a>
       </div>
       <div
         className={css`

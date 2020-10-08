@@ -4,7 +4,11 @@ export const headerLinkArr = [
   ["Events", "/event"],
   ["Artist Projects", "/artist"],
 ];
-export const store = ["Store", "/store"];
+export const store = {
+  label: "Store",
+  en: "https://datzpress.kr/",
+  ko: "https://datzpress.com/store",
+};
 export const otherLinks = [
   ["About", "/about"],
   ["Contact", "/contact"],

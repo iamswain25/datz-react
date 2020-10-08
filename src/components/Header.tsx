@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
-import { headerLinkArr } from "./Links";
+import { headerLinkArr, store } from "./Links";
 import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
@@ -73,11 +73,11 @@ export default function Header({
         />
         <a
           className={`${headerText} ${marginH16}`}
-          href="https://datzpress.com/store"
+          href={store[lang]}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Store
+          {store.label}
         </a>
       </>
     );
