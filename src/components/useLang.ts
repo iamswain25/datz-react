@@ -333,6 +333,11 @@ const classes: { [key: string]: any } = {
       body: css`
         ${getSize(17, 1.47)}
         // line-height: 28px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
         text-align: left;
         white-space: break-spaces;
       `,
