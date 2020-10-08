@@ -1,6 +1,6 @@
 {
   "name": "datz-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -53,7 +53,7 @@
     "eject": "react-scripts eject",
     "deploy": "firebase deploy --only hosting",
     "local": "tsc --esModuleInterop ./local/go.ts && node ./local/go.js",
-    "bd": "yarn build && yarn deploy"
+    "bd": "yarn version --patch && yarn build && yarn deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
