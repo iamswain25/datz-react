@@ -3,12 +3,10 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import EventCoverWidget from "./EventCoverWidget";
 import { flexcolumn } from "./styles";
-import { Sticky } from "react-sticky";
 const stickyContainer = css`
   position: fixed;
-  position: sticky;
   top: 79px;
-  width: calc(50% - 20px);
+  width: calc(50% - 57px);
   height: calc(100vh - 79px);
   margin-right: 20px;
   display: flex;
@@ -24,15 +22,16 @@ const mobileContainer = css`
 export default function EventItemLeft({ images }: { images: string[] }) {
   const isDesktop = useDesktop();
   return (
-    <Sticky>
-      {(props) => (
-        <div
-          className={isDesktop ? stickyContainer : mobileContainer}
-          style={props.style}
-        >
-          <EventCoverWidget images={images} type="event" />
-        </div>
-      )}
-    </Sticky>
+    <>
+      <div className={isDesktop ? stickyContainer : mobileContainer}>
+        <EventCoverWidget images={images} type="event" />
+      </div>
+      <div
+        className={css`
+          width: calc(50% - 20px);
+          margin-right: 20px;
+        `}
+      />
+    </>
   );
 }

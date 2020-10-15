@@ -8,12 +8,11 @@ const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
   position: fixed;
-position: sticky;
   top: 79px;
   height: calc(100vh - 79px - 37px);
   min-width: 384px;
   width: 384px;
-  margin-right: 22px;
+  margin-right: 27px;
   .image-gallery .image-gallery-bullets .image-gallery-bullet.active {
     background-color: #cccccc;
   }
@@ -35,6 +34,13 @@ export default function EventLeft() {
       <div className={isDesktop ? stickyContainer : mobileContainer}>
         <ImageGalleryGeneric items={items} />
       </div>
+      <div
+        className={css`
+          min-width: 384px;
+          width: 384px;
+          margin-right: 27px;
+        `}
+      />
       {!isDesktop && (
         <hr
           className={css`

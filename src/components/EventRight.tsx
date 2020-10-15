@@ -18,7 +18,11 @@ export default function EventRight() {
   const isDesktop = useDesktop();
   if (!list) return null;
   return (
-    <main>
+    <main
+      className={css`
+        flex: 1;
+      `}
+    >
       <Grid container spacing={isDesktop ? 3 : 0}>
         {list?.slice(0, 2).map((item, i) => (
           <Grid item xs={12} xl={6} key={i}>

@@ -28,7 +28,11 @@ export default function ExhibitionRight() {
   const currentExhibitions = list?.filter(filterExhibitionCurrent);
   if (!list) return null;
   return (
-    <main>
+    <main
+      className={css`
+        flex: 1;
+      `}
+    >
       <Grid container spacing={isDesktop ? 3 : 0}>
         {currentExhibitions?.map((item, i) => (
           <Grid item xs={12} key={i}>
