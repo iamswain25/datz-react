@@ -30,23 +30,6 @@ export const F0 = (
     {props.children}
   </div>
 );
-export const F1 = (
-  props: React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
-) => (
-  <div
-    {...props}
-    className={css`
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex: 1;
-      ${props.className}
-    `}
-  >
-    {props.children}
-  </div>
-);
 export const FlexRow = (
   props: React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
 ) => (

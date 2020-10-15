@@ -1,10 +1,11 @@
 import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
-import { Flex, FlexRow, F1 } from "./div";
+import { Flex, FlexRow } from "./div";
 import Shares from "./Shares";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
+import { version } from "../../package.json";
 const menu = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -129,13 +130,18 @@ export default function Footer() {
           {dotzsvgs}
         </div>
         {divider}
-        <F1
+        <div
           className={css`
             height: 71px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
           `}
         >
           <Shares />
-        </F1>
+        </div>
         <FlexRow
           className={css`
             height: 91px;
@@ -145,8 +151,13 @@ export default function Footer() {
             padding-right: 30px;
           `}
         >
-          <F1
+          <div
             className={css`
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
               font-family: datz-medium;
               font-size: 11px;
               color: #707070;
@@ -163,7 +174,7 @@ export default function Footer() {
               )}
               <div>Terms of Use</div>
             </FlexRow>
-          </F1>
+          </div>
         </FlexRow>
       </>
     );
@@ -241,51 +252,8 @@ export default function Footer() {
           `}
         >
           <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
-          <FlexRow
-            className={css`
-              margin-top: 6px;
-            `}
-          >
-            <Link to="privacy">Privacy Policy</Link>
-            {dividerSmallV(
-              css`
-                border-left: 1px solid #707070;
-              `
-            )}
-            <Link to="terms">Terms of Use</Link>
-          </FlexRow>
+          <div>version: {version} </div>
         </Flex>
-        <F1
-          className={css`
-            justify-content: flex-start;
-            align-items: flex-start;
-            margin-left: 43px;
-            font-family: SpoqaHanSans;
-            font-size: 10px;
-            line-height: 1.5;
-            text-align: left;
-            color: #cccccc;
-          `}
-        >
-          <FlexRow>
-            <span>대표: 주상연</span>
-            {dividerSmallV()}
-            <span>전화: 02-447-2581</span>
-            {dividerSmallV()}
-            <span>사업자등록번호: 206-26-99381</span>
-          </FlexRow>
-          <FlexRow
-            className={css`
-              margin-top: 5px;
-            `}
-          >
-            <span>통신판매: 제 2012-서울광진-0124 호</span>
-            {dividerSmallV()}
-            <span>이용약관</span>
-            {dividerSmallV()}
-            <span>개인정보처리방침</span>
-          </FlexRow>
-        </F1>
       </FlexRow>
     </>
   );
