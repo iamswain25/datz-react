@@ -1,11 +1,9 @@
 import React from "react";
-import Share from "../assets/svg/Share";
-import Twitter from "../assets/svg/Twitter";
-import Fb from "../assets/svg/Fb";
 import { css } from "emotion";
 import { useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import Close from "../assets/svg/Close";
+import ShareButtons from "./ShareButtons";
 export default function PublicationCloseBtn({
   shared = true,
   isWhite = false,
@@ -63,30 +61,7 @@ export default function PublicationCloseBtn({
           CLOSE
         </span>
       </button>
-      {isDesktop && shared && (
-        <>
-          <Share
-            color="#ececec"
-            className={css`
-              height: 15px;
-              margin-right: 14px;
-            `}
-          />
-          <Fb
-            color="#ececec"
-            className={css`
-              height: 15px;
-              margin-right: 14px;
-            `}
-          />
-          <Twitter
-            color="#ececec"
-            className={css`
-              height: 15px;
-            `}
-          />
-        </>
-      )}
+      {isDesktop && shared && <ShareButtons color="#ececec" />}
     </div>
   );
 }

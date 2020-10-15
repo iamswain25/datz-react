@@ -1,10 +1,8 @@
 import React from "react";
-import Share from "../assets/svg/Share";
-import Twitter from "../assets/svg/Twitter";
-import Fb from "../assets/svg/Fb";
 import Close from "../assets/svg/Close";
 import { css } from "emotion";
 import useBtnBack from "./useBtnBack";
+import ShareButtons from "./ShareButtons";
 export default function PublicationCloseBtn({
   noClose = false,
 }: {
@@ -44,26 +42,7 @@ export default function PublicationCloseBtn({
           <span>CLOSE</span>
         </button>
       )}
-      <Share
-        color="#cccccc"
-        className={css`
-          height: 15px;
-          margin-right: 16px;
-        `}
-      />
-      <Fb
-        color="#cccccc"
-        className={css`
-          height: 15px;
-          margin-right: 17px;
-        `}
-      />
-      <Twitter
-        color="#cccccc"
-        className={css`
-          height: 15px;
-        `}
-      />
+      <ShareButtons />
     </div>
   );
 }
