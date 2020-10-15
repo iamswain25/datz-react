@@ -102,7 +102,7 @@ export default function AboutDarkroom() {
               <Darkroom
                 color="#fff"
                 className={css`
-                  bottom: 66px;
+                  bottom: 30px;
                   left: 32px;
                   position: absolute;
                 `}

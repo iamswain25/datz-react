@@ -104,7 +104,7 @@ export default function AboutDatzpress() {
                 type="datzpress"
                 color="#afafaf"
                 className={css`
-                  bottom: 66px;
+                  bottom: 30px;
                   left: 32px;
                   position: absolute;
                 `}
