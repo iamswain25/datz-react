@@ -8,6 +8,7 @@ export default function Datz(props: { color?: string; className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 152.29 61.96"
       height="20px"
+      width="50px"
       className={className}
     >
       <g fill={color}>

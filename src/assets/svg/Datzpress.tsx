@@ -12,7 +12,8 @@ export default function Datzpress(props: {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 225.74 135.22"
-      width={isDesktop ? 52 : 39.71}
+      width={isDesktop ? 52 : 40}
+      height={isDesktop ? 32 : 24}
       className={className}
     >
       <g fill={color}>
