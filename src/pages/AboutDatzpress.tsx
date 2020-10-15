@@ -112,51 +112,53 @@ export default function AboutDatzpress() {
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>
-            <div
-              className={css`
-                ${flexcolumnstretch}
-                ${paddingH12}
-                max-height: ${isDesktop
-                  ? "calc(100vh - 79px - 16px)"
-                  : "auto"};
-                overflow: auto;
-              `}
-            >
+            {d1 && (
               <div
                 className={css`
-                  flex: 1;
+                  ${flexcolumnstretch}
+                  ${paddingH12}
+                  max-height: ${isDesktop
+                    ? "calc(100vh - 79px - 16px)"
+                    : "auto"};
+                  overflow: auto;
                 `}
               >
-                <h1 className={h1Style(isDesktop)}>{d1?.title}</h1>
-                <p className={classes.desc}>{d1?.text}</p>
-              </div>
-              <div>
-                <h2
-                  className={css`
-                    margin-top: ${isDesktop ? 30 : 73}px;
-                    font-size: 17px;
-                    line-height: 1.24;
-                    text-align: center;
-                    padding-bottom: 6px;
-                    border-bottom: 1px solid #ffffff;
-                  `}
-                >
-                  CONTACT
-                </h2>
                 <div
                   className={css`
-                    ${classes.desc}
-                    margin-top: 18px;
-                    text-align: center;
-                    white-space: break-spaces;
-                    margin-bottom: 42px;
+                    flex: 1;
                   `}
                 >
-                  {d2?.text}
+                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
+                  <p className={classes.desc}>{d1.text}</p>
                 </div>
-                <BtnBack color="#fff" borderTop />
+                <div>
+                  <h2
+                    className={css`
+                      margin-top: ${isDesktop ? 30 : 73}px;
+                      font-size: 17px;
+                      line-height: 1.24;
+                      text-align: center;
+                      padding-bottom: 6px;
+                      border-bottom: 1px solid #ffffff;
+                    `}
+                  >
+                    CONTACT
+                  </h2>
+                  <div
+                    className={css`
+                      ${classes.desc}
+                      margin-top: 18px;
+                      text-align: center;
+                      white-space: break-spaces;
+                      margin-bottom: 42px;
+                    `}
+                  >
+                    {d2.text}
+                  </div>
+                  <BtnBack color="#fff" borderTop />
+                </div>
               </div>
-            </div>
+            )}
           </Grid>
         </Grid>
       </div>
