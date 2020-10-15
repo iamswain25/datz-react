@@ -50,6 +50,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
             className={css`
               margin: 0 auto;
               max-width: 1920px;
+              color: #707070;
             `}
           >
             {children}
