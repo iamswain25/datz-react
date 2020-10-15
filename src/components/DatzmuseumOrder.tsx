@@ -5,7 +5,10 @@ import Logo from "./Logo";
 
 export default function DatzmuseumOrder({
   order = "https://datzpress.com/product/offerings-se",
-  logo = "D'Ark Room",
+  logo,
+}: {
+  order: string;
+  logo: string;
 }) {
   return (
     <div

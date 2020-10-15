@@ -8,7 +8,7 @@ import Cultural from "../assets/svg/Cultural";
 
 export default function Logo({
   className,
-  type = "D'Ark Room",
+  type,
   color = "#fff",
   offLink = false,
 }: {
@@ -72,11 +72,10 @@ export default function Logo({
       }
     }
     default: {
-      let logo = <Datzpress color={color} className={className} />;
       if (offLink) {
-        return logo;
+        return null;
       } else {
-        return <Link to="/">{logo}</Link>;
+        return <Link to="/" />;
       }
     }
   }
