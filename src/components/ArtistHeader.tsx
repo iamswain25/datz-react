@@ -10,6 +10,7 @@ import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
 import { Link } from "react-router-dom";
+import { Sticky } from "react-sticky";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -135,7 +136,7 @@ export default function ArtistHeader({
                 className={css`
                   margin-right: 20px;
                   width: 15px;
-                      height: 15px;
+                  height: 15px;
                 `}
               />
             </Link>
@@ -156,22 +157,26 @@ export default function ArtistHeader({
   if (sticky) {
     return (
       <>
-        <div
-          className={css`
-            position: fixed;
-position: sticky;
-            top: 0;
-            height: 79px;
-            display: flex;
-            align-items: center;
-            z-index: 5;
-            padding-left: ${isDesktop ? 37 : 17}px;
-            padding-right: ${isDesktop ? 37 : 17}px;
-            background-color: ${isWhite ? "#fff" : "#afafaf"};
-          `}
-        >
-          {innerHeader}
-        </div>
+        <Sticky>
+          {(props) => (
+            <div
+              className={css`
+                position: sticky;
+                top: 0;
+                height: 79px;
+                display: flex;
+                align-items: center;
+                z-index: 5;
+                padding-left: ${isDesktop ? 37 : 17}px;
+                padding-right: ${isDesktop ? 37 : 17}px;
+                background-color: ${isWhite ? "#fff" : "#afafaf"};
+              `}
+              style={props.style}
+            >
+              {innerHeader}
+            </div>
+          )}
+        </Sticky>
         {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
       </>
     );

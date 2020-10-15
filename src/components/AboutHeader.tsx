@@ -10,6 +10,7 @@ import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import Datz from "../assets/svg/Datz";
 import { otherLinks } from "./Links";
 import { NavLink, Link } from "react-router-dom";
+import { Sticky } from "react-sticky";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -150,17 +151,21 @@ export default function AboutHeader({
   if (sticky) {
     return (
       <>
-        <div
-          className={css`
-            position: fixed;
-position: sticky;
-            top: 0;
-            z-index: 2;
-            background-color: ${colors.backgroundColor};
-          `}
-        >
-          {innerHeader}
-        </div>
+        <Sticky>
+          {(props) => (
+            <div
+              className={css`
+                position: sticky;
+                top: 0;
+                z-index: 2;
+                background-color: ${colors.backgroundColor};
+              `}
+              style={props.style}
+            >
+              {innerHeader}
+            </div>
+          )}
+        </Sticky>
         {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
       </>
     );

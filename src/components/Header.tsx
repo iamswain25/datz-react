@@ -10,6 +10,7 @@ import MenuAside from "./MenuAside";
 import { useGlobalState, LANG } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
+import { Sticky } from "react-sticky";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -188,17 +189,31 @@ export default function Header({
   if (sticky) {
     return (
       <>
-        <div
+        {/* <div
           className={css`
-            position: fixed;
-position: sticky;
+            position: sticky;
             top: 0;
             z-index: 5;
             background-color: ${backgroundColor};
           `}
         >
           {innerHeader}
-        </div>
+        </div> */}
+        <Sticky>
+          {(props) => (
+            <div
+              className={css`
+                position: sticky;
+                top: 0;
+                z-index: 5;
+                background-color: ${backgroundColor};
+              `}
+              style={props.style}
+            >
+              {innerHeader}
+            </div>
+          )}
+        </Sticky>
         {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
       </>
     );
