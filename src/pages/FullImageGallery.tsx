@@ -59,6 +59,7 @@ export default function FullImageGallery({
               children={"←"}
               onClick={onClick}
               className={css`
+                color: #707070;
                 left: -34px;
                 padding: 50px 10px;
                 top: 50%;
@@ -73,6 +74,7 @@ export default function FullImageGallery({
               children={"→"}
               onClick={onClick}
               className={css`
+                color: #707070;
                 right: -34px;
                 padding: 50px 10px;
                 top: 50%;
