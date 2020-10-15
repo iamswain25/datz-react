@@ -310,6 +310,7 @@ export default function Search() {
                       font-size: 15px;
                       line-height: 1.2;
                       margin-top: 20px;
+                      text-transform: capitalize;
                     `}
                   >
                     {h.collection}
