@@ -269,6 +269,3 @@ hr {
 .image-gallery-slide.center {
   opacity: 1;
 }
-img:hover {
-  mix-blend-mode: normal;
-}

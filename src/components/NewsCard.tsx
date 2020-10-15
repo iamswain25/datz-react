@@ -39,7 +39,10 @@ export default function NewsCard({ item }: { item: any }) {
             object-fit: cover;
             width: 100%;
             height: 100%;
-            mix-blend-mode: ${isCurrent ? "normal" : "screen"};
+            mix-blend-mode: ${isCurrent ? "screen" : "normal"};
+            :hover {
+              mix-blend-mode: screen;
+            }
           `}
         />
       </div>
