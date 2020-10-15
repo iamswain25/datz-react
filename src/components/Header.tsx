@@ -190,7 +190,8 @@ export default function Header({
       <>
         <div
           className={css`
-            position: sticky;
+            position: fixed;
+position: sticky;
             top: 0;
             z-index: 5;
             background-color: ${backgroundColor};

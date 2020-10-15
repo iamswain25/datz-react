@@ -65,7 +65,8 @@ export default function Search() {
     <main>
       <section
         className={css`
-          position: sticky;
+          position: fixed;
+position: sticky;
           top: 0;
           height: ${isDesktop ? 106 : 180}px;
           background-color: #afafaf;

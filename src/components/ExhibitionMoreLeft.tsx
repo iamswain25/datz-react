@@ -12,7 +12,8 @@ import BodyDraftHtml from "./BodyDraftHtml";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+position: sticky;
   top: 79px;
   flex: 1;
   padding-left: 18px;

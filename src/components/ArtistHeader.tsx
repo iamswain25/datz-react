@@ -158,7 +158,8 @@ export default function ArtistHeader({
       <>
         <div
           className={css`
-            position: sticky;
+            position: fixed;
+position: sticky;
             top: 0;
             height: 79px;
             display: flex;

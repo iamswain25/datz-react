@@ -7,6 +7,7 @@ import DatzpressOrder from "./DatzpressOrder";
 import { bottomBtn37, paddingH27 } from "./styles";
 import useLang from "./useLang";
 const stickyContainer = css`
+  position: fixed;
   position: sticky;
   top: 79px;
   width: 350px;

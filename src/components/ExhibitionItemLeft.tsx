@@ -9,7 +9,8 @@ import DatzmuseumOrder from "./DatzmuseumOrder";
 import useLang from "./useLang";
 import Linkify from "./Linkify";
 const stickyContainer = css`
-  position: sticky;
+  position: fixed;
+position: sticky;
   top: 79px;
   width: 350px;
   height: calc(100vh - 79px);

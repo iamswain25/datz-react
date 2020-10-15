@@ -152,7 +152,8 @@ export default function AboutHeader({
       <>
         <div
           className={css`
-            position: sticky;
+            position: fixed;
+position: sticky;
             top: 0;
             z-index: 2;
             background-color: ${colors.backgroundColor};
