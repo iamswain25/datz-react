@@ -116,7 +116,7 @@ export default function ArtistProject() {
               ? css`
                   width: calc(50% - 23px);
                   margin-right: 23px;
-                  min-height: 100vh;
+                  height: calc(100vh - 37px - 79px);
                 `
               : css`
                   height: 588px;
@@ -148,7 +148,7 @@ export default function ArtistProject() {
               className={css`
                 margin-top: 21px;
                 ${isDesktop ? marginH37 : undefined}
-                height: ${isDesktop ? "calc(100vh - 79px)" : "588px"};
+                height: ${isDesktop ? "calc(100vh - 21px - 79px)" : "588px"};
                 max-height: 100vh;
               `}
               children={<DatzArtistExhibition item={item} />}
@@ -180,7 +180,7 @@ export default function ArtistProject() {
               ? css`
                   width: calc(50% - 23px);
                   margin-right: 23px;
-                  min-height: 100vh;
+                  height: calc(100vh - 37px - 79px);
                 `
               : css`
                   height: 588px;
