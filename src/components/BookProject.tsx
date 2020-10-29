@@ -4,6 +4,7 @@ import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
 import BtnShare from "./BtnShare";
+import { Link } from "react-router-dom";
 export default function BookProject({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -20,13 +21,14 @@ export default function BookProject({ item }: { item: any }) {
         color: #5d5d5d;
         border-bottom: 1px solid #5d5d5d;
         position: relative;
+        margin-top: ${isDesktop ? 0 : 10}px;
       `}
     >
       <h2
-        id="Book-Project"
+        id="book"
         className={css`
           position: absolute;
-          top: -107px;
+          top: -${isDesktop ? 107 : 79}px;
         `}
       />
       <BtnShare />
@@ -66,7 +68,8 @@ export default function BookProject({ item }: { item: any }) {
         >
           Book Project
         </div>
-        <div
+        <Link
+          to="/publication"
           className={css`
             font-size: 16px;
             line-height: 1.19;
@@ -75,7 +78,7 @@ export default function BookProject({ item }: { item: any }) {
           `}
         >
           Publication {">"}
-        </div>
+        </Link>
         <div
           className={css`
             font-size: 18px;

@@ -3,6 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
+import BtnShare from "./BtnShare";
 export default function ResidencyRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -17,8 +18,36 @@ export default function ResidencyRight({ item }: { item: any }) {
         align-items: center;
         color: #5d5d5d;
         border-bottom: 1px solid #5d5d5d;
+        position: relative;
+        margin-top: ${isDesktop ? 0 : 10}px;
       `}
     >
+      <h2
+        id="residency"
+        className={css`
+          position: absolute;
+          top: -${isDesktop ? 107 : 79}px;
+        `}
+      />
+      <BtnShare />
+      <div
+        className={css`
+          font-size: 17px;
+          line-height: 1.24;
+          text-align: center;
+          color: #707070;
+          margin-top: 30px;
+        `}
+      >
+        Datz Artist Projects
+      </div>
+      <hr
+        className={css`
+          width: 100%;
+          border-top: solid 1px #707070;
+          margin-top: 5px;
+        `}
+      />
       <section
         className={css`
           display: flex;
@@ -36,58 +65,66 @@ export default function ResidencyRight({ item }: { item: any }) {
             ${isDesktop ? "" : "margin-top: 25px"}
           `}
         >
-          <div
+          <h1
             className={css`
-              font-size: 23px;
-              line-height: 1.17;
+              font-size: 25px;
+              line-height: 1.08;
+              text-align: center;
+              color: #5d5d5d;
             `}
           >
-            <a
-              href={item?.url?.[0]}
-              className={css`
-                text-decoration: underline;
-              `}
-            >
-              Datz Artist Residency {">"}
-            </a>
-          </div>
+            Datz Artist Residency
+          </h1>
+          <a
+            href={item?.url?.[0]}
+            className={css`
+              margin-top: 15px;
+              text-decoration: underline;
+              font-size: 16px;
+              line-height: 1.19;
+              text-align: center;
+              color: #aaaaaa;
+            `}
+          >
+            Visit DMA {">"}
+          </a>
           <div className={classes.body}>{item?.text}</div>
           <div
             className={css`
-              font-size: 16px;
-              line-height: 1.19;
-              color: #aaaaaa;
-              margin-top: 30px;
+              font-size: 18px;
+              line-height: 1.39;
+              text-align: center;
+              color: #5d5d5d;
+              margin-top: 37px;
             `}
           >
+            <div>Contact</div>
             <a
-              href={item?.url?.[1]}
+              href="mailto:museum@datzpress.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className={css`
-                margin-top: 37px;
                 text-decoration: underline;
               `}
             >
-              Apply {">"}
+              museum@datzpress.com
             </a>
           </div>
         </div>
-        <div
-          className={css`
-            margin-bottom: 12px;
-          `}
-        >
-          <div>
-            <Logo
-              type="culture"
-              color="#5d5d5d"
-              className={css`
-                margin: ${isDesktop ? 100 : 54}px 0 ${isDesktop ? 32 : 50}px;
-                width: 98px;
-              `}
-            />
-          </div>
-        </div>
       </section>
+      <div
+        className={css`
+          margin: ${isDesktop ? 100 : 54}px 0 ${isDesktop ? 32 : 50}px;
+        `}
+      >
+        <Logo
+          type="culture"
+          color="#5d5d5d"
+          className={css`
+            width: 98px;
+          `}
+        />
+      </div>
       <a
         href={item?.url?.[2]}
         className={css`
