@@ -22,7 +22,8 @@ export default function ResidencyRight({ item }: { item: any }) {
         margin-top: ${isDesktop ? 0 : 10}px;
       `}
     >
-      <h2
+      <p
+        aria-hidden
         id="residency"
         className={css`
           position: absolute;
@@ -62,7 +63,7 @@ export default function ResidencyRight({ item }: { item: any }) {
             max-width: 600px;
             display: flex;
             flex-direction: column;
-            ${isDesktop ? "" : "margin-top: 25px"}
+            margin-top: ${isDesktop ? 60 : 25}px;
           `}
         >
           <h1

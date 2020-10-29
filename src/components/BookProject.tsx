@@ -24,7 +24,8 @@ export default function BookProject({ item }: { item: any }) {
         margin-top: ${isDesktop ? 0 : 10}px;
       `}
     >
-      <h2
+      <p
+        aria-hidden
         id="book"
         className={css`
           position: absolute;
