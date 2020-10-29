@@ -2,18 +2,19 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import DatzmuseumOrder from "./DatzmuseumOrder";
-import CloseShare from "./CloseShare";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
 import BtnBack from "./BtnBack";
 import useDoc from "../utils/useDoc";
 import BodyDraftHtml from "./BodyDraftHtml";
+import BtnBackTo from "./BtnBackTo";
+import BtnShare from "./BtnShare";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
   position: fixed;
-position: sticky;
+  position: sticky;
   top: 79px;
   flex: 1;
   padding-left: 18px;
@@ -33,7 +34,16 @@ export default function ExhibitionMoreLeft() {
   const [classes] = useLang("exhibition");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <CloseShare close={`/exhibition/${item.id}`} />
+      <div
+        className={css`
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        `}
+      >
+        <BtnBackTo title="< back to Preview" to={`/exhibition/${item.id}`} />
+        <BtnShare title={item.title} />
+      </div>
       <DatzmuseumOrder order={item.visit_url} logo={item.type} />
       <section
         className={css`
