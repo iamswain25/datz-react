@@ -238,11 +238,7 @@ const classes: { [key: string]: any } = {
         color: #707070;
       `,
       title: css`
-        // font-family: datz-medium;
-        // font-size: 24px;
-        // line-height: 27px;
-        // 현노야 여기 고쳐줘
-        ${getSize(24, 1.19, "datz-medium")}
+        ${getSize(23, 1.19, "datz-medium")}
         letter-spacing: 0.48px;
         margin-top: 12px;
         text-align: center;
