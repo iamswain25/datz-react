@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import Close from "../assets/svg/Close";
 import ShareButtons from "./ShareButtons";
@@ -8,10 +8,12 @@ export default function PublicationCloseBtn({
   shared = true,
   isWhite = false,
   closeTo,
+  title,
 }: {
   shared?: boolean;
   isWhite?: boolean;
   closeTo?: string;
+  title?: string;
 }) {
   const isDesktop = useDesktop();
   const history = useHistory();
@@ -34,33 +36,46 @@ export default function PublicationCloseBtn({
         padding-left: 5px;
       `}
     >
-      <button
-        onClick={goBackHandler}
-        className={css`
-          height: 13px;
-          font-size: 10px;
-          line-height: 1.3;
-          text-align: left;
-          color: ${isWhite ? "#707070" : "#ffffff"};
-          margin-right: 45px;
-          display: flex;
-          align-items: center;
-        `}
-      >
-        <Close
-          color={isWhite ? "#707070" : "#ffffff"}
+      {title && closeTo ? (
+        <Link
+          to={closeTo}
           className={css`
-            margin-right: 8px;
-          `}
-        />
-        <span
-          className={css`
-            margin-top: 2px;
+            font-size: 14px;
+            line-height: 1.21;
+            color: #afafaf;
           `}
         >
-          CLOSE
-        </span>
-      </button>
+          {title}
+        </Link>
+      ) : (
+        <button
+          onClick={goBackHandler}
+          className={css`
+            height: 13px;
+            font-size: 10px;
+            line-height: 1.3;
+            text-align: left;
+            color: ${isWhite ? "#707070" : "#ffffff"};
+            margin-right: 45px;
+            display: flex;
+            align-items: center;
+          `}
+        >
+          <Close
+            color={isWhite ? "#707070" : "#ffffff"}
+            className={css`
+              margin-right: 8px;
+            `}
+          />
+          <span
+            className={css`
+              margin-top: 2px;
+            `}
+          >
+            CLOSE
+          </span>
+        </button>
+      )}
       {isDesktop && shared && <ShareButtons color="#ececec" />}
     </div>
   );

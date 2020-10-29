@@ -13,24 +13,20 @@ const desktopContainer = css`
 export default function EventItem() {
   const item = useDoc("event");
   const isDesktop = useDesktop(true);
-  if (isDesktop) {
-    return (
-      <>
-        <ArtistHeader sticky isWhite closeTo="/event" />
+  return (
+    <>
+      <ArtistHeader sticky isWhite closeTo="/event" title="< back to Events" />
+      {isDesktop ? (
         <section className={desktopContainer}>
           <EventItemLeft images={item.images} />
           <EventItemRight item={item} />
         </section>
-      </>
-    );
-  }
-  return (
-    <>
-      <ArtistHeader sticky isWhite closeTo="/event" />
-      <EventItemRight
-        item={item}
-        children={<EventItemLeft images={item.images} />}
-      />
+      ) : (
+        <EventItemRight
+          item={item}
+          children={<EventItemLeft images={item.images} />}
+        />
+      )}
     </>
   );
 }

@@ -30,12 +30,14 @@ export default function ArtistHeader({
   shared = false,
   isWhite = false,
   closeTo,
+  title,
 }: {
   fixed?: boolean;
   sticky?: boolean;
   shared?: boolean;
   isWhite?: boolean;
   closeTo?: string;
+  title?: string;
 }) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalState(LANG);
@@ -57,7 +59,12 @@ export default function ArtistHeader({
           justify-content: flex-start;
         `}
       >
-        <ArtistCloseBtn shared={shared} isWhite={isWhite} closeTo={closeTo} />
+        <ArtistCloseBtn
+          shared={shared}
+          isWhite={isWhite}
+          closeTo={closeTo}
+          title={title}
+        />
       </div>
       <div
         className={css`
