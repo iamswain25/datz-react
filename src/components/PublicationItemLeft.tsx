@@ -51,7 +51,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
           className={css`
             display: flex;
             flex-direction: column;
-            overflow: hidden;
+            overflow: auto;
             padding: 0 ${isDesktop ? 10 : 0}px ${isDesktop ? 0 : 40}px;
             flex: 1;
             color: ${!en ? "#5d5d5d" : "#4b4b4b"};
@@ -67,16 +67,26 @@ export default function PublicationItemLeft({ item }: { item: any }) {
           <div className={classes.artist}>{artist}</div>
           <div className={classes.quotes}>{preview_quote}</div>
           <div className={classes.body}>{preview_body}</div>
+          <Link
+            to={`/publication/${id}/readmore`}
+            className={css`
+              font-size: 16px;
+              margin: 30px 0;
+              line-height: 1.19;
+              text-align: left;
+              color: #707070;
+            `}
+          >
+            read more {">"}
+          </Link>
         </div>
-        <Link
-          to={`/publication/${id}/readmore`}
+        <hr
           className={css`
+            border: none;
             border-top: solid 1px #707070;
             ${bottomBtn37}
           `}
-        >
-          read more {">"}
-        </Link>
+        />
       </div>
     </>
   );
