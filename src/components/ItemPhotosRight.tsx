@@ -41,7 +41,7 @@ export default function ItemPhotosRight({
 }) {
   const location = useLocation<{ index: number }>();
   const refs = React.useRef<any>();
-  const index = location?.state?.index ?? 0;
+  const index = location?.state?.index;
   if (!item) return null;
   const { images, id } = item as { images: string[]; id: string };
   return (
