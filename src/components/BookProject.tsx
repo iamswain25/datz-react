@@ -3,6 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
+import BtnShare from "./BtnShare";
 export default function BookProject({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -18,8 +19,35 @@ export default function BookProject({ item }: { item: any }) {
         align-items: center;
         color: #5d5d5d;
         border-bottom: 1px solid #5d5d5d;
+        position: relative;
       `}
     >
+      <h2
+        id="Book-Project"
+        className={css`
+          position: absolute;
+          top: -107px;
+        `}
+      />
+      <BtnShare />
+      <div
+        className={css`
+          font-size: 17px;
+          line-height: 1.24;
+          text-align: center;
+          color: #707070;
+          margin-top: 30px;
+        `}
+      >
+        Datz Artist Projects
+      </div>
+      <hr
+        className={css`
+          width: 100%;
+          border-top: solid 1px #707070;
+          margin-top: 5px;
+        `}
+      />
       <div
         className={css`
           max-width: 600px;
@@ -27,7 +55,7 @@ export default function BookProject({ item }: { item: any }) {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          ${isDesktop ? "" : "margin-top: 25px"}
+          margin-top: ${isDesktop ? 60 : 25}px;
         `}
       >
         <div
