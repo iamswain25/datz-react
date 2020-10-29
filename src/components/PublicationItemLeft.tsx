@@ -2,10 +2,11 @@ import React from "react";
 import { css } from "emotion";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
-import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
 import { bottomBtn37, paddingH27 } from "./styles";
 import useLang from "./useLang";
+import BtnShare from "./BtnShare";
+import BtnBackTo from "./BtnBackTo";
 const stickyContainer = css`
   position: fixed;
   top: 79px;
@@ -35,7 +36,16 @@ export default function PublicationItemLeft({ item }: { item: any }) {
         `}
       />
       <div className={isDesktop ? stickyContainer : mobileContainer}>
-        <PublicationCloseBtn />
+        <div
+          className={css`
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+          `}
+        >
+          <BtnBackTo title="< back to Publication" to="/publication" />
+          <BtnShare title={title} />
+        </div>
         <DatzpressOrder order={order_url} />
         <div
           className={css`
