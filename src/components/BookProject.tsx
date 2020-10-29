@@ -5,6 +5,7 @@ import useLang from "./useLang";
 import Logo from "./Logo";
 import BtnShare from "./BtnShare";
 import { Link } from "react-router-dom";
+const hash = "book";
 export default function BookProject({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -26,13 +27,13 @@ export default function BookProject({ item }: { item: any }) {
     >
       <p
         aria-hidden
-        id="book"
+        id={hash}
         className={css`
           position: absolute;
           top: -${isDesktop ? 107 : 79}px;
         `}
       />
-      <BtnShare />
+      <BtnShare hash={hash} title="Book Project" />
       <div
         className={css`
           font-size: 17px;

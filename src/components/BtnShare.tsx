@@ -1,9 +1,25 @@
 import React from "react";
 import Share from "../assets/svg/Share";
 import { css } from "emotion";
-export default function BtnShare({ color = "#cccccc" }) {
+export default function BtnShare({
+  color = "#cccccc",
+  hash,
+  title = "Datzpress",
+}: {
+  color?: string;
+  hash?: string;
+  title?: string;
+}) {
   function handler() {
-    window.alert("url copied!");
+    if (window.navigator.share) {
+      const href = window.location.href;
+      window.navigator.share({
+        title: title,
+        url: href + hash ? "#" + hash : "",
+      });
+    } else {
+      // fallback
+    }
   }
   return (
     <button

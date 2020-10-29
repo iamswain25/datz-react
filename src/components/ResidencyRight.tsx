@@ -4,9 +4,11 @@ import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
 import BtnShare from "./BtnShare";
+const hash = "residency";
 export default function ResidencyRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
+
   return (
     <section
       className={css`
@@ -24,13 +26,13 @@ export default function ResidencyRight({ item }: { item: any }) {
     >
       <p
         aria-hidden
-        id="residency"
+        id={hash}
         className={css`
           position: absolute;
           top: -${isDesktop ? 107 : 79}px;
         `}
       />
-      <BtnShare />
+      <BtnShare hash={hash} title="Datz Artist Residency" />
       <div
         className={css`
           font-size: 17px;
