@@ -95,7 +95,7 @@ export default function Routes() {
             component={ExhibitionReadmore}
           />
           <Route exact path="/artist/:id" component={ArtistPage} />
-          <Route exact path="/artist" component={ArtistProject} />
+          <Route exact path="/artist-project" component={ArtistProject} />
           <Route exact path="/login" component={Signin} />
           <Route
             exact

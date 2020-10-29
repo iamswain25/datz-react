@@ -2,7 +2,7 @@ export const headerLinkArr = [
   ["Publication", "/publication"],
   ["Exhibition", "/exhibition"],
   ["Events", "/event"],
-  ["Artist Projects", "/artist"],
+  ["Artist Projects", "/artist-project"],
 ];
 export const store = {
   label: "Store",

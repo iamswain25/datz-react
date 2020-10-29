@@ -5,7 +5,8 @@ import useLang from "./useLang";
 import Logo from "./Logo";
 import BtnShare from "./BtnShare";
 import { Link } from "react-router-dom";
-const hash = "book";
+const title = "Book Project";
+const hash = title?.toLowerCase().replace(/\s/g, "-");
 export default function BookProject({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -33,7 +34,7 @@ export default function BookProject({ item }: { item: any }) {
           top: -${isDesktop ? 107 : 79}px;
         `}
       />
-      <BtnShare hash={hash} title="Book Project" />
+      <BtnShare title={title} hash={hash} />
       <div
         className={css`
           font-size: 17px;
@@ -68,7 +69,7 @@ export default function BookProject({ item }: { item: any }) {
             line-height: 1.17;
           `}
         >
-          Book Project
+          {title}
         </div>
         <Link
           to="/publication"

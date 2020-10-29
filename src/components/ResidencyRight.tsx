@@ -4,7 +4,8 @@ import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
 import BtnShare from "./BtnShare";
-const hash = "residency";
+const title = "Datz Artist Residency";
+const hash = title?.toLowerCase().replace(/\s/g, "-");
 export default function ResidencyRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ArtistPage");
@@ -32,7 +33,7 @@ export default function ResidencyRight({ item }: { item: any }) {
           top: -${isDesktop ? 107 : 79}px;
         `}
       />
-      <BtnShare hash={hash} title="Datz Artist Residency" />
+      <BtnShare hash={hash} title={title} />
       <div
         className={css`
           font-size: 17px;
@@ -76,7 +77,7 @@ export default function ResidencyRight({ item }: { item: any }) {
               color: #5d5d5d;
             `}
           >
-            Datz Artist Residency
+            {title}
           </h1>
           <a
             href={item?.url?.[0]}
