@@ -1,11 +1,11 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import PublicationCloseBtn from "./PublicationCloseBtn";
 import { paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
 import useLang from "./useLang";
 import BodyDraftHtml from "./BodyDraftHtml";
+import BtnShare from "./BtnShare";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
@@ -30,7 +30,15 @@ export default function EventItemRight({
   const [classes] = useLang("event");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
-      {isDesktop && <PublicationCloseBtn noClose />}
+      <div
+        className={css`
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        `}
+      >
+        <BtnShare title={title} />
+      </div>
       <div
         className={css`
           display: flex;
