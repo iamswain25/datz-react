@@ -1,18 +1,20 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import PublicationCloseBtn from "./PublicationCloseBtn";
 import DatzpressOrder from "./DatzpressOrder";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
 import BtnBack from "./BtnBack";
 import BodyDraftHtml from "./BodyDraftHtml";
+import BtnBackTo from "./BtnBackTo";
+import BtnShare from "./BtnShare";
+import useParams from "./useParams";
 
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
   position: fixed;
-position: sticky;
+  position: sticky;
   top: 79px;
   flex: 1;
   padding-left: 18px;
@@ -29,9 +31,19 @@ export default function PublicationMoreLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
   const { title, artist, quotes, notes, order_url } = item;
+  const { id } = useParams();
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
-      <PublicationCloseBtn />
+      <div
+        className={css`
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        `}
+      >
+        <BtnBackTo title="< back to Preview" to={`/publication/${id}`} />
+        <BtnShare title={title} />
+      </div>
       <DatzpressOrder order={order_url} />
       <section
         className={css`
