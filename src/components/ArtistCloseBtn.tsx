@@ -1,25 +1,23 @@
 import React from "react";
 import { css } from "emotion";
 import { Link, useHistory } from "react-router-dom";
-import useDesktop from "./useDesktop";
 import Close from "../assets/svg/Close";
-import ShareButtons from "./ShareButtons";
-export default function PublicationCloseBtn({
-  shared = true,
-  isWhite = false,
-  closeTo,
+import BtnShare from "./BtnShare";
+export default function ArtistCloseBtn({
+  shared = false,
+  to,
   title,
+  className,
 }: {
   shared?: boolean;
-  isWhite?: boolean;
-  closeTo?: string;
+  to?: string;
   title?: string;
+  className?: string;
 }) {
-  const isDesktop = useDesktop();
   const history = useHistory();
   function goBackHandler() {
-    if (closeTo) {
-      return history.push(closeTo);
+    if (to) {
+      return history.push(to);
     }
     if (history.length < 3) {
       return history.replace("/publication");
@@ -30,19 +28,18 @@ export default function PublicationCloseBtn({
     <div
       className={css`
         display: flex;
-        flex-direction: row;
         align-items: center;
-        height: 20px;
         padding-left: 5px;
       `}
     >
-      {title && closeTo ? (
+      {title && to ? (
         <Link
-          to={closeTo}
+          to={to}
           className={css`
             font-size: 14px;
             line-height: 1.21;
-            color: #afafaf;
+            margin-right: 10px;
+            ${className}
           `}
         >
           {title}
@@ -55,14 +52,13 @@ export default function PublicationCloseBtn({
             font-size: 10px;
             line-height: 1.3;
             text-align: left;
-            color: ${isWhite ? "#707070" : "#ffffff"};
             margin-right: 45px;
             display: flex;
             align-items: center;
           `}
         >
           <Close
-            color={isWhite ? "#707070" : "#ffffff"}
+            color="#fff"
             className={css`
               margin-right: 8px;
             `}
@@ -76,7 +72,7 @@ export default function PublicationCloseBtn({
           </span>
         </button>
       )}
-      {isDesktop && shared && <ShareButtons color="#ececec" />}
+      {shared && <BtnShare color="#ececec" />}
     </div>
   );
 }

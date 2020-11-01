@@ -5,7 +5,6 @@ import DatzmuseumOrder from "./DatzmuseumOrder";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
-import BtnBack from "./BtnBack";
 import useDoc from "../utils/useDoc";
 import BodyDraftHtml from "./BodyDraftHtml";
 import BtnBackTo from "./BtnBackTo";
@@ -74,17 +73,14 @@ export default function ExhibitionMoreLeft() {
         </div>
       </section>
       {isDesktop && (
-        <div
+        <hr
           className={css`
-            align-items: center;
-            justify-content: flex-end;
-            display: flex;
-            flex-direction: column;
+            border-style: solid;
+            border-width: 0;
             border-top: solid 1px #707070;
+            height: 37px;
           `}
-        >
-          <BtnBack />
-        </div>
+        />
       )}
     </div>
   );

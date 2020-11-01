@@ -4,7 +4,6 @@ import useDesktop from "./useDesktop";
 import DatzpressOrder from "./DatzpressOrder";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
-import BtnBack from "./BtnBack";
 import BodyDraftHtml from "./BodyDraftHtml";
 import BtnBackTo from "./BtnBackTo";
 import BtnShare from "./BtnShare";
@@ -81,17 +80,14 @@ export default function PublicationMoreLeft({ item }: { item: any }) {
         </div>
       </section>
       {isDesktop && (
-        <div
+        <hr
           className={css`
-            align-items: center;
-            justify-content: flex-end;
-            display: flex;
-            flex-direction: column;
+            border-style: solid;
+            border-width: 0;
             border-top: solid 1px #707070;
+            height: 37px;
           `}
-        >
-          <BtnBack />
-        </div>
+        />
       )}
     </div>
   );

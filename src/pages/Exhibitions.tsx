@@ -12,6 +12,7 @@ import BtnTop from "../components/BtnTop";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
 import useParams from "../components/useParams";
+import ArtistCloseBtn from "../components/ArtistCloseBtn";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   darkroom: "D'Ark Room",
@@ -27,7 +28,20 @@ export default function Exhibitions() {
   const isDesktop = useDesktop(true);
   return (
     <>
-      <ArtistHeader sticky closeTo="/exhibition" />
+      <ArtistHeader
+        className={css`
+          color: #707070;
+          background-color: white;
+        `}
+      >
+        <ArtistCloseBtn
+          to="/exhibition"
+          title="< back to Exhibition"
+          className={css`
+            color: #afafaf;
+          `}
+        />
+      </ArtistHeader>
       <section
         className={css`
           font-family: datz-medium;

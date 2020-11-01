@@ -19,7 +19,7 @@ export default function NewsItem() {
   if (isDesktop) {
     return (
       <>
-        <ArtistHeader sticky />
+        <ArtistHeader  />
         <section className={desktopContainer}>
           <Grid container spacing={3}>
             <Grid item sm={6}>
@@ -35,7 +35,7 @@ export default function NewsItem() {
   }
   return (
     <>
-      <ArtistHeader sticky />
+      <ArtistHeader  />
       <NewsItemRight item={item} children={<NewsItemLeft item={item} />} />
     </>
   );

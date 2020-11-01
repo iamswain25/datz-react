@@ -1,4 +1,5 @@
 import React from "react";
+import ArtistCloseBtn from "../components/ArtistCloseBtn";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import BtnBack from "../components/BtnBack";
@@ -66,7 +67,15 @@ export default function AboutDarkroom() {
           />
         </div>
       )}
-      <ArtistHeader sticky />
+      <ArtistHeader>
+        <ArtistCloseBtn
+          title="< back to About"
+          to="/about"
+          className={css`
+            color: #fff;
+          `}
+        />
+      </ArtistHeader>
       <div
         className={css`
           ${isDesktop ? paddingH37 : paddingH17}

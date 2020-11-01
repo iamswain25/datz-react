@@ -35,6 +35,7 @@ export default function EventItemRight({
           display: flex;
           align-items: flex-start;
           margin-bottom: 20px;
+          ${isDesktop ? undefined : paddingH27}
         `}
       >
         <BtnShare title={title} />
