@@ -26,9 +26,11 @@ const defaultClassname = css`
 `;
 export default function ArtistHeader({
   className = defaultClassname,
+  color = "#fff",
   children,
 }: {
   className?: string;
+  color?: string;
   children?: React.ReactNode;
 }) {
   const isDesktop = useDesktop();
@@ -134,6 +136,7 @@ export default function ArtistHeader({
                 <>
                   <Link to="/search">
                     <Search
+                      color={color}
                       className={css`
                         margin-right: 20px;
                         width: 15px;
@@ -142,6 +145,7 @@ export default function ArtistHeader({
                     />
                   </Link>
                   <HamburgerButton
+                    color={color}
                     open={isOpen}
                     onClick={openHandler}
                     width={18}

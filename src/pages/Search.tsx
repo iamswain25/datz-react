@@ -12,6 +12,7 @@ import algoliasearch from "algoliasearch";
 import { RequestOptions } from "@algolia/transporter";
 import useLang from "../components/useLang";
 import BtnTop from "../components/BtnTop";
+import MenuAside from "../components/MenuAside";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   artist: "Artist",
@@ -66,7 +67,7 @@ export default function Search() {
       <section
         className={css`
           position: fixed;
-position: sticky;
+          position: sticky;
           top: 0;
           height: ${isDesktop ? 106 : 180}px;
           background-color: #afafaf;
@@ -357,6 +358,7 @@ position: sticky;
         </ul>
         {result?.hits?.length > 5 && <BtnTop full color="#fff" />}
       </section>
+      {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
     </main>
   );
 }

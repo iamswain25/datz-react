@@ -17,6 +17,7 @@ export default function EventItem() {
   return (
     <>
       <ArtistHeader
+        color="#707070"
         className={css`
           color: #707070;
           background-color: white;

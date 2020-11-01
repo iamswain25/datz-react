@@ -66,12 +66,14 @@ export default function MenuAside(props: {
             align-items: center;
           `}
         >
-          <Search
-            color="white"
-            className={css`
-              margin-right: 20px;
-            `}
-          />
+          <Link to="/search">
+            <Search
+              color="white"
+              className={css`
+                margin-right: 20px;
+              `}
+            />
+          </Link>
           <HamburgerButton
             open={value}
             onClick={setValue}
@@ -208,9 +210,3 @@ export default function MenuAside(props: {
     </aside>
   );
 }
-// bottom: 0;
-//     position: absolute;
-//     overflow: hidden;
-//     display: flex;
-//     flex-direction: column;
-//     height: 50px;

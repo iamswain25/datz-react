@@ -28,16 +28,12 @@ export default function Events() {
   const list = useEvents(events?.slice(2));
   return (
     <>
-      <ArtistHeader
-        className={css`
-          color: #707070;
-          background-color: white;
-        `}
-      >
+      <ArtistHeader>
         <ArtistCloseBtn
           to="/event"
+          title="< back to Event"
           className={css`
-            color: #afafaf;
+            color: #fff;
           `}
         />
       </ArtistHeader>
