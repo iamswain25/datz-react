@@ -20,6 +20,7 @@ import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
+import BtnShare from "../components/BtnShare";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -140,8 +141,17 @@ export default function AboutDatzmuseum() {
                     flex: 1;
                   `}
                 >
+                  <div
+                    className={css`
+                      display: flex;
+                      align-items: flex-start;
+                      margin-bottom: 20px;
+                      margin-top: ${isDesktop ? 0 : 20}px;
+                    `}
+                  >
+                    <BtnShare title={d1.title} color="#ececec" />
+                  </div>
                   <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
-
                   <a
                     href="/museum"
                     className={css`

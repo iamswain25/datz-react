@@ -2,7 +2,6 @@ import React from "react";
 import ArtistCloseBtn from "../components/ArtistCloseBtn";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
-import BtnBack from "../components/BtnBack";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
@@ -19,6 +18,8 @@ import LazyImage from "../components/LazyImage";
 import Logo from "../components/Logo";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
+import BtnShare from "../components/BtnShare";
+import DatzBooks from "../assets/svg/DatzBooks";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -29,10 +30,10 @@ const h1Style = (isDesktop = false) => css`
   text-align: center;
 `;
 
-const data = ["datzpress-1", "datzpress-2"];
+const data = ["datzpress-1"];
 export default function AboutDatzpress() {
   const items = useDocs("about", data);
-  const [d1, d2] = useItems(items) || [];
+  const [d1] = useItems(items) || [];
   const isDesktop = useDesktop(true);
   const [classes] = useLang("About");
   const history = useHistory();
@@ -137,35 +138,33 @@ export default function AboutDatzpress() {
                     flex: 1;
                   `}
                 >
-                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
-                  <p className={classes.desc}>{d1.text}</p>
-                </div>
-                <div>
-                  <h2
-                    className={css`
-                      margin-top: ${isDesktop ? 30 : 73}px;
-                      font-size: 17px;
-                      line-height: 1.24;
-                      text-align: center;
-                      padding-bottom: 6px;
-                      border-bottom: 1px solid #ffffff;
-                    `}
-                  >
-                    CONTACT
-                  </h2>
                   <div
                     className={css`
-                      ${classes.desc}
-                      margin-top: 18px;
-                      text-align: center;
-                      white-space: break-spaces;
-                      margin-bottom: 42px;
+                      display: flex;
+                      align-items: flex-start;
+                      margin-bottom: 20px;
+                      margin-top: ${isDesktop ? 0 : 20}px;
                     `}
                   >
-                    {d2.text}
+                    <BtnShare title={d1.title} color="#ececec" />
                   </div>
-                  <BtnBack color="#fff" borderTop />
+                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
+                  <p className={classes.desc}>{d1.text}</p>
+                  <DatzBooks
+                    color="#fff"
+                    className={css`
+                      margin-top: 30px;
+                    `}
+                  />
                 </div>
+                <hr
+                  className={css`
+                    border-style: solid;
+                    border-width: 0;
+                    border-top: solid 1px #fff;
+                    height: 37px;
+                  `}
+                />
               </div>
             )}
           </Grid>

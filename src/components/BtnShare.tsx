@@ -30,7 +30,7 @@ export default function BtnShare({
         align-items: center;
         font-size: 14px;
         line-height: 1.21;
-        color: #afafaf;
+        color: ${color};
         align-self: flex-start;
       `}
     >

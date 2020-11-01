@@ -2,7 +2,7 @@ import React from "react";
 import ArtistCloseBtn from "../components/ArtistCloseBtn";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
-import BtnBack from "../components/BtnBack";
+// import png from "../assets/svg/1015_dfrontspace.png";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
@@ -19,6 +19,7 @@ import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
+import BtnShare from "../components/BtnShare";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -28,12 +29,12 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const data = ["darkroom-1", "darkroom-2"];
+const data = ["darkroom-1"];
 export default function AboutDarkroom() {
   const isDesktop = useDesktop(true);
   const [classes] = useLang("About");
   const items = useDocs("about", data);
-  const [d1, d2] = useItems(items) || [];
+  const [d1] = useItems(items) || [];
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzpress");
@@ -133,35 +134,35 @@ export default function AboutDarkroom() {
                     flex: 1;
                   `}
                 >
-                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
-                  <p className={classes.desc}>{d1.text}</p>
-                </div>
-                <div>
-                  <h2
-                    className={css`
-                      margin-top: ${isDesktop ? 30 : 73}px;
-                      font-size: 17px;
-                      line-height: 1.24;
-                      text-align: center;
-                      padding-bottom: 6px;
-                      border-bottom: 1px solid #ffffff;
-                    `}
-                  >
-                    CONTACT
-                  </h2>
                   <div
                     className={css`
-                      ${classes.desc}
-                      margin-top: 18px;
-                      text-align: center;
-                      white-space: break-spaces;
-                      margin-bottom: 42px;
+                      display: flex;
+                      align-items: flex-start;
+                      margin-bottom: 20px;
+                      margin-top: ${isDesktop ? 0 : 20}px;
                     `}
                   >
-                    {d2.text}
+                    <BtnShare title={d1.title} color="#ececec" />
                   </div>
-                  <BtnBack color="#fff" borderTop />
+                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
+                  <p className={classes.desc}>{d1.text}</p>
+                  {/* <img
+                    src={png}
+                    alt="png"
+                    className={css`
+                      width: 200px;
+                      margin-top: 30px;
+                    `}
+                  /> */}
                 </div>
+                <hr
+                  className={css`
+                    border-style: solid;
+                    border-width: 0;
+                    border-top: solid 1px #fff;
+                    height: 37px;
+                  `}
+                />
               </div>
             )}
           </Grid>
