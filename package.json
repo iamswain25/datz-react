@@ -55,7 +55,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "firebase deploy --only hosting",
+    "deploy": "firebase deploy --only hosting --project datzpress1",
     "local": "tsc --esModuleInterop ./local/go.ts && node ./local/go.js",
     "bd": "yarn build && yarn deploy"
   },
