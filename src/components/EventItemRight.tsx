@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { paddingH27, marginH27 } from "./styles";
+import { paddingH17, paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
 import useLang from "./useLang";
 import BodyDraftHtml from "./BodyDraftHtml";
@@ -35,7 +35,7 @@ export default function EventItemRight({
           display: flex;
           align-items: flex-start;
           margin-bottom: 20px;
-          ${isDesktop ? undefined : paddingH27}
+          ${isDesktop ? undefined : paddingH17}
         `}
       >
         <BtnShare title={title} />

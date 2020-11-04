@@ -7,6 +7,7 @@ import ArtistHeader from "../components/ArtistHeader";
 import { paddingH37 } from "../components/styles";
 import { Grid } from "@material-ui/core";
 import useDoc from "../utils/useDoc";
+import ArtistCloseBtn from "../components/ArtistCloseBtn";
 const desktopContainer = css`
   ${paddingH37}
   height: calc(100vh - 79px);
@@ -19,7 +20,20 @@ export default function NewsItem() {
   if (isDesktop) {
     return (
       <>
-        <ArtistHeader  />
+        <ArtistHeader
+          color="#fff"
+          className={css`
+            color: #fff;
+          `}
+        >
+          <ArtistCloseBtn
+            to="/news"
+            title="< back to News"
+            className={css`
+              color: #fff;
+            `}
+          />
+        </ArtistHeader>
         <section className={desktopContainer}>
           <Grid container spacing={3}>
             <Grid item sm={6}>
@@ -35,7 +49,7 @@ export default function NewsItem() {
   }
   return (
     <>
-      <ArtistHeader  />
+      <ArtistHeader />
       <NewsItemRight item={item} children={<NewsItemLeft item={item} />} />
     </>
   );

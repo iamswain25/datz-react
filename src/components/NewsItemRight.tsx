@@ -1,11 +1,11 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { paddingH27, marginH27 } from "./styles";
+import { paddingH17, paddingH27, marginH27 } from "./styles";
 import BtnBack from "./BtnBack";
-import ShareButtons from "./ShareButtons";
 import useLang from "./useLang";
 import BodyDraftHtml from "./BodyDraftHtml";
+import BtnShare from "./BtnShare";
 const stickyContainer = css`
   margin-left: 20px;
   margin-right: 17px;
@@ -32,19 +32,16 @@ export default function NewsItemRight({
   const [classes] = useLang("body");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
-      {isDesktop && (
-        <div
-          className={css`
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            min-height: 20px;
-            margin-bottom: 20px;
-          `}
-        >
-          <ShareButtons color="#fff" />
-        </div>
-      )}
+      <div
+        className={css`
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+          ${isDesktop ? undefined : paddingH17}
+        `}
+      >
+        <BtnShare title={item.title} />
+      </div>
       <div
         className={css`
           display: flex;
