@@ -2,7 +2,6 @@ import React from "react";
 import ArtistCloseBtn from "../components/ArtistCloseBtn";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
-import BtnBack from "../components/BtnBack";
 import ArtistHeader from "../components/ArtistHeader";
 import {
   paddingH37,
@@ -30,19 +29,13 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const pStyle = css`
-  font-size: 18px;
-  line-height: 1.39;
-  text-align: left;
-  white-space: break-spaces;
-`;
-const data = ["datzmuseum-1", "datzmuseum-2"];
+const data = ["datzmuseum-1"];
 export default function AboutDatzmuseum() {
   const isDesktop = useDesktop(true);
   const [classes] = useLang("About");
   const history = useHistory();
   const items = useDocs("about", data);
-  const [d1, d2] = useItems(items) || [];
+  const [d1] = useItems(items) || [];
   function onLeft() {
     history.replace("/about/darkroom");
   }
@@ -153,7 +146,8 @@ export default function AboutDatzmuseum() {
                   </div>
                   <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
                   <a
-                    href="/museum"
+                    rel="noopener noreferrer"
+                    href="https://www.datzmuseum.org/"
                     className={css`
                       ${flexcolumncenter}
                       font-size: 14px;
@@ -166,32 +160,14 @@ export default function AboutDatzmuseum() {
                   </a>
                   <p className={classes.desc}>{d1.text}</p>
                 </div>
-                <div>
-                  <h2
-                    className={css`
-                      margin-top: ${isDesktop ? 30 : 73}px;
-                      font-size: 17px;
-                      line-height: 1.24;
-                      text-align: center;
-                      padding-bottom: 6px;
-                      border-bottom: 1px solid #ffffff;
-                    `}
-                  >
-                    CONTACT
-                  </h2>
-                  <div
-                    className={css`
-                      ${pStyle}
-                      margin-top: 18px;
-                      text-align: center;
-                      white-space: break-spaces;
-                      margin-bottom: 42px;
-                    `}
-                  >
-                    {d2.text}
-                  </div>
-                  <BtnBack color="#fff" borderTop />
-                </div>
+                <hr
+                  className={css`
+                    border-style: solid;
+                    border-width: 0;
+                    border-top: solid 1px #fff;
+                    height: 37px;
+                  `}
+                />
               </div>
             )}
           </Grid>

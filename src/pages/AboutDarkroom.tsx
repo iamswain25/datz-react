@@ -20,6 +20,7 @@ import LazyImage from "../components/LazyImage";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
 import BtnShare from "../components/BtnShare";
+import Dfrontspace from "../assets/svg/Dfrontspace";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -146,14 +147,13 @@ export default function AboutDarkroom() {
                   </div>
                   <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
                   <p className={classes.desc}>{d1.text}</p>
-                  {/* <img
-                    src={png}
-                    alt="png"
+                  <Dfrontspace
+                    color="#fff"
                     className={css`
-                      width: 200px;
-                      margin-top: 30px;
+                      margin: 20px 0;
+                      height: 50px;
                     `}
-                  /> */}
+                  />
                 </div>
                 <hr
                   className={css`

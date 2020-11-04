@@ -153,7 +153,8 @@ export default function AboutDatzpress() {
                   <DatzBooks
                     color="#fff"
                     className={css`
-                      margin-top: 30px;
+                      margin: 20px 0;
+                      height: 50px;
                     `}
                   />
                 </div>
