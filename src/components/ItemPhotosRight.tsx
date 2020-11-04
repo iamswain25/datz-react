@@ -3,6 +3,7 @@ import { css } from "emotion";
 import { bottomBtn37 } from "./styles";
 import { Link, useLocation } from "react-router-dom";
 import LazyImage from "./LazyImage";
+import ReactPlayer from "react-player";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -53,6 +54,20 @@ export default function ItemPhotosRight({
         `}
       >
         {images?.map((src, i) => {
+          if (ReactPlayer.canPlay(src)) {
+            return (
+              <ReactPlayer
+                url={src}
+                width="100%"
+                height="300px"
+                className={css`
+                  position: relative;
+                  margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
+                `}
+                controls={true}
+              />
+            );
+          }
           return (
             <Link to={`/${type}/${id}/images/${i}`} key={i} replace>
               <div
