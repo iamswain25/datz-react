@@ -18,6 +18,7 @@ export default function HomeEventCard({
   const { date, title, body, id } = item || {};
   const isDesktop = useDesktop();
   const [classes] = useLang(`${type}MainCard`);
+  if (!item) return null;
   return (
     <Link
       to={`/${type}/${id}`}
