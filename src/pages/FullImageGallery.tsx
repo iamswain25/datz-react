@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import useParams from "../components/useParams";
 import useDoc from "../utils/useDoc";
 import useStorages from "../components/useStorages";
+import ReactPlayer from "react-player";
 export default function FullImageGallery({
   type = "publication",
 }: {
@@ -14,7 +15,9 @@ export default function FullImageGallery({
   const { index } = useParams();
   const { replace } = useHistory();
   const item = useDoc(type);
-  const nullImages = useStorages(item?.images);
+  const nullImages = useStorages(
+    item?.images?.filter((i: string) => !ReactPlayer.canPlay(i))
+  );
   const images = nullImages?.map((a) => ({ original: a })) || [];
   function onSlideHandler(currentIndex: number) {
     replace(`/${type}/${item?.id}/images/${currentIndex}`);

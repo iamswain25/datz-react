@@ -56,16 +56,27 @@ export default function ItemPhotosRight({
         {images?.map((src, i) => {
           if (ReactPlayer.canPlay(src)) {
             return (
-              <ReactPlayer
-                url={src}
-                width="100%"
-                height="300px"
+              <div
+                key={i}
                 className={css`
                   position: relative;
                   margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
+                  ::before {
+                    content: "";
+                    display: inline-block;
+                    padding-bottom: 60.98%;
+                    vertical-align: top;
+                  }
                 `}
-                controls={true}
-              />
+              >
+                <ReactPlayer
+                  url={src}
+                  width="100%"
+                  height="100%"
+                  controls={true}
+                  className={classes.placeholder}
+                />
+              </div>
             );
           }
           return (
