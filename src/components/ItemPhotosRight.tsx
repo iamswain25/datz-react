@@ -31,6 +31,12 @@ const classes = {
     height: 100%;
   `,
 };
+interface Video {
+  url: string;
+  playing: boolean;
+  controls: boolean;
+  loop: boolean;
+}
 export default function ItemPhotosRight({
   item,
   type = "publication",
@@ -44,7 +50,11 @@ export default function ItemPhotosRight({
   const refs = React.useRef<any>();
   const index = location?.state?.index;
   if (!item) return null;
-  const { images, id } = item as { images: string[]; id: string };
+  const { images, id, videos } = item as {
+    images: string[];
+    id: string;
+    videos: (Video | string)[];
+  };
   return (
     <>
       <section
@@ -53,34 +63,45 @@ export default function ItemPhotosRight({
           flex: 1;
         `}
       >
-        {images?.map((src, i) => {
-          if (ReactPlayer.canPlay(src)) {
+        {videos?.map((v: Video | string, i) => {
+          if (typeof v === "string") {
             return (
               <div
-                key={i}
+                key={v}
                 className={css`
                   position: relative;
-                  margin-bottom: ${images.length - 1 === i ? 0 : 28}px;
-                  ::before {
-                    content: "";
-                    display: inline-block;
-                    padding-bottom: 60.98%;
-                    vertical-align: top;
-                  }
+                  margin-bottom: 28px;
                 `}
-              >
-                <ReactPlayer
-                  url={src}
-                  width="100%"
-                  height="100%"
-                  controls={true}
-                  className={classes.placeholder}
-                />
-              </div>
+                dangerouslySetInnerHTML={{ __html: v }}
+              />
             );
           }
           return (
-            <Link to={`/${type}/${id}/images/${i}`} key={i} replace>
+            <div
+              key={v.url}
+              className={css`
+                position: relative;
+                margin-bottom: 28px;
+                ::before {
+                  content: "";
+                  display: inline-block;
+                  padding-bottom: 60.98%;
+                  vertical-align: top;
+                }
+              `}
+            >
+              <ReactPlayer
+                {...v}
+                width="100%"
+                height="100%"
+                className={classes.placeholder}
+              />
+            </div>
+          );
+        })}
+        {images?.map((src, i) => {
+          return (
+            <Link to={`/${type}/${id}/images/${i}`} key={src} replace>
               <div
                 ref={(r) => {
                   if (index === i) {
