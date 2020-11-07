@@ -3,7 +3,7 @@ import { css } from "emotion";
 import { bottomBtn37 } from "./styles";
 import { Link, useLocation } from "react-router-dom";
 import LazyImage from "./LazyImage";
-import ReactPlayer from "react-player";
+import Videos from "./Videos";
 const classes = {
   link: css`
     padding-left: 18px;
@@ -40,11 +40,9 @@ interface Video {
 export default function ItemPhotosRight({
   item,
   type = "publication",
-  logo = "D'Ark Room",
 }: {
   item: any;
   type?: string;
-  logo?: string;
 }) {
   const location = useLocation<{ index: number }>();
   const refs = React.useRef<any>();
@@ -63,42 +61,7 @@ export default function ItemPhotosRight({
           flex: 1;
         `}
       >
-        {videos?.map((v: Video | string, i) => {
-          if (typeof v === "string") {
-            return (
-              <div
-                key={v}
-                className={css`
-                  position: relative;
-                  margin-bottom: 28px;
-                `}
-                dangerouslySetInnerHTML={{ __html: v }}
-              />
-            );
-          }
-          return (
-            <div
-              key={v.url}
-              className={css`
-                position: relative;
-                margin-bottom: 28px;
-                ::before {
-                  content: "";
-                  display: inline-block;
-                  padding-bottom: 60.98%;
-                  vertical-align: top;
-                }
-              `}
-            >
-              <ReactPlayer
-                {...v}
-                width="100%"
-                height="100%"
-                className={classes.placeholder}
-              />
-            </div>
-          );
-        })}
+        <Videos arr={videos} />
         {images?.map((src, i) => {
           return (
             <Link to={`/${type}/${id}/images/${i}`} key={src} replace>
