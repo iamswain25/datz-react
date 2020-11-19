@@ -48,7 +48,7 @@ export default function ArtistProject() {
       <Header
         fixed={isDesktop}
         sticky={!isDesktop}
-        darkerLogo
+        // darkerLogo
         backgroundColor={
           !isDesktop
             ? undefined
@@ -56,7 +56,7 @@ export default function ArtistProject() {
             ? "transparent"
             : "rgba(255,255,255,0.8)"
         }
-        color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
+        color={!isDesktop ? undefined : isTop ? "white" : "#606060"}
       />
       <RollingImages
         items={top}
