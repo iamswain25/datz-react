@@ -111,11 +111,11 @@ export default function PublicationList() {
             flex: 1;
           `}
         >
-          <p
+          {/* <p
             className={classes.desc}
           >
             {categories?.find((e) => e.type === selected)?.text}
-          </p>
+          </p> */}
           <section
             className={css`
               flex: 1;
