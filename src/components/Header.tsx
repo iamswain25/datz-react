@@ -31,7 +31,7 @@ const linkActiveClass = css`
 export default function Header({
   fixed = false,
   sticky = false,
-  color = "#606060",
+  color = "#707070",
   backgroundColor = "rgba(255,255,255,0.8)",
   // darkerLogo = false,
 }) {
@@ -104,8 +104,7 @@ export default function Header({
         `}
         to="/"
       >
-        {/* <Datz color={darkerLogo && color === "#707070" ? "#383838" : color} /> */}
-        <Datz color={color} />
+        <Datz color={color === "#707070" ? "#606060" : color} />
       </NavLink>
       {links}
       <div

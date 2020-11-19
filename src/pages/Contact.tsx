@@ -31,6 +31,7 @@ const titleAreaClass = css`
   line-height: 1.5;
   white-space: break-spaces;
   margin-top: 20px;
+  font-family: datz-medium;
 `;
 const mapLinks = (en: boolean = false) => (stock: any, i: number) => {
   const { title, list } = stock;
@@ -144,7 +145,7 @@ export default function Contact() {
                     isDesktop
                       ? h1Style
                       : css`
-                          ${h1Style} margin-top: 50px;
+                          ${h1Style} margin-top: 30px;
                         `
                   }
                 >
@@ -161,8 +162,8 @@ export default function Contact() {
                   <h1 className={h1Style}>CONTACT</h1>
                   <div
                     className={css`
-                      font-size: 21px;
-                      line-height: 1.5;
+                      font-size: 18px;
+                      line-height: 1.39;
                       white-space: break-spaces;
                     `}
                   >

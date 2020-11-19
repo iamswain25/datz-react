@@ -56,7 +56,7 @@ export default function ArtistProject() {
             ? "transparent"
             : "rgba(255,255,255,0.8)"
         }
-        color={!isDesktop ? undefined : isTop ? "white" : "#606060"}
+        color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
       />
       <RollingImages
         items={top}
