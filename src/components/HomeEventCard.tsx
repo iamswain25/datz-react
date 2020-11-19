@@ -6,18 +6,18 @@ import { exhibitionCurrentPast } from "../utils/datefns";
 import LazyImage from "./LazyImage";
 import Logo from "./Logo";
 import { bottomBtn37 } from "./styles";
-import useLang from "./useLang";
+import useLang, { LangKeys } from "./useLang";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 export default function HomeEventCard({
   item,
   type = "exhibition",
 }: {
   item: any;
-  type: string;
+  type: "exhibition" | "event";
 }) {
   const { date, title, body, id } = item || {};
   const isDesktop = useDesktop();
-  const [classes] = useLang(`${type}MainCard`);
+  const [classes] = useLang(`${type}MainCard` as LangKeys);
   if (!item) return null;
   return (
     <Link

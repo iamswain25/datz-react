@@ -1,4 +1,4 @@
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalState, LANG, Lang } from "../store/useGlobalState";
 import { css } from "emotion";
 const getFont = (en: boolean = false) => {
   const minus = 1;
@@ -10,7 +10,7 @@ const getFont = (en: boolean = false) => {
     `;
   };
 };
-const classes: { [key: string]: any } = {
+const classes = {
   publication: (en: boolean) => {
     const getSize = getFont(en);
     return {
@@ -417,10 +417,43 @@ const classes: { [key: string]: any } = {
       },
     };
   },
+  ebgaramond: (en: boolean) => {
+    return {
+      title: ({
+        fontSize = 17,
+        lineHeight = 1.5,
+        font = "datz-medium",
+        cssObject = undefined,
+      }) => {
+        const getSize = getFont(en);
+        return css`
+          ${getSize(fontSize, lineHeight, font)}
+          text-align: center;
+          white-space: break-spaces;
+          ${cssObject}
+        `;
+      },
+    };
+  },
 };
+type ClassesType = typeof classes;
+export type LangKeys = keyof ClassesType;
 
-export default function useLang(type = "exhibition") {
+export default function useLang<T extends LangKeys>(
+  type?: T
+): [any, boolean, Lang] {
   const [lang] = useGlobalState(LANG);
   const en = lang !== "ko";
+  if (!type) {
+    return [undefined, en, lang];
+  }
   return [classes[type](en), en, lang];
 }
+
+// export default function useLang(
+//   type: LangKeys
+// ): [ReturnType<ClassesType[LangKeys]>, boolean, Lang] {
+//   const [lang] = useGlobalState(LANG);
+//   const en = lang !== "ko";
+//   return [classes[type](en), en, lang];
+// }

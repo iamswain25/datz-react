@@ -6,7 +6,7 @@ import { exhibitionCurrentPast } from "../utils/datefns";
 import LazyImage from "./LazyImage";
 import Logo from "./Logo";
 import { bottomBtn37 } from "./styles";
-import useLang from "./useLang";
+import useLang, { LangKeys } from "./useLang";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 export default function MainCard({
   item,
@@ -17,7 +17,7 @@ export default function MainCard({
 }) {
   const { date, title, body, id, preview_body } = item;
   const isDesktop = useDesktop();
-  const [classes] = useLang(`${type}MainCard`);
+  const [classes] = useLang(`${type}MainCard` as LangKeys);
   return (
     <Link to={`/${type}/${id}`}>
       <section
