@@ -4,10 +4,12 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 import useStorages from "./useStorages";
+import useLang from "./useLang";
 export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
   const item = items[index];
+  const [classes] = useLang("ebgaramond");
   const galleryRef = React.useRef<ImageGallery | null>(null);
   function onslideHandler(index: number) {
     setIndex(index);
@@ -18,21 +20,21 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   function mouseLeaveHandler() {
     galleryRef.current?.play();
   }
-  const titleClass = css`
-    font-family: "EB Garamond";
-    font-size: ${isDesktop ? 27 : 22}px;
-    line-height: ${isDesktop ? 1.37 : 1.36};
-    letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
-    text-align: center;
-  `;
-  const authorClass = css`
-    font-family: "EB Garamond";
-    font-size: ${isDesktop ? 21 : 20}px;
-    line-height: ${isDesktop ? 1.38 : 1.4};
-    letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
-    text-align: center;
-    margin-top: ${isDesktop ? 4 : 3}px;
-  `;
+  const titleClass = classes.title(
+    isDesktop ? 27 : 22,
+    1.36,
+    css`
+      letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
+    `
+  );
+  const authorClass = classes.title(
+    isDesktop ? 21 : 20,
+    1.4,
+    css`
+      letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
+      margin-top: ${isDesktop ? 4 : 3}px;
+    `
+  );
   const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
   const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];

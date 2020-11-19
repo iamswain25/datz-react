@@ -419,15 +419,18 @@ const classes = {
   },
   ebgaramond: (en: boolean) => {
     return {
-      title: ({
-        fontSize = 17,
-        lineHeight = 1.5,
-        font = "datz-medium",
-        cssObject = undefined,
-      }) => {
+      title: (fontSize = 17, lineHeight = 1.5, cssObject = undefined) => {
         const getSize = getFont(en);
         return css`
-          ${getSize(fontSize, lineHeight, font)}
+          ${getSize(fontSize, lineHeight, "datz-medium")}
+          text-align: center;
+          white-space: break-spaces;
+          ${cssObject}
+        `;
+      },
+      type: (cssObject = undefined) => {
+        return css`
+          font-family: datz-medium;
           text-align: center;
           white-space: break-spaces;
           ${cssObject}

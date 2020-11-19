@@ -6,6 +6,7 @@ import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import useStorages from "./useStorages";
+import useLang from "./useLang";
 export default function FullPageRollingImages({
   style,
   items,
@@ -14,6 +15,7 @@ export default function FullPageRollingImages({
   style?: React.CSSProperties;
 }) {
   const isDesktop = useDesktop(false);
+  const [classes] = useLang("ebgaramond");
   const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
   const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];
@@ -29,28 +31,23 @@ export default function FullPageRollingImages({
   function mouseLeaveHandler() {
     galleryRef.current?.play();
   }
-  const typeClass = css`
-    font-family: datz-medium;
-    font-size: ${isDesktop ? 19 : 16}px;
-    line-height: ${isDesktop ? 1.21 : 1.19};
-    text-align: center;
-    margin-top: ${isDesktop ? 0 : 5}px;
-  `;
-  const titleClass = css`
-    font-family: "EB Garamond";
-    font-size: ${isDesktop ? 27 : 22}px;
-    line-height: ${isDesktop ? 1.37 : 1.36};
-    letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
-    text-align: center;
-  `;
-  const authorClass = css`
-    font-family: "EB Garamond";
-    font-size: ${isDesktop ? 21 : 20}px;
-    line-height: ${isDesktop ? 1.38 : 1.4};
-    letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
-    text-align: center;
-    margin-top: ${isDesktop ? 4 : 3}px;
-  `;
+  const typeClass = classes.type(
+    css`
+      font-size: ${isDesktop ? 19 : 16}px;
+      line-height: ${isDesktop ? 1.21 : 1.19};
+      margin-top: ${isDesktop ? 0 : 5}px;
+    `
+  );
+  const titleClass = classes.title(isDesktop ? 27 : 22, 1.35);
+  const authorClass = classes.title(
+    isDesktop ? 21 : 20,
+    1.4,
+    css`
+      letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
+      text-align: center;
+      margin-top: ${isDesktop ? 4 : 3}px;
+    `
+  );
   const { type, title, text, color = "#5d5d5d", logo } = item || {};
   return (
     <div
