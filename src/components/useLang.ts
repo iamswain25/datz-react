@@ -273,9 +273,9 @@ const classes = {
       `,
       body: css`
         ${getSize(17, 1.47)}
-        line-height: 28px;
+        line-height: 25px;
         margin-top: 12px;
-        color: #707070;
+        color: ${!en ? "#5d5d5d" : "#4b4b4b"};
         max-height: 112px;
         overflow: hidden;
         text-overflow: ellipsis;

@@ -12,6 +12,7 @@ export default function BtnBackTo({
     <Link
       to={to}
       className={css`
+        height: 20px;
         font-size: 14px;
         line-height: 1.21;
         color: #afafaf;
