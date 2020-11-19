@@ -290,7 +290,7 @@ const classes = {
     return {
       bio: css`
         font-family: datz-regular;
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.8;
         margin-top: 17px;
         white-space: break-spaces;
