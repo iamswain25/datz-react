@@ -21,14 +21,14 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
     galleryRef.current?.play();
   }
   const titleClass = classes.title(
-    isDesktop ? 27 : 22,
+    isDesktop ? 25 : 20,
     1.36,
     css`
       letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
     `
   );
   const authorClass = classes.title(
-    isDesktop ? 21 : 20,
+    isDesktop ? 20 : 19,
     1.4,
     css`
       letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
