@@ -93,7 +93,7 @@ export default function AboutMap3() {
                 <div key={i}>
                   <h2
                     className={css`
-                      ${classes.book(17, 1.24)}
+                      ${classes.book(20, 1.24)}
                       margin-bottom: 25px;
                       margin-top: 46px;
                     `}
@@ -132,7 +132,7 @@ export default function AboutMap3() {
               </h2>
               <p
                 className={css`
-                  ${classes.regular(18, 1.39)}
+                  ${classes.regular2(17, 1.5)}
                   margin-top: 18px;
                 `}
               >

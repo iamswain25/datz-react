@@ -104,7 +104,6 @@ export default function AboutImagesGrid({ item }: { item: any }) {
             className={css`
               ${classes.body}
               margin-top: 12px;
-              text-align: center;
             `}
           >
             {text}

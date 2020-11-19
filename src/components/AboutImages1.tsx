@@ -49,7 +49,7 @@ export default function AboutImages1() {
             margin-top: 5px;
           `}
         />
-        <div
+        {/* <div
           className={css`
             ${classes.h2}
             color: #ffffff;
@@ -58,7 +58,7 @@ export default function AboutImages1() {
           `}
         >
           {main?.text}
-        </div>
+        </div> */}
       </section>
       <Grid
         container

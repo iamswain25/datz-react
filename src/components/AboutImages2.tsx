@@ -76,7 +76,7 @@ export default function AboutImages2() {
             )}
             <div
               className={css`
-                ${classes.book(20, 1.35)}
+                ${classes.book(18, 1.5)}
                 text-align: left;
                 margin-bottom: 47px;
                 margin-top: 24px;
