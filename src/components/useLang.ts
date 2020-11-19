@@ -298,7 +298,14 @@ const classes = {
     };
   },
   PublicationList: (en: boolean) => {
+    const getSize = getFont(en);
     return {
+      desc: css`
+        ${getSize(18, 1.5)}
+        letter-spacing: 0.36px;
+        text-align: left;
+        color: #4b4b4b;
+      `,
       link: css`
         padding: 0 18px;
         display: flex;

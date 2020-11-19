@@ -112,14 +112,7 @@ export default function PublicationList() {
           `}
         >
           <p
-            className={css`
-              font-family: "EB Garamond";
-              font-size: 18px;
-              line-height: 1.5;
-              letter-spacing: 0.36px;
-              text-align: left;
-              color: #4b4b4b;
-            `}
+            className={classes.desc}
           >
             {categories?.find((e) => e.type === selected)?.text}
           </p>
