@@ -9,7 +9,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
   const item = items[index];
-  const [classes] = useLang("ebgaramond");
+  const [classes, en] = useLang("ebgaramond");
   const galleryRef = React.useRef<ImageGallery | null>(null);
   function onslideHandler(index: number) {
     setIndex(index);
@@ -25,6 +25,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
     1.36,
     css`
       letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
+      margin-top: ${en ? 0 : 1}px;
     `
   );
   const authorClass = classes.title(

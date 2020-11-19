@@ -16,7 +16,7 @@ export default function BtnBackTo({
         font-size: 14px;
         line-height: 1.21;
         color: #afafaf;
-        margin-right: 15px;
+        margin-right: 25px;
       `}
     >
       {title}

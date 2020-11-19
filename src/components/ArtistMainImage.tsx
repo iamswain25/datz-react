@@ -14,7 +14,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
     line-height: ${isDesktop ? 1.37 : 1.36};
     letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
     margin-top: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
     line-height: 1.17;
     height: 34px;
     margin-top: 8px;
-    margin-bottom: 4px;
+    margin-bottom: 9px;
     display: flex;
     align-items: center;
     justify-content: center;

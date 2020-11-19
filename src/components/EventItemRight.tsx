@@ -12,7 +12,7 @@ const stickyContainer = css`
   font-family: datz-medium;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  height: calc(100vh - 79px);
 `;
 const mobileContainer = css`
   position: relative;
@@ -40,12 +40,13 @@ export default function EventItemRight({
       >
         <BtnShare title={title} />
       </div>
+      <div className={classes.type}>{type}</div>
       <div
         className={css`
           display: flex;
           flex-direction: column;
-          overflow: hidden;
           flex: 1;
+          overflow: auto;
         `}
       >
         <div
@@ -56,7 +57,6 @@ export default function EventItemRight({
             margin-bottom: ${isDesktop ? 0 : 17}px;
           `}
         >
-          <div className={classes.type}>{type}</div>
           <div className={classes.date}>{date}</div>
           <div className={classes.place}>{place}</div>
         </div>
@@ -75,16 +75,16 @@ export default function EventItemRight({
             <BodyDraftHtml item={item} />
           </div>
         </section>
-        <div
-          className={css`
-            ${isDesktop ? undefined : marginH27}
-            border-top: solid 1px #707070;
-            text-align: center;
-            margin-bottom: ${isDesktop ? 37 : 0}px;
-          `}
-        >
-          {!isDesktop && <BtnBack />}
-        </div>
+      </div>
+      <div
+        className={css`
+          ${isDesktop ? undefined : marginH27}
+          border-top: solid 1px #707070;
+          text-align: center;
+          margin-bottom: ${isDesktop ? 37 : 0}px;
+        `}
+      >
+        {!isDesktop && <BtnBack />}
       </div>
     </div>
   );

@@ -39,11 +39,8 @@ const classes = {
         margin-top: 1px;
       `,
       title: css`
-        // font-family: datz-medium;
-        // font-size: 26px;
-        // line-height: 1.31;
         ${getSize(26, 1.31, "datz-medium")}
-        margin-top: 13px;
+        margin-top: 23px;
         text-align: center;
         color: #4b4b4b;
       `,
@@ -98,11 +95,8 @@ const classes = {
         margin-top: 1px;
       `,
       title: css`
-        // font-family: datz-medium;
-        // font-size: 26px;
-        // line-height: 1.31;
         ${getSize(26, 1.31, "datz-medium")}
-        margin-top: 15px;
+        margin-top: 23px;
         text-align: center;
         color: #4b4b4b;
       `,
@@ -160,7 +154,7 @@ const classes = {
         font-family: datz-medium;
         font-size: 25px;
         line-height: 1.08;
-        margin-top: 15px;
+        margin-top: 23px;
         text-align: center;
         color: #4b4b4b;
       `,
@@ -172,6 +166,54 @@ const classes = {
         margin-bottom: 40px;
         line-height: 28px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
+        white-space: break-spaces;
+        a {
+          text-decoration: underline;
+        }
+      `,
+    };
+  },
+  news: (en: boolean) => {
+    return {
+      type: css`
+        font-family: datz-medium;
+        font-size: 17px;
+        line-height: 1.24;
+        text-align: center;
+        border-bottom: solid 1px #fff;
+        padding-bottom: 7px;
+      `,
+      date: css`
+        font-family: datz-medium;
+        font-size: 17px;
+        line-height: 1.18;
+        letter-spacing: 0.34px;
+        text-align: center;
+        margin-top: 15px;
+      `,
+      place: css`
+        font-family: datz-regular;
+        font-size: 14px;
+        line-height: 1.21;
+        margin-top: 3px;
+        text-align: center;
+        letter-spacing: 0.28px;
+      `,
+
+      title: css`
+        font-family: datz-medium;
+        font-size: 25px;
+        line-height: 1.08;
+        margin-top: 23px;
+        text-align: center;
+      `,
+      body: css`
+        font-family: datz-regular;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 21px;
+        margin-bottom: 40px;
+        line-height: 28px;
         white-space: break-spaces;
         a {
           text-decoration: underline;
@@ -263,18 +305,17 @@ const classes = {
     const getSize = getFont(en);
     return {
       title: css`
-        // font-family: datz-medium;
-        // font-size: 22px;
-        // line-height: 1.23;
-        ${getSize(22, 1.23, "datz-medium")}
+        ${getSize(22, 1.23)}
         letter-spacing: 0.44px;
         text-align: center;
         color: #4b4b4b;
+        margin-top: 10px;
       `,
       body: css`
         ${getSize(17, 1.47)}
         line-height: 25px;
-        margin-top: 12px;
+        margin-top: 13px;
+        margin-bottom: 15px;
         color: ${!en ? "#5d5d5d" : "#4b4b4b"};
         max-height: 112px;
         overflow: hidden;
@@ -324,7 +365,7 @@ const classes = {
         font-family: datz-medium;
         font-size: 17px;
         line-height: 1.35;
-        margin-top: 4px;
+        margin-top: 5px;
       `,
     };
   },
@@ -366,7 +407,7 @@ const classes = {
       desc: css`
         font-family: datz-regular;
         font-size: 18px;
-        line-height: 1.39;
+        line-height: 28px;
         text-align: left;
         white-space: break-spaces;
         flex: 1;

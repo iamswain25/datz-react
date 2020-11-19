@@ -7,7 +7,8 @@ export default function useStorage(path?: string) {
     storage
       .ref(path)
       .getDownloadURL()
-      .then((url) => setImage(url));
+      .then((url) => setImage(url))
+      .catch(console.warn);
   }, [path]);
   return image;
 }

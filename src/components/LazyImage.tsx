@@ -22,6 +22,7 @@ export default function LazyImage({
   img = classes.img,
 }) {
   const image = useStorage(link);
+  console.log(image);
   if (!image) return <div className={placeholder} />;
   return (
     <LI

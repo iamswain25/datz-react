@@ -5,7 +5,6 @@ import EventCoverWidget from "./EventCoverWidget";
 import { flexcolumn } from "./styles";
 const stickyContainer = css`
   position: fixed;
-position: sticky;
   top: 79px;
   display: flex;
   flex-direction: column;

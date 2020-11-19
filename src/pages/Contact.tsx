@@ -12,6 +12,7 @@ import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
 
 const aStyle = css`
+  font-family: datz-regular;
   text-decoration: underline;
   display: block;
   line-height: 1.5;

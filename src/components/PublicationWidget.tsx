@@ -23,7 +23,7 @@ const descClass = (dark = false) => css`
   text-align: center;
   color: ${dark ? "#ffffff" : "#707070"};
   text-align: center;
-  margin-top: 10px;
+  // margin-top: 10px;
   height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;

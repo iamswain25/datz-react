@@ -12,9 +12,7 @@ const stickyContainer = css`
   font-family: datz-medium;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  max-height: calc(100vh - 79px);
-  overflow: auto;
+  height: calc(100vh - 79px);
   color: #fff;
 `;
 const mobileContainer = css`
@@ -29,7 +27,7 @@ export default function NewsItemRight({
   item: any;
 }) {
   const isDesktop = useDesktop();
-  const [classes] = useLang("body");
+  const [classes] = useLang("news");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
       <div
@@ -42,11 +40,13 @@ export default function NewsItemRight({
       >
         <BtnShare title={item.title} />
       </div>
+      <div className={classes.type}>{item.type}</div>
       <div
         className={css`
           display: flex;
           flex-direction: column;
           flex: 1;
+          overflow: auto;
         `}
       >
         <div
@@ -56,32 +56,8 @@ export default function NewsItemRight({
             margin-bottom: ${isDesktop ? 0 : 17}px;
           `}
         >
-          <div
-            className={css`
-              font-size: 17px;
-              border-bottom: solid 1px #fff;
-              padding-bottom: 7px;
-              margin-bottom: 16px;
-            `}
-          >
-            {item.type}
-          </div>
-          <div
-            className={css`
-              font-size: 17px;
-              letter-spacing: 0.34px;
-            `}
-          >
-            {item.date}
-          </div>
-          <div
-            className={css`
-              ${classes.book(14, 1)}
-              margin-top: 3px;
-            `}
-          >
-            {item.place}
-          </div>
+          <div className={classes.date}>{item.date}</div>
+          <div className={classes.place}>{item.place}</div>
         </div>
         {children}
         <section
@@ -93,34 +69,21 @@ export default function NewsItemRight({
               : mobileContainer
           }
         >
-          <div
-            className={css`
-              ${classes.book(25, 1)}
-              margin-top: 20px;
-            `}
-          >
-            {item.title}
-          </div>
-          <div
-            className={css`
-              ${classes.regular(18, 1.5)}
-              margin-top: 20px;
-              padding-bottom: 49px;
-            `}
-          >
+          <div className={classes.title}>{item.title}</div>
+          <div className={classes.body}>
             <BodyDraftHtml item={item} />
           </div>
         </section>
-        <div
-          className={css`
-            ${isDesktop ? undefined : marginH27}
-            border-top: solid 1px #fff;
-            text-align: center;
-            margin-bottom: ${isDesktop ? 37 : 0}px;
-          `}
-        >
-          {!isDesktop && <BtnBack color="#fff" />}
-        </div>
+      </div>
+      <div
+        className={css`
+          ${isDesktop ? undefined : marginH27}
+          border-top: solid 1px #fff;
+          text-align: center;
+          margin-bottom: ${isDesktop ? 37 : 0}px;
+        `}
+      >
+        {!isDesktop && <BtnBack color="#fff" />}
       </div>
     </div>
   );

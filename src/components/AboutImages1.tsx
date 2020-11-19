@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { marginH18, bottomBtn37, marginH10, marginH17 } from "./styles";
 import { Grid } from "@material-ui/core";
-import useLang from "./useLang";
+// import useLang from "./useLang";
 import Divider from "./Divider";
 import AboutImagesGrid from "./AboutImagesGrid";
 import useCollectionWhere from "../utils/useCollectionWhere";
@@ -12,7 +12,7 @@ import useItems from "../utils/useItems";
 const data = ["main"];
 export default function AboutImages1() {
   const isDesktop = useDesktop();
-  const [classes] = useLang("About");
+  // const [classes] = useLang("About");
   const items1 = useDocs("about", data);
   const [main] = useItems(items1) || [];
   const items2 = useCollectionWhere("about", "banner", "type");

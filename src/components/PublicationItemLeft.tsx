@@ -71,7 +71,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
             to={`/publication/${id}/readmore`}
             className={css`
               font-size: 16px;
-              margin: 30px 0;
+              margin: 30px 1px;
               line-height: 1.19;
               text-align: left;
               color: #707070;

@@ -4,12 +4,15 @@ import EventItemRight from "../components/EventItemRight";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import ArtistHeader from "../components/ArtistHeader";
-import { flexrow, paddingH37 } from "../components/styles";
+import { paddingH37 } from "../components/styles";
 import useDoc from "../utils/useDoc";
 import ArtistCloseBtn from "../components/ArtistCloseBtn";
+import { Grid } from "@material-ui/core";
 const desktopContainer = css`
-  ${flexrow}
   ${paddingH37}
+  height: calc(100vh - 79px);
+  position: relative;
+  overflow: hidden;
 `;
 export default function EventItem() {
   const item = useDoc("event");
@@ -33,8 +36,14 @@ export default function EventItem() {
       </ArtistHeader>
       {isDesktop ? (
         <section className={desktopContainer}>
-          <EventItemLeft images={item.images} />
-          <EventItemRight item={item} />
+          <Grid container spacing={3}>
+            <Grid item sm={6}>
+              <EventItemLeft images={item.images} />
+            </Grid>
+            <Grid item sm={6} container>
+              <EventItemRight item={item} />
+            </Grid>
+          </Grid>
         </section>
       ) : (
         <EventItemRight
