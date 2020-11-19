@@ -111,6 +111,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className={css`
+                font-family: datz-medium;
                 font-size: 16px;
                 line-height: 1.19;
                 margin-top: 12px;
@@ -137,7 +138,12 @@ export default function Contact() {
                 </div>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <div>
+                <div
+                  className={css`
+                    font-size: 18px;
+                    line-height: 1.39;
+                  `}
+                >
                   <h1 className={h1Style}>COLLECTIONS</h1>
                   {list?.collections?.map(mapLinks(en))}
                 </div>
