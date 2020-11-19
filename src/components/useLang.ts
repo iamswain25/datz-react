@@ -290,8 +290,8 @@ const classes = {
     return {
       bio: css`
         font-family: datz-regular;
-        font-size: 16px;
-        line-height: 1.8;
+        font-size: 17px;
+        line-height: 1.5;
         margin-top: 17px;
         white-space: break-spaces;
       `,
@@ -372,14 +372,14 @@ const classes = {
         flex: 1;
       `,
       h1: css`
-        font-family: datz-medium
+        font-family: datz-medium;
         font-size: 23px;
         line-height: 1.17;
         text-align: center;
       `,
       h2: css`
-        font-family: datz-medium
-        font-size: 18px;
+        font-family: datz-medium;
+        font-size: 17px;
         line-height: 1.56;
         text-align: center;
       `,
@@ -393,6 +393,17 @@ const classes = {
           font-size: ${fontSize}px;
           line-height: 28px;
           text-align: left;
+          white-space: break-spaces;
+          a {
+            text-decoration: underline;
+          }
+        `;
+      },
+      regular2: (fontSize = 17, lineHeight = 1.5) => {
+        return css`
+          font-family: datz-regular;
+          font-size: ${fontSize}px;
+          line-height: ${lineHeight};
           white-space: break-spaces;
           a {
             text-decoration: underline;

@@ -28,7 +28,7 @@ export default function SupportBottomThree() {
             <Grid item xs={12} sm={4} key={i}>
               <div
                 className={css`
-                  ${classes.book(21, 1.29)}
+                  ${classes.book(22, 1.29)}
                   margin-top: 54px;
                 `}
               >
@@ -36,7 +36,7 @@ export default function SupportBottomThree() {
               </div>
               <div
                 className={css`
-                  ${classes.book(17, 1.47)}
+                  ${classes.regular2(17, 1.47)}
                   margin-top: 10px;
                 `}
               >

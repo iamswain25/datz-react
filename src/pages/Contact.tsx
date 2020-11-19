@@ -14,8 +14,8 @@ import { firestore } from "../config/firebase";
 const aStyle = css`
   text-decoration: underline;
   display: block;
-  line-height: 1.39;
-  font-size: 18px;
+  line-height: 1.5;
+  font-size: 17px;
 `;
 const h1Style = css`
   font-family: datz-medium;
@@ -25,6 +25,12 @@ const h1Style = css`
   margin-bottom: 12px;
   border-bottom: 1px solid #fff;
   width: 100%;
+`;
+const titleAreaClass = css`
+  font-size: 20px;
+  line-height: 1.5;
+  white-space: break-spaces;
+  margin-top: 20px;
 `;
 const mapLinks = (en: boolean = false) => (stock: any, i: number) => {
   const { title, list } = stock;
@@ -128,35 +134,35 @@ export default function Contact() {
             <Grid container spacing={isDesktop ? 4 : 0}>
               <Grid item xs={12} sm={6}>
                 <h1 className={h1Style}>STOCKIST</h1>
-                <div
-                  className={css`
-                    font-size: 18px;
-                    line-height: 1.39;
-                  `}
-                >
+                <div className={titleAreaClass}>
                   {list?.stocklist?.map(mapLinks(en))}
                 </div>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <div
-                  className={css`
-                    font-size: 18px;
-                    line-height: 1.39;
-                  `}
+                <h1
+                  className={
+                    isDesktop
+                      ? h1Style
+                      : css`
+                          ${h1Style} margin-top: 50px;
+                        `
+                  }
                 >
-                  <h1 className={h1Style}>COLLECTIONS</h1>
+                  COLLECTIONS
+                </h1>
+                <div className={titleAreaClass}>
                   {list?.collections?.map(mapLinks(en))}
                 </div>
                 <div
                   className={css`
-                    margin: 32px 0;
+                    margin: 32px 0 50px;
                   `}
                 >
                   <h1 className={h1Style}>CONTACT</h1>
                   <div
                     className={css`
-                      line-height: 1.39;
-                      font-size: 18px;
+                      font-size: 21px;
+                      line-height: 1.5;
                       white-space: break-spaces;
                     `}
                   >
