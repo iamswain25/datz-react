@@ -411,6 +411,7 @@ const classes = {
         text-align: left;
         white-space: break-spaces;
         flex: 1;
+        margin-bottom: 20px;
       `,
       h1: css`
         font-family: datz-medium;

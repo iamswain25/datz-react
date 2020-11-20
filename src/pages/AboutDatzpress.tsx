@@ -30,10 +30,10 @@ const h1Style = (isDesktop = false) => css`
   text-align: center;
 `;
 
-const data = ["datzpress-1"];
+const data = ["datzpress-1", "datzpress-2"];
 export default function AboutDatzpress() {
   const items = useDocs("about", data);
-  const [d1] = useItems(items) || [];
+  const [d1, d2] = useItems(items) || [];
   const isDesktop = useDesktop(true);
   const [classes] = useLang("About");
   const history = useHistory();
@@ -122,7 +122,7 @@ export default function AboutDatzpress() {
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>
-            {d1 && (
+            {d1 && d2 && (
               <div
                 className={css`
                   ${flexcolumnstretch}
@@ -154,9 +154,10 @@ export default function AboutDatzpress() {
                     color="#fff"
                     className={css`
                       margin: 20px 0;
-                      height: 50px;
+                      width: 80px;
                     `}
                   />
+                  <p className={classes.desc}>{d2.text}</p>
                 </div>
                 <hr
                   className={css`
