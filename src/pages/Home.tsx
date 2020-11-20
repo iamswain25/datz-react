@@ -8,7 +8,7 @@ import Divider from "../components/Divider";
 import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import useCollection from "../utils/useCollection";
-export default () => {
+export default function Home() {
   const collection = useCollection("main");
   const items = React.useMemo(() => {
     const c = collection || [];
@@ -40,4 +40,4 @@ export default () => {
       <Footer />
     </>
   );
-};
+}
