@@ -11,6 +11,7 @@ const stickyContainer = css`
   margin-right: 17px;
   font-family: datz-medium;
   display: flex;
+  flex: 1;
   flex-direction: column;
   height: calc(100vh - 79px);
   color: #fff;

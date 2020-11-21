@@ -11,6 +11,7 @@ const stickyContainer = css`
   margin-right: 17px;
   font-family: datz-medium;
   display: flex;
+  flex: 1;
   flex-direction: column;
   height: calc(100vh - 79px);
 `;
@@ -26,7 +27,6 @@ export default function EventItemRight({
   item: any;
 }) {
   const isDesktop = useDesktop();
-  const { type, date, title, place } = item;
   const [classes] = useLang("event");
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
@@ -38,9 +38,9 @@ export default function EventItemRight({
           ${isDesktop ? undefined : paddingH17}
         `}
       >
-        <BtnShare title={title} />
+        <BtnShare title={item?.title} />
       </div>
-      <div className={classes.type}>{type}</div>
+      <div className={classes.type}>{item?.type}</div>
       <div
         className={css`
           display: flex;
@@ -57,8 +57,8 @@ export default function EventItemRight({
             margin-bottom: ${isDesktop ? 0 : 17}px;
           `}
         >
-          <div className={classes.date}>{date}</div>
-          <div className={classes.place}>{place}</div>
+          <div className={classes.date}>{item?.date}</div>
+          <div className={classes.place}>{item?.place}</div>
         </div>
         {children}
         <section
@@ -70,7 +70,7 @@ export default function EventItemRight({
               : mobileContainer
           }
         >
-          <div className={classes.title}>{title}</div>
+          <div className={classes.title}>{item?.title}</div>
           <div className={classes.body}>
             <BodyDraftHtml item={item} />
           </div>
