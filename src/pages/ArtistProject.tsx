@@ -18,7 +18,6 @@ import ResidencyLeft from "../components/ResidencyLeft";
 import Facilities from "../components/Facilities";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
-import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useIsTop from "../components/useIsTop";
 import useCollection from "../utils/useCollection";
 import BtnTop from "../components/BtnTop";
@@ -58,15 +57,26 @@ export default function ArtistProject() {
         }
         color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
       />
-      <RollingImages
-        items={top}
-        additionalClass="white-bullets"
+      <section
         className={css`
-          height: ${isDesktop ? "100vh" : "588px"};
-          background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+          position: relative;
         `}
-        children={(props) => <DatzArtistProject {...props} />}
-      />
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          className={css`
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+          `}
+        >
+          <source src="/artist-project_bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <DatzArtistProject item={top[0]} />
+      </section>
       <div
         className={css`
           ${marginH55}
