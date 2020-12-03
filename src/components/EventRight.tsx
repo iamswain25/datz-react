@@ -32,13 +32,15 @@ export default function EventRight() {
       </Grid>
       <h1
         className={css`
-          height: 37px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 77px;
           font-family: datz-medium;
           font-size: 22px;
           line-height: 1.23;
           text-align: center;
           color: #707070;
-          margin-top: 9px;
           margin-bottom: -15px;
         `}
       >

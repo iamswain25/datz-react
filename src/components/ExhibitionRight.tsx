@@ -21,11 +21,18 @@ export default function ExhibitionRight() {
     firestore
       .collection("exhibition")
       .orderBy("order", "desc")
-      .limit(DEFAULT_COUNT + 4),
+      .limit(DEFAULT_COUNT * 2),
     { idField: "id" }
   );
   const list = useExhibitions(exhibitions);
-  const currentExhibitions = list?.filter(filterExhibitionCurrent);
+  const currentExhibitions = React.useMemo(
+    () => list?.filter(filterExhibitionCurrent),
+    [list]
+  );
+  const pastExhibition = React.useMemo(
+    () => list?.filter(filterExhibitionPast),
+    [list]
+  );
   if (!list) return null;
   return (
     <main
@@ -33,31 +40,40 @@ export default function ExhibitionRight() {
         flex: 1;
       `}
     >
-      <Grid container spacing={isDesktop ? 3 : 0}>
-        {currentExhibitions?.map((item, i) => (
-          <Grid item xs={12} key={i}>
-            <MainCard item={item} type="exhibition" />
-          </Grid>
-        ))}
-      </Grid>
+      {currentExhibitions && currentExhibitions.length > 0 && (
+        <Grid container spacing={isDesktop ? 3 : 0}>
+          {currentExhibitions?.map((item, i) => (
+            <Grid item xs={12} key={i}>
+              <MainCard item={item} type="exhibition" />
+            </Grid>
+          ))}
+        </Grid>
+      )}
+
       <h1
         className={css`
-          height: 37px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 77px;
           font-family: datz-medium;
           font-size: 22px;
           line-height: 1.23;
           text-align: center;
           color: #707070;
-          margin-top: 9px;
           margin-bottom: -15px;
         `}
       >
         Past Exhibition
       </h1>
       <Grid container spacing={isDesktop ? 3 : 0}>
-        {list
-          ?.filter(filterExhibitionPast)
-          ?.slice(0, DEFAULT_COUNT)
+        {pastExhibition
+          ?.slice(
+            0,
+            currentExhibitions && currentExhibitions.length > 0
+              ? DEFAULT_COUNT
+              : DEFAULT_COUNT * 2
+          )
           ?.map((a, i) => (
             <Grid item key={i} xs={12} md={6} xl={4}>
               <ViewAllCard item={a} type="exhibition" nonWhite />
