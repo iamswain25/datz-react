@@ -4,10 +4,9 @@ import CarouselBtnGroup from "./CarouselBtnGroup";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import usePublications from "../utils/usePublications";
-import LazyImage from "./LazyImage";
-import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useDesktop from "./useDesktop";
 import useDocs from "../utils/useDocs";
+import StorageImage from "./StorageImage";
 
 const textClass = (dark = false) => css`
   font-family: datz-medium;
@@ -87,7 +86,7 @@ export default function PublicationWidget({
             const { image_cover, title, id } = item;
             return (
               <Link
-                key={i}
+                key={id}
                 to={`/publication/${id}`}
                 className={css`
                   display: flex;
@@ -114,14 +113,9 @@ export default function PublicationWidget({
                     }
                   `}
                 >
-                  <LazyImage
+                  <StorageImage
                     alt={item.title}
-                    link={image_cover}
-                    placeholder={css`
-                      width: 100%;
-                      height: 100%;
-                      background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    `}
+                    path={image_cover}
                     img={css`
                       object-fit: contain;
                       width: 100%;

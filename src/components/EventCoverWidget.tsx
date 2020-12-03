@@ -6,7 +6,7 @@ import useDesktop from "./useDesktop";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import { Link, useLocation } from "react-router-dom";
 import useParams from "./useParams";
-import LazyImage from "./LazyImage";
+import StorageImage from "./StorageImage";
 const itemClass = css`
   display: flex;
   align-items: center;
@@ -85,7 +85,6 @@ function Sub({
   type: "event" | "news";
   index: number;
 }) {
-  // const img = useStorage(image);
   const { id } = useParams();
   return (
     <div
@@ -100,18 +99,12 @@ function Sub({
         to={`/${type}/${id}/images/${index}`}
         replace
         className={css`
-          // background-image: url();
-          // background-position: center;
-          // background-size: cover;
-          // background-repeat: no-repeat;
           flex: 1;
-          // height: 100%;
-          // width: 100%;
           color: ${dark ? "#ffffff" : "#707070"};
         `}
       >
-        <LazyImage
-          link={image}
+        <StorageImage
+          path={image}
           img={css`
             object-fit: cover;
             width: 100%;

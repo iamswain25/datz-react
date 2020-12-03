@@ -3,10 +3,8 @@ import { css } from "emotion";
 import { Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
-
 import useEvents from "../utils/useEvents";
-import LazyImage from "./LazyImage";
-import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import StorageImage from "./StorageImage";
 import useDocs from "../utils/useDocs";
 
 const textClass = (dark = false) => css`
@@ -104,18 +102,11 @@ export default function EventWidget({
         {list.map((item, i) => {
           const { images, title, id } = item;
           return (
-            <Link key={i} className={afterClass(i)} to={`/event/${id}`}>
+            <Link key={id} className={afterClass(i)} to={`/event/${id}`}>
               <div className={listClass(dark)}>
-                <LazyImage
+                <StorageImage
                   alt={item.title}
-                  link={images[0]}
-                  placeholder={css`
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    top: 0;
-                  `}
+                  path={images[0]}
                   img={css`
                     position: absolute;
                     object-fit: cover;
