@@ -4,8 +4,7 @@ import useDesktop from "./useDesktop";
 import EventCoverWidget from "./EventCoverWidget";
 import { flexcolumn } from "./styles";
 const stickyContainer = css`
-  position: fixed;
-  top: 79px;
+  position: absolute;
   width: calc(50% - 57px);
   height: calc(100vh - 79px);
   margin-right: 20px;
