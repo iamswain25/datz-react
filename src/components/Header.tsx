@@ -90,6 +90,7 @@ export default function Header({
         align-items: center;
         height: 79px;
         max-width: 1920px;
+        margin: 0 auto;
         padding: 0 ${isDesktop ? 37 : 17}px;
         color: ${color};
       `}
@@ -226,6 +227,7 @@ export default function Header({
             position: fixed;
             width: 100%;
             top: 0;
+            left: 0;
             z-index: 5;
             color: ${color};
             background-color: ${backgroundColor};

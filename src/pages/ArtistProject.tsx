@@ -58,24 +58,35 @@ export default function ArtistProject() {
         color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
       />
       <section
-        className={css`
-          position: relative;
-        `}
+      // className={css`
+      //   position: relative;
+      // `}
       >
         <video
           autoPlay
           muted
           loop
           className={css`
-            width: 100%;
+            width: 100vw;
             height: 100vh;
             object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
           `}
         >
           <source src="/artist-project_bg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <DatzArtistProject item={top[0]} />
+        <div
+          className={css`
+            width: 100%;
+            height: 100vh;
+            position: relative;
+          `}
+        >
+          <DatzArtistProject item={top[0]} />
+        </div>
       </section>
       <div
         className={css`
