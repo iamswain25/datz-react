@@ -24,23 +24,28 @@ export default function Support() {
         backgroundColor={isTop ? "transparent" : "#afafaf"}
         color={isTop ? "white" : "#707070"}
       />
-      <div
-        className={css`
-          position: relative;
-          display: flex;
-          height: 100vh;
-        `}
-      >
+      <section>
         <LazyImage
           link={support?.image}
           img={css`
+            position: absolute;
+            left: 0;
             width: 100%;
+            height: 100vh;
             background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
             object-fit: cover;
           `}
         />
-        <SupportTexts item={support} />
-      </div>
+        <div
+          className={css`
+            width: 100%;
+            height: 100vh;
+            position: relative;
+          `}
+        >
+          <SupportTexts item={support} />
+        </div>
+      </section>
       <SupportBottomThree />
       <div
         className={css`

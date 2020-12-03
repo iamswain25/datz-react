@@ -50,6 +50,7 @@ export default function AboutHeader({
         align-items: center;
         height: 79px;
         max-width: 1920px;
+        margin: 0 auto;
         padding: 0 ${isDesktop ? 37 : 17}px;
         color: ${colors.color};
       `}
@@ -177,8 +178,8 @@ export default function AboutHeader({
           className={css`
             position: fixed;
             width: 100%;
-            max-width: 1920px;
             top: 0;
+            left: 0;
             z-index: 5;
             color: ${color};
             background-color: ${backgroundColor};
