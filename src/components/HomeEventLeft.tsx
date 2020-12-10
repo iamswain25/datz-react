@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useStorage from "./useStorage";
+import useLang from "./useLang";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
@@ -19,30 +20,32 @@ const responsive = {
 };
 export default function HomeEventLeft({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
+  const [classes, en] = useLang("ebgaramond");
   const typeClass = css`
     font-family: datz-medium;
     font-size: ${isDesktop ? 19 : 16}px;
     line-height: ${isDesktop ? 1.21 : 1.19};
     text-align: center;
-    margin-top: ${isDesktop ? 0 : 5}px;
+    margin-top: ${isDesktop ? 0 : 5}px auto 0;
   `;
-  const titleClass = css`
-    font-family: "EB Garamond";
-    font-size: ${isDesktop ? 27 : 22}px;
-    line-height: ${isDesktop ? 1.37 : 1.36};
-    letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
-    text-align: center;
-    height: 32px;
-    overflow: hidden;
-  `;
-  const authorClass = css`
-    font-family: "EB Garamond";
-    font-size: ${isDesktop ? 21 : 20}px;
-    line-height: ${isDesktop ? 1.38 : 1.4};
-    letter-spacing: ${isDesktop ? 0.42 : 0.4}px;
-    text-align: center;
-    margin-top: ${isDesktop ? 4 : 3}px;
-  `;
+  const titleClass = classes.title(
+    isDesktop ? 27 : 22,
+    1.36,
+    css`
+      max-width: 555px;
+      overflow: hidden;
+      letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
+      margin: ${en ? 0 : 1}px auto 0;
+    `
+  );
+  const authorClass = classes.title(
+    isDesktop ? 21 : 20,
+    1.4,
+    css`
+      letter-spacing: 0.4px;
+      margin-top: ${isDesktop ? 4 : 3}px;
+    `
+  );
   return (
     <section
       className={css`
@@ -96,9 +99,11 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
                     <hr
                       className={css`
                         height: 0;
+                        max-width: 555px;
+                        text-align: center;
                         border-top: solid 1px #ffffff;
-                        margin-top: ${isDesktop ? 8 : 3}px;
-                        margin-bottom: ${isDesktop ? 18 : 16}px;
+                        margin: ${isDesktop ? 8 : 3}px auto
+                          ${isDesktop ? 18 : 16}px;
                       `}
                     />
                     <p className={titleClass}>{item.title}</p>
