@@ -71,6 +71,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         onMouseLeave={mouseLeaveHandler}
         className={css`
           width: 100%;
+          pointer-events: none;
           height: calc(100vh - 56px);
           position: absolute;
           top: 0;
@@ -87,6 +88,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         <Link
           to={item?.url || ""}
           className={css`
+            pointer-events: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -111,6 +113,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         <Link
           to={item?.url || ""}
           className={css`
+            pointer-events: ${isDesktop ? "auto" : "none"};
             display: flex;
             flex: 1;
           `}

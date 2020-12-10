@@ -60,6 +60,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
         onMouseOver={mouseOverHandler}
         onMouseLeave={mouseLeaveHandler}
         className={css`
+          pointer-events: none;
           position: absolute;
           width: 100%;
           height: 100%;
