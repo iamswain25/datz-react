@@ -37,7 +37,7 @@ const titleAreaClass = css`
 const mapLinks = (en: boolean = false) => (stock: any, i: number) => {
   const { title, list } = stock;
   return (
-    <div key={i}>
+    <div key={stock.id + i}>
       <span>{title}</span>
       {list?.map((l: any, i2: number) => (
         <a

@@ -79,7 +79,11 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
       >
         {list?.map((item, i) => {
           return (
-            <Link key={i} className={afterClass(i)} to={`/news/${item.id}`}>
+            <Link
+              key={item.id + i}
+              className={afterClass(i)}
+              to={`/news/${item.id}`}
+            >
               <div className={listClass(dark)}>
                 <LazyImage
                   alt={item.title}

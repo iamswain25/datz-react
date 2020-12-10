@@ -142,15 +142,7 @@ export default function Footer() {
         >
           <Shares />
         </div>
-        <FlexRow
-          className={css`
-            height: 91px;
-            margin-left: 37px;
-            margin-right: 37px;
-            padding-left: 30px;
-            padding-right: 30px;
-          `}
-        >
+        <FlexRow>
           <div
             className={css`
               display: flex;
@@ -165,7 +157,11 @@ export default function Footer() {
             `}
           >
             <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
-            <FlexRow className={css``}>
+            <FlexRow
+              className={css`
+                margin-bottom: 20px;
+              `}
+            >
               <div>Privacy Policy</div>
               {dividerSmallV(
                 css`

@@ -54,7 +54,7 @@ export default function Header({
             <NavLink
               className={`${headerText} ${marginH16}`}
               to={link}
-              key={i}
+              key={label + i}
               activeClassName={css`
                 ${linkActiveClass} ${color === "white" ? "color: white" : ""}
               `}

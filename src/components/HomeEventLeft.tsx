@@ -81,7 +81,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
           {items.map((item, i) => {
             return (
               <div
-                key={i}
+                key={item.id + i}
                 className={css`
                   background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
                   flex: 1;

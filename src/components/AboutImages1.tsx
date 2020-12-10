@@ -62,7 +62,7 @@ export default function AboutImages1() {
         `}
       >
         {items?.map((item, i) => (
-          <AboutImagesGrid key={i} item={item} />
+          <AboutImagesGrid key={item.id + i} item={item} />
         ))}
       </Grid>
       <div

@@ -52,7 +52,7 @@ export default function Facilities({ items }: { items: any[] }) {
         {items?.map((item, i) => {
           const { text, link, artist, image } = item;
           return (
-            <Grid item xs={12} sm={4} key={i}>
+            <Grid item xs={12} sm={4} key={item.id + i}>
               <div
                 className={css`
                   position: relative;

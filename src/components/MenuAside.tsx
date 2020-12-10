@@ -101,7 +101,7 @@ export default function MenuAside(props: {
             <Link
               className={headerText}
               to={link}
-              key={i}
+              key={label + i}
               onClick={clickHandler}
             >
               {label}
@@ -144,7 +144,7 @@ export default function MenuAside(props: {
             <Link
               className={headerText}
               to={link}
-              key={i}
+              key={label + i}
               onClick={clickHandler}
             >
               {label}

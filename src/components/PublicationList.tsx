@@ -84,7 +84,7 @@ export default function PublicationList() {
               }
               return (
                 <div
-                  key={i}
+                  key={type + i}
                   onClick={selectHandler}
                   className={css`
                     padding-left: ${paddingLeft}px;
@@ -129,7 +129,15 @@ export default function PublicationList() {
                 )
                 .map((item, i) => {
                   return (
-                    <Grid item key={i} xs={12} sm={12} md={6} lg={4} xl={3}>
+                    <Grid
+                      item
+                      key={item.id + i}
+                      xs={12}
+                      sm={12}
+                      md={6}
+                      lg={4}
+                      xl={3}
+                    >
                       <Link
                         to={`publication/${item.id}`}
                         className={classes.link}

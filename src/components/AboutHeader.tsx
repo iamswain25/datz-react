@@ -80,7 +80,7 @@ export default function AboutHeader({
               <NavLink
                 className={headerText}
                 to={link}
-                key={i}
+                key={link + i}
                 activeClassName={linkActiveClass}
               >
                 {label}

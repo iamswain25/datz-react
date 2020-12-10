@@ -300,7 +300,7 @@ export default function Search() {
           {result?.hits?.map((h: any, i: number) => {
             return (
               <li
-                key={i}
+                key={i + h}
                 className={css`
                   border-bottom: 1px solid #fff;
                   padding-bottom: 20px;

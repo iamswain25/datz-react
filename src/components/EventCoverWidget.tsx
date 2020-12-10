@@ -67,7 +67,7 @@ export default function EventCoverWidget({
         }
       >
         {images?.map((img, i) => (
-          <Sub dark={dark} image={img} type={type} index={i} key={i} />
+          <Sub dark={dark} image={img} type={type} index={i} key={img + i} />
         )) || []}
       </Carousel>
     </div>

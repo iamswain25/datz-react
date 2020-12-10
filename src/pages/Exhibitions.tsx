@@ -111,7 +111,7 @@ export default function Exhibitions() {
               filter === "all" ? true : f.type === FILTERS[filter]
             )
             ?.map((c, i) => (
-              <Grid key={i} item xs={12} sm={6} xl={4}>
+              <Grid key={c.id + i} item xs={12} sm={6} xl={4}>
                 <ViewAllCard item={c} type="exhibition" />
               </Grid>
             ))}

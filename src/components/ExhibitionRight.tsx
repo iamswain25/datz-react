@@ -43,7 +43,7 @@ export default function ExhibitionRight() {
       {currentExhibitions && currentExhibitions.length > 0 && (
         <Grid container spacing={isDesktop ? 3 : 0}>
           {currentExhibitions?.map((item, i) => (
-            <Grid item xs={12} key={i}>
+            <Grid item xs={12} key={item.id + i}>
               <MainCard item={item} type="exhibition" />
             </Grid>
           ))}
@@ -75,7 +75,7 @@ export default function ExhibitionRight() {
               : DEFAULT_COUNT * 2
           )
           ?.map((a, i) => (
-            <Grid item key={i} xs={12} md={6} xl={4}>
+            <Grid item key={a.id || i} xs={12} md={6} xl={4}>
               <ViewAllCard item={a} type="exhibition" nonWhite />
             </Grid>
           ))}

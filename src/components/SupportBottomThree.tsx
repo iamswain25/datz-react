@@ -25,7 +25,7 @@ export default function SupportBottomThree() {
         {memberships?.map((item, i) => {
           const { title, text } = item;
           return (
-            <Grid item xs={12} sm={4} key={i}>
+            <Grid item xs={12} sm={4} key={item.id + i}>
               <div
                 className={css`
                   ${classes.book(22, 1.29)}

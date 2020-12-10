@@ -90,7 +90,7 @@ export default function AboutMap3() {
                 Visit Us
               </h1>
               {[workingHour, address].map((e, i) => (
-                <div key={i}>
+                <div key={address + i}>
                   <h2
                     className={css`
                       ${classes.book(20, 1.24)}
