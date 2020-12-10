@@ -7,7 +7,6 @@ import SupportBottomThree from "../components/SupportBottomThree";
 import BtnTop from "../components/BtnTop";
 import { paddingH55, paddingH27 } from "../components/styles";
 import LazyImage from "../components/LazyImage";
-import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useIsTop from "../components/useIsTop";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
@@ -35,7 +34,7 @@ export default function Support() {
                 left: 0;
                 width: 100%;
                 height: 100vh;
-                background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                background-color: transparent;
                 object-fit: cover;
               `}
             />
