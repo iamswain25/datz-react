@@ -6,8 +6,7 @@ import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import { headerLinkArr, store } from "./Links";
 import useDesktop from "./useDesktop";
-import MenuAside from "./MenuAside";
-import { useGlobalLang } from "../store/useGlobalState";
+import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import { Sticky } from "react-sticky";
@@ -41,7 +40,7 @@ export default function Header({
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
   }
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useMobileMenu();
   function openHandler() {
     setOpen(!isOpen);
   }
@@ -215,7 +214,7 @@ export default function Header({
             </div>
           )}
         </Sticky>
-        {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+        
       </>
     );
   }
@@ -235,7 +234,7 @@ export default function Header({
         >
           {innerHeader}
         </div>
-        {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+        
       </>
     );
   }
@@ -250,7 +249,7 @@ export default function Header({
       >
         {innerHeader}
       </Headroom>
-      {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+      
     </>
   );
 }

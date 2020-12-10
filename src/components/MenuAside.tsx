@@ -6,6 +6,7 @@ import Datz from "../assets/svg/Datz";
 import Search from "../assets/svg/Search";
 import { headerLinkArr, otherLinks, store } from "./Links";
 import useLang from "./useLang";
+import { useMobileMenu } from "../store/useGlobalState";
 const headerText = css`
   color: #ffffff;
   height: 23px;
@@ -31,11 +32,11 @@ const asideClass = css`
   display: flex;
   flex-direction: column;
 `;
-export default function MenuAside(props: {
-  value: boolean;
-  setValue: () => any;
-}) {
-  const { value, setValue } = props;
+export default function MenuAside() {
+  const [mobileMenu, setMobileMenu] = useMobileMenu();
+  function setValue() {
+    setMobileMenu(false);
+  }
   const lang: "ko" | "en" = useLang()[2];
   function clickHandler() {
     setValue();
@@ -79,7 +80,7 @@ export default function MenuAside(props: {
             />
           </Link>
           <HamburgerButton
-            open={value}
+            open={mobileMenu}
             onClick={setValue}
             width={18}
             height={15}

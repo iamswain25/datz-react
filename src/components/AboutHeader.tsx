@@ -3,8 +3,7 @@ import Headroom from "react-headroom";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import MenuAside from "./MenuAside";
-import { useGlobalLang } from "../store/useGlobalState";
+import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import Datz from "../assets/svg/Datz";
@@ -37,7 +36,7 @@ export default function AboutHeader({
 }) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalLang();
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useMobileMenu();
   const [colors, setColors] = React.useState({ color, backgroundColor });
   function openHandler() {
     setOpen(!isOpen);
@@ -167,7 +166,7 @@ export default function AboutHeader({
             </div>
           )}
         </Sticky>
-        {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+        
       </>
     );
   }
@@ -187,7 +186,7 @@ export default function AboutHeader({
         >
           {innerHeader}
         </div>
-        {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+        
       </>
     );
   }
@@ -216,7 +215,7 @@ export default function AboutHeader({
       >
         {innerHeader}
       </Headroom>
-      {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
+      
     </>
   );
 }

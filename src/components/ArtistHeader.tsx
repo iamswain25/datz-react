@@ -3,8 +3,7 @@ import ArtistCloseBtn from "./ArtistCloseBtn";
 import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import MenuAside from "./MenuAside";
-import { useGlobalLang } from "../store/useGlobalState";
+import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
 import { Link } from "react-router-dom";
@@ -35,7 +34,7 @@ export default function ArtistHeader({
 }) {
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalLang();
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useMobileMenu();
   const [text, setText] = React.useState("");
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
@@ -159,7 +158,6 @@ export default function ArtistHeader({
           </div>
         )}
       </Sticky>
-      {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
     </>
   );
 }

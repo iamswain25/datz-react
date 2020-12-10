@@ -1,7 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { css } from "emotion";
+import { useMobileMenu } from "../store/useGlobalState";
+import MenuAside from "./MenuAside";
 export default function Layout({ children }: React.PropsWithChildren<any>) {
+  const [isOpen] = useMobileMenu();
   return (
     <Switch>
       <Route
@@ -38,7 +41,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
                 max-width: 1920px;
               `}
             >
-              {children}
+              {isOpen ? <MenuAside /> : children}
             </main>
           </main>
         )}
@@ -53,7 +56,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
               color: #707070;
             `}
           >
-            {children}
+            {isOpen ? <MenuAside /> : children}
           </main>
         )}
       />

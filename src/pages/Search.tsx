@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { Link, NavLink, useHistory } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
-import { useGlobalLang } from "../store/useGlobalState";
+import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import Close from "../assets/svg/Close";
 import useParams from "../components/useParams";
@@ -12,7 +12,6 @@ import algoliasearch from "algoliasearch";
 import { RequestOptions } from "@algolia/transporter";
 import useLang from "../components/useLang";
 import BtnTop from "../components/BtnTop";
-import MenuAside from "../components/MenuAside";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   artist: "Artist",
@@ -41,7 +40,7 @@ export default function Search() {
   const [text, setText] = React.useState(query ?? "");
   const [result, setResult] = React.useState<undefined | any>(undefined);
   const [lang, setLang] = useGlobalLang();
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useMobileMenu();
   const goBack = useBtnBack();
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     const t = e.currentTarget.value;
@@ -358,7 +357,6 @@ export default function Search() {
         </ul>
         {result?.hits?.length > 5 && <BtnTop full color="#fff" />}
       </section>
-      {isOpen && <MenuAside value={isOpen} setValue={openHandler} />}
     </main>
   );
 }
