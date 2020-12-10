@@ -133,15 +133,17 @@ export default function News() {
               </Grid>
             ))}
         </Grid>
-        <div
-          className={css`
-            border-top: 1px solid #fff;
-            ${isDesktop ? marginH17 : undefined}
-            transform: translateY(-1px);
-          `}
-        >
-          <BtnTop full color="#fff" />
-        </div>
+        {list && (
+          <div
+            className={css`
+              border-top: 1px solid #fff;
+              ${isDesktop ? marginH17 : undefined}
+              transform: translateY(-1px);
+            `}
+          >
+            <BtnTop full color="#fff" />
+          </div>
+        )}
       </section>
     </>
   );
