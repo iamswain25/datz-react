@@ -71,11 +71,18 @@ export default function MenuAside() {
             align-items: center;
           `}
         >
-          <Link to="/search">
+          <Link
+            to="/search"
+            className={css`
+              display: flex;
+            `}
+          >
             <Search
               color="white"
               className={css`
                 margin-right: 20px;
+                width: 15px;
+                height: 15px;
               `}
             />
           </Link>

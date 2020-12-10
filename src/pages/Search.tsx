@@ -4,7 +4,6 @@ import useDesktop from "../components/useDesktop";
 import { Link, NavLink, useHistory } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
-import { HamburgerButton } from "react-hamburger-button";
 import Close from "../assets/svg/Close";
 import useParams from "../components/useParams";
 import useBtnBack from "../components/useBtnBack";
@@ -12,6 +11,7 @@ import algoliasearch from "algoliasearch";
 import { RequestOptions } from "@algolia/transporter";
 import useLang from "../components/useLang";
 import BtnTop from "../components/BtnTop";
+import SvgMenu from "../assets/svg/SvgMenu";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   artist: "Artist",
@@ -149,15 +149,9 @@ export default function Search() {
                     `}
                   />
                 </button>
-                <HamburgerButton
-                  open={isOpen}
-                  onClick={openHandler}
-                  width={18}
-                  height={15}
-                  strokeWidth={1}
-                  color="white"
-                  animationDuration={0.5}
-                />
+                <button onClick={openHandler}>
+                  <SvgMenu color="#fff" />
+                </button>
               </>
             )}
           </div>

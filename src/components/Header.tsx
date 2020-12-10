@@ -7,9 +7,9 @@ import { css } from "emotion";
 import { headerLinkArr, store } from "./Links";
 import useDesktop from "./useDesktop";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
-import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import { Sticky } from "react-sticky";
+import SvgMenu from "../assets/svg/SvgMenu";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -32,7 +32,6 @@ export default function Header({
   sticky = false,
   color = "#707070",
   backgroundColor = "rgba(255,255,255,0.8)",
-  // darkerLogo = false,
 }) {
   const [text, setText] = React.useState("");
   const isDesktop = useDesktop();
@@ -163,7 +162,12 @@ export default function Header({
         </button>
         {!isDesktop && (
           <>
-            <Link to="/search">
+            <Link
+              to="/search"
+              className={css`
+                display: flex;
+              `}
+            >
               <Search
                 className={css`
                   margin-right: 20px;
@@ -172,15 +176,9 @@ export default function Header({
                 `}
               />
             </Link>
-            <HamburgerButton
-              open={isOpen}
-              onClick={openHandler}
-              width={18}
-              height={15}
-              strokeWidth={1}
-              color="black"
-              animationDuration={0.5}
-            />
+            <button onClick={openHandler}>
+              <SvgMenu />
+            </button>
           </>
         )}
       </div>
@@ -189,16 +187,6 @@ export default function Header({
   if (sticky) {
     return (
       <>
-        {/* <div
-          className={css`
-            position: sticky;
-            top: 0;
-            z-index: 5;
-            background-color: ${backgroundColor};
-          `}
-        >
-          {innerHeader}
-        </div> */}
         <Sticky>
           {(props) => (
             <div
@@ -214,7 +202,6 @@ export default function Header({
             </div>
           )}
         </Sticky>
-        
       </>
     );
   }
@@ -234,7 +221,6 @@ export default function Header({
         >
           {innerHeader}
         </div>
-        
       </>
     );
   }
@@ -249,7 +235,6 @@ export default function Header({
       >
         {innerHeader}
       </Headroom>
-      
     </>
   );
 }

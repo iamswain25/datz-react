@@ -4,10 +4,10 @@ import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
-import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
 import { Link } from "react-router-dom";
 import { Sticky } from "react-sticky";
+import SvgMenu from "../assets/svg/SvgMenu";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -133,7 +133,12 @@ export default function ArtistHeader({
               </button>
               {!isDesktop && (
                 <>
-                  <Link to="/search">
+                  <Link
+                    to="/search"
+                    className={css`
+                      display: flex;
+                    `}
+                  >
                     <Search
                       color={color}
                       className={css`
@@ -143,15 +148,9 @@ export default function ArtistHeader({
                       `}
                     />
                   </Link>
-                  <HamburgerButton
-                    color={color}
-                    open={isOpen}
-                    onClick={openHandler}
-                    width={18}
-                    height={15}
-                    strokeWidth={1}
-                    animationDuration={0.5}
-                  />
+                  <button onClick={openHandler}>
+                    <SvgMenu color={color} />
+                  </button>
                 </>
               )}
             </div>

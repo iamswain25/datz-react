@@ -26,7 +26,10 @@ export default function AboutImages1() {
               display: flex;
               flex-direction: column;
             `
-          : undefined
+          : css`
+              background-color: #afafaf;
+              min-height: 100vh;
+            `
       }
     >
       <section className={isDesktop ? marginH18 : marginH10}>
@@ -63,25 +66,27 @@ export default function AboutImages1() {
           <AboutImagesGrid key={i} item={item} />
         ))}
       </Grid>
-      <div
-        className={css`
-          margin: 0 17px;
-        `}
-      >
-        <a
+      {items?.length > 0 && (
+        <div
           className={css`
-            ${bottomBtn37}
-            color: #ffffff;
-            margin-top: ${isDesktop ? 30 : 0}px;
-            border-top: solid ${isDesktop ? 1 : 0}px #ffffff;
-            ${isDesktop ? "" : marginH17}
-            width: ${isDesktop ? "100%" : "calc(100% - 34px)"};
+            margin: 0 17px;
           `}
-          href="/message"
         >
-          message {">"}
-        </a>
-      </div>
+          <a
+            className={css`
+              ${bottomBtn37}
+              color: #ffffff;
+              margin-top: ${isDesktop ? 30 : 0}px;
+              border-top: solid ${isDesktop ? 1 : 0}px #ffffff;
+              ${isDesktop ? "" : marginH17}
+              width: ${isDesktop ? "100%" : "calc(100% - 34px)"};
+            `}
+            href="/message"
+          >
+            message {">"}
+          </a>
+        </div>
+      )}
     </section>
   );
 }
