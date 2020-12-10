@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Flex, FlexRow } from "./div";
 import Shares from "./Shares";
 import useDesktop from "./useDesktop";
-import Logo from "./Logo";
 import { version } from "../../package.json";
+import FooterSvgs from "./FooterSvgs";
 const menu = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -18,18 +18,6 @@ const padding = css`
   padding: 11px;
   color: #707070;
 `;
-const dividerV = (className = "") => (
-  <div
-    className={css`
-      margin-left: 37px;
-      margin-right: 21px;
-      width: 0;
-      height: 29px;
-      border-left: solid 1px #707070;
-      ${className}
-    `}
-  />
-);
 const Menus = (
   <div className={menu}>
     <Link to="/about" className={padding}>
@@ -45,21 +33,6 @@ const Menus = (
       Support
     </Link>
   </div>
-);
-const dotzsvgs = (
-  <>
-    <Logo type="datzpress" color="#404041" />
-    {dividerV(css`
-      margin-left: 28px;
-      margin-right: 25px;
-    `)}
-    <Logo type="darkroom" color="#404041" />
-    {dividerV(css`
-      margin-left: 33px;
-      margin-right: 25px;
-    `)}
-    <Logo type="museum" color="#404041" />
-  </>
 );
 export default function Footer() {
   const isDesktop = useDesktop();
@@ -115,7 +88,7 @@ export default function Footer() {
             overflow: hidden;
           `}
         >
-          {dotzsvgs}
+          <FooterSvgs />
         </div>
         {divider}
         <div
@@ -201,7 +174,7 @@ export default function Footer() {
             display: flex;
           `}
         >
-          {dotzsvgs}
+          <FooterSvgs />
         </div>
       </FlexRow>
       {divider}
