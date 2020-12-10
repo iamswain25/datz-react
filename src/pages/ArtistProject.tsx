@@ -92,6 +92,8 @@ export default function ArtistProject() {
           additionalClass="white-bullets"
           className={css`
             height: ${isDesktop ? "100vh" : "588px"};
+            // pointer-events: ${isDesktop ? "auto" : "none"};
+            pointer-events: none;
             background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
           `}
           children={(props) => <DatzArtistProject {...props} />}
@@ -119,6 +121,8 @@ export default function ArtistProject() {
             isDesktop ? undefined : (
               <div
                 className={css`
+                  // pointer-events: ${isDesktop ? "auto" : "none"};
+                  pointer-events: none;
                   margin-top: 21px;
                   width: 100%;
                   position: absolute;
@@ -212,9 +216,11 @@ export default function ArtistProject() {
                   width: calc(50% - 23px);
                   margin-right: 23px;
                   min-height: calc(100vh - 37px - 79px);
+                  pointer-events: none;
                 `
               : css`
                   height: 588px;
+                  pointer-events: none;
                 `
           }
         />

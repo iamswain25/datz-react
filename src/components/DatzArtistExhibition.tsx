@@ -23,6 +23,7 @@ export default function DatzArtistExhibition({ item }: { item: any }) {
   return (
     <div
       className={css`
+        pointer-events: none;
         height: 100%;
         width: 100%;
         position: absolute;
