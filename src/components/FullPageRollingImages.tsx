@@ -108,15 +108,17 @@ export default function FullPageRollingImages({
             `}
           >
             <div className={typeClass}>{type}</div>
-            <hr
-              className={css`
-                border-top: 1px solid ${color};
-                width: ${isDesktop ? "555px" : "auto"};
-                align-self: ${isDesktop ? "auto" : "stretch"};
-                margin-top: ${isDesktop ? 8 : 3}px;
-                margin-bottom: ${isDesktop ? 18 : 16}px;
-              `}
-            />
+            {item && (
+              <hr
+                className={css`
+                  border-top: 1px solid ${color};
+                  width: ${isDesktop ? "555px" : "auto"};
+                  align-self: ${isDesktop ? "auto" : "stretch"};
+                  margin-top: ${isDesktop ? 8 : 3}px;
+                  margin-bottom: ${isDesktop ? 18 : 16}px;
+                `}
+              />
+            )}
             <div className={titleClass}>{title}</div>
             <div className={authorClass}>{text}</div>
           </Link>
