@@ -52,12 +52,16 @@ export default function MenuAside(props: {
           padding-left: 5px;
         `}
       >
-        <Datz
-          color="white"
+        <Link
+          to="/"
+          onClick={setValue}
           className={css`
+            display: flex;
             margin-bottom: 8px;
           `}
-        />
+        >
+          <Datz color="white" />
+        </Link>
         <div
           className={css`
             flex: 1;
