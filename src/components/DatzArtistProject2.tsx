@@ -45,7 +45,7 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
         {items.map((item, i) => {
           const { text, url, artist, image } = item;
           return (
-            <Grid item xs={12} sm={4} key={item.id + i}>
+            <Grid item xs={12} sm={4} key={item.text + i}>
               <div
                 className={css`
                   position: relative;

@@ -21,6 +21,7 @@ import Header from "../components/Header";
 import useIsTop from "../components/useIsTop";
 import useCollection from "../utils/useCollection";
 import BtnTop from "../components/BtnTop";
+import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 export default function ArtistProject() {
   const isDesktop = useDesktop(true);
   const isTop = useIsTop();
@@ -57,37 +58,46 @@ export default function ArtistProject() {
         }
         color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
       />
-      <section
-      // className={css`
-      //   position: relative;
-      // `}
-      >
-        <video
-          autoPlay
-          muted
-          loop
+      {isDesktop ? (
+        <section>
+          <video
+            autoPlay
+            muted
+            loop
+            className={css`
+              width: 100%;
+              height: 100vh;
+              object-fit: cover;
+              position: absolute;
+              left: 0;
+              top: 0;
+            `}
+          >
+            <source src="/artist-project_bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div
+            className={css`
+              width: 100%;
+              height: 100vh;
+              position: relative;
+            `}
+          >
+            <DatzArtistProject item={top[0]} />
+          </div>
+        </section>
+      ) : (
+        <RollingImages
+          items={top}
+          additionalClass="white-bullets"
           className={css`
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            position: absolute;
-            left: 0;
-            top: 0;
+            height: ${isDesktop ? "100vh" : "588px"};
+            background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
           `}
-        >
-          <source src="/artist-project_bg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div
-          className={css`
-            width: 100%;
-            height: 100vh;
-            position: relative;
-          `}
-        >
-          <DatzArtistProject item={top[0]} />
-        </div>
-      </section>
+          children={(props) => <DatzArtistProject {...props} />}
+        />
+      )}
+
       <div
         className={css`
           ${marginH55}
@@ -163,7 +173,7 @@ export default function ArtistProject() {
           item.key = key;
           return (
             <RollingImages2
-              key={key}
+              key={item.image + key}
               items={item.image}
               additionalClass="white-bullets"
               className={css`

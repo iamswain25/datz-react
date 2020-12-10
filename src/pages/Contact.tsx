@@ -37,12 +37,12 @@ const titleAreaClass = css`
 const mapLinks = (en: boolean = false) => (stock: any, i: number) => {
   const { title, list } = stock;
   return (
-    <div key={stock.id + i}>
+    <div key={stock.title + i}>
       <span>{title}</span>
       {list?.map((l: any, i2: number) => (
         <a
           href={l.url}
-          key={i2}
+          key={l.url + i2}
           className={aStyle}
           target="_blank"
           rel="noopener noreferrer"
