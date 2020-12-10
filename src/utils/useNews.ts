@@ -1,7 +1,7 @@
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 
 export default function useNews(items?: any[]) {
-  const [lang] = useGlobalState(LANG);
+  const [lang] = useGlobalLang();
   if (!items) return undefined;
   return items.map((item) => {
     const place = lang === "ko" ? item.place_ko : item.place_en;

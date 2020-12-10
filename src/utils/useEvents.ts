@@ -1,7 +1,7 @@
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 import { Event } from "../@type";
 export default function useEvents(items?: Event[]) {
-  const [lang] = useGlobalState(LANG);
+  const [lang] = useGlobalLang();
   if (!items) {
     return undefined;
   }

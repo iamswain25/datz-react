@@ -4,7 +4,7 @@ import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import Datz from "../assets/svg/Datz";
@@ -36,7 +36,7 @@ export default function AboutHeader({
   backgroundColor = "#afafaf",
 }) {
   const isDesktop = useDesktop();
-  const [lang, setLang] = useGlobalState(LANG);
+  const [lang, setLang] = useGlobalLang();
   const [isOpen, setOpen] = React.useState(false);
   const [colors, setColors] = React.useState({ color, backgroundColor });
   function openHandler() {

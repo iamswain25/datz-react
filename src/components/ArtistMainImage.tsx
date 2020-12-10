@@ -2,10 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 export default function ArtistMainImage({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const [lang] = useGlobalState(LANG);
+  const [lang] = useGlobalLang();
   const { name, genre } = item;
   const nameClassEn = css`
     height: 27px;

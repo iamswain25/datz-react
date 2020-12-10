@@ -174,41 +174,6 @@ export default function MenuAside(props: {
           `}
         >
           <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
-          <div
-            className={css`
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: center;
-              margin-top: 6px;
-            `}
-          >
-            <Link
-              to="/privacy"
-              className={css`
-                color: #ffffff;
-              `}
-            >
-              Privacy Policy
-            </Link>
-            <div
-              className={css`
-                width: 0;
-                height: 8px;
-                border-left: solid 0.8px #ffffff;
-                margin-left: 9px;
-                margin-right: 9px;
-              `}
-            />
-            <Link
-              to="/terms"
-              className={css`
-                color: #ffffff;
-              `}
-            >
-              Terms of Use
-            </Link>
-          </div>
         </div>
       </section>
     </aside>

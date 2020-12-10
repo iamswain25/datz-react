@@ -1,4 +1,4 @@
-import { useGlobalState, LANG, Lang } from "../store/useGlobalState";
+import { Lang, useGlobalLang } from "../store/useGlobalState";
 import { css } from "emotion";
 const getFont = (en: boolean = false) => {
   const minus = 1;
@@ -505,7 +505,7 @@ export type LangKeys = keyof ClassesType;
 export default function useLang<T extends LangKeys>(
   type?: T
 ): [any, boolean, Lang] {
-  const [lang] = useGlobalState(LANG);
+  const [lang] = useGlobalLang();
   const en = lang !== "ko";
   if (!type) {
     return [undefined, en, lang];
@@ -516,7 +516,7 @@ export default function useLang<T extends LangKeys>(
 // export default function useLang(
 //   type: LangKeys
 // ): [ReturnType<ClassesType[LangKeys]>, boolean, Lang] {
-//   const [lang] = useGlobalState(LANG);
+//   const [lang] = useGlobalLang();
 //   const en = lang !== "ko";
 //   return [classes[type](en), en, lang];
 // }

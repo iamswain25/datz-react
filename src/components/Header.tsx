@@ -7,7 +7,7 @@ import { css } from "emotion";
 import { headerLinkArr, store } from "./Links";
 import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import { Sticky } from "react-sticky";
@@ -37,7 +37,7 @@ export default function Header({
 }) {
   const [text, setText] = React.useState("");
   const isDesktop = useDesktop();
-  const [lang, setLang] = useGlobalState(LANG);
+  const [lang, setLang] = useGlobalLang();
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setText(e.currentTarget.value);
   }

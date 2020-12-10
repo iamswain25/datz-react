@@ -4,7 +4,7 @@ import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import MenuAside from "./MenuAside";
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import { flexrowcenter, marginH10 } from "./styles";
 import { Link } from "react-router-dom";
@@ -34,7 +34,7 @@ export default function ArtistHeader({
   children?: React.ReactNode;
 }) {
   const isDesktop = useDesktop();
-  const [lang, setLang] = useGlobalState(LANG);
+  const [lang, setLang] = useGlobalLang();
   const [isOpen, setOpen] = React.useState(false);
   const [text, setText] = React.useState("");
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {

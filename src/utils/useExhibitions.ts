@@ -1,7 +1,7 @@
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 
 export default function useExhibitions(items?: any[]) {
-  const [lang] = useGlobalState(LANG);
+  const [lang] = useGlobalLang();
   if (!items) {
     return undefined;
   }

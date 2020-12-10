@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import { Link, NavLink, useHistory } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
-import { useGlobalState, LANG } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 import { HamburgerButton } from "react-hamburger-button";
 import Close from "../assets/svg/Close";
 import useParams from "../components/useParams";
@@ -40,7 +40,7 @@ export default function Search() {
   const { filter = "all", query } = useParams();
   const [text, setText] = React.useState(query ?? "");
   const [result, setResult] = React.useState<undefined | any>(undefined);
-  const [lang, setLang] = useGlobalState(LANG);
+  const [lang, setLang] = useGlobalLang();
   const [isOpen, setOpen] = React.useState(false);
   const goBack = useBtnBack();
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {

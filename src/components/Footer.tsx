@@ -30,18 +30,6 @@ const dividerV = (className = "") => (
     `}
   />
 );
-const dividerSmallV = (className = "") => (
-  <div
-    className={css`
-      margin-left: 5px;
-      margin-right: 5px;
-      height: 8px;
-      border-left: solid 1px #d1d1d1;
-      margin-top: 2px;
-      ${className}
-    `}
-  />
-);
 const Menus = (
   <div className={menu}>
     <Link to="/about" className={padding}>
@@ -154,22 +142,10 @@ export default function Footer() {
               font-size: 11px;
               color: #707070;
               line-height: 2;
+              margin-bottom: 20px;
             `}
           >
             <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
-            <FlexRow
-              className={css`
-                margin-bottom: 20px;
-              `}
-            >
-              <div>Privacy Policy</div>
-              {dividerSmallV(
-                css`
-                  border-left: 1px solid #707070;
-                `
-              )}
-              <div>Terms of Use</div>
-            </FlexRow>
           </div>
         </FlexRow>
       </>
