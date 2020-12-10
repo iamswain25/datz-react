@@ -16,12 +16,14 @@ export default function PublicationReadmore() {
   return (
     <>
       <Header sticky={isDesktop} />
-      <div className={isDesktop ? paddingH37 : paddingH27}>
-        <section className={isDesktop ? flexrow : flexcolumn}>
-          <PublicationMoreLeft item={item} />
-          <PublicationMoreRight item={item} />
-        </section>
-      </div>
+      {item?.id && (
+        <div className={isDesktop ? paddingH37 : paddingH27}>
+          <section className={isDesktop ? flexrow : flexcolumn}>
+            <PublicationMoreLeft item={item} />
+            <PublicationMoreRight item={item} />
+          </section>
+        </div>
+      )}
     </>
   );
 }

@@ -34,23 +34,27 @@ export default function NewsItem() {
             `}
           />
         </ArtistHeader>
-        <section className={desktopContainer}>
-          <Grid container spacing={3}>
-            <Grid item sm={6}>
-              <NewsItemLeft item={item} />
+        {item?.id && (
+          <section className={desktopContainer}>
+            <Grid container spacing={3}>
+              <Grid item sm={6}>
+                <NewsItemLeft item={item} />
+              </Grid>
+              <Grid item sm={6} container>
+                <NewsItemRight item={item} />
+              </Grid>
             </Grid>
-            <Grid item sm={6} container>
-              <NewsItemRight item={item} />
-            </Grid>
-          </Grid>
-        </section>
+          </section>
+        )}
       </>
     );
   }
   return (
     <>
       <ArtistHeader />
-      <NewsItemRight item={item} children={<NewsItemLeft item={item} />} />
+      {item?.id && (
+        <NewsItemRight item={item} children={<NewsItemLeft item={item} />} />
+      )}
     </>
   );
 }

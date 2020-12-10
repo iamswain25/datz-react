@@ -34,23 +34,24 @@ export default function EventItem() {
           `}
         />
       </ArtistHeader>
-      {isDesktop ? (
-        <section className={desktopContainer}>
-          <Grid container spacing={3}>
-            <Grid item sm={6}>
-              <EventItemLeft images={item.images} />
+      {item?.id &&
+        (isDesktop ? (
+          <section className={desktopContainer}>
+            <Grid container spacing={3}>
+              <Grid item sm={6}>
+                <EventItemLeft images={item.images} />
+              </Grid>
+              <Grid item sm={6} container>
+                <EventItemRight item={item} />
+              </Grid>
             </Grid>
-            <Grid item sm={6} container>
-              <EventItemRight item={item} />
-            </Grid>
-          </Grid>
-        </section>
-      ) : (
-        <EventItemRight
-          item={item}
-          children={<EventItemLeft images={item.images} />}
-        />
-      )}
+          </section>
+        ) : (
+          <EventItemRight
+            item={item}
+            children={<EventItemLeft images={item.images} />}
+          />
+        ))}
     </>
   );
 }

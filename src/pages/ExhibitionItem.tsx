@@ -16,10 +16,12 @@ export default function ExhibitionItem() {
   return (
     <>
       <Header sticky />
-      <section className={isDesktop ? desktopContainer : flexcolumn}>
-        <ExhibitionItemLeft item={item} />
-        <ItemPhotosRight item={item} type="exhibition" />
-      </section>
+      {item?.id && (
+        <section className={isDesktop ? desktopContainer : flexcolumn}>
+          <ExhibitionItemLeft item={item} />
+          <ItemPhotosRight item={item} type="exhibition" />
+        </section>
+      )}
     </>
   );
 }

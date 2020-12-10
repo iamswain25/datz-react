@@ -16,10 +16,12 @@ export default function PublicationItem() {
   return (
     <>
       <Header sticky />
-      <section className={isDesktop ? desktopContainer : flexcolumn}>
-        <PublicationItemLeft item={item} />
-        <ItemPhotosRight item={item} type="publication" />
-      </section>
+      {item?.id && (
+        <section className={isDesktop ? desktopContainer : flexcolumn}>
+          <PublicationItemLeft item={item} />
+          <ItemPhotosRight item={item} type="publication" />
+        </section>
+      )}
     </>
   );
 }

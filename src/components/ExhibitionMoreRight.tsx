@@ -5,7 +5,6 @@ import ArtistWidget from "./ArtistWidget";
 import PublicationWidget from "./PublicationWidget";
 import EventWidget from "./EventWidget";
 import { bottomBtn37 } from "./styles";
-import useDoc from "../utils/useDoc";
 const mobileContainer = css`
   flex: 1;
   display: flex;
@@ -20,9 +19,8 @@ const desktopContainer = css`
   padding-left: 30px;
   padding-top: 40px;
 `;
-export default function ExhibitionMoreRight() {
+export default function ExhibitionMoreRight({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const item = useDoc("exhibition");
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       <div

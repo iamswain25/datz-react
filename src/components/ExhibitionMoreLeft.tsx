@@ -5,7 +5,6 @@ import DatzmuseumOrder from "./DatzmuseumOrder";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
-import useDoc from "../utils/useDoc";
 import BodyDraftHtml from "./BodyDraftHtml";
 import BtnBackTo from "./BtnBackTo";
 import BtnShare from "./BtnShare";
@@ -27,9 +26,8 @@ const mobileContainer = css`
   position: relative;
 `;
 
-export default function ExhibitionMoreLeft() {
+export default function ExhibitionMoreLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const item = useDoc("exhibition");
   const [classes] = useLang("exhibition");
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
