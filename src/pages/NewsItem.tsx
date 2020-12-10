@@ -17,23 +17,23 @@ const desktopContainer = css`
 export default function NewsItem() {
   const isDesktop = useDesktop(true);
   const item = useDoc("news");
-  if (isDesktop) {
-    return (
-      <>
-        <ArtistHeader
-          color="#fff"
+  const header = (
+    <ArtistHeader
+      children={
+        <ArtistCloseBtn
+          to="/news"
+          title="< back to News"
           className={css`
             color: #fff;
           `}
-        >
-          <ArtistCloseBtn
-            to="/news"
-            title="< back to News"
-            className={css`
-              color: #fff;
-            `}
-          />
-        </ArtistHeader>
+        />
+      }
+    />
+  );
+  if (isDesktop) {
+    return (
+      <>
+        {header}
         {item?.id && (
           <section className={desktopContainer}>
             <Grid container spacing={3}>
@@ -51,7 +51,7 @@ export default function NewsItem() {
   }
   return (
     <>
-      <ArtistHeader />
+      {header}
       {item?.id && (
         <NewsItemRight item={item} children={<NewsItemLeft item={item} />} />
       )}
