@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { paddingH17, paddingH27, marginH27 } from "./styles";
-import BtnBack from "./BtnBack";
 import useLang from "./useLang";
 import BodyDraftHtml from "./BodyDraftHtml";
 import BtnShare from "./BtnShare";
@@ -81,11 +80,9 @@ export default function EventItemRight({
           ${isDesktop ? undefined : marginH27}
           border-top: solid 1px #707070;
           text-align: center;
-          margin-bottom: ${isDesktop ? 37 : 0}px;
+          margin-bottom: 37px;
         `}
-      >
-        {!isDesktop && <BtnBack />}
-      </div>
+      />
     </div>
   );
 }

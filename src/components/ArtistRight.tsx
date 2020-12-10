@@ -4,7 +4,6 @@ import useDesktop from "./useDesktop";
 import PublicationWidget from "./PublicationWidget";
 import ExhibitionWidget from "./ExhibitionWidget";
 import EventWidget from "./EventWidget";
-import BtnBack from "./BtnBack";
 import { Grid } from "@material-ui/core";
 import Linkify from "./Linkify";
 import Divider from "./Divider";
@@ -56,11 +55,11 @@ export default function ArtistRight({ item }: { item: any }) {
             justify-content: flex-end;
             display: flex;
             flex-direction: column;
-
             font-family: datz-medium;
             font-size: 17px;
             line-height: 1.47;
             color: #ffffff;
+            margin-bottom: 37px;
           `}
         >
           {!!homepage && (
@@ -82,7 +81,6 @@ export default function ArtistRight({ item }: { item: any }) {
               />
             </Grid>
           )}
-          {!isDesktop && <BtnBack color="#fff" />}
         </div>
       )}
     </section>
