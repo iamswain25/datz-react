@@ -17,6 +17,7 @@ export default function Support() {
   const isTop = useIsTop();
   const items = useDocs("support", data);
   const [support] = useItems(items) || [];
+  // if (!support) return null;
   return (
     <>
       <AboutHeader
@@ -24,41 +25,45 @@ export default function Support() {
         backgroundColor={isTop ? "transparent" : "#afafaf"}
         color={isTop ? "white" : "#707070"}
       />
-      <section>
-        <LazyImage
-          link={support?.image}
-          img={css`
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-            object-fit: cover;
-          `}
-        />
-        <div
-          className={css`
-            width: 100%;
-            height: 100vh;
-            position: relative;
-          `}
-        >
-          <SupportTexts item={support} />
-        </div>
-      </section>
-      <SupportBottomThree />
-      <div
-        className={css`
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #afafaf;
-          ${isDesktop ? paddingH55 : paddingH27}
-        `}
-      >
-        <BtnTop color="white" borderTop full />
-      </div>
+      {support && (
+        <>
+          <section>
+            <LazyImage
+              link={support?.image}
+              img={css`
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
+                object-fit: cover;
+              `}
+            />
+            <div
+              className={css`
+                width: 100%;
+                height: 100vh;
+                position: relative;
+              `}
+            >
+              <SupportTexts item={support} />
+            </div>
+          </section>
+          <SupportBottomThree />
+          <div
+            className={css`
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #afafaf;
+              ${isDesktop ? paddingH55 : paddingH27}
+            `}
+          >
+            <BtnTop color="white" borderTop full />
+          </div>
+        </>
+      )}
     </>
   );
 }

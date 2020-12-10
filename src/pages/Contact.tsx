@@ -71,17 +71,18 @@ export default function Contact() {
     const collections = items.filter((i) => i.type === "collections");
     return { stocklist, enquiry, collections, phone, email, catalog };
   }, [items]);
+  // if (!list) return null;
   return (
-    <>
-      <div
-        className={css`
-          background-color: #afafaf;
-          font-family: datz-regular;
-          text-align: center;
-          color: #ffffff;
-        `}
-      >
-        <AboutHeader sticky />
+    <div
+      className={css`
+        background-color: #afafaf;
+        font-family: datz-regular;
+        text-align: center;
+        color: #ffffff;
+      `}
+    >
+      <AboutHeader sticky />
+      {list && (
         <div
           className={css`
             display: flex;
@@ -128,97 +129,99 @@ export default function Contact() {
               {list?.enquiry?.title}
             </a>
           </section>
-          <section
-            className={css`
-              margin: 32px 0;
-            `}
-          >
-            <Grid container spacing={isDesktop ? 4 : 0}>
-              <Grid item xs={12} sm={6}>
-                <h1 className={h1Style}>STOCKIST</h1>
-                <div className={titleAreaClass}>
-                  {list?.stocklist?.map(mapLinks(en))}
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <h1
-                  className={
-                    isDesktop
-                      ? h1Style
-                      : css`
-                          ${h1Style} margin-top: 30px;
-                        `
-                  }
-                >
-                  COLLECTIONS
-                </h1>
-                <div className={titleAreaClass}>
-                  {list?.collections?.map(mapLinks(en))}
-                </div>
-                <div
-                  className={css`
-                    margin: 32px 0 50px;
-                  `}
-                >
-                  <h1 className={h1Style}>CONTACT</h1>
+          {
+            <section
+              className={css`
+                margin: 32px 0;
+              `}
+            >
+              <Grid container spacing={isDesktop ? 4 : 0}>
+                <Grid item xs={12} sm={6}>
+                  <h1 className={h1Style}>STOCKIST</h1>
+                  <div className={titleAreaClass}>
+                    {list?.stocklist?.map(mapLinks(en))}
+                  </div>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <h1
+                    className={
+                      isDesktop
+                        ? h1Style
+                        : css`
+                            ${h1Style} margin-top: 30px;
+                          `
+                    }
+                  >
+                    COLLECTIONS
+                  </h1>
+                  <div className={titleAreaClass}>
+                    {list?.collections?.map(mapLinks(en))}
+                  </div>
                   <div
                     className={css`
-                      font-size: 18px;
-                      line-height: 1.39;
-                      white-space: break-spaces;
+                      margin: 32px 0 50px;
                     `}
                   >
-                    <div>{list?.phone?.title}</div>
-                    <div>
-                      <a href={"tel:" + list?.phone?.text}>
-                        {list?.phone?.text}
-                      </a>
+                    <h1 className={h1Style}>CONTACT</h1>
+                    <div
+                      className={css`
+                        font-size: 18px;
+                        line-height: 1.39;
+                        white-space: break-spaces;
+                      `}
+                    >
+                      <div>{list?.phone?.title}</div>
+                      <div>
+                        <a href={"tel:" + list?.phone?.text}>
+                          {list?.phone?.text}
+                        </a>
+                      </div>
+                      <div>-</div>
+                      <div>{list?.email?.title}</div>
+                      {list?.email?.list.map(
+                        ({ name, email }: any, key: number) => (
+                          <div key={key}>
+                            <span
+                              className={css`
+                                margin-right: 16px;
+                              `}
+                            >
+                              {name}
+                            </span>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={"mailto:" + email}
+                            >
+                              {email}
+                            </a>
+                          </div>
+                        )
+                      )}
                     </div>
-                    <div>-</div>
-                    <div>{list?.email?.title}</div>
-                    {list?.email?.list.map(
-                      ({ name, email }: any, key: number) => (
-                        <div key={key}>
-                          <span
-                            className={css`
-                              margin-right: 16px;
-                            `}
-                          >
-                            {name}
-                          </span>
-                          <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href={"mailto:" + email}
-                          >
-                            {email}
-                          </a>
-                        </div>
-                      )
-                    )}
                   </div>
-                </div>
-                <div
-                  className={css`
-                    margin: 32px 0;
-                  `}
-                >
-                  <h1 className={h1Style}>CATALOG</h1>
-                  <a
-                    href={list?.catalog?.url}
-                    className={aStyle}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <div
+                    className={css`
+                      margin: 32px 0;
+                    `}
                   >
-                    {list?.catalog?.title}
-                  </a>
-                </div>
+                    <h1 className={h1Style}>CATALOG</h1>
+                    <a
+                      href={list?.catalog?.url}
+                      className={aStyle}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {list?.catalog?.title}
+                    </a>
+                  </div>
+                </Grid>
               </Grid>
-            </Grid>
-          </section>
+            </section>
+          }
         </div>
-        <BtnTop color="white" full />
-      </div>
-    </>
+      )}
+      {list && <BtnTop color="white" full />}
+    </div>
   );
 }

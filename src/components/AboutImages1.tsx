@@ -17,6 +17,7 @@ export default function AboutImages1() {
   const [main] = useItems(items1) || [];
   const items2 = useCollectionWhere("about", "banner", "type");
   const items = useItems(items2) || [];
+  // if (!main) return null;
   return (
     <section
       className={
@@ -37,6 +38,7 @@ export default function AboutImages1() {
             font-size: 23px;
             line-height: 1.17;
             text-align: center;
+            height: 26px;
             color: #ffffff;
             margin-top: 32px;
           `}
@@ -49,16 +51,6 @@ export default function AboutImages1() {
             margin-top: 5px;
           `}
         />
-        {/* <div
-          className={css`
-            ${classes.h2}
-            color: #ffffff;
-            margin-top: 12px;
-            white-space: break-spaces;
-          `}
-        >
-          {main?.text}
-        </div> */}
       </section>
       <Grid
         container
