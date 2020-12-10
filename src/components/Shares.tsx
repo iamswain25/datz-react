@@ -6,7 +6,7 @@ import fb from "../assets/svg/0625/0625_FB.svg";
 import insta from "../assets/svg/0625/0625_instagram.svg";
 import mail from "../assets/svg/0625/0625_mail.svg";
 import share from "../assets/svg/0625/0625_share.svg";
-import twitter from "../assets/svg/0625/0625_twitter.svg";
+// import twitter from "../assets/svg/0625/0625_twitter.svg";
 
 const padding = css`
   color: #707070;
@@ -81,7 +81,7 @@ export default function Shares() {
           `}
         />
       </a>
-      <a
+      {/* <a
         href="https://twitter.com/datzpress"
         target="_blank"
         rel="noopener noreferrer"
@@ -95,7 +95,7 @@ export default function Shares() {
             margin-right: 16px;
           `}
         />
-      </a>
+      </a> */}
       <a
         href="https://blog.naver.com/datzpress"
         target="_blank"
