@@ -38,7 +38,7 @@ export default function AboutMap3() {
           padding-top: ${isDesktop ? 41 : 19}px;
           height: ${isDesktop
             ? "calc(100vh - 79px - 41px - 27px - 37px)"
-            : "auto"};
+            : "588px"};
           color: #ffffff;
           display: flex;
           overflow: hidden;
