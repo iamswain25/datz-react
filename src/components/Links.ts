@@ -7,7 +7,7 @@ export const headerLinkArr = [
 export const store = {
   label: "Store",
   en: "https://datzpress.kr/",
-  ko: "https://datzpress.com/store",
+  ko: "https://store.datzpress.com",
 };
 export const otherLinks = [
   ["About", "/about"],
