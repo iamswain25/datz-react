@@ -8,10 +8,15 @@ export default function useCollection(collection: string) {
     firestore
       .collection(collection)
       .get()
-      .then((snap) => snap.docs.map((d) => d.data()))
+      .then((snap) => snap.docs)
+      .then((docs) => {
+        docs.sort((a, b) => (a.id > b.id ? 1 : -1));
+        return docs.map((d) => d.data());
+      })
       .then((arr) => {
         setItems(arr);
       });
   }, [collection]);
+  console.log(items);
   return convertedItems;
 }
