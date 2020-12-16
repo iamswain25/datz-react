@@ -40,7 +40,17 @@ export default function NewsItemRight({
       >
         <BtnShare title={item.title} />
       </div>
-      <div className={classes.type}>{item.type}</div>
+      <div
+        className={
+          isDesktop
+            ? classes.type
+            : css`
+                ${classes.type}margin: 0 27px;
+              `
+        }
+      >
+        {item.type}
+      </div>
       <div
         className={css`
           display: flex;
@@ -80,7 +90,7 @@ export default function NewsItemRight({
           ${isDesktop ? undefined : marginH27}
           border-top: solid 1px #fff;
           text-align: center;
-          margin-bottom: 37px;
+          padding-bottom: 37px;
         `}
       />
     </div>
