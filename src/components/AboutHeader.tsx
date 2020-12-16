@@ -25,7 +25,6 @@ const headerText = css`
 
 const linkActiveClass = css`
   text-decoration: underline;
-  color: #383838;
 `;
 
 export default function AboutHeader({
@@ -100,9 +99,9 @@ export default function AboutHeader({
           className={css`
             ${headerText};
             ${marginH10};
+            ${lang === "en" ? linkActiveClass : undefined};
           `}
           onClick={() => setLang("en")}
-          style={lang === "en" ? { color: colors.color } : { color: "#cccccc" }}
         >
           EN
         </button>
@@ -118,8 +117,8 @@ export default function AboutHeader({
           className={css`
             ${headerText};
             ${marginH10};
+            ${lang === "ko" ? linkActiveClass : undefined};
           `}
-          style={lang === "ko" ? { color: colors.color } : { color: "#cccccc" }}
         >
           KR
         </button>

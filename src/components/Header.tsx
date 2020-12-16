@@ -14,7 +14,6 @@ import { HamburgerButton } from "react-hamburger-button";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
-  text-decoration: none;
   line-height: 1.19;
   text-align: center;
   color: inherit;
@@ -138,7 +137,8 @@ export default function Header({
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "en" ? color : "#cccccc"};
+            ${lang === "en" ? linkActiveClass : undefined};
+            ${color === "white" ? "color: white" : ""}
           `}
           onClick={() => setLang("en")}
         >
@@ -156,7 +156,8 @@ export default function Header({
           className={css`
             ${headerText};
             ${marginH10};
-            color: ${lang === "ko" ? color : "#cccccc"};
+            ${lang === "ko" ? linkActiveClass : undefined};
+            ${color === "white" ? "color: white" : ""}
           `}
         >
           KR

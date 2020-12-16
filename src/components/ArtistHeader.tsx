@@ -20,6 +20,9 @@ const headerText = css`
     text-decoration: underline;
   }
 `;
+const linkActiveClass = css`
+  text-decoration: underline;
+`;
 const defaultClassname = css`
   background-color: #afafaf;
   color: white;
@@ -108,9 +111,9 @@ export default function ArtistHeader({
                 className={css`
                   ${headerText};
                   ${marginH10};
+                  ${lang === "en" ? linkActiveClass : undefined};
                 `}
                 onClick={() => setLang("en")}
-                style={lang === "en" ? undefined : { color: "#cccccc" }}
               >
                 EN
               </button>
@@ -127,8 +130,8 @@ export default function ArtistHeader({
                 className={css`
                   ${headerText};
                   ${marginH10};
+                  ${lang === "ko" ? linkActiveClass : undefined};
                 `}
-                style={lang === "ko" ? undefined : { color: "#cccccc" }}
               >
                 KR
               </button>
