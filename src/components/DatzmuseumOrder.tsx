@@ -35,7 +35,7 @@ export default function DatzmuseumOrder({
           color: #707070;
         `}
       >
-        Visit DMA {">"}
+        Visit DMA &gt;
       </a>
     </div>
   );

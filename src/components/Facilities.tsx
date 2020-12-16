@@ -39,7 +39,7 @@ export default function Facilities({ items }: { items: any[] }) {
             color: #aaaaaa;
           `}
         >
-          Visit DMA for more information {">"}
+          Visit DMA for more information &gt;
         </Grid>
       </Grid>
       <Grid

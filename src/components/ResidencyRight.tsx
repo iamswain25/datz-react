@@ -90,7 +90,7 @@ export default function ResidencyRight({ item }: { item: any }) {
               color: #aaaaaa;
             `}
           >
-            Visit DMA {">"}
+            Visit DMA &gt;
           </a>
           <div className={classes.body}>{item?.text}</div>
           <div
@@ -139,7 +139,7 @@ export default function ResidencyRight({ item }: { item: any }) {
           margin-bottom: 12px;
         `}
       >
-        About Datz Cultural Foundation {">"}
+        About Datz Cultural Foundation &gt;
       </a>
     </section>
   );

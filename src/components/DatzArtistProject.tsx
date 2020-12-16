@@ -38,7 +38,7 @@ export default function DatzArtistProject({ item }: { item: any }) {
             width: 100%;
           `}
         >
-          pointer Datz Artist Projects
+          Datz Artist Projects
           <hr
             className={css`
               margin-top: 5px;
@@ -81,7 +81,7 @@ export default function DatzArtistProject({ item }: { item: any }) {
                 line-height: 1.19;
               `}
             >
-              About Datz Community {">"}
+              About Datz Community &gt;
             </a>
           </div>
         </div>

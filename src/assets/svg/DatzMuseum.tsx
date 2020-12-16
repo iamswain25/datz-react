@@ -13,7 +13,7 @@ export default function DatzMuseum(props: {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 527.53 114.79"
       width={isDesktop ? 121 : 93}
-      height={isDesktop ? 27 : 29}
+      height={isDesktop ? 27 : 21}
       className={className}
     >
       <g fill={color}>

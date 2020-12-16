@@ -106,7 +106,7 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
                       color: #aaaaaa;
                     `}
                   >
-                    read more {">"}
+                    read more &gt;
                   </Link>
                 </div>
               )}

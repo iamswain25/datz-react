@@ -77,7 +77,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
               color: #707070;
             `}
           >
-            read more {">"}
+            read more &gt;
           </Link>
         </div>
         <hr

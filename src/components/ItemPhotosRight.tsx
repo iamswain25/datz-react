@@ -102,7 +102,7 @@ export default function ItemPhotosRight({
           }
           className={bottomBtn37}
         >
-          Top {">"}
+          Top &gt;
         </button>
       </section>
     </>

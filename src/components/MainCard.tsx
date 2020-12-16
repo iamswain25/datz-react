@@ -113,7 +113,7 @@ export default function MainCard({
               border-bottom: solid 1px #707070;
             `}
           >
-            read more {">"}
+            read more &gt;
           </button>
         </div>
       </section>

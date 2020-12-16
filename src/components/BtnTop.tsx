@@ -29,7 +29,7 @@ export default function BtnTop({
         color: ${color};
       `}
     >
-      Top {">"}
+      Top &gt;
     </button>
   );
 }

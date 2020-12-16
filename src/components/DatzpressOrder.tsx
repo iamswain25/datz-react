@@ -27,7 +27,7 @@ export default function DatzpressOrder({
           color: #707070;
         `}
       >
-        Order {">"}
+        Order &gt;
       </a>
     </div>
   );

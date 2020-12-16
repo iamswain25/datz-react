@@ -63,7 +63,7 @@ export default function EventRight() {
           border-top: 1px solid #707070;
         `}
       >
-        view all {">"}
+        view all &gt;
       </Link>
     </main>
   );

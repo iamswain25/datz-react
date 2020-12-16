@@ -83,7 +83,7 @@ export default function AboutImages1() {
             `}
             href="/message"
           >
-            message {">"}
+            message &gt;
           </a>
         </div>
       )}

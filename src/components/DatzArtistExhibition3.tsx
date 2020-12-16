@@ -74,7 +74,7 @@ export default function DatzArtistExhibition3() {
                 line-height: 1.19;
               `}
             >
-              Past Exhibition {">"}
+              Past Exhibition &gt;
             </Link>
           </Grid>
           <Grid
@@ -92,7 +92,7 @@ export default function DatzArtistExhibition3() {
                 line-height: 1.19;
               `}
             >
-              Past Event {">"}
+              Past Event &gt;
             </Link>
           </Grid>
         </Grid>

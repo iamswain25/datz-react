@@ -80,7 +80,7 @@ export default function BookProject({ item }: { item: any }) {
             margin-top: 8px;
           `}
         >
-          Publication {">"}
+          Publication &gt;
         </Link>
         <div
           className={css`
@@ -145,7 +145,7 @@ export default function BookProject({ item }: { item: any }) {
               text-decoration: underline;
             `}
           >
-            About Datz Books {">"}
+            About Datz Books &gt;
           </a>
         )}
       </div>

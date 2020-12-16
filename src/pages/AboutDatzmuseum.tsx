@@ -156,7 +156,7 @@ export default function AboutDatzmuseum() {
                       margin-bottom: 15px;
                     `}
                   >
-                    Visit Website {">"}
+                    Visit Website &gt;
                   </a>
                   <p className={classes.desc}>{d1.text}</p>
                 </div>

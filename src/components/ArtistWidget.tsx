@@ -67,7 +67,7 @@ export default function ArtistWidget({
             return (
               <Link to={`/artist/${id}`} key={id}>
                 <p className={classes.title}>
-                  {name} {">"}
+                  {name} &gt;
                 </p>
                 <p className={classes.body}>{bio}</p>
               </Link>

@@ -57,7 +57,7 @@ export default function SupportTexts({ item }: { item: any }) {
               text-decoration: underline;
             `}
           >
-            Become a Member {">"}
+            Become a Member &gt;
           </a>
           <div
             className={css`
@@ -100,7 +100,7 @@ export default function SupportTexts({ item }: { item: any }) {
               line-height: 1.22;
             `}
           >
-            Become a Member {">"}
+            Become a Member &gt;
           </a>
         </div>
       </div>

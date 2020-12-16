@@ -66,7 +66,7 @@ export default function News() {
               text-decoration: underline;
             `}
           >
-            Sign up for Datz Newsletter {">"}
+            Sign up for Datz Newsletter &gt;
           </a>
         </div>
         <Grid

@@ -77,7 +77,7 @@ export default function DatzArtistExhibition2({ item }: { item: any }) {
                 line-height: 1.19;
               `}
             >
-              Visit DMA {">"}
+              Visit DMA &gt;
             </a>
           </Grid>
         </Grid>

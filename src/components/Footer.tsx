@@ -59,7 +59,7 @@ export default function Footer() {
         color: #707070;
       `}
     >
-      Sign up for Datz newsletter {">"}
+      Sign up for Datz newsletter &gt;
     </a>
   );
   if (!isDesktop) {
