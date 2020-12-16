@@ -40,9 +40,11 @@ export default function NewsCard({ item }: { item: any }) {
             width: 100%;
             height: 100%;
             mix-blend-mode: ${isCurrent ? "soft-light" : "normal"};
-            :hover {
+            ${isDesktop
+              ? `:hover {
               mix-blend-mode: soft-light;
-            }
+            }`
+              : ""}
           `}
         />
       </div>
