@@ -263,10 +263,12 @@ hr {
 } 
 */
 
-.image-gallery-slide {
-  transform: none !important;
-  opacity: 0;
-}
-.image-gallery-slide.center {
-  opacity: 1;
+@media only screen and (min-width: 1000px) {
+  .image-gallery-slide {
+    transform: none !important;
+    opacity: 0;
+  }
+  .image-gallery-slide.center {
+    opacity: 1;
+  }
 }
