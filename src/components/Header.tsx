@@ -9,7 +9,8 @@ import useDesktop from "./useDesktop";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import { Sticky } from "react-sticky";
-import SvgMenu from "../assets/svg/SvgMenu";
+// import SvgMenu from "../assets/svg/SvgMenu";
+import { HamburgerButton } from "react-hamburger-button";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -176,9 +177,15 @@ export default function Header({
                 `}
               />
             </Link>
-            <button onClick={openHandler}>
-              <SvgMenu />
-            </button>
+            <HamburgerButton
+              open={isOpen}
+              onClick={openHandler}
+              width={18}
+              height={15}
+              strokeWidth={1}
+              color={color}
+              animationDuration={1}
+            />
           </>
         )}
       </div>

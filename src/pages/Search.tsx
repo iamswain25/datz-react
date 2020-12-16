@@ -11,7 +11,8 @@ import algoliasearch from "algoliasearch";
 import { RequestOptions } from "@algolia/transporter";
 import useLang from "../components/useLang";
 import BtnTop from "../components/BtnTop";
-import SvgMenu from "../assets/svg/SvgMenu";
+import { HamburgerButton } from "react-hamburger-button";
+// import SvgMenu from "../assets/svg/SvgMenu";
 const FILTERS: { [key: string]: string } = {
   all: "All",
   artist: "Artist",
@@ -149,9 +150,15 @@ export default function Search() {
                     `}
                   />
                 </button>
-                <button onClick={openHandler}>
-                  <SvgMenu color="#fff" />
-                </button>
+                <HamburgerButton
+                  open={isOpen}
+                  onClick={openHandler}
+                  width={18}
+                  height={15}
+                  strokeWidth={1}
+                  color="white"
+                  animationDuration={0.5}
+                />
               </>
             )}
           </div>

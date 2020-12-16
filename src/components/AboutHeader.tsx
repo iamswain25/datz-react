@@ -9,7 +9,8 @@ import Datz from "../assets/svg/Datz";
 import { otherLinks } from "./Links";
 import { NavLink, Link } from "react-router-dom";
 import { Sticky } from "react-sticky";
-import SvgMenu from "../assets/svg/SvgMenu";
+// import SvgMenu from "../assets/svg/SvgMenu";
+import { HamburgerButton } from "react-hamburger-button";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -139,9 +140,15 @@ export default function AboutHeader({
                 `}
               />
             </Link>
-            <button onClick={openHandler}>
-              <SvgMenu color={color} />
-            </button>
+            <HamburgerButton
+              open={isOpen}
+              onClick={openHandler}
+              width={18}
+              height={15}
+              strokeWidth={1}
+              color={color}
+              animationDuration={0.5}
+            />
           </>
         )}
       </div>
