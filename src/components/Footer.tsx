@@ -6,6 +6,7 @@ import Shares from "./Shares";
 import useDesktop from "./useDesktop";
 import { version } from "../../package.json";
 import FooterSvgs from "./FooterSvgs";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 const menu = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -57,9 +58,19 @@ export default function Footer() {
         line-height: ${isDesktop ? 1.24 : 1.42};
         text-align: left;
         color: #707070;
+        display: flex;
+        align-items: center;
+        justify-contents: center;
       `}
     >
-      Sign up for Datz newsletter &gt;
+      Sign up for Datz newsletter
+      <ArrowForwardIosIcon
+        className={css`
+          margin: 4px 0 0 5px;
+          height: 12px !important;
+          width: 12px !important;
+        `}
+      />
     </a>
   );
   if (!isDesktop) {

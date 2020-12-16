@@ -63,9 +63,9 @@ export default function ViewAllCard({
             object-fit: cover;
             width: 100%;
             height: 100%;
-            mix-blend-mode: ${isCurrent ? "screen" : "normal"};
+            mix-blend-mode: ${isCurrent ? "soft-light" : "normal"};
             :hover {
-              mix-blend-mode: screen;
+              mix-blend-mode: soft-light;
             }
           `}
         />
