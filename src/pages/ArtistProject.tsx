@@ -92,8 +92,6 @@ export default function ArtistProject() {
           additionalClass="white-bullets"
           className={css`
             height: ${isDesktop ? "100vh" : "527px"};
-            // pointer-events: ${isDesktop ? "auto" : "none"};
-            pointer-events: none;
             background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
           `}
           children={(props) => <DatzArtistProject {...props} />}
@@ -121,7 +119,6 @@ export default function ArtistProject() {
             isDesktop ? undefined : (
               <div
                 className={css`
-                  // pointer-events: ${isDesktop ? "auto" : "none"};
                   pointer-events: none;
                   margin-top: 21px;
                   width: 100%;

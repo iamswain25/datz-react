@@ -14,6 +14,7 @@ export default function DatzArtistProject({ item }: { item: any }) {
         top: 0;
         display: flex;
         flex-direction: column;
+        pointer-events: none;
       `}
     >
       <div
@@ -37,7 +38,7 @@ export default function DatzArtistProject({ item }: { item: any }) {
             width: 100%;
           `}
         >
-          Datz Artist Projects
+          pointer Datz Artist Projects
           <hr
             className={css`
               margin-top: 5px;
