@@ -46,7 +46,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
   return (
     <div
       style={{
-        height: isDesktop ? "calc(100vh - 79px)" : 588,
+        height: isDesktop ? "calc(100vh - 79px)" : 527,
         overflow: "hidden",
         paddingTop: 28,
         paddingBottom: 28,

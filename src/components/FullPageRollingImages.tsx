@@ -52,7 +52,7 @@ export default function FullPageRollingImages({
   return (
     <div
       style={{
-        height: isDesktop ? "calc(100vh - 79px)" : 588,
+        height: isDesktop ? "calc(100vh - 79px)" : 527,
         overflow: "hidden",
         paddingBottom: isDesktop ? 37 : 17,
         paddingLeft: isDesktop ? 37 : 17,
