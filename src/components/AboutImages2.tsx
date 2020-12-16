@@ -42,7 +42,7 @@ export default function AboutImages2() {
         className={css`
           position: relative;
           overflow: hidden;
-          height: ${isDesktop ? "auto" : "588px"};
+          height: ${isDesktop ? "auto" : "527px"};
           color: #ffffff;
           max-height: ${isDesktop ? "calc(100vh - 79px)" : "none"};
         `}

@@ -21,7 +21,7 @@ export default function HomeEvent({ items }: { items: any[] }) {
       ) : (
         <div
           className={css`
-            min-height: 588px;
+            min-height: 527px;
             max-height: 100vh;
             background-repeat: no-repeat;
             background-size: cover;

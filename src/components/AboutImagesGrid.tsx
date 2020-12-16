@@ -51,7 +51,7 @@ export default function AboutImagesGrid({ item }: { item: any }) {
                     background-image: url(${img});
                     background-position: center;
                     background-size: cover;
-                    height: 588px;
+                    height: 527px;
                     width: 100%;
                     position: relative;
                     :after {

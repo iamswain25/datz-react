@@ -99,7 +99,7 @@ export default function AboutDarkroom() {
               className={css`
                 position: relative;
                 overflow: hidden;
-                height: ${isDesktop ? "calc(100% - 36px)" : "588px"};
+                height: ${isDesktop ? "calc(100% - 36px)" : "527px"};
               `}
             >
               <LazyImage

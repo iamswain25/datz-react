@@ -91,7 +91,7 @@ export default function ArtistProject() {
           items={top}
           additionalClass="white-bullets"
           className={css`
-            height: ${isDesktop ? "100vh" : "588px"};
+            height: ${isDesktop ? "100vh" : "527px"};
             // pointer-events: ${isDesktop ? "auto" : "none"};
             pointer-events: none;
             background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
@@ -154,7 +154,7 @@ export default function ArtistProject() {
                   min-height: calc(100vh - 37px - 79px);
                 `
               : css`
-                  height: 588px;
+                  height: 527px;
                 `
           }
         />
@@ -183,7 +183,7 @@ export default function ArtistProject() {
               className={css`
                 margin-top: 21px;
                 ${isDesktop ? marginH37 : undefined}
-                height: ${isDesktop ? "calc(100vh - 21px - 79px)" : "588px"};
+                height: ${isDesktop ? "calc(100vh - 21px - 79px)" : "527px"};
                 max-height: 100vh;
               `}
               children={<DatzArtistExhibition item={item} />}
@@ -219,7 +219,7 @@ export default function ArtistProject() {
                   pointer-events: none;
                 `
               : css`
-                  height: 588px;
+                  height: 527px;
                   pointer-events: none;
                 `
           }
