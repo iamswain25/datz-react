@@ -11,6 +11,7 @@ import { NavLink, Link } from "react-router-dom";
 import { Sticky } from "react-sticky";
 // import SvgMenu from "../assets/svg/SvgMenu";
 import { HamburgerButton } from "react-hamburger-button";
+import Notice from "./Notice";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -43,115 +44,118 @@ export default function AboutHeader({
   }
 
   const innerHeader = (
-    <div
-      className={css`
-        display: flex;
-        align-items: center;
-        height: 79px;
-        max-width: 1920px;
-        margin: 0 auto;
-        padding: 0 ${isDesktop ? 37 : 17}px;
-        color: ${colors.color};
-      `}
-    >
-      <Link
-        to="/"
-        className={css`
-          ${flexrowcenter}
-          flex: 1;
-          padding-left: ${isDesktop ? 16 : 5}px;
-          padding-right: ${isDesktop ? 16 : 5}px;
-          margin-bottom: 8px;
-        `}
-      >
-        <Datz color={colors.color} />
-      </Link>
-      {isDesktop && (
-        <div
-          className={css`
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-          `}
-        >
-          {otherLinks.map(([label, link], i) => {
-            return (
-              <NavLink
-                className={headerText}
-                to={link}
-                key={link + i}
-                activeClassName={linkActiveClass}
-              >
-                {label}
-              </NavLink>
-            );
-          })}
-        </div>
-      )}
+    <>
+      <Notice />
       <div
         className={css`
-          ${flexrowcenter}
-          flex: 1;
-          justify-content: flex-end;
+          display: flex;
+          align-items: center;
+          height: 79px;
+          max-width: 1920px;
+          margin: 0 auto;
+          padding: 0 ${isDesktop ? 37 : 17}px;
+          color: ${colors.color};
         `}
       >
-        <button
+        <Link
+          to="/"
           className={css`
-            ${headerText};
-            ${marginH10};
-            ${lang === "en" ? linkActiveClass : undefined};
+            ${flexrowcenter}
+            flex: 1;
+            padding-left: ${isDesktop ? 16 : 5}px;
+            padding-right: ${isDesktop ? 16 : 5}px;
+            margin-bottom: 8px;
           `}
-          onClick={() => setLang("en")}
         >
-          EN
-        </button>
+          <Datz color={colors.color} />
+        </Link>
+        {isDesktop && (
+          <div
+            className={css`
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+            `}
+          >
+            {otherLinks.map(([label, link], i) => {
+              return (
+                <NavLink
+                  className={headerText}
+                  to={link}
+                  key={link + i}
+                  activeClassName={linkActiveClass}
+                >
+                  {label}
+                </NavLink>
+              );
+            })}
+          </div>
+        )}
         <div
           className={css`
-            width: 0;
-            height: 12px;
-            border-left: solid 1px ${colors.color};
-          `}
-        />
-        <button
-          onClick={() => setLang("ko")}
-          className={css`
-            ${headerText};
-            ${marginH10};
-            ${lang === "ko" ? linkActiveClass : undefined};
+            ${flexrowcenter}
+            flex: 1;
+            justify-content: flex-end;
           `}
         >
-          KR
-        </button>
-        {!isDesktop && (
-          <>
-            <Link
-              to="/search"
-              className={css`
-                display: flex;
-              `}
-            >
-              <Search
-                color={colors.color}
+          <button
+            className={css`
+              ${headerText};
+              ${marginH10};
+              ${lang === "en" ? linkActiveClass : undefined};
+            `}
+            onClick={() => setLang("en")}
+          >
+            EN
+          </button>
+          <div
+            className={css`
+              width: 0;
+              height: 12px;
+              border-left: solid 1px ${colors.color};
+            `}
+          />
+          <button
+            onClick={() => setLang("ko")}
+            className={css`
+              ${headerText};
+              ${marginH10};
+              ${lang === "ko" ? linkActiveClass : undefined};
+            `}
+          >
+            KR
+          </button>
+          {!isDesktop && (
+            <>
+              <Link
+                to="/search"
                 className={css`
-                  width: 15px;
-                  height: 15px;
-                  margin-right: 20px;
+                  display: flex;
                 `}
+              >
+                <Search
+                  color={colors.color}
+                  className={css`
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 20px;
+                  `}
+                />
+              </Link>
+              <HamburgerButton
+                open={isOpen}
+                onClick={openHandler}
+                width={18}
+                height={15}
+                strokeWidth={1}
+                color={color}
+                animationDuration={0.5}
               />
-            </Link>
-            <HamburgerButton
-              open={isOpen}
-              onClick={openHandler}
-              width={18}
-              height={15}
-              strokeWidth={1}
-              color={color}
-              animationDuration={0.5}
-            />
-          </>
-        )}
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
   if (sticky) {
     return (
