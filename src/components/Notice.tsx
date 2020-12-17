@@ -1,6 +1,7 @@
 import { css } from "emotion";
+import firebase from "firebase";
 import React from "react";
-import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { useCollectionOnce } from "react-firebase-hooks/firestore";
 import Close from "../assets/svg/Close";
 import { firestore } from "../config/firebase";
 import { useGlobalLang, useNotice } from "../store/useGlobalState";
@@ -9,26 +10,29 @@ const DATZ_LAST_NOTICE_ID = "DATZ_LAST_NOTICE_ID";
 export default function Notice() {
   const [lang] = useGlobalLang();
   const localId = window.localStorage.getItem(DATZ_LAST_NOTICE_ID);
-  const [docs] = useCollectionDataOnce<{
-    created_at: any;
-    en: string;
-    ko: string;
-    id: string;
-  }>(firestore.collection("$notice").orderBy("created_at").limitToLast(1), {
-    idField: "id",
-  });
+  const [snapshot] = useCollectionOnce(
+    firestore.collection("$notice").orderBy("created_at").limitToLast(1)
+  );
   const [notice, setNotice] = useNotice();
   const isDesktop = useDesktop();
-  const fireNotice = docs?.[0];
+  const fireNotice = snapshot?.docs?.[0];
   React.useEffect(() => {
     if (!notice && fireNotice && fireNotice.id !== localId) {
-      setNotice(fireNotice);
+      setNotice({
+        ...fireNotice.data(),
+        id: fireNotice.id,
+        ref: fireNotice.ref,
+      });
     }
   }, [fireNotice, localId, notice, setNotice]);
   if (!notice) return null;
   function remove() {
     if (notice) {
       window.localStorage.setItem(DATZ_LAST_NOTICE_ID, notice.id);
+      notice.ref?.set(
+        { count_close: firebase.firestore.FieldValue.increment(1) },
+        { merge: true }
+      );
       setNotice(undefined);
     }
   }

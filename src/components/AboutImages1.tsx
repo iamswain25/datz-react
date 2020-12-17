@@ -66,7 +66,7 @@ export default function AboutImages1() {
           <AboutImagesGrid key={i} item={item} />
         ))}
       </Grid>
-      {items?.length > 0 && (
+      {items?.length > 0 && (  
         <div
           className={css`
             margin: 0 17px;

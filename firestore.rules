@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	function ifAdmin() {
+      return request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+    }
+  	match /about/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /artist/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /artist-project/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /banner/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /contact/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /event/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    	match /exhibition/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /main/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /news/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /publication/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /publication_category/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /support/{document=**} {
+      allow read: if true;
+      allow write: if ifAdmin();
+    }
+    match /%24notice/{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 # Datzpress.com
 
-## To do
+## 공지 다시보기
 
-- 스토어 주소 한영 변경
+window.localStorage.setItem("DATZ_LAST_NOTICE_ID", null);
+firebase firestore:indexes --project datzpress1 | cat > ./firestore.indexes.json
