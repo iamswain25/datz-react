@@ -71,17 +71,16 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         onMouseLeave={mouseLeaveHandler}
         className={css`
           width: 100%;
+          height: calc(100% - 56px);
           pointer-events: none;
-          height: calc(100vh - 56px);
           position: absolute;
           top: 0;
           left: 0;
           display: flex;
           flex-direction: column;
           align-items: stretch;
-          margin-top: 28px;
-          margin-bottom: 28px;
-          padding-top: 37px;
+          margin: 28px 0;
+          padding: 37px 0;
           color: ${color ?? "#ffffff"};
         `}
       >
