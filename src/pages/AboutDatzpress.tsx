@@ -35,7 +35,7 @@ export default function AboutDatzpress() {
   const items = useDocs("about", data);
   const [d1, d2] = useItems(items) || [];
   const isDesktop = useDesktop(true);
-  const [classes] = useLang("About");
+  const [classes, isEn] = useLang("About");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzmuseum");
@@ -158,6 +158,18 @@ export default function AboutDatzpress() {
                     `}
                   />
                   <p className={classes.desc}>{d2.text}</p>
+                  <p className={classes.desc}>
+                    <a
+                      href={isEn ? d2.url : d1.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={css`
+                        text-decoration: underline;
+                      `}
+                    >
+                      {d2.title}
+                    </a>
+                  </p>
                 </div>
                 <hr
                   className={css`
