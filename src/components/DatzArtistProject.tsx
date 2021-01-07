@@ -76,6 +76,7 @@ export default function DatzArtistProject({ item }: { item: any }) {
               target="_blank"
               href={item?.url}
               className={css`
+                pointer-events: all;
                 text-decoration: underline;
                 font-size: 16px;
                 line-height: 1.19;
