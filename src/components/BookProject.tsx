@@ -133,11 +133,12 @@ export default function BookProject({ item }: { item: any }) {
           margin-bottom: 12px;
         `}
       >
-        {item?.url && (
+        {/* url ko,en as artist */}
+        {item?.artist && (
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href={item?.url}
+            href={item?.artist}
             className={css`
               font-size: 16px;
               line-height: 1.19;
