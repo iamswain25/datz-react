@@ -53,6 +53,8 @@ export default function SupportTexts({ item }: { item: any }) {
         >
           <a
             href="membership"
+            rel="noopener noreferrer"
+            target="_blank"
             className={css`
               text-decoration: underline;
             `}
@@ -93,7 +95,9 @@ export default function SupportTexts({ item }: { item: any }) {
           `}
         >
           <a
-            href="membership"
+            href="https://store.datzpress.com/product/year-membership"
+            rel="noopener noreferrer"
+            target="_blank"
             className={css`
               text-decoration: underline;
               font-size: 23px;
