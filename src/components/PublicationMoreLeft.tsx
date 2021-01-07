@@ -8,6 +8,7 @@ import BodyDraftHtml from "./BodyDraftHtml";
 import BtnBackTo from "./BtnBackTo";
 import BtnShare from "./BtnShare";
 import useParams from "./useParams";
+import NoteDraftHtml from "./NoteDraftHtml";
 
 const stickyContainer = css`
   align-self: flex-start;
@@ -29,7 +30,7 @@ const mobileContainer = css`
 export default function PublicationMoreLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
-  const { title, artist, quotes, notes, order_url } = item;
+  const { title, artist, quotes, order_url } = item;
   const { id } = useParams();
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
@@ -73,9 +74,9 @@ export default function PublicationMoreLeft({ item }: { item: any }) {
             <div className={classes.body}>
               <BodyDraftHtml item={item} />
             </div>
-            <Linkify>
-              <p className={classes.notes}>{notes}</p>
-            </Linkify>
+            <div className={classes.notes}>
+              <NoteDraftHtml item={item} />
+            </div>
           </div>
         </div>
       </section>

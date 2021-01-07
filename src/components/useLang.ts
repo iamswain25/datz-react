@@ -72,6 +72,9 @@ const classes = {
         margin-top: 30px;
         margin-bottom: 40px;
         line-height: 25px;
+        a {
+          text-decoration: underline;
+        }
       `,
     };
   },

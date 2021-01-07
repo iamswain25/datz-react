@@ -10,6 +10,7 @@ export default function useItem(item: any = {}) {
   const body = lang === "ko" ? item.body_ko : item.body_en;
   const bodyDraft = lang === "ko" ? item.bodyDraft_ko : item.bodyDraft_en;
   const notes = lang === "ko" ? item.notes_ko : item.notes_en;
+  const noteDraft = lang === "ko" ? item.noteDraft_ko : item.noteDraft_en;
   const text = lang === "ko" ? item.text_ko : item.text_en;
   const place = lang === "ko" ? item.place_ko : item.place_en;
   const preview_quote =
@@ -26,6 +27,7 @@ export default function useItem(item: any = {}) {
     name,
     bio,
     notes,
+    noteDraft,
     text,
     preview_quote,
     preview_body,
