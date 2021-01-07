@@ -94,3 +94,7 @@ export interface News {
   images: string[];
   image_cover: string;
 }
+export type ExhibitionLogo =
+  | "Datz Museum of Art"
+  | "D'Ark Room"
+  | "Datz Press Gallery";

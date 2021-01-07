@@ -2,13 +2,14 @@ import React from "react";
 import { css } from "emotion";
 import { flexrowcenter } from "./styles";
 import Logo from "./Logo";
+import { ExhibitionLogo } from "../@type";
 
 export default function DatzmuseumOrder({
-  order = "https://datzpress.com/product/offerings-se",
+  order,
   logo,
 }: {
-  order: string;
-  logo: string;
+  order?: string;
+  logo: ExhibitionLogo;
 }) {
   return (
     <div
@@ -26,17 +27,19 @@ export default function DatzmuseumOrder({
       `}
     >
       <Logo type={logo} color="#707070" className={flexrowcenter} />
-      <a
-        href={order}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={css`
-          ${flexrowcenter}
-          color: #707070;
-        `}
-      >
-        Visit DMA &gt;
-      </a>
+      {logo !== "D'Ark Room" && order && (
+        <a
+          href={order}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={css`
+            ${flexrowcenter}
+            color: #707070;
+          `}
+        >
+          Visit DMA &gt;
+        </a>
+      )}
     </div>
   );
 }
