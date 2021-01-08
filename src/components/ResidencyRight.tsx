@@ -131,6 +131,8 @@ export default function ResidencyRight({ item }: { item: any }) {
       </div>
       <a
         href={item?.url?.[2]}
+        target="_blank"
+        rel="noopener noreferrer"
         className={css`
           font-size: 16px;
           line-height: 1.19;
