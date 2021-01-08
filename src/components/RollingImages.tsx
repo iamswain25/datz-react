@@ -13,13 +13,12 @@ export default function RollingImages({
   additionalClass?: string;
   children?: (props: { item: any }) => React.ReactNode;
 }) {
-  const [index, setIndex] = React.useState(0);
+  const [item, setItem] = React.useState();
   const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
   const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];
-  const item = items[index];
   function onslideHandler(index: number) {
-    setIndex(index);
+    setItem(items[index]);
   }
   return (
     <div

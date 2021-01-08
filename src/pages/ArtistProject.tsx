@@ -22,6 +22,7 @@ import useIsTop from "../components/useIsTop";
 import useCollection from "../utils/useCollection";
 import BtnTop from "../components/BtnTop";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import ArtistProjectVideo from "../components/ArtistProjectVideo";
 export default function ArtistProject() {
   const isDesktop = useDesktop(true);
   const isTop = useIsTop();
@@ -59,33 +60,7 @@ export default function ArtistProject() {
         color={!isDesktop ? undefined : isTop ? "white" : "#707070"}
       />
       {isDesktop ? (
-        <section>
-          <video
-            autoPlay
-            muted
-            loop
-            className={css`
-              width: 100%;
-              height: 100vh;
-              object-fit: cover;
-              position: absolute;
-              left: 0;
-              top: 0;
-            `}
-          >
-            <source src="/artist-project_bg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div
-            className={css`
-              width: 100%;
-              height: 100vh;
-              position: relative;
-            `}
-          >
-            <DatzArtistProject item={top[0]} />
-          </div>
-        </section>
+        <ArtistProjectVideo top={top} />
       ) : (
         <RollingImages
           items={top}
