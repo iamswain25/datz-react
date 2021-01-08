@@ -41,6 +41,7 @@ export default function AdminBodyDraftHtml({ item }: { item: any }) {
         .collection(collection)
         .doc(id)
         .update({ ["bodyDraft_" + lang]: bodyDraft, ["body" + lang]: body })
+        .then(() => window.alert("저장 성공"))
         .catch(window.alert);
     }
   }

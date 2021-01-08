@@ -41,6 +41,7 @@ export default function AdminNoteDraftHtml({ item }: { item: any }) {
         .collection(collection)
         .doc(id)
         .update({ ["noteDraft_" + lang]: noteDraft, ["notes" + lang]: notes })
+        .then(() => window.alert("저장 성공"))
         .catch(window.alert);
     }
   }
