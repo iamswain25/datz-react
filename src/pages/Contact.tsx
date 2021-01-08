@@ -124,6 +124,7 @@ export default function Contact() {
                 font-size: 16px;
                 line-height: 1.19;
                 margin-top: 12px;
+                text-decoration: underline;
               `}
             >
               {list?.enquiry?.title}
@@ -172,7 +173,14 @@ export default function Contact() {
                     >
                       <div>{list?.phone?.title}</div>
                       <div>
-                        <a href={"tel:" + list?.phone?.text}>
+                        <a
+                          href={"tel:" + list?.phone?.text}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={css`
+                            text-decoration: underline;
+                          `}
+                        >
                           {list?.phone?.text}
                         </a>
                       </div>
@@ -192,6 +200,9 @@ export default function Contact() {
                               target="_blank"
                               rel="noopener noreferrer"
                               href={"mailto:" + email}
+                              className={css`
+                                text-decoration: underline;
+                              `}
                             >
                               {email}
                             </a>
