@@ -39,7 +39,16 @@ export default function Facilities({ items }: { items: any[] }) {
             color: #aaaaaa;
           `}
         >
-          Visit DMA for more information &gt;
+          <a
+            href="http://datzmuseum.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={css`
+              text-decoration: underline;
+            `}
+          >
+            Visit DMA for more information &gt;
+          </a>
         </Grid>
       </Grid>
       <Grid
