@@ -11,7 +11,7 @@ function logo(key: number) {
     case 1:
       return <Logo type="museum" color="white" />;
     case 2:
-      return <Logo type="museum" color="white" />;
+      return <Logo type="darkroom" color="white" />;
     default:
       return <DatzSvgs color="white" />;
   }
