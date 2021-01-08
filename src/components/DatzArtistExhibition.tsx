@@ -3,15 +3,84 @@ import { css } from "emotion";
 import { paddingH17 } from "./styles";
 import DatzSvgs from "./DatzSvgs";
 import useDesktop from "./useDesktop";
-import Logo from "./Logo";
+import DarkroomLong from "../assets/svg/DarkroomLong";
+import DatzMuseum from "../assets/svg/DatzMuseum";
+import DmaKo from "../assets/svg/DmaKo";
+import Dfrontspace from "../assets/svg/Dfrontspace";
+const dividerV = (className = "") => (
+  <div
+    className={css`
+      margin-left: 37px;
+      margin-right: 21px;
+      width: 0;
+      height: 29px;
+      border-left: solid 1px #707070;
+      border-color: white;
+      ${className}
+    `}
+  />
+);
 function logo(key: number) {
   switch (key) {
     case 0:
-      return <DatzSvgs color="white" />;
+      return (
+        <div
+          className={css`
+            display: flex;
+            align-items: center;
+            height: 71px;
+            margin-left: 37px;
+            margin-right: 37px;
+            padding-left: 30px;
+            padding-right: 30px;
+            justify-content: center;
+            overflow: hidden;
+          `}
+        >
+          <DatzMuseum
+            color="white"
+            className={css`
+              height: 40px;
+              width: 140px;
+            `}
+          />
+          {dividerV(css`
+            margin-left: 28px;
+            margin-right: 25px;
+          `)}
+          <DarkroomLong color="white" />
+        </div>
+      );
     case 1:
-      return <Logo type="museum" color="white" />;
+      return <DmaKo color="white" />;
     case 2:
-      return <Logo type="darkroom" color="white" />;
+      return (
+        <div
+          className={css`
+            display: flex;
+            align-items: center;
+            height: 71px;
+            margin-left: 37px;
+            margin-right: 37px;
+            padding-left: 30px;
+            padding-right: 30px;
+            justify-content: center;
+            overflow: hidden;
+          `}
+        >
+          <DarkroomLong color="white" />
+          {dividerV(css`
+            margin-left: 28px;
+            margin-right: 25px;
+          `)}
+          <Dfrontspace
+            color="white"
+            className={css`
+              height: 33px;
+            `}
+          />
+        </div>
+      );
     default:
       return <DatzSvgs color="white" />;
   }
