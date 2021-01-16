@@ -18,7 +18,7 @@ export default function EventRight() {
   const isDesktop = useDesktop();
   if (!list) return null;
   return (
-    <main
+    <section
       className={css`
         flex: 1;
       `}
@@ -65,6 +65,6 @@ export default function EventRight() {
       >
         view all &gt;
       </Link>
-    </main>
+    </section>
   );
 }

@@ -63,7 +63,7 @@ export default function Search() {
     index.search(query, options).then(setResult);
   }, [query, filter, history]);
   return (
-    <main>
+    <section>
       <section
         className={css`
           position: fixed;
@@ -358,6 +358,6 @@ export default function Search() {
         </ul>
         {result?.hits?.length > 5 && <BtnTop full color="#fff" />}
       </section>
-    </main>
+    </section>
   );
 }

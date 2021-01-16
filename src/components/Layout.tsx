@@ -27,7 +27,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
           "/admin/news/:address",
         ]}
         render={() => (
-          <main
+          <section
             className={css`
               min-height: 100vh;
               background-color: #afafaf;
@@ -36,21 +36,21 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
               font-family: datz-medium;
             `}
           >
-            <main
+            <section
               className={css`
                 margin: 0 auto;
                 max-width: 1920px;
               `}
             >
               {isOpen ? <MenuAside /> : children}
-            </main>
-          </main>
+            </section>
+          </section>
         )}
       />
       <Route
         path="*"
         render={() => (
-          <main
+          <section
             className={css`
               margin: 0 auto;
               max-width: 1920px;
@@ -58,7 +58,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
             `}
           >
             {isOpen ? <MenuAside /> : children}
-          </main>
+          </section>
         )}
       />
     </Switch>

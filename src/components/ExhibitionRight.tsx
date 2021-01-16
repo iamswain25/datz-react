@@ -35,7 +35,7 @@ export default function ExhibitionRight() {
   );
   if (!list) return null;
   return (
-    <main
+    <section
       className={css`
         flex: 1;
       `}
@@ -92,6 +92,6 @@ export default function ExhibitionRight() {
       >
         view all &gt;
       </Link>
-    </main>
+    </section>
   );
 }
