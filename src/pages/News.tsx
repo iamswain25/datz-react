@@ -87,7 +87,7 @@ export default function News() {
               flex-direction: row;
               justify-content: space-between;
               max-width: 230px;
-              flex: 1;
+              flex: 1 1 230px;
             `}
           >
             {Object.keys(FILTERS).map((f, i) => {

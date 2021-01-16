@@ -54,6 +54,7 @@ export default function AboutHeader({
           margin: 0 auto;
           padding: 0 ${isDesktop ? 37 : 17}px;
           color: ${colors.color};
+          position: relative;
         `}
       >
         <Link
@@ -73,7 +74,8 @@ export default function AboutHeader({
             className={css`
               position: absolute;
               left: 50%;
-              transform: translateX(-50%);
+              top: 50%;
+              transform: translate(-50%, -50%);
             `}
           >
             {otherLinks.map(([label, link], i) => {
