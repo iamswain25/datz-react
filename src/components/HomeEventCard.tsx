@@ -22,12 +22,6 @@ export default function HomeEventCard({
   return (
     <Link
       to={`/${type}/${id}`}
-      className={css`
-        flex: 1;
-        min-height: 0;
-        display: flex;
-        flex-direction: column;
-      `}
     >
       <section
         className={css`
@@ -38,11 +32,14 @@ export default function HomeEventCard({
           flex-direction: column;
           font-family: datz-medium;
           min-height: 0;
+          overflow:hidden;
         `}
       >
         <div
           className={css`
             position: relative;
+            display: flex;
+            flex: 1 0 300px;
             ::before {
               content: "";
               display: inline-block;
@@ -66,6 +63,7 @@ export default function HomeEventCard({
               object-fit: cover;
               width: 100%;
               height: 100%;
+              top: 0;
             `}
           />
           <Logo
@@ -81,7 +79,7 @@ export default function HomeEventCard({
         </div>
         <div
           className={css`
-            flex: 1;
+            flex: 1 1 220px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
