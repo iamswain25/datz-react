@@ -85,21 +85,20 @@ export default function AboutDatzpress() {
           position: relative;
           min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
           padding-bottom: ${isDesktop ? 16 : 0}px;
+          overflow:hidden;
         `}
       >
         <Grid
           container
           spacing={isDesktop ? 4 : 0}
-          className={css`
-            flex: 1;
-          `}
+         
         >
           <Grid container item xs={12} sm={6}>
             <div
               className={css`
                 position: relative;
                 overflow: hidden;
-                height: ${isDesktop ? "calc(100% - 36px)" : "527px"};
+                height: ${isDesktop ? "calc(100vh - 79px - 36px)" : "527px"};
               `}
             >
               <LazyImage

@@ -89,16 +89,13 @@ export default function AboutDatzmuseum() {
         <Grid
           container
           spacing={isDesktop ? 4 : 0}
-          className={css`
-            flex: 1;
-          `}
         >
           <Grid item xs={12} sm={6}>
             <div
               className={css`
                 position: relative;
                 overflow: hidden;
-                height: ${isDesktop ? "calc(100% - 36px)" : "527px"};
+                height: ${isDesktop ? "calc(100vh - 79px - 36px)" : "527px"};
               `}
             >
               <LazyImage

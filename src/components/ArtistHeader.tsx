@@ -6,8 +6,6 @@ import useDesktop from "./useDesktop";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { flexrowcenter, marginH10 } from "./styles";
 import { Link } from "react-router-dom";
-import { Sticky } from "react-sticky";
-// import SvgMenu from "../assets/svg/SvgMenu";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
 const headerText = css`
@@ -50,55 +48,51 @@ export default function ArtistHeader({
 
   return (
     <>
-      <Sticky>
-        {(props) => (
-          <>
-            <Notice />
-            <div
-              className={css`
-                position: sticky;
-                top: 0;
-                height: 79px;
-                display: flex;
-                align-items: center;
-                z-index: 5;
-                padding-left: ${isDesktop ? 37 : 17}px;
-                padding-right: ${isDesktop ? 37 : 17}px;
-                ${className}
-              `}
-              style={props.style}
-            >
-              <div
-                className={css`
-                  ${flexrowcenter}
-                  flex: 1;
-                  justify-content: flex-start;
-                `}
-              >
-                {children ?? <ArtistCloseBtn />}
-              </div>
-              <div
-                className={css`
+      <Notice />
+      <div
+        className={css`
+          position: sticky;
+          top: 0;
+          height: 79px;
+          display: flex;
+          align-items: center;
+          z-index: 5;
+          padding-left: ${isDesktop ? 37 : 17}px;
+          padding-right: ${isDesktop ? 37 : 17}px;
+          ${className}
+        `}
+      >
+        <div
+          className={css`
+            ${flexrowcenter}
+            flex: 1;
+            justify-content: flex-start;
+          `}
+        >
+          {children ?? <ArtistCloseBtn />}
+        </div>
+        <div
+          className={css`
                   ${flexrowcenter}
                   flex: 1;
                   justify-content: flex-end;
                   font-family: datz-medium;
                 `}
-              >
-                {isDesktop && (
-                  <Link to="/search">
-                    <span
-                      className={css`
+        >
+          {isDesktop && (
+            <Link to="/search">
+              <span
+                className={css`
                         font-size: 16px;
                       `}
-                    >
-                      Search
+              >
+                Search
                     </span>
-                    <input
-                      type="text"
-                      value={text}
-                      onChange={textHandler}
-                      className={css`
+              <input
+                type="text"
+                value={text}
+                onChange={textHandler}
+                className={css`
                         ${headerText};
                         border-bottom: solid 1px;
                         border-bottom-color: inherit;
@@ -107,70 +101,67 @@ export default function ArtistHeader({
                         margin-right: 8px;
                         margin-bottom: 7px;
                       `}
-                    />
-                  </Link>
-                )}
-                <button
-                  className={css`
+              />
+            </Link>
+          )}
+          <button
+            className={css`
                     ${headerText};
                     ${marginH10};
                     ${lang === "en" ? linkActiveClass : undefined};
                   `}
-                  onClick={() => setLang("en")}
-                >
-                  EN
+            onClick={() => setLang("en")}
+          >
+            EN
                 </button>
-                <div
-                  className={css`
+          <div
+            className={css`
                     width: 0;
                     height: 12px;
                     border-left: solid 1px;
                     border-left-color: inherit;
                   `}
-                />
-                <button
-                  onClick={() => setLang("ko")}
-                  className={css`
+          />
+          <button
+            onClick={() => setLang("ko")}
+            className={css`
                     ${headerText};
                     ${marginH10};
                     ${lang === "ko" ? linkActiveClass : undefined};
                   `}
-                >
-                  KR
+          >
+            KR
                 </button>
-                {!isDesktop && (
-                  <>
-                    <Link
-                      to="/search"
-                      className={css`
+          {!isDesktop && (
+            <>
+              <Link
+                to="/search"
+                className={css`
                         display: flex;
                       `}
-                    >
-                      <Search
-                        color={color}
-                        className={css`
+              >
+                <Search
+                  color={color}
+                  className={css`
                           margin-right: 20px;
                           width: 15px;
                           height: 15px;
                         `}
-                      />
-                    </Link>
-                    <HamburgerButton
-                      open={isOpen}
-                      onClick={openHandler}
-                      width={18}
-                      height={15}
-                      strokeWidth={1}
-                      color={color}
-                      animationDuration={0.5}
-                    />
-                  </>
-                )}
-              </div>
-            </div>
-          </>
-        )}
-      </Sticky>
+                />
+              </Link>
+              <HamburgerButton
+                open={isOpen}
+                onClick={openHandler}
+                width={18}
+                height={15}
+                strokeWidth={1}
+                color={color}
+                animationDuration={0.5}
+              />
+            </>
+          )}
+        </div>
+      </div>
     </>
   );
 }

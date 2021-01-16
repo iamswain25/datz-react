@@ -8,7 +8,6 @@ import { headerLinkArr, store } from "./Links";
 import useDesktop from "./useDesktop";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { flexrowcenter, marginH10, marginH16 } from "./styles";
-import { Sticky } from "react-sticky";
 // import SvgMenu from "../assets/svg/SvgMenu";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
@@ -198,23 +197,16 @@ export default function Header({
   );
   if (sticky) {
     return (
-      <>
-        <Sticky>
-          {(props) => (
-            <div
-              className={css`
+      <div
+        className={css`
                 position: sticky;
                 top: 0;
                 z-index: 5;
                 background-color: ${backgroundColor};
               `}
-              style={props.style}
-            >
-              {innerHeader}
-            </div>
-          )}
-        </Sticky>
-      </>
+      >
+        {innerHeader}
+      </div>
     );
   }
   if (fixed) {

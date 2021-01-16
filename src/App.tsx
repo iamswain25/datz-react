@@ -1,7 +1,6 @@
 import React from "react";
 import Routes from "./config/Routes";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-import { StickyContainer } from "react-sticky";
 // declare module "@material-ui/core/styles/createBreakpoints" {
 //   interface BreakpointOverrides {
 //     xm: true;
@@ -24,9 +23,7 @@ const theme = createMuiTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <StickyContainer>
-        <Routes />
-      </StickyContainer>
+      <Routes />
     </ThemeProvider>
   );
 }

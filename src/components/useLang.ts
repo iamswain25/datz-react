@@ -316,7 +316,7 @@ const classes = {
         margin-top: 13px;
         margin-bottom: 15px;
         color: ${!en ? "#5d5d5d" : "#4b4b4b"};
-        max-height: 112px;
+        max-height: 100px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;

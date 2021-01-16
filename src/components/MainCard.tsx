@@ -72,7 +72,7 @@ export default function MainCard({
         </div>
         <div
           className={css`
-            flex: 1;
+            flex: 1 0 324px;
             display: flex;
             flex-direction: column;
             overflow: hidden;

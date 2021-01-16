@@ -8,7 +8,6 @@ import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import Datz from "../assets/svg/Datz";
 import { otherLinks } from "./Links";
 import { NavLink, Link } from "react-router-dom";
-import { Sticky } from "react-sticky";
 // import SvgMenu from "../assets/svg/SvgMenu";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
@@ -159,23 +158,16 @@ export default function AboutHeader({
   );
   if (sticky) {
     return (
-      <>
-        <Sticky>
-          {(props) => (
-            <div
-              className={css`
+      <div
+        className={css`
                 position: sticky;
                 top: 0;
                 z-index: 2;
                 background-color: ${colors.backgroundColor};
               `}
-              style={props.style}
-            >
-              {innerHeader}
-            </div>
-          )}
-        </Sticky>
-      </>
+      >
+        {innerHeader}
+      </div>
     );
   }
   if (fixed) {
@@ -213,7 +205,7 @@ export default function AboutHeader({
         onUnfix={
           change
             ? () =>
-                setColors({ color: color, backgroundColor: backgroundColor })
+              setColors({ color: color, backgroundColor: backgroundColor })
             : undefined
         }
         style={{

@@ -11,7 +11,6 @@ import NoteDraftHtml from "./NoteDraftHtml";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
-  position: fixed;
   position: sticky;
   top: 79px;
   flex: 1;
