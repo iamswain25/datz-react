@@ -160,16 +160,27 @@ export default function AboutHeader({
   );
   if (sticky) {
     return (
-      <div
-        className={css`
-                position: sticky;
-                top: 0;
-                z-index: 2;
-                background-color: ${colors.backgroundColor};
+      <>
+        <div
+          className={css`
+        width: 100%;
+        height: 79px;
               `}
-      >
-        {innerHeader}
-      </div>
+        >
+        </div>
+        <div
+          className={css`
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: ${colors.backgroundColor};
+          `}
+        >
+          {innerHeader}
+        </div>
+      </>
     );
   }
   if (fixed) {

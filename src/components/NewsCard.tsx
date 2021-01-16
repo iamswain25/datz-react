@@ -60,8 +60,6 @@ export default function NewsCard({ item }: { item: any }) {
       >
         <div
           className={css`
-            overflow: hidden;
-            flex: 1;
             padding-top: 16px;
             padding-bottom: 23px;
             border-bottom: solid 1px #fff;

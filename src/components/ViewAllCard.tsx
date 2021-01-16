@@ -105,8 +105,6 @@ export default function ViewAllCard({
       >
         <div
           className={css`
-            overflow: hidden;
-            flex: 1;
             padding-top: 16px;
             padding-bottom: 23px;
             border-bottom: solid 1px ${nonWhite ? "#707070" : "#fff"};

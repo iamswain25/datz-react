@@ -6,7 +6,7 @@ import Carousel from "react-multi-carousel";
 import usePublications from "../utils/usePublications";
 import useDesktop from "./useDesktop";
 import useDocs from "../utils/useDocs";
-import StorageImage from "./StorageImage";
+import StorageDivImg from "./StorageDivImg";
 
 const textClass = (dark = false) => css`
   font-family: datz-medium;
@@ -113,13 +113,14 @@ export default function PublicationWidget({
                     }
                   `}
                 >
-                  <StorageImage
-                    alt={item.title}
+                  <StorageDivImg
                     path={image_cover}
                     img={css`
-                      object-fit: contain;
-                      width: 100%;
-                      height: 100%;
+                      min-height: 170px;
+                      min-width: 170px;
+                      background-size: contain;
+                      position: relative;
+                      background-color: transparent;
                     `}
                   />
                 </div>

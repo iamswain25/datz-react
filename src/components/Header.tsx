@@ -197,16 +197,24 @@ export default function Header({
   );
   if (sticky) {
     return (
-      <div
-        className={css`
-                position: sticky;
+      <>
+        <div className={css`
+             height: 79px;
+             width: 100%;
+              `}></div>
+        <div
+          className={css`
+                position: fixed;
+                width: 100%;
                 top: 0;
+                left: 0;
                 z-index: 5;
                 background-color: ${backgroundColor};
               `}
-      >
-        {innerHeader}
-      </div>
+        >
+          {innerHeader}
+        </div>
+      </>
     );
   }
   if (fixed) {

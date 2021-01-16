@@ -73,7 +73,7 @@ export default function Events() {
               flex-direction: row;
               justify-content: space-between;
               max-width: 350px;
-              flex: 1;
+              flex: 1 1 350px;
             `}
           >
             {Object.keys(FILTERS).map((f, i) => {

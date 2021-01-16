@@ -66,9 +66,15 @@ export default function Search() {
     <section>
       <section
         className={css`
+          width: 100%;
+          height: ${isDesktop ? 106 : 180}px;
+        `}
+      />
+      <section
+        className={css`
           position: fixed;
-          position: sticky;
           top: 0;
+          width: 100%;
           height: ${isDesktop ? 106 : 180}px;
           background-color: #afafaf;
         `}
@@ -248,7 +254,7 @@ export default function Search() {
               color: #cccccc;
               font-size: 16px;
               line-height: 1.19;
-              flex: 1;
+              flex: 1 1 350px;
               position: ${isDesktop ? "absolute" : "relative"};
               left: 50%;
               transform: translateX(-50%);

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import useEvents from "../utils/useEvents";
-import StorageImage from "./StorageImage";
 import useDocs from "../utils/useDocs";
+import StorageDivImg from "./StorageDivImg";
 
 const textClass = (dark = false) => css`
   font-family: datz-medium;
@@ -104,14 +104,10 @@ export default function EventWidget({
           return (
             <Link key={id} className={afterClass(i)} to={`/event/${id}`}>
               <div className={listClass(dark)}>
-                <StorageImage
-                  alt={item.title}
+                <StorageDivImg
                   path={images[0]}
                   img={css`
-                    position: absolute;
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
+                    background-size: cover;
                   `}
                 />
               </div>

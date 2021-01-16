@@ -151,6 +151,7 @@ export default function AboutDarkroom() {
                     className={css`
                       margin: 20px 0;
                       width: 80px;
+                      height: 33px;
                     `}
                   />
                   <p className={classes.desc}>{d2.text}</p>
