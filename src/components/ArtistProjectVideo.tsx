@@ -6,7 +6,9 @@ export default function ArtistProjectVideo({ top }: { top: any[] }) {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   return (
-    <section>
+    <section className={css`
+   background-color: black;
+  `}>
       <video
         autoPlay
         muted
