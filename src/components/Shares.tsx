@@ -37,6 +37,7 @@ export default function Shares() {
           alt="share"
           className={css`
             height: 24px;
+            width: 24px;
             margin-right: 21px;
           `}
         />
@@ -47,6 +48,7 @@ export default function Shares() {
           alt="share"
           className={css`
             height: 24px;
+            width: 24px;
             margin-right: 20px;
           `}
         />
@@ -62,6 +64,7 @@ export default function Shares() {
           alt="insta"
           className={css`
             height: 24px;
+            width: 24px;
             margin-right: 23px;
           `}
         />
@@ -77,6 +80,7 @@ export default function Shares() {
           alt="fb"
           className={css`
             height: 24px;
+            width: 24px;
             margin-right: 20px;
           `}
         />
@@ -107,6 +111,7 @@ export default function Shares() {
           alt="blog"
           className={css`
             height: 24px;
+            width: 24px;
           `}
         />
       </a>
