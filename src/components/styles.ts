@@ -10,6 +10,7 @@ export const bottomBtn37 = css`
   font-size: 14px;
   line-height: 1.21;
   color: #707070;
+  height: 37px;
 `;
 
 export const flexrow = css`

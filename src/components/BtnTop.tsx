@@ -20,6 +20,7 @@ export default function BtnTop({
         font-size: 14px;
         line-height: 1.21;
         text-align: center;
+        min-height: 37px;
         height: 37px;
         display: flex;
         align-items: center;
@@ -29,7 +30,7 @@ export default function BtnTop({
         color: ${color};
       `}
     >
-      Top &gt;
+        Top &gt;
     </button>
   );
 }

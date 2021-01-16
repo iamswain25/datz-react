@@ -10,10 +10,9 @@ import BtnBackTo from "./BtnBackTo";
 const stickyContainer = css`
   position: fixed;
   top: 79px;
-  width: 350px;
+  width: 408px;
   height: calc(100vh - 79px);
-  margin-left: 18px;
-  margin-right: 40px;
+  padding: 0 40px 0 18px;
   font-family: datz-medium;
   display: flex;
   flex-direction: column;
@@ -28,13 +27,6 @@ export default function PublicationItemLeft({ item }: { item: any }) {
   const { title, artist, preview_quote, preview_body, order_url, id } = item;
   return (
     <>
-      <div
-        className={css`
-          width: 350px;
-          margin-left: 18px;
-          margin-right: 40px;
-        `}
-      />
       <div className={isDesktop ? stickyContainer : mobileContainer}>
         <div
           className={css`
@@ -49,8 +41,6 @@ export default function PublicationItemLeft({ item }: { item: any }) {
         <DatzpressOrder order={order_url} />
         <div
           className={css`
-            display: flex;
-            flex-direction: column;
             overflow: auto;
             padding: 0 ${isDesktop ? 10 : 0}px ${isDesktop ? 0 : 40}px;
             flex: 1;
@@ -75,6 +65,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
               line-height: 1.19;
               text-align: left;
               color: #707070;
+              display:block;
             `}
           >
             read more &gt;
@@ -88,6 +79,12 @@ export default function PublicationItemLeft({ item }: { item: any }) {
           `}
         />
       </div>
+      <div
+        className={css`
+          width: 408px;
+          padding: 0 40px 0 18px;
+        `}
+      />
     </>
   );
 }

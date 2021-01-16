@@ -17,23 +17,17 @@ const classes = {
       edition: css`
         font-family: "EB Garamond";
         font-size: 19px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
         line-height: 1.32;
-        letter-spacing: normal;
         text-align: center;
         color: #5d5d5d;
         margin-top: 12px;
+        min-height: 25px;
       `,
       copies_count: css`
         font-family: "EB Garamond";
         font-size: 15px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
+        min-height: 19px;
         line-height: 1.27;
-        letter-spacing: normal;
         text-align: center;
         color: #afafaf;
         margin-top: 1px;
@@ -43,12 +37,14 @@ const classes = {
         margin-top: 23px;
         text-align: center;
         color: #4b4b4b;
+        min-height: 34px;
       `,
       artist: css`
         ${getSize(20, 1.3)}
         text-align: center;
         color: #4b4b4b;
         margin-top: 1px;
+        min-height: 26px;
       `,
       quotes: css`
         ${getSize(19, 1.42)}
