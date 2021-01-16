@@ -6,7 +6,7 @@ export default function useStorages(paths: string[]) {
     if (!paths || !paths.length) return;
     Promise.all(
       paths.map(async (path) => storage.ref(path).getDownloadURL())
-    ).then((urls) => setImages(urls));
+    ).then((urls) => setImages(urls)).catch(console.error);
   }, [paths]);
   return images;
 }
