@@ -59,7 +59,7 @@ export default function PublicationList() {
               flex-direction: row;
               justify-content: space-between;
               max-width: 320px;
-              flex: 1;
+              flex: 1 1 320px;
             `}
           >
             {categories?.map(({ type }, i) => {
@@ -104,11 +104,7 @@ export default function PublicationList() {
         </div>
         <div
           className={css`
-            margin-left: ${isDesktop ? 73 : 0}px;
-            margin-right: ${isDesktop ? 73 : 0}px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
+            margin: 0 ${isDesktop ? 73 : 0}px;
           `}
         >
           {/* <p
@@ -116,65 +112,61 @@ export default function PublicationList() {
           >
             {categories?.find((e) => e.type === selected)?.text}
           </p> */}
-          <section
-            className={css`
-              flex: 1;
-              margin: 40px 0;
-            `}
-          >
-            <Grid container spacing={isDesktop ? 4 : 0}>
-              {list
-                .filter((f) =>
-                  selected === "All" ? true : f.type === selected
-                )
-                .map((item, i) => {
-                  return (
-                    <Grid
-                      item
-                      key={item.id + i}
-                      xs={12}
-                      sm={12}
-                      md={6}
-                      lg={4}
-                      xl={3}
+
+          <Grid container spacing={isDesktop ? 4 : 0} className={css`
+              padding: 40px 0;
+            `}>
+            {list
+              .filter((f) =>
+                selected === "All" ? true : f.type === selected
+              )
+              .map((item, i) => {
+                return (
+                  <Grid
+                    item
+                    key={item.id + i}
+                    xs={12}
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
+                  >
+                    <Link
+                      to={`publication/${item.id}`}
+                      className={classes.link}
                     >
-                      <Link
-                        to={`publication/${item.id}`}
-                        className={classes.link}
-                      >
-                        <LazyImage
-                          alt={item.title}
-                          link={item.image_cover}
-                          img={css`
+                      <LazyImage
+                        alt={item.title}
+                        link={item.image_cover}
+                        img={css`
                             object-fit: contain;
                             width: 280px;
                             height: 280px;
                           `}
-                          placeholder={css`
+                        placeholder={css`
                             background-color: #fff;
                             min-width: 280px;
                             min-height: 280px;
                           `}
-                        />
-                        <div className={classes.title}>{item.title}</div>
+                      />
+                      <div className={classes.title}>{item.title}</div>
+                    </Link>
+                    {item.artistAddress && item.type !== "Magazine" ? (
+                      <Link
+                        to={`artist/${item.artistAddress}`}
+                        className={classes.link}
+                      >
+                        <div className={classes.artist}>{item.artist}</div>
                       </Link>
-                      {item.artistAddress && item.type !== "Magazine" ? (
-                        <Link
-                          to={`artist/${item.artistAddress}`}
-                          className={classes.link}
-                        >
-                          <div className={classes.artist}>{item.artist}</div>
-                        </Link>
-                      ) : (
+                    ) : (
                         <div className={classes.link}>
                           <div className={classes.artist}>{item.artist}</div>
                         </div>
                       )}
-                    </Grid>
-                  );
-                })}
-            </Grid>
-          </section>
+                  </Grid>
+                );
+              })}
+          </Grid>
           <div
             className={css`
               border-top: solid 1px #707070;
