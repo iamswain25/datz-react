@@ -5,7 +5,7 @@ import { Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import LazyImage from "./LazyImage";
-import { BLEND_SCREEN_COLOR, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import { BLEND_SCREEN_COLOR } from "../config/params";
 const classes = {
   image: css`
     width: 100%;
@@ -63,19 +63,12 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
                   link={image}
                   placeholder={css`
                     position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    top: 0;
                     left: 0;
                   `}
                   img={css`
                     position: absolute;
-                    top: 0;
                     left: 0;
                     object-fit: cover;
-                    width: 100%;
-                    height: 100%;
                     opacity: 0.5;
                   `}
                 />

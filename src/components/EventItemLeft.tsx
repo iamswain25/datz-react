@@ -15,7 +15,7 @@ const stickyContainer = css`
 const mobileContainer = css`
   position: relative;
   overflow: hidden;
-  // max-height: 527px;
+  max-height: 527px;
   ${flexcolumn}
 `;
 export default function EventItemLeft({ images }: { images: string[] }) {

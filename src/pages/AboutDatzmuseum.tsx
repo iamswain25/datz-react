@@ -86,26 +86,17 @@ export default function AboutDatzmuseum() {
           padding-bottom: ${isDesktop ? 16 : 0}px;
         `}
       >
-        <Grid
-          container
-          spacing={isDesktop ? 4 : 0}
-        >
+        <Grid container spacing={isDesktop ? 4 : 0}>
           <Grid item xs={12} sm={6}>
             <div
               className={css`
                 position: relative;
                 overflow: hidden;
                 height: ${isDesktop ? "calc(100vh - 79px - 36px)" : "527px"};
+                width: 100%;
               `}
             >
-              <LazyImage
-                link={d1?.image}
-                img={css`
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                `}
-              />
+              <LazyImage link={d1?.image} />
               <DatzMuseum
                 color="#fff"
                 className={css`

@@ -3,15 +3,9 @@ import { css } from "emotion";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import useDesktop from "./useDesktop";
-import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import { Link, useLocation } from "react-router-dom";
 import useParams from "./useParams";
 import StorageImage from "./StorageImage";
-const itemClass = css`
-  display: flex;
-  align-items: center;
-`;
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
@@ -50,12 +44,16 @@ export default function EventCoverWidget({
     >
       <Carousel
         responsive={responsive}
+        sliderClass={css`
+          height: 100%;
+        `}
         containerClass={css`
-          flex: 1;
-          align-items: normal;
+          height: 100%;
         `}
         ref={refs}
-        itemClass={itemClass}
+        itemClass={css`
+          height: 100%;
+        `}
         renderButtonGroupOutside={true}
         arrows={false}
         customButtonGroup={
@@ -87,31 +85,14 @@ function Sub({
 }) {
   const { id } = useParams();
   return (
-    <div
-      className={css`
-        background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-        display: flex;
-        flex: 1;
-        height: 100%;
-      `}
-    >
-      <Link
-        to={`/${type}/${id}/images/${index}`}
-        replace
-        className={css`
-          flex: 1;
+    <Link to={`/${type}/${id}/images/${index}`} replace>
+      <StorageImage
+        path={image}
+        img={css`
           color: ${dark ? "#ffffff" : "#707070"};
+          min-height: 250px;
         `}
-      >
-        <StorageImage
-          path={image}
-          img={css`
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-          `}
-        />
-      </Link>
-    </div>
+      />
+    </Link>
   );
 }

@@ -31,18 +31,16 @@ export default function Support() {
               link={support?.image}
               img={css`
                 position: absolute;
-                left: 0;
-                width: 100%;
                 height: 100vh;
-                background-color: transparent;
-                object-fit: cover;
+                background-color: black;
               `}
             />
             <div
               className={css`
+                position: relative;
                 width: 100%;
                 height: 100vh;
-                position: relative;
+                overflow: hidden;
               `}
             >
               <SupportTexts item={support} />

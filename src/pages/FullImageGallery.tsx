@@ -7,6 +7,7 @@ import useParams from "../components/useParams";
 import useDoc from "../utils/useDoc";
 import useStorages from "../components/useStorages";
 import ReactPlayer from "react-player";
+import { RenderItemContain } from "../components/ReactImageGalleryRenderItem";
 export default function FullImageGallery({
   type = "publication",
 }: {
@@ -84,6 +85,7 @@ export default function FullImageGallery({
             />
           );
         }}
+        renderItem={RenderItemContain}
       />
     </section>
   );

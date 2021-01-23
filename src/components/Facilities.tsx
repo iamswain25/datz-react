@@ -4,7 +4,7 @@ import { paddingH37, paddingH17 } from "./styles";
 import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
 import LazyImage from "./LazyImage";
-import { BLEND_SCREEN_COLOR, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import { BLEND_SCREEN_COLOR } from "../config/params";
 export default function Facilities({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   return (
@@ -79,19 +79,12 @@ export default function Facilities({ items }: { items: any[] }) {
                   link={image}
                   placeholder={css`
                     position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    top: 0;
                     left: 0;
                   `}
                   img={css`
                     position: absolute;
-                    top: 0;
                     left: 0;
                     object-fit: cover;
-                    width: 100%;
-                    height: 100%;
                   `}
                 />
               </div>

@@ -1,6 +1,6 @@
 import React from "react";
-
 import ImageGallery from "react-image-gallery";
+import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 import useStorages from "./useStorages";
 export default function RollingImages({
   className,
@@ -40,6 +40,7 @@ export default function RollingImages({
         slideInterval={5000}
         additionalClass={additionalClass}
         onSlide={onslideHandler}
+        renderItem={ReactImageGalleryRenderItem}
       />
       {children && children({ item })}
     </div>

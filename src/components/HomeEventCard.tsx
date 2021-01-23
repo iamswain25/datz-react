@@ -7,7 +7,6 @@ import LazyImage from "./LazyImage";
 import Logo from "./Logo";
 import { bottomBtn37 } from "./styles";
 import useLang, { LangKeys } from "./useLang";
-import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 export default function HomeEventCard({
   item,
   type = "exhibition",
@@ -20,9 +19,7 @@ export default function HomeEventCard({
   const [classes] = useLang(`${type}MainCard` as LangKeys);
   if (!item) return null;
   return (
-    <Link
-      to={`/${type}/${id}`}
-    >
+    <Link to={`/${type}/${id}`}>
       <section
         className={css`
           position: relative;
@@ -32,14 +29,14 @@ export default function HomeEventCard({
           flex-direction: column;
           font-family: datz-medium;
           min-height: 0;
-          overflow:hidden;
+          overflow: hidden;
         `}
       >
         <div
           className={css`
             position: relative;
             display: flex;
-            flex: 1 0 300px;
+            flex: 1 0 400px;
             ::before {
               content: "";
               display: inline-block;
@@ -53,17 +50,10 @@ export default function HomeEventCard({
             link={item?.images?.[0]}
             placeholder={css`
               position: absolute;
-              width: 100%;
-              height: 100%;
-              background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-              top: 0;
             `}
             img={css`
               position: absolute;
               object-fit: cover;
-              width: 100%;
-              height: 100%;
-              top: 0;
             `}
           />
           <Logo

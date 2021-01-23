@@ -5,7 +5,7 @@ import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
 import useNews from "../utils/useNews";
 import LazyImage from "./LazyImage";
-import { DEFAULT_COUNT, DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
+import { DEFAULT_COUNT } from "../config/params";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
 
@@ -90,16 +90,11 @@ export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
                   link={item.image_cover}
                   placeholder={css`
                     position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: ${DEFAULT_LAZY_IMAGE_COLOR};
-                    top: 0;
                   `}
                   img={css`
                     position: absolute;
                     object-fit: cover;
-                    width: 100%;
-                    height: 100%;
+                    left: 0;
                   `}
                 />
               </div>

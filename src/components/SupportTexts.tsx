@@ -77,6 +77,8 @@ export default function SupportTexts({ item }: { item: any }) {
           display: flex;
           flex-direction: column;
           align-items: center;
+          overflow: hidden;
+          width: auto;
         `}
       >
         <div

@@ -5,6 +5,7 @@ import Arrow from "./Arrow";
 import { useHistory } from "react-router-dom";
 import ReactImageGallery from "react-image-gallery";
 import useStorages from "./useStorages";
+import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
   return (
     <button
@@ -69,6 +70,7 @@ export default function ArtistImageRolling({ item }: { item: any }) {
         );
       }}
       renderFullscreenButton={renderFullscreenButton}
+      renderItem={ReactImageGalleryRenderItem}
     />
   );
 }

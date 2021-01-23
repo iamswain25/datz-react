@@ -1,5 +1,4 @@
 import React from "react";
-
 import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
@@ -7,6 +6,7 @@ import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import useStorages from "./useStorages";
 import useLang from "./useLang";
+import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 export default function FullPageRollingImages({
   style,
   items,
@@ -73,6 +73,7 @@ export default function FullPageRollingImages({
         autoPlay={true}
         onSlide={onslideHandler}
         slideInterval={5000}
+        renderItem={ReactImageGalleryRenderItem}
       />
       <div
         onMouseOver={mouseOverHandler}

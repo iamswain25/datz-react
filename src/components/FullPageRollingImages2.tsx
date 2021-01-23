@@ -7,6 +7,7 @@ import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import useStorages from "./useStorages";
 import useLang from "./useLang";
+import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 export default function FullPageRollingImages2({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ebgaramond");
@@ -65,6 +66,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         autoPlay={true}
         onSlide={onslideHandler}
         slideInterval={5000}
+        renderItem={ReactImageGalleryRenderItem}
       />
       <div
         onMouseOver={mouseOverHandler}

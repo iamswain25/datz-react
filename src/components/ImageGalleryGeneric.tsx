@@ -5,6 +5,7 @@ import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 import useStorages from "./useStorages";
 import useLang from "./useLang";
+import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState(0);
@@ -55,6 +56,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
         additionalClass={images.length > 1 ? undefined : "no-bullets"}
         onSlide={onslideHandler}
         slideInterval={5000}
+        renderItem={ReactImageGalleryRenderItem}
       />
       <div
         onMouseOver={mouseOverHandler}

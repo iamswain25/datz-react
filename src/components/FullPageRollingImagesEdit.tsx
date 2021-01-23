@@ -1,10 +1,9 @@
 import React from "react";
-
 import ImageGallery from "react-image-gallery";
 import AdminMainEdit from "./AdminMainEdit";
 import AdminMainNew from "./AdminMainNew";
-// import { firestore } from "../firebase";
 import Popup from "reactjs-popup";
+import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 export default (props: { images: Array<any>; collection: string }) => {
   const images = props.images.map((a) => ({ original: a.image }));
   console.log(images);
@@ -34,6 +33,7 @@ export default (props: { images: Array<any>; collection: string }) => {
         autoPlay={false}
         slideInterval={5000}
         onSlide={onslideHandler}
+        renderItem={ReactImageGalleryRenderItem}
       />
       <AdminMainEdit data={props.images[index]} collection={props.collection} />
       <Popup

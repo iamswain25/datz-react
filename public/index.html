@@ -87,11 +87,54 @@
       content="Datz Press is an art book press that works with photographers, designers, and bookmakers. We create, publish, and exhibit books centered on photography. "
     />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function () {
+        if (!String.prototype.repeat) {
+          String.prototype.repeat = function (count) {
+            "use strict";
+            if (this == null)
+              throw new TypeError("can't convert " + this + " to object");
+
+            var str = "" + this;
+            // To convert string to integer.
+            count = +count;
+            // Check NaN
+            if (count != count) count = 0;
+
+            if (count < 0)
+              throw new RangeError("repeat count must be non-negative");
+
+            if (count == Infinity)
+              throw new RangeError("repeat count must be less than infinity");
+
+            count = Math.floor(count);
+            if (str.length == 0 || count == 0) return "";
+
+            // Ensuring count is a 31-bit integer allows us to heavily optimize the
+            // main part. But anyway, most current (August 2014) browsers can't handle
+            // strings 1 << 28 chars or longer, so:
+            if (str.length * count >= 1 << 28)
+              throw new RangeError(
+                "repeat count must not overflow maximum string size"
+              );
+
+            var maxCount = str.length * count;
+            count = Math.floor(Math.log(count) / Math.log(2));
+            while (count) {
+              str += str;
+              count--;
+            }
+            str += str.substring(0, maxCount - str.length);
+            return str;
+          };
+        }
+      })();
+    </script>
     <script src="https://polyfill.io/v3/polyfill.min.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">크롬, 사파리, 엣지등의 최신 브라우저를 이용해주세요.</div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
