@@ -9,6 +9,9 @@ export default function useStorage(path?: string) {
       .getDownloadURL()
       .then((url) => setImage(url))
       .catch(console.warn);
+    return () => {
+      setImage(undefined);
+    };
   }, [path]);
   return image;
 }

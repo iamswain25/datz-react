@@ -9,7 +9,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
     <Switch>
       <Route
         path={[
-          "/artist/:address/images/:index",
+          "/artist/:address/images",
           "/events/:filter",
           "/artist/:address",
           "/exhibitions/:filter",

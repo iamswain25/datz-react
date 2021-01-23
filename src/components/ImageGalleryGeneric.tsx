@@ -8,12 +8,18 @@ import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const isDesktop = useDesktop();
-  const [index, setIndex] = React.useState(0);
-  const item = items[index];
+  const [item, setItem] = React.useState<any>();
   const [classes, en] = useLang("ebgaramond");
   const galleryRef = React.useRef<ImageGallery | null>(null);
+  React.useEffect(() => {
+    if (!item && items.length) {
+      setItem(items[0]);
+    }
+  }, [items, item]);
   function onslideHandler(index: number) {
-    setIndex(index);
+    if (setItem) {
+      setItem(items[index]);
+    }
   }
   function mouseOverHandler() {
     galleryRef.current?.pause();

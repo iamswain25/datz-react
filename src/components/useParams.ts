@@ -5,6 +5,7 @@ export default function useParams() {
     index: string;
     filter: string;
     query: string;
+    type: string;
   }>();
   return params;
 }

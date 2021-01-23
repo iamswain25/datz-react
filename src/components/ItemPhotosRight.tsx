@@ -64,7 +64,14 @@ export default function ItemPhotosRight({
         <Videos arr={videos} />
         {images?.map((src, i) => {
           return (
-            <Link to={`/${type}/${id}/images/${i}`} key={src} replace>
+            <Link
+              to={{
+                pathname: `/${type}/${id}/images`,
+                state: { index: i },
+              }}
+              key={src}
+              replace
+            >
               <div
                 ref={(r) => {
                   if (index === i) {

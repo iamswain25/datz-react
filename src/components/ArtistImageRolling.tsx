@@ -2,7 +2,7 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import Arrow from "./Arrow";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import ReactImageGallery from "react-image-gallery";
 import useStorages from "./useStorages";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
@@ -25,17 +25,20 @@ export default function ArtistImageRolling({ item }: { item: any }) {
   const history = useHistory();
   const images = useStorages(item.images);
   const ref = React.useRef<ReactImageGallery>(null);
+  const { state } = useLocation<{ index: number }>();
+  const index = state?.index ?? 0;
   if (!images) return null;
   return (
     <ImageGallery
+      startIndex={index}
       ref={ref}
       infinite={false}
       items={images.map((i) => ({ original: i }))}
       showNav={true}
       onClick={() =>
-        history.replace(
-          `/artist/${item.id}/images/${ref.current?.getCurrentIndex()}`
-        )
+        history.replace(`/artist/${item.id}/images`, {
+          index: ref.current?.getCurrentIndex(),
+        })
       }
       showThumbnails={false}
       showFullscreenButton={false}

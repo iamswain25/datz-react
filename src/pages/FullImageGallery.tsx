@@ -2,26 +2,40 @@ import React from "react";
 import { css } from "emotion";
 import ImageGallery from "react-image-gallery";
 import Arrow from "../components/Arrow";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import useParams from "../components/useParams";
-import useDoc from "../utils/useDoc";
 import useStorages from "../components/useStorages";
 import ReactPlayer from "react-player";
+import { CircularProgress } from "@material-ui/core";
 import { RenderItemContain } from "../components/ReactImageGalleryRenderItem";
-export default function FullImageGallery({
-  type = "publication",
-}: {
-  type: "publication" | "artist" | "event" | "exhibition" | "news";
-}) {
-  const { index } = useParams();
-  const { replace } = useHistory();
-  const item = useDoc(type);
-  const nullImages = useStorages(
-    item?.images?.filter((i: string) => !ReactPlayer.canPlay(i))
+import useDocId from "../utils/useDocId";
+export default function FullImageGallery() {
+  const { type, id } = useParams();
+  const item = useDocId(type, id);
+  if (!item) return <CircularProgress />;
+  return <Gallery1 item={item} />;
+}
+
+function Gallery1({ item }: { item: any }) {
+  const filtered = React.useMemo(
+    () => item?.images?.filter((i: string) => !ReactPlayer.canPlay(i)),
+    [item]
   );
-  const images = nullImages?.map((a) => ({ original: a })) || [];
+  const images = useStorages(filtered);
+  if (!images) return <CircularProgress />;
+  return <Gallery2 images={images} />;
+}
+
+function Gallery2({ images }: { images: any[] }) {
+  const { id, type } = useParams();
+  const {
+    state: { index = 0 },
+  } = useLocation<{ index: number }>();
+  const [currentIndex, setCurrentIndex] = React.useState(index);
+  const { replace } = useHistory();
+  const images2 = images?.map((a) => ({ original: a })) || [];
   function onSlideHandler(currentIndex: number) {
-    replace(`/${type}/${item?.id}/images/${currentIndex}`);
+    setCurrentIndex(currentIndex);
   }
   return (
     <section
@@ -42,7 +56,7 @@ export default function FullImageGallery({
       <ImageGallery
         infinite={false}
         startIndex={Number(index)}
-        items={images}
+        items={images2}
         showNav={true}
         showThumbnails={false}
         showFullscreenButton={false}
@@ -53,8 +67,8 @@ export default function FullImageGallery({
         additionalClass="contain-image"
         onClick={() =>
           replace({
-            pathname: `/${type}/${item?.id}`,
-            state: { index: Number(index) },
+            pathname: `/${type}/${id}`,
+            state: { index: currentIndex },
           })
         }
         renderLeftNav={function (onClick, disabled) {

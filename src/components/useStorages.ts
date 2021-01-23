@@ -4,9 +4,12 @@ export default function useStorages(paths: string[]) {
   const [images, setImages] = React.useState<undefined | string[]>(undefined);
   React.useEffect(() => {
     if (!paths || !paths.length) return;
-    Promise.all(
-      paths.map(async (path) => storage.ref(path).getDownloadURL())
-    ).then((urls) => setImages(urls)).catch(console.error);
+    Promise.all(paths.map(async (path) => storage.ref(path).getDownloadURL()))
+      .then((urls) => setImages(urls))
+      .catch(console.error);
+    // return () => {
+    //   if (!images) setImages(undefined);
+    // };
   }, [paths]);
   return images;
 }

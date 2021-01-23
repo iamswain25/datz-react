@@ -26,12 +26,8 @@ export default function EventCoverWidget({
   type?: "event" | "news";
 }) {
   const isDesktop = useDesktop();
-  const refs = React.useRef<any>();
-  const location = useLocation<{ index: number }>();
-  const index = location?.state?.index ?? 0;
-  if (index && refs.current) {
-    setTimeout(() => refs.current.goToSlide(index, true), 500);
-  }
+  const { state } = useLocation<{ index: number }>();
+  const index = state?.index;
   return (
     <div
       className={css`
@@ -50,7 +46,9 @@ export default function EventCoverWidget({
         containerClass={css`
           height: 100%;
         `}
-        ref={refs}
+        ref={(r) => {
+          r?.goToSlide(index);
+        }}
         itemClass={css`
           height: 100%;
         `}
@@ -85,7 +83,7 @@ function Sub({
 }) {
   const { id } = useParams();
   return (
-    <Link to={`/${type}/${id}/images/${index}`} replace>
+    <Link to={{ pathname: `/${type}/${id}/images`, state: { index } }} replace>
       <StorageImage
         path={image}
         img={css`

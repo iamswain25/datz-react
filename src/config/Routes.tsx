@@ -41,26 +41,7 @@ export default function Routes() {
           <Route exact path="/publication" component={Publication} />
           <Route exact path="/exhibition" component={Exhibition} />
           <Route exact path="/publication/:id" component={PublicationItem} />
-          <Route
-            exact
-            path="/publication/:id/images/:index"
-            render={() => <FullImageGallery type="publication" />}
-          />
-          <Route
-            exact
-            path="/exhibition/:id/images/:index"
-            render={() => <FullImageGallery type="exhibition" />}
-          />
-          <Route
-            exact
-            path="/event/:id/images/:index"
-            render={() => <FullImageGallery type="event" />}
-          />
-          <Route
-            exact
-            path="/news/:id/images/:index"
-            render={() => <FullImageGallery type="news" />}
-          />
+          <Route exact path="/:type/:id/images" component={FullImageGallery} />
 
           <Route exact path="/event" component={Event} />
           <Route exact path="/events">
@@ -97,11 +78,6 @@ export default function Routes() {
           <Route exact path="/artist/:id" component={ArtistPage} />
           <Route exact path="/artist-project" component={ArtistProject} />
           <Route exact path="/login" component={Signin} />
-          <Route
-            exact
-            path="/artist/:id/images/:index"
-            render={() => <FullImageGallery type="artist" />}
-          />
           <Route exact path="/events/:filter" component={Events} />
           <Route exact path="/exhibitions/:filter" component={Exhibitions} />
           <Route exact path="/about" component={About} />
