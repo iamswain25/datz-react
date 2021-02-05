@@ -1,32 +1,12 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import {
-  flexrowcenter,
-  fullHeightCoverImg,
-  paddingH55,
-  marginH24,
-  paddingH27,
-} from "./styles";
-import Logo from "./Logo";
+import { fullHeightCoverImg, paddingH55, paddingH27 } from "./styles";
 import LazyImage from "./LazyImage";
 import useLang from "./useLang";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
-const svgStyle = css`
-  height: 30px;
-  color: #ffffff;
-`;
-const vertical = (
-  <div
-    className={css`
-      width: 0;
-      height: 29px;
-      border-left: solid 1px #ffffff;
-      ${marginH24}
-    `}
-  />
-);
+import FooterSvgs from "./FooterSvgs";
 const data = ["message"];
 export default function AboutImages2() {
   const isDesktop = useDesktop();
@@ -60,17 +40,7 @@ export default function AboutImages2() {
               max-width: 840px;
             `}
           >
-            {isDesktop && (
-              <div className={flexrowcenter}>
-                <Logo type="datzpress" className={svgStyle} color="#ffffff" />
-                {vertical}
-                <Logo type="datzbooks" className={svgStyle} color="#ffffff" />
-                {vertical}
-                <Logo type="darkroom" className={svgStyle} color="#ffffff" />
-                {vertical}
-                <Logo type="datzmuseum" className={svgStyle} color="#ffffff" />
-              </div>
-            )}
+            {isDesktop && <FooterSvgs isWhite={true} />}
             <div
               className={css`
                 ${classes.book(18, 1.5)}

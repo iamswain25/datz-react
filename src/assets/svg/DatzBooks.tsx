@@ -9,7 +9,7 @@ export default function DatzBooks(props: {
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 6 272.2 117.07"
+      viewBox="0 8 272.2 117.07"
       width={62}
       height={32}
       className={className}

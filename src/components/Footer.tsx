@@ -235,13 +235,7 @@ export default function Footer() {
           <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
           <div>version: {version} </div>
         </Flex>
-        <div
-          className={css`
-            display: flex;
-          `}
-        >
-          <FooterSvgs />
-        </div>
+        <FooterSvgs />
       </FlexRow>
     </>
   );
