@@ -89,19 +89,6 @@ export default function Footer() {
         >
           {signup}
         </section>
-
-        <div
-          className={css`
-            padding: 25px 30px;
-            display: flex;
-            margin: 0 37px;
-            justify-content: center;
-            overflow: hidden;
-          `}
-        >
-          <FooterSvgs />
-        </div>
-        {divider}
         <div
           className={css`
             height: 71px;

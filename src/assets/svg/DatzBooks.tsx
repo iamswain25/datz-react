@@ -11,9 +11,9 @@ export default function DatzBooks(props: {
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 272.2 117.07"
-      width={isDesktop ? 62 : 40}
-      height="40"
+      viewBox="0 6 272.2 117.07"
+      width={isDesktop ? 62 : 48}
+      height={isDesktop ? 32 : 24}
       className={className}
     >
       <g fill={color}>
