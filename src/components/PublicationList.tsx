@@ -58,8 +58,10 @@ export default function PublicationList() {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
-              max-width: 320px;
-              flex: 1 1 320px;
+              max-width: 230px;
+              flex: 1 1 230px;
+              // max-width: 320px;
+              // flex: 1 1 320px;
             `}
           >
             {categories?.map(({ type }, i) => {
