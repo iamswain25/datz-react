@@ -98,7 +98,7 @@ export default function Footer() {
         margin: 20px 0;
       `}
     >
-      Collaboration with a Datz Books
+      Collaborate with Datz Books
       <ArrowForwardIosIcon
         className={css`
           margin: 4px 0 0 5px;
@@ -116,11 +116,9 @@ export default function Footer() {
             margin-top: 40px;
             padding: 12px;
             font-family: datz-medium;
-            // height: 73px;
             background-color: #ececec;
             display: flex;
             flex-direction: column;
-            // align-items: center;
             justify-content: center;
           `}
         >
