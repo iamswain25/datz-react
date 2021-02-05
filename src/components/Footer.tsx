@@ -7,6 +7,7 @@ import useDesktop from "./useDesktop";
 import { version } from "../../package.json";
 import FooterSvgs from "./FooterSvgs";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import useLang from "./useLang";
 const menu = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -37,6 +38,7 @@ const Menus = (
 );
 export default function Footer() {
   const isDesktop = useDesktop();
+  const isEn = useLang()[1];
   const divider = (
     <div
       className={css`
@@ -56,14 +58,48 @@ export default function Footer() {
         font-family: datz-medium;
         font-size: ${isDesktop ? 21 : 19}px;
         line-height: ${isDesktop ? 1.24 : 1.42};
-        text-align: left;
+        text-align: center;
         color: #707070;
         display: flex;
         align-items: center;
-        justify-contents: center;
+        justify-content: center;
+        flex: 1;
+        margin: 20px 0;
       `}
     >
       Sign up for Datz newsletter
+      <ArrowForwardIosIcon
+        className={css`
+          margin: 4px 0 0 5px;
+          height: 12px !important;
+          width: 12px !important;
+        `}
+      />
+    </a>
+  );
+  const collab = (
+    <a
+      href={
+        isEn
+          ? "https://store.datzpress.com/datzbooks_en"
+          : "https://store.datzpress.com/datzbooks"
+      }
+      target="_blank"
+      rel="noopener noreferrer"
+      className={css`
+        font-family: datz-medium;
+        font-size: ${isDesktop ? 21 : 19}px;
+        line-height: ${isDesktop ? 1.24 : 1.42};
+        text-align: center;
+        color: #707070;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        margin: 20px 0;
+      `}
+    >
+      Collaboration with a Datz Books
       <ArrowForwardIosIcon
         className={css`
           margin: 4px 0 0 5px;
@@ -79,15 +115,19 @@ export default function Footer() {
         <section
           className={css`
             margin-top: 40px;
+            padding: 12px;
             font-family: datz-medium;
-            height: 73px;
+            // height: 73px;
             background-color: #ececec;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            // align-items: center;
             justify-content: center;
           `}
         >
           {signup}
+          {divider}
+          {collab}
         </section>
         <div
           className={css`
