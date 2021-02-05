@@ -138,19 +138,16 @@ export default function BookProject({ item }: { item: any }) {
       >
         {/* url ko,en as artist */}
         {item?.artist && (
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href={item?.artist}
+          <Link
+            to="/about/datzpress"
             className={css`
               font-size: 16px;
               line-height: 1.19;
               color: #aaaaaa;
-              text-decoration: underline;
             `}
           >
             About Datz Books &gt;
-          </a>
+          </Link>
         )}
       </div>
     </section>
