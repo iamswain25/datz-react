@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import { Link } from "react-router-dom";
 import blog from "../assets/svg/0625/0625_blog.svg";
 import fb from "../assets/svg/0625/0625_FB.svg";
 import insta from "../assets/svg/0625/0625_instagram.svg";
@@ -15,6 +14,17 @@ const padding = css`
   justify-contents: center;
 `;
 export default function Shares() {
+  function handler() {
+    if (window.navigator.share) {
+      const href = window.location.href;
+      window.navigator.share({
+        title: "datz",
+        url: href,
+      });
+    } else {
+      // fallback
+    }
+  }
   return (
     <div
       className={css`
@@ -42,7 +52,7 @@ export default function Shares() {
           `}
         />
       </a>
-      <Link to="/share" className={padding}>
+      <button onClick={handler} className={padding}>
         <img
           src={share}
           alt="share"
@@ -52,7 +62,7 @@ export default function Shares() {
             margin-right: 20px;
           `}
         />
-      </Link>
+      </button>
       <a
         href="https://www.instagram.com/datzpress/"
         target="_blank"
