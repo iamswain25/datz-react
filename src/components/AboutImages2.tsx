@@ -8,9 +8,6 @@ import {
   marginH24,
   paddingH27,
 } from "./styles";
-import DatzBooks from "../assets/svg/DatzBooks";
-import Darkroom from "../assets/svg/Darkroom";
-import DatzMuseum from "../assets/svg/DatzMuseum";
 import Logo from "./Logo";
 import LazyImage from "./LazyImage";
 import useLang from "./useLang";
@@ -67,11 +64,11 @@ export default function AboutImages2() {
               <div className={flexrowcenter}>
                 <Logo type="datzpress" className={svgStyle} color="#ffffff" />
                 {vertical}
-                <DatzBooks className={svgStyle} color="#ffffff" />
+                <Logo type="datzbooks" className={svgStyle} color="#ffffff" />
                 {vertical}
-                <Darkroom className={svgStyle} color="#ffffff" />
+                <Logo type="darkroom" className={svgStyle} color="#ffffff" />
                 {vertical}
-                <DatzMuseum className={svgStyle} color="#ffffff" />
+                <Logo type="datzmuseum" className={svgStyle} color="#ffffff" />
               </div>
             )}
             <div

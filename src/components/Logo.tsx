@@ -24,38 +24,27 @@ export default function Logo({
       if (offLink) {
         return logo;
       } else {
-        return (
-          <a
-            href="https://www.instagram.com/d.ark.room/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {logo}
-          </a>
-        );
+        return <Link to="/about/darkroom">{logo}</Link>;
       }
     }
-    case "museum":
+    case "datzmuseum":
     case "Datz Museum of Art": {
       let logo = <DatzMuseum color={color} className={className} />;
       if (offLink) {
         return logo;
       } else {
-        return (
-          <a
-            href="https://www.datzmuseum.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {logo}
-          </a>
-        );
+        return <Link to="/about/datzmuseum">{logo}</Link>;
       }
     }
     case "books":
+    case "datzbooks":
     case "DatzBooks": {
       let logo = <DatzBooks color={color} className={className} />;
-      return logo;
+      if (offLink) {
+        return logo;
+      } else {
+        return <Link to="/about/datzpress">{logo}</Link>;
+      }
     }
     case "culture":
     case "Cultural": {
@@ -68,7 +57,7 @@ export default function Logo({
       if (offLink) {
         return logo;
       } else {
-        return <Link to="/">{logo}</Link>;
+        return <Link to="/about/datzpress">{logo}</Link>;
       }
     }
     default: {

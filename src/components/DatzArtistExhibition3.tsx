@@ -39,7 +39,7 @@ export default function DatzArtistExhibition3() {
           align-items: center;
         `}
       >
-        {isDesktop && <Logo type="museum" color="white" />}
+        {isDesktop && <Logo type="datzmuseum" color="white" />}
         <div
           className={css`
             margin-top: 34px;

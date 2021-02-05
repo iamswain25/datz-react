@@ -22,7 +22,7 @@ export default function FooterSvgs() {
           border-left: solid 1px #707070;
         `}
       />
-      <Logo type="museum" color="#404041" />
+      <Logo type="datzmuseum" color="#404041" />
     </>
   );
 }
