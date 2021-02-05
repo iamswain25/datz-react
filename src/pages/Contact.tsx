@@ -143,88 +143,99 @@ export default function Contact() {
                     {list?.stocklist?.map(mapLinks(en))}
                   </div>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                  <h1
-                    className={
-                      isDesktop
-                        ? h1Style
-                        : css`
-                            ${h1Style} margin-top: 30px;
-                          `
-                    }
-                  >
-                    COLLECTIONS
-                  </h1>
-                  <div className={titleAreaClass}>
-                    {list?.collections?.map(mapLinks(en))}
-                  </div>
-                  <div
-                    className={css`
-                      margin: 32px 0 50px;
-                    `}
-                  >
-                    <h1 className={h1Style}>CONTACT</h1>
-                    <div
-                      className={css`
-                        font-size: 18px;
-                        line-height: 1.39;
-                        white-space: break-spaces;
-                      `}
+                <Grid container item xs={12} sm={6} direction="column">
+                  <div>
+                    <h1
+                      className={
+                        isDesktop
+                          ? h1Style
+                          : css`
+                              ${h1Style} margin-top: 30px;
+                            `
+                      }
                     >
-                      <div>{list?.phone?.title}</div>
-                      <div>
-                        <a
-                          href={"tel:" + list?.phone?.text}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={css`
-                            text-decoration: underline;
-                          `}
-                        >
-                          {list?.phone?.text}
-                        </a>
-                      </div>
-                      <div>-</div>
-                      <div>{list?.email?.title}</div>
-                      {list?.email?.list.map(
-                        ({ name, email }: any, key: number) => (
-                          <div key={key}>
-                            <span
-                              className={css`
-                                margin-right: 16px;
-                              `}
-                            >
-                              {name}
-                            </span>
-                            <a
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={"mailto:" + email}
-                              className={css`
-                                text-decoration: underline;
-                              `}
-                            >
-                              {email}
-                            </a>
-                          </div>
-                        )
-                      )}
+                      COLLECTIONS
+                    </h1>
+                    <div className={titleAreaClass}>
+                      {list?.collections?.map(mapLinks(en))}
                     </div>
                   </div>
                   <div
                     className={css`
-                      margin: 32px 0;
+                      flex: 1;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: flex-end;
                     `}
                   >
-                    <h1 className={h1Style}>CATALOG</h1>
-                    <a
-                      href={list?.catalog?.url}
-                      className={aStyle}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <div
+                      className={css`
+                        margin: 32px 0 50px;
+                      `}
                     >
-                      {list?.catalog?.title}
-                    </a>
+                      <h1 className={h1Style}>CONTACT</h1>
+                      <div
+                        className={css`
+                          font-size: 18px;
+                          line-height: 1.39;
+                          white-space: break-spaces;
+                        `}
+                      >
+                        <div>{list?.phone?.title}</div>
+                        <div>
+                          <a
+                            href={"tel:" + list?.phone?.text}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={css`
+                              text-decoration: underline;
+                            `}
+                          >
+                            {list?.phone?.text}
+                          </a>
+                        </div>
+                        <div>-</div>
+                        <div>{list?.email?.title}</div>
+                        {list?.email?.list.map(
+                          ({ name, email }: any, key: number) => (
+                            <div key={key}>
+                              <span
+                                className={css`
+                                  margin-right: 16px;
+                                `}
+                              >
+                                {name}
+                              </span>
+                              <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={"mailto:" + email}
+                                className={css`
+                                  text-decoration: underline;
+                                `}
+                              >
+                                {email}
+                              </a>
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </div>
+                    <div
+                      className={css`
+                        margin: 32px 0 31px;
+                      `}
+                    >
+                      <h1 className={h1Style}>CATALOG</h1>
+                      <a
+                        href={list?.catalog?.url}
+                        className={aStyle}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {list?.catalog?.title}
+                      </a>
+                    </div>
                   </div>
                 </Grid>
               </Grid>
