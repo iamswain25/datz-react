@@ -95,7 +95,6 @@ export default function Footer() {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex: 1;
         margin: 20px 0;
       `}
     >
@@ -176,9 +175,11 @@ export default function Footer() {
         {Menus}
       </section>
 
-      <FlexRow
+      <div
         className={css`
+          display: flex;
           justify-content: space-between;
+          align-items: center;
           height: 107px;
           margin-left: 37px;
           margin-right: 37px;
@@ -186,8 +187,10 @@ export default function Footer() {
           padding-right: 18px;
         `}
       >
-        <FlexRow
+        <div
           className={css`
+            display: flex;
+            align-items: center;
             height: 26px;
             font-family: datz-medium;
             font-size: 21px;
@@ -199,22 +202,15 @@ export default function Footer() {
           {signup}
           <div
             className={css`
-              margin-left: 26px;
-              margin-right: 21px;
+              margin: 0 37px;
               height: 29px;
               border-left: solid 1px #707070;
             `}
           />
-          <Shares />
-        </FlexRow>
-        <div
-          className={css`
-            display: flex;
-          `}
-        >
-          <FooterSvgs />
+          {collab}
         </div>
-      </FlexRow>
+        <Shares />
+      </div>
       {divider}
       <FlexRow
         className={css`
@@ -223,6 +219,8 @@ export default function Footer() {
           margin-right: 37px;
           padding-left: 18px;
           padding-right: 18px;
+          display: flex;
+          justify-content: space-between;
         `}
       >
         <Flex
@@ -237,6 +235,13 @@ export default function Footer() {
           <div>Copyright © 2019 Datz Inc. All rights reserved. </div>
           <div>version: {version} </div>
         </Flex>
+        <div
+          className={css`
+            display: flex;
+          `}
+        >
+          <FooterSvgs />
+        </div>
       </FlexRow>
     </>
   );
