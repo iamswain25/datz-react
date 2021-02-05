@@ -40,7 +40,7 @@ export default function AdminNoteDraftHtml({ item }: { item: any }) {
       firestore
         .collection(collection)
         .doc(id)
-        .update({ ["noteDraft_" + lang]: noteDraft, ["notes" + lang]: notes })
+        .update({ ["noteDraft_" + lang]: noteDraft, ["notes_" + lang]: notes })
         .then(() => window.alert("저장 성공"))
         .catch(window.alert);
     }

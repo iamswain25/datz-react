@@ -9,7 +9,9 @@ export default function useCollection(collection: string) {
       .collection(collection)
       .get()
       .then((snap) => snap.docs)
-      .then((docs) => docs.map((d) => d.data()))
+      .then((docs) =>
+        docs.map((d) => ({ collection, id: d.id, ...d.data() } as any))
+      )
       .then((arr) => {
         arr.sort((a, b) => (a.order > b.order ? 1 : -1));
         setItems(arr);

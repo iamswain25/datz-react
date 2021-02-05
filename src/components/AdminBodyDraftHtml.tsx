@@ -40,7 +40,7 @@ export default function AdminBodyDraftHtml({ item }: { item: any }) {
       firestore
         .collection(collection)
         .doc(id)
-        .update({ ["bodyDraft_" + lang]: bodyDraft, ["body" + lang]: body })
+        .update({ ["bodyDraft_" + lang]: bodyDraft, ["body_" + lang]: body })
         .then(() => window.alert("저장 성공"))
         .catch(window.alert);
     }

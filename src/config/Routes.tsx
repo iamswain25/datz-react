@@ -77,6 +77,11 @@ export default function Routes() {
           />
           <Route exact path="/artist/:id" component={ArtistPage} />
           <Route exact path="/artist-project" component={ArtistProject} />
+          <PrivateRoute
+            exact
+            path="/admin/artist-project"
+            component={ArtistProject}
+          />
           <Route exact path="/login" component={Signin} />
           <Route exact path="/events/:filter" component={Events} />
           <Route exact path="/exhibitions/:filter" component={Exhibitions} />

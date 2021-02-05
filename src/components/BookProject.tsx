@@ -5,6 +5,7 @@ import useLang from "./useLang";
 import Logo from "./Logo";
 import BtnShare from "./BtnShare";
 import { Link } from "react-router-dom";
+import DraftText from "./DraftText";
 const title = "Book Project";
 const hash = title?.toLowerCase().replace(/\s/g, "-");
 export default function BookProject({ item }: { item: any }) {
@@ -88,7 +89,9 @@ export default function BookProject({ item }: { item: any }) {
             line-height: 1.39;
           `}
         >
-          <div className={classes.body}>{item?.text}</div>
+          <div className={classes.body}>
+            <DraftText item={item} />
+          </div>
           <div
             className={css`
               margin-top: 37px;
