@@ -66,12 +66,21 @@ export default function AboutImages1() {
           <AboutImagesGrid key={i} item={item} />
         ))}
       </Grid>
-      {items?.length > 0 && (  
+
+      {items?.length > 0 && (
         <div
           className={css`
             margin: 0 17px;
+            position: relative;
           `}
         >
+          <div
+            id="message"
+            className={css`
+              position: absolute;
+              top: ${isDesktop ? -11 : -42}px;
+            `}
+          />
           <a
             className={css`
               ${bottomBtn37}
@@ -81,7 +90,7 @@ export default function AboutImages1() {
               ${isDesktop ? "" : marginH17}
               width: ${isDesktop ? "100%" : "calc(100% - 34px)"};
             `}
-            href="/message"
+            href="#message"
           >
             message &gt;
           </a>
