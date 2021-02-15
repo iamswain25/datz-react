@@ -13,13 +13,13 @@ import {
 } from "../components/styles";
 import Arrow from "../components/Arrow";
 import { useHistory } from "react-router-dom";
-import DatzMuseum from "../assets/svg/DatzMuseum";
 import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
 import BtnShare from "../components/BtnShare";
+import Logo from "../components/Logo";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -97,14 +97,7 @@ export default function AboutDatzmuseum() {
               `}
             >
               <LazyImage link={d1?.image} />
-              <DatzMuseum
-                color="#fff"
-                className={css`
-                  bottom: 30px;
-                  left: 32px;
-                  position: absolute;
-                `}
-              />
+              <Logo color="#fff" type="datzmuseum" absolute noPadding />
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>

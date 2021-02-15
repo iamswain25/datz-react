@@ -99,15 +99,7 @@ export default function AboutDatzpress() {
               `}
             >
               <LazyImage link={d1?.image} />
-              <Logo
-                type="datzpress"
-                color="#afafaf"
-                className={css`
-                  bottom: 30px;
-                  left: 32px;
-                  position: absolute;
-                `}
-              />
+              <Logo type="datzpress" color="#afafaf" absolute noPadding />
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>
