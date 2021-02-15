@@ -119,15 +119,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
             flex: 1;
           `}
         />
-        <Logo
-          type={logo}
-          color={color}
-          className={css`
-            left: ${isDesktop ? 69 : 40}px;
-            bottom: ${isDesktop ? 33 : 29}px;
-            position: absolute;
-          `}
-        />
+        <Logo type={logo} color={color} absolute />
       </div>
     </div>
   );

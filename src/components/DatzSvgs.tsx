@@ -39,16 +39,16 @@ export default function DatzSvgs({ color = "#707070" }) {
     >
       <Logo type="datzpress" color={color} className={flex} />
       {dividerV(css`
-        margin-left: 28px;
-        margin-right: 25px;
+        margin-left: 13px;
+        margin-right: 10px;
         border-color: ${color};
       `)}
       <Link to="/darkroom" className={flex}>
         <Darkroom color={color} />
       </Link>
       {dividerV(css`
-        margin-left: 33px;
-        margin-right: 25px;
+        margin-left: 18px;
+        margin-right: 10px;
         border-color: ${color};
       `)}
       <Link to="/museum" className={flex}>

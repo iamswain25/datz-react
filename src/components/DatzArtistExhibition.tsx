@@ -40,13 +40,12 @@ function logo(key: number) {
           <DatzMuseum
             color="white"
             className={css`
-              height: 40px;
               width: 140px;
             `}
           />
           {dividerV(css`
-            margin-left: 28px;
-            margin-right: 25px;
+            margin-left: 13px;
+            margin-right: 10px;
           `)}
           <DarkroomLong color="white" />
         </div>
@@ -68,13 +67,13 @@ function logo(key: number) {
         >
           <DarkroomLong color="white" />
           {dividerV(css`
-            margin-left: 28px;
-            margin-right: 25px;
+            margin-left: 13px;
+            margin-right: 20px;
           `)}
           <Dfrontspace
             color="white"
             className={css`
-              height: 33px;
+              height: 28px;
             `}
           />
         </div>

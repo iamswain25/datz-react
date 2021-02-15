@@ -121,13 +121,7 @@ export default function ResidencyRight({ item }: { item: any }) {
           margin: ${isDesktop ? 100 : 54}px 0 ${isDesktop ? 32 : 50}px;
         `}
       >
-        <Logo
-          type="culture"
-          color="#5d5d5d"
-          className={css`
-            width: 98px;
-          `}
-        />
+        <Logo type="culture" color="#5d5d5d" />
       </div>
       <a
         href={item?.url?.[2]}

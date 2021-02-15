@@ -109,16 +109,8 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
                     <p className={titleClass}>{item.title}</p>
                     <p className={authorClass}>{item.text}</p>
                   </Link>
-                  <Logo
-                    type={item.logo}
-                    color="#ffffff"
-                    className={css`
-                      position: absolute;
-                      left: ${isDesktop ? 23 : 32}px;
-                      bottom: ${isDesktop ? 29 : 32}px;
-                    `}
-                  />
                 </Sub>
+                <Logo type={item.logo} color="#ffffff" absolute noPadding />
               </div>
             );
           })}

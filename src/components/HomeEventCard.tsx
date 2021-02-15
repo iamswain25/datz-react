@@ -56,16 +56,7 @@ export default function HomeEventCard({
               object-fit: cover;
             `}
           />
-          <Logo
-            offLink
-            type={item?.logo}
-            color="#fff"
-            className={css`
-              position: absolute;
-              left: 32px;
-              bottom: 29px;
-            `}
-          />
+          <Logo offLink type={item?.logo} color="#fff" absolute noPadding />
         </div>
         <div
           className={css`
