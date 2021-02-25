@@ -19,7 +19,6 @@ import Logo from "../components/Logo";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
 import BtnShare from "../components/BtnShare";
-import DatzBooks from "../assets/svg/DatzBooks";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -131,10 +130,12 @@ export default function AboutDatzpress() {
                   </div>
                   <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
                   <p className={classes.desc}>{d1.text}</p>
-                  <DatzBooks
+                  <Logo
+                    type="datzbooks"
                     color="#fff"
                     className={css`
-                      margin: 20px 0;
+                      margin-top: 20px;
+                      margin-bottom: 20px;
                     `}
                   />
                   <p className={classes.desc}>{d2.text}</p>

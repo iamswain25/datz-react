@@ -16,6 +16,10 @@ const absoluteClass = (isDesktop: boolean, noPadding: boolean = false) => css`
   padding: ${noPadding ? 0 : isDesktop ? 37 : 20}px;
 `;
 
+const negativeLeftPadding = css`
+  margin-left: -15px;
+`;
+
 export default function Logo({
   className,
   type,
@@ -36,6 +40,8 @@ export default function Logo({
   if (absolute) {
     className2 = clsx(className, absoluteClass(isDesktop, noPadding));
   }
+  className2 = clsx(className2, negativeLeftPadding);
+
   switch (type) {
     case "darkroom":
     case "D'Ark Room": {
