@@ -103,23 +103,26 @@ export default function PublicationWidget({
                   className={css`
                     color: ${dark ? "#ffffff" : "#707070"};
                     position: relative;
-                    // ::before {
-                    //   content: "";
-                    //   height: ${isDesktop ? "86px" : "50%"};
-                    //   border-right: solid ${i === 0 ? 0 : 1}px #cccccc;
-                    //   position: absolute;
-                    //   top: 50%;
-                    //   transform: translateY(-50%) translateX(-1px);
-                    // }
+                    ::before {
+                      content: "";
+                      display: inline-block;
+                      padding-bottom: 100%;
+                      vertical-align: top;
+                    }
+                    ::after {
+                      content: "";
+                      height: ${isDesktop ? "86px" : "50%"};
+                      border-right: solid ${i === 0 ? 0 : 1}px #cccccc;
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%) translateX(-1px);
+                    }
                   `}
                 >
                   <StorageDivImg
                     path={image_cover}
                     img={css`
-                      min-height: 170px;
-                      min-width: 170px;
                       background-size: contain;
-                      position: relative;
                       background-color: transparent;
                     `}
                   />

@@ -36,6 +36,7 @@ const listClass = (dark = false) => css`
     display: inline-block;
     padding-bottom: 50.51%;
     vertical-align: top;
+  }
 `;
 const afterClass = (i: number) => css`
   position: relative;
@@ -103,7 +104,7 @@ export default function ExhibitionWidget({
           return (
             <Link key={id} className={afterClass(i)} to={`/exhibition/${id}`}>
               <div className={listClass(dark)}>
-              <StorageDivImg
+                <StorageDivImg
                   path={images[0]}
                   img={css`
                     background-size: cover;
