@@ -73,80 +73,80 @@ export default function ArtistHeader({
         </div>
         <div
           className={css`
-                  ${flexrowcenter}
-                  flex: 1;
-                  justify-content: flex-end;
-                  font-family: datz-medium;
-                `}
+            ${flexrowcenter}
+            flex: 1;
+            justify-content: flex-end;
+            font-family: datz-medium;
+          `}
         >
           {isDesktop && (
             <Link to="/search">
               <span
                 className={css`
-                        font-size: 16px;
-                      `}
+                  font-size: 16px;
+                `}
               >
                 Search
-                    </span>
+              </span>
               <input
                 type="text"
                 value={text}
                 onChange={textHandler}
                 className={css`
-                        ${headerText};
-                        border-bottom: solid 1px;
-                        border-bottom-color: inherit;
-                        width: 56px;
-                        margin-left: 5px;
-                        margin-right: 8px;
-                        margin-bottom: 7px;
-                      `}
+                  ${headerText};
+                  border-bottom: solid 1px;
+                  border-bottom-color: inherit;
+                  width: 56px;
+                  margin-left: 5px;
+                  margin-right: 8px;
+                  margin-bottom: 7px;
+                `}
               />
             </Link>
           )}
           <button
             className={css`
-                    ${headerText};
-                    ${marginH10};
-                    ${lang === "en" ? linkActiveClass : undefined};
-                  `}
+              ${headerText};
+              ${marginH10};
+              ${lang === "en" ? linkActiveClass : undefined};
+            `}
             onClick={() => setLang("en")}
           >
             EN
-                </button>
+          </button>
           <div
             className={css`
-                    width: 0;
-                    height: 12px;
-                    border-left: solid 1px;
-                    border-left-color: inherit;
-                  `}
+              width: 0;
+              height: 12px;
+              border-left: solid 1px;
+              border-left-color: inherit;
+            `}
           />
           <button
             onClick={() => setLang("ko")}
             className={css`
-                    ${headerText};
-                    ${marginH10};
-                    ${lang === "ko" ? linkActiveClass : undefined};
-                  `}
+              ${headerText};
+              ${marginH10};
+              ${lang === "ko" ? linkActiveClass : undefined};
+            `}
           >
             KR
-                </button>
+          </button>
           {!isDesktop && (
             <>
               <Link
                 to="/search"
                 className={css`
-                        display: flex;
-                      `}
+                  display: flex;
+                `}
               >
                 <Search
                   color={color}
                   className={css`
-                          margin-right: 20px;
-                          width: 15px;
-                          height: 15px;
-                        `}
+                    margin-right: 20px;
+                    width: 15px;
+                    height: 15px;
+                  `}
                 />
               </Link>
               <HamburgerButton

@@ -118,7 +118,12 @@ export default function Header({
           `}
         >
           {isDesktop && (
-            <Link to="/search">
+            <Link
+              to="/search"
+              className={css`
+                ${flexrowcenter}
+              `}
+            >
               <span>Search</span>
               <input
                 type="text"
@@ -128,9 +133,7 @@ export default function Header({
                   ${headerText};
                   border-bottom: solid 1px ${color};
                   width: 56px;
-                  margin-left: 5px;
-                  margin-right: 8px;
-                  margin-bottom: 7px;
+                  margin: 0 8px 5px 5px;
                 `}
               />
             </Link>
@@ -198,19 +201,21 @@ export default function Header({
   if (sticky) {
     return (
       <>
-        <div className={css`
-             height: 79px;
-             width: 100%;
-              `}></div>
         <div
           className={css`
-                position: fixed;
-                width: 100%;
-                top: 0;
-                left: 0;
-                z-index: 5;
-                background-color: ${backgroundColor};
-              `}
+            height: 79px;
+            width: 100%;
+          `}
+        ></div>
+        <div
+          className={css`
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            background-color: ${backgroundColor};
+          `}
         >
           {innerHeader}
         </div>
