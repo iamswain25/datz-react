@@ -156,7 +156,7 @@ function links(key: number) {
           `}
         >
           <a
-            href="https://www.instagram.com/datzmuseum"
+            href="https://www.instagram.com/d.ark.room"
             target="_blank"
             rel="noopener noreferrer"
             className={css``}
