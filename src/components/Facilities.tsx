@@ -10,7 +10,7 @@ export default function Facilities({ items }: { items: any[] }) {
   return (
     <div
       className={css`
-        margin: 43px 0;
+        margin: 43px 0 10px;
         position: relative;
         font-family: datz-medium;
         font-size: 16px;

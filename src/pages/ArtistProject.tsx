@@ -212,7 +212,7 @@ export default function ArtistProject() {
       <Facilities items={facilities} />
       <div
         className={css`
-          margin-top: ${isDesktop ? 30 : 0}px;
+          // margin-top: ${isDesktop ? 30 : 0}px;
           display: flex;
           justify-content: center;
         `}
