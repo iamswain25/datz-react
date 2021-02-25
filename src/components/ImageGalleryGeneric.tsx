@@ -103,15 +103,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
         />
         <div className={titleClass}>{title}</div>
         <div className={authorClass}>{text}</div>
-        <Logo
-          type={item?.logo}
-          color={color}
-          className={css`
-            bottom: ${isDesktop ? 29 : 25}px;
-            left: ${isDesktop ? 32 : 23}px;
-            position: absolute;
-          `}
-        />
+        <Logo type={item?.logo} color={color} absolute noPadding />
       </div>
     </>
   );

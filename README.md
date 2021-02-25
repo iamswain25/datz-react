@@ -4,3 +4,7 @@
 
 window.localStorage.setItem("DATZ_LAST_NOTICE_ID", null);
 firebase firestore:indexes --project datzpress1 | cat > ./firestore.indexes.json
+
+## cors setting on files
+
+gsutil cors set cors.json gs://{firebase_id}.appspot.com

@@ -69,11 +69,8 @@ export default function ViewAllCard({
           offLink
           type={type === "exhibition" ? item.type : item.logo}
           color="#fff"
-          className={css`
-            position: absolute;
-            left: 32px;
-            bottom: 29px;
-          `}
+          absolute
+          noPadding
         />
       </div>
       <div

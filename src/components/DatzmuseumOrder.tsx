@@ -26,7 +26,13 @@ export default function DatzmuseumOrder({
         font-family: datz-medium;
       `}
     >
-      <Logo type={logo} color="#707070" className={flexrowcenter} />
+      <Logo
+        type={logo}
+        color="#707070"
+        className={css`
+          margin-bottom: 5px;
+        `}
+      />
       {logo !== "D'Ark Room" && order && (
         <a
           href={order}

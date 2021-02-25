@@ -125,7 +125,6 @@ export default function BookProject({ item }: { item: any }) {
             type="books"
             color="#5d5d5d"
             className={css`
-              width: 80px;
               margin: 25px 0;
             `}
           />
