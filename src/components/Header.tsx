@@ -1,8 +1,7 @@
 import React from "react";
 import Headroom from "react-headroom";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Datz from "../assets/svg/Datz";
-import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import { headerLinkArr, store } from "./Links";
 import useDesktop from "./useDesktop";
@@ -11,6 +10,7 @@ import { flexrowcenter, marginH10, marginH16 } from "./styles";
 // import SvgMenu from "../assets/svg/SvgMenu";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
+import SearchLink from "./SearchLink";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -33,12 +33,8 @@ export default function Header({
   color = "#707070",
   backgroundColor = "rgba(255,255,255,0.8)",
 }) {
-  const [text, setText] = React.useState("");
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalLang();
-  function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setText(e.currentTarget.value);
-  }
   const [isOpen, setOpen] = useMobileMenu();
   function openHandler() {
     setOpen(!isOpen);
@@ -117,27 +113,7 @@ export default function Header({
             font-family: datz-medium;
           `}
         >
-          {isDesktop && (
-            <Link
-              to="/search"
-              className={css`
-                ${flexrowcenter}
-              `}
-            >
-              <span>Search</span>
-              <input
-                type="text"
-                value={text}
-                onChange={textHandler}
-                className={css`
-                  ${headerText};
-                  border-bottom: solid 1px ${color};
-                  width: 56px;
-                  margin: 0 8px 5px 5px;
-                `}
-              />
-            </Link>
-          )}
+          {isDesktop && <SearchLink color={color} />}
           <button
             className={css`
               ${headerText};
@@ -169,20 +145,7 @@ export default function Header({
           </button>
           {!isDesktop && (
             <>
-              <Link
-                to="/search"
-                className={css`
-                  display: flex;
-                `}
-              >
-                <Search
-                  className={css`
-                    margin-right: 20px;
-                    width: 15px;
-                    height: 15px;
-                  `}
-                />
-              </Link>
+              <SearchLink color={color} />
               <HamburgerButton
                 open={isOpen}
                 onClick={openHandler}

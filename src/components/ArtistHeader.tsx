@@ -1,13 +1,12 @@
 import React from "react";
 import ArtistCloseBtn from "./ArtistCloseBtn";
-import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
 import { flexrowcenter, marginH10 } from "./styles";
-import { Link } from "react-router-dom";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
+import SearchLink from "./SearchLink";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -38,10 +37,6 @@ export default function ArtistHeader({
   const isDesktop = useDesktop();
   const [lang, setLang] = useGlobalLang();
   const [isOpen, setOpen] = useMobileMenu();
-  const [text, setText] = React.useState("");
-  function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setText(e.currentTarget.value);
-  }
   function openHandler() {
     setOpen(!isOpen);
   }
@@ -79,31 +74,7 @@ export default function ArtistHeader({
             font-family: datz-medium;
           `}
         >
-          {isDesktop && (
-            <Link to="/search">
-              <span
-                className={css`
-                  font-size: 16px;
-                `}
-              >
-                Search
-              </span>
-              <input
-                type="text"
-                value={text}
-                onChange={textHandler}
-                className={css`
-                  ${headerText};
-                  border-bottom: solid 1px;
-                  border-bottom-color: inherit;
-                  width: 56px;
-                  margin-left: 5px;
-                  margin-right: 8px;
-                  margin-bottom: 7px;
-                `}
-              />
-            </Link>
-          )}
+          {isDesktop && <SearchLink color={color} />}
           <button
             className={css`
               ${headerText};
@@ -134,21 +105,7 @@ export default function ArtistHeader({
           </button>
           {!isDesktop && (
             <>
-              <Link
-                to="/search"
-                className={css`
-                  display: flex;
-                `}
-              >
-                <Search
-                  color={color}
-                  className={css`
-                    margin-right: 20px;
-                    width: 15px;
-                    height: 15px;
-                  `}
-                />
-              </Link>
+              <SearchLink color={color} />
               <HamburgerButton
                 open={isOpen}
                 onClick={openHandler}

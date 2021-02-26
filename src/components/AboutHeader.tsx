@@ -1,6 +1,5 @@
 import React from "react";
 import Headroom from "react-headroom";
-import Search from "../assets/svg/Search";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { useGlobalLang, useMobileMenu } from "../store/useGlobalState";
@@ -11,6 +10,7 @@ import { NavLink, Link } from "react-router-dom";
 // import SvgMenu from "../assets/svg/SvgMenu";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
+import SearchLink from "./SearchLink";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -128,21 +128,7 @@ export default function AboutHeader({
           </button>
           {!isDesktop && (
             <>
-              <Link
-                to="/search"
-                className={css`
-                  display: flex;
-                `}
-              >
-                <Search
-                  color={colors.color}
-                  className={css`
-                    width: 15px;
-                    height: 15px;
-                    margin-right: 20px;
-                  `}
-                />
-              </Link>
+              <SearchLink color={colors.color} />
               <HamburgerButton
                 open={isOpen}
                 onClick={openHandler}
@@ -163,11 +149,10 @@ export default function AboutHeader({
       <>
         <div
           className={css`
-        width: 100%;
-        height: 79px;
-              `}
-        >
-        </div>
+            width: 100%;
+            height: 79px;
+          `}
+        ></div>
         <div
           className={css`
             position: fixed;
@@ -218,7 +203,7 @@ export default function AboutHeader({
         onUnfix={
           change
             ? () =>
-              setColors({ color: color, backgroundColor: backgroundColor })
+                setColors({ color: color, backgroundColor: backgroundColor })
             : undefined
         }
         style={{
