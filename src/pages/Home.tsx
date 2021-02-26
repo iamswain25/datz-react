@@ -25,15 +25,13 @@ export default function Home() {
       <FullPageRollingImages items={publication} />
       <Divider
         className={css`
-          margin-left: ${isDesktop ? 47 : 17}px;
-          margin-right: ${isDesktop ? 47 : 17}px;
+          margin: 0 ${isDesktop ? 47 : 17}px;
         `}
       />
       <FullPageRollingImages2 items={exhibition} />
       <Divider
         className={css`
-          margin-left: ${isDesktop ? 47 : 17}px;
-          margin-right: ${isDesktop ? 47 : 17}px;
+          margin: 0 ${isDesktop ? 47 : 17}px;
         `}
       />
       <HomeEvent items={event} />
