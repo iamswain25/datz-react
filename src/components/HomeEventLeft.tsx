@@ -93,6 +93,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
                     className={css`
                       text-align: center;
                       color: #ffffff;
+                      flex: 1;
                     `}
                   >
                     <p className={typeClass}>{item.type}</p>
