@@ -4,10 +4,10 @@ import useDesktop from "./useDesktop";
 import Logo from "./Logo";
 import CarouselBtnGroup from "./CarouselBtnGroup";
 import Carousel from "react-multi-carousel";
-import { Link } from "react-router-dom";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import useStorage from "./useStorage";
 import useLang from "./useLang";
+import Link from "./Link";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1000 },
