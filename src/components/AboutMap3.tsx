@@ -34,11 +34,10 @@ export default function AboutMap3() {
         className={css`
           ${isDesktop ? paddingH37 : paddingH17}
           position: relative;
-          min-height: 600px;
           padding-top: ${isDesktop ? 41 : 19}px;
           height: ${isDesktop
             ? "calc(100vh - 79px - 41px - 27px - 37px)"
-            : "527px"};
+            : "auto"};
           color: #ffffff;
           display: flex;
           overflow: hidden;
@@ -51,7 +50,7 @@ export default function AboutMap3() {
             sm={6}
             className={css`
               min-height: 527px;
-              height: 100%;
+              height: ${isDesktop ? "100%" : "auto"};
             `}
           >
             <GoogleMapReact
