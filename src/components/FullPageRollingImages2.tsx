@@ -1,13 +1,12 @@
 import React from "react";
-
 import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
-import { Link } from "react-router-dom";
 import useStorages from "./useStorages";
 import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
+import Link from "./Link";
 export default function FullPageRollingImages2({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ebgaramond");
@@ -87,7 +86,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
         `}
       >
         <Link
-          to={item?.url || ""}
+          to={item?.url}
           className={css`
             pointer-events: auto;
             display: flex;
@@ -112,7 +111,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
           <div className={authorClass}>{text}</div>
         </Link>
         <Link
-          to={item?.url || ""}
+          to={item?.url}
           className={css`
             pointer-events: ${isDesktop ? "auto" : "none"};
             display: flex;

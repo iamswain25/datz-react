@@ -3,10 +3,10 @@ import ImageGallery from "react-image-gallery";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import Logo from "./Logo";
-import { Link } from "react-router-dom";
 import useStorages from "./useStorages";
 import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
+import Link from "./Link";
 export default function FullPageRollingImages({
   style,
   items,
@@ -101,7 +101,7 @@ export default function FullPageRollingImages({
           `}
         >
           <Link
-            to={item?.url || ""}
+            to={item?.url}
             className={css`
               pointer-events: auto;
               display: flex;
@@ -126,7 +126,7 @@ export default function FullPageRollingImages({
           </Link>
         </div>
         <Link
-          to={item?.url || ""}
+          to={item?.url}
           className={css`
             pointer-events: ${isDesktop ? "auto" : "none"};
             display: flex;
