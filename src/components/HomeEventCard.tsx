@@ -60,7 +60,7 @@ export default function HomeEventCard({
         </div>
         <div
           className={css`
-            flex: 1 1 220px;
+            flex: 1 1 ${isDesktop ? 220 : 245}px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
