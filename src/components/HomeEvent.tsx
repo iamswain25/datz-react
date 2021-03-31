@@ -3,6 +3,7 @@ import { css } from "emotion";
 import HomeEventLeft from "./HomeEventLeft";
 import HomeEventRight from "./HomeEventRight";
 import useDesktop from "./useDesktop";
+import Divider from "./Divider";
 export default function HomeEvent({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   return (
@@ -19,19 +20,26 @@ export default function HomeEvent({ items }: { items: any[] }) {
       {isDesktop ? (
         <HomeEventLeft items={items} />
       ) : (
-        <div
-          className={css`
-            min-height: 588px;
-            max-height: 100vh;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            padding: 17px;
-            padding-top: 0;
-          `}
-        >
-          <HomeEventLeft items={items} />
-        </div>
+        <>
+          <div
+            className={css`
+              min-height: 588px;
+              max-height: 100vh;
+              background-repeat: no-repeat;
+              background-size: cover;
+              display: flex;
+              padding: 17px;
+              padding-top: 0;
+            `}
+          >
+            <HomeEventLeft items={items} />
+          </div>
+          <Divider
+            className={css`
+              margin: 0 17px 28px;
+            `}
+          />
+        </>
       )}
       <section
         className={css`
