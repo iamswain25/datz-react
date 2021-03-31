@@ -79,7 +79,8 @@ export default function PublicationList() {
               let paddingRight = isFirst ? 49 : isLast ? 0 : 18;
               if (!isDesktop) {
                 paddingLeft = isFirst ? 0 : 5;
-                paddingRight = isFirst ? 9 : isLast ? 0 : 5;
+                paddingRight = isFirst ? 35 : isLast ? 0 : 5;
+                // paddingRight = isFirst ? 9 : isLast ? 0 : 5;
               }
               function selectHandler() {
                 setSelected(type);
