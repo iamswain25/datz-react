@@ -116,13 +116,15 @@ export default function PublicationList() {
             {categories?.find((e) => e.type === selected)?.text}
           </p> */}
 
-          <Grid container spacing={isDesktop ? 4 : 0} className={css`
+          <Grid
+            container
+            spacing={isDesktop ? 4 : 5}
+            className={css`
               padding: 40px 0;
-            `}>
+            `}
+          >
             {list
-              .filter((f) =>
-                selected === "All" ? true : f.type === selected
-              )
+              .filter((f) => (selected === "All" ? true : f.type === selected))
               .map((item, i) => {
                 return (
                   <Grid
@@ -142,15 +144,15 @@ export default function PublicationList() {
                         alt={item.title}
                         link={item.image_cover}
                         img={css`
-                            object-fit: contain;
-                            width: 280px;
-                            height: 280px;
-                          `}
+                          object-fit: contain;
+                          width: 280px;
+                          height: 280px;
+                        `}
                         placeholder={css`
-                            background-color: #fff;
-                            min-width: 280px;
-                            min-height: 280px;
-                          `}
+                          background-color: #fff;
+                          min-width: 280px;
+                          min-height: 280px;
+                        `}
                       />
                       <div className={classes.title}>{item.title}</div>
                     </Link>
@@ -162,10 +164,10 @@ export default function PublicationList() {
                         <div className={classes.artist}>{item.artist}</div>
                       </Link>
                     ) : (
-                        <div className={classes.link}>
-                          <div className={classes.artist}>{item.artist}</div>
-                        </div>
-                      )}
+                      <div className={classes.link}>
+                        <div className={classes.artist}>{item.artist}</div>
+                      </div>
+                    )}
                   </Grid>
                 );
               })}
