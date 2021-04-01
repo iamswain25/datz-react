@@ -145,12 +145,12 @@ export default function Search() {
                   className={css`
                     display: flex;
                     align-items: center;
-                    margin-right: 20px;
                   `}
                 >
                   <Close
                     color="#fff"
                     className={css`
+                      margin: 10px 20px 10px 15px;
                       width: 15px;
                       height: 15px;
                     `}
