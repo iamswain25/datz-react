@@ -134,8 +134,8 @@ export default function AboutDarkroom() {
                     color="#fff"
                     className={css`
                       margin: 20px 0;
-                      width: 80px;
-                      height: 33px;
+                      width: 78px;
+                      height: 69px;
                     `}
                   />
                   <p className={classes.desc}>{d2.text}</p>

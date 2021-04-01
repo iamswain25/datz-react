@@ -136,6 +136,8 @@ export default function AboutDatzpress() {
                     className={css`
                       margin-top: 20px;
                       margin-bottom: 20px;
+                      height: 69px;
+                      width: 114px;
                     `}
                   />
                   <p className={classes.desc}>{d2.text}</p>
