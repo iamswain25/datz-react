@@ -8,6 +8,7 @@ import { paddingH37 } from "../components/styles";
 import { Grid } from "@material-ui/core";
 import useDoc from "../utils/useDoc";
 import ArtistCloseBtn from "../components/ArtistCloseBtn";
+import ArtistImageRolling from "../components/ArtistImageRolling";
 const desktopContainer = css`
   ${paddingH37}
   height: calc(100vh - 79px);
@@ -53,7 +54,23 @@ export default function NewsItem() {
     <>
       {header}
       {item?.id && (
-        <NewsItemRight item={item} children={<NewsItemLeft item={item} />} />
+        <NewsItemRight
+          item={item}
+          children={
+            <div
+              className={css`
+                flex: 1;
+                display: flex;
+                position: relative;
+                padding-bottom: 70px;
+                overflow: hidden;
+                width: 100%;
+              `}
+            >
+              <ArtistImageRolling item={item} type="news" />
+            </div>
+          }
+        />
       )}
     </>
   );
