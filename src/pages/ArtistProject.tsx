@@ -103,7 +103,9 @@ export default function ArtistProject() {
                   flex: 1;
                   margin-left: 23px;
                 `
-              : undefined
+              : css`
+                  margin: 0 11px;
+                `
           }
         >
           <BookProject item={book} />
@@ -168,7 +170,9 @@ export default function ArtistProject() {
                   flex: 1;
                   margin-left: 23px;
                 `
-              : undefined
+              : css`
+                  margin: 0 11px;
+                `
           }
         >
           <ResidencyRight item={residency[0]} />
