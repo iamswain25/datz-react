@@ -133,7 +133,7 @@ export default function AboutDarkroom() {
                   <Dfrontspace
                     color="#fff"
                     className={css`
-                      margin: 20px 0;
+                      margin: 20px 0 5px;
                       width: 78px;
                       height: 69px;
                     `}
