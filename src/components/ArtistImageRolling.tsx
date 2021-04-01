@@ -21,7 +21,13 @@ function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
     />
   );
 }
-export default function ArtistImageRolling({ item }: { item: any }) {
+export default function ArtistImageRolling({
+  item,
+  arrowColor = "#fff",
+}: {
+  item: any;
+  arrowColor?: string;
+}) {
   const history = useHistory();
   const images = useStorages(item.images);
   const ref = React.useRef<ReactImageGallery>(null);
@@ -52,7 +58,8 @@ export default function ArtistImageRolling({ item }: { item: any }) {
             children={"←"}
             onClick={onClick}
             className={css`
-              color: #ffffff;
+              color: ${arrowColor};
+              opacity: ${disabled ? 0.7 : 1};
               bottom: -40px;
               left: 20px;
             `}
@@ -65,9 +72,10 @@ export default function ArtistImageRolling({ item }: { item: any }) {
             children={"→"}
             onClick={onClick}
             className={css`
-              color: #ffffff;
+              color: ${arrowColor};
               bottom: -40px;
               left: 60px;
+              opacity: ${disabled ? 0.7 : 1};
             `}
           />
         );

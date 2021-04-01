@@ -8,6 +8,7 @@ import { paddingH37 } from "../components/styles";
 import useDoc from "../utils/useDoc";
 import ArtistCloseBtn from "../components/ArtistCloseBtn";
 import { Grid } from "@material-ui/core";
+import ArtistImageRolling from "../components/ArtistImageRolling";
 const desktopContainer = css`
   ${paddingH37}
   height: calc(100vh - 79px);
@@ -49,7 +50,20 @@ export default function EventItem() {
         ) : (
           <EventItemRight
             item={item}
-            children={<EventItemLeft images={item.images} />}
+            children={
+              <div
+                className={css`
+                  flex: 1;
+                  display: flex;
+                  position: relative;
+                  padding-bottom: 70px;
+                  overflow: hidden;
+                  width: 100%;
+                `}
+              >
+                <ArtistImageRolling item={item} arrowColor="#707070" />
+              </div>
+            }
           />
         ))}
     </>
