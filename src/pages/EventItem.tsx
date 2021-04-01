@@ -61,7 +61,11 @@ export default function EventItem() {
                   width: 100%;
                 `}
               >
-                <ArtistImageRolling item={item} arrowColor="#707070" />
+                <ArtistImageRolling
+                  item={item}
+                  arrowColor="#707070"
+                  type="event"
+                />
               </div>
             }
           />

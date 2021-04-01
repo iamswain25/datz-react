@@ -24,9 +24,11 @@ function renderFullscreenButton(onClick: any, isFullscreen: boolean) {
 export default function ArtistImageRolling({
   item,
   arrowColor = "#fff",
+  type = "artist",
 }: {
   item: any;
   arrowColor?: string;
+  type?: string;
 }) {
   const history = useHistory();
   const images = useStorages(item.images);
@@ -42,7 +44,7 @@ export default function ArtistImageRolling({
       items={images.map((i) => ({ original: i }))}
       showNav={true}
       onClick={() =>
-        history.replace(`/artist/${item.id}/images`, {
+        history.replace(`/${type}/${item.id}/images`, {
           index: ref.current?.getCurrentIndex(),
         })
       }
