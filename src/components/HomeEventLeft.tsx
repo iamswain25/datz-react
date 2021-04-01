@@ -51,7 +51,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
       className={css`
         display: flex;
         flex-direction: column;
-        margin-right: 14px;
+        margin-right: ${isDesktop ? 14 : 0}px;
         width: ${isDesktop ? "calc(50% - 14px)" : "100%"};
         position: relative;
       `}
