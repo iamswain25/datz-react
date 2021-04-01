@@ -3,18 +3,12 @@ import RollingImages from "../components/RollingImages";
 import RollingImages2 from "../components/RollingImages2";
 import { css } from "emotion";
 import { Divider } from "@material-ui/core";
-import {
-  marginH55,
-  marginH37,
-  paddingH20,
-  marginH17,
-} from "../components/styles";
+import { marginH55, marginH37, marginH17 } from "../components/styles";
 import BookProject from "../components/BookProject";
 import DatzArtistProject from "../components/DatzArtistProject";
 import DatzArtistExhibition from "../components/DatzArtistExhibition";
 import DatzArtistProject2 from "../components/DatzArtistProject2";
 import ResidencyRight from "../components/ResidencyRight";
-import ResidencyLeft from "../components/ResidencyLeft";
 import Facilities from "../components/Facilities";
 import useDesktop from "../components/useDesktop";
 import Header from "../components/Header";
@@ -90,34 +84,6 @@ export default function ArtistProject() {
       >
         <RollingImages2
           items={book?.image}
-          children={
-            isDesktop ? undefined : (
-              <div
-                className={css`
-                  pointer-events: none;
-                  margin-top: 21px;
-                  width: 100%;
-                  position: absolute;
-                  font-family: datz-medium;
-                  font-size: 23px;
-                  line-height: 1.17;
-                  text-align: center;
-                  color: #ffffff;
-                  top: 0;
-                  ${paddingH20}
-                `}
-              >
-                Residency
-                <hr
-                  className={css`
-                    margin-top: 5px;
-                    border-top-color: white;
-                    border-style: solid;
-                  `}
-                />
-              </div>
-            )
-          }
           className={
             isDesktop
               ? css`
@@ -181,7 +147,6 @@ export default function ArtistProject() {
       >
         <RollingImages
           items={residency}
-          children={() => <ResidencyLeft />}
           className={
             isDesktop
               ? css`
