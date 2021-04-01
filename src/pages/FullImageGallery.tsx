@@ -6,13 +6,13 @@ import { useHistory, useLocation } from "react-router-dom";
 import useParams from "../components/useParams";
 import useStorages from "../components/useStorages";
 import ReactPlayer from "react-player";
-import { CircularProgress } from "@material-ui/core";
 import { RenderItemContain } from "../components/ReactImageGalleryRenderItem";
 import useDocId from "../utils/useDocId";
+import LoadingCenter from "../components/LoadingCenter";
 export default function FullImageGallery() {
   const { type, id } = useParams();
   const item = useDocId(type, id);
-  if (!item) return <CircularProgress />;
+  if (!item) return <LoadingCenter />;
   return <Gallery1 item={item} />;
 }
 
@@ -22,7 +22,7 @@ function Gallery1({ item }: { item: any }) {
     [item]
   );
   const images = useStorages(filtered);
-  if (!images) return <CircularProgress />;
+  if (!images) return <LoadingCenter />;
   return <Gallery2 images={images} />;
 }
 
