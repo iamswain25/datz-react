@@ -256,7 +256,7 @@ export default function DatzArtistExhibition({ item }: { item: any }) {
         <div
           className={css`
             margin-top: 34px;
-            max-width: 600px;
+            max-width: 635px;
             font-size: 19px;
             line-height: 1.42;
           `}
@@ -266,7 +266,7 @@ export default function DatzArtistExhibition({ item }: { item: any }) {
             className={css`
               font-size: 14px;
               line-height: 1.14;
-              margin-top: 3px;
+              margin-top: 5px;
             `}
           >
             {text2}
