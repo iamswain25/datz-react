@@ -27,7 +27,7 @@ export default function EventCoverWidget({
 }) {
   const isDesktop = useDesktop();
   const { state } = useLocation<{ index: number }>();
-  const index = state?.index;
+  const index = state?.index || 0;
   return (
     <div
       className={css`
