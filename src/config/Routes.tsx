@@ -13,7 +13,6 @@ import Event from "../pages/Event";
 import EventItem from "../pages/EventItem";
 import PublicationReadmore from "../pages/PublicationReadmore";
 import PrivateRoute from "../components/PrivateRoute";
-import AdminHome from "../pages/AdminHome";
 import ArtistPage from "../pages/ArtistPage";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
@@ -32,6 +31,7 @@ import NewsItem from "../pages/NewsItem";
 import FullImageGallery from "../pages/FullImageGallery";
 import Layout from "../components/Layout";
 import Search from "../pages/Search";
+import RoutesAdmin from "./RoutesAdmin";
 export default function Routes() {
   return (
     <Router>
@@ -104,7 +104,7 @@ export default function Routes() {
           </Route>
           <Route exact path="/newslist/:filter" component={News} />
           <Route exact path="/news/:id" component={NewsItem} />
-          <PrivateRoute exact path="/admin" component={AdminHome} />
+          <PrivateRoute path="/admin" component={RoutesAdmin} />
           <Route path="*">
             <Redirect to="/" />
           </Route>

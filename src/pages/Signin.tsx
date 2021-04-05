@@ -1,19 +1,10 @@
 import React from "react";
 import { auth, Firebase } from "../config/firebase";
-import { useHistory, useLocation } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Container } from "@material-ui/core";
+import useAuthRedirectFrom from "../utils/useAuthRedirectFrom";
 const provider = new Firebase.auth.GoogleAuthProvider();
 export default function Signin() {
-  const [user] = useAuthState(auth);
-  const history = useHistory();
-  const location = useLocation<{ from: { pathname: string } }>();
-  const { from } = location.state ?? { from: "/admin" };
-  React.useEffect(() => {
-    if (user) {
-      history.replace(from);
-    }
-  }, [user, history, from]);
+  useAuthRedirectFrom();
   function signin() {
     auth.signInWithPopup(provider).catch(console.error);
   }
