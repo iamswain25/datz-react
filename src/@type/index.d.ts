@@ -27,6 +27,7 @@ export interface Publication {
   rel_exhibitions: number[];
   rel_events: never[];
   image_cover: string;
+  public: boolean;
 }
 export interface Event {
   created_at: firebase.firestore.Timestamp;
@@ -42,6 +43,7 @@ export interface Event {
   title_ko: string;
   body_ko: string;
   images: string[];
+  public: boolean;
 }
 export interface Exhibition {
   created_at: firebase.firestore.Timestamp;
@@ -63,6 +65,7 @@ export interface Exhibition {
   rel_artists: number[];
   rel_publications: number[];
   rel_events: number[];
+  public: boolean;
 }
 export interface Artists {
   created_at: firebase.firestore.Timestamp;
@@ -78,6 +81,7 @@ export interface Artists {
   rel_publications: number[];
   rel_exhibitions: number[];
   rel_events: number[];
+  public: boolean;
 }
 export interface News {
   created_at: firebase.firestore.Timestamp;
@@ -93,6 +97,7 @@ export interface News {
   body_ko: string;
   images: string[];
   image_cover: string;
+  public: boolean;
 }
 export type ExhibitionLogo =
   | "Datz Museum of Art"

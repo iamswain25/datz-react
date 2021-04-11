@@ -1,104 +1,165 @@
 import { Grid } from "@material-ui/core";
 import { css } from "emotion";
 import React from "react";
-type Child = { title: string };
-type Item = { title: string; children: Child[]; visible?: boolean };
+import { useParams } from "react-router";
+import { Child, Item, Param } from "../@type/admin";
+import Link from "./Link";
+
 const defaultList: Item[] = [
   {
     title: "Main Page",
+    id: "main",
     children: [
-      { title: "Main gallery" },
-      { title: "Wide gallery" },
-      { title: "Vertical gallery" },
-      { title: "External links" },
+      { title: "Main gallery", id: "publication" },
+      { title: "Wide gallery", id: "exhibition" },
+      { title: "Vertical gallery", id: "event" },
+      { title: "External links", id: "link" },
     ],
   },
   {
     title: "Publication",
+    id: "publication",
     children: [
-      { title: "Contents" },
-      { title: "Banner" },
-      { title: "Category" },
+      { title: "Contents", id: "contents" },
+      { title: "Banner", id: "banner" },
+      { title: "Category", id: "category" },
     ],
   },
   {
     title: "Exhibition",
-    children: [{ title: "Contents" }, { title: "Banner" }],
+    id: "exhibition",
+    children: [
+      { title: "Contents", id: "contents" },
+      { title: "Banner", id: "banner" },
+    ],
   },
   {
     title: "Events",
-    children: [{ title: "Contents" }, { title: "Banner" }],
+    id: "event",
+    children: [
+      { title: "Contents", id: "contents" },
+      { title: "Banner", id: "banner" },
+    ],
   },
   {
     title: "Artist",
-    children: [{ title: "Contents" }, { title: "Banner" }],
+    id: "artist",
+    children: [
+      { title: "Contents", id: "contents" },
+      //   { title: "Banner", id: "banner" },
+    ],
   },
   {
     title: "Artist projects",
+    id: "artist-project",
     children: [
-      { title: "Main gallery" },
-      { title: "Book Project" },
-      { title: "Exhibition" },
-      { title: "Datz Artist Residency" },
+      { title: "Main gallery", id: "main" },
+      { title: "Book Project", id: "book" },
+      { title: "Exhibition", id: "exhibition" },
+      { title: "Datz Artist Residency", id: "residency" },
     ],
   },
   {
     title: "About",
-    children: [],
+    id: "about",
+    children: [
+      { title: "Datzpress", id: "datzpress" },
+      { title: "D'ark Room", id: "darkroom" },
+      { title: "Datz Museum of Art", id: "museum" },
+    ],
   },
   {
     title: "Contact",
+    id: "contact",
     children: [
-      { title: "Stockist" },
-      { title: "Collections" },
-      { title: "etc." },
+      { title: "Stockist", id: "stockist" },
+      { title: "Collections", id: "collection" },
+      { title: "etc.", id: "etc" },
     ],
   },
   {
     title: "News",
-    children: [{ title: "Contents" }, { title: "Link" }],
+    children: [
+      { title: "Contents", id: "contents" },
+      { title: "Link", id: "link" },
+    ],
   },
   {
     title: "Support",
-    children: [{ title: "Main gallery" }, { title: "Membership" }],
+    children: [
+      { title: "Main gallery", id: "main" },
+      { title: "Membership", id: "membership" },
+    ],
   },
 ];
-const makeUl = (setList: React.Dispatch<React.SetStateAction<Item[]>>) => (
-  item: Item,
-  index1: number
-) => {
+const makeUl = (
+  setList: React.Dispatch<React.SetStateAction<Item[]>>,
+  params: Param
+) => (item: Item, index1: number) => {
   const makeLi = (child: Child, index2: number) => {
+    const selected = item.id === params.collection && child.id === params.type;
+    const color = selected ? "#4b4b4b" : "#afafaf";
     return (
-      <li key={`react-key-${item.title}-${index1}-${child.title}-${index2}`}>
-        {child.title}
+      <li
+        key={`react-key-${item.title}-${index1}-${child.title}-${index2}`}
+        className={css`
+          margin-top: 9px;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.35;
+          text-align: left;
+          text-decoration: ${selected ? "underline" : "normal"};
+          color: ${color};
+        `}
+      >
+        <Link to={`/admin/${item.id}/${child.id}`}>{child.title}</Link>
       </li>
     );
   };
+  const color = item.id === params.collection ? "#4b4b4b" : "#afafaf";
+
   return (
-    <div key={`react-key-${item.title}-${index1}`}>
-      <Grid container justify="space-between" alignItems="center">
+    <div
+      key={`react-key-${item.title}-${index1}`}
+      className={css`
+        padding-top: 28px;
+      `}
+    >
+      <Grid
+        container
+        justify="space-between"
+        alignItems="center"
+        className={css`
+          border-bottom: 1px solid #4b4b4b;
+          padding-bottom: 9px;
+          margin-bottom: 8px;
+        `}
+      >
         <Grid
           item
           className={css`
             font-size: 22px;
             font-weight: 500;
             line-height: 1.23;
-            color: #afafaf;
+            color: ${color};
           `}
         >
           {item.title}
         </Grid>
-        <Grid
-          item
-          className={css`
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.21;
-            text-align: right;
-            color: #afafaf;
-          `}
-        >
+        <Grid item>
           <button
+            className={
+              item.visible
+                ? css`
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: ${color};
+                  `
+                : css`
+                    font-size: 24px;
+                    color: ${color};
+                  `
+            }
             onClick={() =>
               setList((l) => {
                 l[index1].visible = !l[index1].visible;
@@ -106,7 +167,7 @@ const makeUl = (setList: React.Dispatch<React.SetStateAction<Item[]>>) => (
               })
             }
           >
-            hide
+            {item.visible ? "hide" : ">"}
           </button>
         </Grid>
       </Grid>
@@ -125,5 +186,14 @@ const makeUl = (setList: React.Dispatch<React.SetStateAction<Item[]>>) => (
 
 export default function AdminMenu() {
   const [list, setList] = React.useState(defaultList);
-  return <section>{list.map(makeUl(setList))}</section>;
+  const params = useParams<Param>();
+  return (
+    <section
+      className={css`
+        padding-left: 48px;
+      `}
+    >
+      {list.map(makeUl(setList, params))}
+    </section>
+  );
 }
