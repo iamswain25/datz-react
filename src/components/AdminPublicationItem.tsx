@@ -6,7 +6,9 @@ import AdminGroup from "./AdminGroup";
 import Hr10 from "./Hr10";
 import AdminGroupRelated from "./AdminGroupRelated";
 import AdminRadio from "./AdminRadio";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import { RelationType } from "../@type/admin";
+import { Publication } from "../@type";
 const PUBLICATION_TYPE = ["Book", "Magazine", "Artist' Book"];
 const EN_FIELDS = [
   "title_en",
@@ -26,17 +28,20 @@ const KO_FIELDS = [
   "body_ko",
   "notes_ko",
 ];
-const RELATED = [
+const RELATED: RelationType[] = [
   "rel_artists",
   "rel_publications",
   "rel_exhibitions",
   "rel_events",
 ];
-const submitHandler = (data: any) => console.log(data);
+const submitHandler = (data: any) => {
+  data.public = Boolean(data.public);
+  console.log(data);
+};
 function AdminPublicationItem() {
   const [item] = useAdminItem();
-  const formControl = useForm();
-  const { register, handleSubmit, reset } = formControl;
+  const formControl = useForm<Publication>();
+  const { handleSubmit, reset, control } = formControl;
   React.useEffect(() => {
     reset(item);
   }, [item, reset]);
@@ -63,38 +68,51 @@ function AdminPublicationItem() {
           margin-bottom: 13px;
         `}
       >
-        <ul>
-          <li>
-            <input
-              type="radio"
-              {...register("public")}
-              className={css`
-                width: 12px;
-                height: 12px;
-                border: solid 1px #707070;
-                margin-right: 9px;
-              `}
-            />
-            Public
-          </li>
-          <li
-            className={css`
-              margin-left: 19px;
-            `}
-          >
-            <input
-              type="radio"
-              {...register("public")}
-              className={css`
-                width: 12px;
-                height: 12px;
-                border: solid 1px #707070;
-                margin-right: 9px;
-              `}
-            />
-            Private
-          </li>
-        </ul>
+        <Controller
+          name="public"
+          defaultValue={true}
+          render={({ field }) => {
+            return (
+              <ul>
+                <li>
+                  <input
+                    type="radio"
+                    {...field}
+                    value="true"
+                    className={css`
+                      width: 12px;
+                      height: 12px;
+                      border: solid 1px #707070;
+                      margin-right: 9px;
+                    `}
+                    id="radio-public-true"
+                  />
+                  <label htmlFor="radio-public-true">Public</label>
+                </li>
+                <li
+                  className={css`
+                    margin-left: 19px;
+                  `}
+                >
+                  <input
+                    type="radio"
+                    {...field}
+                    value="" // empty means false
+                    className={css`
+                      width: 12px;
+                      height: 12px;
+                      border: solid 1px #707070;
+                      margin-right: 9px;
+                    `}
+                    id="radio-public-false"
+                  />
+                  <label htmlFor="radio-public-false">Private</label>
+                </li>
+              </ul>
+            );
+          }}
+          control={control}
+        />
         <div
           className={css`
             display: flex;

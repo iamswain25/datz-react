@@ -1,8 +1,10 @@
+export type PublicationType = "Book" | "Magazine" | "Artist' Book";
 export interface Publication {
+  public: boolean;
   created_at: firebase.firestore.Timestamp;
   address: string;
   id: string;
-  type: string;
+  type: PublicationType;
   edition: string;
   copies_count: string;
   title_en: string;
@@ -22,10 +24,10 @@ export interface Publication {
   order_url_en: string;
   order_url_ko: string;
   images: string[];
-  rel_artists: number[];
-  rel_publications: never[];
-  rel_exhibitions: number[];
-  rel_events: never[];
+  rel_artists: string[];
+  rel_publications: string[];
+  rel_exhibitions: string[];
+  rel_events: string[];
   image_cover: string;
   public: boolean;
 }

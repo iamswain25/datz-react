@@ -1,13 +1,15 @@
 import { css } from "emotion";
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
+import { Publication } from "../@type";
+import { RelationType } from "../@type/admin";
 import AdminSortable from "./AdminSortable";
 
 export default function AdminGroup(props: {
   title: string;
   item: any;
-  fields: string[];
-  formControl: UseFormReturn<any>;
+  fields: RelationType[];
+  formControl: UseFormReturn<Publication>;
 }) {
   const { title, fields, item, formControl } = props;
   const [isVisible, setVisible] = React.useState(true);
@@ -53,7 +55,7 @@ export default function AdminGroup(props: {
       </div>
       {isVisible && (
         <div>
-          {fields.map((field, index) => (
+          {fields.map((field) => (
             <AdminSortable
               key={`key-related-${field}`}
               formControl={formControl}

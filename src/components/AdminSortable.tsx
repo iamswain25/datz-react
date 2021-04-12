@@ -4,20 +4,15 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { ReactSortable } from "react-sortablejs";
 import clsx from "clsx";
 import { UseFormReturn } from "react-hook-form";
-interface ItemType {
-  name: string;
-  id: string;
-}
-const convert2ItemType = (fields: any) =>
-  Array.isArray(fields)
-    ? fields?.map((str: string) => ({ name: str, id: str }))
-    : typeof fields === "string"
-    ? [{ name: fields, id: fields }]
-    : [];
+import AdminModalBtn from "./AdminModalBtn";
+import { RelationType, SortableItemType } from "../@type/admin";
+import { Publication } from "../@type";
+import convert2ItemType from "../utils/convert2ItemType";
+
 export default function AdminSortable(props: {
-  field: string;
+  field: RelationType;
   item: any;
-  formControl: UseFormReturn<{ [field: string]: any[] }>;
+  formControl: UseFormReturn<Publication>;
 }) {
   const {
     field,
@@ -25,8 +20,10 @@ export default function AdminSortable(props: {
     formControl: { register, setValue },
   } = props;
   const fields = item[field];
-  const [list, setList] = React.useState<ItemType[]>(convert2ItemType(fields));
-  const setList2 = (newList: ItemType[]) => {
+  const [list, setList] = React.useState<SortableItemType[]>(
+    convert2ItemType(fields)
+  );
+  const setList2 = (newList: SortableItemType[]) => {
     setValue(
       field,
       newList.map((v) => v.id)
@@ -61,18 +58,7 @@ export default function AdminSortable(props: {
         >
           {field}
         </span>
-        <button
-          onClick={() => {}}
-          className={css`
-            width: 50px;
-            text-align: right;
-            font-size: 14px;
-            font-weight: 500;
-            color: #707070;
-          `}
-        >
-          | List {">"}
-        </button>
+        <AdminModalBtn field={field} list={list} setList={setList2} />
       </div>
       <ReactSortable list={list} setList={setList2} handle=".js-draggable">
         {list.map((item, index) => (

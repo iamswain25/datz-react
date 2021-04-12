@@ -9,3 +9,13 @@ export type Param = {
   collection: string;
   type: string;
 };
+
+export type RelationType =
+  | "rel_artists"
+  | "rel_publications"
+  | "rel_exhibitions"
+  | "rel_events";
+export interface SortableItemType {
+  name: string;
+  id: string;
+}
