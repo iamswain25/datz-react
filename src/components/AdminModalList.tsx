@@ -16,7 +16,6 @@ export default function AdminModalList(props: {
     firestore.collection(collection).orderBy("order", "desc"),
     { idField: "id" }
   );
-  console.log(collection, list);
   const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const id = event.target.value;
     if (event.target.checked) {

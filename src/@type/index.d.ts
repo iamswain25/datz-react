@@ -29,7 +29,7 @@ export interface Publication {
   rel_exhibitions: string[];
   rel_events: string[];
   image_cover: string;
-  public: boolean;
+  public: string | boolean;
 }
 export interface Event {
   created_at: firebase.firestore.Timestamp;

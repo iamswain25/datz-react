@@ -32,8 +32,8 @@ export default function AdminModalBtn(props: {
       <Modal open={isVisible} onClose={() => setVisible(false)}>
         <div
           className={css`
-            width: 50%;
-            height: 80%;
+            width: 80%;
+            height: 90%;
             margin: auto;
             overflow: hidden;
             background-color: #fff;

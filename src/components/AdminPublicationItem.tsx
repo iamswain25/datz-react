@@ -35,7 +35,7 @@ const RELATED: RelationType[] = [
   "rel_events",
 ];
 const submitHandler = (data: any) => {
-  data.public = Boolean(data.public);
+  data.public = data.public === "true";
   console.log(data);
 };
 function AdminPublicationItem() {
@@ -43,6 +43,7 @@ function AdminPublicationItem() {
   const formControl = useForm<Publication>();
   const { handleSubmit, reset, control } = formControl;
   React.useEffect(() => {
+    item.public = item.public ? "true" : "false";
     reset(item);
   }, [item, reset]);
 
@@ -70,7 +71,7 @@ function AdminPublicationItem() {
       >
         <Controller
           name="public"
-          defaultValue={true}
+          defaultValue="false"
           render={({ field }) => {
             return (
               <ul>
@@ -97,7 +98,8 @@ function AdminPublicationItem() {
                   <input
                     type="radio"
                     {...field}
-                    value="" // empty means false
+                    defaultChecked={true}
+                    value="false"
                     className={css`
                       width: 12px;
                       height: 12px;
