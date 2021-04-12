@@ -1,20 +1,27 @@
 import React, { KeyboardEvent } from "react";
 import createInlineToolbarPlugin from "@draft-js-plugins/inline-toolbar";
-import createLinkPlugin, { defaultTheme } from "@draft-js-plugins/anchor";
-import PluginEditor from "@draft-js-plugins/editor";
+import createLinkPlugin from "@draft-js-plugins/anchor";
+import Editor from "@draft-js-plugins/editor";
 import { EditorState, RichUtils } from "draft-js";
-import "@draft-js-plugins/inline-toolbar/lib/plugin.css";
 import "@draft-js-plugins/anchor/lib/plugin.css";
+import { css } from "emotion";
 const linkPlugin = createLinkPlugin({
   placeholder: "https://",
   linkTarget: "_blank",
-  theme: defaultTheme,
+  theme: {
+    link: css`
+      color: #2996da;
+      text-decoration: underline;
+    `,
+    input: "",
+    inputInvalid: "",
+  },
 });
 const inlineToolbarPlugin = createInlineToolbarPlugin();
 const { InlineToolbar } = inlineToolbarPlugin;
 const plugins = [inlineToolbarPlugin, linkPlugin];
-export default function LinkPluginEditor({ editorState, onChange }: any) {
-  const ref = React.useRef<null | PluginEditor>(null);
+export default function LinkPluginEditor4({ value, onChange }: any) {
+  const ref = React.useRef<null | Editor>(null);
   function focus() {
     ref.current?.focus();
   }
@@ -25,11 +32,11 @@ export default function LinkPluginEditor({ editorState, onChange }: any) {
     onChange(RichUtils.insertSoftNewline(editorState));
     return "handled";
   }
-  if (!editorState) return null;
+  if (!value) return null;
   return (
     <div style={{ position: "relative" }} onClick={focus}>
-      <PluginEditor
-        editorState={editorState}
+      <Editor
+        editorState={value}
         onChange={onChange}
         plugins={plugins}
         handleReturn={handleReturn}
@@ -37,13 +44,13 @@ export default function LinkPluginEditor({ editorState, onChange }: any) {
           ref.current = element;
         }}
       />
-      <InlineToolbar>
-        {(externalProps) => (
+      <InlineToolbar
+        children={(externalProps) => (
           <React.Fragment>
             <linkPlugin.LinkButton {...(externalProps as any)} />
           </React.Fragment>
         )}
-      </InlineToolbar>
+      />
     </div>
   );
 }

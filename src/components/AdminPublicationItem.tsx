@@ -43,8 +43,10 @@ function AdminPublicationItem() {
   const formControl = useForm<Publication>();
   const { handleSubmit, reset, control } = formControl;
   React.useEffect(() => {
-    item.public = item.public ? "true" : "false";
-    reset(item);
+    if (item) {
+      item.public = item.public ? "true" : "false";
+      reset(item);
+    }
   }, [item, reset]);
 
   if (!item) return null;
@@ -148,7 +150,12 @@ function AdminPublicationItem() {
           font-weight: 500;
         `}
       >
-        <AdminLine field="id" alias="url" item={item} />
+        <AdminLine
+          formControl={formControl}
+          field="id"
+          alias="url"
+          item={item}
+        />
         <AdminRadio
           formControl={formControl}
           field="type"

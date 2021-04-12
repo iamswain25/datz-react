@@ -1,20 +1,14 @@
 import React, { KeyboardEvent } from "react";
-import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
-import createLinkPlugin from "draft-js-anchor-plugin";
-import PluginEditor from "draft-js-plugins-editor";
+import createInlineToolbarPlugin from "@draft-js-plugins/inline-toolbar";
+import createLinkPlugin, { defaultTheme } from "@draft-js-plugins/anchor";
+import PluginEditor from "@draft-js-plugins/editor";
 import { EditorState, RichUtils } from "draft-js";
-// import { DraftJsStyleButtonProps } from "draft-js-buttons";
-import "draft-js-inline-toolbar-plugin/lib/plugin.css";
-import { css } from "emotion";
+import "@draft-js-plugins/inline-toolbar/lib/plugin.css";
+import "@draft-js-plugins/anchor/lib/plugin.css";
 const linkPlugin = createLinkPlugin({
   placeholder: "https://",
   linkTarget: "_blank",
-  theme: {
-    link: css`
-      color: #2996da;
-      text-decoration: underline;
-    `,
-  },
+  theme: defaultTheme,
 });
 const inlineToolbarPlugin = createInlineToolbarPlugin();
 const { InlineToolbar } = inlineToolbarPlugin;
