@@ -25,6 +25,7 @@ export default function AdminLine(props: {
   field: string;
   item: any;
   required?: boolean;
+  disabled?: boolean;
   alias?: string;
   formControl: UseFormReturn<any>;
 }) {
@@ -32,6 +33,7 @@ export default function AdminLine(props: {
     field,
     item,
     required = false,
+    disabled = false,
     alias,
     formControl: { control, register, setValue },
   } = props;
@@ -44,7 +46,7 @@ export default function AdminLine(props: {
       className={css`
         display: flex;
         align-items: center;
-        // height: ${isVisible ? "auto" : "36px"};
+        background-color: ${disabled ? "#cccccc" : "inherit"};
         padding: 8px 0;
         border-bottom: solid 1px #cccccc;
       `}
@@ -75,6 +77,7 @@ export default function AdminLine(props: {
           {...register(field)}
           defaultValue={item[field]}
           readOnly
+          disabled={disabled}
         />
       ) : ["notes_en", "notes_ko", "body_en", "body_ko"].includes(field) ? (
         <Controller
@@ -109,16 +112,18 @@ export default function AdminLine(props: {
           defaultValue={item[field]}
         />
       )}
-      <IconButton
-        onClick={toggleVisible}
-        style={{ padding: 1, alignSelf: "flex-start" }}
-      >
-        {isVisible ? (
-          <CloseIcon style={{ fontSize: 18 }} />
-        ) : (
-          <EditIcon style={{ fontSize: 18 }} />
-        )}
-      </IconButton>
+      {!disabled && (
+        <IconButton
+          onClick={toggleVisible}
+          style={{ padding: 1, alignSelf: "flex-start" }}
+        >
+          {isVisible ? (
+            <CloseIcon style={{ fontSize: 18 }} />
+          ) : (
+            <EditIcon style={{ fontSize: 18 }} />
+          )}
+        </IconButton>
+      )}
     </div>
   );
 }

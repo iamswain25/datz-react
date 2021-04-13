@@ -155,6 +155,7 @@ function AdminPublicationItem() {
           field="id"
           alias="url"
           item={item}
+          disabled
         />
         <AdminRadio
           formControl={formControl}
