@@ -6,6 +6,7 @@ import Hr10 from "./Hr10";
 import LinkPluginEditor3 from "./LinkPluginEditor3";
 import { IconButton } from "@material-ui/core";
 import TextareaAutosize from "react-textarea-autosize";
+import CloseIcon from "@material-ui/icons/Close";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -32,7 +33,7 @@ export default function AdminLine(props: {
     item,
     required = false,
     alias,
-    formControl: { control, register },
+    formControl: { control, register, setValue },
   } = props;
   const [isVisible, setVisible] = React.useState(false);
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
@@ -43,7 +44,8 @@ export default function AdminLine(props: {
       className={css`
         display: flex;
         align-items: center;
-        height: ${isVisible ? "auto" : "36px"};
+        // height: ${isVisible ? "auto" : "36px"};
+        padding: 8px 0;
         border-bottom: solid 1px #cccccc;
       `}
     >
@@ -59,7 +61,8 @@ export default function AdminLine(props: {
       </span>
       <Hr10 />
       {!isVisible ? (
-        <span
+        <input
+          type="text"
           className={css`
             font-size: inherit;
             color: #707070;
@@ -69,9 +72,10 @@ export default function AdminLine(props: {
             overflow: hidden;
             flex: 1;
           `}
-        >
-          {item[field]}
-        </span>
+          {...register(field)}
+          defaultValue={item[field]}
+          readOnly
+        />
       ) : ["notes_en", "notes_ko", "body_en", "body_ko"].includes(field) ? (
         <Controller
           control={control}
@@ -80,6 +84,11 @@ export default function AdminLine(props: {
           render={({ field: { value, onChange } }) => {
             const onChange2 = (event: any) => {
               onChange(event);
+              const pureText = event.blocks
+                .map((block: any) => (!block.text.trim() && "\n") || block.text)
+                .join("\n");
+              // console.log(pureText);
+              setValue(field, pureText);
               return setVisible(false);
             };
             return <LinkPluginEditor3 value={value} onChange={onChange2} />;
@@ -100,8 +109,15 @@ export default function AdminLine(props: {
           defaultValue={item[field]}
         />
       )}
-      <IconButton onClick={toggleVisible}>
-        <EditIcon fontSize="small" />
+      <IconButton
+        onClick={toggleVisible}
+        style={{ padding: 1, alignSelf: "flex-start" }}
+      >
+        {isVisible ? (
+          <CloseIcon style={{ fontSize: 18 }} />
+        ) : (
+          <EditIcon style={{ fontSize: 18 }} />
+        )}
       </IconButton>
     </div>
   );

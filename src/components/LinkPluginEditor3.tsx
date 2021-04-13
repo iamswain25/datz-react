@@ -5,6 +5,7 @@ import Editor, { createEditorStateWithText } from "@draft-js-plugins/editor";
 import { convertFromRaw, convertToRaw, EditorState, RichUtils } from "draft-js";
 import "@draft-js-plugins/inline-toolbar/lib/plugin.css";
 import "@draft-js-plugins/anchor/lib/plugin.css";
+import { css } from "emotion";
 const linkPlugin = createLinkPlugin({
   placeholder: "https://",
   linkTarget: "_blank",
@@ -43,7 +44,13 @@ export default function LinkPluginEditor3({ value, onChange }: any) {
 
   if (!value) return null;
   return (
-    <div style={{ position: "relative" }} onClick={focus}>
+    <div
+      className={css`
+        position: relative;
+        flex: 1;
+      `}
+      onClick={focus}
+    >
       <Editor
         editorState={state}
         onChange={setState}
@@ -58,7 +65,20 @@ export default function LinkPluginEditor3({ value, onChange }: any) {
           </>
         )}
       />
-      <button onClick={saveHandler}>change (not saved)</button>
+      <div
+        className={css`
+          text-align: right;
+        `}
+      >
+        <button
+          onClick={saveHandler}
+          className={css`
+            text-decoration: underline;
+          `}
+        >
+          apply
+        </button>
+      </div>
     </div>
   );
 }
