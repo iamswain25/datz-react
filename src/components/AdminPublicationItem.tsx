@@ -9,6 +9,7 @@ import AdminRadio from "./AdminRadio";
 import { Controller, useForm } from "react-hook-form";
 import { RelationType } from "../@type/admin";
 import { Publication } from "../@type";
+import AdminGroupImages from "./AdminGroupImages";
 const PUBLICATION_TYPE = ["Book", "Magazine", "Artist' Book"];
 const EN_FIELDS = [
   "title_en",
@@ -185,6 +186,7 @@ function AdminPublicationItem() {
           item={item}
           fields={RELATED}
         />
+        <AdminGroupImages formControl={formControl} title="IMAGE" item={item} />
       </section>
     </form>
   );
