@@ -30,7 +30,7 @@ export interface Publication {
   rel_events: string[];
   image_cover: string;
   public: string | boolean;
-  files: { image_cover?: [File]; images: File[] };
+  files: { image_cover?: File; images: File[] };
 }
 export interface Event {
   created_at: firebase.firestore.Timestamp;

@@ -38,6 +38,7 @@ export default function AdminGroup(props: {
           {title}
         </span>
         <button
+          type="button"
           onClick={() => setVisible((v) => !v)}
           className={css`
             width: 50px;

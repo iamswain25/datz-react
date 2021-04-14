@@ -34,6 +34,7 @@ export default function AdminGroupImages(props: { title: string; item: any }) {
           {title}
         </span>
         <button
+          type="button"
           onClick={() => setVisible((v) => !v)}
           className={css`
             width: 50px;
