@@ -17,7 +17,7 @@ export default function AdminImageCover(props: {
     formControl: { register, setValue, watch },
   } = props;
   const fieldRef = React.useRef<HTMLInputElement | null>();
-  const files = watch("files.image_cover");
+  const files = watch(field);
   const { collection } = useParams<Param>();
   const { ref, onChange, ...rest } = register("files.image_cover");
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

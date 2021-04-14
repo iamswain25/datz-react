@@ -7,7 +7,8 @@ import { UseFormReturn } from "react-hook-form";
 import { SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
 import convert2ItemType from "../utils/convert2ItemType";
-
+import { IconButton } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
 const field = "images";
 export default function AdminSortableImages(props: {
   item: any;
@@ -27,6 +28,14 @@ export default function AdminSortableImages(props: {
       newList.map((v) => v.id)
     );
     setList(newList);
+  };
+  const removeItem = (index: number) => {
+    list.splice(index, 1);
+    setList([...list]);
+    setValue(
+      field,
+      list.map((v) => v.id)
+    );
   };
   React.useEffect(() => {
     setList(convert2ItemType(fields));
@@ -104,9 +113,18 @@ export default function AdminSortableImages(props: {
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
+                flex: 1;
               `}
               children={item.id}
             />
+            <IconButton
+              onClick={() => {
+                removeItem(index);
+              }}
+              style={{ padding: 1 }}
+            >
+              <CloseIcon style={{ fontSize: 18 }} />
+            </IconButton>
           </div>
         ))}
       </ReactSortable>
