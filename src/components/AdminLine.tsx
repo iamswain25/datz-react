@@ -1,7 +1,7 @@
 import { css } from "emotion";
 import EditIcon from "@material-ui/icons/Edit";
 import React from "react";
-import { Controller, UseFormReturn } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import Hr10 from "./Hr10";
 import LinkPluginEditor3 from "./LinkPluginEditor3";
 import { IconButton } from "@material-ui/core";
@@ -27,16 +27,9 @@ export default function AdminLine(props: {
   required?: boolean;
   disabled?: boolean;
   alias?: string;
-  formControl: UseFormReturn<any>;
 }) {
-  const {
-    field,
-    item,
-    required = false,
-    disabled = false,
-    alias,
-    formControl: { control, register, setValue },
-  } = props;
+  const { field, item, required = false, disabled = false, alias } = props;
+  const { control, register, setValue } = useFormContext();
   const [isVisible, setVisible] = React.useState(false);
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
     setVisible,

@@ -1,6 +1,6 @@
 import { css } from "emotion";
 import React from "react";
-import { UseFormReturn } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import Hr10 from "./Hr10";
 export default function AdminRadio(props: {
   field: string;
@@ -8,9 +8,9 @@ export default function AdminRadio(props: {
   required?: boolean;
   values: string[];
   alias?: string;
-  formControl: UseFormReturn<any>;
 }) {
-  const { field, item, required = false, alias, values, formControl } = props;
+  const { field, item, required = false, alias, values } = props;
+  const formControl = useFormContext();
   return (
     <div
       className={css`

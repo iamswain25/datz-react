@@ -1,16 +1,10 @@
 import { css } from "emotion";
 import React from "react";
-import { UseFormReturn } from "react-hook-form";
-import { Publication } from "../@type";
 import AdminImageCover from "./AdminImageCover";
 import AdminSortableImages from "./AdminSortableImages";
 
-export default function AdminGroupImages(props: {
-  title: string;
-  item: any;
-  formControl: UseFormReturn<Publication>;
-}) {
-  const { title, item, formControl } = props;
+export default function AdminGroupImages(props: { title: string; item: any }) {
+  const { title, item } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
     <section
@@ -54,8 +48,8 @@ export default function AdminGroupImages(props: {
       </div>
       {isVisible && (
         <div>
-          <AdminImageCover formControl={formControl} item={item} />
-          <AdminSortableImages formControl={formControl} item={item} />
+          <AdminImageCover item={item} />
+          <AdminSortableImages item={item} />
         </div>
       )}
     </section>

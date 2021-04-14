@@ -1,15 +1,13 @@
 import { css } from "emotion";
 import React from "react";
-import { UseFormReturn } from "react-hook-form";
 import AdminLine from "./AdminLine";
 
 export default function AdminGroupRelated(props: {
   title: string;
   item: any;
   fields: string[];
-  formControl: UseFormReturn<any>;
 }) {
-  const { title, item, fields, formControl } = props;
+  const { title, item, fields } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
     <section
@@ -56,7 +54,6 @@ export default function AdminGroupRelated(props: {
           {fields.map((field) => (
             <AdminLine
               key={`key-${title}-${field}`}
-              formControl={formControl}
               field={field}
               item={item}
             />

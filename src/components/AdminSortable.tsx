@@ -3,7 +3,7 @@ import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { ReactSortable } from "react-sortablejs";
 import clsx from "clsx";
-import { UseFormReturn } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import AdminModalBtn from "./AdminModalBtn";
 import { RelationType, SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
@@ -12,14 +12,10 @@ import convert2ItemType from "../utils/convert2ItemType";
 export default function AdminSortable(props: {
   field: RelationType;
   item: any;
-  formControl: UseFormReturn<Publication>;
 }) {
-  const {
-    field,
-    item,
-    formControl: { register, setValue },
-  } = props;
+  const { field, item } = props;
   const fields = item[field];
+  const { register, setValue } = useFormContext<Publication>();
   const [list, setList] = React.useState<SortableItemType[]>(
     convert2ItemType(fields)
   );

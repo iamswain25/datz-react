@@ -3,21 +3,19 @@ import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { ReactSortable } from "react-sortablejs";
 import clsx from "clsx";
-import { UseFormReturn } from "react-hook-form";
-import { SortableItemType } from "../@type/admin";
+import { useFormContext } from "react-hook-form";
+import { Param, SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
 import convert2ItemType from "../utils/convert2ItemType";
 import { IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
+import { useParams } from "react-router-dom";
 const field = "images";
-export default function AdminSortableImages(props: {
-  item: any;
-  formControl: UseFormReturn<Publication>;
-}) {
-  const {
-    item,
-    formControl: { register, setValue },
-  } = props;
+
+export default function AdminSortableImages(props: { item: any }) {
+  const { item } = props;
+  const { register, setValue } = useFormContext<Publication>();
+  const { collection } = useParams<Param>();
   const fields = item[field];
   const [list, setList] = React.useState<SortableItemType[]>(
     convert2ItemType(fields)
@@ -36,6 +34,24 @@ export default function AdminSortableImages(props: {
       field,
       list.map((v) => v.id)
     );
+  };
+  const file2Sortable = React.useCallback(
+    (file: File) => {
+      const name = file.name.replace(/\s/g, "-") || "default";
+      const id = `/${collection}/${item.id}/${name}`;
+      return { id, name } as SortableItemType;
+    },
+    [collection, item]
+  );
+  const fieldRef = React.useRef<HTMLInputElement | null>();
+  const { ref, onChange, ...rest } = register("files.images");
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(e);
+    if (e.target.files?.length) {
+      const incomingFiles = Array.from(e.target.files).map(file2Sortable);
+      console.log([...incomingFiles, ...list]);
+      setList2([...incomingFiles, ...list]);
+    }
   };
   React.useEffect(() => {
     setList(convert2ItemType(fields));
@@ -67,14 +83,36 @@ export default function AdminSortableImages(props: {
         </span>
         <ul>
           <li>
-            <button>Delete all</button>
+            <button
+              type="button"
+              onClick={() => {
+                setList2([]);
+              }}
+            >
+              Delete all
+            </button>
           </li>
           <li
             className={css`
               margin-left: 20px;
             `}
           >
-            <button>↑ upload</button>
+            <button type="button" onClick={() => fieldRef.current?.click()}>
+              ↑ upload
+            </button>
+            <input
+              type="file"
+              multiple
+              onChange={changeHandler}
+              ref={(e) => {
+                ref(e);
+                fieldRef.current = e;
+              }}
+              className={css`
+                display: none;
+              `}
+              {...rest}
+            />
           </li>
         </ul>
       </div>
@@ -115,7 +153,7 @@ export default function AdminSortableImages(props: {
                 overflow: hidden;
                 flex: 1;
               `}
-              children={item.id}
+              children={item.name}
             />
             <IconButton
               onClick={() => {

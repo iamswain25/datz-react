@@ -1,28 +1,27 @@
 import { css } from "emotion";
 import CloseIcon from "@material-ui/icons/Close";
 import React from "react";
-import { UseFormReturn } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { Publication } from "../@type";
 import { IconButton } from "@material-ui/core";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
 const field = "image_cover";
 
-export default function AdminImageCover(props: {
-  item: any;
-  formControl: UseFormReturn<Publication>;
-}) {
-  const {
-    item,
-    formControl: { register, setValue, watch },
-  } = props;
+export default function AdminImageCover(props: { item: any }) {
+  const { item } = props;
+  const { register, setValue, watch } = useFormContext<Publication>();
   const fieldRef = React.useRef<HTMLInputElement | null>();
   const files = watch(field);
   const { collection } = useParams<Param>();
   const { ref, onChange, ...rest } = register("files.image_cover");
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e);
-    setValue(field, `/${collection}/${item.id}/cover`);
+    if (e.target.files?.length) {
+      const file = e.target.files.item(0);
+      const name = file?.name?.replace(/\s/g, "-") || "cover";
+      setValue(field, `/${collection}/${item.id}/${name}`);
+    }
   };
   return (
     <section
@@ -74,6 +73,7 @@ export default function AdminImageCover(props: {
           `}
           {...rest}
         />
+        <span></span>
         <input
           type="text"
           readOnly

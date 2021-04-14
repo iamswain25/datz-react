@@ -24,6 +24,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^17.0.1",
+    "react-dropzone": "^11.3.2",
     "react-firebase-hooks": "^2.2.0",
     "react-hamburger-button": "^0.0.1",
     "react-headroom": "^3.0.0",

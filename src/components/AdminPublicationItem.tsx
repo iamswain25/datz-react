@@ -6,7 +6,7 @@ import AdminGroup from "./AdminGroup";
 import Hr10 from "./Hr10";
 import AdminGroupRelated from "./AdminGroupRelated";
 import AdminRadio from "./AdminRadio";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm, FormProvider } from "react-hook-form";
 import { RelationType } from "../@type/admin";
 import { Publication } from "../@type";
 import AdminGroupImages from "./AdminGroupImages";
@@ -52,143 +52,119 @@ function AdminPublicationItem() {
 
   if (!item) return null;
   return (
-    <form
-      onSubmit={handleSubmit(submitHandler)}
-      className={css`
-        background-color: #ececec;
-        font-size: 16px;
-        font-weight: 500;
-        color: #4b4b4b;
-        padding: 37px 15px;
-      `}
-    >
-      <div
+    <FormProvider {...formControl}>
+      <form
+        onSubmit={handleSubmit(submitHandler)}
         className={css`
-          display: flex;
-          justify-content: space-between;
-          padding-bottom: 9px;
-          border-bottom: 1px solid #707070;
-          text-transform: capitalize;
-          margin-bottom: 13px;
+          background-color: #ececec;
+          font-size: 16px;
+          font-weight: 500;
+          color: #4b4b4b;
+          padding: 37px 15px;
         `}
       >
-        <Controller
-          name="public"
-          defaultValue="false"
-          render={({ field }) => {
-            return (
-              <ul>
-                <li>
-                  <input
-                    type="radio"
-                    {...field}
-                    value="true"
-                    className={css`
-                      width: 12px;
-                      height: 12px;
-                      border: solid 1px #707070;
-                      margin-right: 9px;
-                    `}
-                    id="radio-public-true"
-                  />
-                  <label htmlFor="radio-public-true">Public</label>
-                </li>
-                <li
-                  className={css`
-                    margin-left: 19px;
-                  `}
-                >
-                  <input
-                    type="radio"
-                    {...field}
-                    defaultChecked={true}
-                    value="false"
-                    className={css`
-                      width: 12px;
-                      height: 12px;
-                      border: solid 1px #707070;
-                      margin-right: 9px;
-                    `}
-                    id="radio-public-false"
-                  />
-                  <label htmlFor="radio-public-false">Private</label>
-                </li>
-              </ul>
-            );
-          }}
-          control={control}
-        />
         <div
           className={css`
             display: flex;
-            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #707070;
+            text-transform: capitalize;
+            margin-bottom: 13px;
           `}
         >
-          <button
+          <Controller
+            name="public"
+            defaultValue="false"
+            render={({ field }) => {
+              return (
+                <ul>
+                  <li>
+                    <input
+                      type="radio"
+                      {...field}
+                      value="true"
+                      className={css`
+                        width: 12px;
+                        height: 12px;
+                        border: solid 1px #707070;
+                        margin-right: 9px;
+                      `}
+                      id="radio-public-true"
+                    />
+                    <label htmlFor="radio-public-true">Public</label>
+                  </li>
+                  <li
+                    className={css`
+                      margin-left: 19px;
+                    `}
+                  >
+                    <input
+                      type="radio"
+                      {...field}
+                      defaultChecked={true}
+                      value="false"
+                      className={css`
+                        width: 12px;
+                        height: 12px;
+                        border: solid 1px #707070;
+                        margin-right: 9px;
+                      `}
+                      id="radio-public-false"
+                    />
+                    <label htmlFor="radio-public-false">Private</label>
+                  </li>
+                </ul>
+              );
+            }}
+            control={control}
+          />
+          <div
             className={css`
-              font-size: 16px;
-              font-weight: 500;
-              color: #707070;
+              display: flex;
+              align-items: center;
             `}
           >
-            +Duplicate
-          </button>
-          <Hr10 />
-          <button
-            className={css`
-              font-size: 16px;
-              font-weight: 500;
-              color: #707070;
-            `}
-          >
-            ✓ Update
-          </button>
+            <button
+              className={css`
+                font-size: 16px;
+                font-weight: 500;
+                color: #707070;
+              `}
+            >
+              +Duplicate
+            </button>
+            <Hr10 />
+            <button
+              className={css`
+                font-size: 16px;
+                font-weight: 500;
+                color: #707070;
+              `}
+            >
+              ✓ Update
+            </button>
+          </div>
         </div>
-      </div>
-      <section
-        className={css`
-          font-size: 16px;
-          font-weight: 500;
-        `}
-      >
-        <AdminLine
-          formControl={formControl}
-          field="id"
-          alias="url"
-          item={item}
-          disabled
-        />
-        <AdminRadio
-          formControl={formControl}
-          field="type"
-          item={item}
-          values={PUBLICATION_TYPE}
-        />
-        <AdminLine formControl={formControl} field="edition" item={item} />
-        <AdminLine formControl={formControl} field="copies_count" item={item} />
-        <AdminLine formControl={formControl} field="order_url_en" item={item} />
-        <AdminLine formControl={formControl} field="order_url_ko" item={item} />
-        <AdminGroup
-          formControl={formControl}
-          title="EN"
-          item={item}
-          fields={EN_FIELDS}
-        />
-        <AdminGroup
-          formControl={formControl}
-          title="KO"
-          item={item}
-          fields={KO_FIELDS}
-        />
-        <AdminGroupRelated
-          formControl={formControl}
-          title="RELATED"
-          item={item}
-          fields={RELATED}
-        />
-        <AdminGroupImages formControl={formControl} title="IMAGE" item={item} />
-      </section>
-    </form>
+        <section
+          className={css`
+            font-size: 16px;
+            font-weight: 500;
+          `}
+        >
+          <AdminLine field="id" alias="url" item={item} disabled />
+          <AdminRadio field="type" item={item} values={PUBLICATION_TYPE} />
+          <AdminLine field="edition" item={item} />
+          <AdminLine field="copies_count" item={item} />
+          <AdminLine field="order_url_en" item={item} />
+          <AdminLine field="order_url_ko" item={item} />
+          <AdminGroup title="EN" item={item} fields={EN_FIELDS} />
+          <AdminGroup title="KO" item={item} fields={KO_FIELDS} />
+          <AdminGroupRelated title="RELATED" item={item} fields={RELATED} />
+          <AdminGroupImages title="IMAGE" item={item} />
+        </section>
+      </form>
+    </FormProvider>
   );
 }
 
