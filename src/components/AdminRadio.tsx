@@ -1,15 +1,16 @@
 import { css } from "emotion";
 import React from "react";
 import { useFormContext } from "react-hook-form";
+import { useAdminItem } from "../store/useGlobalState";
 import Hr10 from "./Hr10";
 export default function AdminRadio(props: {
   field: string;
-  item: any;
   required?: boolean;
   values: string[];
   alias?: string;
 }) {
-  const { field, item, required = false, alias, values } = props;
+  const [item] = useAdminItem();
+  const { field, required = false, alias, values } = props;
   const formControl = useFormContext();
   return (
     <div

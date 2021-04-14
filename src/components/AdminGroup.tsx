@@ -4,10 +4,9 @@ import AdminLine from "./AdminLine";
 
 export default function AdminGroupRelated(props: {
   title: string;
-  item: any;
   fields: string[];
 }) {
-  const { title, item, fields } = props;
+  const { title, fields } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
     <section
@@ -53,11 +52,7 @@ export default function AdminGroupRelated(props: {
       {isVisible && (
         <div>
           {fields.map((field) => (
-            <AdminLine
-              key={`key-${title}-${field}`}
-              field={field}
-              item={item}
-            />
+            <AdminLine key={`key-${title}-${field}`} field={field} />
           ))}
         </div>
       )}

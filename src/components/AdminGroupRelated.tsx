@@ -5,10 +5,9 @@ import AdminSortable from "./AdminSortable";
 
 export default function AdminGroup(props: {
   title: string;
-  item: any;
   fields: RelationType[];
 }) {
-  const { title, fields, item } = props;
+  const { title, fields } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
     <section
@@ -54,11 +53,7 @@ export default function AdminGroup(props: {
       {isVisible && (
         <div>
           {fields.map((field) => (
-            <AdminSortable
-              key={`key-related-${field}`}
-              field={field}
-              item={item}
-            />
+            <AdminSortable key={`key-related-${field}`} field={field} />
           ))}
         </div>
       )}

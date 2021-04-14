@@ -8,12 +8,11 @@ import AdminModalBtn from "./AdminModalBtn";
 import { RelationType, SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
 import convert2ItemType from "../utils/convert2ItemType";
+import { useAdminItem } from "../store/useGlobalState";
 
-export default function AdminSortable(props: {
-  field: RelationType;
-  item: any;
-}) {
-  const { field, item } = props;
+export default function AdminSortable(props: { field: RelationType }) {
+  const [item] = useAdminItem();
+  const { field } = props;
   const fields = item[field];
   const { register, setValue } = useFormContext<Publication>();
   const [list, setList] = React.useState<SortableItemType[]>(

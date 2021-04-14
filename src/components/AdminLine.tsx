@@ -7,6 +7,7 @@ import LinkPluginEditor3 from "./LinkPluginEditor3";
 import { IconButton } from "@material-ui/core";
 import TextareaAutosize from "react-textarea-autosize";
 import CloseIcon from "@material-ui/icons/Close";
+import { useAdminItem } from "../store/useGlobalState";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -23,12 +24,12 @@ const getDraftName = (field: string) => {
 };
 export default function AdminLine(props: {
   field: string;
-  item: any;
   required?: boolean;
   disabled?: boolean;
   alias?: string;
 }) {
-  const { field, item, required = false, disabled = false, alias } = props;
+  const [item] = useAdminItem();
+  const { field, required = false, disabled = false, alias } = props;
   const { control, register, setValue } = useFormContext();
   const [isVisible, setVisible] = React.useState(false);
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [

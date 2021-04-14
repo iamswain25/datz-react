@@ -3,18 +3,25 @@ import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { ReactSortable } from "react-sortablejs";
 import clsx from "clsx";
-import { useFormContext } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { Param, SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
 import convert2ItemType from "../utils/convert2ItemType";
 import { IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { useParams } from "react-router-dom";
+import { DropzoneOptions, useDropzone } from "react-dropzone";
 const field = "images";
-
+function uniqBy(a: any[], key: any) {
+  var seen: any = {};
+  return a.filter((item: any) => {
+    var k = key(item);
+    return seen.hasOwnProperty(k) ? false : (seen[k] = true);
+  });
+}
 export default function AdminSortableImages(props: { item: any }) {
   const { item } = props;
-  const { register, setValue } = useFormContext<Publication>();
+  const { register, setValue, control } = useFormContext<Publication>();
   const { collection } = useParams<Param>();
   const fields = item[field];
   const [list, setList] = React.useState<SortableItemType[]>(
@@ -28,8 +35,11 @@ export default function AdminSortableImages(props: { item: any }) {
     setList(newList);
   };
   const removeItem = (index: number) => {
+    const isFile = (file?: File): file is File => !!file;
     list.splice(index, 1);
     setList([...list]);
+    const files = list.map((l) => l.file).filter(isFile);
+    setValue("files.images", files);
     setValue(
       field,
       list.map((v) => v.id)
@@ -39,18 +49,24 @@ export default function AdminSortableImages(props: { item: any }) {
     (file: File) => {
       const name = file.name.replace(/\s/g, "-") || "default";
       const id = `/${collection}/${item.id}/${name}`;
-      return { id, name } as SortableItemType;
+      return { id, name, file } as SortableItemType;
     },
     [collection, item]
   );
-  const fieldRef = React.useRef<HTMLInputElement | null>();
-  const { ref, onChange, ...rest } = register("files.images");
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(e);
+  const changeHandler = (onChange: any) => (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     if (e.target.files?.length) {
-      const incomingFiles = Array.from(e.target.files).map(file2Sortable);
-      console.log([...incomingFiles, ...list]);
-      setList2([...incomingFiles, ...list]);
+      const newFiles = Array.from(e.target.files);
+      const incomingFiles = newFiles.map(file2Sortable);
+      const mergedList = [...incomingFiles, ...list];
+      const uniqueList = uniqBy(
+        mergedList,
+        (item: SortableItemType) => item.id
+      );
+      const files = uniqueList.filter((l) => l.file);
+      setList2(uniqueList);
+      onChange(files);
     }
   };
   React.useEffect(() => {
@@ -87,6 +103,7 @@ export default function AdminSortableImages(props: { item: any }) {
               type="button"
               onClick={() => {
                 setList2([]);
+                setValue("files.images", []);
               }}
             >
               Delete all
@@ -97,21 +114,13 @@ export default function AdminSortableImages(props: { item: any }) {
               margin-left: 20px;
             `}
           >
-            <button type="button" onClick={() => fieldRef.current?.click()}>
-              ↑ upload
-            </button>
-            <input
-              type="file"
-              multiple
-              onChange={changeHandler}
-              ref={(e) => {
-                ref(e);
-                fieldRef.current = e;
-              }}
-              className={css`
-                display: none;
-              `}
-              {...rest}
+            <Controller
+              render={({ field: { onChange } }) => (
+                <Dropzone noClick multiple onChange={changeHandler(onChange)} />
+              )}
+              name="files.images"
+              control={control}
+              defaultValue={[]}
             />
           </li>
         </ul>
@@ -169,3 +178,22 @@ export default function AdminSortableImages(props: { item: any }) {
     </section>
   );
 }
+
+type OnChange = (e: any) => any;
+const Dropzone = ({
+  onChange,
+  ...rest
+}: DropzoneOptions & { onChange: OnChange }) => {
+  const { getRootProps, getInputProps, open } = useDropzone({
+    ...rest,
+  });
+
+  return (
+    <div {...getRootProps()}>
+      <input {...getInputProps({ onChange })} />
+      <button type="button" onClick={open}>
+        ↑ upload
+      </button>
+    </div>
+  );
+};

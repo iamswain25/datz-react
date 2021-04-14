@@ -107,6 +107,7 @@ const Dropzone = ({
           align-items: center;
           height: 36px;
           border-bottom: solid 1px #cccccc;
+          color: #707070;
         `}
       >
         {myFile ? (

@@ -152,16 +152,16 @@ function AdminPublicationItem() {
             font-weight: 500;
           `}
         >
-          <AdminLine field="id" alias="url" item={item} disabled />
-          <AdminRadio field="type" item={item} values={PUBLICATION_TYPE} />
-          <AdminLine field="edition" item={item} />
-          <AdminLine field="copies_count" item={item} />
-          <AdminLine field="order_url_en" item={item} />
-          <AdminLine field="order_url_ko" item={item} />
-          <AdminGroup title="EN" item={item} fields={EN_FIELDS} />
-          <AdminGroup title="KO" item={item} fields={KO_FIELDS} />
-          <AdminGroupRelated title="RELATED" item={item} fields={RELATED} />
-          <AdminGroupImages title="IMAGE" item={item} />
+          <AdminLine field="id" alias="url" disabled />
+          <AdminRadio field="type" values={PUBLICATION_TYPE} />
+          <AdminLine field="edition" />
+          <AdminLine field="copies_count" />
+          <AdminLine field="order_url_en" />
+          <AdminLine field="order_url_ko" />
+          <AdminGroup title="EN" fields={EN_FIELDS} />
+          <AdminGroup title="KO" fields={KO_FIELDS} />
+          <AdminGroupRelated title="RELATED" fields={RELATED} />
+          <AdminGroupImages title="IMAGE" />
         </section>
       </form>
     </FormProvider>

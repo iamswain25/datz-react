@@ -18,4 +18,5 @@ export type RelationType =
 export interface SortableItemType {
   name: string;
   id: string;
+  file?: File;
 }
