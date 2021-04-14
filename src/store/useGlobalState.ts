@@ -12,6 +12,7 @@ type State = {
     ko: string;
     id: string;
     ref?: firebase.default.firestore.DocumentReference;
+    public: boolean;
   };
   MOBILE_MENU: boolean;
   lang: Lang;

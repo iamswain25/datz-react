@@ -25,7 +25,7 @@ export default function Notice() {
       });
     }
   }, [fireNotice, localId, notice, setNotice]);
-  if (!notice) return null;
+  if (!notice?.public) return null;
   function remove() {
     if (notice) {
       window.localStorage.setItem(DATZ_LAST_NOTICE_ID, notice.id);

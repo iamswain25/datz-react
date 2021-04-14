@@ -1,13 +1,17 @@
 import React from "react";
 import { firestore } from "../config/firebase";
+import firebase from "firebase";
 import useItems from "./useItems";
 export default function useCollection(collection: string, order = false) {
   const [items, setItems] = React.useState<undefined | any[]>(undefined);
   const convertedItems = useItems(items);
   React.useEffect(() => {
-    let fire = firestore.collection(collection).where("public", "==", true);
+    let fire: firebase.firestore.Query<firebase.firestore.DocumentData> = firestore.collection(
+      collection
+    );
     if (order) {
-      fire.orderBy("order", "asc");
+      fire = fire.where("public", "==", true);
+      fire = fire.orderBy("order", "asc");
     }
 
     fire
