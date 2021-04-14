@@ -21,7 +21,10 @@ export default function News() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop(true);
   const [items] = useCollectionDataOnce<any>(
-    firestore.collection("news").orderBy("order", "desc"),
+    firestore
+      .collection("news")
+      .where("public", "==", true)
+      .orderBy("order", "desc"),
     { idField: "id" }
   );
   const list = useNews(items);

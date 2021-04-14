@@ -9,7 +9,7 @@ import { css } from "emotion";
 import useDesktop from "../components/useDesktop";
 import useCollection from "../utils/useCollection";
 export default function Home() {
-  const collection = useCollection("main");
+  const collection = useCollection("main", true);
   const items = React.useMemo(() => {
     const c = collection || [];
     const publication = c.filter((d) => d.collection === "publication");

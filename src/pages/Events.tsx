@@ -22,7 +22,10 @@ export default function Events() {
   const { filter = "all" } = useParams();
   const isDesktop = useDesktop(true);
   const [events] = useCollectionDataOnce<any>(
-    firestore.collection("event").orderBy("order", "desc"),
+    firestore
+      .collection("event")
+      .where("public", "==", true)
+      .orderBy("order", "desc"),
     { idField: "id" }
   );
   const list = useEvents(events?.slice(2));

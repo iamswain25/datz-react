@@ -1,7 +1,7 @@
 import React from "react";
 import { firestore } from "../config/firebase";
 import useItems from "./useItems";
-export default function useCollectionWhere(
+export default function useCollectionWherePublic(
   collection: string,
   value: string,
   field: string = "collection"
@@ -12,6 +12,8 @@ export default function useCollectionWhere(
     firestore
       .collection(collection)
       .where(field, "==", value)
+      .where("public", "==", true)
+      .orderBy("order", "asc")
       .get()
       .then((snap) => snap.docs.map((d) => d.data()))
       .then((arr) => {

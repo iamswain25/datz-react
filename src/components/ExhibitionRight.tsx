@@ -20,6 +20,7 @@ export default function ExhibitionRight() {
   const [exhibitions] = useCollectionDataOnce<any>(
     firestore
       .collection("exhibition")
+      .where("public", "==", true)
       .orderBy("order", "desc")
       .limit(DEFAULT_COUNT * 2),
     { idField: "id" }

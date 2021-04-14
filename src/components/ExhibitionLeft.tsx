@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ImageGalleryGeneric from "./ImageGalleryGeneric";
 import { marginH17 } from "./styles";
-import useCollectionWhere from "../utils/useCollectionWhere";
+import useCollectionWherePublic from "../utils/useCollectionWherePublic";
 const stickyContainer = css`
   align-self: flex-start;
   position: fixed;
@@ -27,7 +27,7 @@ const mobileContainer = css`
 `;
 export default function ExhibitionLeft() {
   const isDesktop = useDesktop();
-  const items = useCollectionWhere("banner", "exhibition");
+  const items = useCollectionWherePublic("banner", "exhibition");
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>

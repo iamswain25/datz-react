@@ -21,7 +21,10 @@ const FILTERS: { [key: string]: string } = {
 export default function Exhibitions() {
   const { filter = "all" } = useParams();
   const [exhibitions] = useCollectionDataOnce<any>(
-    firestore.collection("exhibition").orderBy("order", "desc"),
+    firestore
+      .collection("exhibition")
+      .where("public", "==", true)
+      .orderBy("order", "desc"),
     { idField: "id" }
   );
   const list = useExhibitions(exhibitions)?.filter(filterExhibitionPast);

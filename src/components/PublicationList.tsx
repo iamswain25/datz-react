@@ -14,13 +14,19 @@ import useItems from "../utils/useItems";
 export default function PublicationList() {
   const [selected, setSelected] = React.useState("All");
   const [publications] = useCollectionDataOnce<Publication>(
-    firestore.collection("publication").orderBy("order", "desc"),
+    firestore
+      .collection("publication")
+      .where("public", "==", true)
+      .orderBy("order", "desc"),
     { idField: "id" }
   );
   const list = usePublications(publications);
   const isDesktop = useDesktop();
   const [items] = useCollectionDataOnce<any>(
-    firestore.collection("publication_category").orderBy("order", "asc")
+    firestore
+      .collection("publication_category")
+      .where("public", "==", true)
+      .orderBy("order", "asc")
   );
   const categories = useItems(items);
   const [classes] = useLang("PublicationList");

@@ -50,7 +50,11 @@ const responsive = {
 };
 export default function UpcomingWidget({ dark = false }: { dark?: boolean }) {
   const [items] = useCollectionDataOnce<any>(
-    firestore.collection("news").orderBy("order", "desc").limit(DEFAULT_COUNT),
+    firestore
+      .collection("news")
+      .where("public", "==", true)
+      .orderBy("order", "desc")
+      .limit(DEFAULT_COUNT),
     { idField: "id" }
   );
   const list = useNews(items);
