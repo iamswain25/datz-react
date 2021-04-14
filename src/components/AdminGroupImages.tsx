@@ -1,11 +1,9 @@
 import { css } from "emotion";
 import React from "react";
-import { useAdminItem } from "../store/useGlobalState";
 import AdminImageCover from "./AdminImageCover";
 import AdminSortableImages from "./AdminSortableImages";
 
 export default function AdminGroupImages(props: { title: string }) {
-  const [item] = useAdminItem();
   const { title } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
@@ -51,8 +49,8 @@ export default function AdminGroupImages(props: { title: string }) {
       </div>
       {isVisible && (
         <div>
-          <AdminImageCover item={item} />
-          <AdminSortableImages item={item} />
+          <AdminImageCover />
+          <AdminSortableImages />
         </div>
       )}
     </section>

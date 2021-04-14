@@ -7,7 +7,7 @@ import { useFormContext } from "react-hook-form";
 import AdminModalBtn from "./AdminModalBtn";
 import { RelationType, SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
-import convert2ItemType from "../utils/convert2ItemType";
+import { convert2ItemType } from "../utils/convert2ItemType";
 import { useAdminItem } from "../store/useGlobalState";
 
 export default function AdminSortable(props: { field: RelationType }) {

@@ -6,21 +6,16 @@ import clsx from "clsx";
 import { Controller, useFormContext } from "react-hook-form";
 import { Param, SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
-import convert2ItemType from "../utils/convert2ItemType";
+import { uniqBy, convert2ItemType } from "../utils/convert2ItemType";
 import { IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { useParams } from "react-router-dom";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
+import { useAdminItem } from "../store/useGlobalState";
 const field = "images";
-function uniqBy(a: any[], key: any) {
-  var seen: any = {};
-  return a.filter((item: any) => {
-    var k = key(item);
-    return seen.hasOwnProperty(k) ? false : (seen[k] = true);
-  });
-}
-export default function AdminSortableImages(props: { item: any }) {
-  const { item } = props;
+
+export default function AdminSortableImages() {
+  const [item] = useAdminItem();
   const { register, setValue, control } = useFormContext<Publication>();
   const { collection } = useParams<Param>();
   const fields = item[field];

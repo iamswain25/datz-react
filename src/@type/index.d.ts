@@ -31,6 +31,7 @@ export interface Publication {
   image_cover: string;
   public: string | boolean;
   files: { image_cover?: File; images: File[] };
+  videos: string[];
 }
 export interface Event {
   created_at: firebase.firestore.Timestamp;

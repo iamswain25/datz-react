@@ -96,10 +96,6 @@ export default function AdminLine(props: {
           className={css`
             font-size: inherit;
             color: #707070;
-            -webkit-line-clamp: 1;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
             flex: 1;
           `}
           {...register(field)}

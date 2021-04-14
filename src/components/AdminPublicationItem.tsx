@@ -10,6 +10,7 @@ import { Controller, useForm, FormProvider } from "react-hook-form";
 import { RelationType } from "../@type/admin";
 import { Publication } from "../@type";
 import AdminGroupImages from "./AdminGroupImages";
+import AdminGroupVideo from "./AdminGroupVideo";
 const PUBLICATION_TYPE = ["Book", "Magazine", "Artist' Book"];
 const EN_FIELDS = [
   "title_en",
@@ -162,6 +163,7 @@ function AdminPublicationItem() {
           <AdminGroup title="KO" fields={KO_FIELDS} />
           <AdminGroupRelated title="RELATED" fields={RELATED} />
           <AdminGroupImages title="IMAGE" />
+          <AdminGroupVideo title="Video" />
         </section>
       </form>
     </FormProvider>

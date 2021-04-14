@@ -2,7 +2,7 @@ import { css } from "emotion";
 import React from "react";
 import AdminLine from "./AdminLine";
 
-export default function AdminGroupRelated(props: {
+export default function AdminGroup(props: {
   title: string;
   fields: string[];
 }) {

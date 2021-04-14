@@ -3,7 +3,7 @@ import React from "react";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { SortableItemType } from "../@type/admin";
 import { firestore } from "../config/firebase";
-import convert2ItemType from "../utils/convert2ItemType";
+import { convert2ItemType } from "../utils/convert2ItemType";
 
 export default function AdminModalList(props: {
   list?: SortableItemType[];

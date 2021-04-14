@@ -1,13 +1,9 @@
 import { css } from "emotion";
 import React from "react";
-import { RelationType } from "../@type/admin";
-import AdminSortable from "./AdminSortable";
-
-export default function AdminGroupRelated(props: {
-  title: string;
-  fields: RelationType[];
-}) {
-  const { title, fields } = props;
+import AdminLine from "./AdminLine";
+const field = "videos";
+export default function AdminGroupVideo(props: { title: string }) {
+  const { title } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
     <section
@@ -52,9 +48,11 @@ export default function AdminGroupRelated(props: {
       </div>
       {isVisible && (
         <div>
-          {fields.map((field) => (
-            <AdminSortable key={`key-related-${field}`} field={field} />
-          ))}
+          <AdminLine
+            key={`key-${title}-${field}`}
+            field={`${field}.0`}
+            alias="embed"
+          />
         </div>
       )}
     </section>

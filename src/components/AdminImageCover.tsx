@@ -1,4 +1,5 @@
 import React from "react";
+import path from "path";
 import { css } from "emotion";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
 import { Controller, useFormContext } from "react-hook-form";
@@ -7,10 +8,11 @@ import { Publication } from "../@type";
 import { IconButton } from "@material-ui/core";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
+import { useAdminItem } from "../store/useGlobalState";
 const field = "image_cover";
 
-export default function AdminImageCover(props: { item: any }) {
-  const { item } = props;
+export default function AdminImageCover() {
+  const [item] = useAdminItem();
   const { register, setValue, control } = useFormContext<Publication>();
   const { collection } = useParams<Param>();
   return (
@@ -124,7 +126,7 @@ const Dropzone = ({
             </IconButton>
           </>
         ) : (
-          <span>{initialValue?.substr(initialValue.lastIndexOf("/") + 1)}</span>
+          <span>{path.basename(initialValue || "")}</span>
         )}
       </div>
     </section>
