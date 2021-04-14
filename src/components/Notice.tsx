@@ -29,10 +29,9 @@ export default function Notice() {
   function remove() {
     if (notice) {
       window.localStorage.setItem(DATZ_LAST_NOTICE_ID, notice.id);
-      notice.ref?.set(
-        { count_close: firebase.firestore.FieldValue.increment(1) },
-        { merge: true }
-      );
+      notice.ref?.update({
+        count_close: firebase.firestore.FieldValue.increment(1),
+      });
       setNotice(undefined);
     }
   }
@@ -64,6 +63,7 @@ export default function Notice() {
         {notice?.[lang]}
       </div>
       <button
+        type="button"
         onClick={remove}
         className={css`
           font-family: datz-regular;

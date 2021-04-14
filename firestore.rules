@@ -53,7 +53,15 @@ service cloud.firestore {
       allow write: if ifAdmin();
     }
     match /%24notice/{document=**} {
-      allow read, write: if true;
+      allow read: if true;
+      allow create, delete: if ifAdmin();
+      allow update: if (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['count_close']));
+    }
+    match /users/{document=**} {
+      allow read: if true;
+      allow create: if request.resource.data.admin == false;
+      allow update: if ifAdmin();
+      allow delete: if ifAdmin();
     }
   }
 }
