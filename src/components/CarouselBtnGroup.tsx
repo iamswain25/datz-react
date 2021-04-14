@@ -6,6 +6,7 @@ const headerStyle = css`
   font-size: 16px;
   line-height: 1.19;
   text-align: right;
+  padding: 0 10px;
 `;
 export default function CarouselBtnGroup({
   next,
@@ -48,23 +49,29 @@ export default function CarouselBtnGroup({
           padding: 10px ${isDesktop && hasPadding ? 17 : 0}px;
         `}
       >
-        <div>
+        <div
+          className={css`
+            margin-left: -10px;
+          `}
+        >
           <button
+            type="button"
             onClick={previous}
             className={css`
               ${headerStyle};
               color: ${isBeginning ? "#cccccc" : dark ? "#ffffff" : "#707070"};
-              margin-right: 13px;
+              margin-right: 3px;
             `}
           >
             ←
           </button>
           <button
+            type="button"
             onClick={next}
             className={css`
               ${headerStyle};
               color: ${isEnding ? "#cccccc" : dark ? "#ffffff" : "#707070"};
-              margin-left: 13px;
+              margin-left: 3px;
             `}
           >
             →
