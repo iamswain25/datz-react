@@ -4,7 +4,8 @@ const lang: Lang = navigator.language.substring(0, 2) === "ko" ? "ko" : "en";
 const MOBILE_MENU = false;
 const NOTICE = undefined;
 const adminItem = undefined;
-const initialState = { lang, MOBILE_MENU, NOTICE, adminItem };
+const adminOrder = false;
+const initialState = { lang, MOBILE_MENU, NOTICE, adminItem, adminOrder };
 type State = {
   NOTICE?: {
     created_at: any;
@@ -17,6 +18,7 @@ type State = {
   MOBILE_MENU: boolean;
   lang: Lang;
   adminItem?: any;
+  adminOrder: boolean;
 };
 export const { useGlobalState } = createGlobalState<State>(initialState);
 export function useGlobalLang() {
@@ -30,4 +32,7 @@ export function useNotice() {
 }
 export function useAdminItem() {
   return useGlobalState("adminItem");
+}
+export function useAdminOrder() {
+  return useGlobalState("adminOrder");
 }

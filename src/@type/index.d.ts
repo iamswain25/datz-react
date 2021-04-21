@@ -23,6 +23,7 @@ export interface Publication {
   preview_body_ko: string;
   order_url_en: string;
   order_url_ko: string;
+  order: number;
   images: string[];
   rel_artists: string[];
   rel_publications: string[];
