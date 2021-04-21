@@ -11,6 +11,8 @@ import { RelationType } from "../@type/admin";
 import { Publication } from "../@type";
 import AdminGroupImages from "./AdminGroupImages";
 import AdminGroupVideo from "./AdminGroupVideo";
+import { auth, firestore, storage } from "../config/firebase";
+import LoadingCenter from "./LoadingCenter";
 const PUBLICATION_TYPE = ["Book", "Magazine", "Artist' Book"];
 const EN_FIELDS = [
   "title_en",
@@ -36,14 +38,59 @@ const RELATED: RelationType[] = [
   "rel_exhibitions",
   "rel_events",
 ];
-const submitHandler = (data: any) => {
+const submitHandler = async (data: any) => {
+  if (!window.confirm("저장하시겠습니까?")) return;
   data.public = data.public === "true";
-  console.log(data);
+  data.updated_at = new Date();
+  data.updated_by = auth.currentUser?.uid;
+  // upload files
+  const promises = [];
+  // return console.log(data.files);
+  if (data.files.image_cover)
+    promises.push(storage.ref(data.image_cover).put(data.files.image_cover));
+  if (data.files.images?.length) {
+    promises.push(
+      ...data.files.images.map(
+        ({ file, id }: { file: File; id: string }, index: number) =>
+          storage.ref(id).put(file)
+      )
+    );
+  }
+  // return console.log(promises);
+  await Promise.all(promises);
+  delete data.files;
+  const { id, ...rest } = data;
+  await firestore.collection("publication").doc(id).set(rest, { merge: true });
+  window.alert("수정 했습니다.");
+};
+const duplicateHandler = (
+  data: any,
+  setItem: (item: any) => void
+) => async () => {
+  if (!window.confirm("복제 하시겠습니까?")) return;
+  data.public = false;
+  delete data.id;
+  data.created_at = new Date();
+  data.created_by = auth.currentUser?.uid;
+  data.order = Number(data.order) + 100;
+  const id = window.prompt("새로운 url을 입력해주세요.");
+  if (id === null) return;
+  if (!id) return window.alert("url이 입력되지 않았습니다. 다시 시도해주세요.");
+  const docRef = await firestore.collection("publication").doc(id).get();
+  if (docRef.exists)
+    return window.alert("이미 해당 url이 존재합니다. 다른 url로 시도하세요.");
+  await docRef.ref.set(data);
+  setItem({ ...data, id });
 };
 function AdminPublicationItem() {
-  const [item] = useAdminItem();
+  const [item, setItem] = useAdminItem();
   const formControl = useForm<Publication>();
-  const { handleSubmit, reset, control } = formControl;
+  const {
+    handleSubmit,
+    reset,
+    control,
+    formState: { isSubmitting },
+  } = formControl;
   React.useEffect(() => {
     if (item) {
       item.public = item.public ? "true" : "false";
@@ -127,6 +174,8 @@ function AdminPublicationItem() {
             `}
           >
             <button
+              type="button"
+              onClick={duplicateHandler(item, setItem)}
               className={css`
                 font-size: 16px;
                 font-weight: 500;
@@ -137,6 +186,7 @@ function AdminPublicationItem() {
             </button>
             <Hr10 />
             <button
+              type="submit"
               className={css`
                 font-size: 16px;
                 font-weight: 500;
@@ -166,6 +216,7 @@ function AdminPublicationItem() {
           <AdminGroupVideo title="Video" />
         </section>
       </form>
+      {isSubmitting && <LoadingCenter />}
     </FormProvider>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 import { useParams } from "react-router-dom";
 import { Publication } from "../@type";
 import { Param } from "../@type/admin";
@@ -8,14 +8,13 @@ import { firestore } from "../config/firebase";
 import { useAdminItem } from "../store/useGlobalState";
 export default function AdminCollectionList() {
   const { type, collection } = useParams<Param>();
-  const [, setAdminItem] = useAdminItem();
-  const [items] = useCollectionDataOnce<Publication>(
+  const [selectedItem, setAdminItem] = useAdminItem();
+  const [items] = useCollectionData<Publication>(
     firestore
       .collection(type === "banner" ? type : collection)
       .orderBy("order", "desc"),
     { idField: "id" }
   );
-
   return (
     <section
       className={css`
@@ -40,27 +39,32 @@ export default function AdminCollectionList() {
           flex-direction: column;
         `}
       >
-        {items?.map((item: any) => (
-          <li
-            key={item.id}
-            className={css`
-              padding: 9px 2px;
-              border-bottom: solid 1px #cccccc;
-            `}
-          >
-            <button
-              onClick={() => setAdminItem(item)}
+        {items?.map((item: any) => {
+          return (
+            <li
+              key={item.id}
               className={css`
-                font-size: 16px;
-                text-decoration: ${item.public === false
-                  ? "line-through"
-                  : "none"};
+                padding: 9px 2px;
+                border-bottom: solid 1px #cccccc;
+                background-color: ${selectedItem?.id === item.id
+                  ? "#ccc"
+                  : "inherit"};
               `}
             >
-              {item.id}
-            </button>
-          </li>
-        ))}
+              <button
+                onClick={() => setAdminItem(item)}
+                className={css`
+                  font-size: 16px;
+                  text-decoration: ${item.public === false
+                    ? "line-through"
+                    : "none"};
+                `}
+              >
+                {item.id}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

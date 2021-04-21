@@ -71,7 +71,6 @@ export default function AdminLine(props: {
           {...register(field)}
           defaultValue={item[field]}
           readOnly
-          disabled={disabled}
         />
       ) : ["notes_en", "notes_ko", "body_en", "body_ko"].includes(field) ? (
         <Controller

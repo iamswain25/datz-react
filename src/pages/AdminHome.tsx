@@ -5,8 +5,11 @@ import AdminHeader from "../components/AdminHeader";
 import AdminMenu from "../components/AdminMenu";
 import AdminCollectionList from "../components/AdminCollectionList";
 import AdminPublicationItem from "../components/AdminPublicationItem";
+import { useParams } from "react-router-dom";
+import { Param } from "../@type/admin";
 
 export default function AdminHome() {
+  const { collection } = useParams<Param>();
   return (
     <section
       className={css`
@@ -24,7 +27,7 @@ export default function AdminHome() {
             <AdminMenu />
           </Grid>
           <Grid item xs={4}>
-            <AdminCollectionList />
+            {!!collection && <AdminCollectionList />}
           </Grid>
           <Grid item xs={5}>
             <AdminPublicationItem />
