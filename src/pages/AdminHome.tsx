@@ -4,12 +4,36 @@ import { css } from "emotion";
 import AdminHeader from "../components/AdminHeader";
 import AdminMenu from "../components/AdminMenu";
 import AdminCollectionList from "../components/AdminCollectionList";
-import AdminPublicationItem from "../components/AdminPublicationItem";
+import AdminItemPublication from "../components/AdminItemPublication";
 import { useParams } from "react-router-dom";
 import { Param } from "../@type/admin";
+import AdminItemExhibition from "../components/AdminItemExhibition";
+import { useAdminItem } from "../store/useGlobalState";
 
 export default function AdminHome() {
-  const { collection } = useParams<Param>();
+  const { collection, type } = useParams<Param>();
+  const [, setAdminItem] = useAdminItem();
+  React.useEffect(() => {
+    if (type && collection) {
+      setAdminItem(undefined);
+    }
+  }, [collection, type, setAdminItem]);
+  const list = () => {
+    switch (type) {
+      case "contents":
+        return <AdminCollectionList />;
+      case "banner":
+        return <AdminCollectionList />;
+    }
+  };
+  const item = () => {
+    switch (collection) {
+      case "publication":
+        return <AdminItemPublication />;
+      case "exhibition":
+        return <AdminItemExhibition />;
+    }
+  };
   return (
     <section
       className={css`
@@ -27,10 +51,10 @@ export default function AdminHome() {
             <AdminMenu />
           </Grid>
           <Grid item xs={4}>
-            {!!collection && <AdminCollectionList />}
+            {!!collection && list()}
           </Grid>
           <Grid item xs={5}>
-            <AdminPublicationItem />
+            {item()}
           </Grid>
         </Grid>
       </section>

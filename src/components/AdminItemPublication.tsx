@@ -82,7 +82,7 @@ const duplicateHandler = (
   await docRef.ref.set(data);
   setItem({ ...data, id });
 };
-function AdminPublicationItem() {
+export default function AdminItemPublication() {
   const [item, setItem] = useAdminItem();
   const formControl = useForm<Publication>();
   const {
@@ -212,7 +212,7 @@ function AdminPublicationItem() {
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
           <AdminGroupRelated title="RELATED" fields={RELATED} />
-          <AdminGroupImages title="IMAGE" />
+          <AdminGroupImages title="IMAGE" hasCover />
           <AdminGroupVideo title="Video" />
         </section>
       </form>
@@ -220,5 +220,3 @@ function AdminPublicationItem() {
     </FormProvider>
   );
 }
-
-export default AdminPublicationItem;

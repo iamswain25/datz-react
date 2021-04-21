@@ -54,7 +54,7 @@ export interface Exhibition {
   created_at: firebase.firestore.Timestamp;
   address: string;
   id: string;
-  type: string;
+  type: "D'Ark Room" | "Datz Museum of Art";
   visit_url: string;
   start_date: string;
   end_date: string;

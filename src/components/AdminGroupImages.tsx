@@ -3,8 +3,11 @@ import React from "react";
 import AdminImageCover from "./AdminImageCover";
 import AdminSortableImages from "./AdminSortableImages";
 
-export default function AdminGroupImages(props: { title: string }) {
-  const { title } = props;
+export default function AdminGroupImages(props: {
+  title: string;
+  hasCover?: boolean;
+}) {
+  const { title, hasCover = false } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
     <section
@@ -49,7 +52,7 @@ export default function AdminGroupImages(props: { title: string }) {
       </div>
       {isVisible && (
         <div>
-          <AdminImageCover />
+          {hasCover && <AdminImageCover />}
           <AdminSortableImages />
         </div>
       )}

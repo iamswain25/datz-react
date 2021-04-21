@@ -52,18 +52,18 @@ export default function Routes() {
           </Route>
 
           <Route exact path="/event/:id" component={EventItem} />
-          <PrivateRoute exact path="/admin/event/:id" component={EventItem} />
-          <PrivateRoute
+          {/* <PrivateRoute exact path="/admin/event/:id" component={EventItem} /> */}
+          {/* <PrivateRoute
             exact
             path="/admin/publication/:id/readmore"
             component={PublicationReadmore}
-          />
-          <PrivateRoute
+          /> */}
+          {/* <PrivateRoute
             exact
             path="/admin/exhibition/:id/readmore"
             component={ExhibitionReadmore}
-          />
-          <PrivateRoute exact path="/admin/news/:id" component={NewsItem} />
+          /> */}
+          {/* <PrivateRoute exact path="/admin/news/:id" component={NewsItem} /> */}
           <Route exact path="/exhibition/:id" component={ExhibitionItem} />
           <Route
             exact
@@ -77,11 +77,11 @@ export default function Routes() {
           />
           <Route exact path="/artist/:id" component={ArtistPage} />
           <Route exact path="/artist-project" component={ArtistProject} />
-          <PrivateRoute
+          {/* <PrivateRoute
             exact
             path="/admin/artist-project"
             component={ArtistProject}
-          />
+          /> */}
           <Route exact path="/login" component={Signin} />
           <Route exact path="/events/:filter" component={Events} />
           <Route exact path="/exhibitions/:filter" component={Exhibitions} />
