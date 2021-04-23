@@ -69,7 +69,7 @@ export default function AdminLine(props: {
             flex: 1;
           `}
           {...register(field)}
-          defaultValue={item[field]}
+          defaultValue={item[field] || ""}
           readOnly
         />
       ) : ["notes_en", "notes_ko", "body_en", "body_ko"].includes(field) ? (

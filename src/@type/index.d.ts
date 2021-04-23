@@ -4,7 +4,14 @@ export type Collection =
   | "publication"
   | "event"
   | "exhibition"
+  | "banner"
   | "artist";
+export type Logo = "D'Ark Room" | "Datz Museum of Art" | "Datz Press";
+export type ExhibitionLogo =
+  | "Datz Museum of Art"
+  | "D'Ark Room"
+  | "Datz Press Gallery";
+
 export interface Publication {
   public: boolean;
   created_at: firebase.firestore.Timestamp;
@@ -44,7 +51,7 @@ export interface Event {
   created_at: firebase.firestore.Timestamp;
   address: string;
   id: string;
-  logo: "D'Ark Room" | "Datz Museum of Art" | "Datz Press";
+  logo: Logo;
   type: "Artist Talk / Lecture" | "Book Fair" | "Exhibition";
   date: string;
   place_en: string;
@@ -60,7 +67,7 @@ export interface Exhibition {
   created_at: firebase.firestore.Timestamp;
   address: string;
   id: string;
-  type: "D'Ark Room" | "Datz Museum of Art" | "Datz Press Gallery";
+  type: ExhibitionLogo;
   visit_url: string;
   start_date: string;
   end_date: string;
@@ -110,7 +117,17 @@ export interface News {
   image_cover: string;
   public: boolean;
 }
-export type ExhibitionLogo =
-  | "Datz Museum of Art"
-  | "D'Ark Room"
-  | "Datz Press Gallery";
+export interface Banner {
+  created_at: firebase.firestore.Timestamp;
+  url?: string;
+  id: string;
+  type: string;
+  logo: string;
+  title_en: string;
+  text_en: string;
+  title_ko: string;
+  text_ko: string;
+  image: string;
+  public: boolean;
+  files: { image?: File };
+}

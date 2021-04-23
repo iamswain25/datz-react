@@ -11,6 +11,8 @@ export function adminItemHandler(col: Collection) {
     // return console.log(data.files);
     if (data.files.image_cover)
       promises.push(storage.ref(data.image_cover).put(data.files.image_cover));
+    if (data.files.image)
+      promises.push(storage.ref(data.image).put(data.files.image));
     if (data.files.images?.length) {
       promises.push(
         ...data.files.images.map(

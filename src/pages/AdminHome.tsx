@@ -12,6 +12,8 @@ import { useAdminItem } from "../store/useGlobalState";
 import AdminItemEvent from "../components/AdminItemEvent";
 import AdminItemArtist from "../components/AdminItemArtist";
 import AdminItemNews from "../components/AdminItemNews";
+import AdminListBanner from "../components/AdminListBanner";
+import AdminItemBanner from "../components/AdminItemBanner";
 
 export default function AdminHome() {
   const { collection, type } = useParams<Param>();
@@ -21,28 +23,33 @@ export default function AdminHome() {
       setAdminItem(undefined);
     }
   }, [collection, type, setAdminItem]);
-  const list = () => {
-    switch (type) {
-      case "contents":
-        return <AdminCollectionList />;
-      case "banner":
-        return <AdminCollectionList />;
-    }
-  };
-  const item = () => {
-    switch (collection) {
-      case "publication":
-        return <AdminItemPublication />;
-      case "exhibition":
-        return <AdminItemExhibition />;
-      case "event":
-        return <AdminItemEvent />;
-      case "artist":
-        return <AdminItemArtist />;
-      case "news":
-        return <AdminItemNews />;
-    }
-  };
+
+  const [list, item] = React.useMemo(() => {
+    const list = () => {
+      switch (type) {
+        case "contents":
+          return <AdminCollectionList />;
+        case "banner":
+          return <AdminListBanner />;
+      }
+    };
+    const item = () => {
+      if (type === "banner") return <AdminItemBanner />;
+      switch (collection) {
+        case "publication":
+          return <AdminItemPublication />;
+        case "exhibition":
+          return <AdminItemExhibition />;
+        case "event":
+          return <AdminItemEvent />;
+        case "artist":
+          return <AdminItemArtist />;
+        case "news":
+          return <AdminItemNews />;
+      }
+    };
+    return [list, item];
+  }, [collection, type]);
   return (
     <section
       className={css`
