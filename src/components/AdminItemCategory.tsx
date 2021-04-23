@@ -8,14 +8,11 @@ import { Artists } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import { adminItemHandler } from "../utils/adminItemHandler";
-import AdminRadio from "./AdminRadio";
-import AdminGroupImage from "./AdminGroupImage";
-const LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
-const EN_FIELDS = ["title_en", "text_en"];
-const KO_FIELDS = ["title_ko", "text_ko"];
-const { submit, duplicate } = adminItemHandler("main");
-export default function AdminItemMain() {
-  const [item, setItem] = useAdminItem();
+const EN_FIELDS = ["text_en"];
+const KO_FIELDS = ["text_ko"];
+const { submit } = adminItemHandler("publication_category");
+export default function AdminItemCategory() {
+  const [item] = useAdminItem();
   const formControl = useForm<Artists>();
   const {
     reset,
@@ -38,7 +35,7 @@ export default function AdminItemMain() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic duplicate={duplicate(item, setItem)} />
+        <AdminItemPublic />
         <section
           className={css`
             font-size: 16px;
@@ -46,12 +43,8 @@ export default function AdminItemMain() {
           `}
         >
           <AdminLine field="id" disabled />
-          <AdminLine field="url" alias="link" />
-          <AdminLine field="type" />
-          <AdminRadio field="logo" values={LOGO} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
-          <AdminGroupImage title="IMAGE" />
         </section>
       </form>
       {isSubmitting && <LoadingCenter />}

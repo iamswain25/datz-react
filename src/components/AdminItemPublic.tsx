@@ -10,7 +10,7 @@ const transform: {
 export default function AdminItemPublic({
   duplicate,
 }: {
-  duplicate: (...args: any[]) => void;
+  duplicate?: (...args: any[]) => void;
 }) {
   const { control } = useFormContext();
   return (
@@ -78,18 +78,23 @@ export default function AdminItemPublic({
           align-items: center;
         `}
       >
-        <button
-          type="button"
-          onClick={duplicate}
-          className={css`
-            font-size: 16px;
-            font-weight: 500;
-            color: #707070;
-          `}
-        >
-          +Duplicate
-        </button>
-        <Hr10 />
+        {!!duplicate && (
+          <>
+            {" "}
+            <button
+              type="button"
+              onClick={duplicate}
+              className={css`
+                font-size: 16px;
+                font-weight: 500;
+                color: #707070;
+              `}
+            >
+              +Duplicate
+            </button>
+            <Hr10 />
+          </>
+        )}
         <button
           type="submit"
           className={css`

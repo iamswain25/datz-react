@@ -5,6 +5,8 @@ export type Collection =
   | "event"
   | "exhibition"
   | "banner"
+  | "publication_category"
+  | "main"
   | "artist";
 export type Logo = "D'Ark Room" | "Datz Museum of Art" | "Datz Press";
 export type ExhibitionLogo =

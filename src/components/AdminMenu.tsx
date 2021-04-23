@@ -22,7 +22,7 @@ const defaultList: Item[] = [
     children: [
       { title: "Contents", id: "contents" },
       { title: "Banner", id: "banner" },
-      { title: "Category", id: "category" },
+      { title: "Category", id: "publication_category" },
     ],
   },
   {

@@ -14,7 +14,7 @@ const LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
 const EN_FIELDS = ["title_en", "text_en"];
 const KO_FIELDS = ["title_ko", "text_ko"];
 const { submit, duplicate } = adminItemHandler("main");
-export default function AdminItemMain() {
+export default function AdminItemBanner() {
   const [item, setItem] = useAdminItem();
   const formControl = useForm<Artists>();
   const {

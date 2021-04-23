@@ -14,6 +14,8 @@ import AdminItemArtist from "../components/AdminItemArtist";
 import AdminItemNews from "../components/AdminItemNews";
 import AdminListBanner from "../components/AdminListBanner";
 import AdminItemBanner from "../components/AdminItemBanner";
+import AdminItemCategory from "../components/AdminItemCategory";
+import AdminItemMain from "../components/AdminItemMain";
 
 export default function AdminHome() {
   const { collection, type } = useParams<Param>();
@@ -28,6 +30,7 @@ export default function AdminHome() {
     const list = () => {
       switch (type) {
         case "banner":
+        case "publication_category":
           return <AdminListBanner />;
         case "contents":
         default:
@@ -38,6 +41,8 @@ export default function AdminHome() {
       switch (type) {
         case "banner":
           return <AdminItemBanner />;
+        case "publication_category":
+          return <AdminItemCategory />;
       }
       switch (collection) {
         case "publication":
@@ -50,6 +55,8 @@ export default function AdminHome() {
           return <AdminItemArtist />;
         case "news":
           return <AdminItemNews />;
+        case "main":
+          return <AdminItemMain />;
         default:
           return <AdminItemBanner />;
       }

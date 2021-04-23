@@ -7,12 +7,12 @@ import {
   SortEnd,
 } from "react-sortable-hoc";
 import { css } from "emotion";
-import { useCollectionData } from "react-firebase-hooks/firestore";
 import { useParams } from "react-router-dom";
 import { Publication } from "../@type";
 import { Param } from "../@type/admin";
 import { firestore } from "../config/firebase";
 import { useAdminItem, useAdminOrder } from "../store/useGlobalState";
+import useFireSubscription2 from "../utils/useFireSubscription2";
 const DragHandle = SortableHandle(() => (
   <MenuIcon
     className={css`
@@ -65,14 +65,7 @@ const SortableList = SortableContainer(({ items }: any) => {
 });
 export default function AdminListBanner() {
   const { type = "banner", collection } = useParams<Param>();
-
-  const [items] = useCollectionData<Publication>(
-    firestore
-      .collection(type)
-      .where("collection", "==", collection)
-      .orderBy("order", "asc"),
-    { idField: "id" }
-  );
+  const [items] = useFireSubscription2<Publication>();
   const [isEditing, setEditing] = useAdminOrder();
   const startEditing = () => {
     setEditing(true);
