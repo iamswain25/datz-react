@@ -33,6 +33,7 @@ export default function Support() {
                 position: absolute;
                 height: 100vh;
                 background-color: black;
+                left: 0;
               `}
             />
             <div
