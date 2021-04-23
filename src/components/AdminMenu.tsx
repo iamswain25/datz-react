@@ -79,6 +79,7 @@ const defaultList: Item[] = [
   },
   {
     title: "News",
+    id: "news",
     children: [
       { title: "Contents", id: "contents" },
       { title: "Link", id: "link" },
@@ -86,6 +87,7 @@ const defaultList: Item[] = [
   },
   {
     title: "Support",
+    id: "support",
     children: [
       { title: "Main gallery", id: "main" },
       { title: "Membership", id: "membership" },

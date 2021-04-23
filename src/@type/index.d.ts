@@ -1,4 +1,10 @@
 export type PublicationType = "Book" | "Magazine" | "Artist' Book";
+export type Collection =
+  | "news"
+  | "publication"
+  | "event"
+  | "exhibition"
+  | "artist";
 export interface Publication {
   public: boolean;
   created_at: firebase.firestore.Timestamp;
@@ -38,8 +44,8 @@ export interface Event {
   created_at: firebase.firestore.Timestamp;
   address: string;
   id: string;
-  logo: string;
-  type: string;
+  logo: "D'Ark Room" | "Datz Museum of Art" | "Datz Press";
+  type: "Artist Talk / Lecture" | "Book Fair" | "Exhibition";
   date: string;
   place_en: string;
   title_en: string;
@@ -54,7 +60,7 @@ export interface Exhibition {
   created_at: firebase.firestore.Timestamp;
   address: string;
   id: string;
-  type: "D'Ark Room" | "Datz Museum of Art";
+  type: "D'Ark Room" | "Datz Museum of Art" | "Datz Press Gallery";
   visit_url: string;
   start_date: string;
   end_date: string;

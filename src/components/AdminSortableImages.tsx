@@ -124,6 +124,7 @@ export default function AdminSortableImages() {
         {list.map((item, index) => (
           <div
             key={`key-id-${item.id}`}
+            title={item.id}
             className={css`
               display: flex;
               align-items: center;

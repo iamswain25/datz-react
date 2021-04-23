@@ -9,6 +9,9 @@ import { useParams } from "react-router-dom";
 import { Param } from "../@type/admin";
 import AdminItemExhibition from "../components/AdminItemExhibition";
 import { useAdminItem } from "../store/useGlobalState";
+import AdminItemEvent from "../components/AdminItemEvent";
+import AdminItemArtist from "../components/AdminItemArtist";
+import AdminItemNews from "../components/AdminItemNews";
 
 export default function AdminHome() {
   const { collection, type } = useParams<Param>();
@@ -32,6 +35,12 @@ export default function AdminHome() {
         return <AdminItemPublication />;
       case "exhibition":
         return <AdminItemExhibition />;
+      case "event":
+        return <AdminItemEvent />;
+      case "artist":
+        return <AdminItemArtist />;
+      case "news":
+        return <AdminItemNews />;
     }
   };
   return (
