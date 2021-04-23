@@ -13,7 +13,7 @@ const defaultList: Item[] = [
       { title: "Main gallery", id: "publication" },
       { title: "Wide gallery", id: "exhibition" },
       { title: "Vertical gallery", id: "event" },
-      { title: "External links", id: "link" },
+      // { title: "External links", id: "link" },
     ],
   },
   {

@@ -64,7 +64,7 @@ const SortableList = SortableContainer(({ items }: any) => {
   );
 });
 export default function AdminListBanner() {
-  const { type, collection } = useParams<Param>();
+  const { type = "banner", collection } = useParams<Param>();
 
   const [items] = useCollectionData<Publication>(
     firestore
@@ -108,7 +108,7 @@ export default function AdminListBanner() {
       const item = items[oldIndex];
       if (!item) return;
       const { id } = item;
-      await firestore.collection("banner").doc(id).update({ order });
+      await firestore.collection(type).doc(id).update({ order });
     }
   };
   return (

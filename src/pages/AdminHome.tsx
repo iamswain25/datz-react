@@ -27,14 +27,18 @@ export default function AdminHome() {
   const [list, item] = React.useMemo(() => {
     const list = () => {
       switch (type) {
-        case "contents":
-          return <AdminCollectionList />;
         case "banner":
           return <AdminListBanner />;
+        case "contents":
+        default:
+          return <AdminCollectionList />;
       }
     };
     const item = () => {
-      if (type === "banner") return <AdminItemBanner />;
+      switch (type) {
+        case "banner":
+          return <AdminItemBanner />;
+      }
       switch (collection) {
         case "publication":
           return <AdminItemPublication />;
@@ -46,6 +50,8 @@ export default function AdminHome() {
           return <AdminItemArtist />;
         case "news":
           return <AdminItemNews />;
+        default:
+          return <AdminItemBanner />;
       }
     };
     return [list, item];
