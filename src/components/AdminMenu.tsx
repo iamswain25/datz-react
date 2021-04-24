@@ -53,10 +53,11 @@ const defaultList: Item[] = [
     title: "Artist projects",
     id: "artist-project",
     children: [
-      { title: "Main gallery", id: "main" },
+      { title: "Main gallery", id: "top" },
       { title: "Book Project", id: "book" },
       { title: "Exhibition", id: "exhibition" },
       { title: "Datz Artist Residency", id: "residency" },
+      { title: "Facilities", id: "facilities" },
     ],
   },
   {
@@ -82,7 +83,7 @@ const defaultList: Item[] = [
     id: "news",
     children: [
       { title: "Contents", id: "contents" },
-      { title: "Link", id: "link" },
+      // { title: "Link", id: "link" },
     ],
   },
   {
@@ -193,6 +194,7 @@ export default function AdminMenu() {
     <section
       className={css`
         padding-left: 48px;
+        margin-bottom: 100px;
       `}
     >
       {list.map(makeUl(setList, params))}

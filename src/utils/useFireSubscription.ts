@@ -10,6 +10,9 @@ export default function useFireSubscription<T>() {
     let fs = firestore.collection(collection) as firebase.firestore.Query;
     if (type === "contents") {
       fs = fs.orderBy("order", "desc");
+    } else if (collection === "artist-project") {
+      fs = fs.where("type", "==", type);
+      fs = fs.orderBy("order", "asc");
     } else {
       fs = fs.where("collection", "==", type);
       fs = fs.orderBy("order", "asc");

@@ -26,13 +26,7 @@ export default function ArtistProject() {
     const top = c.filter((d) => d.type === "top");
     const [book] = c.filter((d) => d.type === "book");
     const projects = c.filter((d) => d.type === "projects");
-    const exhibition = c.length
-      ? [
-          c.find((d) => d.type === "exhibition"),
-          c.find((d) => d.type === "museum"),
-          c.find((d) => d.type === "darkroom"),
-        ]
-      : [];
+    const exhibition = c.filter((d) => d.type === "exhibition");
     const residency = c.filter((d) => d.type === "residency");
     const facilities = c.filter((d) => d.type === "facilities");
     return { top, book, projects, exhibition, residency, facilities };

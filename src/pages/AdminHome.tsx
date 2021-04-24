@@ -16,6 +16,7 @@ import AdminListBanner from "../components/AdminListBanner";
 import AdminItemBanner from "../components/AdminItemBanner";
 import AdminItemCategory from "../components/AdminItemCategory";
 import AdminItemMain from "../components/AdminItemMain";
+import AdminListArtistProject from "../components/AdminListArtistProject";
 
 export default function AdminHome() {
   const { collection, type } = useParams<Param>();
@@ -28,6 +29,10 @@ export default function AdminHome() {
 
   const [list, item] = React.useMemo(() => {
     const list = () => {
+      switch (collection) {
+        case "artist-project":
+          return <AdminListArtistProject />;
+      }
       switch (type) {
         case "banner":
         case "publication_category":
