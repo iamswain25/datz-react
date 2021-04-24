@@ -17,6 +17,7 @@ import AdminItemBanner from "../components/AdminItemBanner";
 import AdminItemCategory from "../components/AdminItemCategory";
 import AdminItemMain from "../components/AdminItemMain";
 import AdminListArtistProject from "../components/AdminListArtistProject";
+import AdminItemArtistProject from "../components/AdminItemArtistProject";
 
 export default function AdminHome() {
   const { collection, type } = useParams<Param>();
@@ -62,6 +63,8 @@ export default function AdminHome() {
           return <AdminItemNews />;
         case "main":
           return <AdminItemMain />;
+        case "artist-project":
+          return <AdminItemArtistProject />;
         default:
           return <AdminItemBanner />;
       }

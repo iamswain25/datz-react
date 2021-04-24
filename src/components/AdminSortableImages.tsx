@@ -12,9 +12,10 @@ import CloseIcon from "@material-ui/icons/Close";
 import { useParams } from "react-router-dom";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
 import { useAdminItem } from "../store/useGlobalState";
-const field = "images";
-
-export default function AdminSortableImages() {
+export default function AdminSortableImages(props: {
+  field?: "images" | "image";
+}) {
+  const { field = "images" } = props;
   const [item] = useAdminItem();
   const { register, setValue, control } = useFormContext<Publication>();
   const { collection } = useParams<Param>();
@@ -24,7 +25,7 @@ export default function AdminSortableImages() {
   );
   const setList2 = (newList: SortableItemType[]) => {
     setValue(
-      field,
+      field as keyof Publication,
       newList.map((v) => v.id)
     );
     setList(newList);
@@ -34,9 +35,9 @@ export default function AdminSortableImages() {
     list.splice(index, 1);
     setList([...list]);
     const files = list.map((l) => l.file).filter(isFile);
-    setValue("files.images", files);
+    setValue(`files.${field}` as keyof Publication, files);
     setValue(
-      field,
+      field as keyof Publication,
       list.map((v) => v.id)
     );
   };
@@ -98,7 +99,7 @@ export default function AdminSortableImages() {
               type="button"
               onClick={() => {
                 setList2([]);
-                setValue("files.images", []);
+                setValue(`files.${field}` as keyof Publication, []);
               }}
             >
               Delete all
@@ -113,7 +114,7 @@ export default function AdminSortableImages() {
               render={({ field: { onChange } }) => (
                 <Dropzone noClick multiple onChange={changeHandler(onChange)} />
               )}
-              name="files.images"
+              name={`files.${field}` as keyof Publication}
               control={control}
               defaultValue={[]}
             />
@@ -143,7 +144,7 @@ export default function AdminSortableImages() {
             />
             <input
               type="checkbox"
-              {...register(field)}
+              {...register(field as keyof Publication)}
               defaultValue={item.id}
               className={css`
                 display: none;

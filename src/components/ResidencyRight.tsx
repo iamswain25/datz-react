@@ -124,7 +124,7 @@ export default function ResidencyRight({ item }: { item: any }) {
         <Logo type="culture" color="#5d5d5d" />
       </div>
       <a
-        href={item?.url?.[2]}
+        href={item?.url?.[1]}
         target="_blank"
         rel="noopener noreferrer"
         className={css`

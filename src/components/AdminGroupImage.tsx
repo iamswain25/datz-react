@@ -1,9 +1,13 @@
 import { css } from "emotion";
 import React from "react";
 import AdminImage from "./AdminImage";
+import AdminSortableImages from "./AdminSortableImages";
 
-export default function AdminGroupImage(props: { title: string }) {
-  const { title } = props;
+export default function AdminGroupImage(props: {
+  title: string;
+  multiple?: boolean;
+}) {
+  const { title, multiple = false } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
     <section
@@ -48,7 +52,7 @@ export default function AdminGroupImage(props: { title: string }) {
       </div>
       {isVisible && (
         <div>
-          <AdminImage />
+          {multiple ? <AdminSortableImages field="image" /> : <AdminImage />}
         </div>
       )}
     </section>

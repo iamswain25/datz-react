@@ -6,6 +6,7 @@ export type Collection =
   | "exhibition"
   | "banner"
   | "publication_category"
+  | "artist-project"
   | "main"
   | "artist";
 export type Logo = "D'Ark Room" | "Datz Museum of Art" | "Datz Press";
@@ -131,5 +132,17 @@ export interface Banner {
   text_ko: string;
   image: string;
   public: boolean;
+  files: { image?: File };
+}
+export interface ArtistProject {
+  created_at: firebase.firestore.Timestamp;
+  url?: string;
+  id: string;
+  type: string;
+  text_en: string;
+  text_ko: string;
+  image: string | string[];
+  artist_en: string;
+  artist_ko: string;
   files: { image?: File };
 }
