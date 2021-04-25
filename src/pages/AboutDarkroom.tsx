@@ -16,11 +16,12 @@ import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
-import useDocs from "../utils/useDocs";
-import useItems from "../utils/useItems";
 import BtnShare from "../components/BtnShare";
 import Dfrontspace from "../assets/svg/Dfrontspace";
 import Logo from "../components/Logo";
+import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
+import useItem from "../utils/useItem";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -30,12 +31,13 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const data = ["darkroom-1", "darkroom-2"];
 export default function AboutDarkroom() {
   const isDesktop = useDesktop(true);
   const [classes] = useLang("About");
-  const items = useDocs("about", data);
-  const [d1, d2] = useItems(items) || [];
+  const [doc] = useDocumentDataOnce(
+    firestore.collection("about").doc("D’Ark Room")
+  );
+  const item = useItem(doc);
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzpress");
@@ -97,12 +99,12 @@ export default function AboutDarkroom() {
                 width: 100%;
               `}
             >
-              <LazyImage link={d1?.image} />
+              <LazyImage link={item?.image} />
               <Logo color="#fff" type="darkroom" absolute noPadding />
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>
-            {d1 && d2 && (
+            {Boolean(item?.text) && (
               <div
                 className={css`
                   ${flexcolumnstretch}
@@ -126,10 +128,10 @@ export default function AboutDarkroom() {
                       margin-top: ${isDesktop ? 0 : 20}px;
                     `}
                   >
-                    <BtnShare title={d1.title} color="#ececec" />
+                    <BtnShare title={item.title} color="#ececec" />
                   </div>
-                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
-                  <p className={classes.desc}>{d1.text}</p>
+                  <h1 className={h1Style(isDesktop)}>{item.title}</h1>
+                  <p className={classes.desc}>{item.text}</p>
                   <Dfrontspace
                     color="#fff"
                     className={css`
@@ -138,13 +140,12 @@ export default function AboutDarkroom() {
                       height: 69px;
                     `}
                   />
-                  <p className={classes.desc}>{d2.text}</p>
                 </div>
                 <hr
                   className={css`
                     border-style: solid;
                     border-width: 0;
-                    border-top: solid 1px #fff;
+                    border-bottom: solid 1px #fff;
                     height: 37px;
                   `}
                 />

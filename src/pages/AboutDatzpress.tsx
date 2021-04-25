@@ -104,7 +104,7 @@ export default function AboutDatzpress() {
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>
-            {item && (
+            {Boolean(item?.text) && (
               <div
                 className={css`
                   ${flexcolumnstretch}

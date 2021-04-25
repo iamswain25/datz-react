@@ -16,10 +16,11 @@ import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
-import useDocs from "../utils/useDocs";
-import useItems from "../utils/useItems";
 import BtnShare from "../components/BtnShare";
 import Logo from "../components/Logo";
+import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
+import useItem from "../utils/useItem";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -29,13 +30,14 @@ const h1Style = (isDesktop = false) => css`
   border-bottom: 1px solid #ffffff;
   text-align: center;
 `;
-const data = ["datzmuseum-1"];
 export default function AboutDatzmuseum() {
   const isDesktop = useDesktop(true);
   const [classes] = useLang("About");
   const history = useHistory();
-  const items = useDocs("about", data);
-  const [d1] = useItems(items) || [];
+  const [doc] = useDocumentDataOnce(
+    firestore.collection("about").doc("Datz Museum of Art")
+  );
+  const item = useItem(doc);
   function onLeft() {
     history.replace("/about/darkroom");
   }
@@ -96,17 +98,19 @@ export default function AboutDatzmuseum() {
                 width: 100%;
               `}
             >
-              <LazyImage link={d1?.image} />
+              <LazyImage link={item?.image} />
               <Logo color="#fff" type="datzmuseum" absolute noPadding />
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>
-            {d1 && (
+            {Boolean(item?.text) && (
               <div
                 className={css`
                   ${flexcolumnstretch}
                   ${paddingH12}
-                max-height: ${isDesktop ? "calc(100vh - 79px - 16px)" : "auto"};
+                  max-height: ${isDesktop
+                    ? "calc(100vh - 79px - 16px)"
+                    : "auto"};
                   overflow: auto;
                 `}
               >
@@ -123,11 +127,12 @@ export default function AboutDatzmuseum() {
                       margin-top: ${isDesktop ? 0 : 20}px;
                     `}
                   >
-                    <BtnShare title={d1.title} color="#ececec" />
+                    <BtnShare title={item?.title} color="#ececec" />
                   </div>
-                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
+                  <h1 className={h1Style(isDesktop)}>{item?.title}</h1>
                   <a
                     rel="noopener noreferrer"
+                    target="_blank"
                     href="https://www.datzmuseum.org/"
                     className={css`
                       ${flexcolumncenter}
@@ -135,17 +140,18 @@ export default function AboutDatzmuseum() {
                       line-height: 1.21;
                       margin-top: 15px;
                       margin-bottom: 15px;
+                      text-decoration: underline;
                     `}
                   >
-                    Visit Website &gt;
+                    {item?.link_title}
                   </a>
-                  <p className={classes.desc}>{d1.text}</p>
+                  <p className={classes.desc}>{item?.text}</p>
                 </div>
                 <hr
                   className={css`
                     border-style: solid;
                     border-width: 0;
-                    border-top: solid 1px #fff;
+                    border-bottom: solid 1px #fff;
                     height: 37px;
                   `}
                 />
