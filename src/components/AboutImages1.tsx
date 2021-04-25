@@ -20,7 +20,6 @@ export default function AboutImages1() {
       .where("type", "==", "desc")
       .orderBy("order", "asc")
   );
-  console.log(items2);
   const items = useItems(items2) || [];
   return (
     <section

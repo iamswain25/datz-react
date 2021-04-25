@@ -15,19 +15,24 @@ import BtnTop from "./BtnTop";
 import MapMarker from "./MapMarker";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
-const defaultProps = {
-  center: {
-    lat: 37.540535,
-    lng: 127.0922978,
-  },
-  zoom: 16,
-};
-const data = ["getting-here", "address", "working-hour"];
+// const defaultProps = {
+//   center: {
+//     lat: 37.540535,
+//     lng: 127.0922978,
+//   },
+//   zoom: 16,
+// };
+const data = ["getting-here", "address", "working-hour", "Location"];
 export default function AboutMap3() {
   const isDesktop = useDesktop();
   const items = useDocs("about", data);
-  const [gettingHere, address, workingHour] = useItems(items) || [];
+  const [gettingHere, address, workingHour, location] = useItems(items) || [];
   const [classes] = useLang("body");
+  const [zoom, center] = React.useMemo(() => {
+    const zoom = Number(location?.zoom) || 0;
+    const center = { lat: Number(location?.lat), lng: Number(location?.lng) };
+    return [zoom, center];
+  }, [location]);
   return (
     <>
       <section
@@ -53,20 +58,22 @@ export default function AboutMap3() {
               height: ${isDesktop ? "100%" : "auto"};
             `}
           >
-            <GoogleMapReact
-              bootstrapURLKeys={{
-                key: "AIzaSyBLWcym-3i-U68oKTFMpLZEVDed0K9fZuw",
-              }}
-              defaultCenter={defaultProps.center}
-              defaultZoom={defaultProps.zoom}
-            >
-              <MapMarker
-                {...defaultProps.center}
-                className={css`
-                  color: red;
-                `}
-              />
-            </GoogleMapReact>
+            {zoom && (
+              <GoogleMapReact
+                bootstrapURLKeys={{
+                  key: "AIzaSyBLWcym-3i-U68oKTFMpLZEVDed0K9fZuw",
+                }}
+                defaultCenter={center}
+                defaultZoom={zoom}
+              >
+                <MapMarker
+                  {...center}
+                  className={css`
+                    color: red;
+                  `}
+                />
+              </GoogleMapReact>
+            )}
           </Grid>
           <Grid container item xs={12} sm={6} direction="column">
             <div

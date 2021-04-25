@@ -126,7 +126,7 @@ const Dropzone = ({
             </IconButton>
           </>
         ) : (
-          <span>{path.basename(initialValue || "")}</span>
+          <span title={initialValue}>{path.basename(initialValue || "")}</span>
         )}
       </div>
     </section>

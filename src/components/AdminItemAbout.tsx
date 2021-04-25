@@ -60,9 +60,21 @@ export default function AdminItemAbout() {
           `}
         >
           <AdminLine field="id" disabled />
-          <AdminGroup title="EN" fields={en} />
-          <AdminGroup title="KO" fields={ko} />
-          {["desc"].includes(item?.type) && <AdminGroupImage title="IMAGE" />}
+          {item.id === "Location" ? (
+            <>
+              <AdminLine field="lat" />
+              <AdminLine field="lng" />
+              <AdminLine field="zoom" />
+            </>
+          ) : (
+            <>
+              <AdminGroup title="EN" fields={en} />
+              <AdminGroup title="KO" fields={ko} />
+              {["desc"].includes(item?.type) && (
+                <AdminGroupImage title="IMAGE" />
+              )}
+            </>
+          )}
         </section>
       </form>
       {isSubmitting && <LoadingCenter />}
