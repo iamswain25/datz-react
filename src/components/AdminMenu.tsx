@@ -64,7 +64,7 @@ const defaultList: Item[] = [
   {
     title: "About",
     id: "about",
-    children: [{ title: "about", id: "contents" }],
+    children: [{ title: "about", id: "" }],
   },
   {
     title: "Contact",
@@ -97,7 +97,8 @@ const makeUl = (
   params: Param
 ) => (item: Item, index1: number) => {
   const makeLi = (child: Child, index2: number) => {
-    const selected = item.id === params.collection && child.id === params.type;
+    const { type = "" } = params;
+    const selected = item.id === params.collection && child.id === type;
     const color = selected ? "#4b4b4b" : "#afafaf";
     return (
       <li

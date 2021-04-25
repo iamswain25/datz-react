@@ -16,9 +16,10 @@ import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
 import Logo from "../components/Logo";
-import useDocs from "../utils/useDocs";
-import useItems from "../utils/useItems";
 import BtnShare from "../components/BtnShare";
+import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
+import useItem from "../utils/useItem";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -29,12 +30,13 @@ const h1Style = (isDesktop = false) => css`
   text-align: center;
 `;
 
-const data = ["datzpress-1", "datzpress-2"];
 export default function AboutDatzpress() {
-  const items = useDocs("about", data);
-  const [d1, d2] = useItems(items) || [];
+  const [doc] = useDocumentDataOnce(
+    firestore.collection("about").doc("Datz Press")
+  );
+  const item = useItem(doc);
   const isDesktop = useDesktop(true);
-  const [classes, isEn] = useLang("About");
+  const [classes] = useLang("About");
   const history = useHistory();
   function onLeft() {
     history.replace("/about/datzmuseum");
@@ -97,12 +99,12 @@ export default function AboutDatzpress() {
                 width: 100%;
               `}
             >
-              <LazyImage link={d1?.image} />
+              <LazyImage link={item?.image} />
               <Logo type="datzpress" color="#afafaf" absolute noPadding />
             </div>
           </Grid>
           <Grid container item xs={12} sm={6}>
-            {d1 && d2 && (
+            {item && (
               <div
                 className={css`
                   ${flexcolumnstretch}
@@ -126,10 +128,10 @@ export default function AboutDatzpress() {
                       margin-top: ${isDesktop ? 0 : 20}px;
                     `}
                   >
-                    <BtnShare title={d1.title} color="#ececec" />
+                    <BtnShare title={item.title} color="#ececec" />
                   </div>
-                  <h1 className={h1Style(isDesktop)}>{d1.title}</h1>
-                  <p className={classes.desc}>{d1.text}</p>
+                  <h1 className={h1Style(isDesktop)}>{item.title}</h1>
+                  <p className={classes.desc}>{item.text}</p>
                   <Logo
                     type="datzbooks"
                     color="#fff"
@@ -140,17 +142,16 @@ export default function AboutDatzpress() {
                       width: 111px;
                     `}
                   />
-                  <p className={classes.desc}>{d2.text}</p>
                   <p className={classes.desc}>
                     <a
-                      href={isEn ? d2.url : d1.url}
+                      href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={css`
                         text-decoration: underline;
                       `}
                     >
-                      {d2.title}
+                      {item.link_title}
                     </a>
                   </p>
                 </div>
@@ -158,7 +159,7 @@ export default function AboutDatzpress() {
                   className={css`
                     border-style: solid;
                     border-width: 0;
-                    border-top: solid 1px #fff;
+                    border-bottom: solid 1px #fff;
                     height: 37px;
                   `}
                 />

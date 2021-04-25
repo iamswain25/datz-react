@@ -5,15 +5,22 @@ import { marginH18, bottomBtn37, marginH10, marginH17 } from "./styles";
 import { Grid } from "@material-ui/core";
 import Divider from "./Divider";
 import AboutImagesGrid from "./AboutImagesGrid";
-import useCollectionWhere from "../utils/useCollectionWhere";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { firestore } from "../config/firebase";
 const data = ["main"];
 export default function AboutImages1() {
   const isDesktop = useDesktop();
   const items1 = useDocs("about", data);
   const [main] = useItems(items1) || [];
-  const items2 = useCollectionWhere("about", "banner", "type");
+  const [items2] = useCollectionDataOnce<any[]>(
+    firestore
+      .collection("about")
+      .where("type", "==", "desc")
+      .orderBy("order", "asc")
+  );
+  console.log(items2);
   const items = useItems(items2) || [];
   return (
     <section

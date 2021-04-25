@@ -18,6 +18,9 @@ export default function useItem(item: any = {}) {
   const preview_body =
     lang === "ko" ? item.preview_body_ko : item.preview_body_en;
   const order_url = lang === "ko" ? item.order_url_ko : item.order_url_en;
+  const preview = lang === "ko" ? item.preview_ko : item.preview_en;
+  const url = lang === "ko" ? item.url_ko : item.url_en;
+  const link_title = lang === "ko" ? item.link_title_ko : item.link_title_en;
   return {
     ...item,
     title,
@@ -34,5 +37,8 @@ export default function useItem(item: any = {}) {
     order_url,
     place,
     bodyDraft,
+    preview,
+    url,
+    link_title,
   };
 }

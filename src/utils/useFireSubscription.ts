@@ -8,7 +8,9 @@ export default function useFireSubscription<T>() {
   const { type, collection } = useParams<Param>();
   const fs = React.useMemo(() => {
     let fs = firestore.collection(collection) as firebase.firestore.Query;
-    if (type === "contents") {
+    if (!type) {
+      return fs;
+    } else if (type === "contents") {
       fs = fs.orderBy("order", "desc");
     } else if (["artist-project", "contact"].includes(collection)) {
       fs = fs.where("type", "==", type);

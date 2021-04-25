@@ -10,14 +10,14 @@ import useStorage from "./useStorage";
 import useLang from "./useLang";
 
 export default function AboutImagesGrid({ item }: { item: any }) {
-  const { title, text, url, image } = item;
+  const { title, preview, collection, image } = item;
   const [classes] = useLang("About");
   const isDesktop = useDesktop();
   const img = useStorage(image);
   return (
     <Grid item container xs={12} sm={4}>
       <Link
-        to={url}
+        to={`/about/${collection}`}
         className={css`
           overflow: hidden;
           flex: 1;
@@ -106,7 +106,7 @@ export default function AboutImagesGrid({ item }: { item: any }) {
               margin-top: 12px;
             `}
           >
-            {text}
+            {preview}
           </div>
         </div>
         {!isDesktop && (
