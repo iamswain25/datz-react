@@ -199,29 +199,27 @@ export default function Contact() {
                         </div>
                         <div>-</div>
                         <div>{list?.email?.title}</div>
-                        {list?.email?.list.map(
-                          ({ name, email }: any, key: number) => (
-                            <div key={key}>
-                              <span
-                                className={css`
-                                  margin-right: 16px;
-                                `}
-                              >
-                                {name}
-                              </span>
-                              <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={"mailto:" + email}
-                                className={css`
-                                  text-decoration: underline;
-                                `}
-                              >
-                                {email}
-                              </a>
-                            </div>
-                          )
-                        )}
+                        {list?.email?.list.map((l: any, key: number) => (
+                          <div key={key}>
+                            <span
+                              className={css`
+                                margin-right: 16px;
+                              `}
+                            >
+                              {en ? l.title_en : l.title_ko}
+                            </span>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={"mailto:" + l.url}
+                              className={css`
+                                text-decoration: underline;
+                              `}
+                            >
+                              {l.url}
+                            </a>
+                          </div>
+                        ))}
                       </div>
                     </div>
                     <div
