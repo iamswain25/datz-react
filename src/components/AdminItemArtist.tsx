@@ -8,9 +8,10 @@ import { Artists } from "../@type";
 import AdminGroupImages from "./AdminGroupImages";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
-import { RelationType } from "../@type/admin";
+import { Param, RelationType } from "../@type/admin";
 import AdminGroupRelated from "./AdminGroupRelated";
-import { adminItemHandler } from "../utils/adminItemHandler";
+import useSubmitDuplicate from "../utils/useSubmitDuplicate";
+import { useParams } from "react-router-dom";
 const EN_FIELDS = ["name_en", "bio_en"];
 const KO_FIELDS = ["name_ko", "bio_ko"];
 const RELATED: RelationType[] = [
@@ -18,9 +19,10 @@ const RELATED: RelationType[] = [
   "rel_exhibitions",
   "rel_events",
 ];
-const { submit, duplicate } = adminItemHandler("artist");
 export default function AdminItemArtist() {
-  const [item, setItem] = useAdminItem();
+  const { collection } = useParams<Param>();
+  const { submit, duplicate } = useSubmitDuplicate(collection);
+  const [item] = useAdminItem();
   const formControl = useForm<Artists>();
   const {
     reset,
@@ -43,7 +45,7 @@ export default function AdminItemArtist() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic duplicate={duplicate(item, setItem)} />
+        <AdminItemPublic duplicate={duplicate} />
         <section
           className={css`
             font-size: 16px;

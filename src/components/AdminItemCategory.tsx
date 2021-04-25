@@ -7,11 +7,14 @@ import { useForm, FormProvider } from "react-hook-form";
 import { Artists } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
-import { adminItemHandler } from "../utils/adminItemHandler";
+import useSubmitDuplicate from "../utils/useSubmitDuplicate";
+import { useParams } from "react-router";
+import { Param } from "../@type/admin";
 const EN_FIELDS = ["text_en"];
 const KO_FIELDS = ["text_ko"];
-const { submit } = adminItemHandler("publication_category");
 export default function AdminItemCategory() {
+  const { collection } = useParams<Param>();
+  const { submit } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
   const formControl = useForm<Artists>();
   const {

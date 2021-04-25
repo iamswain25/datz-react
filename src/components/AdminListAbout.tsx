@@ -12,10 +12,7 @@ import { Publication } from "../@type";
 import { Param } from "../@type/admin";
 import { firestore } from "../config/firebase";
 import { useAdminItem, useAdminOrder } from "../store/useGlobalState";
-import useFireSubscription from "../utils/useFireSubscription";
-import CloseIcon from "@material-ui/icons/Close";
-import { IconButton } from "@material-ui/core";
-import useTrashItem from "../utils/useTrashItem";
+import useFireSubscription2 from "../utils/useFireSubscription2";
 const DragHandle = SortableHandle(() => (
   <MenuIcon
     className={css`
@@ -27,7 +24,6 @@ const DragHandle = SortableHandle(() => (
 const SortableItem = SortableElement(({ item }: any) => {
   const [selectedItem, setAdminItem] = useAdminItem();
   const [isEditing] = useAdminOrder();
-  const trashItem = useTrashItem(item);
   return (
     <li
       key={item.id}
@@ -43,26 +39,12 @@ const SortableItem = SortableElement(({ item }: any) => {
       <button
         onClick={() => setAdminItem(item)}
         className={css`
-          flex: 1;
-          text-align: left;
           font-size: 16px;
           text-decoration: ${item.public === false ? "line-through" : "none"};
         `}
       >
         {item.id}
       </button>
-      <IconButton
-        onClick={trashItem}
-        className={css`
-          padding: 2px !important;
-        `}
-      >
-        <CloseIcon
-          className={css`
-            font-size: 16px !important;
-          `}
-        />
-      </IconButton>
     </li>
   );
 });
@@ -81,9 +63,9 @@ const SortableList = SortableContainer(({ items }: any) => {
     </ul>
   );
 });
-export default function AdminListArtistProject() {
+export default function AdminListAbout() {
   const { type, collection } = useParams<Param>();
-  const [items] = useFireSubscription<Publication>();
+  const [items] = useFireSubscription2<Publication>();
   const [isEditing, setEditing] = useAdminOrder();
   const startEditing = () => {
     setEditing(true);
@@ -119,7 +101,7 @@ export default function AdminListArtistProject() {
       const item = items[oldIndex];
       if (!item) return;
       const { id } = item;
-      await firestore.collection(collection).doc(id).update({ order });
+      await firestore.collection(type).doc(id).update({ order });
     }
   };
   return (

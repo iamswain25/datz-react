@@ -57,16 +57,19 @@ const mapLinks = (en: boolean = false) => (stock: any, i: number) => {
 export default function Contact() {
   const isDesktop = useDesktop(true);
   const [data] = useCollectionDataOnce(
-    firestore.collection("contact").orderBy("order", "asc")
+    firestore
+      .collection("contact")
+      // .where("public", "==", true)
+      .orderBy("order", "asc")
   );
   const items = useItems(data);
   const [, en] = useLang();
   const list = React.useMemo(() => {
     if (!items) return;
-    const enquiry = items.find((i) => i.type === "enquiry");
-    const phone = items.find((i) => i.type === "phone");
-    const email = items.find((i) => i.type === "email");
-    const catalog = items.find((i) => i.type === "catalog");
+    const enquiry = items.find((i) => i.type2 === "enquiry");
+    const phone = items.find((i) => i.type2 === "phone");
+    const email = items.find((i) => i.type2 === "email");
+    const catalog = items.find((i) => i.type2 === "catalog");
     const stocklist = items.filter((i) => i.type === "stockist");
     const collections = items.filter((i) => i.type === "collections");
     return { stocklist, enquiry, collections, phone, email, catalog };

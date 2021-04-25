@@ -1,5 +1,7 @@
 export type PublicationType = "Book" | "Magazine" | "Artist' Book";
 export type Collection =
+  | "about"
+  | "contact"
   | "news"
   | "publication"
   | "event"

@@ -1,3 +1,5 @@
+import { Collection } from ".";
+
 export type Child = { title: string; id?: string };
 export type Item = {
   title: string;
@@ -6,7 +8,7 @@ export type Item = {
   id?: string;
 };
 export type Param = {
-  collection: string;
+  collection: Collection;
   type: string;
 };
 

@@ -6,12 +6,13 @@ import AdminGroup from "./AdminGroup";
 import AdminGroupRelated from "./AdminGroupRelated";
 import AdminRadio from "./AdminRadio";
 import { useForm, FormProvider } from "react-hook-form";
-import { RelationType } from "../@type/admin";
+import { Param, RelationType } from "../@type/admin";
 import { Exhibition } from "../@type";
 import AdminGroupImages from "./AdminGroupImages";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
-import { adminItemHandler } from "../utils/adminItemHandler";
+import useSubmitDuplicate from "../utils/useSubmitDuplicate";
+import { useParams } from "react-router-dom";
 const EXHIBITION_TYPE = [
   "D'Ark Room",
   "Datz Museum of Art",
@@ -24,9 +25,10 @@ const RELATED: RelationType[] = [
   "rel_publications",
   "rel_events",
 ];
-const { submit, duplicate } = adminItemHandler("exhibition");
 export default function AdminItemExhibition() {
-  const [item, setItem] = useAdminItem();
+  const { collection } = useParams<Param>();
+  const { submit, duplicate } = useSubmitDuplicate(collection);
+  const [item] = useAdminItem();
   const formControl = useForm<Exhibition>();
   const {
     reset,
@@ -50,7 +52,7 @@ export default function AdminItemExhibition() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic duplicate={duplicate(item, setItem)} />
+        <AdminItemPublic duplicate={duplicate} />
         <section
           className={css`
             font-size: 16px;

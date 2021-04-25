@@ -3,24 +3,25 @@ import React from "react";
 import { useAdminItem } from "../store/useGlobalState";
 import AdminLine from "./AdminLine";
 import AdminGroup from "./AdminGroup";
-import AdminRadio from "./AdminRadio";
 import { useForm, FormProvider } from "react-hook-form";
-import { Event } from "../@type";
-import AdminGroupImages from "./AdminGroupImages";
+import { Artists } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
-const EVENT_TYPE = ["Artist Talk / Lecture", "Book Fair", "Exhibition"];
-const EVENT_LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
-const EN_FIELDS = ["title_en", "place_en", "body_en"];
-const KO_FIELDS = ["title_ko", "place_ko", "body_ko"];
-export default function AdminItemEvent() {
+import AdminGroupList from "./AdminGroupList";
+export default function AdminItemContact() {
+  const [item] = useAdminItem();
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
-  const [item] = useAdminItem();
-  const formControl = useForm<Event>();
+  const formControl = useForm<Artists>();
+  const [en, ko] = React.useMemo(() => {
+    const base = ["title"];
+    const en = base.map((str) => str.concat("_en"));
+    const ko = base.map((str) => str.concat("_ko"));
+    return [en, ko];
+  }, []);
   const {
     reset,
     handleSubmit,
@@ -29,7 +30,6 @@ export default function AdminItemEvent() {
   React.useEffect(() => {
     reset(item);
   }, [item, reset]);
-
   if (!item) return null;
   return (
     <FormProvider {...formControl}>
@@ -50,13 +50,10 @@ export default function AdminItemEvent() {
             font-weight: 500;
           `}
         >
-          <AdminLine field="id" alias="url" disabled />
-          <AdminRadio field="type" values={EVENT_TYPE} />
-          <AdminRadio field="logo" values={EVENT_LOGO} />
-          <AdminLine field="date" />
-          <AdminGroup title="EN" fields={EN_FIELDS} />
-          <AdminGroup title="KO" fields={KO_FIELDS} />
-          <AdminGroupImages title="IMAGE" />
+          <AdminLine field="id" disabled />
+          <AdminGroup title="EN" fields={en} />
+          <AdminGroup title="KO" fields={ko} />
+          <AdminGroupList title="LIST" />
         </section>
       </form>
       {isSubmitting && <LoadingCenter />}

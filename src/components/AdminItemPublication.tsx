@@ -6,13 +6,14 @@ import AdminGroup from "./AdminGroup";
 import AdminGroupRelated from "./AdminGroupRelated";
 import AdminRadio from "./AdminRadio";
 import { useForm, FormProvider } from "react-hook-form";
-import { RelationType } from "../@type/admin";
+import { Param, RelationType } from "../@type/admin";
 import { Publication } from "../@type";
 import AdminGroupImages from "./AdminGroupImages";
 import AdminGroupVideo from "./AdminGroupVideo";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
-import { adminItemHandler } from "../utils/adminItemHandler";
+import useSubmitDuplicate from "../utils/useSubmitDuplicate";
+import { useParams } from "react-router-dom";
 const PUBLICATION_TYPE = ["Book", "Magazine", "Artist' Book"];
 const EN_FIELDS = [
   "title_en",
@@ -38,9 +39,10 @@ const RELATED: RelationType[] = [
   "rel_exhibitions",
   "rel_events",
 ];
-const { submit, duplicate } = adminItemHandler("publication");
 export default function AdminItemPublication() {
-  const [item, setItem] = useAdminItem();
+  const { collection } = useParams<Param>();
+  const { submit, duplicate } = useSubmitDuplicate(collection);
+  const [item] = useAdminItem();
   const formControl = useForm<Publication>();
   const {
     handleSubmit,
@@ -64,7 +66,7 @@ export default function AdminItemPublication() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic duplicate={duplicate(item, setItem)} />
+        <AdminItemPublic duplicate={duplicate} />
         <section
           className={css`
             font-size: 16px;

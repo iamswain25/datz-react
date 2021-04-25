@@ -7,14 +7,14 @@ import { useForm, FormProvider } from "react-hook-form";
 import { Artists } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
-import { adminItemHandler } from "../utils/adminItemHandler";
+import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import AdminGroupImage from "./AdminGroupImage";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
-const { submit } = adminItemHandler("artist-project");
 export default function AdminItemArtistProject() {
+  const { type, collection } = useParams<Param>();
+  const { submit } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
-  const { type } = useParams<Param>();
   const formControl = useForm<Artists>();
   const [en, ko] = React.useMemo(() => {
     const base = ["text"];

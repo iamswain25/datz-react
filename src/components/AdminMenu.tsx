@@ -64,18 +64,14 @@ const defaultList: Item[] = [
   {
     title: "About",
     id: "about",
-    children: [
-      { title: "Datzpress", id: "datzpress" },
-      { title: "D'ark Room", id: "darkroom" },
-      { title: "Datz Museum of Art", id: "museum" },
-    ],
+    children: [{ title: "about", id: "contents" }],
   },
   {
     title: "Contact",
     id: "contact",
     children: [
       { title: "Stockist", id: "stockist" },
-      { title: "Collections", id: "collection" },
+      { title: "Collections", id: "collections" },
       { title: "etc.", id: "etc" },
     ],
   },

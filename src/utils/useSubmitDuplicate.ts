@@ -1,7 +1,9 @@
 import { Collection } from "../@type";
 import { auth, firestore, storage } from "../config/firebase";
+import { useAdminItem } from "../store/useGlobalState";
 
-export function adminItemHandler(col: Collection) {
+export default function useSubmitDuplicate(col: Collection) {
+  const [item, setItem] = useAdminItem();
   const submit = async (data: any) => {
     if (!window.confirm("저장하시겠습니까?")) return;
     data.updated_at = new Date();
@@ -9,9 +11,9 @@ export function adminItemHandler(col: Collection) {
     // upload files
     const promises = [];
     // return console.log(data.files);
-    if (data.files.image_cover)
+    if (data?.files?.image_cover)
       promises.push(storage.ref(data.image_cover).put(data.files.image_cover));
-    if (data.files.image) {
+    if (data?.files?.image) {
       if (data.files.image.length > 1) {
         promises.push(
           ...data.files.image.map(
@@ -23,7 +25,7 @@ export function adminItemHandler(col: Collection) {
         promises.push(storage.ref(data.image).put(data.files.image));
       }
     }
-    if (data.files.images?.length) {
+    if (data?.files?.images?.length) {
       promises.push(
         ...data.files.images.map(
           ({ file, id }: { file: File; id: string }, index: number) =>
@@ -38,8 +40,9 @@ export function adminItemHandler(col: Collection) {
     await firestore.collection(col).doc(id).set(rest, { merge: true });
     window.alert("수정 했습니다.");
   };
-  const duplicate = (data: any, setItem: (item: any) => void) => async () => {
+  const duplicate = async () => {
     if (!window.confirm("복제 하시겠습니까?")) return;
+    const data = { ...item };
     data.public = false;
     delete data.id;
     data.created_at = new Date();

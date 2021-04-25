@@ -7,15 +7,18 @@ import { useForm, FormProvider } from "react-hook-form";
 import { Artists } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
-import { adminItemHandler } from "../utils/adminItemHandler";
+import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import AdminRadio from "./AdminRadio";
 import AdminGroupImage from "./AdminGroupImage";
+import { Param } from "../@type/admin";
+import { useParams } from "react-router-dom";
 const LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
 const EN_FIELDS = ["title_en", "text_en"];
 const KO_FIELDS = ["title_ko", "text_ko"];
-const { submit, duplicate } = adminItemHandler("main");
 export default function AdminItemMain() {
-  const [item, setItem] = useAdminItem();
+  const { collection } = useParams<Param>();
+  const { submit, duplicate } = useSubmitDuplicate(collection);
+  const [item] = useAdminItem();
   const formControl = useForm<Artists>();
   const {
     reset,
@@ -38,7 +41,7 @@ export default function AdminItemMain() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic duplicate={duplicate(item, setItem)} />
+        <AdminItemPublic duplicate={duplicate} />
         <section
           className={css`
             font-size: 16px;
