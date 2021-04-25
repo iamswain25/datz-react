@@ -148,19 +148,23 @@ export default function AdminListArtistProject() {
         >
           ({collection.substr(0, 1)}){type}
         </span>
-        <div>
-          <button
-            onClick={isEditing ? saveOrder : startEditing}
-            type="button"
-            className={css`
-              font-size: inherit;
-              font-weight: inherit;
-              color: #707070;
-            `}
-          >
-            {isEditing ? "✓ Finish order" : "≡ Edit order"}
-          </button>
-        </div>
+        {type === "etc" ? (
+          <div />
+        ) : (
+          <div>
+            <button
+              onClick={isEditing ? saveOrder : startEditing}
+              type="button"
+              className={css`
+                font-size: inherit;
+                font-weight: inherit;
+                color: #707070;
+              `}
+            >
+              {isEditing ? "✓ Finish order" : "≡ Edit order"}
+            </button>
+          </div>
+        )}
       </div>
       <SortableList items={items} onSortEnd={onSortEnd} useDragHandle />
     </section>

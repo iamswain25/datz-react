@@ -13,15 +13,18 @@ import { useParams } from "react-router-dom";
 import AdminGroupList from "./AdminGroupList";
 export default function AdminItemContact() {
   const [item] = useAdminItem();
-  const { collection } = useParams<Param>();
+  const { collection, type } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const formControl = useForm<Artists>();
   const [en, ko] = React.useMemo(() => {
     const base = ["title"];
+    if (item?.type2 === "phone") {
+      base.push("text");
+    }
     const en = base.map((str) => str.concat("_en"));
     const ko = base.map((str) => str.concat("_ko"));
     return [en, ko];
-  }, []);
+  }, [item]);
   const {
     reset,
     handleSubmit,
@@ -43,7 +46,10 @@ export default function AdminItemContact() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic duplicate={duplicate} />
+        <AdminItemPublic
+          noPublic={type === "etc"}
+          duplicate={type !== "etc" ? duplicate : undefined}
+        />
         <section
           className={css`
             font-size: 16px;
@@ -53,7 +59,9 @@ export default function AdminItemContact() {
           <AdminLine field="id" disabled />
           <AdminGroup title="EN" fields={en} />
           <AdminGroup title="KO" fields={ko} />
-          <AdminGroupList title="LIST" />
+          {!["phone", "enquiry", "catalog"].includes(item?.type2) && (
+            <AdminGroupList title="LIST" />
+          )}
         </section>
       </form>
       {isSubmitting && <LoadingCenter />}

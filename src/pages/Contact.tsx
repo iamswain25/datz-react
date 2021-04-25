@@ -59,7 +59,7 @@ export default function Contact() {
   const [data] = useCollectionDataOnce(
     firestore
       .collection("contact")
-      // .where("public", "==", true)
+      .where("public", "==", true)
       .orderBy("order", "asc")
   );
   const items = useItems(data);
