@@ -11,11 +11,12 @@ import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
 import AdminGroupImage from "./AdminGroupImage";
+import { formOptionRequired } from "../utils/required";
 export default function AdminItemAbout() {
   const [item] = useAdminItem();
   const { collection } = useParams<Param>();
   const { submit } = useSubmitDuplicate(collection);
-  const formControl = useForm<Artists>();
+  const formControl = useForm<Artists>({ defaultValues: {} });
   const [en, ko] = React.useMemo(() => {
     const base = ["title", "text"];
     if (item?.type === "desc") {
@@ -62,9 +63,9 @@ export default function AdminItemAbout() {
           <AdminLine field="id" disabled />
           {item.id === "Location" ? (
             <>
-              <AdminLine field="lat" />
-              <AdminLine field="lng" />
-              <AdminLine field="zoom" />
+              <AdminLine {...formOptionRequired} field="lat" />
+              <AdminLine {...formOptionRequired} field="lng" />
+              <AdminLine {...formOptionRequired} field="zoom" />
             </>
           ) : (
             <>

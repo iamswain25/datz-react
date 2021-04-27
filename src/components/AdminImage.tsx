@@ -9,11 +9,19 @@ import { IconButton } from "@material-ui/core";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
 import { useAdminItem } from "../store/useGlobalState";
+import { formOptionRequired } from "../utils/required";
+import FormErrorMessage from "./FormErrorMessage";
 const field = "image";
 
 export default function AdminImage() {
   const [item] = useAdminItem();
-  const { register, setValue, control } = useFormContext<Banner>();
+  const {
+    register,
+    setValue,
+    control,
+    clearErrors,
+    formState: { errors },
+  } = useFormContext<Banner>();
   const { collection } = useParams<Param>();
   return (
     <>
@@ -24,7 +32,7 @@ export default function AdminImage() {
             multiple={false}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               if (!e) {
-                setValue(field, item[field]);
+                setValue(field, item[field] || "");
                 onChange(undefined);
                 return;
               }
@@ -32,8 +40,9 @@ export default function AdminImage() {
               const name = file?.name?.replace(/\s/g, "-") || "image";
               setValue(field, `/${collection}/${item.id}/${name}`);
               onChange(file);
+              clearErrors(field);
             }}
-            initialValue={item[field]}
+            initialValue={item[field] || ""}
           />
         )}
         name="files.image"
@@ -43,9 +52,10 @@ export default function AdminImage() {
       <input
         type="hidden"
         readOnly
-        defaultValue={item[field]}
-        {...register(field)}
+        defaultValue={item[field] || ""}
+        {...register(field, formOptionRequired)}
       />
+      <FormErrorMessage errors={errors} name={field} />
     </>
   );
 }
@@ -58,11 +68,8 @@ const Dropzone = ({
   ...rest
 }: DropzoneOptions & { onChange: OnChange; initialValue?: string }) => {
   const [myFile, setMyFile] = React.useState<File>();
-
-  const { getRootProps, getInputProps, open } = useDropzone({
-    multiple,
-    ...rest,
-  });
+  const [item] = useAdminItem();
+  const { type, collection } = useParams<Param>();
   const onChange = (e?: React.ChangeEvent<HTMLInputElement>) => {
     const file = e?.target?.files?.[0];
     setMyFile(file);
@@ -71,6 +78,14 @@ const Dropzone = ({
   const remove = () => {
     onChange(undefined);
   };
+  React.useEffect(() => {
+    remove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [type, collection, item]);
+  const { getRootProps, getInputProps, open } = useDropzone({
+    multiple,
+    ...rest,
+  });
 
   return (
     <section

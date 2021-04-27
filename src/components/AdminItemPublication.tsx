@@ -43,7 +43,7 @@ export default function AdminItemPublication() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Publication>();
+  const formControl = useForm<Publication>({ defaultValues: {} });
   const {
     handleSubmit,
     reset,

@@ -29,7 +29,7 @@ export default function AdminItemExhibition() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Exhibition>();
+  const formControl = useForm<Exhibition>({ defaultValues: {} });
   const {
     reset,
     handleSubmit,

@@ -12,6 +12,7 @@ import { Param, RelationType } from "../@type/admin";
 import AdminGroupRelated from "./AdminGroupRelated";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { useParams } from "react-router-dom";
+import { formOptionRequired } from "../utils/required";
 const EN_FIELDS = ["name_en", "bio_en"];
 const KO_FIELDS = ["name_ko", "bio_ko"];
 const RELATED: RelationType[] = [
@@ -23,7 +24,7 @@ export default function AdminItemArtist() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Artists>();
+  const formControl = useForm<Artists>({ defaultValues: {} });
   const {
     reset,
     handleSubmit,
@@ -53,7 +54,7 @@ export default function AdminItemArtist() {
           `}
         >
           <AdminLine field="id" alias="url" disabled />
-          <AdminLine field="genre" />
+          <AdminLine field="genre" {...formOptionRequired} />
           <AdminLine field="homepage" />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />

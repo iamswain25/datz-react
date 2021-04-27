@@ -15,7 +15,7 @@ export default function AdminItemContact() {
   const [item] = useAdminItem();
   const { collection, type } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
-  const formControl = useForm<Artists>();
+  const formControl = useForm<Artists>({ defaultValues: {} });
   const [en, ko] = React.useMemo(() => {
     const base = ["title"];
     if (item?.type2 === "phone") {

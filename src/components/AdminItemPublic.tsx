@@ -14,7 +14,8 @@ export default function AdminItemPublic({
   duplicate?: (...args: any[]) => void;
   noPublic?: boolean;
 }) {
-  const { control } = useFormContext();
+  const { control, watch } = useFormContext();
+  const isNew = watch("created_by");
   return (
     <div
       className={css`
@@ -86,7 +87,6 @@ export default function AdminItemPublic({
       >
         {!!duplicate && (
           <>
-            {" "}
             <button
               type="button"
               onClick={duplicate}
@@ -109,7 +109,7 @@ export default function AdminItemPublic({
             color: #707070;
           `}
         >
-          ✓ Update
+          ✓ {isNew === null ? "Create" : "Update"}
         </button>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { useAdminItem } from "../store/useGlobalState";
 import AdminLine from "./AdminLine";
 import AdminGroup from "./AdminGroup";
 import { useForm, FormProvider } from "react-hook-form";
-import { Artists } from "../@type";
+import { Main } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
@@ -12,6 +12,8 @@ import AdminRadio from "./AdminRadio";
 import AdminGroupImage from "./AdminGroupImage";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
+import AdminHidden from "./AdminHidden";
+import { formOptionRequired } from "../utils/required";
 const LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
 const EN_FIELDS = ["title_en", "text_en"];
 const KO_FIELDS = ["title_ko", "text_ko"];
@@ -19,7 +21,18 @@ export default function AdminItemBanner() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Artists>();
+  const formControl = useForm<Main>({
+    defaultValues: {
+      text_en: "",
+      text_ko: "",
+      title_en: "",
+      title_ko: "",
+      type: "",
+      logo: "",
+      image: "",
+      collection,
+    },
+  });
   const {
     reset,
     handleSubmit,
@@ -49,9 +62,10 @@ export default function AdminItemBanner() {
           `}
         >
           <AdminLine field="id" disabled />
+          <AdminHidden field="collection" />
           <AdminLine field="url" alias="link" />
-          <AdminLine field="type" />
-          <AdminRadio field="logo" values={LOGO} />
+          <AdminLine field="type" {...formOptionRequired} />
+          <AdminRadio field="logo" values={LOGO} {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
           <AdminGroupImage title="IMAGE" />

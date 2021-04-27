@@ -4,7 +4,7 @@ import { useAdminItem } from "../store/useGlobalState";
 import AdminLine from "./AdminLine";
 import AdminGroup from "./AdminGroup";
 import { useForm, FormProvider } from "react-hook-form";
-import { Artists, Collection } from "../@type";
+import { Banner, Collection } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
@@ -12,23 +12,38 @@ import AdminRadio from "./AdminRadio";
 import AdminGroupImage from "./AdminGroupImage";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
+import { formOptionRequired } from "../utils/required";
+import AdminHidden from "./AdminHidden";
 const LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
 const EN_FIELDS = ["title_en", "text_en"];
 const KO_FIELDS = ["title_ko", "text_ko"];
+
 export default function AdminItemMain() {
-  const { type } = useParams<Param>();
+  const { type, collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(type as Collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Artists>();
+  const formControl = useForm<Banner>({
+    defaultValues: {
+      text_en: "",
+      text_ko: "",
+      title_en: "",
+      title_ko: "",
+      type: "",
+      logo: "",
+      image: "",
+      collection,
+    },
+  });
   const {
     reset,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = formControl;
   React.useEffect(() => {
-    reset(item);
+    reset({ ...item });
   }, [item, reset]);
   if (!item) return null;
+  console.log(errors);
   return (
     <FormProvider {...formControl}>
       <form
@@ -48,10 +63,11 @@ export default function AdminItemMain() {
             font-weight: 500;
           `}
         >
+          <AdminHidden field="collection" />
           <AdminLine field="id" disabled />
           <AdminLine field="url" alias="link" />
-          <AdminLine field="type" />
-          <AdminRadio field="logo" values={LOGO} />
+          <AdminLine field="type" {...formOptionRequired} />
+          <AdminRadio field="logo" values={LOGO} {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
           <AdminGroupImage title="IMAGE" />

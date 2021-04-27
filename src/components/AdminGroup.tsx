@@ -1,11 +1,8 @@
 import { css } from "emotion";
 import React from "react";
+import { formOptionRequired } from "../utils/required";
 import AdminLine from "./AdminLine";
-
-export default function AdminGroup(props: {
-  title: string;
-  fields: string[];
-}) {
+export default function AdminGroup(props: { title: string; fields: string[] }) {
   const { title, fields } = props;
   const [isVisible, setVisible] = React.useState(true);
   return (
@@ -52,7 +49,11 @@ export default function AdminGroup(props: {
       {isVisible && (
         <div>
           {fields.map((field) => (
-            <AdminLine key={`key-${title}-${field}`} field={field} />
+            <AdminLine
+              key={`key-${title}-${field}`}
+              field={field}
+              {...formOptionRequired}
+            />
           ))}
         </div>
       )}

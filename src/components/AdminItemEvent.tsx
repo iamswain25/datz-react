@@ -20,7 +20,7 @@ export default function AdminItemEvent() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Event>();
+  const formControl = useForm<Event>({ defaultValues: {} });
   const {
     reset,
     handleSubmit,

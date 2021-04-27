@@ -15,7 +15,7 @@ export default function AdminItemSupport() {
   const [item] = useAdminItem();
   const { collection } = useParams<Param>();
   const { submit } = useSubmitDuplicate(collection);
-  const formControl = useForm<Artists>();
+  const formControl = useForm<Artists>({ defaultValues: {} });
   const [en, ko] = React.useMemo(() => {
     const base = ["title", "text"];
     const en = base.map((str) => str.concat("_en"));

@@ -24,7 +24,7 @@ export default function AdminImageCover() {
             multiple={false}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               if (!e) {
-                setValue(field, item[field]);
+                setValue(field, item[field] || "");
                 onChange(undefined);
                 return;
               }
@@ -33,7 +33,7 @@ export default function AdminImageCover() {
               setValue(field, `/${collection}/${item.id}/${name}`);
               onChange(file);
             }}
-            initialValue={item[field]}
+            initialValue={item[field] || ""}
           />
         )}
         name="files.image_cover"
@@ -43,7 +43,7 @@ export default function AdminImageCover() {
       <input
         type="hidden"
         readOnly
-        defaultValue={item[field]}
+        defaultValue={item[field] || ""}
         {...register(field)}
       />
     </>
@@ -58,7 +58,7 @@ const Dropzone = ({
   ...rest
 }: DropzoneOptions & { onChange: OnChange; initialValue?: string }) => {
   const [myFile, setMyFile] = React.useState<File>();
-
+  const { type, collection } = useParams<Param>();
   const { getRootProps, getInputProps, open } = useDropzone({
     multiple,
     ...rest,
@@ -71,7 +71,10 @@ const Dropzone = ({
   const remove = () => {
     onChange(undefined);
   };
-
+  React.useEffect(() => {
+    remove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [type, collection]);
   return (
     <section
       {...getRootProps()}

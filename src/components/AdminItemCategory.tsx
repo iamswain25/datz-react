@@ -16,7 +16,7 @@ export default function AdminItemCategory() {
   const { type } = useParams<Param>();
   const { submit } = useSubmitDuplicate(type as Collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Artists>();
+  const formControl = useForm<Artists>({ defaultValues: {} });
   const {
     reset,
     handleSubmit,

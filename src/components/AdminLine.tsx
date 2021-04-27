@@ -8,6 +8,7 @@ import { IconButton } from "@material-ui/core";
 import TextareaAutosize from "react-textarea-autosize";
 import CloseIcon from "@material-ui/icons/Close";
 import { useAdminItem } from "../store/useGlobalState";
+import FormErrorMessage from "./FormErrorMessage";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -24,13 +25,18 @@ const getDraftName = (field: string) => {
 };
 export default function AdminLine(props: {
   field: string;
-  required?: boolean;
+  required?: boolean | string;
   disabled?: boolean;
   alias?: string;
 }) {
   const [item] = useAdminItem();
   const { field, required = false, disabled = false, alias } = props;
-  const { control, register, setValue } = useFormContext();
+  const {
+    control,
+    register,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
   const [isVisible, setVisible] = React.useState(false);
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
     setVisible,
@@ -52,7 +58,7 @@ export default function AdminLine(props: {
           color: #4b4b4b;
         `}
       >
-        {required && "*"}
+        {!!required && "*"}
         {alias ?? field}
       </span>
       <Hr10 />
@@ -68,7 +74,7 @@ export default function AdminLine(props: {
             overflow: hidden;
             flex: 1;
           `}
-          {...register(field)}
+          {...register(field, { required })}
           defaultValue={item[field] || ""}
           readOnly
         />
@@ -76,7 +82,8 @@ export default function AdminLine(props: {
         <Controller
           control={control}
           name={getDraftName(field)}
-          defaultValue={item[field]}
+          defaultValue={item[field] || ""}
+          rules={{ required }}
           render={({ field: { value, onChange } }) => {
             const onChange2 = (event: any) => {
               onChange(event);
@@ -97,8 +104,8 @@ export default function AdminLine(props: {
             color: #707070;
             flex: 1;
           `}
-          {...register(field)}
-          defaultValue={item[field]}
+          {...register(field, { required })}
+          defaultValue={item[field] || ""}
         />
       )}
       {!disabled && (
@@ -113,6 +120,7 @@ export default function AdminLine(props: {
           )}
         </IconButton>
       )}
+      <FormErrorMessage errors={errors} name={field} />
     </div>
   );
 }

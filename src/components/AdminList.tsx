@@ -7,17 +7,14 @@ import { useAdminOrder } from "../store/useGlobalState";
 import useFireSubscription from "../utils/useFireSubscription";
 import useSortEnd from "../utils/useSortEnd";
 import SortableList from "./SortableList";
+import Hr10 from "./Hr10";
+import useCreateNew from "../utils/useCreateNew";
 export default function AdminList() {
   const { type, collection } = useParams<Param>();
   const [items] = useFireSubscription<Publication>();
   const [isEditing, setEditing] = useAdminOrder();
   const onSortEnd = useSortEnd(items);
-  const startEditing = () => {
-    setEditing(true);
-  };
-  const saveOrder = () => {
-    setEditing(false);
-  };
+  const createNewHandler = useCreateNew();
   return (
     <section
       className={css`
@@ -49,9 +46,15 @@ export default function AdminList() {
         collection === "about" ? (
           <div />
         ) : (
-          <div>
+          <div
+            className={css`
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            `}
+          >
             <button
-              onClick={isEditing ? saveOrder : startEditing}
+              onClick={() => setEditing((_) => !_)}
               type="button"
               className={css`
                 font-size: inherit;
@@ -60,6 +63,18 @@ export default function AdminList() {
               `}
             >
               {isEditing ? "✓ Finish order" : "≡ Edit order"}
+            </button>
+            <Hr10 />
+            <button
+              onClick={createNewHandler}
+              type="button"
+              className={css`
+                font-size: inherit;
+                font-weight: inherit;
+                color: #707070;
+              `}
+            >
+              ✎ Create new
             </button>
           </div>
         )}

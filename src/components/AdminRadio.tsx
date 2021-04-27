@@ -2,16 +2,21 @@ import { css } from "emotion";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useAdminItem } from "../store/useGlobalState";
+import { formOptionRequired } from "../utils/required";
+import FormErrorMessage from "./FormErrorMessage";
 import Hr10 from "./Hr10";
 export default function AdminRadio(props: {
   field: string;
-  required?: boolean;
+  required?: boolean | string;
   values: string[];
   alias?: string;
 }) {
   const [item] = useAdminItem();
   const { field, required = false, alias, values } = props;
-  const formControl = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <div
       className={css`
@@ -28,38 +33,47 @@ export default function AdminRadio(props: {
           color: #4b4b4b;
         `}
       >
-        {required && "*"}
+        {!!required && "*"}
         {alias ?? field}
       </span>
       <Hr10 />
-      {values.map((value) => (
-        <div
-          key={`radio-${field}-${value}`}
-          className={css`
-            margin-right: 30px;
-          `}
-        >
-          <input
-            type="radio"
-            {...formControl?.register(field)}
-            value={value}
-            defaultChecked={item[field] === value}
-            id={`radio-${field}-${value}`}
+      <div
+        className={css`
+          display: flex;
+          align-items: center;
+          flex: 1;
+        `}
+      >
+        {values.map((value) => (
+          <div
+            key={`radio-${field}-${value}`}
             className={css`
-              margin-right: 5px;
-            `}
-          />
-          <label
-            htmlFor={`radio-${field}-${value}`}
-            className={css`
-              font-size: 13px;
-              color: #707070;
+              margin-right: 30px;
             `}
           >
-            {value}
-          </label>
-        </div>
-      ))}
+            <input
+              type="radio"
+              {...register(field, formOptionRequired)}
+              value={value}
+              defaultChecked={item[field] === value}
+              id={`radio-${field}-${value}`}
+              className={css`
+                margin-right: 5px;
+              `}
+            />
+            <label
+              htmlFor={`radio-${field}-${value}`}
+              className={css`
+                font-size: 13px;
+                color: #707070;
+              `}
+            >
+              {value}
+            </label>
+          </div>
+        ))}
+      </div>
+      <FormErrorMessage errors={errors} name={field} />
     </div>
   );
 }

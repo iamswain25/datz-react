@@ -129,6 +129,7 @@ export interface Banner {
   url?: string;
   id: string;
   type: string;
+  collection: string;
   logo: string;
   title_en: string;
   text_en: string;
@@ -136,6 +137,7 @@ export interface Banner {
   text_ko: string;
   image: string;
   public: boolean;
+  order: number;
   files: { image?: File };
 }
 export interface ArtistProject {
@@ -149,4 +151,19 @@ export interface ArtistProject {
   artist_en: string;
   artist_ko: string;
   files: { image?: File };
+}
+
+export interface About {
+  en: string;
+  ko: string;
+}
+export interface Main {
+  text_en: string;
+  text_ko: string;
+  title_en: string;
+  title_ko: string;
+  image: string;
+  type: string;
+  logo: string;
+  collection: Collection;
 }
