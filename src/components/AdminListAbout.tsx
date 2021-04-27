@@ -10,12 +10,8 @@ import { css } from "emotion";
 import { useParams } from "react-router-dom";
 import { Publication } from "../@type";
 import { Param } from "../@type/admin";
-// import { firestore } from "../config/firebase";
 import { useAdminItem, useAdminOrder } from "../store/useGlobalState";
 import useFireSubscription from "../utils/useFireSubscription";
-import CloseIcon from "@material-ui/icons/Close";
-import { IconButton } from "@material-ui/core";
-import useTrashItem from "../utils/useTrashItem";
 const DragHandle = SortableHandle(() => (
   <MenuIcon
     className={css`
@@ -27,7 +23,6 @@ const DragHandle = SortableHandle(() => (
 const SortableItem = SortableElement(({ item }: any) => {
   const [selectedItem, setAdminItem] = useAdminItem();
   const [isEditing] = useAdminOrder();
-  const trashItem = useTrashItem(item);
   return (
     <li
       key={item.id}
@@ -51,18 +46,6 @@ const SortableItem = SortableElement(({ item }: any) => {
       >
         {item.id}
       </button>
-      <IconButton
-        onClick={trashItem}
-        className={css`
-          padding: 2px !important;
-        `}
-      >
-        <CloseIcon
-          className={css`
-            font-size: 16px !important;
-          `}
-        />
-      </IconButton>
     </li>
   );
 });
