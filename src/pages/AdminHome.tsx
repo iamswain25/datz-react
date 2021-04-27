@@ -22,6 +22,7 @@ import AdminListAbout from "../components/AdminListAbout";
 import AdminItemContact from "../components/AdminItemContact";
 import AdminItemAbout from "../components/AdminItemAbout";
 import AdminItemSupport from "../components/AdminItemSupport";
+import AdminItemNotice from "../components/AdminItemNotice";
 
 export default function AdminHome() {
   const { collection, type } = useParams<Param>();
@@ -40,6 +41,7 @@ export default function AdminHome() {
         case "artist-project":
         case "contact":
         case "support":
+        case "notice":
           return <AdminListArtistProject />;
       }
       switch (type) {
@@ -79,6 +81,8 @@ export default function AdminHome() {
           return <AdminItemAbout />;
         case "support":
           return <AdminItemSupport />;
+        case "notice":
+          return <AdminItemNotice />;
         default:
           return <AdminItemBanner />;
       }

@@ -7,6 +7,11 @@ import Link from "./Link";
 
 const defaultList: Item[] = [
   {
+    title: "Notice",
+    id: "notice",
+    children: [{ title: "notice", id: "" }],
+  },
+  {
     title: "Main Page",
     id: "main",
     children: [

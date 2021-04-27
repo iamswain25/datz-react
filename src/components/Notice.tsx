@@ -11,21 +11,22 @@ export default function Notice() {
   const [lang] = useGlobalLang();
   const localId = window.localStorage.getItem(DATZ_LAST_NOTICE_ID);
   const [snapshot] = useCollectionOnce(
-    firestore.collection("$notice").orderBy("created_at").limitToLast(1)
+    firestore.collection("notice").orderBy("order", "asc").limit(1)
   );
   const [notice, setNotice] = useNotice();
   const isDesktop = useDesktop();
-  const fireNotice = snapshot?.docs?.[0];
   React.useEffect(() => {
-    if (!notice && fireNotice && fireNotice.id !== localId) {
+    const fireNotice = snapshot?.docs?.[0];
+    if (fireNotice) {
       setNotice({
         ...fireNotice.data(),
         id: fireNotice.id,
         ref: fireNotice.ref,
       });
     }
-  }, [fireNotice, localId, notice, setNotice]);
+  }, [snapshot, setNotice]);
   if (!notice?.public) return null;
+  if (notice?.id === localId) return null;
   function remove() {
     if (notice) {
       window.localStorage.setItem(DATZ_LAST_NOTICE_ID, notice.id);
