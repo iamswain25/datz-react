@@ -9,6 +9,9 @@ export default function useFireSubscription<T>() {
   const fs = React.useMemo(() => {
     let fs = firestore.collection(collection) as firebase.firestore.Query;
     if (!type) {
+      if (collection === "notice") {
+        fs = fs.orderBy("order", "asc");
+      }
       return fs;
     } else if (type === "contents") {
       fs = fs.orderBy("order", "desc");
@@ -19,6 +22,7 @@ export default function useFireSubscription<T>() {
       fs = fs.where("collection", "==", type);
       fs = fs.orderBy("order", "asc");
     }
+
     return fs;
   }, [type, collection]);
   return useCollectionData<T>(fs, { idField: "id" });

@@ -13,6 +13,9 @@ import { Param } from "../@type/admin";
 import { firestore } from "../config/firebase";
 import { useAdminItem, useAdminOrder } from "../store/useGlobalState";
 import useFireSubscription2 from "../utils/useFireSubscription2";
+import CloseIcon from "@material-ui/icons/Close";
+import { IconButton } from "@material-ui/core";
+import useTrashItem from "../utils/useTrashItem";
 const DragHandle = SortableHandle(() => (
   <MenuIcon
     className={css`
@@ -21,9 +24,11 @@ const DragHandle = SortableHandle(() => (
     `}
   />
 ));
-const SortableItem = SortableElement(({ item }: any) => {
+const SortableItem = SortableElement(({ item, sortLength = 1 }: any) => {
   const [selectedItem, setAdminItem] = useAdminItem();
   const [isEditing] = useAdminOrder();
+  const trashItem = useTrashItem(item);
+  const { type } = useParams<Param>();
   return (
     <li
       key={item.id}
@@ -39,12 +44,28 @@ const SortableItem = SortableElement(({ item }: any) => {
       <button
         onClick={() => setAdminItem(item)}
         className={css`
+          flex: 1;
+          text-align: left;
           font-size: 16px;
           text-decoration: ${item.public === false ? "line-through" : "none"};
         `}
       >
         {item.id}
       </button>
+      {type !== "publication_category" && sortLength > 1 && (
+        <IconButton
+          onClick={trashItem}
+          className={css`
+            padding: 2px !important;
+          `}
+        >
+          <CloseIcon
+            className={css`
+              font-size: 16px !important;
+            `}
+          />
+        </IconButton>
+      )}
     </li>
   );
 });
@@ -57,7 +78,12 @@ const SortableList = SortableContainer(({ items }: any) => {
     >
       {items?.map((item: any, index: number) => {
         return (
-          <SortableItem key={`item-${item.id}`} index={index} item={item} />
+          <SortableItem
+            key={`item-${item.id}`}
+            index={index}
+            item={item}
+            sortLength={items.length}
+          />
         );
       })}
     </ul>

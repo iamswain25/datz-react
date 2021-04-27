@@ -9,7 +9,7 @@ export default function useFireSubscription2<T>() {
   const fs = React.useMemo(() => {
     let fs = firestore.collection(type) as firebase.firestore.Query;
     if (type === "publication_category") {
-      fs = fs.orderBy("order", "desc");
+      fs = fs.orderBy("order", "asc");
     } else {
       fs = fs.where("collection", "==", collection);
       fs = fs.orderBy("order", "asc");

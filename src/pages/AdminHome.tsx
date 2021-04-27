@@ -28,7 +28,7 @@ export default function AdminHome() {
   const { collection, type } = useParams<Param>();
   const [, setAdminItem] = useAdminItem();
   React.useEffect(() => {
-    if (type && collection) {
+    if (collection) {
       setAdminItem(undefined);
     }
   }, [collection, type, setAdminItem]);

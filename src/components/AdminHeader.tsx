@@ -1,13 +1,19 @@
 import { css } from "emotion";
 import React from "react";
+import { useDocumentData } from "react-firebase-hooks/firestore";
 import Datz from "../assets/svg/Datz";
+import { Firebase } from "../config/firebase";
+import { timestampRef } from "../utils/lastAdminWrite";
 import Link from "./Link";
 export default function AdminHeader() {
+  const [timestamp] = useDocumentData<{
+    updated_at: Firebase.firestore.Timestamp;
+  }>(timestampRef);
   return (
     <header
       className={css`
         height: 79px;
-        padding-left: 54px;
+        padding: 0 20px 0 54px;
         display: flex;
         align-items: center;
       `}
@@ -43,6 +49,7 @@ export default function AdminHeader() {
       </Link>
       <div
         className={css`
+          margin-top: 2px;
           font-size: 14px;
           font-weight: 500;
           text-align: left;
@@ -51,6 +58,19 @@ export default function AdminHeader() {
         `}
       >
         *수정 후 해당란의 ‘Update’를 클릭(배포)
+      </div>
+      <div
+        className={css`
+          display: flex;
+          flex: 1;
+          align-items: center;
+          justify-content: flex-end;
+          font-size: 16px;
+          font-weight: 500;
+          color: #707070;
+        `}
+      >
+        Latest Update: {timestamp?.updated_at.toDate().toLocaleString()}
       </div>
     </header>
   );

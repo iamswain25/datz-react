@@ -13,7 +13,7 @@ import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
 export default function AdminItemArtistProject() {
   const { type, collection } = useParams<Param>();
-  const { submit } = useSubmitDuplicate(collection);
+  const { submit, duplicate } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
   const formControl = useForm<Artists>();
   const [en, ko] = React.useMemo(() => {
@@ -50,7 +50,10 @@ export default function AdminItemArtistProject() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic noPublic />
+        <AdminItemPublic
+          noPublic
+          duplicate={item.type === "top" ? duplicate : undefined}
+        />
         <section
           className={css`
             font-size: 16px;

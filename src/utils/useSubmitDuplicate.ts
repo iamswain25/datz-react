@@ -1,6 +1,7 @@
 import { Collection } from "../@type";
 import { auth, firestore, storage } from "../config/firebase";
 import { useAdminItem } from "../store/useGlobalState";
+import lastAdminWrite from "./lastAdminWrite";
 
 export default function useSubmitDuplicate(col: Collection) {
   const [item, setItem] = useAdminItem();
@@ -37,7 +38,11 @@ export default function useSubmitDuplicate(col: Collection) {
     await Promise.all(promises);
     delete data.files;
     const { id, ...rest } = data;
-    await firestore.collection(col).doc(id).set(rest, { merge: true });
+    // console.log(rest);
+    await Promise.all([
+      firestore.collection(col).doc(id).set(rest, { merge: true }),
+      lastAdminWrite(),
+    ]);
     window.alert("수정 했습니다.");
   };
   const duplicate = async () => {
