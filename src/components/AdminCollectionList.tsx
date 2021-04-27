@@ -4,18 +4,17 @@ import {
   SortableContainer,
   SortableElement,
   SortableHandle,
-  SortEnd,
 } from "react-sortable-hoc";
 import { css } from "emotion";
 import { useParams } from "react-router-dom";
 import { Publication } from "../@type";
 import { Param } from "../@type/admin";
-import { firestore } from "../config/firebase";
 import { useAdminItem, useAdminOrder } from "../store/useGlobalState";
 import useFireSubscription from "../utils/useFireSubscription";
 import CloseIcon from "@material-ui/icons/Close";
 import { IconButton } from "@material-ui/core";
 import useTrashItem from "../utils/useTrashItem";
+import useSortEnd from "../utils/useSortEnd";
 const DragHandle = SortableHandle(() => (
   <MenuIcon
     className={css`
@@ -92,42 +91,12 @@ export default function AdminCollectionList() {
   const { type, collection } = useParams<Param>();
   const [isEditing, setEditing] = useAdminOrder();
   const [items] = useFireSubscription<Publication>();
+  const onSortEnd = useSortEnd({ orderBy: "desc", items });
   const startEditing = () => {
     setEditing(true);
   };
   const saveOrder = () => {
     setEditing(false);
-  };
-  const onSortEnd = async ({ oldIndex, newIndex }: SortEnd) => {
-    if (!items) return;
-    if (oldIndex === newIndex) return;
-    // console.log(oldIndex, newIndex);
-    let order = null;
-    if (oldIndex < newIndex) {
-      const prev = items[newIndex];
-      const next = items[newIndex + 1];
-      if (next) {
-        order = (prev.order + next.order) / 2;
-      } else {
-        order = prev.order - 100;
-      }
-    } else {
-      const prev = items[newIndex - 1];
-      const next = items[newIndex];
-      if (prev) {
-        order = (prev.order + next.order) / 2;
-      } else {
-        order = next.order + 100;
-      }
-    }
-
-    if (window.confirm("순서 변경 하시겠습니까?")) {
-      // console.log({ oldIndex, newIndex, order });
-      const item = items[oldIndex];
-      if (!item) return;
-      const { id } = item;
-      await firestore.collection(collection).doc(id).update({ order });
-    }
   };
   return (
     <section

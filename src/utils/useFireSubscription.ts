@@ -18,7 +18,7 @@ export default function useFireSubscription<T>() {
     } else if (["artist-project", "contact", "support"].includes(collection)) {
       fs = fs.where("type", "==", type);
       fs = fs.orderBy("order", "asc");
-    } else {
+    } else if (["banner"].includes(collection)) {
       fs = fs.where("collection", "==", type);
       fs = fs.orderBy("order", "asc");
     }

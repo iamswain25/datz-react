@@ -16,9 +16,8 @@ import AdminListBanner from "../components/AdminListBanner";
 import AdminItemBanner from "../components/AdminItemBanner";
 import AdminItemCategory from "../components/AdminItemCategory";
 import AdminItemMain from "../components/AdminItemMain";
-import AdminListArtistProject from "../components/AdminListArtistProject";
+import AdminListAsc from "../components/AdminListAsc";
 import AdminItemArtistProject from "../components/AdminItemArtistProject";
-import AdminListAbout from "../components/AdminListAbout";
 import AdminItemContact from "../components/AdminItemContact";
 import AdminItemAbout from "../components/AdminItemAbout";
 import AdminItemSupport from "../components/AdminItemSupport";
@@ -37,12 +36,11 @@ export default function AdminHome() {
     const list = () => {
       switch (collection) {
         case "about":
-          return <AdminListAbout />;
         case "artist-project":
         case "contact":
         case "support":
         case "notice":
-          return <AdminListArtistProject />;
+          return <AdminListAsc />;
       }
       switch (type) {
         case "banner":
