@@ -10,6 +10,7 @@ export type Collection =
   | "publication_category"
   | "artist-project"
   | "main"
+  | "support"
   | "artist";
 export type Logo = "D'Ark Room" | "Datz Museum of Art" | "Datz Press";
 export type ExhibitionLogo =

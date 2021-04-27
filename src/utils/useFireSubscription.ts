@@ -12,7 +12,7 @@ export default function useFireSubscription<T>() {
       return fs;
     } else if (type === "contents") {
       fs = fs.orderBy("order", "desc");
-    } else if (["artist-project", "contact"].includes(collection)) {
+    } else if (["artist-project", "contact", "support"].includes(collection)) {
       fs = fs.where("type", "==", type);
       fs = fs.orderBy("order", "asc");
     } else {
