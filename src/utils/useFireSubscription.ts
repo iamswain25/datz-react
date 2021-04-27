@@ -7,7 +7,9 @@ import React from "react";
 export default function useFireSubscription<T>() {
   const { type, collection } = useParams<Param>();
   const fs = React.useMemo(() => {
-    let fs = firestore.collection(collection) as firebase.firestore.Query;
+    let fs = firestore.collection(
+      ["banner", "publication_category"].includes(type) ? type : collection
+    ) as firebase.firestore.Query;
     if (!type) {
       if (collection === "notice") {
         fs = fs.orderBy("order", "asc");
@@ -15,11 +17,16 @@ export default function useFireSubscription<T>() {
       return fs;
     } else if (type === "contents") {
       fs = fs.orderBy("order", "desc");
+    } else if (type === "publication_category") {
+      fs = fs.orderBy("order", "asc");
+    } else if (["banner"].includes(type)) {
+      fs = fs.where("collection", "==", collection);
+      fs = fs.orderBy("order", "asc");
+    } else if (["main"].includes(collection)) {
+      fs = fs.where("collection", "==", type);
+      fs = fs.orderBy("order", "asc");
     } else if (["artist-project", "contact", "support"].includes(collection)) {
       fs = fs.where("type", "==", type);
-      fs = fs.orderBy("order", "asc");
-    } else if (["banner"].includes(collection)) {
-      fs = fs.where("collection", "==", type);
       fs = fs.orderBy("order", "asc");
     }
 

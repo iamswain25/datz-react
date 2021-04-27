@@ -4,14 +4,8 @@ import { SortEnd } from "react-sortable-hoc";
 import { useParams } from "react-router-dom";
 import { Param } from "../@type/admin";
 import lastAdminWrite from "./lastAdminWrite";
-export default function useSortEnd({
-  orderBy,
-  items,
-}: {
-  orderBy: "asc" | "desc";
-  items?: any[];
-}) {
-  const { collection } = useParams<Param>();
+export default function useSortEnd(items?: any[]) {
+  const { collection, type } = useParams<Param>();
   const confirm = React.useCallback(
     async (oldIndex, order) => {
       if (!items) return;
@@ -21,14 +15,22 @@ export default function useSortEnd({
         if (!item) return;
         const { id } = item;
         await Promise.all([
-          firestore.collection(collection).doc(id).update({ order }),
+          firestore
+            .collection(
+              ["banner", "publication_category"].includes(type)
+                ? type
+                : collection
+            )
+            .doc(id)
+            .update({ order }),
           lastAdminWrite(),
         ]);
       }
     },
-    [items, collection]
+    [items, collection, type]
   );
-  if (orderBy === "asc") {
+  if (type !== "contents") {
+    // asc
     return async ({ oldIndex, newIndex }: SortEnd) => {
       if (!items) return;
       if (oldIndex === newIndex) return;
@@ -53,6 +55,7 @@ export default function useSortEnd({
       confirm(oldIndex, order);
     };
   } else {
+    // desc
     return async ({ oldIndex, newIndex }: SortEnd) => {
       if (!items) return;
       if (oldIndex === newIndex) return;

@@ -7,11 +7,11 @@ import { useAdminOrder } from "../store/useGlobalState";
 import useFireSubscription from "../utils/useFireSubscription";
 import useSortEnd from "../utils/useSortEnd";
 import SortableList from "./SortableList";
-export default function AdminListAsc() {
+export default function AdminList() {
   const { type, collection } = useParams<Param>();
   const [items] = useFireSubscription<Publication>();
   const [isEditing, setEditing] = useAdminOrder();
-  const onSortEnd = useSortEnd({ orderBy: "asc", items });
+  const onSortEnd = useSortEnd(items);
   const startEditing = () => {
     setEditing(true);
   };
@@ -64,7 +64,15 @@ export default function AdminListAsc() {
           </div>
         )}
       </div>
-      <SortableList items={items} onSortEnd={onSortEnd} useDragHandle />
+      <SortableList
+        items={items}
+        onSortEnd={onSortEnd}
+        useDragHandle
+        noRemove={
+          type === "publication_category" ||
+          ["about", "artist-project", "contact"].includes(collection)
+        }
+      />
     </section>
   );
 }

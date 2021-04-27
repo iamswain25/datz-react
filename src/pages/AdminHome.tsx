@@ -3,7 +3,6 @@ import { Grid } from "@material-ui/core";
 import { css } from "emotion";
 import AdminHeader from "../components/AdminHeader";
 import AdminMenu from "../components/AdminMenu";
-import AdminCollectionList from "../components/AdminCollectionList";
 import AdminItemPublication from "../components/AdminItemPublication";
 import { useParams } from "react-router-dom";
 import { Param } from "../@type/admin";
@@ -12,11 +11,10 @@ import { useAdminItem } from "../store/useGlobalState";
 import AdminItemEvent from "../components/AdminItemEvent";
 import AdminItemArtist from "../components/AdminItemArtist";
 import AdminItemNews from "../components/AdminItemNews";
-import AdminListBanner from "../components/AdminListBanner";
 import AdminItemBanner from "../components/AdminItemBanner";
 import AdminItemCategory from "../components/AdminItemCategory";
 import AdminItemMain from "../components/AdminItemMain";
-import AdminListAsc from "../components/AdminListAsc";
+import AdminList from "../components/AdminList";
 import AdminItemArtistProject from "../components/AdminItemArtistProject";
 import AdminItemContact from "../components/AdminItemContact";
 import AdminItemAbout from "../components/AdminItemAbout";
@@ -32,25 +30,7 @@ export default function AdminHome() {
     }
   }, [collection, type, setAdminItem]);
 
-  const [list, item] = React.useMemo(() => {
-    const list = () => {
-      switch (collection) {
-        case "about":
-        case "artist-project":
-        case "contact":
-        case "support":
-        case "notice":
-          return <AdminListAsc />;
-      }
-      switch (type) {
-        case "banner":
-        case "publication_category":
-          return <AdminListBanner />;
-        case "contents":
-        default:
-          return <AdminCollectionList />;
-      }
-    };
+  const [item] = React.useMemo(() => {
     const item = () => {
       switch (type) {
         case "banner":
@@ -85,7 +65,7 @@ export default function AdminHome() {
           return <AdminItemBanner />;
       }
     };
-    return [list, item];
+    return [item];
   }, [collection, type]);
   return (
     <section
@@ -104,7 +84,7 @@ export default function AdminHome() {
             <AdminMenu />
           </Grid>
           <Grid item xs={4}>
-            {!!collection && list()}
+            {!!collection && <AdminList />}
           </Grid>
           <Grid item xs={5}>
             {item()}
