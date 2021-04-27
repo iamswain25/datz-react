@@ -6,6 +6,7 @@ import lastAdminWrite from "./lastAdminWrite";
 export default function useSubmitDuplicate(col: Collection) {
   const [item, setItem] = useAdminItem();
   const submit = async (data: any) => {
+    console.log(data);
     if (!window.confirm("저장하시겠습니까?")) return;
     data.updated_at = new Date();
     data.updated_by = auth.currentUser?.uid;
@@ -46,7 +47,7 @@ export default function useSubmitDuplicate(col: Collection) {
     window.alert("수정 했습니다.");
   };
   const duplicate = async () => {
-    if (!window.confirm("복제 하시겠습니까?")) return;
+    // if (!window.confirm("복제 하시겠습니까?")) return;
     const data = { ...item };
     data.public = false;
     delete data.id;
