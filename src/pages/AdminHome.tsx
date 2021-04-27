@@ -62,7 +62,7 @@ export default function AdminHome() {
         case "notice":
           return <AdminItemNotice />;
         default:
-          return <AdminItemBanner />;
+          return null;
       }
     };
     return [item];

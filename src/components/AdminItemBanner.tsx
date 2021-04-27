@@ -4,7 +4,7 @@ import { useAdminItem } from "../store/useGlobalState";
 import AdminLine from "./AdminLine";
 import AdminGroup from "./AdminGroup";
 import { useForm, FormProvider } from "react-hook-form";
-import { Artists } from "../@type";
+import { Artists, Collection } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
@@ -16,8 +16,8 @@ const LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
 const EN_FIELDS = ["title_en", "text_en"];
 const KO_FIELDS = ["title_ko", "text_ko"];
 export default function AdminItemMain() {
-  const { collection } = useParams<Param>();
-  const { submit, duplicate } = useSubmitDuplicate(collection);
+  const { type } = useParams<Param>();
+  const { submit, duplicate } = useSubmitDuplicate(type as Collection);
   const [item] = useAdminItem();
   const formControl = useForm<Artists>();
   const {

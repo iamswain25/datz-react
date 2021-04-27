@@ -4,7 +4,7 @@ import { useAdminItem } from "../store/useGlobalState";
 import AdminLine from "./AdminLine";
 import AdminGroup from "./AdminGroup";
 import { useForm, FormProvider } from "react-hook-form";
-import { Artists } from "../@type";
+import { Artists, Collection } from "../@type";
 import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
@@ -13,8 +13,8 @@ import { Param } from "../@type/admin";
 const EN_FIELDS = ["text_en"];
 const KO_FIELDS = ["text_ko"];
 export default function AdminItemCategory() {
-  const { collection } = useParams<Param>();
-  const { submit } = useSubmitDuplicate(collection);
+  const { type } = useParams<Param>();
+  const { submit } = useSubmitDuplicate(type as Collection);
   const [item] = useAdminItem();
   const formControl = useForm<Artists>();
   const {

@@ -38,7 +38,7 @@ export default function useSubmitDuplicate(col: Collection) {
     await Promise.all(promises);
     delete data.files;
     const { id, ...rest } = data;
-    // console.log(rest);
+    console.log(rest);
     await Promise.all([
       firestore.collection(col).doc(id).set(rest, { merge: true }),
       lastAdminWrite(),
