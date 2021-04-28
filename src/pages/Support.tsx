@@ -10,7 +10,7 @@ import LazyImage from "../components/LazyImage";
 import useIsTop from "../components/useIsTop";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
-const data = ["main"];
+const data = ["Contents"];
 export default function Support() {
   const isDesktop = useDesktop(true);
   const isTop = useIsTop();

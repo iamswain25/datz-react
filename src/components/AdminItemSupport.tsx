@@ -14,7 +14,10 @@ import AdminGroupImage from "./AdminGroupImage";
 export default function AdminItemSupport() {
   const [item] = useAdminItem();
   const { collection } = useParams<Param>();
-  const { submit } = useSubmitDuplicate(collection);
+  const {
+    submit,
+    // duplicate
+  } = useSubmitDuplicate(collection);
   const formControl = useForm<Artists>({ defaultValues: {} });
   const [en, ko] = React.useMemo(() => {
     const base = ["title", "text"];
@@ -45,6 +48,7 @@ export default function AdminItemSupport() {
       >
         <AdminItemPublic
           noPublic
+          // duplicate={duplicate}
           // duplicate={type !== "etc" ? duplicate : undefined}
         />
         <section

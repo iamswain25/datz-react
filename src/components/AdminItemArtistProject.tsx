@@ -52,6 +52,7 @@ export default function AdminItemArtistProject() {
       >
         <AdminItemPublic
           noPublic
+          // duplicate={duplicate}
           duplicate={item.type === "top" ? duplicate : undefined}
         />
         <section

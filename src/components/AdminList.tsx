@@ -51,6 +51,7 @@ export default function AdminList() {
         >
           {type === "etc" ||
           (items && items.length === 1) ||
+          (collection === "artist-project" && type === "exhibition") ||
           collection === "about" ? null : (
             <button
               onClick={() => setEditing((_) => !_)}
@@ -64,7 +65,6 @@ export default function AdminList() {
               {isEditing ? "✓ Finish order" : "≡ Edit order"}
             </button>
           )}
-
           {["publication_category", "etc"].includes(type) ||
           ["artist-project", "about", "support"].includes(collection) ? null : (
             <>
@@ -89,8 +89,8 @@ export default function AdminList() {
         onSortEnd={onSortEnd}
         useDragHandle
         noRemove={
-          type === "publication_category" ||
-          ["about", "artist-project", "contact"].includes(collection)
+          ["publication_category", "etc"].includes(type) ||
+          ["about", "artist-project"].includes(collection)
         }
       />
     </section>

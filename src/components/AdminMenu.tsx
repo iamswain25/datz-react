@@ -9,7 +9,7 @@ const defaultList: Item[] = [
   {
     title: "Notice",
     id: "notice",
-    children: [{ title: "notice", id: "" }],
+    children: [{ title: "Contents", id: "" }],
   },
   {
     title: "Main Page",
@@ -59,11 +59,11 @@ const defaultList: Item[] = [
     id: "artist-project",
     children: [
       { title: "Main gallery", id: "top" },
-      { title: " - Book", id: "book" },
-      { title: "Project", id: "projects" },
-      { title: " - Exhibition", id: "exhibition" },
+      { title: "Book Project", id: "book" },
+      { title: " - Project", id: "projects" },
       { title: "Datz Artist Residency", id: "residency" },
       { title: " - Facilities", id: "facilities" },
+      { title: "Exhibition", id: "exhibition" },
     ],
   },
   {
