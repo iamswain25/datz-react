@@ -4,7 +4,7 @@ import { Param } from "../@type/admin";
 import { firestore } from "../config/firebase";
 import { useAdminItem } from "../store/useGlobalState";
 
-export default function useCreateNew() {
+export default function useCreateNew({ order = 0 }) {
   const { type, collection } = useParams<Param>();
   const [, setAdminItem] = useAdminItem();
   return async function createNew() {
@@ -22,7 +22,7 @@ export default function useCreateNew() {
     if (res.exists) {
       return window.alert("id가 이미 존재합니다. 다른 id로 시도하세요");
     }
-    const item = new AdminItem(id, collection, type);
+    const item = new AdminItem(id, collection, type, order);
     setAdminItem(
       item[
         (["banner", "publication_category"].includes(type)
@@ -34,6 +34,7 @@ export default function useCreateNew() {
 }
 class AdminItem {
   common: any;
+  comm2: any;
   bannerCommon: any;
   title: any;
   text: any;
@@ -58,8 +59,17 @@ class AdminItem {
   support: any;
   artist: any;
   nameBio: any;
-  constructor(id: string, collection: Collection, type: string) {
+  constructor(
+    id: string,
+    collection: Collection,
+    type: string,
+    order: number = 0
+  ) {
     this.common = { id, public: false, updated_by: null, order: 0, files: {} };
+    this.comm2 = {
+      ...this.common,
+      order: (Number(order) || 0) + 100,
+    };
     this.title = {
       title_en: "",
       title_ko: "",
@@ -119,7 +129,7 @@ class AdminItem {
     this.main = { ...this.banner, collection: type };
     this.contact = { ...this.common, ...this.title, type, list: [] };
     this.news = {
-      ...this.common,
+      ...this.comm2,
       ...this.title,
       ...this.place,
       ...this.body,
@@ -129,7 +139,7 @@ class AdminItem {
     };
     this.notice = { ...this.common, en: "", ko: "" };
     this.publication = {
-      ...this.common,
+      ...this.comm2,
       ...this.title,
       ...this.place,
       ...this.body,
@@ -149,7 +159,7 @@ class AdminItem {
       videos: null,
     };
     this.exhibition = {
-      ...this.common,
+      ...this.comm2,
       ...this.title,
       ...this.place,
       ...this.body,
@@ -170,7 +180,7 @@ class AdminItem {
       type: "",
       logo: "",
       date: "",
-      ...this.common,
+      ...this.comm2,
       ...this.title,
       ...this.place,
       ...this.body,
@@ -178,7 +188,7 @@ class AdminItem {
     };
     this.artist = {
       ...this.artist,
-      ...this.common,
+      ...this.comm2,
       ...this.nameBio,
       genre: "",
       images: null,
@@ -186,7 +196,7 @@ class AdminItem {
     this.news = {
       type: "",
       date: "",
-      ...this.common,
+      ...this.comm2,
       ...this.title,
       ...this.place,
       ...this.body,
@@ -194,7 +204,7 @@ class AdminItem {
     };
     this.artist = {
       ...this.artist,
-      ...this.common,
+      ...this.comm2,
       ...this.nameBio,
       genre: "",
       images: null,

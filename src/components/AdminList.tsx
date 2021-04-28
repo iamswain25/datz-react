@@ -15,7 +15,7 @@ export default function AdminList() {
   const [isEditing, setEditing] = useAdminOrder();
   const [, setItem] = useAdminItem();
   const onSortEnd = useSortEnd(items);
-  const createNewHandler = useCreateNew();
+  const createNewHandler = useCreateNew(items?.[0] || { order: 0 });
   return (
     <section
       className={css`
