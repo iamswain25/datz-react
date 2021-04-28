@@ -36,6 +36,7 @@ export default function AdminLine(props: {
     control,
     register,
     setValue,
+    clearErrors,
     formState: { errors },
   } = useFormContext();
   const [isVisible, setVisible] = React.useState(
@@ -47,6 +48,10 @@ export default function AdminLine(props: {
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
     setVisible,
   ]);
+  const isDraft = React.useMemo(
+    () => ["notes_en", "notes_ko", "body_en", "body_ko"].includes(field),
+    [field]
+  );
   return (
     <div
       className={css`
@@ -68,36 +73,38 @@ export default function AdminLine(props: {
         {alias ?? field}
       </span>
       <Hr10 />
-      {!isVisible ? (
-        <input
-          type="text"
-          className={css`
-            font-size: inherit;
-            color: #707070;
-            -webkit-line-clamp: 1;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            flex: 1;
-          `}
-          {...register(field, { required })}
-          defaultValue={item[field] || ""}
-          readOnly
-        />
-      ) : ["notes_en", "notes_ko", "body_en", "body_ko"].includes(field) ? (
-        <Controller
-          control={control}
-          name={getDraftName(field)}
-          defaultValue={item[field] || ""}
-          rules={{ required }}
-          render={({ field: { value, onChange } }) => {
-            const onChange2 = (contentState: ContentState) => {
-              onChange(convertToRaw(contentState));
-              setValue(field, contentState.getPlainText());
-            };
-            return <LinkPluginEditor4 value={value} onChange={onChange2} />;
-          }}
-        />
+      {isDraft ? (
+        <>
+          <Controller
+            control={control}
+            name={getDraftName(field)}
+            defaultValue={item[field] || ""}
+            rules={{ required }}
+            render={({ field: { value, onChange } }) => {
+              const onChange2 = (contentState: ContentState) => {
+                onChange(convertToRaw(contentState));
+                setValue(field, contentState.getPlainText());
+                clearErrors(field);
+              };
+              return <LinkPluginEditor4 value={value} onChange={onChange2} />;
+            }}
+          />
+          <input
+            type="hidden"
+            className={css`
+              font-size: inherit;
+              color: #707070;
+              -webkit-line-clamp: 1;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              flex: 1;
+            `}
+            {...register(field, { required })}
+            defaultValue={item[field] || ""}
+            readOnly
+          />
+        </>
       ) : (
         <TextareaAutosize
           className={css`
@@ -106,7 +113,9 @@ export default function AdminLine(props: {
             flex: 1;
           `}
           {...register(field, { required })}
+          maxRows={isVisible ? undefined : 1}
           defaultValue={item[field] || ""}
+          readOnly={!isVisible}
         />
       )}
       {!disabled && (
