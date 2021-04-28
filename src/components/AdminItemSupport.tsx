@@ -13,7 +13,7 @@ import { useParams } from "react-router-dom";
 import AdminGroupImage from "./AdminGroupImage";
 export default function AdminItemSupport() {
   const [item] = useAdminItem();
-  const { collection } = useParams<Param>();
+  const { collection, type } = useParams<Param>();
   const {
     submit,
     // duplicate
@@ -21,10 +21,13 @@ export default function AdminItemSupport() {
   const formControl = useForm<Artists>({ defaultValues: {} });
   const [en, ko] = React.useMemo(() => {
     const base = ["title", "text"];
+    if (type === "main") {
+      base.push("url");
+    }
     const en = base.map((str) => str.concat("_en"));
     const ko = base.map((str) => str.concat("_ko"));
     return [en, ko];
-  }, []);
+  }, [type]);
   const {
     reset,
     handleSubmit,
@@ -58,7 +61,6 @@ export default function AdminItemSupport() {
           `}
         >
           <AdminLine field="id" disabled />
-          {["main"].includes(item?.type) && <AdminLine field="url" />}
           <AdminGroup title="EN" fields={en} />
           <AdminGroup title="KO" fields={ko} />
           {["main"].includes(item?.type) && <AdminGroupImage title="IMAGE" />}
