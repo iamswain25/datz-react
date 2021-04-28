@@ -68,6 +68,11 @@ export default function AdminItemArtistProject() {
               <AdminLine field="url.1" />
             </>
           )}
+          {type === "projects" && (
+            <>
+              <AdminLine field="url" />
+            </>
+          )}
           <AdminGroup title="EN" fields={en} />
           <AdminGroup title="KO" fields={ko} />
           <AdminGroupImage
