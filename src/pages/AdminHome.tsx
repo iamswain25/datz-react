@@ -80,7 +80,7 @@ export default function AdminHome() {
       >
         <div
           className={css`
-            width: 308px;
+            min-width: 298px;
           `}
         >
           <AdminMenu />
@@ -92,11 +92,23 @@ export default function AdminHome() {
             margin-right: 25px;
           `}
         >
-          <Grid container spacing={3}>
-            <Grid item xs={5}>
+          <Grid container spacing={3} direction="row" wrap="nowrap">
+            <Grid
+              item
+              xs={5}
+              className={css`
+                min-width: 320px;
+              `}
+            >
               {!!collection && <AdminList />}
             </Grid>
-            <Grid item xs={7}>
+            <Grid
+              item
+              xs={7}
+              className={css`
+                min-width: 320px;
+              `}
+            >
               {item()}
             </Grid>
           </Grid>
