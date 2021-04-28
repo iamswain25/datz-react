@@ -10,6 +10,7 @@ import { useAdminItem } from "../store/useGlobalState";
 import FormErrorMessage from "./FormErrorMessage";
 import LinkPluginEditor4 from "./LinkPluginEditor4";
 import { ContentState, convertToRaw } from "draft-js";
+import { Publication } from "../@type";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -21,7 +22,7 @@ const getDraftName = (field: string) => {
     case "body_en":
       return "bodyDraft_en";
     default:
-      return "";
+      return undefined;
   }
 };
 export default function AdminLine(props: {
@@ -48,10 +49,8 @@ export default function AdminLine(props: {
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
     setVisible,
   ]);
-  const isDraft = React.useMemo(
-    () => ["notes_en", "notes_ko", "body_en", "body_ko"].includes(field),
-    [field]
-  );
+  const openVisible = React.useCallback(() => setVisible(true), [setVisible]);
+  const isDraft = React.useMemo(() => Boolean(getDraftName(field)), [field]);
   return (
     <div
       className={css`
@@ -77,7 +76,7 @@ export default function AdminLine(props: {
         <>
           <Controller
             control={control}
-            name={getDraftName(field)}
+            name={getDraftName(field) as keyof Publication}
             defaultValue={item[field] || ""}
             rules={{ required }}
             render={({ field: { value, onChange } }) => {
@@ -86,11 +85,17 @@ export default function AdminLine(props: {
                 setValue(field, contentState.getPlainText());
                 clearErrors(field);
               };
-              return <LinkPluginEditor4 value={value} onChange={onChange2} />;
+              return (
+                <LinkPluginEditor4
+                  value={value || item[field]}
+                  onChange={onChange2}
+                  visible={isVisible}
+                />
+              );
             }}
           />
           <input
-            type="hidden"
+            type={isVisible ? "hidden" : "text"}
             className={css`
               font-size: inherit;
               color: #707070;
@@ -102,6 +107,7 @@ export default function AdminLine(props: {
             `}
             {...register(field, { required })}
             defaultValue={item[field] || ""}
+            onDoubleClick={openVisible}
             readOnly
           />
         </>
@@ -115,6 +121,7 @@ export default function AdminLine(props: {
           {...register(field, { required })}
           maxRows={isVisible ? undefined : 1}
           defaultValue={item[field] || ""}
+          onDoubleClick={openVisible}
           readOnly={!isVisible}
         />
       )}

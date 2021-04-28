@@ -13,7 +13,7 @@ const linkPlugin = createLinkPlugin({
   theme: defaultTheme,
 });
 const incomingConvert = (value: any) => {
-  // console.log(value);
+  // console.log("incomingConvert", typeof value);
   if (typeof value === "object") {
     return EditorState.createWithContent(convertFromRaw(value));
   } else {
@@ -21,14 +21,27 @@ const incomingConvert = (value: any) => {
   }
 };
 
-export default function LinkPluginEditor4({ value, onChange }: any) {
-  const [InlineToolbar, plugins] = React.useMemo(() => {
+class createNewToolbar {
+  InlineToolbar;
+  plugins;
+  constructor() {
     const inlineToolbarPlugin = createInlineToolbarPlugin();
     const { InlineToolbar } = inlineToolbarPlugin;
     const plugins = [inlineToolbarPlugin, linkPlugin];
-    return [InlineToolbar, plugins];
-  }, []);
+    this.InlineToolbar = InlineToolbar;
+    this.plugins = plugins;
+  }
+}
 
+// const toolbar = new createNewToolbar();
+// const InlineToolbar = toolbar.InlineToolbar;
+// const plugins = toolbar.plugins;
+
+export default function LinkPluginEditor4({ value, onChange, visible }: any) {
+  const [InlineToolbar, plugins] = React.useMemo(() => {
+    const toolbar = new createNewToolbar();
+    return [toolbar.InlineToolbar, toolbar.plugins];
+  }, []);
   const [state, setState] = React.useState<EditorState>(incomingConvert(value));
   const editor = React.useRef<Editor>(null);
   React.useEffect(() => {
@@ -36,15 +49,16 @@ export default function LinkPluginEditor4({ value, onChange }: any) {
       JSON.stringify(value) !==
       JSON.stringify(convertToRaw(state.getCurrentContent()))
     ) {
-      console.log("CHANGE", JSON.stringify(value));
+      // console.log("CHANGE", JSON.stringify(value));
       setState(incomingConvert(value));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
   const saveCb = useDebouncedCallback(() => {
     const json = JSON.stringify(convertToRaw(state.getCurrentContent()));
+    // console.log(json);
     if (JSON.stringify(value) !== json) {
-      console.log("SAVE", json);
+      // console.log("SAVE", json);
       onChange(state.getCurrentContent());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,6 +79,7 @@ export default function LinkPluginEditor4({ value, onChange }: any) {
       className={css`
         position: relative;
         flex: 1;
+        display: ${visible ? "block" : "none"};
       `}
       onClick={focus}
     >
@@ -78,9 +93,7 @@ export default function LinkPluginEditor4({ value, onChange }: any) {
       />
       <InlineToolbar
         children={(externalProps) => (
-          <>
-            <linkPlugin.LinkButton {...(externalProps as any)} />
-          </>
+          <linkPlugin.LinkButton {...(externalProps as any)} />
         )}
       />
     </div>
