@@ -1,6 +1,6 @@
 {
   "name": "datz-react",
-  "version": "1.10.49",
+  "version": "1.10.50",
   "private": true,
   "dependencies": {
     "@babel/helper-builder-react-jsx-experimental": "^7.12.11",
