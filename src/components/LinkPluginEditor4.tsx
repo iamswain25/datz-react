@@ -37,7 +37,12 @@ class createNewToolbar {
 // const InlineToolbar = toolbar.InlineToolbar;
 // const plugins = toolbar.plugins;
 
-export default function LinkPluginEditor4({ value, onChange, visible }: any) {
+export default function LinkPluginEditor4({
+  value,
+  onChange,
+  visible,
+  keyup,
+}: any) {
   const [InlineToolbar, plugins] = React.useMemo(() => {
     const toolbar = new createNewToolbar();
     return [toolbar.InlineToolbar, toolbar.plugins];
@@ -74,6 +79,11 @@ export default function LinkPluginEditor4({ value, onChange, visible }: any) {
   }
 
   const focus = (): void => editor.current?.focus();
+  React.useEffect(() => {
+    if (visible) {
+      focus();
+    }
+  }, [visible]);
   return (
     <div
       className={css`
@@ -91,6 +101,7 @@ export default function LinkPluginEditor4({ value, onChange, visible }: any) {
         handleReturn={handleReturn}
         ref={editor}
         stripPastedStyles={true}
+        keyBindingFn={keyup}
       />
       <InlineToolbar
         children={(externalProps) => (

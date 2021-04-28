@@ -49,6 +49,14 @@ export default function AdminLine(props: {
     setVisible,
   ]);
   const openVisible = React.useCallback(() => setVisible(true), [setVisible]);
+  const keyupHandler = React.useCallback(
+    (ev) => {
+      if (ev.code === "Escape") {
+        setVisible(false);
+      }
+    },
+    [setVisible]
+  );
   const isDraft = React.useMemo(() => Boolean(getDraftName(field)), [field]);
   return (
     <div
@@ -93,6 +101,7 @@ export default function AdminLine(props: {
                   value={value || item[field]}
                   onChange={onChange2}
                   visible={isVisible}
+                  keyup={keyupHandler}
                 />
               );
             }}
@@ -128,6 +137,7 @@ export default function AdminLine(props: {
           defaultValue={item[field] || ""}
           onDoubleClick={openVisible}
           readOnly={!isVisible}
+          onKeyUp={keyupHandler}
         />
       )}
       {!disabled && (
