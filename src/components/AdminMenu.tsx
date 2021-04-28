@@ -142,17 +142,17 @@ const makeUl = (
         className={css`
           width: 100%;
         `}
-        onClick={() =>
+        onClick={() => {
           setList((l) => {
             l[index1].visible = !l[index1].visible;
             if (l[index1].visible) {
               const collection = l[index1].id;
               const type = l[index1].children[0].id;
-              push(`/admin/${collection}/${type}`);
+              window.setTimeout(() => push(`/admin/${collection}/${type}`), 1);
             }
             return [...l];
-          })
-        }
+          });
+        }}
       >
         <Grid
           container

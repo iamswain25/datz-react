@@ -10,10 +10,13 @@ const linkPlugin = createLinkPlugin({
   linkTarget: "_blank",
   theme: defaultTheme,
 });
-const inlineToolbarPlugin = createInlineToolbarPlugin();
-const { InlineToolbar } = inlineToolbarPlugin;
-const plugins = [inlineToolbarPlugin, linkPlugin];
-export default function LinkPluginEditor({ editorState, onChange }: any) {
+export default function LinkPluginEditor2({ editorState, onChange }: any) {
+  const [InlineToolbar, plugins] = React.useMemo(() => {
+    const inlineToolbarPlugin = createInlineToolbarPlugin();
+    const { InlineToolbar } = inlineToolbarPlugin;
+    const plugins = [inlineToolbarPlugin, linkPlugin];
+    return [InlineToolbar, plugins];
+  }, []);
   const ref = React.useRef<null | PluginEditor>(null);
   function focus() {
     ref.current?.focus();

@@ -3,12 +3,13 @@ import EditIcon from "@material-ui/icons/Edit";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import Hr10 from "./Hr10";
-import LinkPluginEditor3 from "./LinkPluginEditor3";
 import { IconButton } from "@material-ui/core";
 import TextareaAutosize from "react-textarea-autosize";
 import CloseIcon from "@material-ui/icons/Close";
 import { useAdminItem } from "../store/useGlobalState";
 import FormErrorMessage from "./FormErrorMessage";
+import LinkPluginEditor4 from "./LinkPluginEditor4";
+import { ContentState, convertToRaw } from "draft-js";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -90,16 +91,11 @@ export default function AdminLine(props: {
           defaultValue={item[field] || ""}
           rules={{ required }}
           render={({ field: { value, onChange } }) => {
-            const onChange2 = (event: any) => {
-              onChange(event);
-              const pureText = event.blocks
-                .map((block: any) => (!block.text.trim() && "\n") || block.text)
-                .join("\n");
-              // console.log(pureText);
-              setValue(field, pureText);
-              return setVisible(false);
+            const onChange2 = (contentState: ContentState) => {
+              onChange(convertToRaw(contentState));
+              setValue(field, contentState.getPlainText());
             };
-            return <LinkPluginEditor3 value={value} onChange={onChange2} />;
+            return <LinkPluginEditor4 value={value} onChange={onChange2} />;
           }}
         />
       ) : (
