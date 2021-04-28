@@ -11,6 +11,7 @@ import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
 import AdminGroupList from "./AdminGroupList";
+import { formOptionRequired } from "../utils/required";
 export default function AdminItemContact() {
   const [item] = useAdminItem();
   const { collection, type } = useParams<Param>();
@@ -57,6 +58,9 @@ export default function AdminItemContact() {
           `}
         >
           <AdminLine field="id" disabled />
+          {["catalog"].includes(item?.type2) && (
+            <AdminLine field="url" {...formOptionRequired} />
+          )}
           <AdminGroup title="EN" fields={en} />
           <AdminGroup title="KO" fields={ko} />
           {!["phone", "enquiry", "catalog"].includes(item?.type2) && (
