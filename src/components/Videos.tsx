@@ -18,9 +18,10 @@ interface Video {
   loop: boolean;
 }
 export default function Videos({ arr }: { arr: (Video | string)[] }) {
+  const videos = arr.filter((_) => _);
   return (
     <>
-      {arr?.map((v) => {
+      {videos?.map((v) => {
         if (typeof v === "string") {
           return (
             <div
@@ -35,7 +36,7 @@ export default function Videos({ arr }: { arr: (Video | string)[] }) {
         }
         return (
           <div
-            key={v.url}
+            key={`key-${v?.url}`}
             className={css`
               position: relative;
               margin-bottom: 28px;
