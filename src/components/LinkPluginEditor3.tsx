@@ -15,7 +15,7 @@ const incomingConvert = (value: any) => {
   if (typeof value === "object") {
     return EditorState.createWithContent(convertFromRaw(value));
   } else {
-    return createEditorStateWithText(value);
+    return createEditorStateWithText(value || "");
   }
 };
 const inlineToolbarPlugin = createInlineToolbarPlugin();
@@ -42,7 +42,8 @@ export default function LinkPluginEditor3({ value, onChange }: any) {
 
   const focus = (): void => editor.current?.focus();
 
-  if (!value) return null;
+  // if (!value) return null;
+  // console.log(value);
   return (
     <div
       className={css`

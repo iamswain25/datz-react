@@ -37,7 +37,12 @@ export default function AdminLine(props: {
     setValue,
     formState: { errors },
   } = useFormContext();
-  const [isVisible, setVisible] = React.useState(false);
+  const [isVisible, setVisible] = React.useState(
+    item.updated_by === null ? true : false
+  );
+  React.useEffect(() => {
+    setVisible(item.updated_by === null ? true : false);
+  }, [item]);
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
     setVisible,
   ]);
