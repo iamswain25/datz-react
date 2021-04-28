@@ -55,7 +55,7 @@ const defaultList: Item[] = [
     ],
   },
   {
-    title: "Artist projects",
+    title: "Artist Projects",
     id: "artist-project",
     children: [
       { title: "Main gallery", id: "top" },
