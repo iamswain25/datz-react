@@ -4,11 +4,10 @@ import { useFieldArray, useFormContext } from "react-hook-form";
 import {
   SortableContainer,
   SortableElement,
-  SortableHandle,
   SortEnd,
 } from "react-sortable-hoc";
-import MenuIcon from "@material-ui/icons/Menu";
 import AdminArrayLine from "./AdminArrayLine";
+import { DragHandle } from "./SortableItem";
 export default function AdminGroupList(props: { title: string }) {
   const { title } = props;
   const { control } = useFormContext();
@@ -72,14 +71,7 @@ export default function AdminGroupList(props: { title: string }) {
     </section>
   );
 }
-const DragHandle = SortableHandle(() => (
-  <MenuIcon
-    className={css`
-      font-size: 16px !important;
-      cursor: move;
-    `}
-  />
-));
+
 const SortableItem = SortableElement((props: any) => {
   const { item, sortIndex } = props;
   return (

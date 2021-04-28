@@ -66,7 +66,7 @@ const SortableItem = SortableElement(
   }
 );
 export default SortableItem;
-const DragHandle = SortableHandle(() => (
+export const DragHandle = SortableHandle(() => (
   <span
     className={css`
       padding-right: 6px;
