@@ -116,6 +116,7 @@ export default function AdminLine(props: {
             font-size: inherit;
             color: #707070;
             flex: 1;
+            line-height: 1.2;
             padding: 2px;
           `}
           {...register(field, { required })}
@@ -135,7 +136,7 @@ export default function AdminLine(props: {
           ) : (
             <span
               className={css`
-                padding: 2px;
+                padding: 3px;
                 font-size: 14px;
                 font-weight: 500;
                 color: #707070;
