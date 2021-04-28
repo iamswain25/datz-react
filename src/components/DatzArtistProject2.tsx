@@ -2,10 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import { paddingH37, paddingH17 } from "./styles";
 import { Grid } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import useDesktop from "./useDesktop";
 import LazyImage from "./LazyImage";
 import { BLEND_SCREEN_COLOR } from "../config/params";
+import Link from "./Link";
 const classes = {
   image: css`
     width: 100%;
@@ -46,64 +46,49 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
           const { text, url, artist, image } = item;
           return (
             <Grid item xs={12} sm={4} key={item.text + i}>
-              <div
-                className={css`
-                  position: relative;
-                  margin-top: 26px;
-                  background-color: ${BLEND_SCREEN_COLOR};
-                  ::before {
-                    content: "";
-                    display: inline-block;
-                    padding-bottom: 52.91%;
-                    vertical-align: top;
-                  }
-                `}
-              >
-                <LazyImage
-                  link={image}
-                  placeholder={css`
-                    position: absolute;
-                    left: 0;
-                  `}
-                  img={css`
-                    position: absolute;
-                    left: 0;
-                    object-fit: cover;
-                    opacity: 0.5;
-                  `}
-                />
-              </div>
-              <div className={classes.h5}>{text}</div>
-              <div
-                className={css`
-                  margin-top: 6px;
-                  color: #aaaaaa;
-                  border-bottom: solid 1px #aaaaaa;
-                  margin-bottom: 20px;
-                  padding-bottom: 10px;
-                `}
-              >
-                {artist}
-              </div>
-              {url && (
+              <Link to={url} className={css``}>
                 <div
                   className={css`
-                    margin-left: 16px;
-                    margin-right: 16px;
+                    position: relative;
+                    margin-top: 26px;
+                    background-color: ${BLEND_SCREEN_COLOR};
+                    ::before {
+                      content: "";
+                      display: inline-block;
+                      padding-bottom: 52.91%;
+                      vertical-align: top;
+                    }
                   `}
                 >
-                  <Link
-                    to={url}
-                    className={css`
-                      font-size: 14px;
-                      margin-top: 6px;
-                      color: #aaaaaa;
+                  <LazyImage
+                    link={image}
+                    placeholder={css`
+                      position: absolute;
+                      left: 0;
                     `}
-                  >
-                    read more &gt;
-                  </Link>
+                    img={css`
+                      position: absolute;
+                      left: 0;
+                      object-fit: cover;
+                      :hover {
+                        opacity: 0.5;
+                      }
+                    `}
+                  />
                 </div>
-              )}
+                <div className={classes.h5}>{text}</div>
+                <div
+                  className={css`
+                    margin-top: 6px;
+                    color: #aaaaaa;
+                    border-bottom: solid 1px #aaaaaa;
+                    margin-bottom: 20px;
+                    padding-bottom: 10px;
+                  `}
+                >
+                  {artist}
+                </div>
+              </Link>
             </Grid>
           );
         })}
