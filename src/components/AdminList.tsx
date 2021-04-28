@@ -53,7 +53,7 @@ export default function AdminList() {
           {type === "etc" ||
           (items && items.length === 1) ||
           (collection === "artist-project" && type === "exhibition") ||
-          collection === "about" ? null : (
+          ["about", "support"].includes(collection) ? null : (
             <button
               onClick={() => {
                 if (!isEditing) {
@@ -96,7 +96,7 @@ export default function AdminList() {
         useDragHandle
         noRemove={
           ["publication_category", "etc"].includes(type) ||
-          ["about", "artist-project"].includes(collection)
+          ["about", "artist-project", "support"].includes(collection)
         }
       />
     </section>
