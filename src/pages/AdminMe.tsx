@@ -1,7 +1,8 @@
+import React from "react";
 import { Container } from "@material-ui/core";
 import { css } from "emotion";
-import React from "react";
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import Link from "../components/Link";
 import { auth, firestore } from "../config/firebase";
 
 export default function AdminMe() {
@@ -12,7 +13,7 @@ export default function AdminMe() {
   return (
     <Container maxWidth="sm">
       <h1>관리자 정보</h1>
-      <a href="/admin">관리자 페이지로 이동</a>
+      <Link to="/admin">관리자 페이지로 이동</Link>
       <ul
         className={css`
           display: flex;
