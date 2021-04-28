@@ -16,7 +16,7 @@ export default function AdminHeader(props: {
     <header
       className={css`
         height: 79px;
-        padding: 0 20px 0 54px;
+        padding: 0 58px 0 54px;
         display: flex;
         align-items: center;
       `}
@@ -77,7 +77,7 @@ export default function AdminHeader(props: {
           color: #707070;
         `}
       >
-        Latest Update: {timestamp?.updated_at.toDate().toLocaleString()}
+        Latest Update: {timestamp?.updated_at.toDate().toString().substr(0, 24)}
       </div>
     </header>
   );

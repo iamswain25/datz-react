@@ -53,8 +53,9 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
           <section
             className={css`
               min-height: 100vh;
-              background-color: #afafaf;
-              color: #ffffff;
+              background-color: #d8d8d8;
+              color: #707070;
+              font-weight: 500;
               position: relative;
               font-family: datz-medium;
             `}

@@ -69,11 +69,7 @@ export default function AdminHome() {
     return [item];
   }, [collection, type]);
   return (
-    <section
-      className={css`
-        background-color: #d8d8d8;
-      `}
-    >
+    <section>
       <AdminHeader />
       <section
         className={css`
@@ -84,7 +80,6 @@ export default function AdminHome() {
         <div
           className={css`
             width: 260px;
-            margin-right: 50px;
           `}
         >
           <AdminMenu />
@@ -92,6 +87,8 @@ export default function AdminHome() {
         <div
           className={css`
             flex: 1;
+            margin-left: 50px;
+            margin-right: 25px;
           `}
         >
           <Grid container spacing={3}>
