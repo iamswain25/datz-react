@@ -114,7 +114,13 @@ const Dropzone = ({
         >
           *Image
         </span>
-        <button type="button" onClick={open}>
+        <button
+          type="button"
+          onClick={open}
+          className={css`
+            outline: none;
+          `}
+        >
           ↑ upload
         </button>
       </div>

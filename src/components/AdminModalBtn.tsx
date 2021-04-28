@@ -20,6 +20,7 @@ export default function AdminModalBtn(props: {
         type="button"
         onClick={() => setVisible(true)}
         className={css`
+          outline: none;
           width: 50px;
           text-align: right;
           font-size: 14px;
@@ -37,6 +38,7 @@ export default function AdminModalBtn(props: {
             margin: auto;
             overflow: hidden;
             background-color: #fff;
+            outline: none;
           `}
         >
           {isVisible && <AdminModalList {...props} collection={collection} />}
