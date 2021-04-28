@@ -17,7 +17,7 @@ import { formOptionRequired } from "../utils/required";
 const EXHIBITION_TYPE = [
   "D'Ark Room",
   "Datz Museum of Art",
-  "Datz Press Gallery",
+  // "Datz Press Gallery",
 ];
 const EN_FIELDS = ["title_en", "preview_body_en", "body_en", "notes_en"];
 const KO_FIELDS = ["title_ko", "preview_body_ko", "body_ko", "notes_ko"];
