@@ -15,7 +15,7 @@ import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { useParams } from "react-router-dom";
 import { formOptionRequired } from "../utils/required";
-const PUBLICATION_TYPE = ["Book", "Magazine", "Artist' Book"];
+const PUBLICATION_TYPE = ["Book", "Magazine", "Artists' Book"];
 const EN_FIELDS = [
   "title_en",
   "artist_en",
