@@ -14,7 +14,11 @@ export default function AdminItemPublic({
   duplicate?: (...args: any[]) => void;
   noPublic?: boolean;
 }) {
-  const { control, watch } = useFormContext();
+  const {
+    control,
+    watch,
+    formState: { isSubmitting, isDirty },
+  } = useFormContext();
   const refSubmitButtom = React.useRef<HTMLButtonElement>(null);
   React.useEffect(() => {
     function handler(e: KeyboardEvent) {
@@ -32,6 +36,20 @@ export default function AdminItemPublic({
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);
   }, []);
+  React.useEffect(() => {
+    console.log(isSubmitting, isDirty);
+    function handler(e: any) {
+      console.log("beforeunload");
+      if (isSubmitting || !isDirty) {
+        return undefined;
+      }
+      const confirmationMessage = "Save changes?";
+      (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+      return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+    }
+    document.addEventListener("beforeunload", handler);
+    return () => document.removeEventListener("beforeunload", handler);
+  }, [isSubmitting, isDirty]);
 
   const isNew = watch("created_by");
   return (

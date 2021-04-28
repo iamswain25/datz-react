@@ -9,7 +9,7 @@ export default function useSortEnd(items?: any[]) {
   const confirm = React.useCallback(
     async (oldIndex, order) => {
       if (!items) return;
-      if (window.confirm("순서 변경 하시겠습니까?")) {
+      if (window.confirm("Save changes?")) {
         // console.log({ oldIndex, newIndex, order });
         const item = items[oldIndex];
         if (!item) return;

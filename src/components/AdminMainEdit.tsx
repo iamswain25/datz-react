@@ -19,7 +19,7 @@ export default (props: { data: any; collection: string }) => {
       .update({ type, title, author, color, isShowing });
   }
   async function deleteHandler() {
-    if (window.confirm("delete this?")) {
+    if (window.confirm(`Delete Page "${id}"?`)) {
       const { id } = props.data;
       const deleteData = firestore
         .collection(props.collection)

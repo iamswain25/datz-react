@@ -8,7 +8,7 @@ export default function useCreateNew({ order = 0 }) {
   const { type, collection } = useParams<Param>();
   const [, setAdminItem] = useAdminItem();
   return async function createNew() {
-    const id = window.prompt("ID 혹은 URL을 입력하세요!");
+    const id = window.prompt("Create a new id/url");
     if (id === null) return;
     if (id === "") {
       return window.alert("id를 입력하셔야 합니다. 다시 시도하세요.");

@@ -19,6 +19,7 @@ const SortableItem = SortableElement(
     const [isEditing, setEditing] = useAdminOrder();
     const trashItem = useTrashItem(item);
     function itemClickHandler() {
+      window.dispatchEvent(new Event("beforeunload"));
       setAdminItem(item);
       setEditing(false);
     }

@@ -7,7 +7,7 @@ export default function useSubmitDuplicate(col: Collection) {
   const [item, setItem] = useAdminItem();
   const submit = async (data: any) => {
     console.log(data);
-    if (!window.confirm("저장하시겠습니까?")) return;
+    if (!window.confirm("Save changes?")) return;
     data.updated_at = new Date();
     data.updated_by = auth.currentUser?.uid;
     // upload files
@@ -43,8 +43,7 @@ export default function useSubmitDuplicate(col: Collection) {
     await Promise.all([
       firestore.collection(col).doc(id).set(rest, { merge: true }),
       lastAdminWrite(),
-    ]);
-    window.alert("수정 했습니다.");
+    ]).catch(window.alert);
   };
   const duplicate = async () => {
     // if (!window.confirm("복제 하시겠습니까?")) return;
@@ -54,7 +53,7 @@ export default function useSubmitDuplicate(col: Collection) {
     data.created_at = new Date();
     data.created_by = auth.currentUser?.uid;
     data.order = Number(data.order) + 100;
-    const id = window.prompt("새로운 url을 입력해주세요.");
+    const id = window.prompt("Create a new id/url.");
     if (id === null) return;
     if (!id)
       return window.alert("url이 입력되지 않았습니다. 다시 시도해주세요.");

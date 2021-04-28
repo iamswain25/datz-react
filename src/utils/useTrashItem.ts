@@ -17,7 +17,7 @@ export default function useTrashItem(item: any) {
     case "banner":
     case "publication_category":
       return function trash_remove() {
-        if (!window.confirm("삭제하겠습니까?")) return;
+        if (!window.confirm(`Delete Page "${item.id}"?`)) return;
         Promise.all([
           trash(collection, item),
           remove(type, item.id),
@@ -27,7 +27,7 @@ export default function useTrashItem(item: any) {
       };
     default:
       return function trash_remove() {
-        if (!window.confirm("삭제하겠습니까?")) return;
+        if (!window.confirm(`Delete Page "${item.id}"?`)) return;
         Promise.all([
           trash(collection, item),
           remove(collection, item.id),

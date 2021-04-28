@@ -76,7 +76,11 @@ export default function AdminLine(props: {
           <Controller
             control={control}
             name={getDraftName(field) as keyof Publication}
-            defaultValue={item[field] || ""}
+            defaultValue={
+              getDraftName(field)
+                ? item[getDraftName(field) as keyof Publication]
+                : item[field] ?? ""
+            }
             rules={{ required }}
             render={({ field: { value, onChange } }) => {
               const onChange2 = (contentState: ContentState) => {
