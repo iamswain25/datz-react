@@ -63,7 +63,7 @@ export default function AdminHeader(props: {
             margin-left: 64px;
           `}
         >
-          *Be sure to click “Update”(CMD+S) to publish changes
+          *Be sure to click “Update”(CMD+S) to publish changes.
         </div>
       )}
       <div
