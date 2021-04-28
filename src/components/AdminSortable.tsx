@@ -1,6 +1,5 @@
 import { css } from "emotion";
 import React from "react";
-import MenuIcon from "@material-ui/icons/Menu";
 import { ReactSortable } from "react-sortablejs";
 import clsx from "clsx";
 import { useFormContext } from "react-hook-form";
@@ -66,14 +65,15 @@ export default function AdminSortable(props: { field: RelationType }) {
               border-bottom: solid 1px #cccccc;
             `}
           >
-            <MenuIcon
-              fontSize="small"
+            <span
               className={clsx(
                 "js-draggable",
                 css`
+                  padding-right: 6px;
                   cursor: move;
                 `
               )}
+              children="≡"
             />
             <input
               type="checkbox"

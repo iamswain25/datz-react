@@ -1,6 +1,5 @@
 import { css } from "emotion";
 import React from "react";
-import MenuIcon from "@material-ui/icons/Menu";
 import { SortableElement, SortableHandle } from "react-sortable-hoc";
 import { useAdminItem, useAdminOrder } from "../store/useGlobalState";
 import CloseIcon from "@material-ui/icons/Close";
@@ -68,10 +67,11 @@ const SortableItem = SortableElement(
 );
 export default SortableItem;
 const DragHandle = SortableHandle(() => (
-  <MenuIcon
+  <span
     className={css`
-      font-size: 16px !important;
+      padding-right: 6px;
       cursor: move;
     `}
+    children="≡"
   />
 ));
