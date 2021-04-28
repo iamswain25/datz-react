@@ -11,7 +11,8 @@ export default function AdminMe() {
   );
   return (
     <Container maxWidth="sm">
-      <h1>로그인 된 관리자 정보</h1>
+      <h1>관리자 정보</h1>
+      <a href="/admin">관리자 페이지로 이동</a>
       <ul
         className={css`
           display: flex;

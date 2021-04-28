@@ -48,7 +48,7 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
       />
       <Route
         exact
-        path={["/admin/**"]}
+        path={["/admin/**", "/admin", "/login"]}
         render={() => (
           <section
             className={css`

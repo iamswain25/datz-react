@@ -5,7 +5,10 @@ import Datz from "../assets/svg/Datz";
 import { Firebase } from "../config/firebase";
 import { timestampRef } from "../utils/lastAdminWrite";
 import Link from "./Link";
-export default function AdminHeader() {
+export default function AdminHeader(props: {
+  login?: boolean | React.ReactElement;
+}) {
+  const { login = false } = props;
   const [timestamp] = useDocumentData<{
     updated_at: Firebase.firestore.Timestamp;
   }>(timestampRef);
@@ -47,18 +50,22 @@ export default function AdminHeader() {
       >
         datzpress.com
       </Link>
-      <div
-        className={css`
-          margin-top: 2px;
-          font-size: 14px;
-          font-weight: 500;
-          text-align: left;
-          color: #707070;
-          margin-left: 64px;
-        `}
-      >
-        *수정 후 해당란의 ‘Update’를 클릭(배포)
-      </div>
+      {!!login ? (
+        login
+      ) : (
+        <div
+          className={css`
+            margin-top: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: left;
+            color: #707070;
+            margin-left: 64px;
+          `}
+        >
+          *수정 후 해당란의 ‘Update’를 클릭(배포)
+        </div>
+      )}
       <div
         className={css`
           display: flex;

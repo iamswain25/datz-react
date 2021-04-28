@@ -1,17 +1,38 @@
 import React from "react";
 import { auth, Firebase } from "../config/firebase";
-import { Container } from "@material-ui/core";
 import useAuthRedirectFrom from "../utils/useAuthRedirectFrom";
+import { css } from "emotion";
+import AdminHeader from "../components/AdminHeader";
 const provider = new Firebase.auth.GoogleAuthProvider();
 export default function Signin() {
   useAuthRedirectFrom();
   function signin() {
-    auth.signInWithPopup(provider).catch(console.error);
+    auth.signInWithPopup(provider).catch(console.error).catch(window.alert);
   }
   return (
-    <Container maxWidth="sm">
-      <h1>관리자 로그인 페이지</h1>
-      <button onClick={signin}>구글 계정으로 로그인 하세요</button>
-    </Container>
+    <section
+      className={css`
+        background-color: #d8d8d8;
+      `}
+    >
+      <AdminHeader
+        login={
+          <button
+            type="button"
+            onClick={signin}
+            className={css`
+              margin-top: 2px;
+              font-size: 14px;
+              font-weight: 500;
+              text-align: left;
+              color: #707070;
+              margin-left: 64px;
+            `}
+          >
+            구글 계정으로 로그인 하세요
+          </button>
+        }
+      />
+    </section>
   );
 }
