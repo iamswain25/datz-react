@@ -27,6 +27,7 @@ const SortableItem = SortableElement(
       <li
         key={item.id}
         className={css`
+          outline: none;
           display: flex;
           align-items: center;
           padding: 2px 2px;

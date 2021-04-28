@@ -10,6 +10,7 @@ import FormErrorMessage from "./FormErrorMessage";
 import LinkPluginEditor4 from "./LinkPluginEditor4";
 import { ContentState, convertToRaw } from "draft-js";
 import { Publication } from "../@type";
+import { KeyboardEventHandler } from "react";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -48,16 +49,20 @@ export default function AdminLine(props: {
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
     setVisible,
   ]);
+  const reg = register(field, { required });
+  const ref = React.useRef<HTMLInputElement | HTMLTextAreaElement | null>(null);
   const openVisible = React.useCallback(() => setVisible(true), [setVisible]);
-  const keyupHandler = React.useCallback(
-    (ev) => {
-      if (ev.code === "Escape") {
+  const keyupHandler: KeyboardEventHandler<HTMLTextAreaElement> = React.useCallback(
+    (event: any) => {
+      if (event.code === "Escape") {
         setVisible(false);
+        ref.current?.setSelectionRange(0, 0);
       }
     },
     [setVisible]
   );
   const isDraft = React.useMemo(() => Boolean(getDraftName(field)), [field]);
+
   return (
     <div
       className={css`
@@ -109,6 +114,7 @@ export default function AdminLine(props: {
           <input
             type={isVisible ? "hidden" : "text"}
             className={css`
+              outline: none;
               font-size: inherit;
               color: #707070;
               -webkit-line-clamp: 1;
@@ -117,7 +123,11 @@ export default function AdminLine(props: {
               overflow: hidden;
               flex: 1;
             `}
-            {...register(field, { required })}
+            {...reg}
+            ref={(r) => {
+              reg.ref(r);
+              ref.current = r;
+            }}
             defaultValue={item[field] || ""}
             onDoubleClick={openVisible}
             readOnly
@@ -126,13 +136,18 @@ export default function AdminLine(props: {
       ) : (
         <TextareaAutosize
           className={css`
+            outline: none;
             font-size: inherit;
             color: #707070;
             flex: 1;
             line-height: 1.2;
             padding: 2px;
           `}
-          {...register(field, { required })}
+          {...reg}
+          ref={(r) => {
+            reg.ref(r);
+            ref.current = r;
+          }}
           maxRows={isVisible ? undefined : 1}
           defaultValue={item[field] || ""}
           onDoubleClick={openVisible}

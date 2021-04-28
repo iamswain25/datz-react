@@ -35,7 +35,7 @@ export default function AdminHeader(props: {
           color: #383838;
         `}
       >
-        관리자 페이지
+        Admin Page
       </div>
       <Link
         to={`https://datzpress.com`}
