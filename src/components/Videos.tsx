@@ -18,7 +18,7 @@ interface Video {
   loop: boolean;
 }
 export default function Videos({ arr }: { arr: (Video | string)[] }) {
-  const videos = arr.filter((_) => _);
+  const videos = arr?.filter((_) => _);
   return (
     <>
       {videos?.map((v) => {

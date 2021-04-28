@@ -12,16 +12,21 @@ const linkPlugin = createLinkPlugin({
   theme: defaultTheme,
 });
 const incomingConvert = (value: any) => {
+  // console.log(value);
   if (typeof value === "object") {
     return EditorState.createWithContent(convertFromRaw(value));
   } else {
     return createEditorStateWithText(value || "");
   }
 };
-const inlineToolbarPlugin = createInlineToolbarPlugin();
-const { InlineToolbar } = inlineToolbarPlugin;
-const plugins = [inlineToolbarPlugin, linkPlugin];
+
 export default function LinkPluginEditor3({ value, onChange }: any) {
+  const [InlineToolbar, plugins] = React.useMemo(() => {
+    const inlineToolbarPlugin = createInlineToolbarPlugin();
+    const { InlineToolbar } = inlineToolbarPlugin;
+    const plugins = [inlineToolbarPlugin, linkPlugin];
+    return [InlineToolbar, plugins];
+  }, []);
   const [state, setState] = React.useState<EditorState>(incomingConvert(value));
   const editor = React.useRef<Editor>(null);
   React.useEffect(() => {
