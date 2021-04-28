@@ -23,7 +23,7 @@ export default function AdminMe() {
     >
       <h1
         className={css`
-          font-size: 40px;
+          font-size: 30px;
         `}
       >
         Admin Info
@@ -37,13 +37,26 @@ export default function AdminMe() {
         `}
       >
         <li>
-          <img src={auth.currentUser?.photoURL || ""} alt="photoUrl" />
+          <img
+            src={auth.currentUser?.photoURL || ""}
+            alt="photoUrl"
+            className={css`
+              border-radius: 50%;
+            `}
+          />
         </li>
-        <li>{auth.currentUser?.email}</li>
+        <li
+          className={css`
+            margin-top: 10px;
+          `}
+        >
+          {auth.currentUser?.email}
+        </li>
         <li>{auth.currentUser?.displayName}</li>
         <li
           className={css`
             margin-top: 10px;
+            font-size: 18px;
           `}
         >
           {doc?.admin ? (
@@ -71,7 +84,7 @@ export default function AdminMe() {
             onClick={() => auth.signOut()}
             className={css`
               text-decoration: underline;
-              font-size: 30px;
+              font-size: 22px;
               margin-top: 30px;
             `}
           >

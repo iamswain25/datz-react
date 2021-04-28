@@ -8,10 +8,10 @@ export default function useCreateNew({ order = 0 }) {
   const { type, collection } = useParams<Param>();
   const [, setAdminItem] = useAdminItem();
   return async function createNew() {
-    const id = window.prompt("Create a new id/url");
+    const id = window.prompt("You must create a new id/url for the next step.");
     if (id === null) return;
     if (id === "") {
-      return window.alert("id를 입력하셔야 합니다. 다시 시도하세요.");
+      return window.alert();
     }
     const res = await firestore
       .collection(
@@ -20,7 +20,7 @@ export default function useCreateNew({ order = 0 }) {
       .doc(id)
       .get();
     if (res.exists) {
-      return window.alert("id가 이미 존재합니다. 다른 id로 시도하세요");
+      return window.alert("Id/url already exists.");
     }
     const item = new AdminItem(id, collection, type, order);
     setAdminItem(

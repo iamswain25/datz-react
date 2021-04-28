@@ -57,10 +57,10 @@ export default function useSubmitDuplicate(col: Collection) {
     const id = window.prompt("Create a new id/url.");
     if (id === null) return;
     if (!id)
-      return window.alert("url이 입력되지 않았습니다. 다시 시도해주세요.");
+      return window.alert("You must create a new id/url for the next step.");
     const docRef = await firestore.collection(col).doc(id).get();
     if (docRef.exists)
-      return window.alert("이미 해당 url이 존재합니다. 다른 url로 시도하세요.");
+      return window.alert("Id/url already exists.");
     await docRef.ref.set(data);
     setItem({ ...data, id });
   };

@@ -63,7 +63,7 @@ export default function AdminHeader(props: {
             margin-left: 64px;
           `}
         >
-          *수정 후 해당란의 ‘Update’를 클릭(배포)
+          *Be sure to click “Update”(CMD+S) to publish changes
         </div>
       )}
       <div
