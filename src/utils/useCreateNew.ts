@@ -149,6 +149,7 @@ class AdminItem {
       ...this.order_url,
       ...this.artist,
       images: null,
+      image_cover: "",
       type: "",
       edition: "",
       copies_count: "",
@@ -201,6 +202,7 @@ class AdminItem {
       ...this.place,
       ...this.body,
       images: null,
+      image_cover: "",
     };
     this.artist = {
       ...this.artist,

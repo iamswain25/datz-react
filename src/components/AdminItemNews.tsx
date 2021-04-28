@@ -52,7 +52,7 @@ export default function AdminItemNews() {
           <AdminLine field="date" {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
-          <AdminGroupImages title="IMAGE" />
+          <AdminGroupImages hasCover title="IMAGE" />
         </section>
       </form>
       {isSubmitting && <LoadingCenter />}
