@@ -25,6 +25,7 @@ export default function AdminHome() {
   const { collection, type } = useParams<Param>();
   const [, setAdminItem] = useAdminItem();
   React.useEffect(() => {
+    document.title = "Datzpress Admin Page";
     if (collection) {
       setAdminItem(undefined);
     }
