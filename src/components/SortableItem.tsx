@@ -27,7 +27,6 @@ const SortableItem = SortableElement(
       <li
         key={item.id}
         className={css`
-          outline: none;
           display: flex;
           align-items: center;
           padding: 2px 2px;
@@ -43,6 +42,7 @@ const SortableItem = SortableElement(
         <button
           onClick={itemClickHandler}
           className={css`
+            outline: none;
             flex: 1;
             text-align: left;
             font-size: 16px;

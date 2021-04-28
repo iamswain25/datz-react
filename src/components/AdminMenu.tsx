@@ -124,7 +124,14 @@ const makeUl = (
           color: ${color};
         `}
       >
-        <Link to={`/admin/${item.id}/${child.id}`}>{child.title}</Link>
+        <Link
+          className={css`
+            outline: none;
+          `}
+          to={`/admin/${item.id}/${child.id}`}
+        >
+          {child.title}
+        </Link>
       </li>
     );
   };
@@ -140,6 +147,7 @@ const makeUl = (
       <button
         type="button"
         className={css`
+          outline: none;
           width: 100%;
         `}
         onClick={() => {
