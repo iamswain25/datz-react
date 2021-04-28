@@ -44,6 +44,7 @@ export default function useSubmitDuplicate(col: Collection) {
       firestore.collection(col).doc(id).set(rest, { merge: true }),
       lastAdminWrite(),
     ]).catch(window.alert);
+    setItem(data);
   };
   const duplicate = async () => {
     // if (!window.confirm("복제 하시겠습니까?")) return;
