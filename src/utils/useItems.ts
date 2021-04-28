@@ -14,6 +14,7 @@ export default function useItems(items?: any[]) {
       lang === "ko" ? item.artist_ko : item.artist_en ?? item.artist;
     const preview = lang === "ko" ? item.preview_ko : item.preview_en;
     const url = lang === "ko" ? item.url_ko : item.url_en ?? item.url;
+    const body = lang === "ko" ? item.body_ko : item.body_en ?? item.body;
     const link_title =
       lang === "ko"
         ? item.link_title_ko
@@ -28,6 +29,7 @@ export default function useItems(items?: any[]) {
       preview,
       url,
       link_title,
+      body,
     };
   });
 }
