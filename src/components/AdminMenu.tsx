@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import { css } from "emotion";
 import React from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { Child, Item, Param } from "../@type/admin";
 import Link from "./Link";
 
@@ -104,7 +104,8 @@ const defaultList: Item[] = [
 ];
 const makeUl = (
   setList: React.Dispatch<React.SetStateAction<Item[]>>,
-  params: Param
+  params: Param,
+  push: (path: string, state?: unknown) => void
 ) => (item: Item, index1: number) => {
   const makeLi = (child: Child, index2: number) => {
     const { type = "" } = params;
@@ -136,52 +137,64 @@ const makeUl = (
         padding-top: 28px;
       `}
     >
-      <Grid
-        container
-        justify="space-between"
-        alignItems="center"
+      <button
+        type="button"
         className={css`
-          border-bottom: 1px solid #4b4b4b;
-          padding-bottom: 9px;
-          margin-bottom: 8px;
+          width: 100%;
         `}
+        onClick={() =>
+          setList((l) => {
+            l[index1].visible = !l[index1].visible;
+            if (l[index1].visible) {
+              const collection = l[index1].id;
+              const type = l[index1].children[0].id;
+              push(`/admin/${collection}/${type}`);
+            }
+            return [...l];
+          })
+        }
       >
         <Grid
-          item
+          container
+          justify="space-between"
+          alignItems="center"
           className={css`
-            font-size: 22px;
-            font-weight: 500;
-            line-height: 1.23;
-            color: ${color};
+            border-bottom: 1px solid #4b4b4b;
+            padding-bottom: 9px;
+            margin-bottom: 8px;
           `}
         >
-          {item.title}
-        </Grid>
-        <Grid item>
-          <button
-            className={
-              item.visible
-                ? css`
-                    font-size: 14px;
-                    font-weight: 500;
-                    color: ${color};
-                  `
-                : css`
-                    font-size: 24px;
-                    color: ${color};
-                  `
-            }
-            onClick={() =>
-              setList((l) => {
-                l[index1].visible = !l[index1].visible;
-                return [...l];
-              })
-            }
+          <Grid
+            item
+            className={css`
+              font-size: 22px;
+              font-weight: 500;
+              line-height: 1.23;
+              color: ${color};
+            `}
           >
-            {item.visible ? "hide" : ">"}
-          </button>
+            {item.title}
+          </Grid>
+          <Grid item>
+            <span
+              className={
+                item.visible
+                  ? css`
+                      font-size: 14px;
+                      font-weight: 500;
+                      color: ${color};
+                    `
+                  : css`
+                      font-size: 24px;
+                      color: ${color};
+                    `
+              }
+            >
+              {item.visible ? "hide" : ">"}
+            </span>
+          </Grid>
         </Grid>
-      </Grid>
+      </button>
       {item.visible && (
         <ul
           className={css`
@@ -198,6 +211,7 @@ const makeUl = (
 export default function AdminMenu() {
   const [list, setList] = React.useState(defaultList);
   const params = useParams<Param>();
+  const { push } = useHistory();
   return (
     <section
       className={css`
@@ -205,7 +219,7 @@ export default function AdminMenu() {
         margin-bottom: 100px;
       `}
     >
-      {list.map(makeUl(setList, params))}
+      {list.map(makeUl(setList, params, push))}
     </section>
   );
 }
