@@ -17,8 +17,12 @@ const SortableItem = SortableElement(
     sortLength: number;
   }) => {
     const [selectedItem, setAdminItem] = useAdminItem();
-    const [isEditing] = useAdminOrder();
+    const [isEditing, setEditing] = useAdminOrder();
     const trashItem = useTrashItem(item);
+    function itemClickHandler() {
+      setAdminItem(item);
+      setEditing(false);
+    }
     return (
       <li
         key={item.id}
@@ -34,7 +38,7 @@ const SortableItem = SortableElement(
       >
         {isEditing && <DragHandle />}
         <button
-          onClick={() => setAdminItem(item)}
+          onClick={itemClickHandler}
           className={css`
             flex: 1;
             text-align: left;
