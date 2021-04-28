@@ -116,7 +116,7 @@ class AdminItem {
       image: "",
       collection,
     };
-    this.main = { ...this.banner };
+    this.main = { ...this.banner, collection: type };
     this.contact = { ...this.common, ...this.title, type, list: [] };
     this.news = {
       ...this.common,
