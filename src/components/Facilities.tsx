@@ -59,9 +59,9 @@ export default function Facilities({ items }: { items: any[] }) {
         `}
       >
         {items?.map((item, i) => {
-          const { text, link, artist, image } = item;
+          const { title, link, text, image } = item;
           return (
-            <Grid item xs={12} sm={4} key={text + i}>
+            <Grid item xs={12} sm={4} key={title + i}>
               <div
                 className={css`
                   position: relative;
@@ -93,14 +93,14 @@ export default function Facilities({ items }: { items: any[] }) {
                   margin-top: 10px;
                 `}
               >
-                {text}
+                {title}
               </div>
               <div
                 className={css`
                   color: #aaaaaa;
                 `}
               >
-                {artist}
+                {text}
               </div>
               <div
                 className={css`

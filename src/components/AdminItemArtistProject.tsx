@@ -23,6 +23,11 @@ export default function AdminItemArtistProject() {
         break;
       case "projects": {
         base.push("artist");
+        break;
+      }
+      case "facilities": {
+        base.unshift("title");
+        break;
       }
     }
     const en = base.map((str) => str.concat("_en"));
@@ -68,7 +73,7 @@ export default function AdminItemArtistProject() {
               <AdminLine field="url.1" />
             </>
           )}
-          {type === "projects" && (
+          {["projects", "facilities"].includes(type) && (
             <>
               <AdminLine field="url" />
             </>
