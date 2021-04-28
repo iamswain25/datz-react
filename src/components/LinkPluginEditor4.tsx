@@ -80,6 +80,7 @@ export default function LinkPluginEditor4({ value, onChange, visible }: any) {
         position: relative;
         flex: 1;
         display: ${visible ? "block" : "none"};
+        color: #707070;
       `}
       onClick={focus}
     >
