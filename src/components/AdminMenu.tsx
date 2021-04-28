@@ -159,7 +159,7 @@ const makeUl = (
           justify="space-between"
           alignItems="center"
           className={css`
-            border-bottom: 1px solid #4b4b4b;
+            border-bottom: 1px solid ${color};
             padding-bottom: 9px;
             margin-bottom: 8px;
           `}
