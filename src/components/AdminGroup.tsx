@@ -52,6 +52,11 @@ export default function AdminGroup(props: { title: string; fields: string[] }) {
             <AdminLine
               key={`key-${title}-${field}`}
               field={field}
+              alias={
+                field.startsWith("preview_")
+                  ? field.replace("preview_", "(P)")
+                  : field
+              }
               required={
                 [
                   "quotes_en",
