@@ -21,18 +21,7 @@ export default function AdminItemBanner() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Main>({
-    defaultValues: {
-      text_en: "",
-      text_ko: "",
-      title_en: "",
-      title_ko: "",
-      type: "",
-      logo: "",
-      image: "",
-      collection,
-    },
-  });
+  const formControl = useForm<Main>();
   const {
     reset,
     handleSubmit,

@@ -14,6 +14,7 @@ import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { useParams } from "react-router-dom";
+import { formOptionRequired } from "../utils/required";
 const PUBLICATION_TYPE = ["Book", "Magazine", "Artist' Book"];
 const EN_FIELDS = [
   "title_en",
@@ -74,7 +75,11 @@ export default function AdminItemPublication() {
           `}
         >
           <AdminLine field="id" alias="url" disabled />
-          <AdminRadio field="type" values={PUBLICATION_TYPE} />
+          <AdminRadio
+            field="type"
+            values={PUBLICATION_TYPE}
+            {...formOptionRequired}
+          />
           <AdminLine field="edition" />
           <AdminLine field="copies_count" />
           <AdminLine field="order_url_en" />

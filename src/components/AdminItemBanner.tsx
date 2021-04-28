@@ -19,31 +19,19 @@ const EN_FIELDS = ["title_en", "text_en"];
 const KO_FIELDS = ["title_ko", "text_ko"];
 
 export default function AdminItemMain() {
-  const { type, collection } = useParams<Param>();
+  const { type } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(type as Collection);
   const [item] = useAdminItem();
-  const formControl = useForm<Banner>({
-    defaultValues: {
-      text_en: "",
-      text_ko: "",
-      title_en: "",
-      title_ko: "",
-      type: "",
-      logo: "",
-      image: "",
-      collection,
-    },
-  });
+  const formControl = useForm<Banner>();
   const {
     reset,
     handleSubmit,
-    formState: { isSubmitting, errors },
+    formState: { isSubmitting },
   } = formControl;
   React.useEffect(() => {
     reset({ ...item });
   }, [item, reset]);
   if (!item) return null;
-  console.log(errors);
   return (
     <FormProvider {...formControl}>
       <form

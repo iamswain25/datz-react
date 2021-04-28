@@ -12,6 +12,7 @@ import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
+import { formOptionRequired } from "../utils/required";
 const EVENT_TYPE = ["Artist Talk / Lecture", "Book Fair", "Exhibition"];
 const EVENT_LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
 const EN_FIELDS = ["title_en", "place_en", "body_en"];
@@ -51,9 +52,17 @@ export default function AdminItemEvent() {
           `}
         >
           <AdminLine field="id" alias="url" disabled />
-          <AdminRadio field="type" values={EVENT_TYPE} />
-          <AdminRadio field="logo" values={EVENT_LOGO} />
-          <AdminLine field="date" />
+          <AdminRadio
+            field="type"
+            values={EVENT_TYPE}
+            {...formOptionRequired}
+          />
+          <AdminRadio
+            field="logo"
+            values={EVENT_LOGO}
+            {...formOptionRequired}
+          />
+          <AdminLine field="date" {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
           <AdminGroupImages title="IMAGE" />

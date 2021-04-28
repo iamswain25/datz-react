@@ -41,18 +41,17 @@ export default function AdminList() {
         >
           ({collection.substr(0, 1)}){type}
         </span>
-        {type === "etc" ||
-        (items && items.length === 1) ||
-        collection === "about" ? (
-          <div />
-        ) : (
-          <div
-            className={css`
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-            `}
-          >
+
+        <div
+          className={css`
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          `}
+        >
+          {type === "etc" ||
+          (items && items.length === 1) ||
+          collection === "about" ? null : (
             <button
               onClick={() => setEditing((_) => !_)}
               type="button"
@@ -64,20 +63,26 @@ export default function AdminList() {
             >
               {isEditing ? "✓ Finish order" : "≡ Edit order"}
             </button>
-            <Hr10 />
-            <button
-              onClick={createNewHandler}
-              type="button"
-              className={css`
-                font-size: inherit;
-                font-weight: inherit;
-                color: #707070;
-              `}
-            >
-              ✎ Create new
-            </button>
-          </div>
-        )}
+          )}
+
+          {["publication_category", "etc"].includes(type) ||
+          ["artist-project", "about", "support"].includes(collection) ? null : (
+            <>
+              <Hr10 />
+              <button
+                onClick={createNewHandler}
+                type="button"
+                className={css`
+                  font-size: inherit;
+                  font-weight: inherit;
+                  color: #707070;
+                `}
+              >
+                ✎ Create new
+              </button>
+            </>
+          )}
+        </div>
       </div>
       <SortableList
         items={items}

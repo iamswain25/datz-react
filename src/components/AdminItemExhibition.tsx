@@ -13,6 +13,7 @@ import LoadingCenter from "./LoadingCenter";
 import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { useParams } from "react-router-dom";
+import { formOptionRequired } from "../utils/required";
 const EXHIBITION_TYPE = [
   "D'Ark Room",
   "Datz Museum of Art",
@@ -60,10 +61,14 @@ export default function AdminItemExhibition() {
           `}
         >
           <AdminLine field="id" alias="url" disabled />
-          <AdminRadio field="type" values={EXHIBITION_TYPE} />
+          <AdminRadio
+            field="type"
+            values={EXHIBITION_TYPE}
+            {...formOptionRequired}
+          />
           <AdminLine field="visit_url" />
-          <AdminLine field="start_date" />
-          <AdminLine field="end_date" />
+          <AdminLine field="start_date" {...formOptionRequired} />
+          <AdminLine field="end_date" {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
           <AdminGroupRelated title="RELATED" fields={RELATED} />

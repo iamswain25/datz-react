@@ -9,6 +9,8 @@ import TextareaAutosize from "react-textarea-autosize";
 import CloseIcon from "@material-ui/icons/Close";
 import { useAdminItem } from "../store/useGlobalState";
 import getObjectInStringDotValue from "../utils/getObjectInStringDotValue";
+import { formOptionRequired } from "../utils/required";
+import FormErrorMessage from "./FormErrorMessage";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -31,7 +33,12 @@ export default function AdminArrayLine(props: {
 }) {
   const [item] = useAdminItem();
   const { field, required = false, disabled = false, alias } = props;
-  const { control, register, setValue } = useFormContext();
+  const {
+    control,
+    register,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
   const [isVisible, setVisible] = React.useState(false);
   const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
     setVisible,
@@ -69,7 +76,7 @@ export default function AdminArrayLine(props: {
             overflow: hidden;
             flex: 1;
           `}
-          {...register(field)}
+          {...register(field, formOptionRequired)}
           defaultValue={getObjectInStringDotValue(item, field) || ""}
           readOnly
         />
@@ -78,6 +85,7 @@ export default function AdminArrayLine(props: {
           control={control}
           name={getDraftName(field)}
           defaultValue={getObjectInStringDotValue(item, field)}
+          rules={formOptionRequired}
           render={({ field: { value, onChange } }) => {
             const onChange2 = (event: any) => {
               onChange(event);
@@ -98,7 +106,7 @@ export default function AdminArrayLine(props: {
             color: #707070;
             flex: 1;
           `}
-          {...register(field)}
+          {...register(field, formOptionRequired)}
           defaultValue={getObjectInStringDotValue(item, field)}
         />
       )}
@@ -114,6 +122,7 @@ export default function AdminArrayLine(props: {
           )}
         </IconButton>
       )}
+      <FormErrorMessage errors={errors} name={field} />
     </div>
   );
 }

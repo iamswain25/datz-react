@@ -12,15 +12,16 @@ import AdminArrayLine from "./AdminArrayLine";
 export default function AdminGroupList(props: { title: string }) {
   const { title } = props;
   const { control } = useFormContext();
-  const { fields, swap, prepend } = useFieldArray({
+  const { fields, swap, append } = useFieldArray({
     control,
     name: "list",
   });
   const onSortEnd = async ({ oldIndex, newIndex }: SortEnd) => {
     swap(oldIndex, newIndex);
   };
-  const prependHandler = () => {
-    prepend({ title_en: "", title_ko: "", url: "" }, { shouldFocus: true });
+  const newHandler = () => {
+    const item = { title_en: "", title_ko: "", url: "" };
+    append(item, { shouldFocus: true });
   };
   return (
     <section
@@ -52,7 +53,7 @@ export default function AdminGroupList(props: { title: string }) {
         <div>
           <button
             type="button"
-            onClick={prependHandler}
+            onClick={newHandler}
             className={css`
               width: 50px;
               text-align: right;
@@ -83,7 +84,7 @@ const SortableItem = SortableElement((props: any) => {
   const { item, sortIndex } = props;
   return (
     <li
-      key={item.id}
+      key={`key-${item.id}`}
       className={css`
         display: flex;
         padding: 9px 2px;

@@ -59,11 +59,11 @@ const defaultList: Item[] = [
     id: "artist-project",
     children: [
       { title: "Main gallery", id: "top" },
-      { title: "Book", id: "book" },
+      { title: " - Book", id: "book" },
       { title: "Project", id: "projects" },
-      { title: "Exhibition", id: "exhibition" },
+      { title: " - Exhibition", id: "exhibition" },
       { title: "Datz Artist Residency", id: "residency" },
-      { title: "Facilities", id: "facilities" },
+      { title: " - Facilities", id: "facilities" },
     ],
   },
   {

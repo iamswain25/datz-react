@@ -12,12 +12,20 @@ import CloseIcon from "@material-ui/icons/Close";
 import { useParams } from "react-router-dom";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
 import { useAdminItem } from "../store/useGlobalState";
+import FormErrorMessage from "./FormErrorMessage";
+import { formOptionRequired } from "../utils/required";
 export default function AdminSortableImages(props: {
   field?: "images" | "image";
 }) {
   const { field = "images" } = props;
   const [item] = useAdminItem();
-  const { register, setValue, control } = useFormContext<Publication>();
+  const {
+    register,
+    setValue,
+    control,
+    clearErrors,
+    formState: { errors },
+  } = useFormContext<Publication>();
   const { collection } = useParams<Param>();
   const fields = item[field];
   const [list, setList] = React.useState<SortableItemType[]>(
@@ -63,6 +71,7 @@ export default function AdminSortableImages(props: {
       const files = uniqueList.filter((l) => l.file);
       setList2(uniqueList);
       onChange(files);
+      clearErrors(field as keyof Publication);
     }
   };
   React.useEffect(() => {
@@ -144,7 +153,7 @@ export default function AdminSortableImages(props: {
             />
             <input
               type="checkbox"
-              {...register(field as keyof Publication)}
+              {...register(field as keyof Publication, formOptionRequired)}
               defaultValue={item.id}
               className={css`
                 display: none;
@@ -172,6 +181,7 @@ export default function AdminSortableImages(props: {
           </div>
         ))}
       </ReactSortable>
+      <FormErrorMessage errors={errors} name={field} />
     </section>
   );
 }

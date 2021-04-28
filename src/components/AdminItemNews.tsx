@@ -11,6 +11,7 @@ import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { useParams } from "react-router-dom";
 import { Param } from "../@type/admin";
+import { formOptionRequired } from "../utils/required";
 const EN_FIELDS = ["title_en", "place_en", "body_en"];
 const KO_FIELDS = ["title_ko", "place_ko", "body_ko"];
 export default function AdminItemNews() {
@@ -47,8 +48,8 @@ export default function AdminItemNews() {
           `}
         >
           <AdminLine field="id" alias="url" disabled />
-          <AdminLine field="type" />
-          <AdminLine field="date" />
+          <AdminLine field="type" {...formOptionRequired} />
+          <AdminLine field="date" {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
           <AdminGroup title="KO" fields={KO_FIELDS} />
           <AdminGroupImages title="IMAGE" />

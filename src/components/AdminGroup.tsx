@@ -52,7 +52,18 @@ export default function AdminGroup(props: { title: string; fields: string[] }) {
             <AdminLine
               key={`key-${title}-${field}`}
               field={field}
-              {...formOptionRequired}
+              required={
+                [
+                  "quotes_en",
+                  "quotes_ko",
+                  "notes_en",
+                  "notes_ko",
+                  "preview_quote_en",
+                  "preview_quote_ko",
+                ].includes(field)
+                  ? undefined
+                  : formOptionRequired.required
+              }
             />
           ))}
         </div>

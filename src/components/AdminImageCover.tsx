@@ -9,11 +9,18 @@ import { IconButton } from "@material-ui/core";
 import { Param } from "../@type/admin";
 import { useParams } from "react-router-dom";
 import { useAdminItem } from "../store/useGlobalState";
+import FormErrorMessage from "./FormErrorMessage";
+import { formOptionRequired } from "../utils/required";
 const field = "image_cover";
 
 export default function AdminImageCover() {
   const [item] = useAdminItem();
-  const { register, setValue, control } = useFormContext<Publication>();
+  const {
+    register,
+    setValue,
+    control,
+    formState: { errors },
+  } = useFormContext<Publication>();
   const { collection } = useParams<Param>();
   return (
     <>
@@ -44,8 +51,9 @@ export default function AdminImageCover() {
         type="hidden"
         readOnly
         defaultValue={item[field] || ""}
-        {...register(field)}
+        {...register(field, formOptionRequired)}
       />
+      <FormErrorMessage errors={errors} name={field} />
     </>
   );
 }
