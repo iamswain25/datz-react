@@ -3,7 +3,7 @@ import { css } from "emotion";
 import { useParams } from "react-router-dom";
 import { Publication } from "../@type";
 import { Param } from "../@type/admin";
-import { useAdminOrder } from "../store/useGlobalState";
+import { useAdminItem, useAdminOrder } from "../store/useGlobalState";
 import useFireSubscription from "../utils/useFireSubscription";
 import useSortEnd from "../utils/useSortEnd";
 import SortableList from "./SortableList";
@@ -13,6 +13,7 @@ export default function AdminList() {
   const { type, collection } = useParams<Param>();
   const [items] = useFireSubscription<Publication>();
   const [isEditing, setEditing] = useAdminOrder();
+  const [, setItem] = useAdminItem();
   const onSortEnd = useSortEnd(items);
   const createNewHandler = useCreateNew();
   return (
@@ -54,7 +55,12 @@ export default function AdminList() {
           (collection === "artist-project" && type === "exhibition") ||
           collection === "about" ? null : (
             <button
-              onClick={() => setEditing((_) => !_)}
+              onClick={() => {
+                if (!isEditing) {
+                  setItem(null);
+                }
+                setEditing((_) => !_);
+              }}
               type="button"
               className={css`
                 font-size: inherit;
