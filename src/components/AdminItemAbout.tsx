@@ -52,7 +52,7 @@ export default function AdminItemAbout() {
       >
         <AdminItemPublic
           noPublic
-          // duplicate={type !== "etc" ? duplicate : undefined}
+          // duplicate={duplicate}
         />
         <section
           className={css`

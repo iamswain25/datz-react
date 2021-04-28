@@ -9,7 +9,7 @@ import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
-const data = ["main"];
+const data = ["The community of Datz"];
 export default function AboutImages1() {
   const isDesktop = useDesktop();
   const items1 = useDocs("about", data);

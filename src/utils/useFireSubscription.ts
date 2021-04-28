@@ -22,7 +22,7 @@ export default function useFireSubscription<T>() {
     } else if (["banner"].includes(type)) {
       fs = fs.where("collection", "==", collection);
       fs = fs.orderBy("order", "asc");
-    } else if (["main"].includes(collection)) {
+    } else if (["main", "about"].includes(collection)) {
       fs = fs.where("collection", "==", type);
       fs = fs.orderBy("order", "asc");
     } else if (["artist-project", "contact", "support"].includes(collection)) {
