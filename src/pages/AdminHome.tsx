@@ -93,10 +93,10 @@ export default function AdminHome() {
           `}
         >
           <Grid container spacing={3}>
-            <Grid item xs={6}>
+            <Grid item xs={5}>
               {!!collection && <AdminList />}
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={7}>
               {item()}
             </Grid>
           </Grid>
