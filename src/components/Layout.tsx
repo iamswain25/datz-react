@@ -24,7 +24,6 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
           "/search",
           "/search/:filter",
           "/news/:address",
-          "/admin/news/:address",
         ]}
         render={() => (
           <section
@@ -44,6 +43,23 @@ export default function Layout({ children }: React.PropsWithChildren<any>) {
             >
               {isOpen ? <MenuAside /> : children}
             </section>
+          </section>
+        )}
+      />
+      <Route
+        exact
+        path={["/admin/**"]}
+        render={() => (
+          <section
+            className={css`
+              min-height: 100vh;
+              background-color: #afafaf;
+              color: #ffffff;
+              position: relative;
+              font-family: datz-medium;
+            `}
+          >
+            {children}
           </section>
         )}
       />
