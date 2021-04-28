@@ -79,7 +79,7 @@ export default function AdminHome() {
       >
         <div
           className={css`
-            width: 260px;
+            width: 308px;
           `}
         >
           <AdminMenu />
