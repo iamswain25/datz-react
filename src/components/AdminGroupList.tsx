@@ -54,7 +54,7 @@ export default function AdminGroupList(props: { title: string }) {
             type="button"
             onClick={newHandler}
             className={css`
-              width: 50px;
+              width: 100px;
               text-align: right;
               font-size: 14px;
               font-weight: 500;
