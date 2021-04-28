@@ -6,6 +6,7 @@ import Logo from "./Logo";
 import useStorages from "./useStorages";
 import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
+import Link from "./Link";
 export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const isDesktop = useDesktop();
   const [item, setItem] = React.useState<any>();
@@ -82,27 +83,45 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
           color: ${color};
         `}
       >
-        <div
+        <Link
+          to={item?.url}
           className={css`
-            font-family: datz-medium;
-            font-size: ${isDesktop ? 19 : 16}px;
-            line-height: ${isDesktop ? 1.21 : 1.19};
-            text-align: center;
-            height: 23px;
+            pointer-events: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
           `}
         >
-          {type}
-        </div>
-        <hr
+          <div
+            className={css`
+              font-family: datz-medium;
+              font-size: ${isDesktop ? 19 : 16}px;
+              line-height: ${isDesktop ? 1.21 : 1.19};
+              text-align: center;
+              height: 23px;
+            `}
+          >
+            {type}
+          </div>
+          <hr
+            className={css`
+              border-top: 1px solid ${color};
+              width: 100%;
+              margin-top: ${isDesktop ? 8 : 3}px;
+              margin-bottom: ${isDesktop ? 18 : 16}px;
+            `}
+          />
+          <div className={titleClass}>{title}</div>
+          <div className={authorClass}>{text}</div>
+        </Link>
+        <Link
+          to={item?.url}
           className={css`
-            border-top: 1px solid ${color};
-            width: 100%;
-            margin-top: ${isDesktop ? 8 : 3}px;
-            margin-bottom: ${isDesktop ? 18 : 16}px;
+            pointer-events: ${isDesktop ? "auto" : "none"};
+            display: flex;
+            flex: 1;
           `}
         />
-        <div className={titleClass}>{title}</div>
-        <div className={authorClass}>{text}</div>
         <Logo type={item?.logo} color={color} absolute noPadding />
       </div>
     </>
