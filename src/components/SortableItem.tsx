@@ -33,6 +33,7 @@ const SortableItem = SortableElement(
           height: 40px;
           box-sizing: border-box;
           border-bottom: solid 1px #cccccc;
+
           background-color: ${selectedItem?.id === item.id
             ? "#ccc"
             : "inherit"};
@@ -46,10 +47,21 @@ const SortableItem = SortableElement(
             flex: 1;
             text-align: left;
             font-size: 16px;
-            text-decoration: ${item.public === false ? "line-through" : "none"};
+            text-decoration: ${
+              item.public === false ? "line-through" : "none"
+            };\
           `}
         >
-          {item.id}
+          <span
+            className={css`
+              -webkit-line-clamp: 1;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            `}
+          >
+            {item.id}
+          </span>
         </button>
         {sortLength > 1 && !noRemove && (
           <IconButton
