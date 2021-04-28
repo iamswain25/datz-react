@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "@material-ui/core";
 import { css } from "emotion";
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import Link from "../components/Link";
@@ -13,13 +12,28 @@ export default function AdminMe() {
   );
   useTitle();
   return (
-    <Container maxWidth="sm">
-      <h1>관리자 정보</h1>
-      <Link to="/admin">관리자 페이지로 이동</Link>
+    <section
+      className={css`
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      `}
+    >
+      <h1
+        className={css`
+          font-size: 40px;
+        `}
+      >
+        Admin Info
+      </h1>
+
       <ul
         className={css`
           display: flex;
           flex-direction: column;
+          margin-top: 20px;
         `}
       >
         <li>
@@ -27,11 +41,44 @@ export default function AdminMe() {
         </li>
         <li>{auth.currentUser?.email}</li>
         <li>{auth.currentUser?.displayName}</li>
-        <li>편집권한: {String(doc?.admin)}</li>
+        <li
+          className={css`
+            margin-top: 10px;
+          `}
+        >
+          {doc?.admin ? (
+            <div>
+              <span>You are our admin, please proceed at </span>
+              <br />
+              <Link
+                to="/admin"
+                className={css`
+                  text-decoration: underline;
+                `}
+              >
+                datzpress.com/admin
+              </Link>
+            </div>
+          ) : (
+            <div>
+              You have no permission, <br />
+              please contact system admin.
+            </div>
+          )}
+        </li>
         <li>
-          <button onClick={() => auth.signOut()}>logout</button>
+          <button
+            onClick={() => auth.signOut()}
+            className={css`
+              text-decoration: underline;
+              font-size: 30px;
+              margin-top: 30px;
+            `}
+          >
+            logout
+          </button>
         </li>
       </ul>
-    </Container>
+    </section>
   );
 }

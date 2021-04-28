@@ -27,9 +27,10 @@ export default function Signin() {
               text-align: left;
               color: #707070;
               margin-left: 64px;
+              text-decoration: underline;
             `}
           >
-            구글 계정으로 로그인 하세요
+            Signin with Google
           </button>
         }
       />
