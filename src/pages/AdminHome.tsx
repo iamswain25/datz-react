@@ -32,6 +32,7 @@ export default function AdminHome() {
 
   const [item] = React.useMemo(() => {
     const item = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       switch (type) {
         case "banner":
           return <AdminItemBanner />;
