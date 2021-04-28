@@ -78,19 +78,31 @@ export default function AdminHome() {
       <section
         className={css`
           padding: 12px;
+          display: flex;
         `}
       >
-        <Grid container spacing={3}>
-          <Grid item xs={3}>
-            <AdminMenu />
+        <div
+          className={css`
+            width: 260px;
+            margin-right: 50px;
+          `}
+        >
+          <AdminMenu />
+        </div>
+        <div
+          className={css`
+            flex: 1;
+          `}
+        >
+          <Grid container spacing={3}>
+            <Grid item xs={6}>
+              {!!collection && <AdminList />}
+            </Grid>
+            <Grid item xs={6}>
+              {item()}
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            {!!collection && <AdminList />}
-          </Grid>
-          <Grid item xs={5}>
-            {item()}
-          </Grid>
-        </Grid>
+        </div>
       </section>
     </section>
   );

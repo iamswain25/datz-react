@@ -29,7 +29,9 @@ const SortableItem = SortableElement(
         className={css`
           display: flex;
           align-items: center;
-          padding: 9px 2px;
+          padding: 2px 2px;
+          height: 40px;
+          box-sizing: border-box;
           border-bottom: solid 1px #cccccc;
           background-color: ${selectedItem?.id === item.id
             ? "#ccc"

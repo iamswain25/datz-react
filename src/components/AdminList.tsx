@@ -29,6 +29,7 @@ export default function AdminList() {
       <div
         className={css`
           padding-bottom: 9px;
+          margin-bottom: 13px;
           border-bottom: 1px solid #707070;
           display: flex;
           align-items: center;
