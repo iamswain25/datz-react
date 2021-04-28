@@ -20,12 +20,13 @@ import AdminItemContact from "../components/AdminItemContact";
 import AdminItemAbout from "../components/AdminItemAbout";
 import AdminItemSupport from "../components/AdminItemSupport";
 import AdminItemNotice from "../components/AdminItemNotice";
+import useTitle from "../utils/useTitle";
 
 export default function AdminHome() {
   const { collection, type } = useParams<Param>();
   const [, setAdminItem] = useAdminItem();
+  useTitle();
   React.useEffect(() => {
-    document.title = "Datzpress Admin Page";
     if (collection) {
       setAdminItem(undefined);
     }

@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Redirect, RouteComponentProps } from "react-router-dom";
 import { auth } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import LoadingCenter from "./LoadingCenter";
+import useTitle from "../utils/useTitle";
 export default function PrivateRoute({
   component: Component,
   ...rest
@@ -10,8 +12,9 @@ export default function PrivateRoute({
   [any: string]: any;
 }) {
   const [user, isInit, error] = useAuthState(auth);
+  useTitle();
   if (isInit) {
-    return <div>"loading..."</div>;
+    return <LoadingCenter />;
   } else if (error) {
     return <div>{JSON.stringify(error)}</div>;
   }

@@ -4,12 +4,14 @@ import { css } from "emotion";
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import Link from "../components/Link";
 import { auth, firestore } from "../config/firebase";
+import useTitle from "../utils/useTitle";
 
 export default function AdminMe() {
   const [doc] = useDocumentDataOnce<any>(
     firestore.collection("users").doc(auth.currentUser?.uid),
     { idField: "id" }
   );
+  useTitle();
   return (
     <Container maxWidth="sm">
       <h1>관리자 정보</h1>
