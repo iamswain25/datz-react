@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 import useDesktop from "./useDesktop";
 import LazyImage from "./LazyImage";
 import { BLEND_SCREEN_COLOR } from "../config/params";
+import Link from "./Link";
 export default function Facilities({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   return (
@@ -59,66 +60,68 @@ export default function Facilities({ items }: { items: any[] }) {
         `}
       >
         {items?.map((item, i) => {
-          const { title, link, text, image } = item;
+          const { title, body, text, image, url } = item;
           return (
             <Grid item xs={12} sm={4} key={title + i}>
-              <div
-                className={css`
-                  position: relative;
-                  margin-top: ${isDesktop ? "0" : "30px"};
-                  background-color: ${BLEND_SCREEN_COLOR};
-                  ::before {
-                    content: "";
-                    display: inline-block;
-                    padding-bottom: 52.91%;
-                    vertical-align: top;
-                  }
-                `}
-              >
-                <LazyImage
-                  link={image}
-                  placeholder={css`
-                    position: absolute;
-                    left: 0;
+              <Link to={url}>
+                <div
+                  className={css`
+                    position: relative;
+                    margin-top: ${isDesktop ? "0" : "30px"};
+                    background-color: ${BLEND_SCREEN_COLOR};
+                    ::before {
+                      content: "";
+                      display: inline-block;
+                      padding-bottom: 52.91%;
+                      vertical-align: top;
+                    }
                   `}
-                  img={css`
-                    position: absolute;
-                    left: 0;
-                    object-fit: cover;
+                >
+                  <LazyImage
+                    link={image}
+                    placeholder={css`
+                      position: absolute;
+                      left: 0;
+                    `}
+                    img={css`
+                      position: absolute;
+                      left: 0;
+                      object-fit: cover;
+                    `}
+                  />
+                </div>
+                <div
+                  className={css`
+                    margin-top: 10px;
                   `}
-                />
-              </div>
-              <div
-                className={css`
-                  margin-top: 10px;
-                `}
-              >
-                {title}
-              </div>
-              <div
-                className={css`
-                  color: #aaaaaa;
-                `}
-              >
-                {text}
-              </div>
-              <div
-                className={css`
-                  border-top: solid 1px #aaaaaa;
-                  padding-top: 10px;
-                  margin-top: 20px;
-                  margin-left: 16px;
-                  margin-right: 16px;
-                `}
-              >
+                >
+                  {title}
+                </div>
                 <div
                   className={css`
                     color: #aaaaaa;
                   `}
                 >
-                  {link}
+                  {text}
                 </div>
-              </div>
+                <div
+                  className={css`
+                    border-top: solid 1px #aaaaaa;
+                    padding-top: 10px;
+                    margin-top: 20px;
+                    margin-left: 16px;
+                    margin-right: 16px;
+                  `}
+                >
+                  <div
+                    className={css`
+                      color: #aaaaaa;
+                    `}
+                  >
+                    {body}
+                  </div>
+                </div>
+              </Link>
             </Grid>
           );
         })}

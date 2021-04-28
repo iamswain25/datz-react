@@ -27,6 +27,7 @@ export default function AdminItemArtistProject() {
       }
       case "facilities": {
         base.unshift("title");
+        base.push("body");
         break;
       }
     }
