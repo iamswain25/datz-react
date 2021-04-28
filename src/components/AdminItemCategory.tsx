@@ -14,7 +14,10 @@ const EN_FIELDS = ["text_en"];
 const KO_FIELDS = ["text_ko"];
 export default function AdminItemCategory() {
   const { type } = useParams<Param>();
-  const { submit } = useSubmitDuplicate(type as Collection);
+  const {
+    submit,
+    // duplicate
+  } = useSubmitDuplicate(type as Collection);
   const [item] = useAdminItem();
   const formControl = useForm<Artists>({ defaultValues: {} });
   const {
@@ -38,7 +41,9 @@ export default function AdminItemCategory() {
           padding: 37px 15px;
         `}
       >
-        <AdminItemPublic />
+        <AdminItemPublic
+        // duplicate={duplicate}
+        />
         <section
           className={css`
             font-size: 16px;
