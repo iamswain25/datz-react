@@ -29,7 +29,6 @@ export default function AdminHome() {
       setAdminItem(undefined);
     }
   }, [collection, type, setAdminItem]);
-
   const [item] = React.useMemo(() => {
     const item = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });

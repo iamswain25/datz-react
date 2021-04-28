@@ -15,6 +15,24 @@ export default function AdminItemPublic({
   noPublic?: boolean;
 }) {
   const { control, watch } = useFormContext();
+  const refSubmitButtom = React.useRef<HTMLButtonElement>(null);
+  React.useEffect(() => {
+    function handler(e: KeyboardEvent) {
+      console.log(e.code);
+      if (
+        (window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) &&
+        e.code === "KeyS"
+      ) {
+        e.preventDefault();
+        console.log("save");
+        refSubmitButtom?.current?.click();
+        // Process the event here (such as click on submit button)
+      }
+    }
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, []);
+
   const isNew = watch("created_by");
   return (
     <div
@@ -102,6 +120,7 @@ export default function AdminItemPublic({
           </>
         )}
         <button
+          ref={refSubmitButtom}
           type="submit"
           className={css`
             font-size: 16px;
