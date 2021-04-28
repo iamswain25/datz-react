@@ -17,7 +17,7 @@ import { Grid } from "@material-ui/core";
 import useLang from "../components/useLang";
 import LazyImage from "../components/LazyImage";
 import BtnShare from "../components/BtnShare";
-import Dfrontspace from "../assets/svg/Dfrontspace";
+// import Dfrontspace from "../assets/svg/Dfrontspace";
 import Logo from "../components/Logo";
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
@@ -132,14 +132,14 @@ export default function AboutDarkroom() {
                   </div>
                   <h1 className={h1Style(isDesktop)}>{item.title}</h1>
                   <p className={classes.desc}>{item.text}</p>
-                  <Dfrontspace
+                  {/* <Dfrontspace
                     color="#fff"
                     className={css`
                       margin: 20px 0 5px;
                       width: 78px;
                       height: 69px;
                     `}
-                  />
+                  /> */}
                 </div>
                 <hr
                   className={css`

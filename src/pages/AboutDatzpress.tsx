@@ -132,7 +132,7 @@ export default function AboutDatzpress() {
                   </div>
                   <h1 className={h1Style(isDesktop)}>{item.title}</h1>
                   <p className={classes.desc}>{item.text}</p>
-                  <Logo
+                  {/* <Logo
                     type="datzbooks"
                     color="#fff"
                     className={css`
@@ -141,7 +141,7 @@ export default function AboutDatzpress() {
                       height: 67px;
                       width: 111px;
                     `}
-                  />
+                  /> */}
                   <p className={classes.desc}>
                     <a
                       href={item.url}
