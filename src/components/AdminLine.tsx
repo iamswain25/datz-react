@@ -1,5 +1,4 @@
 import { css } from "emotion";
-import EditIcon from "@material-ui/icons/Edit";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import Hr10 from "./Hr10";
@@ -117,6 +116,7 @@ export default function AdminLine(props: {
             font-size: inherit;
             color: #707070;
             flex: 1;
+            padding: 2px;
           `}
           {...register(field, { required })}
           maxRows={isVisible ? undefined : 1}
@@ -133,7 +133,16 @@ export default function AdminLine(props: {
           {isVisible ? (
             <CloseIcon style={{ fontSize: 18 }} />
           ) : (
-            <EditIcon style={{ fontSize: 18 }} />
+            <span
+              className={css`
+                padding: 2px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #707070;
+              `}
+            >
+              ✎
+            </span>
           )}
         </IconButton>
       )}
