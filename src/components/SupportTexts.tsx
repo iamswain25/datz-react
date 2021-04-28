@@ -97,7 +97,7 @@ export default function SupportTexts({ item }: { item: any }) {
           `}
         >
           <a
-            href="https://store.datzpress.com/product/year-membership"
+            href={item?.url}
             rel="noopener noreferrer"
             target="_blank"
             className={css`
