@@ -272,3 +272,7 @@ hr {
     opacity: 1;
   }
 }
+.notranslate.public-DraftEditor-content span {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
