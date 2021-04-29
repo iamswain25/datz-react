@@ -9,19 +9,10 @@ import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 import Link from "./Link";
 export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const isDesktop = useDesktop();
-  const [item, setItem] = React.useState<any>();
+  const [index, setIndex] = React.useState<number>(0);
   const [classes, en] = useLang("ebgaramond");
   const galleryRef = React.useRef<ImageGallery | null>(null);
-  React.useEffect(() => {
-    if (!item && items.length) {
-      setItem(items[0]);
-    }
-  }, [items, item]);
-  function onslideHandler(index: number) {
-    if (setItem) {
-      setItem(items[index]);
-    }
-  }
+  const item = items?.[index];
   function mouseOverHandler() {
     galleryRef.current?.pause();
   }
@@ -61,7 +52,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
         showBullets={true}
         autoPlay={true}
         additionalClass={images.length > 1 ? undefined : "no-bullets"}
-        onSlide={onslideHandler}
+        onSlide={setIndex}
         slideInterval={5000}
         renderItem={ReactImageGalleryRenderItem}
       />

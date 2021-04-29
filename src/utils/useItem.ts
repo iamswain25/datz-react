@@ -17,10 +17,14 @@ export default function useItem(item: any = {}) {
     lang === "ko" ? item.preview_quote_ko : item.preview_quote_en;
   const preview_body =
     lang === "ko" ? item.preview_body_ko : item.preview_body_en;
-  const order_url = lang === "ko" ? item.order_url_ko : item.order_url_en;
-  const preview = lang === "ko" ? item.preview_ko : item.preview_en;
-  const url = lang === "ko" ? item.url_ko : item.url_en;
-  const link_title = lang === "ko" ? item.link_title_ko : item.link_title_en;
+  const order_url =
+    (lang === "ko" ? item.order_url_ko : item.order_url_en) ?? item.order_url;
+  const preview =
+    (lang === "ko" ? item.preview_ko : item.preview_en) ?? item.preview;
+  const url = (lang === "ko" ? item.url_ko : item.url_en) ?? item.url;
+  const link_title =
+    (lang === "ko" ? item.link_title_ko : item.link_title_en) ??
+    item.link_title;
   return {
     ...item,
     title,
