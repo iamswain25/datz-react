@@ -2,6 +2,7 @@ import React from "react";
 import draftToHtml from "draftjs-to-html";
 import { useLocation } from "react-router-dom";
 import AdminBodyDraftHtml from "./AdminBodyDraftHtml";
+import { css } from "emotion";
 export default function BodyDraftHtml({ item }: { item: any }) {
   const { body, bodyDraft } = item;
   const { pathname } = useLocation();
@@ -10,6 +11,9 @@ export default function BodyDraftHtml({ item }: { item: any }) {
   }
   return (
     <div
+      className={css`
+        white-space: normal;
+      `}
       dangerouslySetInnerHTML={{
         __html: bodyDraft
           ? draftToHtml(bodyDraft, undefined, undefined, (entity, text) => {
