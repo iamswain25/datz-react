@@ -71,6 +71,7 @@ export default function LinkPluginEditor4({
   React.useEffect(() => saveCb(), [state, saveCb]);
 
   function handleReturn(e: KeyboardEvent, editorState: EditorState) {
+    console.log("return ", e);
     if (e.shiftKey) {
       return "not-handled";
     }
