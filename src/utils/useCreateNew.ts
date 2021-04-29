@@ -123,6 +123,7 @@ class AdminItem {
       ...this.titleText,
       type: "",
       logo: null,
+      url: "",
       image: "",
       collection,
     };
