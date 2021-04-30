@@ -28,6 +28,7 @@ export default function BtnShare({
   title?: string;
 }) {
   const [open, setOpen] = React.useState(false);
+  if (!window.navigator.share) return null;
   const url = window.location.href;
   function handler() {
     if (window.navigator.share) {
