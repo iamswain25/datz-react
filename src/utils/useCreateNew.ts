@@ -134,7 +134,7 @@ class AdminItem {
       ...this.title,
       ...this.place,
       ...this.body,
-      images: null,
+      images: [],
       type: "",
       date: "",
     };
@@ -149,7 +149,7 @@ class AdminItem {
       ...this.quotes,
       ...this.order_url,
       ...this.artist,
-      images: null,
+      images: [],
       image_cover: "",
       type: "",
       edition: "",
@@ -169,7 +169,7 @@ class AdminItem {
       ...this.notes,
       ...this.quotes,
       ...this.order_url,
-      images: null,
+      images: [],
       type: "",
       visit_url: "",
       start_date: "",
@@ -186,7 +186,7 @@ class AdminItem {
       ...this.title,
       ...this.place,
       ...this.body,
-      images: null,
+      images: [],
     };
     this.artist = {
       ...this.artist,

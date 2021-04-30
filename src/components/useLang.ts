@@ -59,18 +59,12 @@ const classes = {
         ${getSize(19, 1.42)}
         margin-top: 20px;
         line-height: 28px;
-        a {
-          text-decoration: underline;
-        }
       `,
       notes: css`
         ${getSize(16, 1.69)}
         margin-top: 30px;
         margin-bottom: 40px;
         line-height: 25px;
-        a {
-          text-decoration: underline;
-        }
       `,
     };
   },
@@ -105,9 +99,6 @@ const classes = {
         line-height: 28px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
-        a {
-          text-decoration: underline;
-        }
       `,
       notes: css`
         ${getSize(16, 1.69)}
@@ -166,9 +157,6 @@ const classes = {
         line-height: 28px;
         color: ${en ? "#4b4b4b" : "#5d5d5d"};
         white-space: break-spaces;
-        a {
-          text-decoration: underline;
-        }
       `,
     };
   },
@@ -214,9 +202,6 @@ const classes = {
         margin-bottom: 40px;
         line-height: 28px;
         white-space: break-spaces;
-        a {
-          text-decoration: underline;
-        }
       `,
     };
   },

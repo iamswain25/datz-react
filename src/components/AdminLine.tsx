@@ -62,7 +62,6 @@ export default function AdminLine(props: {
     [setVisible]
   );
   const isDraft = React.useMemo(() => Boolean(getDraftName(field)), [field]);
-
   return (
     <div
       className={css`
@@ -112,22 +111,18 @@ export default function AdminLine(props: {
             }}
           />
           <input
-            type={isVisible ? "hidden" : "text"}
+            type={"text"}
             className={css`
               outline: none;
               font-size: inherit;
               color: #707070;
               -webkit-line-clamp: 1;
-              display: -webkit-box;
+              display: ${isVisible ? "none" : "-webkit-box"};
               -webkit-box-orient: vertical;
               overflow: hidden;
               flex: 1;
             `}
             {...reg}
-            ref={(r) => {
-              reg.ref(r);
-              ref.current = r;
-            }}
             defaultValue={item[field] || ""}
             onDoubleClick={openVisible}
             readOnly

@@ -1,28 +1,16 @@
 import React from "react";
-import draftToHtml from "draftjs-to-html";
-import { useLocation } from "react-router-dom";
-import AdminBodyDraftHtml from "./AdminBodyDraftHtml";
+import { convertFromRaw, EditorState, Editor } from "draft-js";
+import "draft-js/dist/Draft.css";
+import { decorators } from "../utils/decorator";
+
 export default function BodyDraftHtml({ item }: { item: any }) {
   const { body, bodyDraft } = item;
-  const { pathname } = useLocation();
-  if (pathname.startsWith("/admin/")) {
-    return <AdminBodyDraftHtml item={item} />;
+  if (bodyDraft) {
+    const state = EditorState.createWithContent(
+      convertFromRaw(bodyDraft),
+      decorators
+    );
+    return <Editor readOnly editorState={state} onChange={() => {}} />;
   }
-  return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: bodyDraft
-          ? draftToHtml(bodyDraft, undefined, undefined, (entity, text) => {
-              if (entity.type === "LINK") {
-                var targetOption = entity.data.targetOption || "_blank";
-                return '<a href="'
-                  .concat(entity.data.url, '" target="')
-                  .concat(targetOption, '">')
-                  .concat(text, "</a>");
-              }
-            })
-          : body,
-      }}
-    />
-  );
+  return <div children={body} />;
 }
