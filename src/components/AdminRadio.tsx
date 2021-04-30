@@ -8,7 +8,7 @@ import Hr10 from "./Hr10";
 export default function AdminRadio(props: {
   field: string;
   required?: boolean | string;
-  values: string[];
+  values: string[] | { value: string; label: string }[];
   alias?: string;
 }) {
   const [item] = useAdminItem();
@@ -44,34 +44,43 @@ export default function AdminRadio(props: {
           flex: 1;
         `}
       >
-        {values.map((value) => (
-          <div
-            key={`radio-${field}-${value}`}
-            className={css`
-              margin-right: 30px;
-            `}
-          >
-            <input
-              type="radio"
-              {...register(field, formOptionRequired)}
-              value={value}
-              defaultChecked={item[field] === value}
-              id={`radio-${field}-${value}`}
+        {values.map((_: any) => {
+          let value, label;
+          if (typeof _ === "string") {
+            value = _;
+            label = _;
+          } else {
+            ({ value, label } = _);
+          }
+          return (
+            <div
+              key={`radio-${field}-${value}`}
               className={css`
-                margin-right: 5px;
-              `}
-            />
-            <label
-              htmlFor={`radio-${field}-${value}`}
-              className={css`
-                font-size: 13px;
-                color: #707070;
+                margin-right: 30px;
               `}
             >
-              {value}
-            </label>
-          </div>
-        ))}
+              <input
+                type="radio"
+                {...register(field, formOptionRequired)}
+                value={value}
+                defaultChecked={item[field] === value}
+                id={`radio-${field}-${value}`}
+                className={css`
+                  margin-right: 5px;
+                `}
+              />
+              <label
+                htmlFor={`radio-${field}-${value}`}
+                className={css`
+                  font-size: 13px;
+                  color: #707070;
+                `}
+              >
+                {label}
+              </label>
+            </div>
+          );
+        })}
       </div>
       <FormErrorMessage errors={errors} name={field} />
     </div>

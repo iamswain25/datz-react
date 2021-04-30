@@ -17,6 +17,10 @@ import { formOptionRequired } from "../utils/required";
 const LOGO = ["D'Ark Room", "Datz Museum of Art", "Datz Press"];
 const EN_FIELDS = ["title_en", "text_en"];
 const KO_FIELDS = ["title_ko", "text_ko"];
+const COLORS = [
+  { value: "#5d5d5d", label: "Dark Grey(default)" },
+  { value: "#fff", label: "White" },
+];
 export default function AdminItemBanner() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
@@ -53,7 +57,7 @@ export default function AdminItemBanner() {
           <AdminLine field="id" disabled />
           <AdminHidden field="collection" />
           <AdminLine field="url" alias="link" />
-          <AdminLine field="color" />
+          <AdminRadio field="color" values={COLORS} />
           <AdminLine field="type" {...formOptionRequired} />
           <AdminRadio field="logo" values={LOGO} {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
