@@ -18,22 +18,23 @@ const incomingConvert = (value: any) => {
     return createEditorStateWithText(value || "");
   }
 };
-const linkPlugin = createLinkPlugin({
-  placeholder: "https://",
-  linkTarget: "_blank",
-});
+
 export default function LinkPluginEditor4({
   value,
   onChange,
   visible,
   keyup,
 }: any) {
-  const { inlineToolbarPlugin } = React.useMemo(() => {
+  const { InlineToolbar, plugins, linkPlugin } = React.useMemo(() => {
     const inlineToolbarPlugin = createInlineToolbarPlugin();
-    return { inlineToolbarPlugin };
+    const { InlineToolbar } = inlineToolbarPlugin;
+    const linkPlugin = createLinkPlugin({
+      placeholder: "https://",
+      linkTarget: "_blank",
+    });
+    const plugins = [inlineToolbarPlugin, linkPlugin];
+    return { InlineToolbar, plugins, linkPlugin };
   }, []);
-  const { InlineToolbar } = inlineToolbarPlugin;
-  const plugins = [inlineToolbarPlugin, linkPlugin];
   const [state, setState] = React.useState<EditorState>(incomingConvert(value));
   const editor = React.useRef<PluginEditor>(null);
   React.useEffect(() => {
