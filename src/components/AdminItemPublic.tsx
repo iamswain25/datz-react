@@ -50,7 +50,7 @@ export default function AdminItemPublic({
   //   return () => document.removeEventListener("beforeunload", handler);
   // }, [isSubmitting, isDirty]);
 
-  const isNew = watch("created_by");
+  const isNew = watch("updated_by");
   return (
     <div
       className={css`

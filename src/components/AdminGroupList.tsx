@@ -1,17 +1,19 @@
-import { css } from "emotion";
 import React from "react";
+import { css } from "emotion";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import {
   SortableContainer,
   SortableElement,
   SortEnd,
 } from "react-sortable-hoc";
-import AdminArrayLine from "./AdminArrayLine";
+import AdminLine from "./AdminLine";
 import { DragHandle } from "./SortableItem";
+import CloseIcon from "@material-ui/icons/Close";
+import { IconButton } from "@material-ui/core";
 export default function AdminGroupList(props: { title: string }) {
   const { title } = props;
   const { control } = useFormContext();
-  const { fields, swap, append } = useFieldArray({
+  const { fields, swap, prepend, remove } = useFieldArray({
     control,
     name: "list",
   });
@@ -20,8 +22,9 @@ export default function AdminGroupList(props: { title: string }) {
   };
   const newHandler = () => {
     const item = { title_en: "", title_ko: "", url: "" };
-    append(item, { shouldFocus: true });
+    prepend(item, { shouldFocus: true });
   };
+
   return (
     <section
       className={css`
@@ -66,14 +69,19 @@ export default function AdminGroupList(props: { title: string }) {
         </div>
       </div>
       <div>
-        <SortableList items={fields} onSortEnd={onSortEnd} useDragHandle />
+        <SortableList
+          items={fields}
+          onSortEnd={onSortEnd}
+          useDragHandle
+          remove={remove}
+        />
       </div>
     </section>
   );
 }
 
 const SortableItem = SortableElement((props: any) => {
-  const { item, sortIndex } = props;
+  const { item, sortIndex, remove } = props;
   return (
     <li
       key={`key-${item.id}`}
@@ -86,23 +94,45 @@ const SortableItem = SortableElement((props: any) => {
         className={css`
           padding: 10px 0;
           margin-right: 12px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
         `}
       >
         <DragHandle />
+        <IconButton
+          onClick={() => remove(sortIndex)}
+          style={{ padding: 1, marginLeft: -5 }}
+        >
+          <CloseIcon style={{ fontSize: 18 }} />
+        </IconButton>
       </div>
       <div
         className={css`
           flex: 1;
         `}
       >
-        <AdminArrayLine field={`list.${sortIndex}.title_en`} alias="title_en" />
-        <AdminArrayLine field={`list.${sortIndex}.title_ko`} alias="title_ko" />
-        <AdminArrayLine field={`list.${sortIndex}.url`} alias="link" />
+        <AdminLine
+          field={`list.${sortIndex}.title_en`}
+          alias="title_en"
+          defaultValue={item.title_en}
+        />
+        <AdminLine
+          field={`list.${sortIndex}.title_ko`}
+          alias="title_ko"
+          defaultValue={item.title_ko}
+        />
+        <AdminLine
+          field={`list.${sortIndex}.url`}
+          alias="link"
+          defaultValue={item.url}
+        />
       </div>
     </li>
   );
 });
-const SortableList = SortableContainer(({ items }: any) => {
+const SortableList = SortableContainer(({ items, remove }: any) => {
   return (
     <ul
       className={css`
@@ -116,6 +146,7 @@ const SortableList = SortableContainer(({ items }: any) => {
             index={index}
             item={item}
             sortIndex={index}
+            remove={remove}
           />
         );
       })}

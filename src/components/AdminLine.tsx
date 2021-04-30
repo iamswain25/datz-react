@@ -11,6 +11,7 @@ import LinkPluginEditor4 from "./LinkPluginEditor4";
 import { ContentState, convertToRaw } from "draft-js";
 import { Publication } from "../@type";
 import { KeyboardEventHandler } from "react";
+import getObjectInStringDotValue from "../utils/getObjectInStringDotValue";
 const getDraftName = (field: string) => {
   switch (field) {
     case "notes_en":
@@ -30,9 +31,12 @@ export default function AdminLine(props: {
   required?: boolean | string;
   disabled?: boolean;
   alias?: string;
+  defaultValue?: any;
 }) {
   const [item] = useAdminItem();
   const { field, required = false, disabled = false, alias } = props;
+  const defaultValue =
+    props.defaultValue ?? getObjectInStringDotValue(item, field);
   const {
     control,
     register,
@@ -91,7 +95,7 @@ export default function AdminLine(props: {
             defaultValue={
               getDraftName(field)
                 ? item[getDraftName(field) as keyof Publication]
-                : item[field] ?? ""
+                : defaultValue
             }
             rules={{ required }}
             render={({ field: { value, onChange } }) => {
@@ -102,7 +106,7 @@ export default function AdminLine(props: {
               };
               return (
                 <LinkPluginEditor4
-                  value={value || item[field]}
+                  value={value || getObjectInStringDotValue(item, field)}
                   onChange={onChange2}
                   visible={isVisible}
                   keyup={keyupHandler}
@@ -123,7 +127,7 @@ export default function AdminLine(props: {
               flex: 1;
             `}
             {...reg}
-            defaultValue={item[field] || ""}
+            defaultValue={defaultValue}
             onDoubleClick={openVisible}
             readOnly
           />
@@ -144,7 +148,7 @@ export default function AdminLine(props: {
             ref.current = r;
           }}
           maxRows={isVisible ? undefined : 1}
-          defaultValue={item[field] || ""}
+          defaultValue={defaultValue}
           onDoubleClick={openVisible}
           readOnly={!isVisible}
           onKeyUp={keyupHandler}
