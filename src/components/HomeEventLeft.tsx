@@ -79,7 +79,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
           customButtonGroup={<CarouselBtnGroup noBorderBottom={!isDesktop} />}
         >
           {items.map((item, i) => {
-            const { color = "#fff" } = item;
+            const { color = "#5d5d5d" } = item;
             return (
               <div
                 key={item.id + i}

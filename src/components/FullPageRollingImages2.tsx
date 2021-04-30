@@ -25,7 +25,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
   function mouseLeaveHandler() {
     galleryRef.current?.play();
   }
-  const { type, title, text, color = "#fff", logo } = item || {};
+  const { type, title, text, color = "#5d5d5d", logo } = item || {};
   const typeClass = classes.type(
     css`
       font-size: ${isDesktop ? 19 : 16}px;
