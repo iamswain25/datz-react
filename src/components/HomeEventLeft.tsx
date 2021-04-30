@@ -79,6 +79,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
           customButtonGroup={<CarouselBtnGroup noBorderBottom={!isDesktop} />}
         >
           {items.map((item, i) => {
+            const { color = "#fff" } = item;
             return (
               <div
                 key={item.id + i}
@@ -92,7 +93,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
                     to={item.url || ""}
                     className={css`
                       text-align: center;
-                      color: #ffffff;
+                      color: ${color};
                       flex: 1;
                     `}
                   >
@@ -102,7 +103,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
                         height: 0;
                         max-width: 555px;
                         text-align: center;
-                        border-top: solid 1px #ffffff;
+                        border-top: solid 1px ${color};
                         margin: ${isDesktop ? 8 : 3}px auto
                           ${isDesktop ? 18 : 16}px;
                       `}
@@ -111,7 +112,7 @@ export default function HomeEventLeft({ items }: { items: any[] }) {
                     <p className={authorClass}>{item.text}</p>
                   </Link>
                 </Sub>
-                <Logo type={item.logo} color="#ffffff" absolute noPadding />
+                <Logo type={item.logo} color={color} absolute noPadding />
               </div>
             );
           })}

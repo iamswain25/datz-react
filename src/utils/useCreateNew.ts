@@ -122,6 +122,7 @@ class AdminItem {
       ...this.common,
       ...this.titleText,
       type: "",
+      color: "",
       logo: null,
       url: "",
       image: "",

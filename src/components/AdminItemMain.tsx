@@ -53,6 +53,7 @@ export default function AdminItemBanner() {
           <AdminLine field="id" disabled />
           <AdminHidden field="collection" />
           <AdminLine field="url" alias="link" />
+          <AdminLine field="color" />
           <AdminLine field="type" {...formOptionRequired} />
           <AdminRadio field="logo" values={LOGO} {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
