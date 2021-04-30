@@ -3,7 +3,7 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import { paddingH17, paddingH27, marginH27 } from "./styles";
 import useLang from "./useLang";
-import BodyDraftHtml from "./BodyDraftHtml";
+import DraftHtml from "./DraftHtml";
 import BtnShare from "./BtnShare";
 const stickyContainer = css`
   margin-left: 20px;
@@ -81,7 +81,7 @@ export default function NewsItemRight({
         >
           <div className={classes.title}>{item.title}</div>
           <div className={classes.body}>
-            <BodyDraftHtml item={item} />
+            <DraftHtml type="body" item={item} />
           </div>
         </section>
       </div>

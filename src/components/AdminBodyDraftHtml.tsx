@@ -10,7 +10,7 @@ import {
 } from "draft-js";
 import { css } from "emotion";
 import { useLocation } from "react-router-dom";
-export default function AdminBodyDraftHtml({ item }: { item: any }) {
+export default function AdminDraftHtml({ item }: { item: any }) {
   const lang = useLang()[2];
   const { pathname } = useLocation();
 

@@ -4,11 +4,10 @@ import useDesktop from "./useDesktop";
 import DatzpressOrder from "./DatzpressOrder";
 import Linkify from "react-linkify";
 import useLang from "./useLang";
-import BodyDraftHtml from "./BodyDraftHtml";
+import DraftHtml from "./DraftHtml";
 import BtnBackTo from "./BtnBackTo";
 import BtnShare from "./BtnShare";
 import useParams from "./useParams";
-import NoteDraftHtml from "./NoteDraftHtml";
 
 const stickyContainer = css`
   align-self: flex-start;
@@ -71,10 +70,10 @@ export default function PublicationMoreLeft({ item }: { item: any }) {
               <p className={classes.quotes}>{quotes}</p>
             </Linkify>
             <div className={classes.body}>
-              <BodyDraftHtml item={item} />
+              <DraftHtml type="body" item={item} />
             </div>
             <div className={classes.notes}>
-              <NoteDraftHtml item={item} />
+              <DraftHtml type="note" item={item} />
             </div>
           </div>
         </div>

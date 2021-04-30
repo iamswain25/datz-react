@@ -4,10 +4,9 @@ import useDesktop from "./useDesktop";
 import DatzmuseumOrder from "./DatzmuseumOrder";
 import { exhibitionCurrentPast } from "../utils/datefns";
 import useLang from "./useLang";
-import BodyDraftHtml from "./BodyDraftHtml";
+import DraftHtml from "./DraftHtml";
 import BtnBackTo from "./BtnBackTo";
 import BtnShare from "./BtnShare";
-import NoteDraftHtml from "./NoteDraftHtml";
 const stickyContainer = css`
   align-self: flex-start;
   position: -webkit-sticky;
@@ -62,10 +61,10 @@ export default function ExhibitionMoreLeft({ item }: { item: any }) {
           `}
         >
           <div className={classes.body}>
-            <BodyDraftHtml item={item} />
+            <DraftHtml type="body" item={item} />
           </div>
           <div className={classes.notes}>
-            <NoteDraftHtml item={item} />
+            <DraftHtml type="note" item={item} />
           </div>
         </div>
       </section>
