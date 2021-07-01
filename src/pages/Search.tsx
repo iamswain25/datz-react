@@ -77,6 +77,7 @@ export default function Search() {
           width: 100%;
           height: ${isDesktop ? 106 : 180}px;
           background-color: #afafaf;
+          max-width: 1920px;
         `}
       >
         <div
