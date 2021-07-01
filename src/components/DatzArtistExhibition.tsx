@@ -9,6 +9,7 @@ import DmaKo from "../assets/svg/DmaKo";
 import Dfrontspace from "../assets/svg/Dfrontspace";
 import Instagram from "../assets/svg/Instagram";
 import Fb from "../assets/svg/Fb";
+import Link from "./Link";
 const dividerV = (className = "") => (
   <div
     className={css`
@@ -129,16 +130,14 @@ function links(key: number) {
             />
           </a>
 
-          <a
-            href="https://www.datzmuseum.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="https://www.datzmuseum.org/"
             className={css`
               text-decoration: underline;
             `}
           >
             Visit DMA {">"}
-          </a>
+          </Link>
         </div>
       );
     case 2:

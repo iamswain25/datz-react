@@ -3,6 +3,7 @@ import { css } from "emotion";
 import { flexrowcenter } from "./styles";
 import Logo from "./Logo";
 import { ExhibitionLogo } from "../@type";
+import Link from "./Link";
 
 export default function DatzmuseumOrder({
   order,
@@ -34,17 +35,15 @@ export default function DatzmuseumOrder({
         `}
       />
       {logo !== "D'Ark Room" && order && (
-        <a
-          href={order}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to={order}
           className={css`
             ${flexrowcenter}
             color: #707070;
           `}
         >
           Visit DMA &gt;
-        </a>
+        </Link>
       )}
     </div>
   );

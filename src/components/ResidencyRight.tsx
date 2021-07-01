@@ -4,6 +4,7 @@ import useDesktop from "./useDesktop";
 import useLang from "./useLang";
 import Logo from "./Logo";
 import BtnShare from "./BtnShare";
+import Link from "./Link";
 const title = "Datz Artist Residency";
 const hash = title?.toLowerCase().replace(/\s/g, "-");
 export default function ResidencyRight({ item }: { item: any }) {
@@ -79,8 +80,8 @@ export default function ResidencyRight({ item }: { item: any }) {
           >
             {title}
           </h1>
-          <a
-            href={item?.url?.[0]}
+          <Link
+            to={item?.url?.[0]}
             className={css`
               margin-top: 15px;
               text-decoration: underline;
@@ -91,7 +92,7 @@ export default function ResidencyRight({ item }: { item: any }) {
             `}
           >
             Visit DMA &gt;
-          </a>
+          </Link>
           <div className={classes.body}>{item?.text}</div>
           <div
             className={css`
