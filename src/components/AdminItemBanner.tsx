@@ -57,7 +57,7 @@ export default function AdminItemMain() {
           <AdminHidden field="collection" />
           <AdminLine field="id" disabled />
           <AdminLine field="url" alias="link" />
-          <AdminRadio field="color" values={COLORS} />
+          <AdminRadio field="color" values={COLORS} {...formOptionRequired} />
           <AdminLine field="type" {...formOptionRequired} />
           <AdminRadio field="logo" values={LOGO} {...formOptionRequired} />
           <AdminGroup title="EN" fields={EN_FIELDS} />
