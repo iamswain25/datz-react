@@ -28,12 +28,18 @@ export default function AboutMap3() {
   const items = useDocs("about", data);
   const [gettingHere, address, workingHour, location] = useItems(items) || [];
   const [classes, isEn] = useLang("body");
+  const [selected, setSelected] = React.useState(false);
   const [zoom, center] = React.useMemo(() => {
     const zoom = Number(location?.zoom) || 0;
     const center = { lat: Number(location?.lat), lng: Number(location?.lng) };
     return [zoom, center];
   }, [location]);
-
+  function childClickHandler() {
+    setSelected(true);
+  }
+  function closeHandler() {
+    setSelected(false);
+  }
   return (
     <>
       <section
@@ -66,8 +72,16 @@ export default function AboutMap3() {
                 }}
                 defaultCenter={center}
                 defaultZoom={zoom}
+                onChildClick={childClickHandler}
+                onClick={closeHandler}
               >
-                <MapMarker {...center} text={gettingHere?.text} isEn={isEn} />
+                <MapMarker
+                  {...center}
+                  text={gettingHere?.text}
+                  isEn={isEn}
+                  selected={selected}
+                  close={closeHandler}
+                />
               </GoogleMapReact>
             )}
           </Grid>
