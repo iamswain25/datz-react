@@ -27,12 +27,13 @@ export default function AboutMap3() {
   const isDesktop = useDesktop();
   const items = useDocs("about", data);
   const [gettingHere, address, workingHour, location] = useItems(items) || [];
-  const [classes] = useLang("body");
+  const [classes, isEn] = useLang("body");
   const [zoom, center] = React.useMemo(() => {
     const zoom = Number(location?.zoom) || 0;
     const center = { lat: Number(location?.lat), lng: Number(location?.lng) };
     return [zoom, center];
   }, [location]);
+
   return (
     <>
       <section
@@ -66,12 +67,7 @@ export default function AboutMap3() {
                 defaultCenter={center}
                 defaultZoom={zoom}
               >
-                <MapMarker
-                  {...center}
-                  className={css`
-                    color: red;
-                  `}
-                />
+                <MapMarker {...center} text={gettingHere?.text} isEn={isEn} />
               </GoogleMapReact>
             )}
           </Grid>
