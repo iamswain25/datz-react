@@ -150,7 +150,7 @@ export default function AdminLine(props: {
           maxRows={isVisible ? undefined : 1}
           defaultValue={defaultValue}
           onDoubleClick={openVisible}
-          readOnly={!isVisible}
+          readOnly={!isVisible || disabled}
           onKeyUp={keyupHandler}
         />
       )}
