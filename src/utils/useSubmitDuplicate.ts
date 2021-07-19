@@ -1,5 +1,5 @@
 import { Collection } from "../@type";
-import { auth, firestore, storage } from "../config/firebase";
+import { auth, firestore, storage, Firebase } from "../config/firebase";
 import { useAdminItem } from "../store/useGlobalState";
 import lastAdminWrite from "./lastAdminWrite";
 
@@ -8,7 +8,7 @@ export default function useSubmitDuplicate(col: Collection) {
   const submit = async (data: any) => {
     console.log(data);
     if (!window.confirm("Save changes?")) return;
-    data.updated_at = new Date();
+    data.updated_at = Firebase.firestore.Timestamp.now();
     data.updated_by = auth.currentUser?.uid;
     // upload files
     const promises = [];
@@ -59,8 +59,7 @@ export default function useSubmitDuplicate(col: Collection) {
     if (!id)
       return window.alert("You must create a new id/url for the next step.");
     const docRef = await firestore.collection(col).doc(id).get();
-    if (docRef.exists)
-      return window.alert("Id/url already exists.");
+    if (docRef.exists) return window.alert("Id/url already exists.");
     await docRef.ref.set(data);
     setItem({ ...data, id });
   };

@@ -57,9 +57,13 @@ export default function AdminItemArtistProject() {
         `}
       >
         <AdminItemPublic
-          noPublic
+          noPublic={["book", "residency", "exhibition"].includes(type)}
           // duplicate={duplicate}
-          duplicate={item.type === "top" ? duplicate : undefined}
+          duplicate={
+            ["book", "residency", "exhibition"].includes(item.type)
+              ? undefined
+              : duplicate
+          }
         />
         <section
           className={css`
@@ -68,17 +72,16 @@ export default function AdminItemArtistProject() {
           `}
         >
           <AdminLine field="id" disabled />
-          {type === "residency" && (
-            <>
-              <AdminLine field="url.0" />
-              <AdminLine field="url.1" />
-            </>
-          )}
-          {["projects", "facilities"].includes(type) && (
+          {["projects", "facilities"].includes(type) ? (
             <>
               <AdminLine field="url" />
             </>
-          )}
+          ) : type === "residency" ? (
+            <>
+              <AdminLine field="url" />
+              <AdminLine field="url2" />
+            </>
+          ) : null}
           <AdminGroup title="EN" fields={en} />
           <AdminGroup title="KO" fields={ko} />
           <AdminGroupImage

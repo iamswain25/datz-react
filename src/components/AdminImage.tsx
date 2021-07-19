@@ -47,7 +47,6 @@ export default function AdminImage() {
         )}
         name="files.image"
         control={control}
-        defaultValue=""
       />
       <input
         type="hidden"

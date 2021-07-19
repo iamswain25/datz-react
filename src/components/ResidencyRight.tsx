@@ -81,7 +81,7 @@ export default function ResidencyRight({ item }: { item: any }) {
             {title}
           </h1>
           <Link
-            to={item?.url?.[0]}
+            to={item?.url}
             className={css`
               margin-top: 15px;
               text-decoration: underline;
@@ -125,7 +125,7 @@ export default function ResidencyRight({ item }: { item: any }) {
         <Logo type="culture" color="#5d5d5d" />
       </div>
       <a
-        href={item?.url?.[1]}
+        href={item?.url2}
         target="_blank"
         rel="noopener noreferrer"
         className={css`

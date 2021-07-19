@@ -45,7 +45,6 @@ export default function AdminImageCover() {
         )}
         name="files.image_cover"
         control={control}
-        defaultValue=""
       />
       <input
         type="hidden"
