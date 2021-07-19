@@ -20,15 +20,18 @@ const AlgoliaSearch = functions
         return null;
     }
     const index = client.initIndex(ALGOLIA_INDEX_NAME);
+    const objectID = `${collectionId}-${documentId}`;
     if (change.after.exists) {
       const data = change.after.data();
       if (!data) return new Error("no data");
+      if (data.public === false) return; // private post
       // Add an 'objectID' field which Algolia requires
-      data.objectID = documentId;
+      data.objectID = objectID;
       data.collection = collectionId;
+      data.address = documentId;
       return index.saveObject(data);
     } else {
-      return index.deleteObject(documentId);
+      return index.deleteObject(objectID);
     }
   });
 

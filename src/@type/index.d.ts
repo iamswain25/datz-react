@@ -22,7 +22,6 @@ export type ExhibitionLogo =
 export interface Publication {
   public: boolean;
   created_at: firebase.firestore.Timestamp;
-  address: string;
   id: string;
   type: PublicationType;
   edition: string;
@@ -56,7 +55,6 @@ export interface Publication {
 }
 export interface Event {
   created_at: firebase.firestore.Timestamp;
-  address: string;
   id: string;
   logo: Logo;
   type: "Artist Talk / Lecture" | "Book Fair" | "Exhibition";
@@ -72,7 +70,6 @@ export interface Event {
 }
 export interface Exhibition {
   created_at: firebase.firestore.Timestamp;
-  address: string;
   id: string;
   type: ExhibitionLogo;
   visit_url: string;
@@ -94,7 +91,6 @@ export interface Exhibition {
 }
 export interface Artists {
   created_at: firebase.firestore.Timestamp;
-  address: string;
   id: string;
   genre: string;
   name_en: string;
@@ -110,7 +106,6 @@ export interface Artists {
 }
 export interface News {
   created_at: firebase.firestore.Timestamp;
-  address: string;
   id: string;
   type: string;
   date: string;
