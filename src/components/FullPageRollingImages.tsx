@@ -17,13 +17,21 @@ export default function FullPageRollingImages({
 }) {
   const isDesktop = useDesktop(false);
   const [{ mainRandomStartIndex = false }] = useFeatureFlag();
+  const startIndex = React.useMemo(
+    () => (mainRandomStartIndex ? Math.floor(Math.random() * items.length) : 0),
+    [items, mainRandomStartIndex]
+  );
   const [classes] = useLang("ebgaramond");
   const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
   const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(startIndex);
   const item = items[index];
   const galleryRef = React.useRef<ImageGallery | null>(null);
+  React.useEffect(() => {
+    console.log({ startIndex });
+    setIndex(startIndex);
+  }, [startIndex, setIndex]);
   function onslideHandler(index: number) {
     setIndex(index);
   }
@@ -64,11 +72,7 @@ export default function FullPageRollingImages({
       }}
     >
       <ImageGallery
-        startIndex={
-          mainRandomStartIndex
-            ? Math.floor(Math.random() * (images.length + 1))
-            : undefined
-        }
+        startIndex={startIndex}
         ref={galleryRef}
         infinite={true}
         items={images}
