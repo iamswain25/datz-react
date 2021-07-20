@@ -7,6 +7,7 @@ import useStorages from "./useStorages";
 import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 import Link from "./Link";
+import { useFeatureFlag } from "../store/useGlobalState";
 export default function FullPageRollingImages({
   style,
   items,
@@ -15,6 +16,7 @@ export default function FullPageRollingImages({
   style?: React.CSSProperties;
 }) {
   const isDesktop = useDesktop(false);
+  const [{ mainRandomStartIndex = false }] = useFeatureFlag();
   const [classes] = useLang("ebgaramond");
   const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
   const nullImages = useStorages(imageArr);
@@ -62,6 +64,11 @@ export default function FullPageRollingImages({
       }}
     >
       <ImageGallery
+        startIndex={
+          mainRandomStartIndex
+            ? Math.floor(Math.random() * (images.length + 1))
+            : undefined
+        }
         ref={galleryRef}
         infinite={true}
         items={images}
