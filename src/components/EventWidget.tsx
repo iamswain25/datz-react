@@ -105,7 +105,7 @@ export default function EventWidget({
             <Link key={id} className={afterClass(i)} to={`/event/${id}`}>
               <div className={listClass(dark)}>
                 <StorageDivImg
-                  path={images[0]}
+                  path={images?.[0]}
                   img={css`
                     background-size: cover;
                   `}

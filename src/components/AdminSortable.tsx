@@ -8,6 +8,8 @@ import { RelationType, SortableItemType } from "../@type/admin";
 import { Publication } from "../@type";
 import { convert2ItemType } from "../utils/convert2ItemType";
 import { useAdminItem } from "../store/useGlobalState";
+import { IconButton } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
 
 export default function AdminSortable(props: { field: RelationType }) {
   const [item] = useAdminItem();
@@ -24,6 +26,14 @@ export default function AdminSortable(props: { field: RelationType }) {
     );
     setList(newList);
   };
+  function remove(id: string) {
+    const searchIndex = list.findIndex((item) => item.id === id);
+    // console.log({ id, searchIndex });
+    if (typeof searchIndex === "number") {
+      list.splice(searchIndex, 1);
+      setList2([...list]);
+    }
+  }
   React.useEffect(() => {
     setList(convert2ItemType(fields));
   }, [fields]);
@@ -85,6 +95,7 @@ export default function AdminSortable(props: { field: RelationType }) {
             />
             <span
               className={css`
+                flex: 1;
                 color: #707070;
                 -webkit-line-clamp: 1;
                 display: -webkit-box;
@@ -93,6 +104,18 @@ export default function AdminSortable(props: { field: RelationType }) {
               `}
               children={item.id}
             />
+            <IconButton
+              onClick={() => remove(item.id)}
+              className={css`
+                padding: 2px !important;
+              `}
+            >
+              <CloseIcon
+                className={css`
+                  font-size: 16px !important;
+                `}
+              />
+            </IconButton>
           </div>
         ))}
       </ReactSortable>
