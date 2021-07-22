@@ -1,7 +1,6 @@
 import { css } from "emotion";
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import { useAdminItem } from "../store/useGlobalState";
 import { formOptionRequired } from "../utils/required";
 import FormErrorMessage from "./FormErrorMessage";
 import Hr10 from "./Hr10";
@@ -11,7 +10,6 @@ export default function AdminRadio(props: {
   values: string[] | { value: string; label: string }[];
   alias?: string;
 }) {
-  const [item] = useAdminItem();
   const { field, required = false, alias, values } = props;
   const {
     register,
@@ -63,7 +61,6 @@ export default function AdminRadio(props: {
                 type="radio"
                 {...register(field, formOptionRequired)}
                 value={value}
-                defaultChecked={item[field] === value}
                 id={`radio-${field}-${value}`}
                 className={css`
                   margin-right: 5px;

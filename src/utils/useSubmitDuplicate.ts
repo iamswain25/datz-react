@@ -1,5 +1,5 @@
 import { Collection } from "../@type";
-import { auth, firestore, storage, Firebase } from "../config/firebase";
+import { auth, firestore, storage } from "../config/firebase";
 import { useAdminItem } from "../store/useGlobalState";
 import lastAdminWrite from "./lastAdminWrite";
 
@@ -8,7 +8,8 @@ export default function useSubmitDuplicate(col: Collection) {
   const submit = async (data: any) => {
     console.log(data);
     if (!window.confirm("Save changes?")) return;
-    data.updated_at = Firebase.firestore.Timestamp.now();
+    delete data.created_at;
+    data.updated_at = new Date();
     data.updated_by = auth.currentUser?.uid;
     // upload files
     const promises = [];

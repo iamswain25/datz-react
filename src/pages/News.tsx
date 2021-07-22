@@ -75,7 +75,7 @@ export default function News() {
         <Grid
           container
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           className={css`
             color: #cccccc;
             font-size: 16px;

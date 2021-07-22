@@ -62,7 +62,7 @@ export default function Exhibitions() {
         <Grid
           container
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           className={css`
             color: #cccccc;
             font-size: 16px;
@@ -133,7 +133,7 @@ export default function Exhibitions() {
         <Grid
           container
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           className={css`
             height: 28px;
           `}

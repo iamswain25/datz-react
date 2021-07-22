@@ -102,119 +102,124 @@ const defaultList: Item[] = [
     ],
   },
 ];
-const makeUl = (
-  setList: React.Dispatch<React.SetStateAction<Item[]>>,
-  params: Param,
-  push: (path: string, state?: unknown) => void
-) => (item: Item, index1: number) => {
-  const makeLi = (child: Child, index2: number) => {
-    const { type = "" } = params;
-    const selected = item.id === params.collection && child.id === type;
-    const color = selected ? "#4b4b4b" : "#afafaf";
+const makeUl =
+  (
+    setList: React.Dispatch<React.SetStateAction<Item[]>>,
+    params: Param,
+    push: (path: string, state?: unknown) => void
+  ) =>
+  (item: Item, index1: number) => {
+    const makeLi = (child: Child, index2: number) => {
+      const { type = "" } = params;
+      const selected = item.id === params.collection && child.id === type;
+      const color = selected ? "#4b4b4b" : "#afafaf";
+      return (
+        <li
+          key={`react-key-${item.title}-${index1}-${child.title}-${index2}`}
+          className={css`
+            margin-top: 9px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.35;
+            text-align: left;
+            text-decoration: ${selected ? "underline" : "normal"};
+            color: ${color};
+          `}
+        >
+          <Link
+            className={css`
+              outline: none;
+            `}
+            to={`/admin/${item.id}/${child.id}`}
+          >
+            {child.title}
+          </Link>
+        </li>
+      );
+    };
+    const color = item.id === params.collection ? "#4b4b4b" : "#afafaf";
+
     return (
-      <li
-        key={`react-key-${item.title}-${index1}-${child.title}-${index2}`}
+      <div
+        key={`react-key-${item.title}-${index1}`}
         className={css`
-          margin-top: 9px;
-          font-size: 20px;
-          font-weight: 500;
-          line-height: 1.35;
-          text-align: left;
-          text-decoration: ${selected ? "underline" : "normal"};
-          color: ${color};
+          padding-top: 28px;
         `}
       >
-        <Link
+        <button
+          type="button"
           className={css`
             outline: none;
+            width: 100%;
           `}
-          to={`/admin/${item.id}/${child.id}`}
-        >
-          {child.title}
-        </Link>
-      </li>
-    );
-  };
-  const color = item.id === params.collection ? "#4b4b4b" : "#afafaf";
-
-  return (
-    <div
-      key={`react-key-${item.title}-${index1}`}
-      className={css`
-        padding-top: 28px;
-      `}
-    >
-      <button
-        type="button"
-        className={css`
-          outline: none;
-          width: 100%;
-        `}
-        onClick={() => {
-          setList((l) => {
-            l[index1].visible = !l[index1].visible;
-            if (l[index1].visible) {
-              const collection = l[index1].id;
-              const type = l[index1].children[0].id;
-              window.setTimeout(() => push(`/admin/${collection}/${type}`), 1);
-            }
-            return [...l];
-          });
-        }}
-      >
-        <Grid
-          container
-          justify="space-between"
-          alignItems="center"
-          className={css`
-            border-bottom: 1px solid ${color};
-            padding-bottom: 9px;
-            margin-bottom: 8px;
-          `}
+          onClick={() => {
+            setList((l) => {
+              l[index1].visible = !l[index1].visible;
+              if (l[index1].visible) {
+                const collection = l[index1].id;
+                const type = l[index1].children[0].id;
+                window.setTimeout(
+                  () => push(`/admin/${collection}/${type}`),
+                  1
+                );
+              }
+              return [...l];
+            });
+          }}
         >
           <Grid
-            item
+            container
+            justifyContent="space-between"
+            alignItems="center"
             className={css`
-              font-size: 22px;
-              font-weight: 500;
-              line-height: 1.23;
-              color: ${color};
+              border-bottom: 1px solid ${color};
+              padding-bottom: 9px;
+              margin-bottom: 8px;
             `}
           >
-            {item.title}
-          </Grid>
-          <Grid item>
-            <span
-              className={
-                item.visible
-                  ? css`
-                      font-size: 14px;
-                      font-weight: 500;
-                      color: ${color};
-                    `
-                  : css`
-                      font-size: 24px;
-                      color: ${color};
-                    `
-              }
+            <Grid
+              item
+              className={css`
+                font-size: 22px;
+                font-weight: 500;
+                line-height: 1.23;
+                color: ${color};
+              `}
             >
-              {item.visible ? "hide" : ">"}
-            </span>
+              {item.title}
+            </Grid>
+            <Grid item>
+              <span
+                className={
+                  item.visible
+                    ? css`
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: ${color};
+                      `
+                    : css`
+                        font-size: 24px;
+                        color: ${color};
+                      `
+                }
+              >
+                {item.visible ? "hide" : ">"}
+              </span>
+            </Grid>
           </Grid>
-        </Grid>
-      </button>
-      {item.visible && (
-        <ul
-          className={css`
-            flex-direction: column;
-          `}
-        >
-          {item.children.map(makeLi)}
-        </ul>
-      )}
-    </div>
-  );
-};
+        </button>
+        {item.visible && (
+          <ul
+            className={css`
+              flex-direction: column;
+            `}
+          >
+            {item.children.map(makeLi)}
+          </ul>
+        )}
+      </div>
+    );
+  };
 
 export default function AdminMenu() {
   const [list, setList] = React.useState(defaultList);

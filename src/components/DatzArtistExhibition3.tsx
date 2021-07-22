@@ -53,7 +53,7 @@ export default function DatzArtistExhibition3() {
           book project spaces on Datz Press that organize exhibitions with
           books, and meets audiences through artist talks and portfolio reviews.
         </div>
-        <Grid container alignItems="center" justify="center" spacing={3}>
+        <Grid container alignItems="center" justifyContent="center" spacing={3}>
           <Grid item>
             <a href="/">
               <img src={insta} alt="insta" />

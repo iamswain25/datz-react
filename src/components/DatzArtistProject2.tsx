@@ -32,7 +32,7 @@ export default function DatzArtistProject2({ items }: { items: any[] }) {
     >
       <Grid
         container
-        justify="center"
+        justifyContent="center"
         className={css`
           font-size: 19px;
           line-height: 1.21;

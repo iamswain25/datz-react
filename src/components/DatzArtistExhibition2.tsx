@@ -51,7 +51,7 @@ export default function DatzArtistExhibition2({ item }: { item: any }) {
         >
           {item.text}
         </div>
-        <Grid container alignItems="center" justify="center" spacing={3}>
+        <Grid container alignItems="center" justifyContent="center" spacing={3}>
           <Grid item>
             <a href="/">
               <img src={fb} alt="fb" />

@@ -23,7 +23,7 @@ export default function Facilities({ items }: { items: any[] }) {
     >
       <Grid
         container
-        justify="center"
+        justifyContent="center"
         className={css`
           font-size: 19px;
           line-height: 1.21;
@@ -33,7 +33,7 @@ export default function Facilities({ items }: { items: any[] }) {
         <Grid>Facilities</Grid>
         <Grid
           container
-          justify="center"
+          justifyContent="center"
           className={css`
             font-size: 16px;
             line-height: 1.19;

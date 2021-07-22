@@ -27,7 +27,7 @@ export default function ArtistRight({ item }: { item: any }) {
   return (
     <section className={isDesktop ? desktopContainer : mobileContainer}>
       {!isDesktop && (
-        <Grid container justify="center">
+        <Grid container justifyContent="center">
           <div
             className={css`
               font-size: 17px;
@@ -63,7 +63,7 @@ export default function ArtistRight({ item }: { item: any }) {
           `}
         >
           {!!homepage && (
-            <Grid container justify="center">
+            <Grid container justifyContent="center">
               <Linkify>
                 <div
                   className={css`
