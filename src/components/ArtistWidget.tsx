@@ -36,7 +36,7 @@ export default function ArtistWidget({
   const items = useDocs("artist", rel_artists);
   const isDesktop = useDesktop();
   const list = useArtists(items);
-  if (!list) {
+  if (!(list && list.length)) {
     return null;
   }
   return (
@@ -66,9 +66,7 @@ export default function ArtistWidget({
           {list.map(({ name, bio, id }) => {
             return (
               <Link to={`/artist/${id}`} key={id}>
-                <p className={classes.title}>
-                  {name} &gt;
-                </p>
+                <p className={classes.title}>{name} &gt;</p>
                 <p className={classes.body}>{bio}</p>
               </Link>
             );
