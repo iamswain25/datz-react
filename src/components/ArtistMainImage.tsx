@@ -2,30 +2,16 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
-import { useGlobalLang } from "../store/useGlobalState";
 export default function ArtistMainImage({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const [lang] = useGlobalLang();
   const { name, genre } = item;
   const nameClassEn = css`
     height: 27px;
-    font-family: "EB Garamond";
     font-size: ${isDesktop ? 27 : 22}px;
     line-height: ${isDesktop ? 1.37 : 1.36};
     letter-spacing: ${isDesktop ? 0.54 : 0.44}px;
     margin-top: 14px;
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `;
-  const nameClassKo = css`
-    font-family: SpoqaHanSans;
-    font-size: 23px;
-    line-height: 1.17;
-    height: 34px;
-    margin-top: 8px;
-    margin-bottom: 9px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,7 +41,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
         >
           Artist
         </div>
-        <div className={lang === "en" ? nameClassEn : nameClassKo}>{name}</div>
+        <div className={nameClassEn}>{name}</div>
         <div
           className={css`
             font-size: 14px;

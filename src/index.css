@@ -204,6 +204,7 @@ select[multiple] {
 }
 .contain-image {
   width: 100%;
+  cursor: pointer;
 }
 .image-gallery.contain-image
   .image-gallery-content
