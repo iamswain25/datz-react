@@ -1,13 +1,16 @@
 import * as functions from "firebase-functions";
+import * as admin from "firebase-admin";
 import algoliasearch from "algoliasearch";
 const ALGOLIA_ID = functions.config().algolia.app_id;
 const ALGOLIA_ADMIN_KEY = functions.config().algolia.api_key;
 const ALGOLIA_INDEX_NAME = "datzpress";
 const client = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_KEY);
+admin.initializeApp();
+const firestore = admin.firestore();
 const AlgoliaSearch = functions
   .region("asia-northeast3")
   .firestore.document("{collectionId}/{documentId}")
-  .onWrite((change, context) => {
+  .onWrite(async (change, context) => {
     const { documentId, collectionId } = context.params;
     switch (collectionId) {
       case "publication":
@@ -31,6 +34,28 @@ const AlgoliaSearch = functions
       data.address = documentId;
       return index.saveObject(data);
     } else {
+      const field = `rel_${collectionId}s`;
+      const prom1 = ["publication", "artist", "exhibition", "event"].map(
+        (col) =>
+          firestore
+            .collection(col)
+            .where(field, "array-contains", documentId)
+            .get()
+            .then((snapshot) =>
+              snapshot.docs.map((doc) =>
+                doc.ref
+                  .update(
+                    field,
+                    admin.firestore.FieldValue.arrayRemove(documentId)
+                  )
+                  .then((_) => `${col}/${doc.id}`)
+              )
+            )
+      );
+      const prom2 = await Promise.all(prom1);
+      const prom3 = prom2.reduce((acc, val) => acc.concat(val), []);
+      const updated = await Promise.all(prom3);
+      console.log({ objectID, updated });
       return index.deleteObject(objectID);
     }
   });
