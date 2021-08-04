@@ -8,6 +8,7 @@ import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 import Link from "./Link";
 export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
+  
   const isDesktop = useDesktop();
   const [index, setIndex] = React.useState<number>(0);
   const [classes, en] = useLang("ebgaramond");
@@ -39,6 +40,7 @@ export default function ImageGalleryGeneric({ items = [] }: { items?: any[] }) {
   const nullImages = useStorages(imageArr);
   const images = nullImages?.map((a) => ({ original: a })) || [];
   const { type = "", title = "", text = "", color = "#5d5d5d" } = item || {};
+  if(!items?.length) return null;
   return (
     <>
       <ImageGallery
