@@ -72,13 +72,10 @@ export default function AdminList() {
               {isEditing ? "✓ Finish order" : "≡ Edit order"}
             </button>
           )}
-          {[
-            "publication_category",
-            "etc",
-            "book",
-            "residency",
-            "exhibition",
-          ].includes(type) ||
+          {["publication_category", "etc", "book", "residency"].includes(
+            type
+          ) ||
+          (collection === "artist-project" && type === "exhibition") ||
           ["about", "support"].includes(collection) ? null : (
             <>
               <Hr10 />
@@ -102,13 +99,9 @@ export default function AdminList() {
         onSortEnd={onSortEnd}
         useDragHandle
         noRemove={
-          [
-            "publication_category",
-            "etc",
-            "book",
-            "residency",
-            "exhibition",
-          ].includes(type) || ["about", "support"].includes(collection)
+          ["publication_category", "etc", "book", "residency"].includes(type) ||
+          ["about", "support"].includes(collection) ||
+          (collection === "artist-project" && type === "exhibition")
         }
       />
     </section>
