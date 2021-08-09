@@ -5,7 +5,11 @@ export default function useStorages(paths: string[]) {
   React.useEffect(() => {
     let isCancelled = false;
     if (!paths || !paths.length) return;
-    Promise.all(paths.map(async (path) => storage.ref(path).getDownloadURL()))
+    Promise.all(
+      paths.map(async (path) =>
+        storage.ref(path).getDownloadURL().catch(console.error)
+      )
+    )
       .then((urls) => !isCancelled && setImages(urls))
       .catch(console.error);
     return () => {
