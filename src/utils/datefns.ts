@@ -1,49 +1,57 @@
-import { isWithinInterval, isBefore, isAfter, parse } from "date-fns";
+import { isWithinInterval, parse, isFuture, isPast } from "date-fns";
 const current = "Current Exhibition";
 const past = "Past Exhibition";
-const future = "Future Exhibition";
+const upcoming = "Upcoming Exhibition";
 export function exhibitionCurrentPast(start_date?: string, end_date?: string) {
+  const now = new Date();
   if (start_date && end_date) {
-    const start = parse(start_date, "yyyy.MM.dd", new Date());
-    const end = parse(end_date, "yyyy.MM.dd", new Date());
-    return isWithinInterval(new Date(), {
-      start,
-      end,
-    })
-      ? current
-      : past;
+    const start = parse(start_date, "yyyy.MM.dd", now);
+    const end = parse(end_date, "yyyy.MM.dd", now);
+    if (
+      isWithinInterval(now, {
+        start,
+        end,
+      })
+    ) {
+      return current;
+    } else if (isFuture(start) && isFuture(end)) {
+      return upcoming;
+    } else {
+      return past;
+    }
   }
   if (!start_date && end_date) {
-    return isBefore(new Date(), parse(end_date, "yyyy.MM.dd", new Date()))
-      ? current
-      : past;
+    const end = parse(end_date, "yyyy.MM.dd", now);
+    return isFuture(end) ? current : past;
   }
   if (start_date && !end_date) {
-    return isAfter(new Date(), parse(start_date, "yyyy.MM.dd", new Date()))
-      ? current
-      : future;
+    const start = parse(start_date, "yyyy.MM.dd", now);
+    return isPast(start) ? current : upcoming;
   }
   return past;
 }
 export function filterExhibitionCurrent(e: any): boolean {
+  const now = new Date();
   const { start_date, end_date, date } = e;
   if (start_date && end_date) {
-    const start = parse(start_date, "yyyy.MM.dd", new Date());
-    const end = parse(end_date, "yyyy.MM.dd", new Date());
-    if (isBefore(new Date(), start)) {
-      // future event as current
+    const start = parse(start_date, "yyyy.MM.dd", now);
+    const end = parse(end_date, "yyyy.MM.dd", now);
+    if (isFuture(start)) {
+      // upcoming event as current
       return true;
     }
-    return isWithinInterval(new Date(), {
+    return isWithinInterval(now, {
       start,
       end,
     });
   }
   if (!start_date && end_date) {
-    return isBefore(new Date(), parse(end_date, "yyyy.MM.dd", new Date()));
+    const end = parse(end_date, "yyyy.MM.dd", now);
+    return isFuture(end);
   }
   if (start_date && !end_date) {
-    return isAfter(new Date(), parse(start_date, "yyyy.MM.dd", new Date()));
+    const start = parse(start_date, "yyyy.MM.dd", now);
+    return isPast(start);
   }
   if (date) {
     if (date.indexOf("/") > -1) {
@@ -51,32 +59,33 @@ export function filterExhibitionCurrent(e: any): boolean {
       if (end && end.length > 6) {
         return filterExhibitionCurrent({ start_date: start, end_date: end });
       } else {
-        return isBefore(new Date(), parse(start, "yyyy.MM.dd", new Date()));
+        return isFuture(parse(start, "yyyy.MM.dd", now));
       }
     }
-    return isBefore(new Date(), parse(date, "yyyy.MM.dd", new Date()));
+    return isFuture(parse(date, "yyyy.MM.dd", now));
   }
   return false;
 }
 export function filterExhibitionPast(e: any) {
+  const now = new Date();
   const { start_date, end_date } = e;
   if (start_date && end_date) {
-    const start = parse(start_date, "yyyy.MM.dd", new Date());
-    const end = parse(end_date, "yyyy.MM.dd", new Date());
-    if (isBefore(new Date(), start)) {
-      // future event as current
+    const start = parse(start_date, "yyyy.MM.dd", now);
+    const end = parse(end_date, "yyyy.MM.dd", now);
+    if (isFuture(start)) {
+      // upcoming event as current
       return false;
     }
-    return !isWithinInterval(new Date(), {
+    return !isWithinInterval(now, {
       start,
       end,
     });
   }
   if (!start_date && end_date) {
-    return !isBefore(new Date(), parse(end_date, "yyyy.MM.dd", new Date()));
+    return !isFuture(parse(end_date, "yyyy.MM.dd", now));
   }
   if (start_date && !end_date) {
-    return !isAfter(new Date(), parse(start_date, "yyyy.MM.dd", new Date()));
+    return !isPast(parse(start_date, "yyyy.MM.dd", now));
   }
   return false;
 }
