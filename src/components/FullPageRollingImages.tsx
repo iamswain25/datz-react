@@ -19,7 +19,8 @@ export default function FullPageRollingImages({
   const [{ mainRandomStartIndex = false }] = useFeatureFlag();
   const startIndex = React.useMemo(
     () => (mainRandomStartIndex ? Math.floor(Math.random() * items.length) : 0),
-    [items, mainRandomStartIndex]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
   const [classes] = useLang("ebgaramond");
   const imageArr = React.useMemo(() => items.map((a) => a.image), [items]);
