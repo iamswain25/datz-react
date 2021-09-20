@@ -373,10 +373,10 @@ const classes = {
         font-size: 17px;
         line-height: 1.47;
         overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
+        // text-overflow: ellipsis;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 4;
+        // -webkit-box-orient: vertical;
         text-align: left;
         white-space: break-spaces;
       `,

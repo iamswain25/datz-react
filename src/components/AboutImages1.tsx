@@ -26,8 +26,8 @@ export default function AboutImages1() {
       className={
         isDesktop
           ? css`
-              height: calc(100vh - 79px);
-              min-height: 600px;
+              min-height: calc(100vh - 79px);
+              // min-height: 600px;
               position: relative;
               display: flex;
               flex-direction: column;
@@ -57,6 +57,21 @@ export default function AboutImages1() {
               margin-top: 5px;
             `}
           />
+        )}
+        {!!main?.text && (
+          <div
+            className={css`
+              font-family: datz-medium;
+              font-size: 17px;
+              line-height: 1.56;
+              text-align: center;
+              color: #ffffff;
+              margin-top: 12px;
+              white-space: break-spaces;
+            `}
+          >
+            {main?.text}
+          </div>
         )}
       </section>
       <Grid

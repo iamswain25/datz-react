@@ -71,7 +71,10 @@ export default function AboutImagesGrid({ item }: { item: any }) {
             isDesktop
               ? css`
                   margin-top: 19px;
-                  height: 150px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: stretch;
+                  min-height: 150px;
                   font-family: datz-medium;
                   font-size: 19px;
                   line-height: 1.42;

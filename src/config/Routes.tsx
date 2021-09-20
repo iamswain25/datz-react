@@ -6,7 +6,6 @@ import {
   Redirect,
 } from "react-router-dom";
 import Layout from "../components/Layout";
-import LoadingCenter from "../components/LoadingCenter";
 import Home from "../pages/Home";
 const Signin = React.lazy(() => import("../pages/Signin"));
 const Publication = React.lazy(() => import("../pages/Publication"));
@@ -42,7 +41,7 @@ export default function Routes() {
   return (
     <Router>
       <Layout>
-        <Suspense fallback={<LoadingCenter />}>
+        <Suspense fallback={null}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/publication" component={Publication} />
