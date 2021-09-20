@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { flexcolumncenter, paddingH17, marginH10, marginH37 } from "./styles";
+import { flexcolumncenter, paddingH17, marginH10, paddingH10 } from "./styles";
 import { Link } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
@@ -88,7 +88,8 @@ export default function AboutImagesGrid({ item }: { item: any }) {
                   font-family: datz-medium;
                   text-align: center;
                   color: #ffffff;
-                  ${isDesktop ? marginH37 : marginH10}
+                  width: 100%;
+                  ${paddingH10}
                   left: 0;
                   font-size: 16px;
                   line-height: 1.19;
