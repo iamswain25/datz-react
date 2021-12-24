@@ -51,6 +51,9 @@ export default function AdminItemPublication() {
     formState: { isSubmitting },
   } = formControl;
   React.useEffect(() => {
+    if (!item?.videos?.[0]) {
+      item.videos = [null];
+    }
     reset(item);
   }, [item, reset]);
 
