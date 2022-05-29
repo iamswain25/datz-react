@@ -17,10 +17,13 @@ import useCollection from "../utils/useCollection";
 import BtnTop from "../components/BtnTop";
 import { DEFAULT_LAZY_IMAGE_COLOR } from "../config/params";
 import ArtistProjectVideo from "../components/ArtistProjectVideo";
+import useNavTopHeight from "../components/useNavTopHeight";
 export default function ArtistProject() {
   const isDesktop = useDesktop(true);
   const isTop = useIsTop();
   const collection = useCollection("artist-project");
+  const { navTopHeight } = useNavTopHeight();
+  const desktopHeight = `calc(100vh - 21px - ${navTopHeight})`;
   const items = React.useMemo(() => {
     const c = collection || [];
     const top = c.filter((d) => d.type === "top");
@@ -83,7 +86,7 @@ export default function ArtistProject() {
               ? css`
                   width: calc(50% - 23px);
                   margin-right: 23px;
-                  min-height: calc(100vh - 37px - 79px);
+                  min-height: calc(100vh - 37px - ${navTopHeight});
                 `
               : css`
                   height: 527px;
@@ -117,7 +120,7 @@ export default function ArtistProject() {
               className={css`
                 margin-top: 21px;
                 ${isDesktop ? marginH37 : undefined}
-                height: ${isDesktop ? "calc(100vh - 21px - 79px)" : "527px"};
+                height: ${isDesktop ? desktopHeight : "527px"};
                 max-height: 100vh;
               `}
               children={<DatzArtistExhibition item={item} />}
@@ -148,7 +151,7 @@ export default function ArtistProject() {
               ? css`
                   width: calc(50% - 23px);
                   margin-right: 23px;
-                  min-height: calc(100vh - 37px - 79px);
+                  min-height: calc(100vh - 37px - ${navTopHeight});
                   pointer-events: none;
                 `
               : css`

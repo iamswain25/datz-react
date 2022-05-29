@@ -5,6 +5,7 @@ import Datz from "../assets/svg/Datz";
 import { Firebase } from "../config/firebase";
 import { timestampRef } from "../utils/lastAdminWrite";
 import Link from "./Link";
+import useNavTopHeight from "./useNavTopHeight";
 export default function AdminHeader(props: {
   login?: boolean | React.ReactElement;
 }) {
@@ -12,10 +13,11 @@ export default function AdminHeader(props: {
   const [timestamp] = useDocumentData<{
     updated_at: Firebase.firestore.Timestamp;
   }>(timestampRef);
+  const { navTopHeight } = useNavTopHeight();
   return (
     <header
       className={css`
-        height: 79px;
+        height: ${navTopHeight}px;
         padding: 0 58px 0 54px;
         display: flex;
         align-items: center;

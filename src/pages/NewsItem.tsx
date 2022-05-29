@@ -9,15 +9,18 @@ import { Grid } from "@material-ui/core";
 import useDoc from "../utils/useDoc";
 import ArtistCloseBtn from "../components/ArtistCloseBtn";
 import ArtistImageRolling from "../components/ArtistImageRolling";
-const desktopContainer = css`
-  ${paddingH37}
-  height: calc(100vh - 79px);
-  position: relative;
-  overflow: hidden;
-`;
+import useNavTopHeight from "../components/useNavTopHeight";
+
 export default function NewsItem() {
   const isDesktop = useDesktop(true);
   const item = useDoc("news");
+  const { desktopHeight } = useNavTopHeight();
+  const desktopContainer = css`
+    ${paddingH37}
+    height: ${desktopHeight};
+    position: relative;
+    overflow: hidden;
+  `;
   const header = (
     <ArtistHeader
       children={

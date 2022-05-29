@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { auth, firestore } from "../config/firebase";
 
 export default async function lastAdminWrite() {

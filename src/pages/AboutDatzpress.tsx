@@ -20,6 +20,7 @@ import BtnShare from "../components/BtnShare";
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
 import useItem from "../utils/useItem";
+import useNavTopHeight from "../components/useNavTopHeight";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -44,6 +45,8 @@ export default function AboutDatzpress() {
   function onRight() {
     history.replace("/about/darkroom");
   }
+  const { desktopHeight36, desktopHeight, desktopHeight16 } = useNavTopHeight();
+
   return (
     <>
       {isDesktop && (
@@ -84,7 +87,7 @@ export default function AboutDatzpress() {
           ${isDesktop ? paddingH37 : paddingH17}
           ${flexcolumn}
           position: relative;
-          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          min-height: ${isDesktop ? desktopHeight : "auto"};
           padding-bottom: ${isDesktop ? 16 : 0}px;
           overflow: hidden;
         `}
@@ -95,7 +98,7 @@ export default function AboutDatzpress() {
               className={css`
                 position: relative;
                 overflow: hidden;
-                height: ${isDesktop ? "calc(100vh - 79px - 36px)" : "527px"};
+                height: ${isDesktop ? desktopHeight36 : "527px"};
                 width: 100%;
               `}
             >
@@ -109,9 +112,7 @@ export default function AboutDatzpress() {
                 className={css`
                   ${flexcolumnstretch}
                   ${paddingH12}
-                  max-height: ${isDesktop
-                    ? "calc(100vh - 79px - 16px)"
-                    : "auto"};
+                  max-height: ${isDesktop ? desktopHeight16 : "auto"};
                   overflow: auto;
                 `}
               >
@@ -132,16 +133,6 @@ export default function AboutDatzpress() {
                   </div>
                   <h1 className={h1Style(isDesktop)}>{item.title}</h1>
                   <p className={classes.desc}>{item.text}</p>
-                  {/* <Logo
-                    type="datzbooks"
-                    color="#fff"
-                    className={css`
-                      margin-top: 20px;
-                      margin-bottom: 5px;
-                      height: 67px;
-                      width: 111px;
-                    `}
-                  /> */}
                   <p className={classes.desc}>
                     <a
                       href={item.url}

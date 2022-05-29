@@ -7,6 +7,7 @@ import { flexrowcenter, marginH10 } from "./styles";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
 import SearchLink from "./SearchLink";
+import useNavTopHeight from "./useNavTopHeight";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -40,7 +41,7 @@ export default function ArtistHeader({
   function openHandler() {
     setOpen(!isOpen);
   }
-
+  const { originalHeight } = useNavTopHeight();
   return (
     <>
       <Notice />
@@ -48,7 +49,7 @@ export default function ArtistHeader({
         className={css`
           position: sticky;
           top: 0;
-          height: 79px;
+          height: ${originalHeight}px;
           display: flex;
           align-items: center;
           z-index: 5;

@@ -7,16 +7,8 @@ import { bottomBtn37, paddingH27 } from "./styles";
 import useLang from "./useLang";
 import BtnShare from "./BtnShare";
 import BtnBackTo from "./BtnBackTo";
-const stickyContainer = css`
-  position: fixed;
-  top: 79px;
-  width: 408px;
-  height: calc(100vh - 79px);
-  padding: 0 40px 0 18px;
-  font-family: datz-medium;
-  display: flex;
-  flex-direction: column;
-`;
+import useNavTopHeight from "./useNavTopHeight";
+
 const mobileContainer = css`
   position: relative;
   ${paddingH27}
@@ -24,6 +16,17 @@ const mobileContainer = css`
 export default function PublicationItemLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes, en] = useLang("publication");
+  const { navTopHeight, desktopHeight } = useNavTopHeight();
+  const stickyContainer = css`
+    position: fixed;
+    top: ${navTopHeight}px;
+    width: 408px;
+    height: ${desktopHeight};
+    padding: 0 40px 0 18px;
+    font-family: datz-medium;
+    display: flex;
+    flex-direction: column;
+  `;
   const { title, artist, preview_quote, preview_body, order_url, id } = item;
   return (
     <>
@@ -65,7 +68,7 @@ export default function PublicationItemLeft({ item }: { item: any }) {
               line-height: 1.19;
               text-align: left;
               color: #707070;
-              display:block;
+              display: block;
             `}
           >
             read more &gt;

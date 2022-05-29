@@ -5,16 +5,8 @@ import { paddingH17, paddingH27, marginH27 } from "./styles";
 import useLang from "./useLang";
 import DraftHtml from "./DraftHtml";
 import BtnShare from "./BtnShare";
-const stickyContainer = css`
-  margin-left: 20px;
-  margin-right: 17px;
-  font-family: datz-medium;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  height: calc(100vh - 79px);
-  color: #fff;
-`;
+import useNavTopHeight from "./useNavTopHeight";
+
 const mobileContainer = css`
   position: relative;
   ${paddingH27}
@@ -28,6 +20,17 @@ export default function NewsItemRight({
 }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("news");
+  const { desktopHeight } = useNavTopHeight();
+  const stickyContainer = css`
+    margin-left: 20px;
+    margin-right: 17px;
+    font-family: datz-medium;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: ${desktopHeight};
+    color: #fff;
+  `;
   return (
     <div className={isDesktop ? stickyContainer : undefined}>
       <div

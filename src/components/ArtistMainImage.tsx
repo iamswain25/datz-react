@@ -2,8 +2,10 @@ import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import ArtistImageRolling from "./ArtistImageRolling";
+import useNavTopHeight from "./useNavTopHeight";
 export default function ArtistMainImage({ item }: { item: any }) {
   const isDesktop = useDesktop();
+  const { desktopHeight } = useNavTopHeight();
   const { name, genre } = item;
   const nameClassEn = css`
     height: 27px;
@@ -26,7 +28,7 @@ export default function ArtistMainImage({ item }: { item: any }) {
           font-family: datz-medium;
           text-align: center;
           color: #ffffff;
-          height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          height: ${isDesktop ? desktopHeight : "auto"};
           overflow: hidden;
         `}
       >

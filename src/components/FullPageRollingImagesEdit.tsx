@@ -4,8 +4,11 @@ import AdminMainEdit from "./AdminMainEdit";
 import AdminMainNew from "./AdminMainNew";
 import Popup from "reactjs-popup";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
+import useNavTopHeight from "./useNavTopHeight";
 export default (props: { images: Array<any>; collection: string }) => {
   const images = props.images.map((a) => ({ original: a.image }));
+  const { desktopHeight } = useNavTopHeight();
+
   console.log(images);
   const [index, setIndex] = React.useState(0);
   function onslideHandler(index: number) {
@@ -16,7 +19,7 @@ export default (props: { images: Array<any>; collection: string }) => {
   return (
     <div
       style={{
-        height: "calc(100vh - 79px)",
+        height: desktopHeight,
         overflow: "hidden",
         padding: 37,
         position: "relative",

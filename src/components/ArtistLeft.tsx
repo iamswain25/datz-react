@@ -6,7 +6,6 @@ import useLang from "./useLang";
 const stickyContainer = css`
   border-top: 1px solid #ffffff;
   padding-top: 43px;
-  // top: 79px;
   flex: 1;
   margin-right: 30px;
   font-family: datz-medium;

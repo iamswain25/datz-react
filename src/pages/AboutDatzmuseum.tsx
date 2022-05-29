@@ -21,6 +21,7 @@ import Logo from "../components/Logo";
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
 import useItem from "../utils/useItem";
+import useNavTopHeight from "../components/useNavTopHeight";
 const h1Style = (isDesktop = false) => css`
   margin-top: ${isDesktop ? 35 : 14}px;
   margin-bottom: 20px;
@@ -44,6 +45,7 @@ export default function AboutDatzmuseum() {
   function onRight() {
     history.replace("/about/datzpress");
   }
+  const { desktopHeight, desktopHeight36, desktopHeight16 } = useNavTopHeight();
   return (
     <>
       {isDesktop && (
@@ -84,7 +86,7 @@ export default function AboutDatzmuseum() {
           ${isDesktop ? paddingH37 : paddingH17}
           ${flexcolumn}
           position: relative;
-          min-height: ${isDesktop ? "calc(100vh - 79px)" : "auto"};
+          min-height: ${isDesktop ? desktopHeight : "auto"};
           padding-bottom: ${isDesktop ? 16 : 0}px;
         `}
       >
@@ -94,7 +96,7 @@ export default function AboutDatzmuseum() {
               className={css`
                 position: relative;
                 overflow: hidden;
-                height: ${isDesktop ? "calc(100vh - 79px - 36px)" : "527px"};
+                height: ${isDesktop ? desktopHeight36 : "527px"};
                 width: 100%;
               `}
             >
@@ -108,9 +110,7 @@ export default function AboutDatzmuseum() {
                 className={css`
                   ${flexcolumnstretch}
                   ${paddingH12}
-                  max-height: ${isDesktop
-                    ? "calc(100vh - 79px - 16px)"
-                    : "auto"};
+                  max-height: ${isDesktop ? desktopHeight16 : "auto"};
                   overflow: auto;
                 `}
               >

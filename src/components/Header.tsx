@@ -11,6 +11,7 @@ import { flexrowcenter, marginH10, marginH16 } from "./styles";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
 import SearchLink from "./SearchLink";
+import useNavTopHeight from "./useNavTopHeight";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -39,6 +40,8 @@ export default function Header({
   function openHandler() {
     setOpen(!isOpen);
   }
+  const { navTopHeight, originalHeight } = useNavTopHeight();
+
   let links = null;
   if (isDesktop) {
     links = (
@@ -84,7 +87,7 @@ export default function Header({
         className={css`
           display: flex;
           align-items: center;
-          height: 79px;
+          height: ${originalHeight}px;
           max-width: 1920px;
           margin: 0 auto;
           padding: 0 ${isDesktop ? 37 : 17}px;
@@ -166,7 +169,7 @@ export default function Header({
       <>
         <div
           className={css`
-            height: 79px;
+            height: ${navTopHeight}px;
             width: 100%;
           `}
         ></div>

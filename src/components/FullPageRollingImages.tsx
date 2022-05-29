@@ -8,6 +8,7 @@ import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 import Link from "./Link";
 import { useFeatureFlag } from "../store/useGlobalState";
+import useNavTopHeight from "./useNavTopHeight";
 export default function FullPageRollingImages({
   style,
   items,
@@ -16,6 +17,7 @@ export default function FullPageRollingImages({
   style?: React.CSSProperties;
 }) {
   const isDesktop = useDesktop(false);
+  const { desktopHeight } = useNavTopHeight();
   const [{ mainRandomStartIndex = false }] = useFeatureFlag();
   const startIndex = React.useMemo(
     () => (mainRandomStartIndex ? Math.floor(Math.random() * items.length) : 0),
@@ -63,7 +65,7 @@ export default function FullPageRollingImages({
   return (
     <div
       style={{
-        height: isDesktop ? "calc(100vh - 79px)" : 527,
+        height: isDesktop ? desktopHeight : 527,
         overflow: "hidden",
         paddingBottom: isDesktop ? 37 : 28,
         paddingLeft: isDesktop ? 37 : 17,

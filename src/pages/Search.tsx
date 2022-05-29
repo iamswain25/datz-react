@@ -12,6 +12,7 @@ import { RequestOptions } from "@algolia/transporter";
 import useLang from "../components/useLang";
 import BtnTop from "../components/BtnTop";
 import { HamburgerButton } from "react-hamburger-button";
+import useNavTopHeight from "../components/useNavTopHeight";
 // import SvgMenu from "../assets/svg/SvgMenu";
 const FILTERS: { [key: string]: string } = {
   all: "All",
@@ -42,6 +43,8 @@ export default function Search() {
   const [result, setResult] = React.useState<undefined | any>(undefined);
   const [lang, setLang] = useGlobalLang();
   const [isOpen, setOpen] = useMobileMenu();
+  const { originalHeight } = useNavTopHeight();
+
   const goBack = useBtnBack();
   function textHandler(e: React.ChangeEvent<HTMLInputElement>) {
     const t = e.currentTarget.value;
@@ -84,7 +87,7 @@ export default function Search() {
           className={css`
             display: flex;
             align-items: center;
-            height: 79px;
+            height: ${originalHeight}px;
             max-width: 1920px;
             padding: 0 ${isDesktop ? 37 : 17}px;
             margin: 0 auto;

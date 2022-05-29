@@ -7,6 +7,7 @@ import useStorages from "./useStorages";
 import useLang from "./useLang";
 import ReactImageGalleryRenderItem from "./ReactImageGalleryRenderItem";
 import Link from "./Link";
+import useNavTopHeight from "./useNavTopHeight";
 export default function FullPageRollingImages2({ items }: { items: any[] }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("ebgaramond");
@@ -15,6 +16,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
   const images = nullImages?.map((a) => ({ original: a })) || [];
   const [index, setIndex] = React.useState(0);
   const item = items[index];
+  const { desktopHeight } = useNavTopHeight();
   const galleryRef = React.useRef<ImageGallery | null>(null);
   function onslideHandler(index: number) {
     setIndex(index);
@@ -46,7 +48,7 @@ export default function FullPageRollingImages2({ items }: { items: any[] }) {
   return (
     <div
       style={{
-        height: isDesktop ? "calc(100vh - 79px)" : 527,
+        height: isDesktop ? desktopHeight : 527,
         overflow: "hidden",
         paddingTop: 28,
         paddingBottom: 28,

@@ -9,17 +9,8 @@ import useLang from "./useLang";
 import Linkify from "./Linkify";
 import BtnBackTo from "./BtnBackTo";
 import BtnShare from "./BtnShare";
-const stickyContainer = css`
-  position: fixed;
-  top: 79px;
-  width: 350px;
-  height: calc(100vh - 79px);
-  margin-left: 18px;
-  margin-right: 40px;
-  font-family: datz-medium;
-  display: flex;
-  flex-direction: column;
-`;
+import useNavTopHeight from "./useNavTopHeight";
+
 const mobileContainer = css`
   position: relative;
   ${paddingH27}
@@ -27,6 +18,19 @@ const mobileContainer = css`
 export default function ExhibitionItemLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("exhibition");
+  const { navTopHeight, desktopHeight } = useNavTopHeight();
+
+  const stickyContainer = css`
+    position: fixed;
+    top: ${navTopHeight}px;
+    width: 350px;
+    height: ${desktopHeight};
+    margin-left: 18px;
+    margin-right: 40px;
+    font-family: datz-medium;
+    display: flex;
+    flex-direction: column;
+  `;
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>

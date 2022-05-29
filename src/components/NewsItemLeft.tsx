@@ -3,15 +3,8 @@ import { css } from "emotion";
 import useDesktop from "./useDesktop";
 import EventCoverWidget from "./EventCoverWidget";
 import { flexcolumn } from "./styles";
-const stickyContainer = css`
-  position: absolute;
-  width: calc(50% - 57px);
-  height: calc(100vh - 79px);
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 37px;
-`;
+import useNavTopHeight from "./useNavTopHeight";
+
 const mobileContainer = css`
   position: relative;
   overflow: hidden;
@@ -19,6 +12,16 @@ const mobileContainer = css`
 `;
 export default function NewsItemLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
+  const { desktopHeight } = useNavTopHeight();
+  const stickyContainer = css`
+    position: absolute;
+    width: calc(50% - 57px);
+    height: ${desktopHeight};
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 37px;
+  `;
   return (
     <>
       <div className={isDesktop ? stickyContainer : mobileContainer}>

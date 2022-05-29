@@ -7,6 +7,7 @@ import Search from "../assets/svg/Search";
 import { headerLinkArr, otherLinks, store } from "./Links";
 import useLang from "./useLang";
 import { useMobileMenu } from "../store/useGlobalState";
+import useNavTopHeight from "./useNavTopHeight";
 const headerText = css`
   color: #ffffff;
   height: 23px;
@@ -38,6 +39,8 @@ export default function MenuAside() {
     setMobileMenu(false);
   }
   const lang: "ko" | "en" = useLang()[2];
+  const { navTopHeight } = useNavTopHeight();
+
   function clickHandler() {
     setValue();
   }
@@ -49,7 +52,7 @@ export default function MenuAside() {
           flex-direction: row;
           display: flex;
           align-items: center;
-          height: 79px;
+          height: ${navTopHeight}px;
           padding-left: 5px;
         `}
       >

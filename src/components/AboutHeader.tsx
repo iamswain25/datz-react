@@ -11,6 +11,7 @@ import { NavLink, Link } from "react-router-dom";
 import { HamburgerButton } from "react-hamburger-button";
 import Notice from "./Notice";
 import SearchLink from "./SearchLink";
+import useNavTopHeight from "./useNavTopHeight";
 const headerText = css`
   font-family: datz-medium;
   font-size: 16px;
@@ -38,6 +39,7 @@ export default function AboutHeader({
   const [lang, setLang] = useGlobalLang();
   const [isOpen, setOpen] = useMobileMenu();
   const [colors, setColors] = React.useState({ color, backgroundColor });
+  const { navTopHeight, originalHeight } = useNavTopHeight();
   function openHandler() {
     setOpen(!isOpen);
   }
@@ -49,7 +51,7 @@ export default function AboutHeader({
         className={css`
           display: flex;
           align-items: center;
-          height: 79px;
+          height: ${originalHeight}px;
           max-width: 1920px;
           margin: 0 auto;
           padding: 0 ${isDesktop ? 37 : 17}px;
@@ -150,7 +152,7 @@ export default function AboutHeader({
         <div
           className={css`
             width: 100%;
-            height: 79px;
+            height: ${navTopHeight}px;
           `}
         ></div>
         <div

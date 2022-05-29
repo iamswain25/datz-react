@@ -15,6 +15,7 @@ import BtnTop from "./BtnTop";
 import MapMarker from "./MapMarker";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
+import useNavTopHeight from "./useNavTopHeight";
 // const defaultProps = {
 //   center: {
 //     lat: 37.540535,
@@ -29,6 +30,8 @@ export default function AboutMap3() {
   const [gettingHere, address, workingHour, location] = useItems(items) || [];
   const [classes, isEn] = useLang("body");
   const [selected, setSelected] = React.useState(false);
+  const { navTopHeight } = useNavTopHeight();
+  const desktopHeight4 = `calc(100vh - ${navTopHeight}px - 41px - 27px - 37px)`;
   const [zoom, center] = React.useMemo(() => {
     const zoom = Number(location?.zoom) || 0;
     const center = { lat: Number(location?.lat), lng: Number(location?.lng) };
@@ -47,9 +50,7 @@ export default function AboutMap3() {
           ${isDesktop ? paddingH37 : paddingH17}
           position: relative;
           padding-top: ${isDesktop ? 41 : 19}px;
-          height: ${isDesktop
-            ? "calc(100vh - 79px - 41px - 27px - 37px)"
-            : "auto"};
+          height: ${isDesktop ? desktopHeight4 : "auto"};
           color: #ffffff;
           display: flex;
           overflow: hidden;

@@ -9,10 +9,12 @@ import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { firestore } from "../config/firebase";
+import useNavTopHeight from "./useNavTopHeight";
 const data = ["The community of Datz"];
 export default function AboutImages1() {
   const isDesktop = useDesktop();
   const items1 = useDocs("about", data);
+  const { navTopHeight } = useNavTopHeight();
   const [main] = useItems(items1) || [];
   const [items2] = useCollectionDataOnce<any[]>(
     firestore
@@ -26,7 +28,7 @@ export default function AboutImages1() {
       className={
         isDesktop
           ? css`
-              min-height: calc(100vh - 79px);
+              min-height: calc(100vh - ${navTopHeight}px);
               // min-height: 600px;
               position: relative;
               display: flex;

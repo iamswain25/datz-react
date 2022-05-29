@@ -1,6 +1,6 @@
 import React from "react";
 import { firestore } from "../config/firebase";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import useItems from "./useItems";
 export default function useCollection(collection: string, isPublic = false) {
   const [items, setItems] = React.useState<undefined | any[]>(undefined);

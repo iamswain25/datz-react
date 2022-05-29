@@ -7,21 +7,23 @@ import useLang from "./useLang";
 import useDocs from "../utils/useDocs";
 import useItems from "../utils/useItems";
 import FooterSvgs from "./FooterSvgs";
+import useNavTopHeight from "./useNavTopHeight";
 const data = ["message"];
 export default function AboutImages2() {
   const isDesktop = useDesktop();
   const items = useDocs("about", data);
   const [message] = useItems(items) || [];
   const [classes] = useLang("body");
+  const { desktopHeight } = useNavTopHeight();
   return (
     <>
       <section
         className={css`
           position: relative;
           overflow: hidden;
-          height: ${isDesktop ? "calc(100vh - 79px)" : "527px"};
+          height: ${isDesktop ? desktopHeight : "527px"};
           color: #ffffff;
-          max-height: ${isDesktop ? "calc(100vh - 79px)" : "none"};
+          max-height: ${isDesktop ? desktopHeight : "none"};
         `}
       >
         <LazyImage link={message?.image} img={fullHeightCoverImg} />

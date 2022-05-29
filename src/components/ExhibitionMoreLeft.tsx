@@ -7,19 +7,8 @@ import useLang from "./useLang";
 import DraftHtml from "./DraftHtml";
 import BtnBackTo from "./BtnBackTo";
 import BtnShare from "./BtnShare";
-const stickyContainer = css`
-  align-self: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 79px;
-  flex: 1;
-  padding-left: 18px;
-  height: calc(100vh - 79px);
-  padding-right: 30px;
-  font-family: datz-medium;
-  display: flex;
-  flex-direction: column;
-`;
+import useNavTopHeight from "./useNavTopHeight";
+
 const mobileContainer = css`
   position: relative;
 `;
@@ -27,6 +16,20 @@ const mobileContainer = css`
 export default function ExhibitionMoreLeft({ item }: { item: any }) {
   const isDesktop = useDesktop();
   const [classes] = useLang("exhibition");
+  const { navTopHeight, desktopHeight } = useNavTopHeight();
+  const stickyContainer = css`
+    align-self: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: ${navTopHeight}px;
+    flex: 1;
+    padding-left: 18px;
+    height: ${desktopHeight};
+    padding-right: 30px;
+    font-family: datz-medium;
+    display: flex;
+    flex-direction: column;
+  `;
   return (
     <div className={isDesktop ? stickyContainer : mobileContainer}>
       <div

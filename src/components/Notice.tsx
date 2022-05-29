@@ -1,41 +1,14 @@
-import { css } from "emotion";
-import firebase from "firebase";
 import React from "react";
-import { useCollectionOnce } from "react-firebase-hooks/firestore";
+import { css } from "emotion";
 import Close from "../assets/svg/Close";
-import { firestore } from "../config/firebase";
-import { useGlobalLang, useNotice } from "../store/useGlobalState";
+import { useGlobalLang } from "../store/useGlobalState";
 import useDesktop from "./useDesktop";
-const DATZ_LAST_NOTICE_ID = "DATZ_LAST_NOTICE_ID";
+import useNoticeRemove from "./useNoticeRemove";
 export default function Notice() {
   const [lang] = useGlobalLang();
-  const localId = window.localStorage.getItem(DATZ_LAST_NOTICE_ID);
-  const [snapshot] = useCollectionOnce(
-    firestore.collection("notice").orderBy("order", "asc").limit(1)
-  );
-  const [notice, setNotice] = useNotice();
   const isDesktop = useDesktop();
-  React.useEffect(() => {
-    const fireNotice = snapshot?.docs?.[0];
-    if (fireNotice) {
-      setNotice({
-        ...fireNotice.data(),
-        id: fireNotice.id,
-        ref: fireNotice.ref,
-      });
-    }
-  }, [snapshot, setNotice]);
-  if (!notice?.public) return null;
-  if (notice?.id === localId) return null;
-  function remove() {
-    if (notice) {
-      window.localStorage.setItem(DATZ_LAST_NOTICE_ID, notice.id);
-      notice.ref?.update({
-        count_close: firebase.firestore.FieldValue.increment(1),
-      });
-      setNotice(undefined);
-    }
-  }
+  const { remove, notice } = useNoticeRemove();
+  if (!notice) return null;
   return (
     <header
       className={css`
