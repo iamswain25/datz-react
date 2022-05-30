@@ -40,7 +40,7 @@ export default function Header({
   function openHandler() {
     setOpen(!isOpen);
   }
-  const { navTopHeight, originalHeight } = useNavTopHeight();
+  const { originalHeight } = useNavTopHeight();
 
   let links = null;
   if (isDesktop) {
@@ -169,10 +169,11 @@ export default function Header({
       <>
         <div
           className={css`
-            height: ${navTopHeight}px;
-            width: 100%;
+            visibility: hidden;
           `}
-        ></div>
+        >
+          {innerHeader}
+        </div>
         <div
           className={css`
             position: fixed;

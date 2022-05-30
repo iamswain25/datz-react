@@ -15,7 +15,7 @@ export default function Notice() {
         height: ${isDesktop ? "50px" : "auto"};
         overflow: hidden;
         display: flex;
-        padding: ${isDesktop ? 0 : 30}px ${isDesktop ? 37 : 17}px;
+        padding: ${isDesktop ? 0 : 17}px ${isDesktop ? 37 : 17}px;
         background-color: #ffffb0;
         box-sizing: border-box;
         align-items: center;
@@ -24,18 +24,6 @@ export default function Notice() {
         position: relative;
       `}
     >
-      <div
-        className={css`
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          text-align: center;
-          transform: translate(-50%, -50%);
-          overflow: hidden;
-        `}
-      >
-        {notice?.[lang]}
-      </div>
       <button
         type="button"
         onClick={remove}
@@ -44,6 +32,7 @@ export default function Notice() {
           font-size: 14px;
           display: flex;
           align-items: center;
+          margin-right: 25px;
         `}
       >
         <Close
@@ -57,6 +46,20 @@ export default function Notice() {
         />
         <div>close</div>
       </button>
+      <div
+        className={css`
+          overflow: hidden;
+          text-align: center;
+          flex: 1;
+        `}
+      >
+        {notice?.[lang]}
+      </div>
+      <div
+        className={css`
+          padding-right: 75px;
+        `}
+      />
     </header>
   );
 }
