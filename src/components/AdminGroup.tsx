@@ -65,6 +65,8 @@ export default function AdminGroup(props: { title: string; fields: string[] }) {
                   "notes_ko",
                   "preview_quote_en",
                   "preview_quote_ko",
+                  "link_en",
+                  "link_ko",
                 ].includes(field)
                   ? undefined
                   : formOptionRequired.required

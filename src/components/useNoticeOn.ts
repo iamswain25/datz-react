@@ -1,16 +1,7 @@
 import React from "react";
-import firebase from "firebase/app";
 import { firestore } from "../config/firebase";
-import { useNotice } from "../store/useGlobalState";
+import { Notice, useNotice } from "../store/useGlobalState";
 export const DATZ_LAST_NOTICE_ID = "DATZ_LAST_NOTICE_ID";
-export interface Notice {
-  created_at: any;
-  en: string;
-  ko: string;
-  id: string;
-  ref?: firebase.firestore.DocumentReference;
-  public: boolean;
-}
 export default function useNoticeOn() {
   const [notice, setNotice] = useNotice();
   React.useEffect(() => {

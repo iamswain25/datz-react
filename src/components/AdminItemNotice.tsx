@@ -16,7 +16,7 @@ export default function AdminItemNotice() {
   const { submit, duplicate } = useSubmitDuplicate(collection);
   const formControl = useForm<Artists>({ defaultValues: {} });
   const [en, ko] = React.useMemo(() => {
-    const base = [""];
+    const base = ["", "link_"];
     const en = base.map((str) => str.concat("en"));
     const ko = base.map((str) => str.concat("ko"));
     return [en, ko];

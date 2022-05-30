@@ -4,11 +4,13 @@ import Close from "../assets/svg/Close";
 import { useGlobalLang } from "../store/useGlobalState";
 import useDesktop from "./useDesktop";
 import useNoticeRemove from "./useNoticeRemove";
+import Link from "./Link";
 export default function Notice() {
   const [lang] = useGlobalLang();
   const isDesktop = useDesktop();
   const { remove, notice } = useNoticeRemove();
   if (!notice) return null;
+  const link = notice?.[`link_${lang}`];
   return (
     <header
       className={css`
@@ -53,7 +55,18 @@ export default function Notice() {
           flex: 1;
         `}
       >
-        {notice?.[lang]}
+        {link ? (
+          <Link
+            to={link}
+            className={css`
+              text-decoration: underline;
+            `}
+          >
+            {notice?.[lang]}
+          </Link>
+        ) : (
+          notice?.[lang]
+        )}
       </div>
       <div
         className={css`

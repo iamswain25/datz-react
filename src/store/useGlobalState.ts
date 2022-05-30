@@ -1,6 +1,17 @@
 import { createGlobalState } from "react-hooks-global-state";
+import firebase from "firebase/app";
 import { firestore } from "../config/firebase";
 export type Lang = "en" | "ko";
+export interface Notice {
+  created_at: any;
+  en: string;
+  ko: string;
+  link_en: string;
+  link_ko: string;
+  id: string;
+  ref?: firebase.firestore.DocumentReference;
+  public: boolean;
+}
 const lang: Lang = navigator.language.substring(0, 2) === "ko" ? "ko" : "en";
 const MOBILE_MENU = false;
 const NOTICE = undefined;
@@ -16,14 +27,7 @@ const initialState = {
   featureFlag,
 };
 type State = {
-  NOTICE?: {
-    created_at: any;
-    en: string;
-    ko: string;
-    id: string;
-    ref?: firebase.default.firestore.DocumentReference;
-    public: boolean;
-  };
+  NOTICE?: Notice;
   MOBILE_MENU: boolean;
   lang: Lang;
   adminItem?: any;

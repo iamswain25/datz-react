@@ -4634,11 +4634,6 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-cra-template-typescript@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/cra-template-typescript/-/cra-template-typescript-1.0.2.tgz#3bb4133a310e04bda4e3fb98f4d10360ac1b7652"
-  integrity sha512-yB5IomcbdDgxNSrZaJtfQe/G/TuV3d9ftbVtth8E0tjOTS7eTKu92sVGRhsNv3mRS40R9i3Ehbz3yxgZ+Z6Fbw==
-
 create-ecdh@^4.0.0:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.4.tgz#d6e7f4bffa66736085a0762fd3a632684dabcc4e"
@@ -4679,14 +4674,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-create-react-class@^15.7.0:
-  version "15.7.0"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.7.0.tgz#7499d7ca2e69bb51d13faf59bd04f0c65a1d6c1e"
-  integrity sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng==
-  dependencies:
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
 
 cross-fetch@^3.0.4:
   version "3.1.4"
