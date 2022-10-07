@@ -1,13 +1,11 @@
 import React from "react";
 import { css } from "emotion";
 import useDesktop from "./useDesktop";
-import { filterExhibitionCurrent } from "../utils/datefns";
 import { Link } from "react-router-dom";
 import LazyImage from "./LazyImage";
 import { BLEND_SCREEN_COLOR } from "../config/params";
 export default function NewsCard({ item }: { item: any }) {
   const isDesktop = useDesktop();
-  const isCurrent = filterExhibitionCurrent(item);
   return (
     <Link to={`/news/${item.id}`}>
       <div
@@ -33,7 +31,7 @@ export default function NewsCard({ item }: { item: any }) {
           img={css`
             position: absolute;
             object-fit: cover;
-            mix-blend-mode: ${isCurrent ? "soft-light" : "normal"};
+            mix-blend-mode: normal;
             ${isDesktop
               ? `:hover {
               mix-blend-mode: soft-light;
