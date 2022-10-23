@@ -24,6 +24,7 @@ export default function LinkPluginEditor4({
   keyup,
 }: any) {
   const editorRef = React.useRef<PluginEditor>(null);
+  const valueChange = React.useRef(false);
   const { InlineToolbar, plugins, linkPlugin } = React.useMemo(() => {
     const inlineToolbarPlugin = createInlineToolbarPlugin();
     const { InlineToolbar } = inlineToolbarPlugin;
@@ -50,6 +51,7 @@ export default function LinkPluginEditor4({
       JSON.stringify(convertToRaw(state.getCurrentContent()))
     ) {
       console.log("useEffect");
+      valueChange.current = true;
       setState(incomingConvert(value));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -67,7 +69,8 @@ export default function LinkPluginEditor4({
     if (!state.getDecorator()) {
       editorRef.current?.componentDidMount();
     }
-    saveCb();
+    if (!valueChange.current) saveCb();
+    valueChange.current = false;
   }, [state, saveCb]);
   return (
     <div

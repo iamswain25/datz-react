@@ -16,14 +16,14 @@ export default function useSubmitDuplicate(col: Collection) {
     // return console.log(data.files);
     if (data?.files?.image_cover)
       promises.push(storage.ref(data.image_cover).put(data.files.image_cover));
-    if (data.files.image.length > 1) {
+    if (data?.files?.image?.length > 1) {
       promises.push(
         ...data.files.image.map(
           ({ file, id }: { file: File; id: string }, index: number) =>
             storage.ref(id).put(file)
         )
       );
-    } else if (data.files.image.length === 1) {
+    } else if (data?.files?.image?.length === 1) {
       promises.push(storage.ref(data.image).put(data.files.image));
     }
     if (data?.files?.images?.length) {
