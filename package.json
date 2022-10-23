@@ -80,7 +80,7 @@
     ]
   },
   "devDependencies": {
-    "@types/draft-js": "^0.10.44",
+    "@types/draft-js": "^0.11.9",
     "@types/draftjs-to-html": "^0.8.0",
     "@types/google-map-react": "^1.1.8",
     "@types/react-copy-to-clipboard": "^4.3.0",
