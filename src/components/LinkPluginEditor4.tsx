@@ -1,33 +1,84 @@
 import React from "react";
-import createInlineToolbarPlugin from "@draft-js-plugins/inline-toolbar";
-import createLinkPlugin, { defaultTheme } from "@draft-js-plugins/anchor";
-import PluginEditor, {
-  createEditorStateWithText,
-} from "@draft-js-plugins/editor";
-import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
-import { useDebouncedCallback } from "use-debounce";
+import createInlineToolbarPlugin, {
+  ToolbarProps,
+} from "@draft-js-plugins/inline-toolbar";
+import createLinkPlugin, {
+  AnchorPlugin,
+  defaultTheme,
+} from "@draft-js-plugins/anchor";
+import PluginEditor from "@draft-js-plugins/editor";
+import {
+  ContentState,
+  convertFromRaw,
+  DraftDecoratorType,
+  EditorState,
+} from "draft-js";
 import "@draft-js-plugins/inline-toolbar/lib/plugin.css";
 import "@draft-js-plugins/anchor/lib/plugin.css";
 import { css } from "emotion";
-const incomingConvert = (value: any) => {
-  // console.log("incomingConvert", value);
-  if (typeof value === "object") {
-    return EditorState.createWithContent(convertFromRaw(value));
-  } else {
-    return createEditorStateWithText(value || "");
-  }
-};
-export default function LinkPluginEditor4({
-  value,
-  onChange,
-  visible,
-  keyup,
-}: any) {
-  const editorRef = React.useRef<PluginEditor>(null);
-  const valueChange = React.useRef(false);
-  const { InlineToolbar, plugins, linkPlugin } = React.useMemo(() => {
+import { useAdminItem } from "../store/useGlobalState";
+import { draftFieldConverter } from "./AdminLine";
+import _ from "lodash";
+export default function LinkPluginEditor4(props: {
+  onChange: (contentState: ContentState) => void;
+  visible: boolean;
+  keyup: any;
+  field: string;
+}) {
+  const { onChange, field } = props;
+  const editorRef = React.useRef<DraftLinkEditor>(null);
+  const [item] = useAdminItem();
+  React.useEffect(() => {
+    console.log(1, "item");
+    const theclass = editorRef.current;
+    theclass?.promiseDeco.then((deco) => {
+      // console.log("deco", deco);
+      if (item?.[field]) {
+        const contentState = convertFromRaw(item?.[field]);
+        onChange(contentState);
+        theclass?.setState({
+          editorState: EditorState.createWithContent(contentState, deco),
+        });
+      } else {
+        const covertedField = draftFieldConverter.get(field);
+        const plainText = item?.[covertedField];
+        if (plainText) {
+          const contentState = ContentState.createFromText(plainText);
+          onChange(contentState);
+          theclass?.setState({
+            editorState: EditorState.createWithContent(contentState, deco),
+          });
+        }
+      }
+      theclass.resolveDeco = undefined;
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item]);
+
+  return <DraftLinkEditor {...props} ref={editorRef} />;
+}
+
+class DraftLinkEditor extends React.Component<
+  {
+    onChange: (contentState: ContentState) => void;
+    visible: boolean;
+    keyup: any;
+    field: string;
+  },
+  { editorState: EditorState }
+> {
+  plugins: any[];
+  InlineToolbar: React.ComponentType<ToolbarProps>;
+  linkPlugin: AnchorPlugin;
+  PluginEditorRef = React.createRef<PluginEditor>();
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      editorState: EditorState.createEmpty(),
+    };
     const inlineToolbarPlugin = createInlineToolbarPlugin();
     const { InlineToolbar } = inlineToolbarPlugin;
+    this.InlineToolbar = InlineToolbar;
     const linkPlugin = createLinkPlugin({
       placeholder: "https://",
       linkTarget: "_blank",
@@ -38,64 +89,58 @@ export default function LinkPluginEditor4({
         `,
       },
     });
-    const plugins = [inlineToolbarPlugin, linkPlugin];
-    return { InlineToolbar, plugins, linkPlugin };
-  }, []);
-  const [state, setState] = React.useState<EditorState>(() =>
-    incomingConvert(value)
-  );
-
-  React.useEffect(() => {
-    if (
-      JSON.stringify(value) !==
-      JSON.stringify(convertToRaw(state.getCurrentContent()))
-    ) {
-      console.log("useEffect");
-      valueChange.current = true;
-      setState(incomingConvert(value));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
-  const saveCb = useDebouncedCallback(() => {
-    const json = JSON.stringify(convertToRaw(state.getCurrentContent()));
-    // console.log(json);
-    if (JSON.stringify(value) !== json) {
-      console.log("saveCb");
-      onChange(state.getCurrentContent());
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    this.linkPlugin = linkPlugin;
+    this.plugins = [inlineToolbarPlugin, linkPlugin];
+    this.promiseDeco = new Promise((res) => {
+      this.resolveDeco = res;
+    });
+  }
+  debouncedSave = _.debounce((editorState: EditorState) => {
+    // console.log("debouncedSave");
+    this.props.onChange(editorState.getCurrentContent());
   }, 500);
-  React.useEffect(() => {
-    if (!state.getDecorator()) {
-      editorRef.current?.componentDidMount();
-    }
-    if (!valueChange.current) saveCb();
-    valueChange.current = false;
-  }, [state, saveCb]);
-  return (
-    <div
-      className={css`
-        position: relative;
-        flex: 1;
-        display: ${visible ? "block" : "none"};
-        color: #707070;
-      `}
-    >
-      <PluginEditor
-        ref={editorRef}
-        editorState={state}
-        onChange={setState}
-        plugins={plugins}
-        stripPastedStyles={true}
-        keyBindingFn={keyup}
-      />
-      <InlineToolbar
-        children={(externalProps) => (
-          <div>
-            <linkPlugin.LinkButton {...(externalProps as any)} />
-          </div>
-        )}
-      />
-    </div>
-  );
+  promiseDeco: Promise<DraftDecoratorType>;
+  resolveDeco: ((deco: DraftDecoratorType) => void) | undefined;
+
+  changeHandler = (editorState: EditorState) => {
+    // console.log("changeHandler");
+    this.setState({ editorState }, () => {
+      const deco = this.state.editorState.getDecorator();
+      if (this.resolveDeco && deco) {
+        this.resolveDeco?.(deco);
+      } else {
+        // this.props.onChange(editorState.getCurrentContent());
+        this.debouncedSave(editorState);
+      }
+    });
+  };
+  render() {
+    const { visible, keyup } = this.props;
+    return (
+      <div
+        className={css`
+          position: relative;
+          flex: 1;
+          display: ${visible ? "block" : "none"};
+          color: #707070;
+        `}
+      >
+        <PluginEditor
+          ref={this.PluginEditorRef}
+          editorState={this.state.editorState}
+          onChange={this.changeHandler}
+          plugins={this.plugins}
+          stripPastedStyles={true}
+          keyBindingFn={keyup}
+        />
+        <this.InlineToolbar
+          children={(externalProps) => (
+            <div>
+              <this.linkPlugin.LinkButton {...(externalProps as any)} />
+            </div>
+          )}
+        />
+      </div>
+    );
+  }
 }

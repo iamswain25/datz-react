@@ -1,6 +1,5 @@
 import { css } from "emotion";
 import React from "react";
-import { useAdminItem } from "../store/useGlobalState";
 import AdminLine from "./AdminLine";
 import AdminGroup from "./AdminGroup";
 import AdminGroupRelated from "./AdminGroupRelated";
@@ -14,6 +13,7 @@ import AdminItemPublic from "./AdminItemPublic";
 import useSubmitDuplicate from "../utils/useSubmitDuplicate";
 import { useParams } from "react-router-dom";
 import { formOptionRequired } from "../utils/required";
+import useResetForm from "../utils/useResetForm";
 const EXHIBITION_TYPE = [
   "D'Ark Room",
   "Datz Museum of Art",
@@ -26,20 +26,18 @@ const RELATED: RelationType[] = [
   "rel_publications",
   "rel_events",
 ];
+// const allFields = [...EN_FIELDS, ...KO_FIELDS, ...RELATED];
+
 export default function AdminItemExhibition() {
   const { collection } = useParams<Param>();
   const { submit, duplicate } = useSubmitDuplicate(collection);
-  const [item] = useAdminItem();
   const formControl = useForm<Exhibition>({ defaultValues: {} });
   const {
     reset,
     handleSubmit,
     formState: { isSubmitting },
   } = formControl;
-  React.useEffect(() => {
-    reset(item);
-  }, [item, reset]);
-
+  const item = useResetForm<Exhibition>(reset);
   if (!item) return null;
   return (
     <FormProvider {...formControl}>

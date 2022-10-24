@@ -47,9 +47,7 @@ const SortableItem = SortableElement(
             flex: 1;
             text-align: left;
             font-size: 16px;
-            text-decoration: ${
-              item.public === false ? "line-through" : "none"
-            };\
+            text-decoration: ${item.public === false ? "line-through" : "none"};
           `}
         >
           <span

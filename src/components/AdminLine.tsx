@@ -8,24 +8,17 @@ import CloseIcon from "@material-ui/icons/Close";
 import { useAdminItem } from "../store/useGlobalState";
 import FormErrorMessage from "./FormErrorMessage";
 import LinkPluginEditor4 from "./LinkPluginEditor4";
-import { ContentState, convertToRaw } from "draft-js";
-import { Publication } from "../@type";
+import { ContentState, convertToRaw, RawDraftContentState } from "draft-js";
 import { KeyboardEventHandler } from "react";
-import getObjectInStringDotValue from "../utils/getObjectInStringDotValue";
-const getDraftName = (field: string) => {
-  switch (field) {
-    case "notes_en":
-      return "noteDraft_en";
-    case "notes_ko":
-      return "noteDraft_ko";
-    case "body_ko":
-      return "bodyDraft_ko";
-    case "body_en":
-      return "bodyDraft_en";
-    default:
-      return undefined;
-  }
-};
+export const draftFieldConverter = new Map();
+draftFieldConverter.set("notes_en", "noteDraft_en");
+draftFieldConverter.set("notes_ko", "noteDraft_ko");
+draftFieldConverter.set("body_ko", "bodyDraft_ko");
+draftFieldConverter.set("body_en", "bodyDraft_en");
+draftFieldConverter.set("noteDraft_en", "notes_en");
+draftFieldConverter.set("noteDraft_ko", "notes_ko");
+draftFieldConverter.set("bodyDraft_ko", "body_ko");
+draftFieldConverter.set("bodyDraft_en", "body_en");
 export default function AdminLine(props: {
   field: string;
   required?: boolean | string;
@@ -34,9 +27,13 @@ export default function AdminLine(props: {
   defaultValue?: any;
 }) {
   const [item] = useAdminItem();
-  const { field, required = false, disabled = false, alias } = props;
-  const defaultValue =
-    props.defaultValue ?? getObjectInStringDotValue(item, field);
+  const {
+    field,
+    required = false,
+    disabled = false,
+    alias,
+    defaultValue,
+  } = props;
   const {
     control,
     register,
@@ -44,28 +41,29 @@ export default function AdminLine(props: {
     clearErrors,
     formState: { errors },
   } = useFormContext();
-  const [isVisible, setVisible] = React.useState(
-    item.updated_by === null ? true : false
-  );
+  const [isVisible, setVisible] = React.useState(false);
   React.useEffect(() => {
     setVisible(item.updated_by === null ? true : false);
   }, [item]);
-  const toggleVisible = React.useCallback(() => setVisible((v) => !v), [
-    setVisible,
-  ]);
+  const toggleVisible = React.useCallback(
+    () => setVisible((v) => !v),
+    [setVisible]
+  );
   const reg = register(field, { required });
   const ref = React.useRef<HTMLInputElement | HTMLTextAreaElement | null>(null);
   const openVisible = React.useCallback(() => setVisible(true), [setVisible]);
-  const keyupHandler: KeyboardEventHandler<HTMLTextAreaElement> = React.useCallback(
-    (event: any) => {
-      if (event.code === "Escape") {
-        setVisible(false);
-        ref.current?.setSelectionRange(0, 0);
-      }
-    },
-    [setVisible]
-  );
-  const isDraft = React.useMemo(() => Boolean(getDraftName(field)), [field]);
+  const keyupHandler: KeyboardEventHandler<HTMLTextAreaElement> =
+    React.useCallback(
+      (event: any) => {
+        if (event.code === "Escape") {
+          setVisible(false);
+          ref.current?.setSelectionRange(0, 0);
+        }
+      },
+      [setVisible]
+    );
+
+  const isDraft = Boolean(draftFieldConverter.get(field));
   return (
     <div
       className={css`
@@ -91,23 +89,27 @@ export default function AdminLine(props: {
         <>
           <Controller
             control={control}
-            name={getDraftName(field) as keyof Publication}
-            defaultValue={
-              getDraftName(field)
-                ? item[getDraftName(field) as keyof Publication]
-                : defaultValue
-            }
+            name={draftFieldConverter.get(field)}
+            defaultValue={item?.[draftFieldConverter.get(field)]}
             rules={{ required }}
-            render={({ field: { value, onChange } }) => {
-              const onChange2 = (contentState: ContentState) => {
+            render={({
+              field: { onChange, name },
+            }: {
+              field: {
+                value: RawDraftContentState;
+                onChange: (rawContentState: RawDraftContentState) => void;
+                name: string;
+              };
+            }) => {
+              const onChangeDraft = (contentState: ContentState) => {
                 onChange(convertToRaw(contentState));
                 setValue(field, contentState.getPlainText());
                 clearErrors(field);
               };
               return (
                 <LinkPluginEditor4
-                  value={value || getObjectInStringDotValue(item, field)}
-                  onChange={onChange2}
+                  field={name}
+                  onChange={onChangeDraft}
                   visible={isVisible}
                   keyup={keyupHandler}
                 />
